@@ -76,17 +76,46 @@
 
 ### 📦 รายการสิ่งที่ขอแก้ไขในแต่ละ Repository (Action Items for Agents):
 
-#### **A. ฝั่ง Tier 1: `D:\zuri-ai` (`prisma/schema.prisma` & `schema-zuri-ai.md`)**
-1. **เพิ่มฟิลด์ใน Model `Workspace` หรือ `Project`:**
+#### **A. ฝั่ง Tier 1: `D:\zuri-ai` (`prisma/schema.prisma` & Next.js/React UI)**
+1. **เพิ่มฟิลด์ใน Model `Workspace` หรือ `Project` (`prisma/schema.prisma`):**
    ```prisma
    // prisma/schema.prisma
    model Workspace {
      // ... existing fields ...
-     catalogVaultId   String?   // UUIDv7 / vlt-{tenant_code} (เช่น vlt-smartgift-2026)
+     catalogVaultId   String?   // UUIDv7 / vlt-{tenant_code} (เช่น vlt-catalog-product)
      vaultNamespace   String?   // e.g. "smartgift://b2b/portfolio/v1"
    }
+
+   model DataPipelineRun {
+     id              String    @id @default(uuid())
+     runId           String    @unique // e.g. "run-master-20260829T230036Z-xxxx"
+     workspaceId     String
+     tenantId        String    // e.g. "Org-EtohGroup"
+     businessId      String    // e.g. "SmartGift"
+     vaultId         String    // e.g. "vlt-catalog-product"
+     status          String    // "PROCESSING" | "PENDING_APPROVAL" | "PUBLISHED" | "FAILED"
+     catalogVersion  String    // e.g. "catalog-v2026.08.29-fe2bf21f"
+     summary         Json      // { totalOffers: 357, added: 12, priceChanges: 3, bomDrifts: 0 }
+     createdAt       DateTime  @default(now())
+     approvedAt      DateTime?
+     approvedBy      String?
+   }
    ```
-2. **อัปเดต AuthContext Resolver (`src/modules/agent/auth-context.js`):**
+
+2. **พัฒนาหน้าจอ Data Pipeline & Ingestion UI (`/platform/workspaces/[id]/pipeline`):**
+   * **Lane 1: FlowAccount MCP & Ingestion Monitor:**
+     - แสดงสถานะการเชื่อมต่อกับ FlowAccount MCP (`https://mcp.flowaccount.com/mcp`)
+     - แสดงปุ่ม **"Trigger Sync FlowAccount"** พร้อมตารางแสดงประวัติ Ingest Run ID, SHA-256, และจำนวนแถว (`Row Diff: +N`)
+   * **Lane 2: Factory Cost & Supplier Upload Portal:**
+     - ให้ผู้จัดการ (Manager / Procurement) สามารถลากวางอัปโหลดไฟล์ Excel / CSV / PDF ใบราคาโรงงานจีน
+     - เลือก Supplier Tag (`P-xx`), Warehouse (กวางโจว/อี้อู), และ Shipping Mode (Truck / Sea)
+   * **Review & Approval Gate (หน้าจอตรวจสอบก่อนเผยแพร่):**
+     - แสดงตาราง Visual Diff: สินค้าที่เพิ่มใหม่, รายการที่ราคาเปลี่ยน (แสดงราคาเก่า vs ใหม่), และ BOM Drift
+     - ปุ่ม **"Approve & Publish"** เพื่ออนุมัติส่งข้อมูลขึ้น Supabase Cloud DB และสั่ง Edge Vault Substrate ให้ตัดรอบ Re-index
+   * **Traceability & Provenance Search:**
+     - กล่องค้นหาด้วย `event_id`, `product_id`, หรือ `source_ref` เพื่อดูประวัติการคำนวณราคาและที่มาของข้อมูลแบบครบวงจร
+
+3. **อัปเดต AuthContext Resolver (`src/modules/agent/auth-context.js`):**
    * ให้แนบ `catalogVaultId` เข้าไปใน Request Envelope เมื่อเรียกใช้งาน Agent ในบริบท B2B Gift Catalog
 
 ---
