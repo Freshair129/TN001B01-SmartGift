@@ -93,6 +93,7 @@ py -3 demo_app.py
 
 ## 📚 เอกสารเพิ่มเติม (Documentation in `/docs`)
 
+* 🌐 [Zuri Ecosystem System Boundaries & Integration Blueprint](docs/ZURI_ECOSYSTEM_BOUNDARIES.md)
 * 🏛️ [System Architecture Blueprint](docs/SMARTGIFT_SYSTEM_ARCHITECTURE.md)
 * 📋 [Change Request (CR) for Zuri-AI, MSP & GKS Integration](docs/CR-GKS-MSP-VAULT-INTEGRATION.md)
 * 📖 [Data Pipeline & Multi-Vault Structure Specification](docs/DATA_PIPELINE_AND_VAULT_STRUCTURE.md)
