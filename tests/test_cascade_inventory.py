@@ -9,7 +9,10 @@ import sys
 # Ensure parent directory is in python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from inventory_cascade_engine import InventoryCascadeEngine
+try:
+    from src.cascade_engine import InventoryCascadeEngine
+except ImportError:
+    from inventory_cascade_engine import InventoryCascadeEngine
 
 class TestInventoryCascade(unittest.TestCase):
     def setUp(self):
