@@ -1,0 +1,164 @@
+# ============================================================================
+# SmartGift B2B E-commerce & GraphRAG Schema Specification
+# GenesisBlockDB Hybrid Graph + Vector Engine Contract (Version 1.0.0)
+# ============================================================================
+
+client_contract:
+  client_namespace: "smartgift"
+  schema_ref: "smartgift://b2b/portfolio/v1"
+  schema_version: "1.3.0"
+  vault_isolation: true
+  vault_id_format: "UUIDv7 / vlt-{tenant_code}"
+  vault_scope: "Product Catalog & Sensory Knowledge Only (Zero PII / Zero Transaction Storage)"
+  description: "B2B Gift Sets, Corporate Bundles, Unboxing Sensory Vectors & Product-Only Vault Isolation"
+
+# 1. Vector Spaces Configuration (HNSW In-Process)
+vector_spaces:
+  - name: "unboxing_sensory"
+    model: "bge-m3"
+    dim: 1024
+    metric: "cosine"
+    quantization: "F16"
+    purpose: "Sensory descriptions, unboxing feelings, aromas, material textures"
+
+  - name: "product_features"
+    model: "bge-m3"
+    dim: 1024
+    metric: "cosine"
+    quantization: "F16"
+    purpose: "Technical specifications, charging systems, material grades"
+
+# 2. Node Ontology & Taxonomy
+node_ontology:
+  Category:
+    prefix: "cat:"
+    labels: ["Category"]
+    properties:
+      name_th: { type: "string", required: true }
+      name_en: { type: "string", required: true }
+      slug: { type: "enum", values: ["pastel-series", "classic-oriental", "novelty-self-care", "executive-smart-tech"], required: true }
+      vibe: { type: "string" }
+      target_recipient: { type: "string" }
+      guardrail: { type: "string" }
+
+  ProductMaster:
+    prefix: "pm:"
+    labels: ["ProductMaster"]
+    properties:
+      code: { type: "string", unique: true, required: true }
+      name_th: { type: "string", required: true }
+      name_en: { type: "string", required: true }
+      category: { type: "string", required: true }
+      base_cost: { type: "number", required: true }
+      specs: { type: "map" }
+
+  SKU:
+    prefix: "sku:"
+    labels: ["SKU", "ProductVariant"]
+    properties:
+      code: { type: "string", unique: true, required: true }
+      color: { type: "string" }
+      material: { type: "string" }
+      inventory_qty: { type: "integer", default: 0 }
+      safety_stock: { type: "integer", default: 10 }
+
+  CatalogOffer:
+    prefix: "offer:"
+    labels: ["CatalogOffer"]
+    vector_space: "unboxing_sensory"
+    properties:
+      code: { type: "string", unique: true, required: true }
+      name: { type: "string", required: true }
+      gift_tier: { type: "enum", values: ["Reach", "Select", "Signature", "Bespoke"] }
+      unboxing_experience: { type: "string", required: true }
+      base_price: { type: "number" }
+      price_tiers: { type: "list<price_tier>" }
+
+  BundleOffer:
+    prefix: "bundle:"
+    labels: ["BundleOffer", "CorporateMetaBundle"]
+    properties:
+      code: { type: "string", unique: true, required: true }
+      name: { type: "string", required: true }
+      target_recipients: { type: "integer", required: true }
+      total_price: { type: "number", required: true }
+      description: { type: "string" }
+      tier_breakdown: { type: "map" }
+
+  GiftTier:
+    prefix: "tier:"
+    labels: ["GiftTier"]
+    properties:
+      name: { type: "enum", values: ["Reach", "Select", "Signature", "Bespoke"] }
+      budget_tier: { type: "string" }
+      priority: { type: "integer" }
+
+  RecipientSegment:
+    prefix: "seg:"
+    labels: ["RecipientSegment"]
+    properties:
+      name: { type: "string", required: true }
+      target_level: { type: "enum", values: ["C-Level", "Mid-Management", "Operations"] }
+
+  CorporateClient:
+    prefix: "client:"
+    labels: ["CorporateClient"]
+    properties:
+      client_id: { type: "string", unique: true, required: true }
+      name: { type: "string", required: true }
+      industry: { type: "string" }
+      segment: { type: "string" }
+      tier_breakdown: { type: "map", required: true }
+
+# 3. Edge Ontology (Graph Relationships)
+edge_ontology:
+  IN_CATEGORY:
+    source: "ProductMaster"
+    target: "Category"
+
+  VARIANT_OF:
+    source: "SKU"
+    target: "ProductMaster"
+
+  CONTAINS:
+    source: "CatalogOffer"
+    target: "ProductMaster"
+    properties:
+      qty: { type: "integer", default: 1, required: true }
+
+  BELONGS_TO_TIER:
+    source: "CatalogOffer"
+    target: "GiftTier"
+
+  RECOMMENDED_TIER:
+    source: "RecipientSegment"
+    target: "GiftTier"
+
+  INCLUDES_OFFER:
+    source: "BundleOffer"
+    target: "CatalogOffer"
+    properties:
+      qty: { type: "integer", required: true }
+
+  ORDERED:
+    source: "CorporateClient"
+    target: "BundleOffer"
+    properties:
+      order_id: { type: "string", required: true }
+      quantity: { type: "integer", required: true }
+      amount: { type: "number", required: true }
+      ordered_at: { type: "timestamp" }
+
+# 4. Standard HQL (Hybrid Query Language) Contracts
+hql_contracts:
+  set_decomposition: |
+    TRAVERSE FROM "offer:{offer_code}" DEPTH 1 REL CONTAINS
+
+  bundle_cascade: |
+    TRAVERSE FROM "bundle:{bundle_code}" DEPTH 2 REL INCLUDES_OFFER|CONTAINS
+
+  unboxing_semantic_search: |
+    SEARCH IN unboxing_sensory FOR "{query_text}" K 5
+
+  tiered_context_expansion: |
+    CONTEXT FOR "offer:{offer_code}" TIER H2 BUDGET 2048

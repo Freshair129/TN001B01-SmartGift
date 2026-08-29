@@ -1,0 +1,33 @@
+{
+  "enterprise_scope": {
+    "workspace": "Wannapa Workspace",
+    "organization": "Org-EtohGroup",
+    "tenant_id": "Org-EtohGroup",
+    "business": "SmartGift",
+    "business_id": "SmartGift",
+    "legal_entity": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)"
+  },
+  "vaults": [
+    {
+      "vault_id": "vlt-catalog-product",
+      "name": "Product Catalog & Unboxing Sensory Vault",
+      "scope": "Product Catalog & Sensory Knowledge Only",
+      "schema_ref": "smartgift://b2b/portfolio/v1",
+      "schema_version": "1.3.0",
+      "vector_spaces": ["unboxing_sensory", "product_features"],
+      "storage_path": "./vaults/vlt-catalog-product/genesis-db",
+      "static_sqlite_path": "./vaults/vlt-catalog-product/projection.sqlite",
+      "zero_pii": true
+    },
+    {
+      "vault_id": "vlt-customer-client",
+      "name": "Corporate Client Knowledge Vault",
+      "scope": "Corporate Clients, Segments & Gift Suppression Rules",
+      "schema_ref": "smartgift://b2b/clients/v1",
+      "schema_version": "1.0.0",
+      "storage_path": "./vaults/vlt-customer-client/genesis-db",
+      "zero_pii": false,
+      "gated_auth": true
+    }
+  ]
+}

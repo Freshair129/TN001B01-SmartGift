@@ -1,0 +1,415 @@
+{
+  "pipeline_run_id": "run-20260829T230036Z-abad44",
+  "tenant_id": "Org-EtohGroup",
+  "business_id": "SmartGift",
+  "vault_id": "vlt-catalog-product",
+  "timestamp": "2026-08-29T23:00:36.848242+00:00",
+  "summary": {
+    "total_items_analyzed": 2445,
+    "flowaccount_sql_items": 1110,
+    "google_sheet_items": 1335,
+    "successfully_mapped_product_ids": 2445
+  },
+  "sample_mappings": [
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "AS00-2",
+      "raw_name_th": "แก้วมัค พร้อม towel",
+      "mapped_product_id": "AS00-2",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "BE0011",
+      "raw_name_th": "กาต้มน้ำไฟฟ้าแบบพกพา",
+      "mapped_product_id": "BE0011",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "BT00-0",
+      "raw_name_th": "ขวดน้ำสูญญากาศพร้อมมีหน้าจอแสดงอุณหภูมิ",
+      "mapped_product_id": "BT00-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "BT04-0",
+      "raw_name_th": "Vacuum กระบอกน้ำเก็บอุณหภูมิ with 3 lids",
+      "mapped_product_id": "BT04-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "BW00-0",
+      "raw_name_th": "แก้วเก็บอุณหภูมิ in simple dark blue gift bag packing",
+      "mapped_product_id": "BW00-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "BW16-2",
+      "raw_name_th": "Plain thermos cup",
+      "mapped_product_id": "BW16-2",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "CA188",
+      "raw_name_th": "Car Purifier เครื่องฟอกอากาศในรถยนต์ขนาดพกพา WAY U รุ่น WU-",
+      "mapped_product_id": "CA188",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "CER01-5",
+      "raw_name_th": "",
+      "mapped_product_id": "CER01-5",
+      "supplier_code": "P-00",
+      "extraction_source": "default_code"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "CER01-7",
+      "raw_name_th": "Ceramic teapot พร้อม teacup 7 pcs ชุดของขวัญ",
+      "mapped_product_id": "CER01-7",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "CER02-5",
+      "raw_name_th": "Ceramic teapot พร้อม teacup 5 pcs ชุดของขวัญ",
+      "mapped_product_id": "CER02-5",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "CER02-7",
+      "raw_name_th": "Ceramic teapot พร้อม teacup 7 pcs ชุดของขวัญ",
+      "mapped_product_id": "CER02-7",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DAP00-2",
+      "raw_name_th": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน  Model :",
+      "mapped_product_id": "DAP00-2",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DDB00-3",
+      "raw_name_th": "กระบอกน้ำเก็บอุณหภูมิ พร้อม fan พร้อม ร่มพับ set (MOQ 50 sets)",
+      "mapped_product_id": "DDB00-3",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DF1010",
+      "raw_name_th": "ไดร์เป่าผม",
+      "mapped_product_id": "DF1010",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DF1420",
+      "raw_name_th": "พัดลมห้อยคอ / Hanging Neck Fan",
+      "mapped_product_id": "DF1420",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DG011",
+      "raw_name_th": "เครื่องประคบร้อนแก้ปวด",
+      "mapped_product_id": "DG011",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DS0260",
+      "raw_name_th": "เครื่องทำความชื้น(แมว)",
+      "mapped_product_id": "DS0260",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DS041",
+      "raw_name_th": "แปรงสีฟันไฟฟ้า",
+      "mapped_product_id": "DS041",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DS056",
+      "raw_name_th": "เครื่องเพิ่มความชื้นในอากาศ",
+      "mapped_product_id": "DS056",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DY0560",
+      "raw_name_th": "เครื่องรีดผ้าแบบพกพา",
+      "mapped_product_id": "DY0560",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "DY05601",
+      "raw_name_th": "เครื่องทำความสะอาดภายในช่องปาก",
+      "mapped_product_id": "DY05601",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FLW0162",
+      "raw_name_th": "Vintage flower style thermos cup พร้อม ร่มพับ",
+      "mapped_product_id": "FLW0162",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FLW02162",
+      "raw_name_th": "Vintage flower style thermos cup พร้อม เครื่องนวดคอ",
+      "mapped_product_id": "FLW02162",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FLW03162",
+      "raw_name_th": "Vintage flower style thermos cup พร้อม Hand warmer พาวเวอร์แบงก์",
+      "mapped_product_id": "FLW03162",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD00-0",
+      "raw_name_th": "Vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม Mag safe พาวเวอร์แบงก์",
+      "mapped_product_id": "FXD00-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD00-2",
+      "raw_name_th": "Sports bag พร้อม พาวเวอร์แบงก์ พร้อม sports กระบอกน้ำ",
+      "mapped_product_id": "FXD00-2",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD00-3",
+      "raw_name_th": "Sports bag พร้อม ปากกา พร้อม สมุดโน้ต พร้อม sports กระบอกน้ำ",
+      "mapped_product_id": "FXD00-3",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD01-0",
+      "raw_name_th": "Vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม พาวเวอร์แบงก์",
+      "mapped_product_id": "FXD01-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD02-0",
+      "raw_name_th": "Vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม capsule ร่มพับ",
+      "mapped_product_id": "FXD02-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD03-0",
+      "raw_name_th": "Vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม เครื่องนวดคอ",
+      "mapped_product_id": "FXD03-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD04-0",
+      "raw_name_th": "Vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม เครื่องนวดคอ พร้อม Mag safe พาวเวอร์แบงก์",
+      "mapped_product_id": "FXD04-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD04-0N",
+      "raw_name_th": "Happy Mother",
+      "mapped_product_id": "FXD04-0N",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD05-0",
+      "raw_name_th": "Vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม เครื่องนวดคอ พร้อม พาวเวอร์แบงก์",
+      "mapped_product_id": "FXD05-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD06-0",
+      "raw_name_th": "Vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม ปากกา พร้อม สมุดโน้ต A5",
+      "mapped_product_id": "FXD06-0",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD14-2",
+      "raw_name_th": "Sports bag พร้อม capsule ร่มพับ พร้อม sports กระบอกน้ำ",
+      "mapped_product_id": "FXD14-2",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD14-3",
+      "raw_name_th": "Sports bag พร้อม ร่มพับ พร้อม พาวเวอร์แบงก์ พร้อม sports กระบอกน้ำ",
+      "mapped_product_id": "FXD14-3",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD14-4",
+      "raw_name_th": "Sports bag พร้อม พาวเวอร์แบงก์ พร้อม ปากกา พร้อม สมุดโน้ต พร้อม sports กระบอกน้ำ",
+      "mapped_product_id": "FXD14-4",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD14-5",
+      "raw_name_th": "Sports bag พร้อม capsule ร่มพับ พร้อม พาวเวอร์แบงก์ พร้อม ปากกา พร้อม สมุดโน้ต พร้อม sports กระบอกน้ำ",
+      "mapped_product_id": "FXD14-5",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD19-2",
+      "raw_name_th": "Briefcase พร้อม สมุดโน้ต พร้อม ปากกา gift pack",
+      "mapped_product_id": "FXD19-2",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD19-3",
+      "raw_name_th": "Briefcase พร้อม สมุดโน้ต พร้อม ปากกา พร้อม usb gift pack",
+      "mapped_product_id": "FXD19-3",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD19-4",
+      "raw_name_th": "Briefcase พร้อม vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม สมุดโน้ต พร้อม ปากกา พร้อม แฟลชไดรฟ์ USB gift pack",
+      "mapped_product_id": "FXD19-4",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD19-5",
+      "raw_name_th": "Briefcase พร้อม ร่มพับ พร้อม vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม สมุดโน้ต พร้อม ปากกา พร้อม usb gift pack",
+      "mapped_product_id": "FXD19-5",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD1X-2",
+      "raw_name_th": "Briefcase พร้อม สมุดโน้ต พร้อม ปากกา gift pack",
+      "mapped_product_id": "FXD1X-2",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD1X-3",
+      "raw_name_th": "Briefcase พร้อม สมุดโน้ต พร้อม ปากกา พร้อม usb gift pack",
+      "mapped_product_id": "FXD1X-3",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD1X-4",
+      "raw_name_th": "Briefcase พร้อม vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม สมุดโน้ต พร้อม ปากกา gift pack",
+      "mapped_product_id": "FXD1X-4",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD1X-5",
+      "raw_name_th": "Briefcase พร้อม ร่มพับ พร้อม vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม สมุดโน้ต พร้อม ปากกา พร้อม usb gift pack",
+      "mapped_product_id": "FXD1X-5",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD1Y-3",
+      "raw_name_th": "Briefcase พร้อม vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม สมุดโน้ต พร้อม ปากกา gift pack",
+      "mapped_product_id": "FXD1Y-3",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD1Y-4",
+      "raw_name_th": "Briefcase พร้อม ร่มพับ พร้อม vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม สมุดโน้ต พร้อม ปากกา gift pack",
+      "mapped_product_id": "FXD1Y-4",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD20-3",
+      "raw_name_th": "Briefcase พร้อม vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม สมุดโน้ต พร้อม ปากกา gift pack",
+      "mapped_product_id": "FXD20-3",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    },
+    {
+      "source": "smartgift-portfolio.postgres.sql",
+      "flowaccount_code": "FXD20-4",
+      "raw_name_th": "Briefcase พร้อม ร่มพับ พร้อม vacuum กระบอกน้ำเก็บอุณหภูมิ พร้อม สมุดโน้ต พร้อม ปากกา gift pack",
+      "mapped_product_id": "FXD20-4",
+      "supplier_code": "P-00",
+      "extraction_source": "fallback_or_unassigned"
+    }
+  ]
+}

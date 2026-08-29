@@ -1,0 +1,145 @@
+{
+  "tenant_id": "Org-EtohGroup",
+  "business_id": "SmartGift",
+  "created_at": "2026-08-29T22:58:59.145569+00:00",
+  "last_updated": "2026-08-29T22:59:00.712910+00:00",
+  "total_ingested_versions": 4,
+  "files": {
+    "บริษัท เทราบิส จำกัด_BillingNoteReport_.xlsx": {
+      "original_filename": "บริษัท เทราบิส จำกัด_BillingNoteReport_.xlsx",
+      "current_sha256": "daafaf11bbab69cf6eb5cf9d76a03daaf667a58ab07f41c7790a450f4fdced96",
+      "versions_count": 1,
+      "history": [
+        {
+          "version_id": "ver-บริษัท เทราบิส จำกัด_BillingNoteReport_-v1-daafaf11",
+          "version_number": 1,
+          "sha256": "daafaf11bbab69cf6eb5cf9d76a03daaf667a58ab07f41c7790a450f4fdced96",
+          "size_bytes": 137463,
+          "archive_path": "data-pipeline/01_raw/archive\\20260829T225859Z_daafaf11bbab_บริษัท เทราบิส จำกัด_BillingNoteReport_.xlsx",
+          "ingested_at": "2026-08-29T22:58:59.146503+00:00",
+          "total_rows": 1600,
+          "row_diff_from_previous": 1600,
+          "headers": [
+            "รายงานใบวางบิล/ใบแจ้งหนี้",
+            "col_1",
+            "col_2",
+            "col_3",
+            "col_4",
+            "col_5",
+            "col_6",
+            "col_7",
+            "col_8",
+            "col_9",
+            "col_10",
+            "col_11",
+            "col_12",
+            "col_13",
+            "col_14"
+          ]
+        }
+      ]
+    },
+    "บริษัท เทราบิส จำกัด_QuotationReport_.xlsx": {
+      "original_filename": "บริษัท เทราบิส จำกัด_QuotationReport_.xlsx",
+      "current_sha256": "0d5acee8a0fe399f57b0a641fb1d16aa4bb599ed9bc1d743cf01d074c4a1f18c",
+      "versions_count": 1,
+      "history": [
+        {
+          "version_id": "ver-บริษัท เทราบิส จำกัด_QuotationReport_-v1-0d5acee8",
+          "version_number": 1,
+          "sha256": "0d5acee8a0fe399f57b0a641fb1d16aa4bb599ed9bc1d743cf01d074c4a1f18c",
+          "size_bytes": 560016,
+          "archive_path": "data-pipeline/01_raw/archive\\20260829T225859Z_0d5acee8a0fe_บริษัท เทราบิส จำกัด_QuotationReport_.xlsx",
+          "ingested_at": "2026-08-29T22:58:59.317404+00:00",
+          "total_rows": 6695,
+          "row_diff_from_previous": 6695,
+          "headers": [
+            "รายงานใบเสนอราคา",
+            "col_1",
+            "col_2",
+            "col_3",
+            "col_4",
+            "col_5",
+            "col_6",
+            "col_7",
+            "col_8",
+            "col_9",
+            "col_10",
+            "col_11",
+            "col_12",
+            "col_13",
+            "col_14",
+            "col_15",
+            "col_16"
+          ]
+        }
+      ]
+    },
+    "บริษัท เทราบิส จำกัด_contact.xlsx": {
+      "original_filename": "บริษัท เทราบิส จำกัด_contact.xlsx",
+      "current_sha256": "708b556b60790ca98f440f0b6a5dbedee484d63493dbf2da277ea7339f52c6c3",
+      "versions_count": 1,
+      "history": [
+        {
+          "version_id": "ver-บริษัท เทราบิส จำกัด_contact-v1-708b556b",
+          "version_number": 1,
+          "sha256": "708b556b60790ca98f440f0b6a5dbedee484d63493dbf2da277ea7339f52c6c3",
+          "size_bytes": 508153,
+          "archive_path": "data-pipeline/01_raw/archive\\20260829T225900Z_708b556b6079_บริษัท เทราบิส จำกัด_contact.xlsx",
+          "ingested_at": "2026-08-29T22:59:00.006737+00:00",
+          "total_rows": 4680,
+          "row_diff_from_previous": 4680,
+          "headers": [
+            "รายการสมุดรายชื่อ",
+            "col_1",
+            "col_2",
+            "col_3",
+            "col_4",
+            "col_5",
+            "col_6",
+            "col_7",
+            "col_8",
+            "col_9",
+            "col_10",
+            "col_11",
+            "col_12",
+            "col_13",
+            "col_14",
+            "col_15",
+            "col_16",
+            "col_17"
+          ]
+        }
+      ]
+    },
+    "บริษัท เทราบิส จำกัด_product.xlsx": {
+      "original_filename": "บริษัท เทราบิส จำกัด_product.xlsx",
+      "current_sha256": "da7452ffd91baca7c5e24198e0418585f8da17265bd190447f7c83b755fca318",
+      "versions_count": 1,
+      "history": [
+        {
+          "version_id": "ver-บริษัท เทราบิส จำกัด_product-v1-da7452ff",
+          "version_number": 1,
+          "sha256": "da7452ffd91baca7c5e24198e0418585f8da17265bd190447f7c83b755fca318",
+          "size_bytes": 123476,
+          "archive_path": "data-pipeline/01_raw/archive\\20260829T225900Z_da7452ffd91b_บริษัท เทราบิส จำกัด_product.xlsx",
+          "ingested_at": "2026-08-29T22:59:00.613561+00:00",
+          "total_rows": 1321,
+          "row_diff_from_previous": 1321,
+          "headers": [
+            "รายการสินค้า",
+            "col_1",
+            "col_2",
+            "col_3",
+            "col_4",
+            "col_5",
+            "col_6",
+            "col_7",
+            "col_8",
+            "col_9"
+          ]
+        }
+      ]
+    }
+  }
+}

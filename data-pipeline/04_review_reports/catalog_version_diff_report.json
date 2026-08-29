@@ -1,0 +1,17 @@
+{
+  "current_version": "catalog-v2026.08.29-fe2bf21f",
+  "previous_version": "catalog-v2026.08.29-fe2bf21f",
+  "has_changes": false,
+  "diff_summary": {
+    "added_offers_count": 0,
+    "removed_offers_count": 0,
+    "price_changed_count": 0,
+    "bom_drift_count": 0
+  },
+  "details": {
+    "added": [],
+    "removed": [],
+    "price_changes": [],
+    "bom_changes": []
+  }
+}

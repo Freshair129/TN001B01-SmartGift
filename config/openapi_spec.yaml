@@ -1,0 +1,805 @@
+openapi: 3.0.3
+info:
+  title: SmartGift B2B E-commerce, GraphRAG & Agentic RAG API Specification
+  description: |
+    Comprehensive API Specification for SmartGift B2B Architecture (Option B: Supabase Cloud PostgreSQL + GenesisBlock Edge Engine).
+    Fully compliant with Standard RAG, GraphRAG (Knowledge Graph Augmented Retrieval), and Agentic RAG (Autonomous Tool-Using Agent) specifications.
+  version: 1.1.0
+servers:
+  - url: http://localhost:8000/api/v1
+    description: Local Development Server
+  - url: https://api.smartgift.b2b/v1
+    description: Production Supabase + Edge API Server
+
+paths:
+  # ============================================================================
+  # 1. Standard RAG Endpoints (Dense Vector & Embedding Operations)
+  # ============================================================================
+  /rag/embeddings:
+    post:
+      summary: Standard RAG Vector Embedding Generator
+      description: Generates 1024-dimensional dense vector embeddings using bge-m3 model.
+      operationId: generateEmbeddings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmbeddingRequest'
+      responses:
+        '200':
+          description: Successfully generated vector embedding.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmbeddingResponse'
+
+  /rag/retrieve:
+    post:
+      summary: Standard Vector Similarity Retrieval
+      description: Performs dense HNSW vector similarity search over sensory descriptions.
+      operationId: retrieveVector
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StandardVectorRetrievalRequest'
+      responses:
+        '200':
+          description: Vector search candidate results.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VectorSearchResult'
+
+  # ============================================================================
+  # 2. GraphRAG Endpoints (Knowledge Graph Expansion & Hybrid Fusion)
+  # ============================================================================
+  /search/graphrag:
+    post:
+      summary: GraphRAG Hybrid Vector & Graph Context Search
+      description: Searches gift offers by unboxing sensory experience, interest theme, and recipient level using GenesisBlockDB Edge Engine (< 1ms).
+      operationId: searchGraphRAG
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  example: "เครื่องนวดคอ สมุดโน้ตหนังไร้สาย อุปกรณ์สุขภาพผ่อนคลาย"
+                top_k:
+                  type: integer
+                  default: 4
+                  example: 4
+                category_slug:
+                  type: string
+                  enum: [pastel-series, classic-oriental, novelty-self-care, executive-smart-tech]
+                  example: "executive-smart-tech"
+      responses:
+        '200':
+          description: Successful retrieval of GraphRAG context and offer candidates.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  query:
+                    type: string
+                  total_results:
+                    type: integer
+                  latency_ms:
+                    type: number
+                    example: 0.85
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/GraphRAGOfferResult'
+
+  /graphrag/traverse:
+    post:
+      summary: GraphRAG Traversal (Query IR query-ir.v1)
+      description: Performs n-hop graph traversal from seed nodes (Category, GiftTier, CatalogOffer) using GenesisBlockDB Query IR.
+      operationId: traverseGraph
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GraphTraverseRequest'
+      responses:
+        '200':
+          description: Graph traversal result nodes and edges.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphTraversalResult'
+
+  /graphrag/hybrid-fusion:
+    post:
+      summary: Reciprocal Rank Fusion (RRF) Re-ranking
+      description: Merges and re-ranks candidate results from Dense Vector, Keyword BM25, and Graph Traversal layers.
+      operationId: hybridFusion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReciprocalRankFusionRequest'
+      responses:
+        '200':
+          description: Fused and re-ranked result list.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RRFMergedResult'
+
+  # ============================================================================
+  # 3. Agentic RAG Endpoints (Autonomous Multi-Step AI Agent Tasks & Tools)
+  # ============================================================================
+  /agentic/task:
+    post:
+      summary: Dispatch Autonomous Agentic RAG Task
+      description: Dispatches an autonomous multi-step agent task to research, decompose BOM, filter history, and build a B2B proposal.
+      operationId: dispatchAgenticTask
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentTaskRequest'
+      responses:
+        '202':
+          description: Task accepted and processing asynchronously.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentTaskResponse'
+
+  /agentic/task/{task_id}/status:
+    get:
+      summary: Get Agentic Task Execution & Thinking Status
+      description: Tracks autonomous agent steps, tool invocations (BOM decompose, RRF merge, RLS check), and output.
+      operationId: getAgentTaskStatus
+      parameters:
+        - name: task_id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "task-agt-99812"
+      responses:
+        '200':
+          description: Detailed agent task status and execution history.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentTaskStatusResponse'
+
+  /agentic/eval:
+    post:
+      summary: RAG Evaluation & Grounding Audit (Ragas Framework)
+      description: Evaluates Faithfulness, Answer Relevance, and Context Precision to detect LLM hallucinations.
+      operationId: evaluateRAG
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RAGEvaluationRequest'
+      responses:
+        '200':
+          description: Quantitative RAG evaluation scores.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RAGEvaluationMetrics'
+
+  # ============================================================================
+  # 4. Domain & Business Operations Endpoints
+  # ============================================================================
+  /consultant/recommend:
+    post:
+      summary: AI Consultant Automated Recommendation & Quote Generator
+      description: Connects GraphRAG context with Local Thai LLM to generate professional B2B gift set recommendations and quotations.
+      operationId: getConsultantRecommendation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - user_prompt
+              properties:
+                user_prompt:
+                  type: string
+                  example: "ต้องการจัดของขวัญแจกผู้บริหาร 50 ท่าน งบประมาณไม่เกิน 1,500 บาท/ชุด เน้นไอทีทันสมัย"
+                client_id:
+                  type: string
+                  example: "CLI-CORP-9921"
+      responses:
+        '200':
+          description: Recommendation report and quote payload generated by AI LLM.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  recommendation_text:
+                    type: string
+                  matched_offers:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OfferCodeSummary'
+                  estimated_total_cost:
+                    type: number
+                  gross_margin_percent:
+                    type: number
+
+  /bundles/decompose:
+    post:
+      summary: On-Demand BOM Set Decomposition & Profit Margin Calculator
+      description: Decomposes a corporate bundle or gift set into SKU components (Bill of Materials) and calculates COGS and gross margin without inventory tracking constraints.
+      operationId: decomposeBundle
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - bundle_code
+                - quantity
+              properties:
+                bundle_code:
+                  type: string
+                  example: "PKG-SME-ELITE"
+                quantity:
+                  type: integer
+                  example: 10
+      responses:
+        '200':
+          description: Decomposed BOM breakdown, physical component requirements, and financial gross profit margin.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BOMDecompositionResult'
+
+  /categories:
+    get:
+      summary: List Main Top-Level Categories
+      description: Returns the Top 4 Main Interest Themes according to SmartGift 2026 Portfolio Blueprint.
+      operationId: getCategories
+      responses:
+        '200':
+          description: List of Top 4 main categories.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+
+  /tiers:
+    get:
+      summary: List Gift Budget Tiers
+      description: Returns the 4 Gift Tiers (Reach, Select, Signature, Bespoke) for budget filtering and allocation.
+      operationId: getGiftTiers
+      responses:
+        '200':
+          description: List of gift budget tiers.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GiftTier'
+
+  /segments:
+    get:
+      summary: List Recipient Segments
+      description: Returns corporate recipient segments (C-Level, Mid-Management, Operations) for gift tier mapping.
+      operationId: getRecipientSegments
+      responses:
+        '200':
+          description: List of recipient segments.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RecipientSegment'
+
+  /products:
+    get:
+      summary: List Physical Product Masters
+      description: Returns canonical physical products used for assembling gift sets (BOM items).
+      operationId: getProductMasters
+      responses:
+        '200':
+          description: List of physical product masters.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductMaster'
+
+  /bundles:
+    get:
+      summary: List Corporate Meta-Bundles
+      description: Returns multi-tier corporate bundle packages (e.g. PKG-SME-ELITE).
+      operationId: getBundles
+      responses:
+        '200':
+          description: List of corporate meta-bundles.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BundleOffer'
+
+  /clients/{client_id}:
+    get:
+      summary: Get Corporate Client Profile & Order History
+      description: Fetches corporate client details and past order history for gift suppression.
+      operationId: getCorporateClient
+      parameters:
+        - name: client_id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "CLI-CORP-9921"
+      responses:
+        '200':
+          description: Corporate client profile and order history.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CorporateClient'
+
+  /sync/supabase-to-edge:
+    post:
+      summary: Trigger Supabase PostgreSQL ➔ GenesisBlockDB Edge Sync
+      description: Syncs Master Catalog dataset from Supabase Cloud to GenesisBlockDB Edge Engine and flushes HNSW Indexes.
+      operationId: triggerSync
+      responses:
+        '200':
+          description: Sync completed successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  synced_nodes:
+                    type: integer
+                    example: 79
+                  synced_edges:
+                    type: integer
+                    example: 278
+
+components:
+  schemas:
+    # --------------------------------------------------------------------------
+    # RAG & Vector Schemas
+    # --------------------------------------------------------------------------
+    EmbeddingRequest:
+      type: object
+      required:
+        - text
+      properties:
+        text:
+          type: string
+          example: "แก้วน้ำพกพา SUS316 สไตล์พาสเทล ละมุน"
+        model:
+          type: string
+          default: "bge-m3"
+          example: "bge-m3"
+
+    EmbeddingResponse:
+      type: object
+      properties:
+        model:
+          type: string
+        dim:
+          type: integer
+          example: 1024
+        embedding:
+          type: array
+          items:
+            type: number
+
+    StandardVectorRetrievalRequest:
+      type: object
+      required:
+        - query_vector
+      properties:
+        vault_id:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+          description: "Vault UUID for Multi-Tenant RAG Isolation"
+        query_vector:
+          type: array
+          items:
+            type: number
+        top_k:
+          type: integer
+          default: 5
+
+    VectorSearchResult:
+      type: object
+      properties:
+        id:
+          type: string
+        score:
+          type: number
+          example: 0.942
+        metadata:
+          type: object
+
+    # --------------------------------------------------------------------------
+    # GraphRAG Schemas
+    # --------------------------------------------------------------------------
+    GraphTraverseRequest:
+      type: object
+      required:
+        - seed_id
+      properties:
+        contract_version:
+          type: string
+          default: "query-ir.v1"
+        vault_id:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+          description: "Vault UUID for Graph Context Isolation"
+        seed_id:
+          type: string
+          example: "offer:TGC06-4"
+        depth:
+          type: integer
+          default: 2
+        relations:
+          type: array
+          items:
+            type: string
+          example: ["CONTAINS", "BELONGS_TO_TIER"]
+
+    GraphTraversalResult:
+      type: object
+      properties:
+        seed_id:
+          type: string
+        nodes_explored:
+          type: integer
+        subgraph:
+          type: object
+          properties:
+            nodes:
+              type: array
+              items:
+                type: object
+            edges:
+              type: array
+              items:
+                type: object
+
+    ReciprocalRankFusionRequest:
+      type: object
+      required:
+        - vector_results
+        - keyword_results
+        - graph_results
+      properties:
+        vector_results:
+          type: array
+          items:
+            type: object
+        keyword_results:
+          type: array
+          items:
+            type: object
+        graph_results:
+          type: array
+          items:
+            type: object
+        rrf_k:
+          type: integer
+          default: 60
+
+    RRFMergedResult:
+      type: object
+      properties:
+        offer_code:
+          type: string
+        name:
+          type: string
+        combined_rrf_score:
+          type: number
+          example: 0.0328
+
+    # --------------------------------------------------------------------------
+    # Agentic RAG Schemas
+    # --------------------------------------------------------------------------
+    AgentTaskRequest:
+      type: object
+      required:
+        - prompt
+      properties:
+        prompt:
+          type: string
+          example: "จัดพอร์ตของขวัญแจกผู้ใช้บริการ VIP 20 ท่าน และพนักงาน 100 ท่าน"
+        client_id:
+          type: string
+          example: "CLI-CORP-9921"
+        max_thinking_steps:
+          type: integer
+          default: 5
+
+    AgentTaskResponse:
+      type: object
+      properties:
+        task_id:
+          type: string
+          example: "task-agt-99812"
+        status:
+          type: string
+          example: "processing"
+
+    AgentTaskStatusResponse:
+      type: object
+      properties:
+        task_id:
+          type: string
+        status:
+          type: string
+          enum: [queued, processing, completed, failed]
+        steps_executed:
+          type: array
+          items:
+            type: object
+            properties:
+              step_number:
+                type: integer
+              tool_name:
+                type: string
+              output_summary:
+                type: string
+        final_result:
+          type: object
+
+    RAGEvaluationRequest:
+      type: object
+      required:
+        - user_query
+        - retrieved_context
+        - generated_answer
+      properties:
+        user_query:
+          type: string
+        retrieved_context:
+          type: array
+          items:
+            type: string
+        generated_answer:
+          type: string
+
+    RAGEvaluationMetrics:
+      type: object
+      properties:
+        faithfulness_score:
+          type: number
+          example: 0.98
+        answer_relevance_score:
+          type: number
+          example: 0.95
+        context_precision_score:
+          type: number
+          example: 0.92
+        is_hallucination_detected:
+          type: boolean
+          example: false
+
+    # --------------------------------------------------------------------------
+    # Domain & Catalog Schemas
+    # --------------------------------------------------------------------------
+    Category:
+      type: object
+      properties:
+        slug:
+          type: string
+          example: "executive-smart-tech"
+        name_th:
+          type: string
+          example: "ชุดนวัตกรรมทางการทำงานอัจฉริยะ"
+        name_en:
+          type: string
+          example: "Executive Smart Tech (Modern & Work)"
+        vibe:
+          type: string
+          example: "Modern & Work"
+        target_recipient:
+          type: string
+          example: "ผู้บริหาร, กลุ่มนักธุรกิจยุคใหม่"
+
+    GiftTier:
+      type: object
+      properties:
+        name:
+          type: string
+          enum: [Reach, Select, Signature, Bespoke]
+          example: "Signature"
+        budget_tier:
+          type: string
+          example: "Premium/Executive"
+        priority:
+          type: integer
+          example: 3
+
+    RecipientSegment:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Executive / Manager"
+        target_level:
+          type: string
+          enum: [C-Level, Mid-Management, Operations]
+          example: "Mid-Management"
+
+    ProductMaster:
+      type: object
+      properties:
+        code:
+          type: string
+          example: "PM-PB10K"
+        name_th:
+          type: string
+          example: "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh"
+        name_en:
+          type: string
+          example: "MagSafe Wireless Powerbank 10000mAh"
+        category:
+          type: string
+          example: "Executive Smart Tech (Modern & Work)"
+        base_cost:
+          type: number
+          example: 320.00
+
+    CorporateClient:
+      type: object
+      properties:
+        client_id:
+          type: string
+          example: "CLI-CORP-9921"
+        name:
+          type: string
+          example: "TechCorp Thailand Co., Ltd."
+        industry:
+          type: string
+          example: "Software Development"
+        tier_breakdown:
+          type: object
+          properties:
+            vip_count:
+              type: integer
+            exec_count:
+              type: integer
+            mass_count:
+              type: integer
+        order_history:
+          type: array
+          items:
+            type: string
+
+    BundleOffer:
+      type: object
+      properties:
+        bundle_code:
+          type: string
+          example: "PKG-SME-ELITE"
+        name:
+          type: string
+          example: "SME Executive Elite Gift Package"
+        total_price:
+          type: number
+          example: 24500.00
+        target_recipients:
+          type: integer
+          example: 15
+        included_offers:
+          type: array
+          items:
+            type: object
+            properties:
+              offer_code:
+                type: string
+              qty:
+                type: integer
+
+    GraphRAGOfferResult:
+      type: object
+      properties:
+        offer_code:
+          type: string
+        name:
+          type: string
+        interest_theme:
+          type: string
+        gift_tier:
+          type: string
+        unboxing_experience:
+          type: string
+        price_tiers:
+          type: array
+          items:
+            type: object
+            properties:
+              min_qty:
+                type: integer
+              unit_price:
+                type: number
+
+    BOMDecompositionResult:
+      type: object
+      properties:
+        bundle_code:
+          type: string
+        bundle_name:
+          type: string
+        total_selling_price:
+          type: number
+        total_cost_price:
+          type: number
+        gross_profit:
+          type: number
+        gross_margin_percent:
+          type: number
+        sets_breakdown:
+          type: array
+          items:
+            type: object
+            properties:
+              offer_code:
+                type: string
+              offer_name:
+                type: string
+              components:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    product_code:
+                      type: string
+                    name_th:
+                      type: string
+                    total_qty_needed:
+                      type: integer
+                    unit_cost:
+                      type: number
+                    total_cost:
+                      type: number
+
+    OfferCodeSummary:
+      type: object
+      properties:
+        offer_code:
+          type: string
+        name:
+          type: string
