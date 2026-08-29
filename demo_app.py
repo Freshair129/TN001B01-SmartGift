@@ -7,8 +7,12 @@ and Local Thai LLMs on Ollama.
 import os
 import sys
 import json
-from inventory_cascade_engine import InventoryCascadeEngine
-from smartgift_graphrag_agent import SmartGiftGraphRAGAgent
+try:
+    from src.cascade_engine import InventoryCascadeEngine
+    from src.graphrag_agent import SmartGiftGraphRAGAgent
+except ImportError:
+    from inventory_cascade_engine import InventoryCascadeEngine
+    from smartgift_graphrag_agent import SmartGiftGraphRAGAgent
 
 sys.stdout.reconfigure(encoding='utf-8')
 

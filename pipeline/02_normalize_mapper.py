@@ -263,10 +263,6 @@ def main():
         for log in audit_log_entries:
             f.write(json.dumps(log, ensure_ascii=False) + "\n")
 
-    # Also keep root copy for backward compatibility
-    with open("product_id_mapping_report.json", "w", encoding="utf-8") as f:
-        json.dump(report, f, ensure_ascii=False, indent=2)
-
     print(f"✅ Product ID Mapping Complete with Full ID Bindings!")
     print(f"📊 Summary: Run ID '{pipeline_run_id}' | Analyzed {len(mapping_results)} items.")
     print(f"💾 Saved Audit Report to '{OUTPUT_REPORT_PATH}'.")

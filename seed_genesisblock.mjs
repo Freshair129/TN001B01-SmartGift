@@ -5,8 +5,8 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
 const BINDING_PATH = process.env.GENESIS_BINDING_PATH || '@freshair129/gks-genesis-block-native';
-const DB_PATH = './smartgift-genesis-db';
-const CATALOG_PATH = './smartgift_catalog_master.json';
+const DB_PATH = process.env.GENESIS_DB_PATH || './vaults/vlt-catalog-product/genesis-db';
+const CATALOG_PATH = process.env.CATALOG_PATH || './data-pipeline/02_prepared/smartgift_catalog_master.json';
 const OLLAMA_EMBED_URL = 'http://localhost:11434/api/embeddings';
 
 async function getEmbedding(text) {

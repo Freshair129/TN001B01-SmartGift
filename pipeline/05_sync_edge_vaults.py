@@ -12,7 +12,7 @@ from typing import Dict, Any, Optional
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-CATALOG_PATH = "smartgift_catalog_master.json"
+CATALOG_PATH = "data-pipeline/02_prepared/smartgift_catalog_master.json"
 SEED_SCRIPT_PATH = "seed_genesisblock.mjs"
 
 class SupabaseGenesisSyncBridge:

@@ -9,7 +9,10 @@ import sys
 import json
 import requests
 from typing import Dict, Any, List, Optional
-from inventory_cascade_engine import InventoryCascadeEngine
+try:
+    from src.cascade_engine import InventoryCascadeEngine
+except ImportError:
+    from inventory_cascade_engine import InventoryCascadeEngine
 
 sys.stdout.reconfigure(encoding='utf-8')
 

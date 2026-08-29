@@ -8,11 +8,18 @@ import json
 import os
 from typing import Dict, Any, List, Tuple
 
-CATALOG_JSON_PATH = "smartgift_catalog_master.json"
+CATALOG_JSON_PATH = "data-pipeline/02_prepared/smartgift_catalog_master.json"
 
 class InventoryCascadeEngine:
-    def __init__(self, catalog_path: str = CATALOG_JSON_PATH):
-        self.catalog_path = catalog_path
+    def __init__(self, catalog_path: str = None):
+        if catalog_path:
+            self.catalog_path = catalog_path
+        elif os.path.exists(CATALOG_JSON_PATH):
+            self.catalog_path = CATALOG_JSON_PATH
+        elif os.path.exists("smartgift_catalog_master.json"):
+            self.catalog_path = "smartgift_catalog_master.json"
+        else:
+            self.catalog_path = CATALOG_JSON_PATH
         self.load_catalog()
         self.init_virtual_inventory()
 
