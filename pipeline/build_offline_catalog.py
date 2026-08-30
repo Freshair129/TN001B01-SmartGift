@@ -29,8 +29,39 @@ import zipfile
 from datetime import datetime, timezone
 
 from PIL import Image
+from fontTools import subset as ftsubset
 
 sys.stdout.reconfigure(encoding="utf-8")
+
+FONTS_DIR = "pipeline/fonts"
+FONT_FACES = (("Sarabun-Regular.ttf", 400), ("Sarabun-Bold.ttf", 700))
+FONT_CSS_PLACEHOLDER = "/*__FONT_CSS__*/"
+
+
+def build_font_css(sample_text):
+    """Subset Sarabun (OFL, pipeline/fonts/) to the characters actually used
+    and return @font-face rules with WOFF data URIs. Returns "" when the font
+    assets are absent so the system stack remains the sole fallback."""
+    faces = []
+    chars = "".join(sorted(set(sample_text))) + "0123456789฿.,:;+-×%()·—…"
+    for filename, weight in FONT_FACES:
+        path = os.path.join(FONTS_DIR, filename)
+        if not os.path.exists(path):
+            return ""
+        options = ftsubset.Options(flavor="woff")
+        font = ftsubset.load_font(path, options)
+        subsetter = ftsubset.Subsetter(options)
+        subsetter.populate(text=chars)
+        subsetter.subset(font)
+        buf = io.BytesIO()
+        font.save(buf)
+        b64 = base64.b64encode(buf.getvalue()).decode("ascii")
+        faces.append(
+            "@font-face{font-family:'Sarabun';font-style:normal;"
+            f"font-weight:{weight};"
+            f"src:url(data:font/woff;base64,{b64}) format('woff');}}"
+        )
+    return "".join(faces)
 
 PRICELIST_PUBLIC = "public/data/pricelist_public.json"
 CATALOG_MEDIA = "public/data/catalog_media.json"
@@ -382,11 +413,11 @@ def render_flipbook(data, pages):
         for i, (t, html) in enumerate(pages)
     )
 
-    css = """
+    css = """/*__FONT_CSS__*/
 :root{--orange:#FC5900;--brown:#675443;--gold:#D6A641;--paper:#FFF8F0;--ink:#2C241F;}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
-body{background:var(--brown);color:var(--ink);font-family:"Leelawadee UI","Segoe UI",Tahoma,"Noto Sans Thai",sans-serif;overflow:hidden}
+body{background:var(--brown);color:var(--ink);font-family:"Sarabun","Leelawadee UI","Segoe UI",Tahoma,"Noto Sans Thai",sans-serif;overflow:hidden}
 #book-wrap{position:absolute;inset:52px 0 0 0;display:flex;align-items:center;justify-content:center;overflow:auto}
 #book{background:var(--paper);width:min(1060px,96vw);aspect-ratio:297/210;max-height:calc(100vh - 76px);box-shadow:0 18px 60px rgba(0,0,0,.45);border-radius:8px;position:relative;transform-origin:center top}
 .page{position:absolute;inset:0;padding:34px 40px;overflow:auto;transition:opacity .28s ease, transform .28s ease}
@@ -680,9 +711,10 @@ def render_print_html(data, pages):
 <html lang="th"><head><meta charset="utf-8">
 <title>SmartGift Offline Catalog {esc(data["catalog_version"])} — print proof</title>
 <style>
+{FONT_CSS_PLACEHOLDER}
 @page{{size:A4 landscape;margin:10mm}}
 *{{box-sizing:border-box;margin:0;padding:0}}
-body{{font-family:"Leelawadee UI","Segoe UI",Tahoma,"Noto Sans Thai",sans-serif;color:#2C241F;background:#fff}}
+body{{font-family:"Sarabun","Leelawadee UI","Segoe UI",Tahoma,"Noto Sans Thai",sans-serif;color:#2C241F;background:#fff}}
 .p-page{{page-break-after:always;padding:6mm;min-height:180mm}}
 {RENDER_SHARED_PRINT_CSS}
 </style></head><body>{body}</body></html>"""
@@ -731,7 +763,7 @@ def scan_offline_html(html_text):
     # Base64 image payloads are random data and can contain any letter
     # sequence — scan only the human-readable parts of the document.
     import re
-    low = re.sub(r"data:image/[a-z+]+;base64,[A-Za-z0-9+/=]+", "", html_text).lower()
+    low = re.sub(r"data:(?:image|font)/[a-z0-9+-]+;base64,[A-Za-z0-9+/=]+", "", html_text).lower()
     for marker in FORBIDDEN_MARKERS:
         if marker in low:
             violations.append(f"forbidden marker: '{marker}'")
@@ -753,6 +785,12 @@ def main():
     base = f"SmartGift-Catalog-Offline-{version}"
 
     html = render_flipbook(data, pages)
+    font_css = build_font_css(html)
+    html = html.replace(FONT_CSS_PLACEHOLDER, font_css, 1)
+    if font_css:
+        print(f"🔤 Sarabun subset embedded ({len(font_css)/1024:.0f} KB CSS, weights 400/700)")
+    else:
+        print("⚠️ Sarabun assets not found — shipping with system Thai font stack only")
     violations = scan_offline_html(html)
     if violations:
         for v in violations:
@@ -770,7 +808,7 @@ def main():
 
     print_path = os.path.join(OUT_DIR, "_print_proof.html")
     with open(print_path, "w", encoding="utf-8") as f:
-        f.write(render_print_html(data, pages))
+        f.write(render_print_html(data, pages).replace(FONT_CSS_PLACEHOLDER, font_css, 1))
     pdf_path = os.path.join(OUT_DIR, base + ".pdf")
     pdf_ok = False
     if os.path.exists(CHROME):
@@ -822,7 +860,8 @@ Snapshot: {data['snapshot_sha256'][:16]}…
                        "pdf": os.path.getsize(pdf_path) if pdf_ok else None,
                        "zip": os.path.getsize(zip_path)},
         "size_budget_bytes": SIZE_BUDGET_BYTES,
-        "font_strategy": "system Thai font stack (embedded OFL subset pending font asset approval)",
+        "font_strategy": ("embedded Sarabun OFL subset (woff, weights 400/700) + system Thai fallback stack"
+                          if font_css else "system Thai font stack (Sarabun assets missing)"),
         "sources": {
             "pricelist_public": manifest["data_integrity_hashes"]["pricelist_public"],
             "catalog_media": manifest["data_integrity_hashes"]["catalog_media"],

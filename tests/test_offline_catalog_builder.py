@@ -8,8 +8,10 @@ import json
 import unittest
 
 from pipeline.build_offline_catalog import (
+    FONT_CSS_PLACEHOLDER,
     SIZE_BUDGET_BYTES,
     build_dataset,
+    build_font_css,
     render_flipbook,
     render_pages,
     scan_offline_html,
@@ -53,6 +55,14 @@ class TestOfflineCatalogBuilder(unittest.TestCase):
         self.assertEqual(titles[1], "สารบัญ")
         self.assertEqual(titles[-1], "ติดต่อ")
         self.assertGreater(len(titles), 10)
+
+    def test_sarabun_subset_embeds_and_scans_clean(self):
+        font_css = build_font_css("ทดสอบภาษาไทย SmartGift 123")
+        self.assertIn("font-weight:400", font_css)
+        self.assertIn("font-weight:700", font_css)
+        self.assertIn("data:font/woff;base64,", font_css)
+        final = self.html.replace(FONT_CSS_PLACEHOLDER, font_css, 1)
+        self.assertEqual(scan_offline_html(final), [])
 
     def test_no_fetch_or_external_links(self):
         low = self.html.lower()
