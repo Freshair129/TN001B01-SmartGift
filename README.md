@@ -93,6 +93,7 @@ py -3 demo_app.py
 
 ## 📚 เอกสารเพิ่มเติม (Documentation in `/docs`)
 
+* 📑 [รายงานสรุปปัญหาที่พบและแนวทางแก้ไข (Session Problem & Resolution Summary)](docs/SESSION_PROBLEM_AND_RESOLUTION_SUMMARY.md)
 * 🌐 [Zuri Ecosystem System Boundaries & Integration Blueprint](docs/ZURI_ECOSYSTEM_BOUNDARIES.md)
 * 🏛️ [System Architecture Blueprint](docs/SMARTGIFT_SYSTEM_ARCHITECTURE.md)
 * 📖 [Data Pipeline & Multi-Vault Structure Specification](docs/DATA_PIPELINE_AND_VAULT_STRUCTURE.md)
