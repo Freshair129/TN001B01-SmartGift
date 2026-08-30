@@ -1,0 +1,7991 @@
+{
+  "catalog_version": "catalog-v2026.08.30-a92d9039",
+  "tenant_id": "Org-EtohGroup",
+  "business_id": "SmartGift",
+  "vault_id": "vlt-catalog-product",
+  "snapshot_sha256": "a92d90391dff434db266e12401c0f6a12e814da78f894fe9d50c2cc94af39304",
+  "created_at": "2026-08-30T01:28:31.368499+00:00",
+  "summary": {
+    "total_categories": 4,
+    "total_canonical_products": 16,
+    "total_catalog_offers": 357,
+    "total_corporate_bundles": 2
+  },
+  "offers_index": {
+    "TGC06-4": {
+      "name": "ชุดของขวัญ Executive Smart Tech (Smart Notebook + Power Bank + Metal Pen)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 930.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 880.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 820.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-NB",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PEN",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TDD03-2": {
+      "name": "ชุดของขวัญ Pastel Series (ร่มพาสเทล + สมุด Skin-touch + กระบอกน้ำสุญญากาศ)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 550.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 490.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 440.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-UMB",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-BOTTLE-LED",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-TMB",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TMK0215": {
+      "name": "ชุดของขวัญ Classic Oriental (สมุดคลิปโลหะ + ปากกาไม้แท้ + ที่คั่นหนังสือเมฆมงคล)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 790.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 730.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-PEN",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-FLASH",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-TEA-INF",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TWL01-8": {
+      "name": "ชุดของขวัญ Novelty & Self-Care (เทียนหอมอโรมา + แก้วอเนกประสงค์ + สบู่กุหลาบ)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 680.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 620.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 570.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-AROMA",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-CFMUG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "444": {
+      "name": "แฟลชไดร์ฟ USB 2.0 แบบการ์ด 444 ความจุ 8GB",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "445": {
+      "name": "แฟลชไดร์ฟ USB 2.0 แบบการ์ด 445 ความจุ 4GB",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MC00-1": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้นพร้อมสกรีน Model : MC00-1",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "THB03-2": {
+      "name": "Vacuum jug+เครื่องนวดคอ THB03-2(P-20)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-20"
+    },
+    "TBG03-2": {
+      "name": "ขวดน้ำสูญญากาศ + เครื่องนวดคอ TBG03-2(P-2D)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-2D"
+    },
+    "TSP07-2": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) ชาร์จแบบไร้สาย + เครื่องนวดคอ TS",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TBY01": {
+      "name": "เครื่องนวดคอ TBY01(P-14)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-14"
+    },
+    "TYD0762": {
+      "name": "เครื่องนวดคอ+ที่ใส่ปากกา แบบถ้วยรางวัลเรืองแสง (Trophy Night) TYD0762(",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TSPS2-2": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) ชาร์จแบบไร้สาย with Writing scre",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TYD0262": {
+      "name": "เครื่องรีดผ้าแบบพกพา + เครื่องนวดคอ TYD0262(P-2D)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 13,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 12,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 14,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 11,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-2D"
+    },
+    "TSQ06-4": {
+      "name": "Light เครื่องทำความชื้น + ร่ม+เครื่องนวดคอ+ขวดน้ำสูญญากาศ TSQ06-4(P-16",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-16"
+    },
+    "TSQ04-3": {
+      "name": "Light เครื่องทำความชื้น + เครื่องนวดคอ+ขวดน้ำสูญญากาศ TSQ04-3(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TSQ01-2": {
+      "name": "Light เครื่องทำความชื้น + เครื่องนวดคอ TSQ01-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TDS04-3": {
+      "name": "ขวดน้ำสูญญากาศ + แปรงสีฟันไฟฟ้า + เครื่องนวดคอ TSQ01-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TSPB2-2": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) ชาร์จแบบไร้สาย  with Writing scr",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TYD0363": {
+      "name": "เครื่องรีดผ้าแบบพกพา + เครื่องนวดคอ+ เครื่องนวดตา TYD0363(P-2D)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-2D"
+    },
+    "TBG02-2": {
+      "name": "เครื่องนวดคอ + แก้วชาพร้อมที่กรองในแก้ว TBG02-2(P-2D)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-2D"
+    },
+    "TDR0-4": {
+      "name": "กาต้มน้ำไฟฟ้าแบบพกพา+ พัดลม + เครื่องนวดคอ + เครื่องนวดตา TDR0-4(P-13)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TSP06-2": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) ชาร์จแบบไร้สาย + เครื่องนวดคอ TS",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TZZ0-3": {
+      "name": "เครื่องปั่นแบบพกพา  + เครื่องนวดคอ +  ปืนนวด TZZ0-3(P-13)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TCH01-3": {
+      "name": "ไดร์เป่าผม with concentrator nozzle + เครื่องนวดคอ + ขวดน้ำสูญญากาศ TC",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TCH01-2": {
+      "name": "ไดร์เป่าผม with concentrator nozzle + เครื่องนวดคอ TCH01-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TJM02-2": {
+      "name": "ปืนนวด + เครื่องนวดคอ TJM02-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TJM03-3": {
+      "name": "ปืนนวด + เครื่องนวดคอ + ขวดน้ำสูญญากาศ TJM03-3(P-06)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "BE0011": {
+      "name": "กาต้มน้ำไฟฟ้าแบบพกพา BE0011(P-09)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TDR0-5": {
+      "name": "กาต้มน้ำไฟฟ้าแบบพกพา+ พัดลม + เครื่องนวดคอ + smart bracelet + เครื่องน",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TDR0-3": {
+      "name": "กาต้มน้ำไฟฟ้าแบบพกพา+ เครื่องนวดคอ +  ปืนนวด TDR0-3(P-13)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TDS02-2": {
+      "name": "เครื่องนวดคอ + แปรงสีฟันไฟฟ้า TDS02-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TZZ0-5": {
+      "name": "เครื่องปั่นแบบพกพา + พัดลม + เครื่องนวดคอ + smart bracelet + เครื่องนว",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TJS0062": {
+      "name": "เครื่องทำความชื้น with ambient light + เครื่องนวดคอ TJS0062(P-PT)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TJS0163": {
+      "name": "เครื่องทำความชื้น with ambient light + เครื่องนวดคอ พรัอมรีโมท TJS0163",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TNB01-3": {
+      "name": "ขวดน้ำสูญญากาศ + hand warmer เพาเวอร์แบงค์ + neck TNB01-3(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBH02-3": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดคอ + หูฟังไร้สาย TBH02",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBH01-3": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดคอ + เครื่องนวดตา TBH0",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TBH00-6": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดตา + Smart bracelet +",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TBH00-5": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดตา + Smart bracelet +",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TBH00-4": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดคอ + เครื่องนวดตา + เพ",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TBJ03-3": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดคอ + Smart bracelet TB",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBH01-2": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดคอ TBH01-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBY0072": {
+      "name": "เครื่องนวดคอ + ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ TBY0072(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TCH00-2": {
+      "name": "ไดร์เป่าผม + เครื่องนวดคอ TCH00-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TYZ00-3": {
+      "name": "ผ้าปิดตา + เครื่องนวดคอ +  ขวดน้ำสูญญากาศมีพร้อมมีหน้าจอแสดงอุณหภูมิ T",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TYZ01-3": {
+      "name": "ผ้าปิดตา + เครื่องนวดคอพร้อมรีโมท+  ขวดน้ำสูญญากาศมีพร้อมมีหน้าจอแสดงอ",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TDM0066": {
+      "name": "เครื่องนวดคอ + ขวดน้ำสูญญากาศ + rose + greeting card TDM0066(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TDK0066": {
+      "name": "เครื่องนวดคอพร้อมรีโมท+ ขวดน้ำสูญญากาศ + rose + greeting card TDK0066(",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TDM0167": {
+      "name": "เครื่องนวดคอ + ขวดน้ำสูญญากาศ + เครื่องโกนหนวดไฟฟ้า + rose + greeting",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TDK0167": {
+      "name": "เครื่องนวดคอพร้อมรีโมท+ ขวดน้ำสูญญากาศ + เครื่องโกนหนวดไฟฟ้า + rose +",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TWR01-9": {
+      "name": "ถ้วยอุ่นพร้อมช้อน + flower + ร่ม + พัดลม mini + เครื่องนวดคอ TWR01-9(P",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TWR3063": {
+      "name": "Atmosphere Lamp + Rose+ เครื่องนวดคอ TWR3063(P-PT)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "DY0560": {
+      "name": "เครื่องรีดผ้าแบบพกพา DY0560(P-09)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TYD0162": {
+      "name": "เครื่องรีดผ้าแบบพกพา +  ขวดน้ำสูญญากาศมีพร้อมมีหน้าจอแสดงอุณหภูมิ TYD0",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-2D"
+    },
+    "TYD05-2": {
+      "name": "เครื่องรีดผ้าแบบพกพา + ไดร์เป่าผม TYD05-2(P-2D)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-2D"
+    },
+    "TYD04-2": {
+      "name": "เครื่องรีดผ้าแบบพกพา + ปืนนวด TYD04-2(P-2D)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-2D"
+    },
+    "TYD1062": {
+      "name": "เครื่องรีดผ้าแบบพกพา+ที่ใส่ปากกา แบบถ้วยรางวัลเรืองแสง (Trophy Night L",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TZZ0-4": {
+      "name": "เครื่องปั่นแบบพกพา + พัดลม + เครื่องนวดคอ + เครื่องนวดตา TZZ0-4(P-13)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TDS08-3": {
+      "name": "แปรงสีฟันไฟฟ้า + กรรไกรตัดเล็บไฟฟ้า + เครื่องทำความสะอาดภายในช่องปาก T",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TDS07-2": {
+      "name": "แปรงสีฟันไฟฟ้า + เครื่องทำความสะอาดภายในช่องปาก TDS07-2(P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 5012,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TDS05-2": {
+      "name": "ไดร์เป่าผม with concentrator nozzle + เครื่องทำความสะอาดภายในช่องปาก T",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TN00-2-100": {
+      "name": "ชุดแก้วกาแฟอุ่นร้อน ที่ 55องศา เซลเซียล TN00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBX02-2-100": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน  TBX02-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TRJ00-3-1": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TRJ00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TRJ00-3-10": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TRJ00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "DG011": {
+      "name": "เครื่องประคบร้อนแก้ปวด DG011(P-09)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TWR61-7": {
+      "name": "ถ้วยอุ่นพร้อมช้อน + flower + เครื่องประคบร้อนแก้ปวด TWR61-7(P-PT)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TWR2113": {
+      "name": "Atmosphere Lamp + Rabbit pendant + เครื่องประคบร้อนแก้ปวด TWR2113(P-PT",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "DS056": {
+      "name": "เครื่องเพิ่มความชื้นในอากาศ DS056(P-09)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TSQ05-2": {
+      "name": "Light เครื่องทำความชื้น + ปืนนวด TSQ05-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TSQ02-2": {
+      "name": "Light เครื่องทำความชื้น + ร่ม TSQ02-2(P-05)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-05"
+    },
+    "DS041": {
+      "name": "แปรงสีฟันไฟฟ้า DS041(P-09)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TDS03-3": {
+      "name": "ขวดน้ำสูญญากาศ + แปรงสีฟันไฟฟ้า + ปืนนวด TDS03-3(P-06)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TDS02-3": {
+      "name": "ขวดน้ำสูญญากาศ + แปรงสีฟันไฟฟ้า + ไดร์เป่าผม TDS02-3(P-06)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TDS03-2": {
+      "name": "ขวดน้ำสูญญากาศ + แปรงสีฟันไฟฟ้า TDS03-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TDS01-2": {
+      "name": "ไดร์เป่าผม + แปรงสีฟันไฟฟ้า TDS01-2(P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBB0032": {
+      "name": "แปรงสีฟันไฟฟ้า + ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ TBB0032(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "DF1420": {
+      "name": "พัดลมห้อยคอ / Hanging Neck Fan DF1420(P-09)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TYD0662": {
+      "name": "Hanging neck พัดลม+ที่ใส่ปากกา แบบถ้วยรางวัลเรืองแสง (Trophy Night Lig",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TS0212": {
+      "name": "เชือกกระโดด Digital TS0212(P-09)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TZ0110": {
+      "name": "เครื่องตัดเล็บไฟฟ้า TZ0110(P-09)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TBS01-2": {
+      "name": "ขวดแก้วคริสตัล+ ร่ม TBS01-2(P-05)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-05"
+    },
+    "TBS02-2": {
+      "name": "ขวดแก้วคริสตัล+ สมุดโน๊ต TBS02-2(P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBS02-3": {
+      "name": "ขวดแก้วคริสตัล+ ปากกา + สมุดโน๊ต TBS02-3(P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBS02-4": {
+      "name": "ขวดแก้วคริสตัล+ สมุดโน๊ต + แฟลชไดร์ฟ + ปากกา TBS02-4(P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBS03-4": {
+      "name": "ร่ม + ขวดแก้วคริสตัล+ สมุดโน๊ต + ปากกา TBS03-4(P-06)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TBS02-5": {
+      "name": "ร่ม + ขวดแก้วคริสตัล+ สมุดโน๊ต + แฟลชไดร์ฟ + ปากกา TBS02-5(P-06)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TBS02-6": {
+      "name": "ขวดแก้วคริสตัล+ สมุดโน๊ต + แฟลชไดร์ฟ + ปากกา + ลำโพง + เพาเวอร์แบงค์ T",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-03"
+    },
+    "TBS01": {
+      "name": "ขวดแก้วโบโรซิลิเกตทรงสูงขวด + ร่ม TBS01(P-05)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-05"
+    },
+    "TBS02": {
+      "name": "ขวดแก้วโบโรซิลิเกตทรงสูงขวด +  สมุดโน๊ต TBS01(P-05)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TPV5-4": {
+      "name": "Sports wash bag with Quick-dry towel+Skip Rope+Sports cup+พัดลม mini T",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-BG"
+    },
+    "TYD00-2": {
+      "name": "Sport ขวด + towel gift set TYD00-2(P-05)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-05"
+    },
+    "TNN03-3": {
+      "name": "Wireless charging light up logo สมุดโน๊ตอัจฉริยะ (Notebook Powerbank)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-03"
+    },
+    "TBG04-2": {
+      "name": "ขวดน้ำสูญญากาศ + neck brace TBG04-2(P-2D)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-2D"
+    },
+    "TPC00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน  TPC00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TNR00-3": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) ชาร์จแบบไร้สาย + ขวดน้ำสูญญากาศ",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-03"
+    },
+    "TNR01-3": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) + ขวดน้ำสูญญากาศ + sign ปากกา TN",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-03"
+    },
+    "DY05601": {
+      "name": "เครื่องทำความสะอาดภายในช่องปาก DY05601(P-09)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TBP1713": {
+      "name": "ร่มบังแดดรถยนต์ + เพาเวอร์แบงค์ + หูฟังไร้สาย TBP1713(P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBP1712": {
+      "name": "ร่มบังแดดรถยนต์ + เพาเวอร์แบงค์ TBP1712(P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBH05-3": {
+      "name": "แท่นชาร์จไร้สาย (wireless) 6 in 1 + หูฟังไร้สาย + Smart bracelet TBH05",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBH06-2": {
+      "name": "แท่นชาร์จไร้สาย (wireless) 6 in 1 + Smart bracelet TBG04-2(P-2D)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBH05-2": {
+      "name": "แท่นชาร์จไร้สาย (wireless) 6 in 1 + หูฟังไร้สาย TBH05-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBH04-2": {
+      "name": "แท่นชาร์จไร้สาย (wireless) 6 in 1 + เครื่องนวดคอ TBH04-2(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBP1613": {
+      "name": "ร่มบังแดดรถยนต์ +  สายชาร์จ USB + ที่ชาร์จแบตในรถ TBP1613(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBP1612": {
+      "name": "ร่มบังแดดรถยนต์ + ที่วางโทรศัพท์ในรถยนต์ TBP1612(P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TBP1512": {
+      "name": "ร่มบังแดดรถยนต์ + parking phone number plate TBP1512(P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TWR4063": {
+      "name": "Atmosphere Lamp + Rose+ เครื่องทำความชื้น TWR4063(P-PT)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TBP1513": {
+      "name": "ร่มบังแดดรถยนต์ + ที่วางโทรศัพท์ในรถยนต์ + Parking number plate TBP151",
+      "gift_tier": "Signature",
+      "price_tiers": [
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TYD0862": {
+      "name": "เครื่องทำความชื้น+ที่ใส่ปากกา แบบถ้วยรางวัลเรืองแสง (Trophy Night Ligh",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TJS0162": {
+      "name": "เครื่องทำความชื้น with ambient light + ขวดน้ำสูญญากาศ TJS0162(P-PT)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "DS0260": {
+      "name": "เครื่องทำความชื้น(แมว) DS0260(P-09)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-09"
+    },
+    "TPF09-2": {
+      "name": "Gift Set Model : TPF09-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPP00-2": {
+      "name": "สมุดโน๊ต+ ปากกา TPP00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TWR51-7": {
+      "name": "ถ้วยอุ่นพร้อมช้อน + ดอกไม้สบู่ + เครื่องนวดตา TWR51-7(P-PT)",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "CA188": {
+      "name": "Car Purifier เครื่องฟอกอากาศในรถยนต์ขนาดพกพา WAY U รุ่น WU-CA188",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPH00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TPH00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPH00-7": {
+      "name": "ร่ม + ขวดน้ำสูญญากาศ + แฟลชไดร์ฟ + ปากกา + สมุดโน๊ต A5 + ลำโพง + เพาเว",
+      "gift_tier": "Select",
+      "price_tiers": [
+        {
+          "min_qty": 20,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 980.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 850.0
+        }
+      ],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TTT01-4": {
+      "name": "สมุดโน๊ต+ ปากกา TTT01-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPM01-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TPM01-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPM00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TPM00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TNW03": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) TNW03",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "THD004": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) THD004",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "BT00-0": {
+      "name": "ขวดน้ำสูญญากาศพร้อมมีหน้าจอแสดงอุณหภูมิ BT00-0",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TNP07": {
+      "name": "Video Notebook Power Bank สมุดไดอารี่อัจฉริยะ ชาร์จมือถือแบบไร้สาย เล่",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPH00-4": {
+      "name": "ร่ม + ขวดน้ำสูญญากาศ + ปากกา + สมุดโน๊ต A5  TPH00-4(P-06)",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-06"
+    },
+    "TBP03-3": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดคอ + เพาเวอร์แบงค์ TBP",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPY00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TPY00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPD01": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น  TPD01",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TCS00-2": {
+      "name": "ไดร์เป่าผม with concentrator nozzle + ร่มอัตโนมัติ TCS00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPY00-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 7 ชิ้น  TPY00-7",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT00-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้นพร้อมสกรีน Model : TTT00-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPY00-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้น  TPY00-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBH04-1": {
+      "name": "แท่นชาร์จไร้สาย (wireless) 6 in 1 TBH04-1(P-02)",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "LED06-1": {
+      "name": "Clock with Wireless charging, LED lamp) Model :  LED06-1",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TNH00": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook with cable charging) Model : TNH00",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้นพร้อมสกรีน Model : TTT00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TCC00-2": {
+      "name": "ไดร์เป่าผม with concentrator nozzle + Comb TCC00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TSB02-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน  TSB02-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TDP10-8": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 8 ชิ้นพร้อมสกรีน Model : TDP10-8",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TCZ003": {
+      "name": "สายชาร์จ + wireless หูฟังไร้สาย + ที่ชาร์จแบตในรถ  + แฟลชไดร์ฟ  + เพาเ",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-04"
+    },
+    "TPB01-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TPB01-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPG00-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้น  TPG00-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPT06": {
+      "name": "สมุดโน๊ต+ ปากกา TPT06",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "SA00-0": {
+      "name": "ร่มอัตโนมัติ SA00-0",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MC00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้นพร้อมสกรีน Model : MC00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TNL02": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook with cable charging) Model : TNL02",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPF0": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 7 ชิ้น Model : TPF0(1",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TYD0364": {
+      "name": "เครื่องรีดผ้าแบบพกพา + เครื่องนวดคอ+ เครื่องนวดตา + Vacuum Cup TYD0364",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-2D"
+    },
+    "TPJ00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น  TPJ00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC03-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TPC03-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBHN0-4": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + Smart bracelet + เครื่องนวดคอ +",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBHP0-2": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เพาเวอร์แบงค์ TBHP0-2",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBHW0-2": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + Smart bracelet TBHW0-2",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBHW0-3": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + Smart bracelet + เพาเวอร์แบงค์ T",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBHN0-3": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดคอ + เพาเวอร์แบงค์ TBH",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "SBE00-3": {
+      "name": "Gift Set Model : SBE00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBT02-8": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 8 ชิ้น  TBT02-8",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TWR21-7": {
+      "name": "ถ้วยอุ่นพร้อมช้อน + flower + ขวดน้ำสูญญากาศ TWR21-7 (P-PT)",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-PT"
+    },
+    "TPD10-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 5 ชิ้น  TPD10-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPF09-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 3 ชิ้น Model : TPF09-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-A5"
+    },
+    "TPF19-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 3 ชิ้น Model : TPF19-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TPJ0047": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 7 ชิ้นพร้อมสกรีน Model : TPJ0047",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBW00-6": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้นพร้อมสกรีน Model : TBW00-6",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBH03-3": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + Smart bracelet + หูฟังไร้สาย TBH",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TSB03-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้นพร้อมสกรีน  TSB03-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBF7033": {
+      "name": "ขวดน้ำสูญญากาศ + สายชาร์จ + เพาเวอร์แบงค์ TBF7033",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT07-5": {
+      "name": "แก้วมัค + เครื่องนวดคอ + ร่มขนาดเล็ก + พาวเวอร์แบงค์ Mag safe  TTT07-5",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT05-3": {
+      "name": "แก้วมัค + เครื่องนวดคอ + พาวเวอร์แบงค์ Mag safe  TTT05-3",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT06-3": {
+      "name": "แก้วมัค + เครื่องนวดคอ + ร่มขนาดเล็ก  TTT06-3",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBC21-3": {
+      "name": "สมุด+ปากกา+แก้วน้ำดีไซน์สัญลักษณ์มังกร TBC21-3",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TNW08-0": {
+      "name": "สมุดโน๊ตอัจฉริยะ (Notebook with Wireless  & cable charging, LED lamp)",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBH01-4": {
+      "name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + เครื่องนวดตา + Smart bracelet +",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-13"
+    },
+    "TAB01-1": {
+      "name": "Vacuum flask with 3 lids",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC03-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้น  TPC03-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT00-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 5 ชิ้นพร้อมสกรีน Model : TTT00-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "DAP00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน  Model : DAP00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPT0": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้น  TPT0(1)4-6",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBX03-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน  TBX03-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "THY00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  THY00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPJ01-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้นพร้อมสกรีน Model : TPJ01-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPT03-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TPT03-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPB00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น  TPB00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "UE300": {
+      "name": "USB 2.0 TO LAN TP-LINK(UE300)",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "RJ45": {
+      "name": "USB 3.0 TO RJ45 (1000 Mbs)",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TXH0404": {
+      "name": "ชุดของขวัญในกล่อง Luxury Gift พร้อมสกรีน  TXH0404",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "DF1010": {
+      "name": "ไดร์เป่าผม DF1010 (P-02)",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-02"
+    },
+    "TMQ1832": {
+      "name": "ไดร์เป่าผม + แปรงหวีผม TMQ1832",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TJM01-1": {
+      "name": "ปืนนวด TJM01-1",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPY02-6": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้น Model : TPY02-6",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPT10-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 7 ชิ้น Model : TPT10-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC16-6": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้นพร้อมสกรีน Model : TPC16-6",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPF29-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 3 ชิ้น Model : TPF29-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT00-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 7 ชิ้นพร้อมสกรีน Model : TTT00-7",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC21-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 5 ชิ้น Model : TGC21-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "FXD00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 4 ชิ้น Model : FXD00-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC21-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 3 ชิ้น Model : TGC21-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MZB00-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 4 ชิ้น Model : MZB00-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBF6034": {
+      "name": "ขวดน้ำสูญญากาศ + ปากกา + แฟลชไดร์ฟ + เพาเวอร์แบงค์ TBF6034",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFB00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน  TFB00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPT00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น  TPT00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPS01": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TPS01- 3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBH11-2": {
+      "name": "เครื่องนวดคอ + เครื่องนวดตา TBH11-2",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPS03-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้นพร้อมสกรีน Model : TPS03-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT15-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 3 ชิ้น Model : TTT15-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "FXD8816": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 7 ชิ้น Model : FXD881",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPF7034": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 4 ชิ้น Model : TPF703",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "FXD37-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Business Gift Set ชุด 3 ชิ้น Model : FXD37-",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPY01-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  TPY01-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPM00-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้น  TPM00-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPH00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น  TPH00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT06-2": {
+      "name": "แก้วมัค + เครื่องนวดคอ  TTT06-2",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TLD0-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้นพร้อมสกรีน Model : TLD0-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC0": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้นพร้อมสกรีน Model : TPC0(1)-6",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBT00-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้น  TBT00-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC10-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น TGC10-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "KB002": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น S-KB002",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBT01-6": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้น  TBT01-6",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "FXD19-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม ชุด 6 ชิ้น Model : FXD19-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC01-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 7 ชิ้นพร้อมสกรีน Model : TPC01-7",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TDP10-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 7 ชิ้นพร้อมสกรีน Model : TDP10-7",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC10-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม พร้อมสกรีน Model : TGC10-7",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TCS30-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม พร้อมสกรีน Model : TCS30-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TCS40-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม Model : TCS40-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TCZ0033": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้นพร้อมสกรีน Model : TCZ0033",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBQ04-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้น TBQ04-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC14-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้นพร้อมสกรีน Model : TPC14-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "QZA00-3": {
+      "name": "ชุดของขวัญ 2 ชื้น  QZA00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "FXD22-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model : FXD22-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TXH2763": {
+      "name": "ผ้าขนหนูหมี + เครื่องนวดคอ + ถ้วยสูญญากาศ   TXH2763",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPY00-6": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้น  TPY00-6",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPD00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น  TPD00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT18-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น Model : TTT18-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT17-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น Model : TTT17-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC21-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้น Model : TGC21-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "THY01-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น  THY01-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TDP10-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน Model : TDP10-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TSS01-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้นพร้อมสกรีน  TSS01-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TLD0-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน Model : TLD0-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBC4117": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 7 ชิ้น TBC4117",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "DY0000": {
+      "name": "เครื่องนวดคอ บรรจุกล่องมาตรฐาน Model:DY0000",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "DY000": {
+      "name": "เครื่องนวดคอ บรรจุกล่องมาตรฐาน Model:DY000",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MZA02-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 3 ชิ้น Model:MZA02-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBP09-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TBP09-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "AZ3943": {
+      "name": "แฟลชไดร์ฟ USB 2.0 Model:AZ3943",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "AZ3955": {
+      "name": "แฟลชไดร์ฟ USB 2.0 Model : AZ3955",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPD01-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model:TPD01-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "FXD05-0": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :FXD05-0",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TSS01-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TSS01-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TLD0--2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน Model : TLD0--2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TWP02-2": {
+      "name": "Multifunctiom Fan  Modei:TWP02-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TCS20-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น TCS20-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "QZA03-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :QZA03-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBY17-1": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  1 ชิ้น Model :TBY17-1",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "FXD35-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :FXD35-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT07-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  4 ชิ้น Model :TTT07-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPF13-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  7  ชิ้น Model :TPF13-7",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBX0--2": {
+      "name": "ชุดของขวัญ 2 ชิ้น Model : TBX0--2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "M6025Q": {
+      "name": "มัลติฟังก์ชั่น เครื่องชาร์จโทรศัพท์ไร้สาย + กล่องฆ่าเชื้อโรค + นาฬิกา",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC08-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TGC08-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPS00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TPS00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS18-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TFS18-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TJP00-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  5 ชิ้น Model :TJP00-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS15-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TFS15-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC01-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  4 ชิ้น Model :TPC01-4,TPC11-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MZA00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :MZA00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "EP08": {
+      "name": "หูฟังไร้สาย TWS i12 : Model-EP08",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT13-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TTT13-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS17-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TFS17-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT14-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model : TTT14-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TPC00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBJ04-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TBJ04-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC00-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  7 ชิ้น Model :TPC00-7",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "FXD66-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :FXD66-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TSPS3-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้น Model :TSPS3-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPF14-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  5 ชิ้น Model :TPF14-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MZA02-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  1 ชิ้น Model :MZA02-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC002": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TPC002",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC222": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TPC222",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS15-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TFS15-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT30-1": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  1 ชิ้น Model : TTT30-1",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TYD0060": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  1 ชิ้น Model :TYD0060",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPM00-3-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TPM00-3-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "FXD32-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :FXD32-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS17-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TFS17-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TMW08-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TMW08-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS15-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  4 ชิ้น Model :TFS15-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS18-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TFS18-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TMN00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TMN00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TMN03-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TMN03-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC21-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TGC21-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "QZA01-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model : QZA01-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "QZA02-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model : QZA02-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TCW0013": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TCW0013",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPJ0123": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TPJ0123",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTZ00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TTZ00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC15-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TPC15-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TYS01-1": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  1 ชิ้น Model :TYS01-1",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBT10-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TBT10-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBT10-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model : TBT10-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS16-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TFS16-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TSB03-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TSB03-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC04-44": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TGC04-44(2)",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MZC00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :MZC00-3(2)",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MZB00-6": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :MZB00-6(2)",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPH00-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  5 ชิ้น Model :TPH00-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPJ00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TPJ00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC13-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  5 ชิ้น Model :TPC13-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "316": {
+      "name": "กระบอกน้ำ Model: 316",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTT02-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model : TTT02-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPF39-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TPF39-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TYZ02-2": {
+      "name": "ชุดผ้าปิดตา + เครื่องนวดคอ Model:TYZ02-2",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPV5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  4 ชิ้น Model :TPV5—4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPY01-6": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  6 ชิ้น Model : TPY01-6",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC11-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TPC11-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "BW00-0": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 1 ชิ้น Model : BW00-0",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MXF42-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model : MXF42-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "A009": {
+      "name": "ม่านกันแดดรถยนต์รุ่น A009",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPC13-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  7 ชิ้น Model :TPC13-7",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TJLD42-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model : TJLD42-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTB03-2": {
+      "name": "ชุดของขวัญ 2 ชิ้น Model : TTB03-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TJS01-4": {
+      "name": "ชุดของขวัญ 4 ชิ้น Model : TJS01-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS16-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TFS16-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MXF47-4": {
+      "name": "ชุดของขวัญ 4 ชิ้น Model : MXF47-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPY10-7": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  7 ชิ้น Model :TPY10-7",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TRJ00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TRJ00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TWJ01-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model : TWJ01-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TJL3143": {
+      "name": "ชุดของขวัญ 3 ชิ้น Model : TJL3143",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPH01-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model : TPH01-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPT03-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม 4 ชิ้น Model :TPT03-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TPT12-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  4 ชิ้น Model :TPT12-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TMN01-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model : TMN01-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC09-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TGC09-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TGC04-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  5 ชิ้น Model : TGC04-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBJ04-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TBJ04-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBJ05-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TBJ05-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "WRY39-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :WRY39-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "WRY40-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :WRY40-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "Y280": {
+      "name": "ลำโพงบลูทูธกันน้ำ AWEI Model : Y280",
+      "gift_tier": "Select",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TSX00-1": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  1 ชิ้น Model : TSX00-1",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TSS05-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TSS05-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBP10-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :TBP10-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "EP901": {
+      "name": "หูฟังไร้สาย L12 Model : S-EP901",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "MZC00-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model :MZC00-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TTC13-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model : TTC13-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS20-3": {
+      "name": "ชุดของขวัญ 3 ชิ้น Model :TFS20-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TDD04-2": {
+      "name": "ชุดของขวัญ 2 ชิ้น Model : TDD04-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TMS07-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  4 ชิ้น Model TMS07-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TJL3042": {
+      "name": "ชุดของขวัญ 2 ชิ้น Model : TJL3042",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TBJ04-1": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  1 ชิ้น Model :TBJ04-1",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TWJ00-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model:TWJ00-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TFS16-4": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  4 ชิ้น Model : TFS16-4",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TDK02-2": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  2 ชิ้น Model : TDK02-2",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "TCT01-3": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  3 ชิ้น Model :TCT01-3",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "CER01-5": {
+      "name": "ชุดของขวัญในกล่องพรีเมี่ยม  5 ชิ้น Model :CER01-5",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    },
+    "RD31": {
+      "name": "พัดลมพกพารุ่น RD31",
+      "gift_tier": "Signature",
+      "price_tiers": [],
+      "components": [
+        {
+          "product_code": "PM-MSG",
+          "qty": 1
+        },
+        {
+          "product_code": "PM-PB10K",
+          "qty": 1
+        }
+      ],
+      "supplier_code": "P-00"
+    }
+  }
+}

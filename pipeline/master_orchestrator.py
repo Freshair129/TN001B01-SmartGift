@@ -29,13 +29,21 @@ def run_master_pipeline():
     print("=" * 70)
 
     # -------------------------------------------------------------
-    # STAGE 1: FlowAccount Export Registry & SHA-256 Archiving
+    # STAGE 1: FlowAccount Export Registry & Formula Archiving
     # -------------------------------------------------------------
-    print("\n📦 [STAGE 1/5] Ingesting FlowAccount Exports & Immutable Archiving...")
+    print("\n📦 [STAGE 1/5] Ingesting FlowAccount Exports & Pricing Formula YAML Rules...")
     from pipeline.flowaccount_registry_archiver import FlowAccountRegistryArchiver
+    from pipeline.pricing_formula_archiver import PricingFormulaArchiver
+    
     archiver = FlowAccountRegistryArchiver()
     stage1_res = archiver.process_all_exports()
     for r in stage1_res:
+        status_sym = "✅" if r["status"] == "NEW_VERSION_ARCHIVED" else "⏸️"
+        print(f"  {status_sym} [{r['status']}] {r['filename']:<42} (SHA: {r['sha256'][:10]})")
+
+    formula_archiver = PricingFormulaArchiver()
+    f_res = formula_archiver.process_all_formulas()
+    for r in f_res:
         status_sym = "✅" if r["status"] == "NEW_VERSION_ARCHIVED" else "⏸️"
         print(f"  {status_sym} [{r['status']}] {r['filename']:<42} (SHA: {r['sha256'][:10]})")
 

@@ -1,0 +1,25 @@
+{
+  "tenant_id": "Org-EtohGroup",
+  "business_id": "SmartGift",
+  "vault_id": "vlt-catalog-product",
+  "created_at": "2026-08-30T01:28:12.056804+00:00",
+  "last_updated": "2026-08-30T01:28:12.058242+00:00",
+  "active_formula_sha256": "f4473230f10b59133936974a0cacf84bbe84865d61db76553d8cc2a58ba635fc",
+  "total_ingested_versions": 1,
+  "formulas": {
+    "pricing_rules_formula.yaml": {
+      "filename": "pricing_rules_formula.yaml",
+      "current_sha256": "f4473230f10b59133936974a0cacf84bbe84865d61db76553d8cc2a58ba635fc",
+      "versions_count": 1,
+      "history": [
+        {
+          "version_id": "v-20260830T012812Z-f44732",
+          "sha256": "f4473230f10b59133936974a0cacf84bbe84865d61db76553d8cc2a58ba635fc",
+          "archived_at": "2026-08-30T01:28:12.057060+00:00",
+          "archive_path": "data-pipeline/01_raw/archive/pricing_formulas\\20260830T012812Z_f4473230f1_pricing_rules_formula.yaml",
+          "size_bytes": 3351
+        }
+      ]
+    }
+  }
+}

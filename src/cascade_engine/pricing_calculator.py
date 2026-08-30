@@ -97,6 +97,8 @@ class SmartGiftPricingCalculator:
     def _load_config(self):
         candidate_paths = [
             self.config_path,
+            os.path.join(os.path.dirname(__file__), "..", "..", "config", "pricing_rules_formula.yaml"),
+            "config/pricing_rules_formula.yaml",
             os.path.join(os.path.dirname(__file__), "..", "..", "config", "shipping_rate_matrix.yaml"),
             "config/shipping_rate_matrix.yaml",
             "config/shipping_rate_matrix.json"
