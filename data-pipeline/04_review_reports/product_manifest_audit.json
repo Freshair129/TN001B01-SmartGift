@@ -4,7 +4,7 @@
   "business_id": "SmartGift",
   "operating_entity": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)",
   "catalog_version": "v1.3.0-2026.08.30-f31f38cf",
-  "generated_at": "2026-08-30T14:01:28.001095+00:00",
+  "generated_at": "2026-08-30T14:36:34.867141+00:00",
   "data_integrity_hashes": {
     "smartgift_catalog_master": {
       "path": "data-pipeline/02_prepared/smartgift_catalog_master.json",
@@ -23,8 +23,8 @@
     },
     "catalog_media": {
       "path": "public/data/catalog_media.json",
-      "size_bytes": 4683,
-      "sha256": "d81403c7a34024e5bad3b2269111732f10a128ce758dd9d14c3dee439fd0b4e8"
+      "size_bytes": 57584,
+      "sha256": "990b553c2806d93a39e74801fe276d6dc40d323e930ffa74b240be9b10f918b1"
     },
     "pricelist_public": {
       "path": "public/data/pricelist_public.json",
@@ -97,11 +97,1352 @@
     "TGC09-3": {
       "code": "TGC09-3",
       "title": "ชุดกระบอกน้ำ สมุด A5 และปากกา",
-      "image_url": "/assets/catalog-media/set-TGC09-3.webp",
-      "visual_status": "source_matched_creative_proof",
-      "source_label": "รหัส + ภาพอยู่ใน catalog หน้าเดียวกัน",
+      "image_url": "/assets/catalog-media/source-offer-TGC09-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 22",
       "is_hero": false,
-      "generated_from_catalog": true
+      "generated_from_catalog": false
+    },
+    "FXD66-2": {
+      "code": "FXD66-2",
+      "title": "ภาพสินค้า FXD66-2",
+      "image_url": "/assets/catalog-media/source-offer-FXD66-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 1",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "FXD8816": {
+      "code": "FXD8816",
+      "title": "ภาพสินค้า FXD8816",
+      "image_url": "/assets/catalog-media/source-offer-FXD8816.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 3",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBC4117": {
+      "code": "TBC4117",
+      "title": "ภาพสินค้า TBC4117",
+      "image_url": "/assets/catalog-media/source-offer-TBC4117.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 5",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT17-2": {
+      "code": "TTT17-2",
+      "title": "ภาพสินค้า TTT17-2",
+      "image_url": "/assets/catalog-media/source-offer-TTT17-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 6",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT18-2": {
+      "code": "TTT18-2",
+      "title": "ภาพสินค้า TTT18-2",
+      "image_url": "/assets/catalog-media/source-offer-TTT18-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 6",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "FXD37-3": {
+      "code": "FXD37-3",
+      "title": "ภาพสินค้า FXD37-3",
+      "image_url": "/assets/catalog-media/source-offer-FXD37-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 6",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "FXD35-2": {
+      "code": "FXD35-2",
+      "title": "ภาพสินค้า FXD35-2",
+      "image_url": "/assets/catalog-media/source-offer-FXD35-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 7",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "FXD32-3": {
+      "code": "FXD32-3",
+      "title": "ภาพสินค้า FXD32-3",
+      "image_url": "/assets/catalog-media/source-offer-FXD32-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 8",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT15-3": {
+      "code": "TTT15-3",
+      "title": "ภาพสินค้า TTT15-3",
+      "image_url": "/assets/catalog-media/source-offer-TTT15-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 9",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "FXD05-0": {
+      "code": "FXD05-0",
+      "title": "ภาพสินค้า FXD05-0",
+      "image_url": "/assets/catalog-media/source-offer-FXD05-0.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 9",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "FXD22-2": {
+      "code": "FXD22-2",
+      "title": "ภาพสินค้า FXD22-2",
+      "image_url": "/assets/catalog-media/source-offer-FXD22-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 10",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT06-2": {
+      "code": "TTT06-2",
+      "title": "ภาพสินค้า TTT06-2",
+      "image_url": "/assets/catalog-media/source-offer-TTT06-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 12",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT05-3": {
+      "code": "TTT05-3",
+      "title": "ภาพสินค้า TTT05-3",
+      "image_url": "/assets/catalog-media/source-offer-TTT05-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 12",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT06-3": {
+      "code": "TTT06-3",
+      "title": "ภาพสินค้า TTT06-3",
+      "image_url": "/assets/catalog-media/source-offer-TTT06-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 12",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT07-4": {
+      "code": "TTT07-4",
+      "title": "ภาพสินค้า TTT07-4",
+      "image_url": "/assets/catalog-media/source-offer-TTT07-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 13",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT07-5": {
+      "code": "TTT07-5",
+      "title": "ภาพสินค้า TTT07-5",
+      "image_url": "/assets/catalog-media/source-offer-TTT07-5.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 13",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT13-2": {
+      "code": "TTT13-2",
+      "title": "ภาพสินค้า TTT13-2",
+      "image_url": "/assets/catalog-media/source-offer-TTT13-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 13",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "FXD19-5": {
+      "code": "FXD19-5",
+      "title": "ภาพสินค้า FXD19-5",
+      "image_url": "/assets/catalog-media/source-offer-FXD19-5.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 16",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "FXD00-3": {
+      "code": "FXD00-3",
+      "title": "ภาพสินค้า FXD00-3",
+      "image_url": "/assets/catalog-media/source-offer-FXD00-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 17",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "MZA02-3": {
+      "code": "MZA02-3",
+      "title": "ภาพสินค้า MZA02-3",
+      "image_url": "/assets/catalog-media/source-offer-MZA02-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 17",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TGC21-5": {
+      "code": "TGC21-5",
+      "title": "ภาพสินค้า TGC21-5",
+      "image_url": "/assets/catalog-media/source-offer-TGC21-5.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 18",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TGC21-4": {
+      "code": "TGC21-4",
+      "title": "ภาพสินค้า TGC21-4",
+      "image_url": "/assets/catalog-media/source-offer-TGC21-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 18",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TGC21-3": {
+      "code": "TGC21-3",
+      "title": "ภาพสินค้า TGC21-3",
+      "image_url": "/assets/catalog-media/source-offer-TGC21-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 18",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TGC21-2": {
+      "code": "TGC21-2",
+      "title": "ภาพสินค้า TGC21-2",
+      "image_url": "/assets/catalog-media/source-offer-TGC21-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 18",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "MZA02-2": {
+      "code": "MZA02-2",
+      "title": "ภาพสินค้า MZA02-2",
+      "image_url": "/assets/catalog-media/source-offer-MZA02-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 19",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TCS20-2": {
+      "code": "TCS20-2",
+      "title": "ภาพสินค้า TCS20-2",
+      "image_url": "/assets/catalog-media/source-offer-TCS20-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 19",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TCS30-3": {
+      "code": "TCS30-3",
+      "title": "ภาพสินค้า TCS30-3",
+      "image_url": "/assets/catalog-media/source-offer-TCS30-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 20",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TCS40-3": {
+      "code": "TCS40-3",
+      "title": "ภาพสินค้า TCS40-3",
+      "image_url": "/assets/catalog-media/source-offer-TCS40-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 20",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBC21-3": {
+      "code": "TBC21-3",
+      "title": "ภาพสินค้า TBC21-3",
+      "image_url": "/assets/catalog-media/source-offer-TBC21-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 21",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TJL3042": {
+      "code": "TJL3042",
+      "title": "ภาพสินค้า TJL3042",
+      "image_url": "/assets/catalog-media/source-offer-TJL3042.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 21",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TJL3143": {
+      "code": "TJL3143",
+      "title": "ภาพสินค้า TJL3143",
+      "image_url": "/assets/catalog-media/source-offer-TJL3143.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 21",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TGC08-2": {
+      "code": "TGC08-2",
+      "title": "ภาพสินค้า TGC08-2",
+      "image_url": "/assets/catalog-media/source-offer-TGC08-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 22",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TGC10-3": {
+      "code": "TGC10-3",
+      "title": "ภาพสินค้า TGC10-3",
+      "image_url": "/assets/catalog-media/source-offer-TGC10-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 22",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TGC10-7": {
+      "code": "TGC10-7",
+      "title": "ภาพสินค้า TGC10-7",
+      "image_url": "/assets/catalog-media/source-offer-TGC10-7.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 22",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "QZA00-3": {
+      "code": "QZA00-3",
+      "title": "ภาพสินค้า QZA00-3",
+      "image_url": "/assets/catalog-media/source-offer-QZA00-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 23",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "QZA01-3": {
+      "code": "QZA01-3",
+      "title": "ภาพสินค้า QZA01-3",
+      "image_url": "/assets/catalog-media/source-offer-QZA01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 23",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "QZA02-3": {
+      "code": "QZA02-3",
+      "title": "ภาพสินค้า QZA02-3",
+      "image_url": "/assets/catalog-media/source-offer-QZA02-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 23",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "QZA03-3": {
+      "code": "QZA03-3",
+      "title": "ภาพสินค้า QZA03-3",
+      "image_url": "/assets/catalog-media/source-offer-QZA03-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 23",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "MZB00-4": {
+      "code": "MZB00-4",
+      "title": "ภาพสินค้า MZB00-4",
+      "image_url": "/assets/catalog-media/source-offer-MZB00-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 24",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBP1713": {
+      "code": "TBP1713",
+      "title": "ภาพสินค้า TBP1713",
+      "image_url": "/assets/catalog-media/source-offer-TBP1713.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 24",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBP1712": {
+      "code": "TBP1712",
+      "title": "ภาพสินค้า TBP1712",
+      "image_url": "/assets/catalog-media/source-offer-TBP1712.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 24",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBP1613": {
+      "code": "TBP1613",
+      "title": "ภาพสินค้า TBP1613",
+      "image_url": "/assets/catalog-media/source-offer-TBP1613.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 24",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBP1612": {
+      "code": "TBP1612",
+      "title": "ภาพสินค้า TBP1612",
+      "image_url": "/assets/catalog-media/source-offer-TBP1612.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 25",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBP1512": {
+      "code": "TBP1512",
+      "title": "ภาพสินค้า TBP1512",
+      "image_url": "/assets/catalog-media/source-offer-TBP1512.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 25",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBH05-2": {
+      "code": "TBH05-2",
+      "title": "ภาพสินค้า TBH05-2",
+      "image_url": "/assets/catalog-media/source-offer-TBH05-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 25",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "THB03-2": {
+      "code": "THB03-2",
+      "title": "ภาพสินค้า THB03-2",
+      "image_url": "/assets/catalog-media/source-offer-THB03-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 26",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDS07-2": {
+      "code": "TDS07-2",
+      "title": "ภาพสินค้า TDS07-2",
+      "image_url": "/assets/catalog-media/source-offer-TDS07-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 27",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TGC04-5": {
+      "code": "TGC04-5",
+      "title": "ภาพสินค้า TGC04-5",
+      "image_url": "/assets/catalog-media/source-offer-TGC04-5.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 27",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT02-2": {
+      "code": "TTT02-2",
+      "title": "ภาพสินค้า TTT02-2",
+      "image_url": "/assets/catalog-media/source-offer-TTT02-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 29",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TSPS3-2": {
+      "code": "TSPS3-2",
+      "title": "ภาพสินค้า TSPS3-2",
+      "image_url": "/assets/catalog-media/source-offer-TSPS3-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 29",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TSPS2-2": {
+      "code": "TSPS2-2",
+      "title": "ภาพสินค้า TSPS2-2",
+      "image_url": "/assets/catalog-media/source-offer-TSPS2-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 29",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TSPB2-2": {
+      "code": "TSPB2-2",
+      "title": "ภาพสินค้า TSPB2-2",
+      "image_url": "/assets/catalog-media/source-offer-TSPB2-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 29",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TYD0363": {
+      "code": "TYD0363",
+      "title": "ภาพสินค้า TYD0363",
+      "image_url": "/assets/catalog-media/source-offer-TYD0363.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 30",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TYD0262": {
+      "code": "TYD0262",
+      "title": "ภาพสินค้า TYD0262",
+      "image_url": "/assets/catalog-media/source-offer-TYD0262.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 30",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TYD0162": {
+      "code": "TYD0162",
+      "title": "ภาพสินค้า TYD0162",
+      "image_url": "/assets/catalog-media/source-offer-TYD0162.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 30",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TSQ06-4": {
+      "code": "TSQ06-4",
+      "title": "ภาพสินค้า TSQ06-4",
+      "image_url": "/assets/catalog-media/source-offer-TSQ06-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 30",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TSQ04-3": {
+      "code": "TSQ04-3",
+      "title": "ภาพสินค้า TSQ04-3",
+      "image_url": "/assets/catalog-media/source-offer-TSQ04-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 31",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDS04-3": {
+      "code": "TDS04-3",
+      "title": "ภาพสินค้า TDS04-3",
+      "image_url": "/assets/catalog-media/source-offer-TDS04-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 32",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDS03-3": {
+      "code": "TDS03-3",
+      "title": "ภาพสินค้า TDS03-3",
+      "image_url": "/assets/catalog-media/source-offer-TDS03-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 32",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDS02-3": {
+      "code": "TDS02-3",
+      "title": "ภาพสินค้า TDS02-3",
+      "image_url": "/assets/catalog-media/source-offer-TDS02-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 33",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDS03-2": {
+      "code": "TDS03-2",
+      "title": "ภาพสินค้า TDS03-2",
+      "image_url": "/assets/catalog-media/source-offer-TDS03-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 33",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDS02-2": {
+      "code": "TDS02-2",
+      "title": "ภาพสินค้า TDS02-2",
+      "image_url": "/assets/catalog-media/source-offer-TDS02-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 33",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDS01-2": {
+      "code": "TDS01-2",
+      "title": "ภาพสินค้า TDS01-2",
+      "image_url": "/assets/catalog-media/source-offer-TDS01-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 33",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TCH01-3": {
+      "code": "TCH01-3",
+      "title": "ภาพสินค้า TCH01-3",
+      "image_url": "/assets/catalog-media/source-offer-TCH01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 35",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TCH01-2": {
+      "code": "TCH01-2",
+      "title": "ภาพสินค้า TCH01-2",
+      "image_url": "/assets/catalog-media/source-offer-TCH01-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 36",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TCZ0033": {
+      "code": "TCZ0033",
+      "title": "ภาพสินค้า TCZ0033",
+      "image_url": "/assets/catalog-media/source-offer-TCZ0033.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 38",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TJM03-3": {
+      "code": "TJM03-3",
+      "title": "ภาพสินค้า TJM03-3",
+      "image_url": "/assets/catalog-media/source-offer-TJM03-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 40",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TNB01-3": {
+      "code": "TNB01-3",
+      "title": "ภาพสินค้า TNB01-3",
+      "image_url": "/assets/catalog-media/source-offer-TNB01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 40",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT00-5": {
+      "code": "TTT00-5",
+      "title": "ภาพสินค้า TTT00-5",
+      "image_url": "/assets/catalog-media/source-offer-TTT00-5.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 41",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT01-4": {
+      "code": "TTT01-4",
+      "title": "ภาพสินค้า TTT01-4",
+      "image_url": "/assets/catalog-media/source-offer-TTT01-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 41",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT00-4": {
+      "code": "TTT00-4",
+      "title": "ภาพสินค้า TTT00-4",
+      "image_url": "/assets/catalog-media/source-offer-TTT00-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 41",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TTT00-3": {
+      "code": "TTT00-3",
+      "title": "ภาพสินค้า TTT00-3",
+      "image_url": "/assets/catalog-media/source-offer-TTT00-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 41",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "MC00-1": {
+      "code": "MC00-1",
+      "title": "ภาพสินค้า MC00-1",
+      "image_url": "/assets/catalog-media/source-offer-MC00-1.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 42",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "MC00-2": {
+      "code": "MC00-2",
+      "title": "ภาพสินค้า MC00-2",
+      "image_url": "/assets/catalog-media/source-offer-MC00-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 42",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBS01-2": {
+      "code": "TBS01-2",
+      "title": "ภาพสินค้า TBS01-2",
+      "image_url": "/assets/catalog-media/source-offer-TBS01-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 43",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBS02-2": {
+      "code": "TBS02-2",
+      "title": "ภาพสินค้า TBS02-2",
+      "image_url": "/assets/catalog-media/source-offer-TBS02-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 43",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBS02-3": {
+      "code": "TBS02-3",
+      "title": "ภาพสินค้า TBS02-3",
+      "image_url": "/assets/catalog-media/source-offer-TBS02-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 43",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBS02-4": {
+      "code": "TBS02-4",
+      "title": "ภาพสินค้า TBS02-4",
+      "image_url": "/assets/catalog-media/source-offer-TBS02-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 43",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBS02-5": {
+      "code": "TBS02-5",
+      "title": "ภาพสินค้า TBS02-5",
+      "image_url": "/assets/catalog-media/source-offer-TBS02-5.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 44",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBS02-6": {
+      "code": "TBS02-6",
+      "title": "ภาพสินค้า TBS02-6",
+      "image_url": "/assets/catalog-media/source-offer-TBS02-6.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 44",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBS01": {
+      "code": "TBS01",
+      "title": "ภาพสินค้า TBS01",
+      "image_url": "/assets/catalog-media/source-offer-TBS01.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 44",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBS02": {
+      "code": "TBS02",
+      "title": "ภาพสินค้า TBS02",
+      "image_url": "/assets/catalog-media/source-offer-TBS02.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 44",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TSX00-1": {
+      "code": "TSX00-1",
+      "title": "ภาพสินค้า TSX00-1",
+      "image_url": "/assets/catalog-media/source-offer-TSX00-1.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 45",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBH03-3": {
+      "code": "TBH03-3",
+      "title": "ภาพสินค้า TBH03-3",
+      "image_url": "/assets/catalog-media/source-offer-TBH03-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 45",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBH01-3": {
+      "code": "TBH01-3",
+      "title": "ภาพสินค้า TBH01-3",
+      "image_url": "/assets/catalog-media/source-offer-TBH01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 45",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBH00-6": {
+      "code": "TBH00-6",
+      "title": "ภาพสินค้า TBH00-6",
+      "image_url": "/assets/catalog-media/source-offer-TBH00-6.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 45",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBH01-4": {
+      "code": "TBH01-4",
+      "title": "ภาพสินค้า TBH01-4",
+      "image_url": "/assets/catalog-media/source-offer-TBH01-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 46",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBH00-4": {
+      "code": "TBH00-4",
+      "title": "ภาพสินค้า TBH00-4",
+      "image_url": "/assets/catalog-media/source-offer-TBH00-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 46",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBJ03-3": {
+      "code": "TBJ03-3",
+      "title": "ภาพสินค้า TBJ03-3",
+      "image_url": "/assets/catalog-media/source-offer-TBJ03-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 46",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBH01-2": {
+      "code": "TBH01-2",
+      "title": "ภาพสินค้า TBH01-2",
+      "image_url": "/assets/catalog-media/source-offer-TBH01-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 46",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TSB03-2": {
+      "code": "TSB03-2",
+      "title": "ภาพสินค้า TSB03-2",
+      "image_url": "/assets/catalog-media/source-offer-TSB03-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 47",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TSB02-2": {
+      "code": "TSB02-2",
+      "title": "ภาพสินค้า TSB02-2",
+      "image_url": "/assets/catalog-media/source-offer-TSB02-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 47",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TSS01-2": {
+      "code": "TSS01-2",
+      "title": "ภาพสินค้า TSS01-2",
+      "image_url": "/assets/catalog-media/source-offer-TSS01-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 47",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TMQ1832": {
+      "code": "TMQ1832",
+      "title": "ภาพสินค้า TMQ1832",
+      "image_url": "/assets/catalog-media/source-offer-TMQ1832.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 48",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TCH00-2": {
+      "code": "TCH00-2",
+      "title": "ภาพสินค้า TCH00-2",
+      "image_url": "/assets/catalog-media/source-offer-TCH00-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 48",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPF7034": {
+      "code": "TPF7034",
+      "title": "ภาพสินค้า TPF7034",
+      "image_url": "/assets/catalog-media/source-offer-TPF7034.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 50",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBF6034": {
+      "code": "TBF6034",
+      "title": "ภาพสินค้า TBF6034",
+      "image_url": "/assets/catalog-media/source-offer-TBF6034.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 51",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBF7033": {
+      "code": "TBF7033",
+      "title": "ภาพสินค้า TBF7033",
+      "image_url": "/assets/catalog-media/source-offer-TBF7033.png",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 51",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPH00-7": {
+      "code": "TPH00-7",
+      "title": "ภาพสินค้า TPH00-7",
+      "image_url": "/assets/catalog-media/source-offer-TPH00-7.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 52",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPH00-5": {
+      "code": "TPH00-5",
+      "title": "ภาพสินค้า TPH00-5",
+      "image_url": "/assets/catalog-media/source-offer-TPH00-5.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 52",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPH00-4": {
+      "code": "TPH00-4",
+      "title": "ภาพสินค้า TPH00-4",
+      "image_url": "/assets/catalog-media/source-offer-TPH00-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 52",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPH01-3": {
+      "code": "TPH01-3",
+      "title": "ภาพสินค้า TPH01-3",
+      "image_url": "/assets/catalog-media/source-offer-TPH01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 52",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPF09-2": {
+      "code": "TPF09-2",
+      "title": "ภาพสินค้า TPF09-2",
+      "image_url": "/assets/catalog-media/source-offer-TPF09-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 53",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPF09-3": {
+      "code": "TPF09-3",
+      "title": "ภาพสินค้า TPF09-3",
+      "image_url": "/assets/catalog-media/source-offer-TPF09-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 53",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPF19-3": {
+      "code": "TPF19-3",
+      "title": "ภาพสินค้า TPF19-3",
+      "image_url": "/assets/catalog-media/source-offer-TPF19-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 53",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPF29-3": {
+      "code": "TPF29-3",
+      "title": "ภาพสินค้า TPF29-3",
+      "image_url": "/assets/catalog-media/source-offer-TPF29-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 53",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPM00-3": {
+      "code": "TPM00-3",
+      "title": "ภาพสินค้า TPM00-3",
+      "image_url": "/assets/catalog-media/source-offer-TPM00-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 54",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPM01-3": {
+      "code": "TPM01-3",
+      "title": "ภาพสินค้า TPM01-3",
+      "image_url": "/assets/catalog-media/source-offer-TPM01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 54",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TCW0013": {
+      "code": "TCW0013",
+      "title": "ภาพสินค้า TCW0013",
+      "image_url": "/assets/catalog-media/source-offer-TCW0013.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 56",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDP10-2": {
+      "code": "TDP10-2",
+      "title": "ภาพสินค้า TDP10-2",
+      "image_url": "/assets/catalog-media/source-offer-TDP10-2.png",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 57",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDP10-7": {
+      "code": "TDP10-7",
+      "title": "ภาพสินค้า TDP10-7",
+      "image_url": "/assets/catalog-media/source-offer-TDP10-7.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 57",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TDP10-8": {
+      "code": "TDP10-8",
+      "title": "ภาพสินค้า TDP10-8",
+      "image_url": "/assets/catalog-media/source-offer-TDP10-8.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 57",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPT00-2": {
+      "code": "TPT00-2",
+      "title": "ภาพสินค้า TPT00-2",
+      "image_url": "/assets/catalog-media/source-offer-TPT00-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 61",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPT10-7": {
+      "code": "TPT10-7",
+      "title": "ภาพสินค้า TPT10-7",
+      "image_url": "/assets/catalog-media/source-offer-TPT10-7.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 61",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPT03-3": {
+      "code": "TPT03-3",
+      "title": "ภาพสินค้า TPT03-3",
+      "image_url": "/assets/catalog-media/source-offer-TPT03-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 62",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPT03-4": {
+      "code": "TPT03-4",
+      "title": "ภาพสินค้า TPT03-4",
+      "image_url": "/assets/catalog-media/source-offer-TPT03-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 62",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPT12-4": {
+      "code": "TPT12-4",
+      "title": "ภาพสินค้า TPT12-4",
+      "image_url": "/assets/catalog-media/source-offer-TPT12-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 63",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPC14-4": {
+      "code": "TPC14-4",
+      "title": "ภาพสินค้า TPC14-4",
+      "image_url": "/assets/catalog-media/source-offer-TPC14-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 64",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPC13-5": {
+      "code": "TPC13-5",
+      "title": "ภาพสินค้า TPC13-5",
+      "image_url": "/assets/catalog-media/source-offer-TPC13-5.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 64",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPC16-6": {
+      "code": "TPC16-6",
+      "title": "ภาพสินค้า TPC16-6",
+      "image_url": "/assets/catalog-media/source-offer-TPC16-6.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 64",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPC13-7": {
+      "code": "TPC13-7",
+      "title": "ภาพสินค้า TPC13-7",
+      "image_url": "/assets/catalog-media/source-offer-TPC13-7.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 64",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPC03-4": {
+      "code": "TPC03-4",
+      "title": "ภาพสินค้า TPC03-4",
+      "image_url": "/assets/catalog-media/source-offer-TPC03-4.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 65",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPC03-3": {
+      "code": "TPC03-3",
+      "title": "ภาพสินค้า TPC03-3",
+      "image_url": "/assets/catalog-media/source-offer-TPC03-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 65",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPC00-2": {
+      "code": "TPC00-2",
+      "title": "ภาพสินค้า TPC00-2",
+      "image_url": "/assets/catalog-media/source-offer-TPC00-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 66",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPC00-3": {
+      "code": "TPC00-3",
+      "title": "ภาพสินค้า TPC00-3",
+      "image_url": "/assets/catalog-media/source-offer-TPC00-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 66",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPC11-3": {
+      "code": "TPC11-3",
+      "title": "ภาพสินค้า TPC11-3",
+      "image_url": "/assets/catalog-media/source-offer-TPC11-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 66",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TRJ00-3": {
+      "code": "TRJ00-3",
+      "title": "ภาพสินค้า TRJ00-3",
+      "image_url": "/assets/catalog-media/source-offer-TRJ00-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 67",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPY10-7": {
+      "code": "TPY10-7",
+      "title": "ภาพสินค้า TPY10-7",
+      "image_url": "/assets/catalog-media/source-offer-TPY10-7.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 67",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPY00-7": {
+      "code": "TPY00-7",
+      "title": "ภาพสินค้า TPY00-7",
+      "image_url": "/assets/catalog-media/source-offer-TPY00-7.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 68",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPY00-6": {
+      "code": "TPY00-6",
+      "title": "ภาพสินค้า TPY00-6",
+      "image_url": "/assets/catalog-media/source-offer-TPY00-6.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 68",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPY02-6": {
+      "code": "TPY02-6",
+      "title": "ภาพสินค้า TPY02-6",
+      "image_url": "/assets/catalog-media/source-offer-TPY02-6.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 68",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPY01-6": {
+      "code": "TPY01-6",
+      "title": "ภาพสินค้า TPY01-6",
+      "image_url": "/assets/catalog-media/source-offer-TPY01-6.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 68",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPY00-3": {
+      "code": "TPY00-3",
+      "title": "ภาพสินค้า TPY00-3",
+      "image_url": "/assets/catalog-media/source-offer-TPY00-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 69",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPY01-3": {
+      "code": "TPY01-3",
+      "title": "ภาพสินค้า TPY01-3",
+      "image_url": "/assets/catalog-media/source-offer-TPY01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 69",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "THY00-3": {
+      "code": "THY00-3",
+      "title": "ภาพสินค้า THY00-3",
+      "image_url": "/assets/catalog-media/source-offer-THY00-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 69",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "THY01-3": {
+      "code": "THY01-3",
+      "title": "ภาพสินค้า THY01-3",
+      "image_url": "/assets/catalog-media/source-offer-THY01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 69",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TNN03-3": {
+      "code": "TNN03-3",
+      "title": "ภาพสินค้า TNN03-3",
+      "image_url": "/assets/catalog-media/source-offer-TNN03-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 70",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TNR01-3": {
+      "code": "TNR01-3",
+      "title": "ภาพสินค้า TNR01-3",
+      "image_url": "/assets/catalog-media/source-offer-TNR01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 73",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPP00-2": {
+      "code": "TPP00-2",
+      "title": "ภาพสินค้า TPP00-2",
+      "image_url": "/assets/catalog-media/source-offer-TPP00-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 73",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPD01-2": {
+      "code": "TPD01-2",
+      "title": "ภาพสินค้า TPD01-2",
+      "image_url": "/assets/catalog-media/source-offer-TPD01-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 74",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPD00-2": {
+      "code": "TPD00-2",
+      "title": "ภาพสินค้า TPD00-2",
+      "image_url": "/assets/catalog-media/source-offer-TPD00-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 74",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPS03-3": {
+      "code": "TPS03-3",
+      "title": "ภาพสินค้า TPS03-3",
+      "image_url": "/assets/catalog-media/source-offer-TPS03-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 75",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPJ00-2": {
+      "code": "TPJ00-2",
+      "title": "ภาพสินค้า TPJ00-2",
+      "image_url": "/assets/catalog-media/source-offer-TPJ00-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 76",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPJ00-3": {
+      "code": "TPJ00-3",
+      "title": "ภาพสินค้า TPJ00-3",
+      "image_url": "/assets/catalog-media/source-offer-TPJ00-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 76",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPJ01-3": {
+      "code": "TPJ01-3",
+      "title": "ภาพสินค้า TPJ01-3",
+      "image_url": "/assets/catalog-media/source-offer-TPJ01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 76",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPB00-2": {
+      "code": "TPB00-2",
+      "title": "ภาพสินค้า TPB00-2",
+      "image_url": "/assets/catalog-media/source-offer-TPB00-2.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 77",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TPB01-3": {
+      "code": "TPB01-3",
+      "title": "ภาพสินค้า TPB01-3",
+      "image_url": "/assets/catalog-media/source-offer-TPB01-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 77",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "BW00-0": {
+      "code": "BW00-0",
+      "title": "ภาพสินค้า BW00-0",
+      "image_url": "/assets/catalog-media/source-offer-BW00-0.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 77",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "TBT10-3": {
+      "code": "TBT10-3",
+      "title": "ภาพสินค้า TBT10-3",
+      "image_url": "/assets/catalog-media/source-offer-TBT10-3.jpg",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับจากแคตตาล็อก Business Gift หน้า 78",
+      "is_hero": false,
+      "generated_from_catalog": false
     },
     "S-1052": {
       "code": "S-1052",
@@ -290,7 +1631,7 @@
     "total_categories": 4,
     "total_canonical_products": 16,
     "total_catalog_offers": 357,
-    "total_indexed_images": 26
+    "total_indexed_images": 175
   },
   "source_catalog_version_basis": {
     "public_snapshot": "pricelist_public",
@@ -304,8 +1645,8 @@
     },
     "catalog_media": {
       "path": "/data/catalog_media.json",
-      "size_bytes": 4683,
-      "sha256": "d81403c7a34024e5bad3b2269111732f10a128ce758dd9d14c3dee439fd0b4e8"
+      "size_bytes": 57584,
+      "sha256": "990b553c2806d93a39e74801fe276d6dc40d323e930ffa74b240be9b10f918b1"
     }
   }
 }

@@ -32,12 +32,54 @@ test('selection covers exact category and kind, with no stale or truncated resul
   assert.equal(selectItems(rows, '', 'set').length, 2);
 });
 
+test('selection shows photographed items first without mutating source order', () => {
+  const rows = [{ code: 'A', kind: 'set', image: '' }, { code: 'B', kind: 'set', image: 'b.jpg' }, { code: 'C', kind: 'set', image: 'c.jpg' }];
+  assert.deepEqual(selectItems(rows, '', 'set').map(row => row.code), ['B', 'C', 'A']);
+  assert.deepEqual(rows.map(row => row.code), ['A', 'B', 'C']);
+});
+
+test('reviewed Business Gift source photos match 150 existing offers without inventing PM mappings', () => {
+  const actualMaster = require('../data-pipeline/02_prepared/smartgift_catalog_master.json');
+  const actualMedia = require('../public/data/catalog_media.json');
+  const rows = buildCatalog(actualMaster, actualMedia);
+  const matched = rows.filter(row => row.image.includes('/source-offer-'));
+  assert.equal(matched.length, 150);
+  assert.ok(matched.every(row => row.kind === 'set'));
+  assert.equal(rows.filter(row => row.kind === 'single' && row.image).length, 0);
+  for (const code of ['TGC06-4', 'TYD05-2', 'TBS03-4', 'TPH00-3', 'TPC01-7', 'TPS00-2']) {
+    assert.ok(!matched.some(row => row.code === code));
+  }
+  const conflict = rows.find(row => row.code === 'TGC09-3');
+  assert.ok(conflict.image.endsWith('source-offer-TGC09-3.jpg'));
+  assert.deepEqual(conflict.contents, { status: 'conflict', items: [] });
+  assert.ok(matched.every(row => row.priceLabel === 'สอบถามราคา'));
+  const fs = require('node:fs');
+  const path = require('node:path');
+  for (const row of matched) {
+    assert.ok(fs.statSync(path.join(__dirname, '../public', row.image)).size > 0);
+  }
+});
+
 test('customer records omit internal cost, arbitrary metadata and unapproved prices', () => {
   const row = buildCatalog(master, media)[0];
   assert.equal(row.factory_cost, undefined);
   assert.equal(row.srp_price, undefined);
   assert.equal(row.priceLabel, 'สอบถามราคา');
   assert.equal(JSON.stringify(row).includes('factory_cost'), false);
+});
+
+test('all extracted photo bytes match the reviewed PDF provenance ledger', () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const crypto = require('node:crypto');
+  const spec = fs.readFileSync(path.join(__dirname, '../docs/specs/SPEC-CUSTOMER-CATALOG-IMAGE-FIRST-2026-08-30.md'), 'utf8');
+  const entries = [...spec.matchAll(/^\| ([A-Z0-9-]+) \| (\d+) \| (Image\d+) \| (source-offer-[A-Z0-9-]+\.(?:jpg|png)) \| `([a-f0-9]{64})` \|$/gm)];
+  assert.equal(entries.length, 150);
+  for (const [, code, , , filename, sha] of entries) {
+    assert.equal(path.parse(filename).name, `source-offer-${code}`);
+    const bytes = fs.readFileSync(path.join(__dirname, '../public/assets/catalog-media', filename));
+    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), sha, code);
+  }
 });
 
 test('unverified BOM and known source conflict never presented as confirmed contents', () => {

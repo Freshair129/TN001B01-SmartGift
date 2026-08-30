@@ -1,7 +1,7 @@
 ---
-version: "0.1.2b"
+version: "0.1.3b"
 created_at: "2026-08-30T11:06:00+07:00,ATHER"
-last_update: "2026-08-30T18:32:00+07:00,ATHER"
+last_update: "2026-08-30T21:25:00+07:00,ATHER"
 status: "beta"
 superseded_by: null
 attributes:
@@ -117,8 +117,21 @@ attributes:
 
 ## CHANGELOG
 
+### Follow-up ภาพจริงตามคำขอผู้ใช้
+
+- สาเหตุที่ยังไม่มีภาพในรายการหลังเปลี่ยน UI: media source-photo เดิม 4 รหัสไม่ตรงรายการขาย; generated images ไม่ผ่าน source-photo gate จึงเหลือ placeholder อย่างถูกต้อง
+- รอบนี้ตรวจ code column/ภาพแถวเดียวกันใน Business Gift PDF 80 หน้า ได้ 156 candidates; เว้น 5 รหัสที่ header ทับกับ TGC06-4 ซึ่งคำบรรยาย concept ขัดภาพ เหลือ 150 exact offer-code photos
+- ดึง JPEG 148 + PNG 2 จาก embedded image bytes โดยไม่แต่งภาพและไม่แก้ raw PDF; ชื่อ source, หน้า, image object และ SHA256 ทุกภาพอยู่ใน customer spec v0.1.2b
+- ใช้ media contract เดิม เชื่อม 150/357 offers และวางรายการมีภาพก่อนในกริด; ยังไม่มี PM mapping 16 รายการ ไม่ยืมรูปคล้ายกันและไม่อ้างว่าข้อมูลหก entities canonical ครบแล้ว
+- Prevention เพิ่ม row-boundary/header exclusion tests และ regression ที่ตรวจ image identity, original byte hashes, stable photo-first order และ TGC09-3 conflict gate
+- Visual QA พบ mobile rule เดิม width 64px ทับรูปการ์ดใหม่ จึงจำกัด rule นี้เฉพาะ placeholder; ตรวจซ้ำบน 390px รูปกว้าง 343px เท่าการ์ด ไม่ใช่ thumbnail 64px
+- ตรวจ Node 13 tests + Python 36 tests ผ่าน (extraction 5, pricing/quote/inventory 31); รูป 150/150 decode ได้; PDF hash ก่อน/หลังตรงกัน
+- ยังไม่ปิด RCA ด้านข้อมูล: ชื่อ/BOM/type ที่ไม่ยืนยัน, PM image mapping และ public/offline projection gates คงอยู่ ไม่รัน pipeline หรือ deploy ในงานนี้
+- Version diff: RCA 0.1.2b → 0.1.3b; customer spec 0.1.1b → 0.1.2b; canonical schema 1.3.0 และ media contract 1.0.0b ไม่เปลี่ยน
+
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
+| 0.1.3b | 2026-08-30 | beta | จับคู่ภาพต้นฉบับ 150 offers พร้อม provenance/tests; ไม่ promote BOM/PM/canonical readiness | uncommitted | ATHER |
 | 0.1.2b | 2026-08-30 | beta | บันทึก local presentation และ regression evidence; ยังไม่ปิด image/BOM/public gates | uncommitted | ATHER |
 | 0.1.1b | 2026-08-30 | candidate | บันทึกกลุ่มผู้ใช้หลักเป็นลูกค้า; ยังไม่แก้โค้ด | uncommitted | ATHER |
 | 0.1.0b | 2026-08-30 | candidate | บันทึก root cause ของภาพ anatomy อ่านยาก ข้อมูลไม่สัมพันธ์กัน และช่องว่าง image mapping | uncommitted | ATHER |

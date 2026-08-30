@@ -31,6 +31,7 @@ body.customer-dialog-open { overflow: hidden; }
 #customer-catalog .customer-photo-name { display: block; font-size: 15px; font-weight: 600; margin: 12px 0 3px; }
 #customer-catalog .customer-photo-code { color: #52626a; font-size: 12px; }
 #customer-catalog .customer-browse > h2 { margin-bottom: 18px; }
+#customer-catalog .customer-browse { margin-top: 30px; }
 #customer-catalog .customer-categories { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
 #customer-catalog .customer-category { padding: 10px 16px; border: 1px solid #cbd6da; border-radius: 6px; background: #fff; color: #344c56; min-height: 44px; font-size: 14px; }
 #customer-catalog .customer-category[aria-pressed="true"] { color: #fff; background: #08798a; border-color: #08798a; }
@@ -40,7 +41,7 @@ body.customer-dialog-open { overflow: hidden; }
 #customer-catalog .customer-type { padding: 10px 0 13px; background: none; border: 0; border-bottom: 3px solid transparent; color: #52626a; min-height: 48px; }
 #customer-catalog .customer-type[aria-pressed="true"] { color: #086679; border-bottom-color: #08798a; font-weight: 700; }
 #customer-catalog .customer-count { margin: 0; font-size: 13px; color: #52626a; white-space: nowrap; }
-#customer-catalog .customer-items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+#customer-catalog .customer-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; }
 #customer-catalog .customer-item { min-width: 0; border-bottom: 1px solid #dce4e7; }
 #customer-catalog .customer-item-action { padding: 22px 0; display: grid; width: 100%; text-align: left; grid-template-columns: 86px minmax(0, 1fr); gap: 8px 16px; border: 0; background: none; color: inherit; }
 #customer-catalog .customer-item-action:hover h3 { color: #08798a; }
@@ -49,6 +50,10 @@ body.customer-dialog-open { overflow: hidden; }
 #customer-catalog .customer-item-code { display: block; color: #52626a; font-size: 12px; margin-bottom: 4px; overflow-wrap: anywhere; }
 #customer-catalog .customer-item h3 { font-size: 16px; font-weight: 600; text-wrap: pretty; }
 #customer-catalog .customer-item-meta { grid-column: 2; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; margin-top: 4px; font-size: 13px; }
+#customer-catalog .customer-item-with-photo .customer-item-action { grid-template-columns: minmax(0, 1fr); gap: 14px; height: 100%; grid-template-rows: auto 1fr auto; }
+#customer-catalog .customer-item-with-photo .customer-picture { grid-row: auto; width: 100%; aspect-ratio: 4/3; }
+#customer-catalog .customer-item-with-photo .customer-picture img { padding: 16px; }
+#customer-catalog .customer-item-with-photo .customer-item-meta { grid-column: 1; }
 #customer-catalog .customer-item-price { color: #52626a; }
 #customer-catalog .customer-item-link { color: #086679; font-weight: 600; margin-left: auto; }
 #customer-catalog .customer-feedback { padding: 30px 0; color: #52626a; }
@@ -74,8 +79,11 @@ body.customer-dialog-open { overflow: hidden; }
 @media (max-width: 800px) {
   #customer-catalog .customer-header-note { display: none; }
   #customer-catalog .customer-main { padding-top: 30px; }
-  #customer-catalog .customer-items { grid-template-columns: 1fr; }
+  #customer-catalog .customer-items { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
   #customer-catalog .customer-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+}
+@media (max-width: 540px) {
+  #customer-catalog .customer-items { grid-template-columns: 1fr; }
 }
 @media (max-width: 420px) {
   #customer-catalog .customer-main { padding: 26px 16px 16px; }
@@ -84,7 +92,7 @@ body.customer-dialog-open { overflow: hidden; }
   #customer-catalog .customer-types { gap: 16px; }
   #customer-catalog .customer-type { font-size: 14px; }
   #customer-catalog .customer-item-action { grid-template-columns: 64px minmax(0, 1fr); gap: 8px 12px; }
-  #customer-catalog .customer-item .customer-picture { width: 64px; font-size: 11px; }
+  #customer-catalog .customer-item:not(.customer-item-with-photo) .customer-picture { width: 64px; font-size: 11px; }
   #customer-catalog .customer-detail { padding: 20px; }
   #customer-catalog .customer-dialog-bar { padding: 10px 16px; }
 }

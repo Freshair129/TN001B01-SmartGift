@@ -71,7 +71,8 @@
   }
 
   function selectItems(items, category, kind) {
-    return items.filter(item => (!category || item.category === category) && item.kind === kind);
+    return items.filter(item => (!category || item.category === category) && item.kind === kind)
+      .sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
   }
 
   const api = { buildCatalog, selectItems, sourcePhotos, detailComponents };
@@ -84,7 +85,7 @@
   let items = [];
   let photos = [];
   let category = '';
-  let kind = 'single';
+  let kind = 'set';
   let limit = 24;
   let loaded = false;
   let failed = false;
@@ -107,11 +108,6 @@
     <header class="customer-header"><a class="customer-brand" href="#/catalog" aria-label="SmartGift หน้ารวมสินค้า">SmartGift<span>ของขวัญองค์กร</span></a><span class="customer-header-note">เลือกจากสิ่งที่ใช่ ให้ได้อย่างใส่ใจ</span></header>
     <main class="customer-main">
       <div class="customer-intro"><h1>สินค้าและชุดของขวัญองค์กร</h1><p>ดูภาพ เลือกหมวด แล้วเปิดดูรายละเอียดสินค้าที่สนใจ</p></div>
-      <section class="customer-references" aria-labelledby="customer-references-title" hidden>
-        <div class="customer-section-head"><h2 id="customer-references-title">ภาพจากแคตตาล็อก</h2><span>ภาพต้นฉบับ</span></div>
-        <p class="customer-reference-note">รูปอ้างอิงเหล่านี้ยังไม่จับคู่กับรายการขายด้านล่าง จึงยังไม่แสดงราคาและข้อมูลชุดร่วมกัน</p>
-        <div class="customer-photo-grid"></div>
-      </section>
       <section class="customer-browse" aria-labelledby="customer-browse-title">
         <h2 id="customer-browse-title">เลือกดูสินค้า</h2>
         <div class="customer-categories" role="group" aria-label="หมวดสินค้า"></div>
@@ -119,6 +115,11 @@
         <div class="customer-feedback" role="status"></div>
         <div class="customer-items"></div>
         <div class="customer-more"></div>
+      </section>
+      <section class="customer-references" aria-labelledby="customer-references-title" hidden>
+        <div class="customer-section-head"><h2 id="customer-references-title">ภาพอ้างอิงเพิ่มเติม</h2><span>ภาพต้นฉบับ</span></div>
+        <p class="customer-reference-note">รูปอ้างอิงเหล่านี้ยังไม่จับคู่กับรายการขาย จึงยังไม่แสดงราคาและข้อมูลชุดร่วมกัน</p>
+        <div class="customer-photo-grid"></div>
       </section>
       <footer class="customer-footer">ภาพและรายละเอียดช่วยประกอบการเลือกสินค้า กรุณายืนยันราคาและรายละเอียดก่อนสั่งซื้อ</footer>
     </main>
@@ -218,7 +219,7 @@
     control.dataset.category = code;
     root.querySelector('.customer-categories').append(control);
   }
-  for (const [value, title] of [['single', 'สินค้ารายชิ้น'], ['set', 'รายการจากแคตตาล็อก']]) {
+  for (const [value, title] of [['set', 'รายการจากแคตตาล็อก'], ['single', 'สินค้ารายชิ้น']]) {
     const control = button(title, 'customer-type', () => { kind = value; filterChanged(); });
     control.dataset.kind = value;
     root.querySelector('.customer-types').append(control);
@@ -244,6 +245,7 @@
     list.replaceChildren();
     for (const item of visible.slice(0, limit)) {
       const article = element('article', 'customer-item');
+      if (item.image) article.classList.add('customer-item-with-photo');
       const action = button('', 'customer-item-action', event => openDetails(item, false, event.currentTarget));
       action.setAttribute('aria-label', `ดูรายละเอียด ${item.name} ${item.code}`);
       const copy = element('div', 'customer-item-copy');

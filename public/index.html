@@ -1744,7 +1744,7 @@
           </figcaption>
         </figure>
       ` : `<p class="catalog-media-note">ไม่มีภาพนำที่ผ่าน path allowlist</p>`;
-      const sets = media.sets.map(item => {
+      const sets = media.sets.slice(0, 4).map(item => {
         const src = mediaPath(item.image);
         if (!src) return "";
         return `
