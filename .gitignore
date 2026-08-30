@@ -37,3 +37,15 @@ Thumbs.db
 # CRM domain, behind its scope chain and PDPA consent controls (FR-103/SEC-005),
 # not this repository. Anything under 01_raw is an intake artifact, not a store.
 data-pipeline/01_raw/05_crm_customer_data/
+
+# The same three documents also live under lanes named after their SOURCE rather
+# than their contents, which is how the first pass missed them: the fix was
+# scoped to the folder whose name announced what was inside it, and identical
+# copies sat in `01_flowaccount_exports/` and `archive/`. Match on the document
+# kind, not the directory.
+#
+# `_product.xlsx` is deliberately NOT ignored — it is the price authority named
+# in AGENTS.md invariant #2 and carries no personal data.
+**/*_contact.xlsx
+**/*_QuotationReport_.xlsx
+**/*_BillingNoteReport_.xlsx
