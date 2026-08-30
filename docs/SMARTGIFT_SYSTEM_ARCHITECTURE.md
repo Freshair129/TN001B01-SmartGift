@@ -18,7 +18,7 @@
 │  └─ Organization (Tenant): Org-EtohGroup (Enterprise Group Boundary)                    │
 │     └─ Business 01: SmartGift (B2B Gift Set & Portfolio Engine)                          │
 │        ├─ Legal Entity: บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)                         │
-│        ├─ Data Pipeline: FlowAccount Normalizer (Read-Only Intake ➔ Staging SQL)          │
+│        ├─ Data Pipeline: FlowAccount Normalizer (Read-Only Intake ➔ Review Catalog)       │
 │        ├─ Product Catalog Vault: vlt-catalog-product (Zero-PII UUIDv7)                    │
 │        └─ Customer Client Vault: vlt-customer-client (PII-Gated Historical Suppression)  │
 └──────────────────────────────────────────────────────────────────────────────────────────┘
@@ -74,28 +74,29 @@
 
 ```
 ┌─────────────────┐       ┌──────────────────────┐       ┌──────────────────────┐
-│ Stage 1: Intake │ ───>  │ Stage 2: Preparation │ ───>  │ Stage 3: Staging SQL │
-│    Raw Data     │       │  & Normalization     │       │    Generation        │
+│ Stage 1: Intake │ ───>  │ Stage 2: Preparation │ ───>  │ Stage 3: Review      │
+│    Raw Data     │       │  & Normalization     │       │  Catalog Enrichment  │
 └─────────────────┘       └──────────────────────┘       └──────────────────────┘
- (FlowAccount xlsx,        (product_id_mapper,            (smartgift-portfolio.sql,
-  Google Sheets, PDFs)      Regex Entity Extraction)       smartgift-clients.sql)
+ (FlowAccount xlsx,        (product_id_mapper,            (sub-catalogs, price
+  factory costs, +         Regex Entity Extraction)        tiers, SRP, package
+  Stage 1.5 confirmed                                       BOM breakdown)
+  cost apply)
                                                                     │
                                                                     ▼
 ┌─────────────────┐       ┌──────────────────────┐       ┌──────────────────────┐
-│ Stage 5b: Edge  │ <───  │ Stage 5a: Upstream   │ <───  │ Stage 4: Review      │
-│   Static DB     │       │   Postgres Sync      │       │   & Approval Gate    │
+│ Stage 5: Local  │ <───  │ Stage 4.5: Public    │ <───  │ Stage 4: Review      │
+│  Vault Sync     │       │  Web Manifest        │       │   & Approval Gate    │
 └─────────────────┘       └──────────────────────┘       └──────────────────────┘
- (GenesisBlockDB,          (Send to zuri-ai /             (Audit Diff Report,
-  DuckDB, SQLite)           Supabase Cloud DB)             Human Verification)
+ (GenesisBlockDB,          (category slices,              (Audit Diff Report,
+  SQLite; Supabase          integrity hashes)               Human Verification)
+  path opt-in, see #5)
 ```
 
-1. **Stage 1 (Raw Intake):** เก็บไฟล์ต้นทาง `บริษัท เทราบิส จำกัด_product.xlsx` ในสถานะ **Read-Only / Immutable 100%**
-2. **Stage 2 (Normalization):** ใช้ `product_id_mapper.py` สกัดรหัส Product ID, Model Code, และ Supplier Tag (`P-xx`) ที่ฝังอยู่ในชื่อสินค้า
-3. **Stage 3 (Staging SQL):** ผลิตไฟล์ SQL มาตรฐาน `smartgift-portfolio.postgres.sql`
-4. **Stage 4 (Review Gate):** ตรวจสอบผ่านรายงาน `product_id_mapping_report.json` ก่อน Approve
-5. **Stage 5 (Dual Publishing):**
-   * **5a. Upstream Cloud:** นำเข้า `zuri-ai` / Supabase Cloud DB
-   * **5b. Local Edge Engine:** ซิงก์ลง GenesisBlockDB (`smartgift-genesis-db`) + Static SQLite (`projection.sqlite`) สำหรับ Edge Device & Offline Analytics (< 1ms Latency)
+1. **Stage 1 (Raw Intake):** เก็บไฟล์ต้นทาง `บริษัท เทราบิส จำกัด_product.xlsx` ในสถานะ **Read-Only / Immutable 100%**; ตามด้วย **Stage 1.5** (`pipeline/apply_factory_cost_to_product_master.py`) ที่เติม `ProductMaster.base_cost` เฉพาะรหัสที่ผ่านการยืนยัน mapping แล้ว
+2. **Stage 2 (Normalization):** ใช้ `pipeline/02_normalize_mapper.py` สกัดรหัส Product ID, Model Code, และ Supplier Tag (`P-xx`) ที่ฝังอยู่ในชื่อสินค้า
+3. **Stage 3 (Review Catalog Enrichment):** `pipeline/enrich_review_catalog.py` รวม sub-catalog, quantity tiers, SRP และ package BOM เข้า `smartgift_catalog_master.json` — **ไม่ผลิตไฟล์ SQL** `data-pipeline/03_staging_sql/` ว่างเปล่าและไม่มีสคริปต์ใช้งาน (ดูรายละเอียดใน [DATA_PIPELINE_AND_VAULT_STRUCTURE.md §1](DATA_PIPELINE_AND_VAULT_STRUCTURE.md))
+4. **Stage 4 (Review Gate):** `pipeline/04_audit_review.py` สร้าง `catalog_version_diff_report.json` ก่อน Approve; ตามด้วย **Stage 4.5** (`pipeline/generate_product_manifest.py`) ที่สร้าง customer-safe manifest สำหรับหน้าเว็บ
+5. **Stage 5 (Local Vault Sync):** `pipeline/05_sync_edge_vaults.py` ซิงก์ลง GenesisBlockDB + Static SQLite (`projection.sqlite`) เสมอสำหรับ Edge Device & Offline Analytics (< 1ms Latency) — เชื่อม Supabase/`zuri-ai` ก็ต่อเมื่อตั้งค่า `SUPABASE_URL`/`SUPABASE_KEY`; ถ้าไม่ตั้งค่า (สภาพปัจจุบัน) จะรัน local-only
 
 ---
 
@@ -110,6 +111,11 @@
 ---
 
 ## 🗂️ 5. โครงสร้างโฟลเดอร์เป้าหมาย (Target Directory Structure)
+
+> **หมายเหตุ (2026-08-31):** ผังนี้เป็น blueprint เป้าหมาย ไม่ใช่ snapshot ของไฟล์จริงในปัจจุบัน —
+> ชื่อไฟล์ตัวอย่างด้านล่าง (เช่น `flowaccount-product-raw.xlsx`, `smartgift-portfolio.postgres.sql`)
+> ไม่ตรงกับไฟล์จริงใน repo และ `03_staging_sql/` ยังไม่มีสคริปต์ใดเขียนเข้าไปเลย ดูโครงสร้างจริง
+> ปัจจุบันที่ [DATA_PIPELINE_AND_VAULT_STRUCTURE.md](DATA_PIPELINE_AND_VAULT_STRUCTURE.md)
 
 ```text
 O:\Org-EtohGroup\                         # 🏢 Organization Root (Tenant: Org-EtohGroup)

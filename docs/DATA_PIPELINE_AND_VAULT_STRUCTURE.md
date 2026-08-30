@@ -1,9 +1,18 @@
 # 🏛️ Data Pipeline, Multi-Vault RAG & Static DB Architecture
 
-**Document Version:** 1.1.0  
+**Document Version:** 1.2.0  
 **Project:** SmartGift B2B E-commerce & Intelligent Portfolio System (`O:\Org-EtohGroup\SmartGift`)  
 **Scope:** Multi-Vault RAG, Data Governance Pipeline, Review Gates, Edge Static DB & Upstream Sync
 
+> **v1.2.0 (2026-08-31):** แก้ Stage 3 ให้ตรงกับ `pipeline/master_orchestrator.py` จริง — Stage 3
+> คือ Review Catalog Enrichment (`enrich_review_catalog.py`) ไม่ใช่ "Staging SQL Generation";
+> `data-pipeline/03_staging_sql/` ไม่มีสคริปต์ใดเขียนเข้าไปเลยและว่างมาตั้งแต่ต้น ไม่ใช่ dead code
+> ที่เพิ่งเกิด เพิ่ม Stage 1.5 (apply confirmed factory cost mapping) และ Stage 4.5 (public web
+> manifest) ที่ orchestrator รันจริงแต่เอกสารรุ่นก่อนไม่ได้พูดถึง และชี้แจงว่า Stage 5's Supabase/
+> zuri-ai cloud path เป็น opt-in ผ่าน env var (`SUPABASE_URL`/`SUPABASE_KEY`) — ถ้าไม่ตั้งค่า
+> ระบบทำงานแบบ local-only (`⚠️ Operating in Local Master Sync mode`) ไม่ใช่ pipeline ที่อัปโหลด
+> คลาวด์อัตโนมัติเสมอไปตามที่ v1.1.0 บอกไว้
+>
 > **v1.1.0 (2026-08-30):** อัพเดทโครงสร้างโฟลเดอร์ให้ตรงกับ repo จริง (`data-pipeline/` แทน `data/`,
 > root ที่ `O:\Org-EtohGroup\SmartGift` แทน `o:\cat`), เพิ่ม intake lane 01–08 ใน `01_raw/`
 > (แก้เลข lane ซ้ำ `02_pricing_formulas` → `07_pricing_formulas` และเพิ่ม `08_factory_costs`)
@@ -17,37 +26,67 @@
 
 ```
 ┌─────────────────┐       ┌──────────────────────┐       ┌──────────────────────┐
-│ Stage 1: Intake │ ───>  │ Stage 2: Preparation │ ───>  │ Stage 3: Staging SQL │
-│    Raw Data     │       │  & Normalization     │       │    Generation        │
+│ Stage 1: Intake │ ───>  │ Stage 2: Preparation │ ───>  │ Stage 3: Review      │
+│    Raw Data     │       │  & Normalization     │       │  Catalog Enrichment  │
 └─────────────────┘       └──────────────────────┘       └──────────────────────┘
- (FlowAccount xlsx,        (product_id_mapper,            (smartgift-portfolio.sql,
-  Google Sheets, PDFs)      Regex Entity Extraction)       smartgift-clients.sql)
+ (FlowAccount xlsx,        (product_id_mapper,            (sub-catalogs, price
+  factory costs,           regex entity extraction)        tiers, SRP, package
+  pricing formulas —                                       BOM breakdown)
+  + Stage 1.5 confirmed
+  cost apply, below)
                                                                     │
                                                                     ▼
 ┌─────────────────┐       ┌──────────────────────┐       ┌──────────────────────┐
-│ Stage 5b: Edge  │ <───  │ Stage 5a: Upstream   │ <───  │ Stage 4: Review      │
-│   Static DB     │       │   Postgres Sync      │       │   & Approval Gate    │
+│ Stage 5: Local  │ <───  │ Stage 4.5: Public    │ <───  │ Stage 4: Review &    │
+│  Vault Sync     │       │  Web Manifest        │       │  Approval Gate       │
 └─────────────────┘       └──────────────────────┘       └──────────────────────┘
- (GenesisBlockDB,          (Send to zuri-ai /             (Audit Diff Report,
-  DuckDB, SQLite)           Supabase Cloud DB)             Human Verification)
+ (GenesisBlockDB +         (category slices,              (catalog_version_diff_
+  SQLite; Supabase          integrity hashes for            report.json, Human
+  cloud path is opt-in,     public/data/)                   Verification)
+  env-var gated — see
+  Stage 5 note below)
 ```
 
-### รายละเอียด 5 ขั้นตอน:
+### รายละเอียด 5 ขั้นตอน (+ 1.5 / 4.5 ที่ orchestrator แทรกไว้):
 1. **Stage 1: Intake Raw Data (`data-pipeline/01_raw/`):**
    * เก็บไฟล์ต้นฉบับแยกเป็น lane 01–08 (FlowAccount exports, ใบราคาโรงงาน PDF, แคตตาล็อก, เรทส่ง CBM, CRM, เอกสารธุรกิจ, สูตรราคา, ต้นทุนโรงงาน)
    * ทุก lane ที่มี archiver จะทำ SHA-256 versioning + immutable archive + registry + audit log
    * **กฎเหล็ก:** เป็นโซน **Read-Only / Immutable** ห้ามแก้ไขไฟล์ต้นฉบับโดยเด็ดขาด
+   * **Stage 1.5 (`pipeline/apply_factory_cost_to_product_master.py`):** เติม `ProductMaster.base_cost`
+     ให้เฉพาะรหัสที่มี `factory_cost_pm_mapping.json` status `confirmed` เท่านั้น (fail-closed,
+     idempotent) — ดู [ADR-005](decisions/ADR-005-FACTORY-COST-INTAKE-LANE.md)
 2. **Stage 2: Preparation & Normalization (`pipeline/02_normalize_mapper.py`):**
    * ใช้ Regular Expression สกัด Product ID, Model Code, และ Supplier Tag (`P-xx`) ที่ฝังอยู่ในชื่อสินค้า
    * แปลงข้อมูลให้อยู่ในโครงสร้างมาตรฐาน (Canonical Schema)
-3. **Stage 3: Staging SQL Generation (`data-pipeline/03_staging_sql/`):**
-   * ผลิตไฟล์ SQL พร้อมนำเข้า เช่น `smartgift-portfolio.postgres.sql`, `smartgift-customers.postgres.sql`
-4. **Stage 4: Review & Approval Gate (`data-pipeline/04_review_reports/`):**
-   * สร้างรายงานตรวจสอบความถูกต้อง [product_id_mapping_report.json](file:///o:/cat/product_id_mapping_report.json)
+3. **Stage 3: Review Catalog Enrichment (`pipeline/enrich_review_catalog.py`):**
+   * รวม sub-catalog สินค้า/ชุดของขวัญ, quantity tiers, SRP และ package BOM breakdown เข้า
+     `smartgift_catalog_master.json`
+   * **`data-pipeline/03_staging_sql/` ไม่ได้ถูกใช้งาน** — ไม่มีสคริปต์ใดใน `pipeline/` เขียนไฟล์ลง
+     โฟลเดอร์นี้เลย (ตรวจ git history แล้วว่างมาตั้งแต่ commit แรก) ไม่มีการผลิตไฟล์
+     `smartgift-portfolio.postgres.sql`/`smartgift-customers.postgres.sql` ตามที่เอกสารรุ่นก่อนอ้างไว้
+     — ราคาปัจจุบันอ่านจาก `price-boss/sql/smartgiftpricelist.postgres.sql` ที่มีอยู่แล้ว (input, ไม่ใช่
+     output ของ stage นี้) ผ่าน `pipeline/export_pricelist_master.py` ซึ่งเป็นสคริปต์แยกที่ยังไม่ได้ผูก
+     เข้า orchestrator (รันเองด้วย `python pipeline/export_pricelist_master.py`)
+4. **Stage 4: Review & Approval Gate (`pipeline/04_audit_review.py`):**
+   * สร้าง `catalog_version_diff_report.json` และ version snapshot ใหม่ใน `data-pipeline/04_review_reports/`
    * แสดง Diff และความผิดปกติเพื่อรอการ Review + Approve
-5. **Stage 5: Dual Distribution (แยก 2 ปลายทาง):**
-   * **5a. Upstream Production:** ส่งไฟล์ `.sql` ที่ผ่านการ Approve เข้าสู่ `zuri-ai` / Supabase Cloud DB
-   * **5b. Local Static DB & Edge Engine:** แปลงข้อมูลลง **GenesisBlockDB Substrate + SQLite/DuckDB** ประจำ Vault ในเครื่องสำหรับ Edge Device, Analytics และ GraphRAG
+   * **Stage 4.5 (`pipeline/generate_product_manifest.py`):** สร้าง customer-safe manifest
+     (`public/data/product_manifest.json`), category slices และ integrity hashes สำหรับหน้าเว็บ —
+     ดู [ADR-004](decisions/ADR-004-CUSTOMER-SAFE-PRICELIST-ENDPOINT.md)
+5. **Stage 5: Local Vault Sync (`pipeline/05_sync_edge_vaults.py`):**
+   * แปลงข้อมูลลง **GenesisBlockDB Substrate + SQLite** ประจำ Vault ในเครื่องสำหรับ Edge Device,
+     Analytics และ GraphRAG เสมอ
+   * **Cloud sync เป็น opt-in:** สคริปต์นี้พยายามเชื่อม Supabase ก็ต่อเมื่อตั้งค่า env var
+     `SUPABASE_URL`/`SUPABASE_KEY` ไว้เท่านั้น — ถ้าไม่ตั้งค่า (สภาพปัจจุบันของ repo นี้) จะรันแบบ
+     `⚠️ Operating in Local Master Sync mode` คือ local-only ล้วน ไม่มีการอัปโหลดขึ้น
+     `zuri-ai`/Supabase อัตโนมัติ
+
+**สคริปต์ที่มีอยู่แต่ orchestrator ไม่ได้เรียก (รันแยกด้วยมือ):** `extract_factory_costs.py`
+(แปลงไฟล์ต้นทุนดิบ lane 08 → `factory_costs.json`; ต้องรันก่อนถ้าไฟล์ต้นทุนใหม่เข้ามา),
+`export_pricelist_master.py` (สร้าง `pricelist_master.json`/`pricelist_public.json`),
+`build_offline_catalog.py` (สร้าง offline customer catalog), `add_dimensions_weight.py`,
+`add_material_color.py`, `auto_quote_service.py` — ไม่มีสคริปต์เหล่านี้ใน 5-stage run ของ
+`master_orchestrator.py`
 
 ---
 
@@ -82,8 +121,8 @@ O:\Org-EtohGroup\SmartGift\
 │   │   ├── smartgift_catalog_master.json
 │   │   ├── pricelist_master.json
 │   │   └── factory_costs.json            #   🆕 normalized supplier costs + proposed PM mapping
-│   ├── 03_staging_sql/                   # Stage 3: ไฟล์ SQL ที่แปลงเสร็จแล้ว
-│   └── 04_review_reports/                # Stage 4: รายงาน Audit & Approval Gates
+│   ├── 03_staging_sql/                   # ⚠️ ว่างเปล่า — ไม่มีสคริปต์ใดเขียนเข้ามา (ดูหมายเหตุ Stage 3 ด้านบน)
+│   └── 04_review_reports/                # Stage 4 / 4.5: รายงาน Audit, Diff & Public Manifest
 │
 ├── vaults/                               # 🔐 Multi-Vault Storage (Local Edge Engine Substrates)
 │   │
@@ -100,16 +139,19 @@ O:\Org-EtohGroup\SmartGift\
 │       └── genesis-db/
 │
 ├── pipeline/                             # 🛠️ สคริปต์ Data Pipeline Engine
-│   ├── master_orchestrator.py            # รัน pipeline 5 stage ตามลำดับ
+│   ├── master_orchestrator.py            # รัน pipeline 1/1.5/2/3/4/4.5/5 ตามลำดับ (ดู §1)
 │   ├── flowaccount_registry_archiver.py  # Stage 1: FlowAccount exports (SHA-256 versioning)
 │   ├── pricing_formula_archiver.py       # Stage 1: pricing formula YAML (lane 07)
-│   ├── factory_cost_archiver.py          # 🆕 Stage 1: factory cost files (lane 08, รองรับ .xls/.xlsx)
-│   ├── extract_factory_costs.py          # 🆕 Stage 2: normalize supplier costs + proposed PM mapping
+│   ├── factory_cost_archiver.py          # Stage 1: factory cost files (lane 08, รองรับ .xls/.xlsx)
+│   ├── apply_factory_cost_to_product_master.py # Stage 1.5: เติม ProductMaster.base_cost (confirmed mapping เท่านั้น)
 │   ├── 02_normalize_mapper.py            # Stage 2: สกัดรหัสสินค้า & ทำ Entity Mapping
 │   ├── enrich_review_catalog.py          # Stage 3: review catalog + BOM enrichment
-│   ├── export_pricelist_master.py        # Stage 3/4: pricelist master artifact
 │   ├── 04_audit_review.py                # Stage 4: ตรวจสอบ Diff และสร้างรายงาน Review
-│   └── 05_sync_edge_vaults.py            # Stage 5: ซิงก์ข้อมูลลง GenesisBlockDB & Static DBs
+│   ├── generate_product_manifest.py      # Stage 4.5: public web manifest + category slices
+│   ├── 05_sync_edge_vaults.py            # Stage 5: ซิงก์ข้อมูลลง GenesisBlockDB & SQLite (local-only ถ้าไม่ตั้ง Supabase env var)
+│   ├── extract_factory_costs.py          # แยก, ไม่อยู่ใน orchestrator: normalize supplier costs → proposed PM mapping
+│   ├── export_pricelist_master.py        # แยก, ไม่อยู่ใน orchestrator: pricelist_master.json/pricelist_public.json
+│   └── build_offline_catalog.py          # แยก, ไม่อยู่ใน orchestrator: offline customer catalog bundle
 │
 ├── src/                                  # 💻 Business Domain & Application Logic
 │   ├── cascade_engine/                   # Inventory Cascade & On-Demand BOM Decomposition
@@ -141,4 +183,4 @@ O:\Org-EtohGroup\SmartGift\
 
 1. **รองรับ Edge Device 100%:** ไฟล์ `projection.sqlite` และ GenesisBlockDB ทำงานแบบ Offline อ่านข้อมูลได้เร็ว < 1ms โดยไม่ต้องต่อ Cloud
 2. **รองรับ Data Analytics:** มี Static DB (`projection.sqlite` / DuckDB) ให้ฝ่ายวิเคราะห์รันคำนวณ Gross Margin, BOM Cost, และสถิติยอดสั่งซื้อได้ทันที
-3. **Data Quality & Governance สูงสุด:** ผ่านการเตรียมข้อมูลและตรวจสอบ (Review + Approve) ก่อนส่งเข้า `zuri-ai` / Supabase Cloud DB เสมอ
+3. **Data Quality & Governance สูงสุด:** ผ่านการเตรียมข้อมูลและตรวจสอบ (Review + Approve) ก่อนใช้งานเสมอ — การส่งเข้า `zuri-ai` / Supabase Cloud DB เป็น opt-in ที่ยังไม่ได้เปิดใช้ในสภาพปัจจุบันของ repo นี้ (ดู Stage 5 ใน §1)

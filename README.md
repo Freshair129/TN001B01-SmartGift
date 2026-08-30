@@ -52,7 +52,7 @@ O:\Org-EtohGroup\SmartGift\
 ├── data-pipeline/           # 🔄 5-Stage Data Governance Pipeline
 │   ├── 01_raw/              # Stage 1: ไฟล์ดิบแยกหมวด + Immutable Archive + Registry
 │   ├── 02_prepared/         # Stage 2: Master Catalog SSOT (smartgift_catalog_master.json)
-│   ├── 03_staging_sql/      # Stage 3: ไฟล์ SQL ที่แปลงเสร็จแล้ว
+│   ├── 03_staging_sql/      # ⚠️ ว่างเปล่า — ไม่มีสคริปต์ใช้งาน (Stage 3 จริงคือ enrich_review_catalog.py, ดู docs/DATA_PIPELINE_AND_VAULT_STRUCTURE.md)
 │   └── 04_review_reports/   # Stage 4: รายงาน Audit, Diff & Provenance Log
 ├── docs/                    # 📚 เอกสารสถาปัตยกรรมและ Change Requests ทั้งหมด
 ├── vaults/                  # 🔐 Multi-Vault Storage (GenesisBlockDB Native + SQLite)
