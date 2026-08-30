@@ -1,7 +1,7 @@
 ---
-version: "0.1.0b"
+version: "0.1.1b"
 created_at: "2026-08-30T20:29:43+07:00,ATHER,uncommitted"
-last_update: "2026-08-30T20:29:43+07:00,ATHER"
+last_update: "2026-08-30T20:34:34+07:00,Claude"
 status: "draft"
 superseded_by: null
 attributes:
@@ -14,7 +14,7 @@ attributes:
 
 **Authority:** [schema_genesisblock.yaml](../../config/schema_genesisblock.yaml), `client_contract.schema_version = 1.3.0`, `smartgift://b2b/portfolio/v1`.
 **ตรวจเทียบ:** 2026-08-30; schema SHA-256 `bcd507d791e406e8114ab636f3905518a58c569791e6d1f87c7b1ef302c00419`.
-**อ้างอิง:** [ADR-002](../decisions/ADR-002-PRICELIST-MASTER-SQL-SNAPSHOT.md), [ADR-003](../decisions/ADR-003-SEASONAL-PKG-SCHEMA-PROFIT-GATE.md), [AGENTS.md](../../AGENTS.md).
+**อ้างอิง:** [ADR-002](../decisions/ADR-002-PRICELIST-MASTER-SQL-SNAPSHOT.md), [ADR-003](../decisions/ADR-003-SEASONAL-PKG-SCHEMA-PROFIT-GATE.md), [ADR-005](../decisions/ADR-005-FACTORY-COST-INTAKE-LANE.md), [AGENTS.md](../../AGENTS.md).
 **Complexity / Risk:** C-1 / LOW — จัดทำเอกสารของโครงสร้างที่มีอยู่ ไม่เปลี่ยน ontology, schema, ราคา, vault หรือ runtime.
 
 ## 1. วิธีอ่าน
@@ -25,6 +25,7 @@ attributes:
 - `source_id FK` และ `target_id FK` คือปลายทางของ graph edge; กล่อง `CONTAINS` และ `INCLUDES_OFFER` แสดง edge ที่มีข้อมูล `qty` ไม่ใช่ node ใหม่
 - YAML ยังไม่กำหนด min/max cardinality หรือความไม่ซ้ำของคู่ endpoint จึงใช้ `0..many` ในภาพเพื่อแสดงความสัมพันธ์ที่อาจมีหลายเส้น **ไม่ใช่ข้อบังคับว่าทุกสินค้าต้องมีหลายหมวด หรือทุก offer ต้องมีหลาย tier**
 - edge หนึ่งเส้นมี source หนึ่ง node และ target หนึ่ง node; ไม่กำหนด composite PK ให้ edge เอง เพราะ schema ยังไม่ได้กำหนด edge identity/uniqueness
+- คอมเมนต์หัวไฟล์ YAML ยังเขียนว่า `Version 1.0.0` แต่ authority ที่ใช้คือ `client_contract.schema_version = 1.3.0` + SHA-256 ข้างต้น; อย่าอ้าง version จากคอมเมนต์หัวไฟล์
 
 ## 2. ERD ของ product catalog
 
@@ -112,6 +113,8 @@ erDiagram
 
 YAML ไม่ได้กำหนดโครงสร้างย่อยของ `price_tier` ในไฟล์นี้ และไม่ได้ประกาศ currency ของ `base_cost`, `base_price`, `total_price`; consumer ต้องอ่าน basis/currency จาก pricing contract และหลักฐานราคา ไม่อนุมานจากชนิด `number`
 
+มิติที่ ERD ไม่ได้วาดแต่อยู่ใน YAML: CatalogOffer ผูกกับ vector space `unboxing_sensory` (bge-m3, dim 1024, cosine); ส่วน `product_features` ประกาศไว้แต่ยังไม่มี node ใดอ้างถึง. labels เสริมตาม YAML: SKU มี label `ProductVariant` และ BundleOffer มี label `CorporateMetaBundle` — เป็น labels ของ node เดิม ไม่ใช่ node ชนิดใหม่
+
 ## 3. ตาราง FK และความหมายของ edge
 
 | Edge ตาม YAML | Source PK | Target PK | Property ของ edge |
@@ -124,7 +127,7 @@ YAML ไม่ได้กำหนดโครงสร้างย่อยข
 | INCLUDES_OFFER | BundleOffer.id | CatalogOffer.id | qty: integer, required |
 | ORDERED | CorporateClient.id | BundleOffer.id | order_id, quantity, amount, ordered_at; ดูขอบเขตแยกด้านล่าง |
 
-เส้นทางถอดชุด: `BundleOffer → INCLUDES_OFFER → CatalogOffer → CONTAINS → ProductMaster`.
+เส้นทางถอดชุด: `BundleOffer → INCLUDES_OFFER → CatalogOffer → CONTAINS → ProductMaster` ตรงกับ HQL contract `bundle_cascade` (`TRAVERSE ... DEPTH 2 REL INCLUDES_OFFER|CONTAINS`) และระดับ offer เดียวตรงกับ `set_decomposition`.
 จำนวนชิ้นต่อ component path = `INCLUDES_OFFER.qty × CONTAINS.qty`; ถ้าสินค้าเดียวกันอยู่หลาย offer จึงค่อยรวมแต่ละ path หลังยืนยันจำนวนและ BOM แล้ว ไม่ใช้จำนวนผู้รับแทน edge quantity โดยอัตโนมัติ
 
 `PKG-*` เป็น `BundleOffer.code` ซึ่งเป็น business key; FK ใน package option/BOM ใช้ `bundle_id → BundleOffer.id`. ตัวอย่าง ID จากไฟล์ปัจจุบันคือ `bundle:smartgift-christmas_2026-select-mid-management`; ห้ามสร้าง ID ใหม่จาก display name หรือเปลี่ยน slug ที่มีอยู่เงียบ ๆ
@@ -150,7 +153,7 @@ erDiagram
         string target_id FK "BundleOffer.id"
         string order_id "required; not declared unique"
         integer quantity "required"
-        integer amount "required; unit unspecified in YAML"
+        number amount "required; currency/unit unspecified in YAML"
         timestamp ordered_at
     }
     BundleOffer {
@@ -184,8 +187,8 @@ Category และ GiftTier อ้างนิยามจาก schema/`priceli
 ## 6. กติกาทางธุรกิจที่ต้องตรวจเพิ่มจาก schema
 
 - Profit Gate ใช้กำไรไม่น้อยกว่า **25,000 บาทต่อ configured package** ตาม ADR-003: รายได้สุทธิ − ต้นทุนตรงส่งมอบครบทุกหมวด บนฐาน VAT เดียวกัน
-- ข้อมูลขาดให้ `missing_inputs`, profit เป็น null และห้ามแสดง `pass`; ทั้ง 11 package ใน snapshot นี้ยังไม่ผ่าน gate
-- base_cost ที่ขาดยังเป็น null; ไม่เอา SRP หรือ CBM/freight estimate มาเติมเป็นต้นทุนจริง และไม่แก้ factory evidence เดิมผ่านเอกสารนี้
+- ข้อมูลขาดให้ `missing_inputs`, profit เป็น null และห้ามแสดง `pass`; ทั้ง 11 package ใน snapshot นี้ยังไม่ผ่าน gate (ตรงกับ `BundleOffer.json metadata.profit_gate`: passed_count 0, review_required_count 11, fail_closed)
+- base_cost ที่ขาดยังเป็น null; ไม่เอา SRP หรือ CBM/freight estimate มาเติมเป็นต้นทุนจริง และไม่แก้ factory evidence เดิมผ่านเอกสารนี้ — ช่องทางเติม base_cost คือ factory cost intake lane ตาม ADR-005 หลัง PM mapping ได้รับอนุมัติจากมนุษย์
 - qty ของ BOM/package ที่ใช้งานต้องเป็น integer > 0 และ resolve FK ได้; กฎค่าบวกเป็น validation ตาม ADR/TDD เพิ่มจาก YAML ซึ่งระบุเพียง integer/required
 - inventory_qty ต้องไม่ติดลบตาม AGENTS.md; ค่า default 0 ใน YAML เพียงอย่างเดียวไม่ได้พิสูจน์ว่ามี database CHECK constraint แล้ว
 - ห้ามนำ source_association ระหว่าง model/offer มาแทน CONTAINS โดยเติม qty=1 เอง
@@ -195,9 +198,11 @@ Category และ GiftTier อ้างนิยามจาก schema/`priceli
 ตรวจเทียบ node properties, prefix, required/unique, edge endpoints และ edge properties กับ YAML; ตรวจจำนวนและสถานะของ JSON ทั้งสามไฟล์จาก disk โดยไม่แก้ไขไฟล์ต้นทาง. ภาพเป็น Mermaid source ใน Markdown; ไม่มีการเปลี่ยน application code, schema, database หรือ deployment
 
 Version diff: ไม่มีเอกสาร → `0.1.0b`: เพิ่ม ERD ของ product catalog, ขอบเขต CRM/transaction แยก, PK/FK, mapping JSON และข้อจำกัดที่ยังไม่พร้อม promote
+`0.1.0b` → `0.1.1b` (review pass): แก้ชนิด `ORDERED.amount` จาก integer เป็น number ตาม YAML; เพิ่มหมายเหตุ vector spaces/labels, HQL contracts, คอมเมนต์ `Version 1.0.0` ในหัวไฟล์ YAML, อ้างอิง ADR-005 และหลักฐาน `metadata.profit_gate`. ตรวจซ้ำจาก disk: schema SHA-256 ตรง; นับ records/edges/rows ของทั้งสามไฟล์ตรงตามตาราง §5 ทุกแถว; bundle ID ตัวอย่างมีจริง
 
 ## CHANGELOG
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
+| 0.1.1b | 2026-08-30 | draft | review pass: แก้ชนิด ORDERED.amount, เพิ่ม vector spaces/labels/HQL notes, อ้างอิง ADR-005, ยืนยันตัวเลข §5 จาก disk | uncommitted | Claude |
 | 0.1.0b | 2026-08-30 | draft | บันทึก ERD ตาม GenesisBlock schema 1.3.0 และสถานะ JSON exports | uncommitted | ATHER |
