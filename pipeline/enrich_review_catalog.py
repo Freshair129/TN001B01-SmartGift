@@ -183,11 +183,67 @@ def main():
 
         print(f"Package {b['bundle_code']} ({b['name']}): Selling=฿{total_sell:,.2f}, Cost=฿{b['landed_cost']:,.2f}, Profit=฿{b['gross_profit']:,.2f} (Meets Min ฿20k: {b['meets_min_profit_threshold']})")
 
-    # 5. Save updated master data
+    # 5. Enrich ProductMaster, ProductFamily, and Aliases for all products and offers
+    print("\n=== Step 3: Enriching ProductMaster, ProductFamily, and Aliases ===")
+    pm_mapping = {
+        'PM-TMB': {'product_master': 'PROD-MASTER-TMB-01', 'product_family': 'PF-DRINKWARE', 'aliases': ['แก้วทัมเบลอร์', 'แก้วเก็บความเย็น', 'Thermal Tumbler', 'SUS316 Tumbler', 'กระบอกน้ำสแตนเลส', 'TMB-316', 'Tumbler SUS316']},
+        'PM-SPK': {'product_master': 'PROD-MASTER-SPK-01', 'product_family': 'PF-AUDIO-TECH', 'aliases': ['ลำโพงบลูทูธ', 'ลำโพงไร้สาย', 'Bluetooth Speaker', 'Dual Stereo Speaker', 'ลำโพงพกพา 5W', 'SPK-5W', 'Wireless Speaker']},
+        'PM-PB10K': {'product_master': 'PROD-MASTER-PB10K-01', 'product_family': 'PF-POWER-CHARGING', 'aliases': ['พาวเวอร์แบงก์', 'แบตสำรอง', 'MagSafe Powerbank', 'Wireless Powerbank 10000mAh', 'ที่ชาร์จไร้สาย', 'PB10K', 'Magnetic Battery Pack']},
+        'PM-CFMUG': {'product_master': 'PROD-MASTER-CFMUG-01', 'product_family': 'PF-DRINKWARE', 'aliases': ['แก้วกาแฟ', 'แก้วเก็บความร้อน', 'Coffee Mug', 'Stainless Coffee Mug', 'แก้วกาแฟพกพา 316', 'CF-MUG', 'Travel Coffee Mug']},
+        'PM-UMB': {'product_master': 'PROD-MASTER-UMB-01', 'product_family': 'PF-OUTDOOR-LIFESTYLE', 'aliases': ['ร่มพับ', 'ร่มกันแดด', 'Auto Umbrella', 'UPF50+ Umbrella', 'ร่มพับ 6 ตอน', 'UMB-UPF50', 'Sun & Rain Umbrella']},
+        'PM-MSG': {'product_master': 'PROD-MASTER-MSG-01', 'product_family': 'PF-WELLNESS-HEALTH', 'aliases': ['เครื่องนวดคอ', 'เครื่องนวดพกพา', 'Neck Massager', 'Pulse Massager', 'เครื่องนวดประคบร้อน', 'MSG-PULSE', 'Cervical Massager']},
+        'PM-NB': {'product_master': 'PROD-MASTER-NB-01', 'product_family': 'PF-SMART-OFFICE', 'aliases': ['สมุดโน้ตพาวเวอร์แบงก์', 'สมุดหนังชาร์จไร้สาย', 'Powerbank Notebook', 'Smart PU Notebook', 'สมุดอัจฉริยะ', 'NB-PWR', 'Wireless Charging Notebook']},
+        'PM-PEN': {'product_master': 'PROD-MASTER-PEN-01', 'product_family': 'PF-CRAFT-STATIONERY', 'aliases': ['ปากกาไม้แท้', 'ปากกาวอลนัท', 'Walnut Brass Pen', 'Gel Pen', 'ปากกาหัวทองเหลือง', 'PEN-WOOD', 'Executive Signature Pen']},
+        'PM-MUG-HEAT': {'product_master': 'PROD-MASTER-MUG-HEAT-01', 'product_family': 'PF-DRINKWARE', 'aliases': ['แก้วอุ่นร้อน', 'ชุดแก้วอุ่น 55 องศา', 'Heating Mug', 'Ceramic Mug 55C', 'แท่นอุ่นแก้ว', 'MUG-HEAT', 'Constant Temperature Cup']},
+        'PM-FLASH': {'product_master': 'PROD-MASTER-FLASH-01', 'product_family': 'PF-STORAGE-TECH', 'aliases': ['แฟลชไดรฟ์', 'แฟลชไดร์ฟโลหะ', 'Metal Flash Drive', 'Dual USB Flash', 'Type-C USB Drive', 'FLASH-DUAL', 'OTG Thumb Drive']},
+        'PM-BOTTLE-LED': {'product_master': 'PROD-MASTER-BOTTLE-LED-01', 'product_family': 'PF-DRINKWARE', 'aliases': ['กระบอกน้ำ LED', 'กระบอกน้ำบอกอุณหภูมิ', 'LED Thermos Bottle', 'Smart Temperature Flask', 'กระบอกน้ำสุญญากาศ LED', 'BOTTLE-LED', 'Smart Thermos']},
+        'PM-CUTLERY': {'product_master': 'PROD-MASTER-CUTLERY-01', 'product_family': 'PF-ECO-LIFESTYLE', 'aliases': ['ชุดช้อนส้อมพกพา', 'ช้อนส้อมสแตนเลส', 'Portable Cutlery Set', 'Stainless Flatware', 'ชุดช้อนส้อมฟู้ดเกรด', 'CUTLERY-SS', 'Travel Dining Set']},
+        'PM-TEA-INF': {'product_master': 'PROD-MASTER-TEA-INF-01', 'product_family': 'PF-DRINKWARE', 'aliases': ['กระบอกชงชา', 'แก้วชงชาสองชั้น', 'Tea Infuser Bottle', 'Borosilicate Tea Bottle', 'ขวดชงชาแยกกาก', 'TEA-INF', 'Double Wall Tea Tumbler']},
+        'PM-AROMA': {'product_master': 'PROD-MASTER-AROMA-01', 'product_family': 'PF-WELLNESS-HEALTH', 'aliases': ['เครื่องพ่นอโรมา', 'เครื่องกระจายกลิ่น', 'Flame Aroma Diffuser', 'Ultrasonic Diffuser', 'เครื่องพ่นไอน้ำเปลวไฟ', 'AROMA-DIFF', 'Essential Oil Humidifier']},
+        'PM-FAN': {'product_master': 'PROD-MASTER-FAN-01', 'product_family': 'PF-ECO-LIFESTYLE', 'aliases': ['พัดลมพกพา', 'พัดลมมือถือ', 'Mini Handheld Fan', 'Digital Display Fan', 'พัดลมดิจิทัล 4000mAh', 'FAN-4000', 'Portable Rechargeable Fan']},
+        'PM-DESK-MAT': {'product_master': 'PROD-MASTER-DESK-MAT-01', 'product_family': 'PF-SMART-OFFICE', 'aliases': ['แผ่นรองโต๊ะชาร์จไร้สาย', 'แผ่นรองโต๊ะหนัง', 'Vegan Desk Mat', 'Wireless Charging Desk Pad', 'แผ่นรองเมาส์ขนาดใหญ่', 'DESK-MAT', 'Executive Desk Blotter']}
+    }
+
+    for p in master_data.get("canonical_products", []):
+        code = p.get("code")
+        mapping = pm_mapping.get(code, {
+            "product_master": f"PROD-MASTER-{code}",
+            "product_family": "PF-GENERAL",
+            "aliases": [p.get("name_th", ""), p.get("name_en", ""), code]
+        })
+        p["product_master"] = mapping["product_master"]
+        p["product_family"] = mapping["product_family"]
+        p["aliases"] = mapping["aliases"]
+
+    theme_family_map = {
+        "eco-friendly": "PF-ECO-SUSTAINABLE",
+        "executive-smart-tech": "PF-EXECUTIVE-TECH",
+        "classic-oriental": "PF-CLASSIC-CRAFT",
+        "novelty-self-care": "PF-NOVELTY-WELLNESS",
+        "novelty-lifestyle": "PF-NOVELTY-WELLNESS"
+    }
+
+    for o in master_data.get("catalog_offers", []):
+        theme_slug = o.get("interest_theme_slug", "general")
+        code = o.get("offer_code", "")
+        sup = o.get("supplier_code", "")
+        name = o.get("name", "")
+        
+        o["product_master"] = f"OFFER-MASTER-{code}"
+        o["product_family"] = theme_family_map.get(theme_slug, "PF-CORPORATE-GIFT")
+        
+        aliases = [code, name]
+        if sup:
+            aliases.append(sup)
+        if o.get("interest_theme"):
+            aliases.append(o["interest_theme"])
+        o["aliases"] = [a for a in aliases if a]
+
+    # 6. Save updated master data
     with open(MASTER_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(master_data, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ Successfully updated {MASTER_JSON_PATH} with review dataset enrichment!")
+    print(f"\n✅ Successfully updated {MASTER_JSON_PATH} with review dataset enrichment and ProductMaster metadata!")
 
 if __name__ == "__main__":
     main()
