@@ -1,22 +1,22 @@
 {
   "artifact": "offline_customer_catalog",
-  "catalog_version": "v1.3.0-2026.08.30-f31f38cf",
-  "snapshot_sha256": "a9fbe53c2f8dbd551f889164c4b95f58e250c2a77ba23180430a4eb851c65333",
-  "generated_at": "2026-08-30T15:48:29.899089+00:00",
+  "catalog_version": "v1.3.0-2026.08.30-23c4c524",
+  "snapshot_sha256": "94467212e2500bd16aa251316390b33ed4b3f6f033b792804a1729ee925e742a",
+  "generated_at": "2026-08-30T18:27:25.438319+00:00",
   "pages": 51,
   "embedded_images": 154,
   "size_bytes": {
-    "html": 1958797,
-    "pdf": 10506912,
-    "zip": 11448200
+    "html": 1958799,
+    "pdf": 10506872,
+    "zip": 11448159
   },
   "size_budget_bytes": 26214400,
   "font_strategy": "embedded Sarabun OFL subset (woff, weights 400/700) + system Thai fallback stack",
   "sources": {
     "pricelist_public": {
       "path": "/data/pricelist_public.json",
-      "size_bytes": 1400871,
-      "sha256": "f31f38cf34b7a6f92a8d866aa56971d811797943a065d0e0f84484891e03d597"
+      "size_bytes": 1453533,
+      "sha256": "23c4c524afdcb27389217b648466c1c778548be14672f983b88f63386d9b2432"
     },
     "catalog_media": {
       "path": "/data/catalog_media.json",
@@ -26,13 +26,13 @@
   },
   "boundary_scan": "passed (forbidden markers + external references)",
   "deliverables": [
-    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.html",
-    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.pdf",
-    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.zip"
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-23c4c524.html",
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-23c4c524.pdf",
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-23c4c524.zip"
   ],
   "sha256": {
-    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.html": "788ff4a448f0c720b3b12ed06526b2abff6f27ef1167df079f98e7c8846cb25f",
-    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.pdf": "035faa89f43b247c0e58697f9b676e607764f943e52a35c36665333a24a98922",
-    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.zip": "5f7c8f298920b01ec786df03430bf5dda7e443a7f96009c0349e3e6258bf2a48"
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-23c4c524.html": "5ab0019383c063ccf77ae3251116a7293c0e24161e85713159bd184e8e341cc1",
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-23c4c524.pdf": "24ef46dfa2459669069107b484c980f44c5656cc297fda4721b4cd5ca7e2b433",
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-23c4c524.zip": "56fef011ca52da6bbde71bff0b65d10e32390a6f458c6e7c70c4d85ffb315225"
   }
 }

@@ -36,8 +36,8 @@
       },
       {
         "path": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
-        "size_bytes": 854479,
+        "sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
+        "size_bytes": 854047,
         "scope": "catalog_srp_and_labels"
       },
       {
@@ -150,6 +150,19 @@
       "models_without_type": 50,
       "missing_prices": 102,
       "missing_or_nonpositive_qty_tiers": 118,
+      "priced_without_qty_tier_count": 16,
+      "non_standard_qty_tier_count": 5,
+      "standard_qty_tiers": [
+        1,
+        10,
+        20,
+        50,
+        100,
+        300,
+        500,
+        1000
+      ],
+      "offers_with_confirmed_price_count": 122,
       "priced_offer_count": 221,
       "verified_bom_edges": 0,
       "proposed_bom_edges": 17,
@@ -74286,7 +74299,7 @@
       "quote_ready": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TDD03-2",
         "kind": "canonical_portfolio"
       },
@@ -74346,7 +74359,7 @@
       "quote_ready": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TGC06-4",
         "kind": "canonical_portfolio"
       },
@@ -74406,7 +74419,7 @@
       "quote_ready": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TMK0215",
         "kind": "canonical_portfolio"
       },
@@ -74466,7 +74479,7 @@
       "quote_ready": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TWL01-8",
         "kind": "canonical_portfolio"
       },
@@ -74513,7 +74526,7 @@
       "quote_ready": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-UMB,PM-BOTTLE-LED,PM-TMB",
         "kind": "derived_from_canonical_products"
       },
@@ -74554,7 +74567,7 @@
       "quote_ready": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-TMB,PM-BOTTLE-LED",
         "kind": "derived_from_canonical_products"
       },
@@ -74745,7 +74758,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "christmas_2026:reach-operations",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -74904,7 +74917,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "christmas_2026:select-mid-management",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -75054,7 +75067,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "christmas_2026:signature-c-level",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -75146,7 +75159,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "christmas_2026:bespoke",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -75395,7 +75408,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "christmas_2026-corporate-mix",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -75523,7 +75536,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "new_year_2027:reach-operations",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -75672,7 +75685,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "new_year_2027:select-mid-management",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -75821,7 +75834,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "new_year_2027:signature-c-level",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -75913,7 +75926,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "new_year_2027:bespoke",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -76157,7 +76170,7 @@
         "kind": "approved_seasonal_design",
         "definition_key": "new_year_2027-corporate-mix",
         "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+        "catalog_source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
       },
       "entity_type": "BundleOffer",
       "contract_validation": {
@@ -95400,7 +95413,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "SG-OFFER-XMAS-2026-REACH-OPS:PM-UMB",
         "kind": "canonical_offer_component"
       },
@@ -95438,7 +95451,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "SG-OFFER-XMAS-2026-REACH-OPS:PM-BOTTLE-LED",
         "kind": "canonical_offer_component"
       },
@@ -95476,7 +95489,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "SG-OFFER-XMAS-2026-REACH-OPS:PM-TMB",
         "kind": "canonical_offer_component"
       },
@@ -95514,7 +95527,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TDD03-2:PM-UMB",
         "kind": "canonical_offer_component"
       },
@@ -95552,7 +95565,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TDD03-2:PM-BOTTLE-LED",
         "kind": "canonical_offer_component"
       },
@@ -95590,7 +95603,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TDD03-2:PM-TMB",
         "kind": "canonical_offer_component"
       },
@@ -95628,7 +95641,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TGC06-4:PM-NB",
         "kind": "canonical_offer_component"
       },
@@ -95666,7 +95679,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TGC06-4:PM-PB10K",
         "kind": "canonical_offer_component"
       },
@@ -95704,7 +95717,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TGC06-4:PM-PEN",
         "kind": "canonical_offer_component"
       },
@@ -95737,7 +95750,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "SG-OFFER-NY-2027-REACH-OPS:PM-TMB",
         "kind": "canonical_offer_component"
       },
@@ -95775,7 +95788,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "SG-OFFER-NY-2027-REACH-OPS:PM-BOTTLE-LED",
         "kind": "canonical_offer_component"
       },
@@ -95813,7 +95826,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TWL01-8:PM-AROMA",
         "kind": "canonical_offer_component"
       },
@@ -95846,7 +95859,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TWL01-8:PM-CFMUG",
         "kind": "canonical_offer_component"
       },
@@ -95884,7 +95897,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TWL01-8:PM-MSG",
         "kind": "canonical_offer_component"
       },
@@ -95922,7 +95935,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TMK0215:PM-PEN",
         "kind": "canonical_offer_component"
       },
@@ -95955,7 +95968,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TMK0215:PM-FLASH",
         "kind": "canonical_offer_component"
       },
@@ -95993,7 +96006,7 @@
       "verified": false,
       "provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "TMK0215:PM-TEA-INF",
         "kind": "canonical_offer_component"
       },
@@ -96143,7 +96156,8 @@
       "flow_account_name": "เครื่องนวดคอ + เครื่องนวดตา TBH11-2",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -97348,7 +97362,8 @@
       "flow_account_name": "ชุดของขวัญในกล่องพรีเมี่ยม  1 ชิ้น Model : TTT30-1",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -97376,7 +97391,8 @@
       "flow_account_name": "ไดร์เป่าผม with concentrator nozzle + Comb TCC00-2",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -97430,7 +97446,8 @@
       "flow_account_name": "Light เครื่องทำความชื้น + ร่ม+เครื่องนวดคอ+ขวดน้ำสูญญากาศ TSQ06-4(P-16)",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -98862,7 +98879,9 @@
       "flow_account_code": "TYD0262(P-2D)-14",
       "flow_account_name": "เครื่องรีดผ้าแบบพกพา + เครื่องนวดคอ TYD0262(P-2D)",
       "export_date": "2026-06-21",
-      "data_quality_issues": [],
+      "data_quality_issues": [
+        "non_standard_qty_tier"
+      ],
       "quote_ready": false,
       "provenance": {
         "source_file": "price-boss/sql/smartgiftpricelist.postgres.sql",
@@ -99336,7 +99355,9 @@
       "flow_account_code": "TYD0262(P-2D)-11",
       "flow_account_name": "เครื่องรีดผ้าแบบพกพา + เครื่องนวดคอ TYD0262(P-2D)",
       "export_date": "2026-06-21",
-      "data_quality_issues": [],
+      "data_quality_issues": [
+        "non_standard_qty_tier"
+      ],
       "quote_ready": false,
       "provenance": {
         "source_file": "price-boss/sql/smartgiftpricelist.postgres.sql",
@@ -100265,7 +100286,8 @@
       "flow_account_name": "ไดร์เป่าผม with concentrator nozzle + ร่มอัตโนมัติ TCS00-2",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -101085,7 +101107,8 @@
       "flow_account_name": "ชุดผ้าปิดตา + เครื่องนวดคอ Model:TYZ02-2",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -103255,7 +103278,8 @@
       "flow_account_name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน  TFB00-2",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -104237,7 +104261,8 @@
       "flow_account_name": "แท่นชาร์จไร้สาย (wireless) 6 in 1 TBH04-1(P-02)",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -105638,7 +105663,8 @@
       "flow_account_name": "ขวดน้ำสูญญากาศ มีหน้าจอแสดงอุณหภูมิ + Smart bracelet + หูฟังไร้สาย TBH03-3",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -106461,7 +106487,8 @@
       "flow_account_name": "ชุดของขวัญในกล่องพรีเมี่ยม 6 ชิ้นพร้อมสกรีน Model : TCZ0033",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -106870,7 +106897,9 @@
       "flow_account_code": "TYD0262(P-2D)-12",
       "flow_account_name": "เครื่องรีดผ้าแบบพกพา + เครื่องนวดคอ TYD0262(P-2D)",
       "export_date": "2026-06-21",
-      "data_quality_issues": [],
+      "data_quality_issues": [
+        "non_standard_qty_tier"
+      ],
       "quote_ready": false,
       "provenance": {
         "source_file": "price-boss/sql/smartgiftpricelist.postgres.sql",
@@ -107157,7 +107186,8 @@
       "flow_account_name": "ชุดของขวัญในกล่องพรีเมี่ยม 2 ชิ้นพร้อมสกรีน  TSB02-2",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -108375,7 +108405,9 @@
       "flow_account_code": "TDS07-2(P-02)-5012",
       "flow_account_name": "แปรงสีฟันไฟฟ้า + เครื่องทำความสะอาดภายในช่องปาก TDS07-2(P-02)",
       "export_date": "2026-06-21",
-      "data_quality_issues": [],
+      "data_quality_issues": [
+        "non_standard_qty_tier"
+      ],
       "quote_ready": false,
       "provenance": {
         "source_file": "price-boss/sql/smartgiftpricelist.postgres.sql",
@@ -111498,7 +111530,8 @@
       "flow_account_name": "ชุดของขวัญในกล่องพรีเมี่ยม Model : TCS40-3",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -111945,7 +111978,8 @@
       "flow_account_name": "ร่ม + ขวดน้ำสูญญากาศ + ปากกา + สมุดโน๊ต A5  TPH00-4(P-06)",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -112285,7 +112319,8 @@
       "flow_account_name": "สายชาร์จ + wireless หูฟังไร้สาย + ที่ชาร์จแบตในรถ  + แฟลชไดร์ฟ  + เพาเวอร์แบงค์ gift set TCZ003 (P-04)",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -112940,7 +112975,8 @@
       "flow_account_name": "เครื่องรีดผ้าแบบพกพา + เครื่องนวดคอ+ เครื่องนวดตา + Vacuum Cup TYD0364(P-2D)",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -113153,7 +113189,8 @@
       "flow_account_name": "ถ้วยอุ่นพร้อมช้อน + flower + ขวดน้ำสูญญากาศ TWR21-7 (P-PT)",
       "export_date": "2026-06-21",
       "data_quality_issues": [
-        "missing_or_nonpositive_qty_tier"
+        "missing_or_nonpositive_qty_tier",
+        "priced_without_qty_tier"
       ],
       "quote_ready": false,
       "provenance": {
@@ -113452,7 +113489,9 @@
       "flow_account_code": "TYD0262(P-2D)-13",
       "flow_account_name": "เครื่องรีดผ้าแบบพกพา + เครื่องนวดคอ TYD0262(P-2D)",
       "export_date": "2026-06-21",
-      "data_quality_issues": [],
+      "data_quality_issues": [
+        "non_standard_qty_tier"
+      ],
       "quote_ready": false,
       "provenance": {
         "source_file": "price-boss/sql/smartgiftpricelist.postgres.sql",
@@ -160593,7 +160632,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-AROMA"
       }
     },
@@ -160646,7 +160685,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-BOTTLE-LED"
       }
     },
@@ -160699,7 +160738,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-CFMUG"
       }
     },
@@ -160752,7 +160791,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-CUTLERY"
       }
     },
@@ -160805,7 +160844,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-DESK-MAT"
       }
     },
@@ -160858,7 +160897,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-FAN"
       }
     },
@@ -160911,7 +160950,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-FLASH"
       }
     },
@@ -160964,7 +161003,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-MSG"
       }
     },
@@ -161017,7 +161056,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-MUG-HEAT"
       }
     },
@@ -161070,7 +161109,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-NB"
       }
     },
@@ -161123,7 +161162,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-PB10K"
       }
     },
@@ -161176,7 +161215,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-PEN"
       }
     },
@@ -161229,7 +161268,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-SPK"
       }
     },
@@ -161282,7 +161321,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-TEA-INF"
       }
     },
@@ -161335,7 +161374,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-TMB"
       }
     },
@@ -161388,7 +161427,7 @@
       "factory_provenance": null,
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
         "source_key": "PM-UMB"
       }
     }
@@ -161450,7 +161489,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-AROMA",
           "qty": 1
         },
@@ -161517,7 +161556,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-AROMA",
           "qty": 10
         },
@@ -161584,7 +161623,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-AROMA",
           "qty": 20
         },
@@ -161651,7 +161690,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-AROMA",
           "qty": 50
         },
@@ -161718,7 +161757,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-AROMA",
           "qty": 100
         },
@@ -161785,7 +161824,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-AROMA",
           "qty": 300
         },
@@ -161852,7 +161891,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-AROMA",
           "qty": 500
         },
@@ -161919,7 +161958,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-AROMA",
           "qty": 1000
         },
@@ -161986,7 +162025,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-BOTTLE-LED",
           "qty": 1
         },
@@ -162053,7 +162092,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-BOTTLE-LED",
           "qty": 10
         },
@@ -162120,7 +162159,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-BOTTLE-LED",
           "qty": 20
         },
@@ -162187,7 +162226,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-BOTTLE-LED",
           "qty": 50
         },
@@ -162254,7 +162293,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-BOTTLE-LED",
           "qty": 100
         },
@@ -162321,7 +162360,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-BOTTLE-LED",
           "qty": 300
         },
@@ -162388,7 +162427,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-BOTTLE-LED",
           "qty": 500
         },
@@ -162455,7 +162494,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-BOTTLE-LED",
           "qty": 1000
         },
@@ -162522,7 +162561,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CFMUG",
           "qty": 1
         },
@@ -162589,7 +162628,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CFMUG",
           "qty": 10
         },
@@ -162656,7 +162695,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CFMUG",
           "qty": 20
         },
@@ -162723,7 +162762,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CFMUG",
           "qty": 50
         },
@@ -162790,7 +162829,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CFMUG",
           "qty": 100
         },
@@ -162857,7 +162896,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CFMUG",
           "qty": 300
         },
@@ -162924,7 +162963,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CFMUG",
           "qty": 500
         },
@@ -162991,7 +163030,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CFMUG",
           "qty": 1000
         },
@@ -163058,7 +163097,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CUTLERY",
           "qty": 1
         },
@@ -163125,7 +163164,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CUTLERY",
           "qty": 10
         },
@@ -163192,7 +163231,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CUTLERY",
           "qty": 20
         },
@@ -163259,7 +163298,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CUTLERY",
           "qty": 50
         },
@@ -163326,7 +163365,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CUTLERY",
           "qty": 100
         },
@@ -163393,7 +163432,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CUTLERY",
           "qty": 300
         },
@@ -163460,7 +163499,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CUTLERY",
           "qty": 500
         },
@@ -163527,7 +163566,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-CUTLERY",
           "qty": 1000
         },
@@ -163594,7 +163633,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-DESK-MAT",
           "qty": 1
         },
@@ -163661,7 +163700,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-DESK-MAT",
           "qty": 10
         },
@@ -163728,7 +163767,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-DESK-MAT",
           "qty": 20
         },
@@ -163795,7 +163834,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-DESK-MAT",
           "qty": 50
         },
@@ -163862,7 +163901,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-DESK-MAT",
           "qty": 100
         },
@@ -163929,7 +163968,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-DESK-MAT",
           "qty": 300
         },
@@ -163996,7 +164035,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-DESK-MAT",
           "qty": 500
         },
@@ -164063,7 +164102,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-DESK-MAT",
           "qty": 1000
         },
@@ -164130,7 +164169,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FAN",
           "qty": 1
         },
@@ -164197,7 +164236,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FAN",
           "qty": 10
         },
@@ -164264,7 +164303,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FAN",
           "qty": 20
         },
@@ -164331,7 +164370,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FAN",
           "qty": 50
         },
@@ -164398,7 +164437,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FAN",
           "qty": 100
         },
@@ -164465,7 +164504,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FAN",
           "qty": 300
         },
@@ -164532,7 +164571,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FAN",
           "qty": 500
         },
@@ -164599,7 +164638,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FAN",
           "qty": 1000
         },
@@ -164666,7 +164705,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FLASH",
           "qty": 1
         },
@@ -164733,7 +164772,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FLASH",
           "qty": 10
         },
@@ -164800,7 +164839,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FLASH",
           "qty": 20
         },
@@ -164867,7 +164906,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FLASH",
           "qty": 50
         },
@@ -164934,7 +164973,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FLASH",
           "qty": 100
         },
@@ -165001,7 +165040,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FLASH",
           "qty": 300
         },
@@ -165068,7 +165107,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FLASH",
           "qty": 500
         },
@@ -165135,7 +165174,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-FLASH",
           "qty": 1000
         },
@@ -165202,7 +165241,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MSG",
           "qty": 1
         },
@@ -165269,7 +165308,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MSG",
           "qty": 10
         },
@@ -165336,7 +165375,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MSG",
           "qty": 20
         },
@@ -165403,7 +165442,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MSG",
           "qty": 50
         },
@@ -165470,7 +165509,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MSG",
           "qty": 100
         },
@@ -165537,7 +165576,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MSG",
           "qty": 300
         },
@@ -165604,7 +165643,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MSG",
           "qty": 500
         },
@@ -165671,7 +165710,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MSG",
           "qty": 1000
         },
@@ -165738,7 +165777,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MUG-HEAT",
           "qty": 1
         },
@@ -165805,7 +165844,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MUG-HEAT",
           "qty": 10
         },
@@ -165872,7 +165911,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MUG-HEAT",
           "qty": 20
         },
@@ -165939,7 +165978,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MUG-HEAT",
           "qty": 50
         },
@@ -166006,7 +166045,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MUG-HEAT",
           "qty": 100
         },
@@ -166073,7 +166112,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MUG-HEAT",
           "qty": 300
         },
@@ -166140,7 +166179,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MUG-HEAT",
           "qty": 500
         },
@@ -166207,7 +166246,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-MUG-HEAT",
           "qty": 1000
         },
@@ -166274,7 +166313,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-NB",
           "qty": 1
         },
@@ -166341,7 +166380,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-NB",
           "qty": 10
         },
@@ -166408,7 +166447,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-NB",
           "qty": 20
         },
@@ -166475,7 +166514,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-NB",
           "qty": 50
         },
@@ -166542,7 +166581,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-NB",
           "qty": 100
         },
@@ -166609,7 +166648,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-NB",
           "qty": 300
         },
@@ -166676,7 +166715,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-NB",
           "qty": 500
         },
@@ -166743,7 +166782,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-NB",
           "qty": 1000
         },
@@ -166810,7 +166849,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PB10K",
           "qty": 1
         },
@@ -166877,7 +166916,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PB10K",
           "qty": 10
         },
@@ -166944,7 +166983,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PB10K",
           "qty": 20
         },
@@ -167011,7 +167050,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PB10K",
           "qty": 50
         },
@@ -167078,7 +167117,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PB10K",
           "qty": 100
         },
@@ -167145,7 +167184,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PB10K",
           "qty": 300
         },
@@ -167212,7 +167251,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PB10K",
           "qty": 500
         },
@@ -167279,7 +167318,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PB10K",
           "qty": 1000
         },
@@ -167346,7 +167385,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PEN",
           "qty": 1
         },
@@ -167413,7 +167452,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PEN",
           "qty": 10
         },
@@ -167480,7 +167519,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PEN",
           "qty": 20
         },
@@ -167547,7 +167586,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PEN",
           "qty": 50
         },
@@ -167614,7 +167653,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PEN",
           "qty": 100
         },
@@ -167681,7 +167720,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PEN",
           "qty": 300
         },
@@ -167748,7 +167787,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PEN",
           "qty": 500
         },
@@ -167815,7 +167854,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-PEN",
           "qty": 1000
         },
@@ -167882,7 +167921,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-SPK",
           "qty": 1
         },
@@ -167949,7 +167988,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-SPK",
           "qty": 10
         },
@@ -168016,7 +168055,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-SPK",
           "qty": 20
         },
@@ -168083,7 +168122,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-SPK",
           "qty": 50
         },
@@ -168150,7 +168189,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-SPK",
           "qty": 100
         },
@@ -168217,7 +168256,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-SPK",
           "qty": 300
         },
@@ -168284,7 +168323,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-SPK",
           "qty": 500
         },
@@ -168351,7 +168390,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-SPK",
           "qty": 1000
         },
@@ -168418,7 +168457,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TEA-INF",
           "qty": 1
         },
@@ -168485,7 +168524,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TEA-INF",
           "qty": 10
         },
@@ -168552,7 +168591,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TEA-INF",
           "qty": 20
         },
@@ -168619,7 +168658,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TEA-INF",
           "qty": 50
         },
@@ -168686,7 +168725,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TEA-INF",
           "qty": 100
         },
@@ -168753,7 +168792,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TEA-INF",
           "qty": 300
         },
@@ -168820,7 +168859,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TEA-INF",
           "qty": 500
         },
@@ -168887,7 +168926,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TEA-INF",
           "qty": 1000
         },
@@ -168954,7 +168993,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TMB",
           "qty": 1
         },
@@ -169021,7 +169060,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TMB",
           "qty": 10
         },
@@ -169088,7 +169127,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TMB",
           "qty": 20
         },
@@ -169155,7 +169194,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TMB",
           "qty": 50
         },
@@ -169222,7 +169261,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TMB",
           "qty": 100
         },
@@ -169289,7 +169328,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TMB",
           "qty": 300
         },
@@ -169356,7 +169395,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TMB",
           "qty": 500
         },
@@ -169423,7 +169462,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-TMB",
           "qty": 1000
         },
@@ -169490,7 +169529,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-UMB",
           "qty": 1
         },
@@ -169557,7 +169596,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-UMB",
           "qty": 10
         },
@@ -169624,7 +169663,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-UMB",
           "qty": 20
         },
@@ -169691,7 +169730,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-UMB",
           "qty": 50
         },
@@ -169758,7 +169797,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-UMB",
           "qty": 100
         },
@@ -169825,7 +169864,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-UMB",
           "qty": 300
         },
@@ -169892,7 +169931,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-UMB",
           "qty": 500
         },
@@ -169959,7 +169998,7 @@
       "provenance": {
         "srp": {
           "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-          "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+          "source_sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541",
           "source_key": "PM-UMB",
           "qty": 1000
         },

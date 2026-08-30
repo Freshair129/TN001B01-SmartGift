@@ -114,9 +114,18 @@ def image_data_uri(rel_url, max_dim=IMG_MAX_DIM):
 
 
 def ladder_from_prices(price_rows, offer_code, limit=4):
+    # Exclude rows the exporter itself flags as unreliable: price_missing
+    # (no real price — unit_price is forced to 0) and non_standard_qty_tier
+    # (a quantity outside FlowAccount's normal ladder, e.g. a one-off 5012 or
+    # 11-14 that reads as a data-entry artifact rather than a real bulk tier —
+    # see pipeline/export_pricelist_master.py's _standard_qty_tiers). Neither
+    # is corrected or guessed at here; they are simply not shown to customers.
     rows = sorted(
         (r for r in price_rows
-         if r["offer_code"] == offer_code and r.get("qty_tier") and (r.get("unit_price") or 0) > 0),
+         if r["offer_code"] == offer_code and r.get("qty_tier")
+         and not r.get("price_missing")
+         and "non_standard_qty_tier" not in (r.get("data_quality_issues") or [])
+         and (r.get("unit_price") or 0) > 0),
         key=lambda r: r["qty_tier"],
     )
     return [{"qty": r["qty_tier"], "unit_price": r["unit_price"]} for r in rows[:limit]]

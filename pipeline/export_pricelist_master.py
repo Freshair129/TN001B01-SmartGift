@@ -5,6 +5,7 @@ import hashlib
 import json
 import math
 import os
+from collections import Counter
 from pathlib import Path
 import re
 import sqlite3
@@ -59,6 +60,15 @@ FACTORY_TABLE_COLUMNS = {
 }
 EXPECTED_FACTORY_COUNTS = {"catalogs": 2, "products": 1087}
 SRP_QTY_TIERS = (1, 10, 20, 50, 100, 300, 500, 1000)
+# A smartgift_price.qty_tier value counts as part of FlowAccount's normal
+# group-pricing ladder if it is one of the codebase's own declared
+# meaningful quantities (SRP_QTY_TIERS) or if it recurs at least this many
+# times across the raw table — computed from this run's own rows, not a
+# hardcoded snapshot, so a genuinely new ladder point is recognized rather
+# than perpetually flagged. A one-off value (e.g. a single row with an
+# unrepeated, non-canonical qty_tier) reads as a probable FlowAccount
+# data-entry artifact — flagged for human review, never altered or dropped.
+MIN_STANDARD_TIER_OCCURRENCES = 5
 JSON_FIELDS = {"aliases_th", "aliases_en", "offer_codes", "colors", "price_tiers", "source_ref"}
 PACKAGE_STATUSES = {"draft", "mapping_pending", "cost_pending", "missing_inputs", "below_minimum", "pass", "approved", "rejected"}
 INSERT = re.compile(r"INSERT INTO (\w+)\s*\(([^)]+)\)\s*VALUES\s*\((.*?)\)\s*(?:ON CONFLICT \(\w+\) DO NOTHING\s*)?;", re.S)
@@ -496,6 +506,17 @@ def _package_missing_inputs(*, offer, target_recipients=None,
     if target_recipients is None:
         missing.append("target_recipients")
     return tuple(missing)
+
+
+def _standard_qty_tiers(price_rows):
+    """Quantity tiers that are commercially plausible for smartgift_price:
+    the codebase's own declared meaningful quantities (SRP_QTY_TIERS) plus
+    whatever else recurs often enough in this run's raw rows to be a real
+    FlowAccount group-ladder point rather than a one-off data-entry slip."""
+    counts = Counter(row["qty_tier"] for row in price_rows
+                     if row["qty_tier"] is not None and row["qty_tier"] > 0)
+    frequent = {tier for tier, count in counts.items() if count >= MIN_STANDARD_TIER_OCCURRENCES}
+    return frozenset(SRP_QTY_TIERS) | frequent
 
 
 def _cost_mapping_entry(cost_mapping, product_code):
@@ -1197,7 +1218,8 @@ def build_public_projection(data):
             "name_en", "product_family", "category_slug", "unit_srp_qty1"))
             for row in data["bom"]],
         "prices": [pick(row, (
-            "id", "offer_code", "qty_tier", "unit_price", "unit_price_with_vat"))
+            "id", "offer_code", "qty_tier", "unit_price", "unit_price_with_vat",
+            "price_missing", "data_quality_issues"))
             for row in data["prices"]],
         "srp_reference_products": [pick(row, (
             "product_code", "product_master_id", "product_family", "category_slug", "name_th",
@@ -1352,13 +1374,29 @@ def build_master(root=ROOT):
                       source_price_tiers=row["price_tiers"],
                       provenance=_provenance("smartgift_offer", row, row["code"]))
         data["catalog_offers"].append(_contract_check(record, "CatalogOffer", schema))
+    standard_qty_tiers = _standard_qty_tiers(tables["smartgift_price"])
     for row in sorted(tables["smartgift_price"], key=lambda row: row["id"]):
         record = {key: row[key] for key in TABLE_COLUMNS["smartgift_price"].split() if key != "source_ref"}
+        price_present = not row["price_missing"] and row["unit_price"] is not None and row["unit_price"] > 0
+        tier_present = row["qty_tier"] is not None and row["qty_tier"] > 0
         reasons = []
-        if row["price_missing"] or row["unit_price"] is None or row["unit_price"] <= 0:
+        if not price_present:
             reasons.append("missing_or_nonpositive_price")
-        if row["qty_tier"] is None or row["qty_tier"] <= 0:
+        if not tier_present:
             reasons.append("missing_or_nonpositive_qty_tier")
+        if price_present and not tier_present:
+            # A real price with no ladder position — most likely a
+            # price_list_group flat rate (see flow_account_code/name), not a
+            # missing quantity tier. Distinct from a genuinely blank row so
+            # nothing filtering on "missing qty_tier" silently drops a real
+            # price along with it (never happens automatically: this value
+            # only ever informs review, it does not change qty_tier itself).
+            reasons.append("priced_without_qty_tier")
+        if tier_present and row["qty_tier"] not in standard_qty_tiers:
+            # A positive qty_tier outside both SRP_QTY_TIERS and this run's
+            # observed FlowAccount ladder — flagged for a human to confirm
+            # with FlowAccount, never treated as invalid or corrected here.
+            reasons.append("non_standard_qty_tier")
         record.update(data_quality_issues=reasons, quote_ready=False,
                       provenance=_provenance("smartgift_price", row, row["id"]))
         data["prices"].append(record)
@@ -1379,6 +1417,19 @@ def build_master(root=ROOT):
         "models_without_type": sum(row["product_family_id"] is None for row in data["product_masters"]),
         "missing_prices": sum(row["price_missing"] for row in data["prices"]),
         "missing_or_nonpositive_qty_tiers": sum(row["qty_tier"] is None or row["qty_tier"] <= 0 for row in data["prices"]),
+        "priced_without_qty_tier_count": sum(
+            "priced_without_qty_tier" in row["data_quality_issues"] for row in data["prices"]),
+        "non_standard_qty_tier_count": sum(
+            "non_standard_qty_tier" in row["data_quality_issues"] for row in data["prices"]),
+        "standard_qty_tiers": sorted(standard_qty_tiers),
+        # Distinct offer_code with >=1 row where a real price is actually
+        # present — NOT "has a prices-table row" (a row can exist and still
+        # carry price_missing=true). Presence-of-row overstated this by 99
+        # offer_codes in an earlier read of this exact table (2026-08-30
+        # cross-session review) — this field is defined to not repeat that.
+        "offers_with_confirmed_price_count": len({
+            row["offer_code"] for row in data["prices"]
+            if not row["price_missing"] and row["unit_price"] is not None and row["unit_price"] > 0}),
         "priced_offer_count": len({row["offer_code"] for row in data["prices"]}),
         "verified_bom_edges": sum(row.get("verified") is True for row in data["bom"]),
         "proposed_bom_edges": len(data["bom"]),

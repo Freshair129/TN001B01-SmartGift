@@ -12,6 +12,7 @@ from pipeline.build_offline_catalog import (
     SIZE_BUDGET_BYTES,
     build_dataset,
     build_font_css,
+    ladder_from_prices,
     render_flipbook,
     render_pages,
     scan_offline_html,
@@ -55,6 +56,29 @@ class TestOfflineCatalogBuilder(unittest.TestCase):
         self.assertEqual(titles[1], "สารบัญ")
         self.assertEqual(titles[-1], "ติดต่อ")
         self.assertGreater(len(titles), 10)
+
+    def test_ladder_excludes_missing_and_non_standard_tiers(self):
+        rows = [
+            {"offer_code": "X", "qty_tier": 10, "unit_price": 100, "price_missing": False,
+             "data_quality_issues": []},
+            {"offer_code": "X", "qty_tier": 20, "unit_price": 90, "price_missing": False,
+             "data_quality_issues": []},
+            {"offer_code": "X", "qty_tier": None, "unit_price": 0, "price_missing": True,
+             "data_quality_issues": ["missing_or_nonpositive_price", "missing_or_nonpositive_qty_tier"]},
+            {"offer_code": "X", "qty_tier": 5012, "unit_price": 85, "price_missing": False,
+             "data_quality_issues": ["non_standard_qty_tier"]},
+        ]
+        ladder = ladder_from_prices(rows, "X")
+        self.assertEqual(ladder, [{"qty": 10, "unit_price": 100}, {"qty": 20, "unit_price": 90}])
+
+    def test_offline_dataset_sets_have_no_non_standard_tiers(self):
+        # Regression guard for the live bug found 2026-08-30: TDS07-2 and
+        # TYD0262 are customer-facing media sets whose ladder used to include
+        # a raw, unfiltered 5012/11-14 quantity tier.
+        for s in self.data["sets"]:
+            qtys = {t["qty"] for t in s["ladder"]}
+            self.assertTrue(qtys.issubset({1, 10, 20, 50, 100, 300, 500, 1000}),
+                            f"{s['code']} ladder has a non-standard qty: {qtys}")
 
     def test_sarabun_subset_embeds_and_scans_clean(self):
         font_css = build_font_css("ทดสอบภาษาไทย SmartGift 123")

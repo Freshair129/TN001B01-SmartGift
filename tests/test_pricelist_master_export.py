@@ -15,7 +15,7 @@ from pipeline.export_pricelist_master import (
     PUBLIC_OUTPUT_PATH, ROOT,
     SCHEMA_PATH, SQL_PATH, SRP_QTY_TIERS, build_master, evaluate_profit, export_master,
     build_public_projection, parse_factory_catalog, parse_snapshot, parse_values,
-    validate_master, validate_public_projection,
+    validate_master, validate_public_projection, _standard_qty_tiers,
 )
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -83,6 +83,25 @@ class TestPackageProfitGate(unittest.TestCase):
         self.assertEqual(result["status"], "missing_inputs")
         self.assertIsNone(result["profit"])
         self.assertIn("factory_identity", result["missing_inputs"])
+
+
+class TestStandardQtyTiers(unittest.TestCase):
+    def test_frequent_and_declared_tiers_are_standard_rare_ones_are_not(self):
+        rows = (
+            [{"qty_tier": 10}] * 6 + [{"qty_tier": 20}] * 6
+            + [{"qty_tier": 999}]  # a single occurrence: not frequent, not declared
+            + [{"qty_tier": 1}]    # a single occurrence, but declared in SRP_QTY_TIERS
+            + [{"qty_tier": None}] * 3 + [{"qty_tier": 0}]
+        )
+        standard = _standard_qty_tiers(rows)
+        self.assertIn(10, standard)
+        self.assertIn(20, standard)
+        self.assertIn(1, standard)  # declared, kept even though rare here
+        self.assertNotIn(999, standard)  # rare and not declared -> not standard
+        self.assertTrue(set(SRP_QTY_TIERS).issubset(standard))
+
+    def test_empty_input_still_returns_declared_tiers(self):
+        self.assertEqual(_standard_qty_tiers([]), frozenset(SRP_QTY_TIERS))
 
 
 class TestPricelistMasterExport(unittest.TestCase):
@@ -166,6 +185,55 @@ class TestPricelistMasterExport(unittest.TestCase):
         self.assertEqual(sum(row["price_missing"] for row in prices), 102)
         self.assertTrue(all(row["data_quality_issues"] for row in prices if row["price_missing"]))
         self.assertEqual(sum(row["qty_tier"] is None or row["qty_tier"] <= 0 for row in prices), 118)
+
+    def test_priced_rows_without_a_qty_tier_are_distinguished_from_blank_rows(self):
+        # A real price on a row with no ladder position (a price_list_group
+        # flat rate, e.g. TSQ06-4's P-16 group) must not be indistinguishable
+        # from a genuinely blank FlowAccount row (price_missing=True).
+        prices = self.data["prices"]
+        priced_no_tier = [row for row in prices
+                          if "priced_without_qty_tier" in row["data_quality_issues"]]
+        self.assertEqual(len(priced_no_tier), 16)
+        for row in priced_no_tier:
+            self.assertFalse(row["price_missing"])
+            self.assertIsNotNone(row["unit_price"])
+            self.assertGreater(row["unit_price"], 0)
+            self.assertTrue(row["qty_tier"] is None or row["qty_tier"] <= 0)
+            self.assertNotIn("missing_or_nonpositive_price", row["data_quality_issues"])
+        # No row is ever both "blank" and "priced without a tier" at once.
+        blank = {row["id"] for row in prices if row["price_missing"]}
+        self.assertFalse(blank & {row["id"] for row in priced_no_tier})
+
+    def test_non_standard_qty_tiers_are_flagged_not_corrected(self):
+        # TDS07-2 (5012) and TYD0262 (11/12/13/14) are literal values in the
+        # raw SQL dump (verified against price-boss/sql/smartgiftpricelist
+        # .postgres.sql directly) — not a parsing artifact of this exporter.
+        # This asserts they are flagged for review, and that the exporter
+        # never rewrites or drops the value itself.
+        prices = self.data["prices"]
+        flagged = {(row["offer_code"], row["qty_tier"])
+                   for row in prices if "non_standard_qty_tier" in row["data_quality_issues"]}
+        self.assertEqual(flagged, {
+            ("TDS07-2", 5012), ("TYD0262", 11), ("TYD0262", 12),
+            ("TYD0262", 13), ("TYD0262", 14),
+        })
+        # A legitimate rare tier (qty=1, a real single-unit SRP price) must
+        # not be swept up as "non standard" just for being infrequent.
+        single_unit = next(row for row in prices if row["offer_code"] == "TRJ00-3")
+        self.assertEqual(single_unit["qty_tier"], 1)
+        self.assertNotIn("non_standard_qty_tier", single_unit["data_quality_issues"])
+        self.assertEqual(self.data["metadata"]["quality_summary"]["non_standard_qty_tier_count"], 5)
+        self.assertIn(1, self.data["metadata"]["quality_summary"]["standard_qty_tiers"])
+
+    def test_offers_with_confirmed_price_count_is_not_overstated_by_row_presence(self):
+        # A distinct offer_code appearing in `prices` at all (a row exists)
+        # is a different, larger set than offer_codes with a real price —
+        # 99 offer_codes have only price_missing rows. Regression guard for
+        # the exact miscount a cross-session review surfaced on 2026-08-30.
+        summary = self.data["metadata"]["quality_summary"]
+        self.assertEqual(summary["priced_offer_count"], 221)
+        self.assertEqual(summary["offers_with_confirmed_price_count"], 122)
+        self.assertLess(summary["offers_with_confirmed_price_count"], summary["priced_offer_count"])
         self.assertTrue(all(row["base_cost"] is None and row["category"] is None
                             and row["contract_validation"]["status"] == "incomplete"
                             for row in self.data["product_masters"]))
@@ -206,6 +274,22 @@ class TestPricelistMasterExport(unittest.TestCase):
         self.assertNotIn("provenance", public["catalog_offers"][0])
         artifact = json.loads((ROOT / PUBLIC_OUTPUT_PATH).read_text(encoding="utf-8"))
         self.assertEqual(artifact, public)
+
+    def test_public_prices_carry_price_missing_and_quality_flags(self):
+        # A public consumer must be able to tell a real price from a blank
+        # or non-standard-tier row without relying on unit_price==0 as the
+        # only signal (that convention is fragile — see build_offline_catalog
+        # .py's ladder_from_prices, which now checks these fields directly).
+        public = build_public_projection(self.data)
+        for row in public["prices"]:
+            self.assertIn("price_missing", row)
+            self.assertIn("data_quality_issues", row)
+        self.assertNotIn("flow_account_code", public["prices"][0])
+        self.assertNotIn("flow_account_name", public["prices"][0])
+        self.assertNotIn("provenance", public["prices"][0])
+        non_standard = [row for row in public["prices"]
+                        if "non_standard_qty_tier" in row["data_quality_issues"]]
+        self.assertEqual({row["offer_code"] for row in non_standard}, {"TDS07-2", "TYD0262"})
 
     def test_orphan_duplicate_and_fabricated_bom_are_rejected(self):
         mutations = (

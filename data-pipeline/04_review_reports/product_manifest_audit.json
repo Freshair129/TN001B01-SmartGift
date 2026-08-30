@@ -3,8 +3,8 @@
   "tenant_id": "Org-EtohGroup",
   "business_id": "SmartGift",
   "operating_entity": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)",
-  "catalog_version": "v1.3.0-2026.08.30-f31f38cf",
-  "generated_at": "2026-08-30T15:48:50.277034+00:00",
+  "catalog_version": "v1.3.0-2026.08.30-23c4c524",
+  "generated_at": "2026-08-30T18:27:47.441908+00:00",
   "data_integrity_hashes": {
     "smartgift_catalog_master": {
       "path": "data-pipeline/02_prepared/smartgift_catalog_master.json",
@@ -13,8 +13,8 @@
     },
     "pricelist_master": {
       "path": "data-pipeline/02_prepared/pricelist_master.json",
-      "size_bytes": 6242664,
-      "sha256": "729bebdb0dde3706560d568f000b2f6dbccd40fa5de03189dbfe761e0edf7d74"
+      "size_bytes": 6243688,
+      "sha256": "d2a7f09a495cecf96d01006df232267737175d7d85b1b28b5e0a63ab476fa153"
     },
     "factory_costs": {
       "path": "data-pipeline/02_prepared/factory_costs.json",
@@ -28,8 +28,8 @@
     },
     "pricelist_public": {
       "path": "public/data/pricelist_public.json",
-      "size_bytes": 1400871,
-      "sha256": "f31f38cf34b7a6f92a8d866aa56971d811797943a065d0e0f84484891e03d597"
+      "size_bytes": 1453533,
+      "sha256": "23c4c524afdcb27389217b648466c1c778548be14672f983b88f63386d9b2432"
     }
   },
   "multi_file_index": [
@@ -1640,8 +1640,8 @@
   "published_public_hashes": {
     "pricelist_public": {
       "path": "/data/pricelist_public.json",
-      "size_bytes": 1400871,
-      "sha256": "f31f38cf34b7a6f92a8d866aa56971d811797943a065d0e0f84484891e03d597"
+      "size_bytes": 1453533,
+      "sha256": "23c4c524afdcb27389217b648466c1c778548be14672f983b88f63386d9b2432"
     },
     "catalog_media": {
       "path": "/data/catalog_media.json",
