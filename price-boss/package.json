@@ -1,0 +1,28 @@
+{
+  "name": "price_boss",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SmartGift Price Boss — MySQL smartgift + React SPA",
+  "type": "module",
+  "scripts": {
+    "api": "node server/index.mjs",
+    "web": "npm run dev --prefix web",
+    "dev": "concurrently -n api,web -c teal,brass \"npm run api\" \"npm run web\"",
+    "build": "npm run build --prefix web",
+    "sync": "python sync_smartgift.py",
+    "import:pricelist": "python scripts/import_smartgift_postgres.py",
+    "compose:up": "docker compose up -d --build",
+    "compose:down": "docker compose down",
+    "compose:logs": "docker compose logs -f --tail=100",
+    "compose:external": "docker compose -f docker-compose.external-mysql.yml up -d --build"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.24.2"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

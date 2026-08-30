@@ -1,0 +1,6024 @@
+{
+  "database": "smartgift",
+  "generated_note": "Exported from live MySQL; regenerate with scripts/export_schema_catalog.py",
+  "domains": {
+    "rbac": {
+      "label": "สิทธิ์ / พนักงาน",
+      "order": 1
+    },
+    "crm": {
+      "label": "ลูกค้า",
+      "order": 2
+    },
+    "quote": {
+      "label": "ใบเสนอราคา",
+      "order": 3
+    },
+    "catalog": {
+      "label": "แคตตาล็อก / แท็ก",
+      "order": 4
+    },
+    "pricelist": {
+      "label": "Pricelist SmartGift",
+      "order": 5
+    },
+    "sourcing": {
+      "label": "สั่งจีน",
+      "order": 6
+    },
+    "sales": {
+      "label": "Sales Command / เป้า",
+      "order": 7
+    },
+    "view": {
+      "label": "Views",
+      "order": 8
+    }
+  },
+  "tables": [
+    {
+      "name": "catalogs",
+      "kind": "BASE TABLE",
+      "domain": "catalog",
+      "title_th": "แคตตาล็อก",
+      "purpose": "แหล่ง sync จากเว็บ pricing (giftset / powerbank)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "catalog_key",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "label",
+          "type": "varchar(255)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "product_count",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "source_url",
+          "type": "varchar(512)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "synced_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "china_request_checklist",
+      "kind": "BASE TABLE",
+      "domain": "sourcing",
+      "title_th": "เช็กลิสต์ถามโรงงาน",
+      "purpose": "รายการสิ่งที่ต้องขอจากโรงงาน (อ้างอิง UI)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "group_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "group_label",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????????????",
+          "ordinal": 3
+        },
+        {
+          "name": "field_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "ask_th",
+          "type": "varchar(512)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????????????",
+          "ordinal": 5
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "china_sourcing",
+      "kind": "BASE TABLE",
+      "domain": "sourcing",
+      "title_th": "ใบขอราคาจีน",
+      "purpose": "RFQ ต่อ product (+ supplier) รวม MOQ/ราคา/แบต",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "product_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "supplier_id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "status",
+          "type": "enum('draft','requested','quoted','confirmed','rejected')",
+          "nullable": false,
+          "key": "MUL",
+          "default": "draft",
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "currency",
+          "type": "char(3)",
+          "nullable": false,
+          "key": "",
+          "default": "CNY",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "unit_price_100",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???? @ 100 ????",
+          "ordinal": 6
+        },
+        {
+          "name": "unit_price_500",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???? @ 500 ????",
+          "ordinal": 7
+        },
+        {
+          "name": "unit_price_1000",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???? @ 1,000 ????",
+          "ordinal": 8
+        },
+        {
+          "name": "unit_price_3000",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???? @ 3,000 ????",
+          "ordinal": 9
+        },
+        {
+          "name": "unit_price_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "moq_model",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "MOQ ???????",
+          "ordinal": 11
+        },
+        {
+          "name": "moq_color",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "MOQ ?????",
+          "ordinal": 12
+        },
+        {
+          "name": "moq_logo",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "MOQ ????????",
+          "ordinal": 13
+        },
+        {
+          "name": "moq_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        },
+        {
+          "name": "sample_price",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 15
+        },
+        {
+          "name": "sample_shipping",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 16
+        },
+        {
+          "name": "sample_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 17
+        },
+        {
+          "name": "logo_silk_screen",
+          "type": "tinyint(1)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "1=????? 0=?????? NULL=?????????",
+          "ordinal": 18
+        },
+        {
+          "name": "logo_uv_print",
+          "type": "tinyint(1)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 19
+        },
+        {
+          "name": "logo_laser",
+          "type": "tinyint(1)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 20
+        },
+        {
+          "name": "logo_full_color",
+          "type": "tinyint(1)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 21
+        },
+        {
+          "name": "logo_setup_fee",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "??????????????? (?????)",
+          "ordinal": 22
+        },
+        {
+          "name": "logo_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 23
+        },
+        {
+          "name": "custom_color_moq",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 24
+        },
+        {
+          "name": "pantone_fee",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 25
+        },
+        {
+          "name": "custom_color_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 26
+        },
+        {
+          "name": "pkg_standard_box",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 27
+        },
+        {
+          "name": "pkg_premium_box",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 28
+        },
+        {
+          "name": "pkg_manual",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 29
+        },
+        {
+          "name": "pkg_accessories",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "????????????????????",
+          "ordinal": 30
+        },
+        {
+          "name": "pkg_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 31
+        },
+        {
+          "name": "production_lead_days",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 32
+        },
+        {
+          "name": "production_lead_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 33
+        },
+        {
+          "name": "carton_qty",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????????????????",
+          "ordinal": 34
+        },
+        {
+          "name": "carton_l_cm",
+          "type": "decimal(10,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 35
+        },
+        {
+          "name": "carton_w_cm",
+          "type": "decimal(10,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 36
+        },
+        {
+          "name": "carton_h_cm",
+          "type": "decimal(10,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 37
+        },
+        {
+          "name": "carton_nw_kg",
+          "type": "decimal(10,3)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "Net Weight",
+          "ordinal": 38
+        },
+        {
+          "name": "carton_gw_kg",
+          "type": "decimal(10,3)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "Gross Weight",
+          "ordinal": 39
+        },
+        {
+          "name": "carton_cbm",
+          "type": "decimal(12,6)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 40
+        },
+        {
+          "name": "carton_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 41
+        },
+        {
+          "name": "cell_maker",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "????????????",
+          "ordinal": 42
+        },
+        {
+          "name": "cell_model",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????????",
+          "ordinal": 43
+        },
+        {
+          "name": "capacity_real_mah",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????????? (mAh)",
+          "ordinal": 44
+        },
+        {
+          "name": "cycle_life",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????????????",
+          "ordinal": 45
+        },
+        {
+          "name": "battery_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 46
+        },
+        {
+          "name": "doc_battery_test",
+          "type": "tinyint(1)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "????????????????",
+          "ordinal": 47
+        },
+        {
+          "name": "doc_safety",
+          "type": "tinyint(1)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???????????????????",
+          "ordinal": 48
+        },
+        {
+          "name": "doc_transport",
+          "type": "tinyint(1)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???????????????? (UN38.3 ???)",
+          "ordinal": 49
+        },
+        {
+          "name": "docs_file_refs",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????/??????????????",
+          "ordinal": 50
+        },
+        {
+          "name": "docs_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 51
+        },
+        {
+          "name": "warranty_months",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 52
+        },
+        {
+          "name": "warranty_terms",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "??????????????????????????",
+          "ordinal": 53
+        },
+        {
+          "name": "trade_term",
+          "type": "enum('EXW','FOB','DDP_Bangkok','OTHER')",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 54
+        },
+        {
+          "name": "trade_term_port",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???? Shenzhen, Ningbo",
+          "ordinal": 55
+        },
+        {
+          "name": "trade_term_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 56
+        },
+        {
+          "name": "deposit_pct",
+          "type": "decimal(5,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "% ?????????",
+          "ordinal": 57
+        },
+        {
+          "name": "balance_before_ship_pct",
+          "type": "decimal(5,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "% ???????????",
+          "ordinal": 58
+        },
+        {
+          "name": "payment_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 59
+        },
+        {
+          "name": "requested_at",
+          "type": "datetime",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 60
+        },
+        {
+          "name": "quoted_at",
+          "type": "datetime",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 61
+        },
+        {
+          "name": "confirmed_at",
+          "type": "datetime",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 62
+        },
+        {
+          "name": "internal_note",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 63
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 64
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 65
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "customer_contacts",
+      "kind": "BASE TABLE",
+      "domain": "crm",
+      "title_th": "ผู้ติดต่อ",
+      "purpose": "ผู้ติดต่อหลายคนต่อลูกค้า",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "customer_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "name",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "title",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "phone",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "email",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "line_id",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "is_primary",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 10
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "customers",
+      "kind": "BASE TABLE",
+      "domain": "crm",
+      "title_th": "ลูกค้า",
+      "purpose": "ลูกค้าองค์กร + owner_emp_id สำหรับ scope ของ sale",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "tier_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "customer_code",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "name_th",
+          "type": "varchar(255)",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "name_en",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "customer_type",
+          "type": "enum('company','individual','government')",
+          "nullable": false,
+          "key": "",
+          "default": "company",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "is_anchor",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "is_winback",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "tax_id",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "branch",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "สำนักงานใหญ่ / สาขา",
+          "ordinal": 10
+        },
+        {
+          "name": "billing_address",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "shipping_address",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "province",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 13
+        },
+        {
+          "name": "phone",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        },
+        {
+          "name": "email",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 15
+        },
+        {
+          "name": "contact_name",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 16
+        },
+        {
+          "name": "contact_phone",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 17
+        },
+        {
+          "name": "contact_email",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 18
+        },
+        {
+          "name": "credit_days",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 19
+        },
+        {
+          "name": "price_list_group",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "อ้างอิง P-xx จาก smartgift_price",
+          "ordinal": 20
+        },
+        {
+          "name": "owner_emp_id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "พนักงานขายเจ้าของลูกค้า",
+          "ordinal": 21
+        },
+        {
+          "name": "status",
+          "type": "enum('active','inactive','blacklist')",
+          "nullable": false,
+          "key": "MUL",
+          "default": "active",
+          "extra": "",
+          "comment": "",
+          "ordinal": 22
+        },
+        {
+          "name": "note",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 23
+        },
+        {
+          "name": "created_by",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 24
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 25
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 26
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "employees",
+      "kind": "BASE TABLE",
+      "domain": "rbac",
+      "title_th": "พนักงาน",
+      "purpose": "บัญชีเข้าสู่ระบบ + บทบาท + หัวหน้า",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "emp_code",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "username",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "password_hash",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "เก็บ hash เท่านั้น ห้าม plain text",
+          "ordinal": 4
+        },
+        {
+          "name": "full_name",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "email",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "phone",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "role_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "manager_id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "หัวหน้าโดยตรง",
+          "ordinal": 9
+        },
+        {
+          "name": "is_active",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "1",
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "last_login_at",
+          "type": "datetime",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 13
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "permissions",
+      "kind": "BASE TABLE",
+      "domain": "rbac",
+      "title_th": "สิทธิ์",
+      "purpose": "สิทธิ์แบบละเอียด แยกตาม module",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "เช่น customer.read, quote.approve",
+          "ordinal": 2
+        },
+        {
+          "name": "module",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "customer|quote|product|employee|admin",
+          "ordinal": 3
+        },
+        {
+          "name": "name_th",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "description",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "product_offer_link",
+      "kind": "BASE TABLE",
+      "domain": "pricelist",
+      "title_th": "ผูก Product↔Offer",
+      "purpose": "จับคู่ catalog product กับ smartgift_offer ด้วย ID",
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "offer_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "match_method",
+          "type": "enum('exact_code')",
+          "nullable": false,
+          "key": "",
+          "default": "exact_code",
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 4
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_pol_offer",
+          "column": "offer_id",
+          "ref_table": "smartgift_offer",
+          "ref_column": "id"
+        },
+        {
+          "constraint": "fk_pol_product",
+          "column": "product_id",
+          "ref_table": "products",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "product_tags",
+      "kind": "BASE TABLE",
+      "domain": "catalog",
+      "title_th": "แท็กสินค้า",
+      "purpose": "many-to-many product ↔ tag",
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "tag_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "tagged_by",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 5
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "products",
+      "kind": "BASE TABLE",
+      "domain": "catalog",
+      "title_th": "สินค้าแคตตาล็อก",
+      "purpose": "SKU จากโรงงาน + catalog_id",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "catalog_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "catalog_key",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "name",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "rmb",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "upc",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "dim_l",
+          "type": "decimal(10,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "dim_w",
+          "type": "decimal(10,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "dim_h",
+          "type": "decimal(10,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "kg",
+          "type": "decimal(10,3)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "exclusive_flag",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "img",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 13
+        },
+        {
+          "name": "synced_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_products_catalog_id",
+          "column": "catalog_id",
+          "ref_table": "catalogs",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "quotation_items",
+      "kind": "BASE TABLE",
+      "domain": "quote",
+      "title_th": "รายการในใบ",
+      "purpose": "บรรทัดสินค้า อ้าง offer_id / product_id",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "quotation_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "line_no",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "1",
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "offer_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "offer_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "อ้างอิง smartgift_offer.code",
+          "ordinal": 5
+        },
+        {
+          "name": "product_id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "อ้างอิง products.id (catalog จีน)",
+          "ordinal": 6
+        },
+        {
+          "name": "sku_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "item_name",
+          "type": "varchar(512)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "qty",
+          "type": "decimal(12,2)",
+          "nullable": false,
+          "key": "",
+          "default": "1.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "qty_tier",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "ขั้นราคา 10/20/50/100/500",
+          "ordinal": 11
+        },
+        {
+          "name": "unit",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "",
+          "default": "ชิ้น",
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "unit_price",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 13
+        },
+        {
+          "name": "discount_amt",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        },
+        {
+          "name": "line_total",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 15
+        },
+        {
+          "name": "branding_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "โลโก้ / สี / packing",
+          "ordinal": 16
+        },
+        {
+          "name": "carton_note",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "carton / CBM note",
+          "ordinal": 17
+        },
+        {
+          "name": "profile_code",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "standard|corporate",
+          "ordinal": 18
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 19
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 20
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_qi_offer",
+          "column": "offer_id",
+          "ref_table": "smartgift_offer",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "quotation_line_breaks",
+      "kind": "BASE TABLE",
+      "domain": "quote",
+      "title_th": "บันไดราคา",
+      "purpose": "qty → unit_price ต่อบรรทัด",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "quotation_item_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "qty",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???????? ???? 100/300/500/1000",
+          "ordinal": 3
+        },
+        {
+          "name": "unit_price",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????????? (THB)",
+          "ordinal": 4
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 6
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_qlb_item",
+          "column": "quotation_item_id",
+          "ref_table": "quotation_items",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "quotation_status_logs",
+      "kind": "BASE TABLE",
+      "domain": "quote",
+      "title_th": "ประวัติสถานะ",
+      "purpose": "audit ทุกครั้งที่เปลี่ยนสถานะใบ",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "quotation_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "from_status",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "to_status",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "emp_id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 7
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "quotations",
+      "kind": "BASE TABLE",
+      "domain": "quote",
+      "title_th": "ใบเสนอราคา (หัว)",
+      "purpose": "หัวใบ ยอดรวม สถานะ เงื่อนไขการค้า",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "quote_no",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "customer_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "contact_id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "owner_emp_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "พนักงานขายที่ออกใบ",
+          "ordinal": 5
+        },
+        {
+          "name": "status",
+          "type": "enum('draft','submitted','approved','sent','accepted','rejected','expired','cancelled')",
+          "nullable": false,
+          "key": "MUL",
+          "default": "draft",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "quote_date",
+          "type": "date",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "valid_until",
+          "type": "date",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "currency",
+          "type": "char(3)",
+          "nullable": false,
+          "key": "",
+          "default": "THB",
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "price_list_group",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "payment_term",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "delivery_term",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "trade_term",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "EXW/FOB/DDP ฯลฯ",
+          "ordinal": 13
+        },
+        {
+          "name": "subtotal",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        },
+        {
+          "name": "discount_amt",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 15
+        },
+        {
+          "name": "discount_pct",
+          "type": "decimal(5,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 16
+        },
+        {
+          "name": "vat_pct",
+          "type": "decimal(5,2)",
+          "nullable": false,
+          "key": "",
+          "default": "7.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 17
+        },
+        {
+          "name": "vat_amt",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 18
+        },
+        {
+          "name": "grand_total",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 19
+        },
+        {
+          "name": "customer_note",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "ข้อความถึงลูกค้า",
+          "ordinal": 20
+        },
+        {
+          "name": "internal_note",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 21
+        },
+        {
+          "name": "approved_by",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 22
+        },
+        {
+          "name": "approved_at",
+          "type": "datetime",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 23
+        },
+        {
+          "name": "sent_at",
+          "type": "datetime",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 24
+        },
+        {
+          "name": "created_by",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 25
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 26
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 27
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "role_permissions",
+      "kind": "BASE TABLE",
+      "domain": "rbac",
+      "title_th": "แมปสิทธิ์",
+      "purpose": "many-to-many บทบาท ↔ สิทธิ์",
+      "columns": [
+        {
+          "name": "role_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "permission_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "roles",
+      "kind": "BASE TABLE",
+      "domain": "rbac",
+      "title_th": "บทบาท",
+      "purpose": "กำหนดบทบาท administrator / manager / sale",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "code",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "administrator|manager|sale",
+          "ordinal": 2
+        },
+        {
+          "name": "name_th",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "name_en",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "description",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "is_active",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "1",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 8
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "sales_customer_tier",
+      "kind": "BASE TABLE",
+      "domain": "sales",
+      "title_th": "Tier ลูกค้า",
+      "purpose": "P1 / A / B / C / WINBACK",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "tier_code",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "name_th",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "sales_kpi_def",
+      "kind": "BASE TABLE",
+      "domain": "sales",
+      "title_th": "นิยาม KPI",
+      "purpose": "รหัส KPI ที่วัดทุกศุกร์",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "kpi_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "name_th",
+          "type": "varchar(255)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "unit",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "direction",
+          "type": "enum('maximize','minimize','exact')",
+          "nullable": false,
+          "key": "",
+          "default": "maximize",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "sales_period",
+      "kind": "BASE TABLE",
+      "domain": "sales",
+      "title_th": "งวดเป้าขาย",
+      "purpose": "เดือนเป้า เช่น 2026-08 + quota_pre_vat",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "period_code",
+          "type": "varchar(16)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "label_th",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "year_num",
+          "type": "smallint",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "month_num",
+          "type": "tinyint",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "quota_pre_vat",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "is_current",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 10
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "sales_period_kpi",
+      "kind": "BASE TABLE",
+      "domain": "sales",
+      "title_th": "KPI รายเดือน",
+      "purpose": "เป้า/จริง ต่องวด",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "period_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "kpi_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "target_value",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "target_op",
+          "type": "enum('eq','gte','lte')",
+          "nullable": false,
+          "key": "",
+          "default": "eq",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "actual_value",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "actual_note",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "measure_note",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_spk_kpi",
+          "column": "kpi_id",
+          "ref_table": "sales_kpi_def",
+          "ref_column": "id"
+        },
+        {
+          "constraint": "fk_spk_period",
+          "column": "period_id",
+          "ref_table": "sales_period",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "sales_period_quota_split",
+      "kind": "BASE TABLE",
+      "domain": "sales",
+      "title_th": "แจกเป้าตามแหล่ง",
+      "purpose": "amount + % ต่อ period × source",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "period_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "source_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "amount",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "pct",
+          "type": "decimal(6,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_pqs_period",
+          "column": "period_id",
+          "ref_table": "sales_period",
+          "ref_column": "id"
+        },
+        {
+          "constraint": "fk_pqs_source",
+          "column": "source_id",
+          "ref_table": "sales_revenue_source",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "sales_revenue_source",
+      "kind": "BASE TABLE",
+      "domain": "sales",
+      "title_th": "แหล่งรายได้",
+      "purpose": "Anchor / Quote ค้าง / Win-back / inbound",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "source_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "name_th",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "name_en",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "color_hex",
+          "type": "char(7)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "sales_week_plan",
+      "kind": "BASE TABLE",
+      "domain": "sales",
+      "title_th": "แผนรายสัปดาห์",
+      "purpose": "W1–W4 theme + เป้าสะสม",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "period_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "week_no",
+          "type": "tinyint",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "theme_th",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "date_range",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "revenue_goal",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_swp_period",
+          "column": "period_id",
+          "ref_table": "sales_period",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "sales_week_task",
+      "kind": "BASE TABLE",
+      "domain": "sales",
+      "title_th": "งานในสัปดาห์",
+      "purpose": "task checklist ภายใต้ week_plan",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "week_plan_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "task_th",
+          "type": "varchar(512)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "is_done",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_swt_week",
+          "column": "week_plan_id",
+          "ref_table": "sales_week_plan",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "smartgift_export_run",
+      "kind": "BASE TABLE",
+      "domain": "pricelist",
+      "title_th": "รอบนำเข้า pricelist",
+      "purpose": "เมตาการ export จาก Mac",
+      "columns": [
+        {
+          "name": "run_id",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "exported_at",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "source_path",
+          "type": "varchar(1024)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "commercial_skus",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "offers",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "models",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "smartgift_group",
+      "kind": "BASE TABLE",
+      "domain": "pricelist",
+      "title_th": "กลุ่มประเภท",
+      "purpose": "care_wellness / home_travel / office / smart_tech",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "group_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "name_th",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "name_en",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "smartgift_model",
+      "kind": "BASE TABLE",
+      "domain": "pricelist",
+      "title_th": "รุ่น (model)",
+      "purpose": "ลายเซ็นรุ่น + type_id; ลิงก์ offer ผ่าน junction",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "sig_hash",
+          "type": "char(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "base_signature",
+          "type": "text",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "display_name",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "english_name",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "type_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "group_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "type_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "group_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "status",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "price_source",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "offer_codes",
+          "type": "json",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "colors",
+          "type": "json",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 13
+        },
+        {
+          "name": "price_tiers",
+          "type": "json",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        },
+        {
+          "name": "source_ref",
+          "type": "json",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 15
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_model_group",
+          "column": "group_id",
+          "ref_table": "smartgift_group",
+          "ref_column": "id"
+        },
+        {
+          "constraint": "fk_model_type",
+          "column": "type_id",
+          "ref_table": "smartgift_type",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "smartgift_model_offer",
+      "kind": "BASE TABLE",
+      "domain": "pricelist",
+      "title_th": "Model↔Offer",
+      "purpose": "แทน offer_codes JSON ด้วย ID join",
+      "columns": [
+        {
+          "name": "model_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "offer_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_mo_model",
+          "column": "model_id",
+          "ref_table": "smartgift_model",
+          "ref_column": "id"
+        },
+        {
+          "constraint": "fk_mo_offer",
+          "column": "offer_id",
+          "ref_table": "smartgift_offer",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "smartgift_offer",
+      "kind": "BASE TABLE",
+      "domain": "pricelist",
+      "title_th": "Offer / SKU ราคา",
+      "purpose": "รหัสสินค้าใน pricelist (code) + id สำหรับ join",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "name_th",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "name_en",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "offer_kind",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "status",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "branding",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "origin",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "rmb",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "image",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "price_tiers",
+          "type": "json",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "source_ref",
+          "type": "json",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 13
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "smartgift_price",
+      "kind": "BASE TABLE",
+      "domain": "pricelist",
+      "title_th": "ขั้นราคา",
+      "purpose": "qty_tier / unit_price ผูก offer_id",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "offer_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "offer_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "qty_tier",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "unit_price",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "unit_price_with_vat",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "price_missing",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "price_list_group",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "flow_account_code",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "flow_account_name",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "export_date",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "source_ref",
+          "type": "json",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_price_offer",
+          "column": "offer_id",
+          "ref_table": "smartgift_offer",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "smartgift_type",
+      "kind": "BASE TABLE",
+      "domain": "pricelist",
+      "title_th": "ประเภทสินค้า",
+      "purpose": "taxonomy ของรุ่น (type_code + group_id)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "type_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "group_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "group_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "name_th",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "name_en",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "aliases_th",
+          "type": "json",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "aliases_en",
+          "type": "json",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint": "fk_type_group",
+          "column": "group_id",
+          "ref_table": "smartgift_group",
+          "ref_column": "id"
+        }
+      ]
+    },
+    {
+      "name": "suppliers",
+      "kind": "BASE TABLE",
+      "domain": "sourcing",
+      "title_th": "ซัพพลายเออร์จีน",
+      "purpose": "โรงงาน / ผู้ขาย",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "name",
+          "type": "varchar(255)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "contact_name",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "wechat",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "email",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "phone",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "city",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "note",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "is_active",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "1",
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 11
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "tag_groups",
+      "kind": "BASE TABLE",
+      "domain": "catalog",
+      "title_th": "กลุ่มแท็ก",
+      "purpose": "จัดกลุ่มแท็กสินค้า",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "label_th",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "label_en",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "is_active",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "1",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 8
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "tags",
+      "kind": "BASE TABLE",
+      "domain": "catalog",
+      "title_th": "แท็ก",
+      "purpose": "แท็กสำหรับกรอง/รายงาน",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "PRI",
+          "default": null,
+          "extra": "auto_increment",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "tag_group_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "MUL",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "UNI",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "label_th",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "label_en",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "color",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "เช่น #92642A สำหรับ UI",
+          "ordinal": 6
+        },
+        {
+          "name": "description",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "is_active",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "1",
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "created_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 11
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_employee_access",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "พนักงาน×สิทธิ์",
+      "purpose": "ใช้ตรวจ permission ตอน login",
+      "columns": [
+        {
+          "name": "employee_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "emp_code",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "username",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "full_name",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "is_active",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "1",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "role_code",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "administrator|manager|sale",
+          "ordinal": 6
+        },
+        {
+          "name": "role_th",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "permission_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "เช่น customer.read, quote.approve",
+          "ordinal": 8
+        },
+        {
+          "name": "module",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "customer|quote|product|employee|admin",
+          "ordinal": 9
+        },
+        {
+          "name": "permission_th",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_product_offer",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "Product+Offer",
+      "purpose": "catalog ที่ผูก offer พร้อมช่วงราคา",
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "catalog_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "catalog_key",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "product_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "product_name",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "catalog_rmb",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "offer_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "offer_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "offer_th",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "offer_en",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "offer_kind",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "offer_status",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "offer_rmb",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 13
+        },
+        {
+          "name": "price_min",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        },
+        {
+          "name": "price_max",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 15
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_product_sourcing",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "สินค้า+sourcing",
+      "purpose": "สถานะ RFQ จีนต่อสินค้า",
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "catalog_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "catalog_key",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "name",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "catalog_rmb",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "exclusive_flag",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "sourcing_id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "status",
+          "type": "enum('draft','requested','quoted','confirmed','rejected')",
+          "nullable": true,
+          "key": "",
+          "default": "draft",
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "currency",
+          "type": "char(3)",
+          "nullable": true,
+          "key": "",
+          "default": "CNY",
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "unit_price_100",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???? @ 100 ????",
+          "ordinal": 11
+        },
+        {
+          "name": "unit_price_500",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???? @ 500 ????",
+          "ordinal": 12
+        },
+        {
+          "name": "unit_price_1000",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???? @ 1,000 ????",
+          "ordinal": 13
+        },
+        {
+          "name": "unit_price_3000",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "???? @ 3,000 ????",
+          "ordinal": 14
+        },
+        {
+          "name": "moq_model",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "MOQ ???????",
+          "ordinal": 15
+        },
+        {
+          "name": "moq_color",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "MOQ ?????",
+          "ordinal": 16
+        },
+        {
+          "name": "moq_logo",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "MOQ ????????",
+          "ordinal": 17
+        },
+        {
+          "name": "sample_price",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 18
+        },
+        {
+          "name": "sample_shipping",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 19
+        },
+        {
+          "name": "production_lead_days",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 20
+        },
+        {
+          "name": "carton_qty",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????????????????",
+          "ordinal": 21
+        },
+        {
+          "name": "carton_cbm",
+          "type": "decimal(12,6)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 22
+        },
+        {
+          "name": "cell_maker",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "????????????",
+          "ordinal": 23
+        },
+        {
+          "name": "capacity_real_mah",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "?????????? (mAh)",
+          "ordinal": 24
+        },
+        {
+          "name": "trade_term",
+          "type": "enum('EXW','FOB','DDP_Bangkok','OTHER')",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 25
+        },
+        {
+          "name": "deposit_pct",
+          "type": "decimal(5,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "% ?????????",
+          "ordinal": 26
+        },
+        {
+          "name": "balance_before_ship_pct",
+          "type": "decimal(5,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "% ???????????",
+          "ordinal": 27
+        },
+        {
+          "name": "supplier_name",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 28
+        },
+        {
+          "name": "sourcing_updated_at",
+          "type": "datetime",
+          "nullable": true,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP",
+          "comment": "",
+          "ordinal": 29
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_product_tag_summary",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "สรุปแท็ก",
+      "purpose": "GROUP_CONCAT tag_codes",
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "name",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "tag_codes",
+          "type": "text",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "tag_count",
+          "type": "bigint",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_product_tags",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "สินค้า+แท็ก",
+      "purpose": "รายละเอียดแท็กต่อสินค้า",
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "bigint unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "catalog_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "catalog_key",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "name",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "rmb",
+          "type": "decimal(12,4)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "exclusive_flag",
+          "type": "tinyint(1)",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "tag_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "tag_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "tag_th",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "tag_en",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "tag_color",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "เช่น #92642A สำหรับ UI",
+          "ordinal": 12
+        },
+        {
+          "name": "group_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 13
+        },
+        {
+          "name": "group_th",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        },
+        {
+          "name": "tagged_by",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 15
+        },
+        {
+          "name": "tag_note",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 16
+        },
+        {
+          "name": "tagged_at",
+          "type": "datetime",
+          "nullable": false,
+          "key": "",
+          "default": "CURRENT_TIMESTAMP",
+          "extra": "DEFAULT_GENERATED",
+          "comment": "",
+          "ordinal": 17
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_quotation_summary",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "สรุปใบเสนอราคา",
+      "purpose": "หัวใบ + ลูกค้า + เจ้าของ + จำนวนรายการ",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "quote_no",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "status",
+          "type": "enum('draft','submitted','approved','sent','accepted','rejected','expired','cancelled')",
+          "nullable": true,
+          "key": "",
+          "default": "draft",
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "quote_date",
+          "type": "date",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "valid_until",
+          "type": "date",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "currency",
+          "type": "char(3)",
+          "nullable": true,
+          "key": "",
+          "default": "THB",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "subtotal",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "discount_amt",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "vat_amt",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "grand_total",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "customer_code",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "customer_name",
+          "type": "varchar(255)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "customer_owner_emp_id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "พนักงานขายเจ้าของลูกค้า",
+          "ordinal": 13
+        },
+        {
+          "name": "owner_code",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        },
+        {
+          "name": "owner_name",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 15
+        },
+        {
+          "name": "owner_role",
+          "type": "varchar(32)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "administrator|manager|sale",
+          "ordinal": 16
+        },
+        {
+          "name": "item_count",
+          "type": "bigint",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 17
+        },
+        {
+          "name": "break_count",
+          "type": "bigint",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 18
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_sales_period_kpi",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "มุมมอง KPI",
+      "purpose": "period + kpi def + target/actual",
+      "columns": [
+        {
+          "name": "period_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "period_code",
+          "type": "varchar(16)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "period_label",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "kpi_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "kpi_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "kpi_th",
+          "type": "varchar(255)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "unit",
+          "type": "varchar(32)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "direction",
+          "type": "enum('maximize','minimize','exact')",
+          "nullable": false,
+          "key": "",
+          "default": "maximize",
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "target_value",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "target_op",
+          "type": "enum('eq','gte','lte')",
+          "nullable": false,
+          "key": "",
+          "default": "eq",
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "actual_value",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "actual_note",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "measure_note",
+          "type": "varchar(128)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 13
+        },
+        {
+          "name": "sort_order",
+          "type": "int",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_sales_quota_split",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "มุมมองแจกเป้า",
+      "purpose": "period + source + amount/%",
+      "columns": [
+        {
+          "name": "period_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "period_code",
+          "type": "varchar(16)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "period_label",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "quota_pre_vat",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "source_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "source_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "source_th",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "color_hex",
+          "type": "char(7)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "amount",
+          "type": "decimal(14,2)",
+          "nullable": false,
+          "key": "",
+          "default": "0.00",
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "pct",
+          "type": "decimal(20,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_sales_week_plan",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "มุมมองแผนสัปดาห์",
+      "purpose": "week + tasks แบบ flatten",
+      "columns": [
+        {
+          "name": "period_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "period_code",
+          "type": "varchar(16)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "week_plan_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "week_no",
+          "type": "tinyint",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "theme_th",
+          "type": "varchar(128)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "date_range",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "revenue_goal",
+          "type": "decimal(14,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "task_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "task_th",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "task_sort",
+          "type": "int",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "is_done",
+          "type": "tinyint(1)",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_smartgift_report",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "รายงาน join pricelist",
+      "purpose": "group→type→model↔offer→price (+product)",
+      "columns": [
+        {
+          "name": "group_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "type_group",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "type_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "type_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "type_th",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "type_en",
+          "type": "varchar(255)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "model_id",
+          "type": "int unsigned",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "sig_hash",
+          "type": "char(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "model_name",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        },
+        {
+          "name": "model_name_en",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 10
+        },
+        {
+          "name": "model_status",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 11
+        },
+        {
+          "name": "price_source",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 12
+        },
+        {
+          "name": "offer_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 13
+        },
+        {
+          "name": "offer_code",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 14
+        },
+        {
+          "name": "offer_th",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 15
+        },
+        {
+          "name": "offer_en",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 16
+        },
+        {
+          "name": "offer_kind",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 17
+        },
+        {
+          "name": "offer_status",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 18
+        },
+        {
+          "name": "branding",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 19
+        },
+        {
+          "name": "origin",
+          "type": "varchar(64)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 20
+        },
+        {
+          "name": "catalog_rmb",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 21
+        },
+        {
+          "name": "offer_image",
+          "type": "varchar(512)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 22
+        },
+        {
+          "name": "price_min",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 23
+        },
+        {
+          "name": "price_max",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 24
+        },
+        {
+          "name": "price_vat_min",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 25
+        },
+        {
+          "name": "price_vat_max",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 26
+        },
+        {
+          "name": "price_tier_count",
+          "type": "bigint",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 27
+        },
+        {
+          "name": "product_id",
+          "type": "bigint unsigned",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 28
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_smartgift_report_by_group",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "สรุปตามกลุ่ม",
+      "purpose": "aggregate ตาม type_group",
+      "columns": [
+        {
+          "name": "type_group",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "group_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "type_count",
+          "type": "bigint",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "model_count",
+          "type": "bigint",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "offer_count",
+          "type": "bigint",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "offers_with_price",
+          "type": "decimal(23,0)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "price_min",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "price_max",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "v_smartgift_report_by_type",
+      "kind": "VIEW",
+      "domain": "view",
+      "title_th": "สรุปตามประเภท",
+      "purpose": "aggregate จาก v_smartgift_report",
+      "columns": [
+        {
+          "name": "type_group",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 1
+        },
+        {
+          "name": "type_id",
+          "type": "int unsigned",
+          "nullable": true,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 2
+        },
+        {
+          "name": "type_code",
+          "type": "varchar(64)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 3
+        },
+        {
+          "name": "type_label",
+          "type": "varchar(255)",
+          "nullable": false,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 4
+        },
+        {
+          "name": "model_count",
+          "type": "bigint",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 5
+        },
+        {
+          "name": "offer_count",
+          "type": "bigint",
+          "nullable": false,
+          "key": "",
+          "default": "0",
+          "extra": "",
+          "comment": "",
+          "ordinal": 6
+        },
+        {
+          "name": "offers_with_price",
+          "type": "decimal(23,0)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 7
+        },
+        {
+          "name": "price_min",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 8
+        },
+        {
+          "name": "price_max",
+          "type": "decimal(12,2)",
+          "nullable": true,
+          "key": "",
+          "default": null,
+          "extra": "",
+          "comment": "",
+          "ordinal": 9
+        }
+      ],
+      "foreign_keys": []
+    }
+  ]
+}

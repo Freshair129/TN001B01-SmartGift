@@ -1,0 +1,372 @@
+{
+  "title": "Workflows — Price Boss / SmartGift",
+  "database": "smartgift",
+  "roles": ["administrator", "manager", "sale"],
+  "flows": [
+    {
+      "id": "login-rbac",
+      "title": "เข้าสู่ระบบ และตรวจสิทธิ์",
+      "domain": "rbac",
+      "summary": "พนักงาน login ด้วย username → โหลด role + permissions จาก v_employee_access",
+      "actors": ["administrator", "manager", "sale"],
+      "steps": [
+        {
+          "n": 1,
+          "action": "เปิดหน้า Login",
+          "actor": "ทุกบทบาท",
+          "system": "POST /api/auth/login",
+          "tables": ["employees", "roles", "v_employee_access", "permissions"],
+          "pre": ["username ไม่ว่าง", "employees.is_active = 1"],
+          "post": ["ได้ user + permissions[] ใน localStorage"],
+          "fail": ["401 ถ้าไม่พบหรือถูกปิด"]
+        },
+        {
+          "n": 2,
+          "action": "เมนูถูกกรองตาม permission",
+          "actor": "ระบบ",
+          "system": "AppShell can(perm)",
+          "tables": [],
+          "pre": ["มี session"],
+          "post": ["เห็นเฉพาะเมนูที่อนุญาต"],
+          "fail": []
+        }
+      ],
+      "notes": [
+        "Demo: admin / manager / sale01 — ยังไม่บังคับ password_hash ในรอบนี้",
+        "sale ไม่มี customer.read_all / quote.read_all → เห็นเฉพาะของตน"
+      ]
+    },
+    {
+      "id": "customer-create",
+      "title": "สร้าง / ดูแลลูกค้า",
+      "domain": "crm",
+      "summary": "ลงทะเบียนลูกค้าก่อนออกใบเสนอราคา พร้อม owner และ tier (Sales Command)",
+      "actors": ["sale", "manager", "administrator"],
+      "steps": [
+        {
+          "n": 1,
+          "action": "สร้างลูกค้า",
+          "actor": "sale / manager / admin",
+          "system": "POST /api/customers",
+          "tables": ["customers"],
+          "pre": ["customer.write", "customer_code ไม่ซ้ำ", "name_th ไม่ว่าง"],
+          "post": ["customers แถวใหม่; sale ตั้ง owner_emp_id = ตน"],
+          "fail": ["409 code ซ้ำ", "blacklist ห้ามออกใบใหม่"]
+        },
+        {
+          "n": 2,
+          "action": "เพิ่มผู้ติดต่อ",
+          "actor": "owner หรือ write_all",
+          "system": "customer_contacts",
+          "tables": ["customer_contacts"],
+          "pre": ["customers.id มีอยู่"],
+          "post": ["มีผู้ติดต่อ; is_primary ได้ 1 คน"],
+          "fail": []
+        },
+        {
+          "n": 3,
+          "action": "กำหนด tier / anchor / winback (ถ้าใช้ Sales Command)",
+          "actor": "manager / admin",
+          "system": "customers.tier_id, is_anchor, is_winback",
+          "tables": ["customers", "sales_customer_tier"],
+          "pre": ["tier ใน sales_customer_tier"],
+          "post": ["ใช้กรอง Call list / Win-back / Anchor"],
+          "fail": []
+        }
+      ],
+      "notes": [
+        "sale แก้ได้เฉพาะลูกค้าที่ owner_emp_id = ตน (ไม่มี customer.write_all)",
+        "status = blacklist → ห้ามสร้าง quotation ใหม่ (enforce ที่แอป)"
+      ]
+    },
+    {
+      "id": "quotation-lifecycle",
+      "title": "วงจรชีวิตใบเสนอราคา",
+      "domain": "quote",
+      "summary": "draft → submitted → approved → sent → accepted พร้อม reject/cancel/expire",
+      "actors": ["sale", "manager", "administrator"],
+      "diagram": [
+        "draft ──submit──► submitted ──approve──► approved ──send──► sent ──accept──► accepted",
+        "                     │                     │",
+        "                     └──reject──► rejected ─┘ (revise → draft)",
+        "                                        │",
+        "                             cancel ──► cancelled",
+        "                             expire ──► expired"
+      ],
+      "transitions": [
+        { "from": "—", "action": "create", "to": "draft", "who": "sale, manager, admin", "perm": "quote.write" },
+        { "from": "draft", "action": "update lines/breaks", "to": "draft", "who": "owner / write_all", "perm": "quote.write" },
+        { "from": "draft", "action": "submit", "to": "submitted", "who": "owner", "perm": "quote.submit" },
+        { "from": "submitted", "action": "approve", "to": "approved", "who": "manager, admin", "perm": "quote.approve" },
+        { "from": "submitted", "action": "reject", "to": "rejected", "who": "manager, admin", "perm": "quote.approve" },
+        { "from": "rejected", "action": "revise", "to": "draft", "who": "owner", "perm": "quote.write" },
+        { "from": "approved", "action": "send", "to": "sent", "who": "owner / manager", "perm": "quote.send" },
+        { "from": "sent", "action": "accept", "to": "accepted", "who": "owner / manager / admin", "perm": "quote.write" },
+        { "from": "*", "action": "cancel", "to": "cancelled", "who": "manager, admin", "perm": "quote.cancel" },
+        { "from": "approved|sent", "action": "expire", "to": "expired", "who": "system / admin", "perm": "valid_until < today" }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "action": "สร้างใบ draft",
+          "actor": "sale / manager / admin",
+          "system": "INSERT quotations",
+          "tables": ["quotations", "quotation_status_logs"],
+          "pre": ["ลูกค้า active", "quote_no ไม่ซ้ำ", "owner_emp_id", "quote_date"],
+          "post": ["status=draft", "log NULL→draft", "valid_until แนะนำ +30 วัน"],
+          "fail": ["ลูกค้า blacklist", "ไม่มีสิทธิ์บนลูกค้า"]
+        },
+        {
+          "n": 2,
+          "action": "เพิ่มรายการ + บันไดราคา",
+          "actor": "owner",
+          "system": "quotation_items + quotation_line_breaks",
+          "tables": ["quotation_items", "quotation_line_breaks", "smartgift_offer", "smartgift_price", "products"],
+          "pre": ["status=draft|rejected→draft", "เลือก offer_id หรือ product_id ได้"],
+          "post": ["คำนวณ line_total", "อัปเดต subtotal/vat/grand_total"],
+          "fail": ["แก้ไขตอนสถานะล็อก"]
+        },
+        {
+          "n": 3,
+          "action": "Submit",
+          "actor": "owner",
+          "system": "status → submitted",
+          "tables": ["quotations", "quotation_status_logs"],
+          "pre": [">=1 item", "ทุก item มี >=1 break", "grand_total >= 0"],
+          "post": ["รอคิว manager"],
+          "fail": ["400 ไม่ครบ item/break"]
+        },
+        {
+          "n": 4,
+          "action": "Approve / Reject",
+          "actor": "manager / admin",
+          "system": "quote.approve",
+          "tables": ["quotations", "quotation_status_logs"],
+          "pre": ["status=submitted", "reject ต้องมี note"],
+          "post": ["approved: ตั้ง approved_by/at", "rejected: sale revise → draft"],
+          "fail": ["sale ทำไม่ได้"]
+        },
+        {
+          "n": 5,
+          "action": "Send → Accept",
+          "actor": "owner / manager",
+          "system": "quote.send แล้ว mark accepted",
+          "tables": ["quotations", "quotation_status_logs"],
+          "pre": ["send จาก approved", "accept จาก sent"],
+          "post": ["sent_at", "accepted = ล็อกใบ (terminal)"],
+          "fail": []
+        }
+      ],
+      "notes": [
+        "ทุกเปลี่ยนสถานะต้อง INSERT quotation_status_logs 1 แถว",
+        "Terminal: accepted / expired / cancelled — ห้ามแก้รายการ (ยกเว้น admin override + note)",
+        "แนะนำ maker-checker: คน approve ไม่ใช่คนสร้างใบ"
+      ]
+    },
+    {
+      "id": "catalog-sync",
+      "title": "Sync แคตตาล็อกจากเว็บ → products",
+      "domain": "catalog",
+      "summary": "ดึง giftset/powerbank จาก smartgift-pricing แล้วเขียน catalogs + products",
+      "actors": ["administrator"],
+      "steps": [
+        {
+          "n": 1,
+          "action": "รัน sync_smartgift.py",
+          "actor": "admin / ops",
+          "system": "Basic Auth → API catalog",
+          "tables": ["catalogs", "products"],
+          "pre": ["MYSQL_DATABASE=smartgift", "SG_USER/PASSWORD"],
+          "post": ["catalog_id ผูก products", "upsert ตาม catalog_key+code"],
+          "fail": ["auth เว็บล้ม", "MySQL ปิด"]
+        },
+        {
+          "n": 2,
+          "action": "สร้าง china_sourcing draft (ถ้ายังไม่มี)",
+          "actor": "ops",
+          "system": "seed_china_sourcing",
+          "tables": ["china_sourcing"],
+          "pre": ["products.id"],
+          "post": ["1 draft ต่อ product"],
+          "fail": []
+        }
+      ],
+      "notes": ["อย่าเดาข้อมูลจากเว็บโดยไม่ sync", "exclusive_flag / มิติกล่องมาจากแหล่ง sync"]
+    },
+    {
+      "id": "pricelist-id-join",
+      "title": "Pricelist join ด้วย ID",
+      "domain": "pricelist",
+      "summary": "group → type → model ↔ offer → price และผูก product",
+      "actors": ["administrator", "manager", "sale"],
+      "diagram": [
+        "smartgift_group.id",
+        "  └─ smartgift_type.group_id",
+        "       └─ smartgift_model.type_id",
+        "            └─ smartgift_model_offer.model_id",
+        "                 └─ smartgift_offer.id",
+        "                      ├─ smartgift_price.offer_id",
+        "                      └─ product_offer_link.offer_id → products.id"
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "action": "นำเข้า Postgres dump → ตารางดิบ",
+          "actor": "ops",
+          "system": "import_smartgift_postgres.py",
+          "tables": ["smartgift_type", "smartgift_model", "smartgift_offer", "smartgift_price"],
+          "pre": ["ไฟล์ sql/smartgiftpricelist.postgres.sql"],
+          "post": ["มี business key: type_code, code, sig_hash"],
+          "fail": []
+        },
+        {
+          "n": 2,
+          "action": "Migrate เป็น ID joins",
+          "actor": "ops",
+          "system": "migrate_to_smartgift_db.py",
+          "tables": ["smartgift_group", "smartgift_model_offer", "product_offer_link"],
+          "pre": ["DB smartgift"],
+          "post": ["ขยาย offer_codes JSON → junction", "ผูก product ด้วย code"],
+          "fail": ["offer code ใน JSON ไม่มีใน offer"]
+        },
+        {
+          "n": 3,
+          "action": "ดูรายงาน",
+          "actor": "ทุกบทบาทที่มี product.read",
+          "system": "GET /api/report/smartgift",
+          "tables": ["v_smartgift_report"],
+          "pre": [],
+          "post": ["กรองกลุ่ม/ประเภท/มีราคา/ผูก product", "CSV export"],
+          "fail": []
+        }
+      ],
+      "notes": [
+        "Business key ยังเก็บไว้สำหรับแสดงผล; FK ใช้ INT id",
+        "coverage: models ไม่มี type / offers ไม่มีราคา / products ไม่ผูก offer"
+      ]
+    },
+    {
+      "id": "china-rfq",
+      "title": "ขอราคาจากโรงงานจีน (RFQ)",
+      "domain": "sourcing",
+      "summary": "กรอก china_sourcing ตาม checklist แล้วเปลี่ยนสถานะ draft→quoted→confirmed",
+      "actors": ["manager", "administrator"],
+      "steps": [
+        {
+          "n": 1,
+          "action": "เปิด sourcing ของสินค้า",
+          "actor": "manager / admin",
+          "system": "sourcing.write",
+          "tables": ["china_sourcing", "products", "suppliers", "v_product_sourcing"],
+          "pre": ["product_id", "อาจมี supplier_id"],
+          "post": ["status=draft|requested"],
+          "fail": ["sale ไม่มี sourcing.write"]
+        },
+        {
+          "n": 2,
+          "action": "ถามตาม checklist",
+          "actor": "ops",
+          "system": "china_request_checklist",
+          "tables": ["china_request_checklist"],
+          "pre": [],
+          "post": ["กรอก unit_price_*, moq_*, sample_*, logo_*, carton_*, battery_*, trade_term, payment"],
+          "fail": []
+        },
+        {
+          "n": 3,
+          "action": "รับ quote / ยืนยัน",
+          "actor": "manager / admin",
+          "system": "status quoted → confirmed",
+          "tables": ["china_sourcing"],
+          "pre": ["มีราคาขั้นอย่างน้อยหนึ่ง"],
+          "post": ["quoted_at / confirmed_at"],
+          "fail": []
+        }
+      ],
+      "notes": ["สถานะ: draft, requested, quoted, confirmed, rejected"]
+    },
+    {
+      "id": "sales-quota-plan",
+      "title": "Quota & แผน (Sales Command)",
+      "domain": "sales",
+      "summary": "ตั้งเป้าเดือน แจก 4 แหล่งรายได้ ติดตาม KPI ทุกศุกร์ และ Weekly Plan",
+      "actors": ["administrator", "manager"],
+      "steps": [
+        {
+          "n": 1,
+          "action": "สร้างงวด (เช่น 2026-08)",
+          "actor": "admin",
+          "system": "sales_period",
+          "tables": ["sales_period"],
+          "pre": ["period_code ไม่ซ้ำ", "quota_pre_vat"],
+          "post": ["is_current=1 ของงวดนี้"],
+          "fail": []
+        },
+        {
+          "n": 2,
+          "action": "แจกเป้า 4 แหล่ง",
+          "actor": "admin / manager",
+          "system": "sales_period_quota_split",
+          "tables": ["sales_revenue_source", "sales_period_quota_split", "v_sales_quota_split"],
+          "pre": ["ผลรวม amount ≈ quota_pre_vat"],
+          "post": ["Donut บนหน้า /sales-command"],
+          "fail": []
+        },
+        {
+          "n": 3,
+          "action": "ตั้ง KPI + อัปเดตจริงทุกศุกร์",
+          "actor": "manager",
+          "system": "sales_period_kpi",
+          "tables": ["sales_kpi_def", "sales_period_kpi", "v_sales_period_kpi"],
+          "pre": ["kpi_code มีใน def"],
+          "post": ["actual_value / actual_note เช่น 43/43"],
+          "fail": []
+        },
+        {
+          "n": 4,
+          "action": "วาง Weekly Plan W1–W4",
+          "actor": "manager",
+          "system": "sales_week_plan + sales_week_task",
+          "tables": ["sales_week_plan", "sales_week_task", "v_sales_week_plan"],
+          "pre": ["revenue_goal สะสมถึงเป้าเดือน"],
+          "post": ["ทีมทำตาม task; is_done"],
+          "fail": []
+        }
+      ],
+      "notes": [
+        "หน้า UI: /sales-command",
+        "Seed ตัวอย่าง: ส.ค. 2026 เป้า 873,000 — Anchor 400K / Quote ค้าง 250K / Win-back 150K / อื่นๆ 73K",
+        "ยังไม่ได้ sync ตรงจาก Vercel dashboard (ต้อง login)"
+      ]
+    }
+  ],
+  "permissions_matrix": [
+    { "code": "customer.read", "admin": true, "manager": true, "sale": true },
+    { "code": "customer.read_all", "admin": true, "manager": true, "sale": false },
+    { "code": "customer.write", "admin": true, "manager": true, "sale": true },
+    { "code": "customer.write_all", "admin": true, "manager": true, "sale": false },
+    { "code": "customer.delete", "admin": true, "manager": false, "sale": false },
+    { "code": "quote.read", "admin": true, "manager": true, "sale": true },
+    { "code": "quote.read_all", "admin": true, "manager": true, "sale": false },
+    { "code": "quote.write", "admin": true, "manager": true, "sale": true },
+    { "code": "quote.submit", "admin": true, "manager": true, "sale": true },
+    { "code": "quote.approve", "admin": true, "manager": true, "sale": false },
+    { "code": "quote.send", "admin": true, "manager": true, "sale": true },
+    { "code": "quote.cancel", "admin": true, "manager": true, "sale": false },
+    { "code": "product.read", "admin": true, "manager": true, "sale": true },
+    { "code": "product.write", "admin": true, "manager": true, "sale": false },
+    { "code": "sourcing.write", "admin": true, "manager": true, "sale": false },
+    { "code": "employee.read", "admin": true, "manager": true, "sale": false },
+    { "code": "employee.write", "admin": true, "manager": false, "sale": false },
+    { "code": "role.manage", "admin": true, "manager": false, "sale": false },
+    { "code": "admin.access", "admin": true, "manager": false, "sale": false }
+  ],
+  "field_checklist": [
+    { "status": "draft", "header": ["quote_no", "customer_id", "owner_emp_id", "quote_date"], "lines": "อนุญาตว่างชั่วคราว" },
+    { "status": "submitted", "header": ["+ valid_until", "currency", "totals"], "lines": "≥1 item + breaks" },
+    { "status": "approved", "header": ["+ approved_by/at"], "lines": "sale ห้ามแก้ราคา" },
+    { "status": "sent", "header": ["+ sent_at"], "lines": "แนะนำ customer_note" },
+    { "status": "accepted", "header": ["—"], "lines": "ล็อกใบ" },
+    { "status": "rejected/cancelled", "header": ["+ log.note"], "lines": "—" }
+  ]
+}
