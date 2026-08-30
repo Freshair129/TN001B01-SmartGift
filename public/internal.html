@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="./customer-catalog.css">
-  <title>SmartGift — B2B Portfolio & BOM Cascade Catalog</title>
+  <title>SmartGift — Internal Dashboard (B2B Portfolio & BOM Cascade)</title>
   <style>
     :root {
       color-scheme: light;
@@ -1306,13 +1306,22 @@
         </div>
       </div>
       <div class="load">
-        <span id="source" class="source">กำลังโหลดข้อมูล Catalog…</span>
+        <label class="file-button" for="file">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          เปิด Snapshot JSON
+        </label>
+        <input id="file" type="file" accept="application/json,.json">
+        <span id="source" class="source">กำลังโหลดข้อมูล Master Catalog…</span>
       </div>
     </header>
 
     <nav id="app-navigation" class="nav" aria-label="เมนูหลัก">
       <a href="#/catalog" aria-current="page">Anatomy Explorer</a>
+      <a href="#/offers">ชุดของขวัญ (Offers)</a>
+      <a href="#/bundles">แพ็กเกจองค์กร (Bundles & BOM)</a>
       <a href="#/expo">Seasonal Expo</a>
+      <a href="#/calculator">คำนวณราคา (Price Calculator)</a>
+      <a href="#/governance">Data Governance & Logs</a>
     </nav>
 
     <div class="status" aria-label="สรุปสถิติ Master Catalog">
@@ -1546,14 +1555,44 @@
         </div>
       </section>
 
-      <!-- VIEW 2: SEASONAL EXPO -->
+      <!-- VIEW 2: ALL OFFERS -->
+      <section id="offers-view" class="view" data-view="offers" hidden>
+        <div class="heading">
+          <div>
+            <div class="eyebrow">Catalog Offers</div>
+            <h2>รายการชุดของขวัญและสินค้าทั้งหมด</h2>
+          </div>
+          <p>ค้นหาและกรองชุดของขวัญองค์กรตามรหัสข้อเสนอ รหัสซัพพลายเออร์ หรือชื่อสินค้า</p>
+        </div>
+        <div class="panel page-panel">
+          <div class="toolbar">
+            <input id="search-offers" class="search-input" type="text" placeholder="🔍 ค้นหารหัส เช่น TGC06, PM-TMB, P-01...">
+            <span id="offers-count" style="font-weight: 700; color: var(--muted);">แสดง 0 รายการ</span>
+          </div>
+          <div id="all-offers-grid" class="cards-grid"></div>
+        </div>
+      </section>
+
+      <!-- VIEW 3: CORPORATE BUNDLES & BOM -->
+      <section id="bundles-view" class="view" data-view="bundles" hidden>
+        <div class="heading">
+          <div>
+            <div class="eyebrow">Corporate Packages & BOM Waterfall</div>
+            <h2>แพ็กเกจองค์กรและการถอดชิ้นส่วน (BOM Breakdown)</h2>
+          </div>
+          <p>รายการ legacy สำหรับอ้างอิงเท่านั้น · package ใหม่ต้องตรวจ gate กำไรขั้นต่ำ ฿25,000 จากต้นทุนที่ยืนยันได้</p>
+        </div>
+        <div class="bundle-grid" id="bundles-container"></div>
+      </section>
+
+      <!-- VIEW 4: SEASONAL EXPO -->
       <section id="expo-view" class="view" data-view="expo" hidden>
         <div class="heading">
           <div>
             <div class="eyebrow">Seasonal Ad Creative & BOM Explorer</div>
             <h2>Seasonal Expo: ชุด Christmas และ New Year</h2>
           </div>
-          <p>เลือก package ตาม event, tier และโครงสร้างบริษัท แล้วเปิดดูส่วนประกอบในชุด · ราคาแบบสอบถามผ่านทีมขาย</p>
+          <p>เลือก package ตาม event, tier และโครงสร้างบริษัท แล้วเปิดดูชิ้นส่วนย่อยพร้อมราคา 1 ชิ้น, CBM และสถานะ Profit Gate</p>
         </div>
         <section id="expo-media-feature" class="expo-media-feature" aria-labelledby="expo-media-title" hidden></section>
         <div class="expo-toolbar" aria-label="ตัวกรอง Seasonal Expo">
@@ -1575,11 +1614,85 @@
               <option value="all">ทุก segment</option>
             </select>
           </div>
+          <label class="expo-mode" for="expo-customer-safe">
+            <input id="expo-customer-safe" type="checkbox">
+            Customer-safe ad preview
+          </label>
           <span id="expo-count" style="color: var(--muted); font-size: 12px; font-weight: 700;">0 packages</span>
         </div>
         <div id="seasonal-expo-grid" class="expo-grid"></div>
       </section>
 
+      <!-- VIEW 5: LIVE PRICE CALCULATOR -->
+      <section id="calculator-view" class="view" data-view="calculator" hidden>
+        <div class="heading">
+          <div>
+            <div class="eyebrow">Dynamic Landed Cost Engine</div>
+            <h2>เครื่องมือคำนวณราคาและบันไดราคาเสนอขาย (Ladder Quote)</h2>
+          </div>
+          <p>คำนวณราคาจากต้นทุนโรงงานจีน (EXW RMB) อัตราค่าขนส่งทางรถ/เรือ และเกณฑ์กำไรขั้นต่ำ</p>
+        </div>
+        <div class="panel page-panel">
+          <div class="calc-form">
+            <div class="form-group">
+              <label for="calc-rmb">ต้นทุนโรงงาน (RMB/ชิ้น)</label>
+              <input id="calc-rmb" type="number" value="50" min="1" step="0.5">
+            </div>
+            <div class="form-group">
+              <label for="calc-fx">อัตราแลกเปลี่ยน (CNY ➔ THB)</label>
+              <input id="calc-fx" type="number" value="5.0" min="1" step="0.05">
+            </div>
+            <div class="form-group">
+              <label for="calc-upc">จำนวนชิ้นต่อกล่อง (UPC)</label>
+              <input id="calc-upc" type="number" value="20" min="1">
+            </div>
+            <div class="form-group">
+              <label for="calc-cbm">ปริมาตรกล่อง (CBM/กล่อง)</label>
+              <input id="calc-cbm" type="number" value="0.08" min="0.01" step="0.01">
+            </div>
+            <div class="form-group">
+              <label for="calc-kg">น้ำหนักกล่อง (KG/กล่อง)</label>
+              <input id="calc-kg" type="number" value="12" min="0.1" step="0.5">
+            </div>
+            <div class="form-group">
+              <label for="calc-profile">ประเภทการเสนอราคา</label>
+              <select id="calc-profile">
+                <option value="corporate" selected>องค์กร (Corporate 1.47x บน Landed Cost)</option>
+                <option value="standard">ทั่วไป (Standard บันไดต้นทุน)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="calc-logo">งานสกรีนโลโก้</label>
+              <select id="calc-logo">
+                <option value="none">ไม่รวมงานสกรีน</option>
+                <option value="silk" selected>สกรีนซิลค์สกรีน 1 จุด (Silk 1 Pos)</option>
+                <option value="engrave">เลเซอร์ยิงลาย (Laser Engrave)</option>
+                <option value="hotstamp">ปั๊มฟอยล์ / Hotstamp</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="calculator-results" class="quote-result"></div>
+        </div>
+      </section>
+
+      <!-- VIEW 6: DATA GOVERNANCE & LOGS -->
+      <section id="governance-view" class="view" data-view="governance" hidden>
+        <div class="heading">
+          <div>
+            <div class="eyebrow">Provenance Audit Trail</div>
+            <h2>ประวัติการนำเข้าข้อมูลและลายนิ้วมือดิจิทัล (SHA-256)</h2>
+          </div>
+          <p>เก็บบันทึกประวัติการเปลี่ยนแปลงสูตรราคา การสกัดรหัสสินค้า และการซิงก์ข้อมูลแบบ Append-Only</p>
+        </div>
+        <div class="panel page-panel">
+          <div class="toolbar">
+            <span style="font-weight: 800; font-size: 15px;">Recent Audit Events</span>
+            <span id="audit-count" style="color: var(--muted); font-size: 13px;">0 events</span>
+          </div>
+          <div id="audit-list-container" class="audit-list"></div>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -1588,7 +1701,9 @@
     let catalogMaster = null;
     let catalogMedia = null;
     let activeCategory = "eco-friendly";
-    const views = new Set(["catalog", "expo"]);
+    let auditLogs = [];
+    let expoCustomerSafe = false;
+    const views = new Set(["catalog", "offers", "bundles", "expo", "calculator", "governance"]);
 
     const fmtMoney = v => (typeof v === "number" && !isNaN(v)) 
       ? new Intl.NumberFormat("th-TH", { style: "currency", currency: "THB", maximumFractionDigits: 2 }).format(v) 
@@ -1721,15 +1836,15 @@
     }
 
     const packageStatus = status => ({
-      draft: ["draft", "เร็ว ๆ นี้"],
-      mapping_pending: ["pending", "รอยืนยันรายละเอียด"],
-      cost_pending: ["pending", "รอยืนยันรายละเอียด"],
-      missing_inputs: ["pending", "รอยืนยันรายละเอียด"],
-      below_minimum: ["pending", "ยังไม่เปิดรับออเดอร์"],
-      pass: ["ready", "พร้อมเสนอราคา"],
-      approved: ["approved", "พร้อมเสนอราคา"],
-      rejected: ["pending", "ยังไม่เปิดรับออเดอร์"],
-    }[status] || ["pending", "รอยืนยันรายละเอียด"]);
+      draft: ["draft", "รอ brief"],
+      mapping_pending: ["pending", "รอ reconcile offer"],
+      cost_pending: ["pending", "รอต้นทุนจริง"],
+      missing_inputs: ["pending", "ข้อมูลต้นทุนไม่ครบ"],
+      below_minimum: ["bad", "ต่ำกว่า gate ฿25,000"],
+      pass: ["ready", "ผ่าน gate ฿25,000"],
+      approved: ["approved", "อนุมัติแล้ว"],
+      rejected: ["bad", "ไม่ใช้ package นี้"],
+    }[status] || ["pending", status || "ไม่ทราบสถานะ"]);
 
     function canonicalProducts(data) {
       if (Array.isArray(data.canonical_products)) return data.canonical_products;
@@ -1743,6 +1858,7 @@
         category: row.category_slug,
         srp_price: row.srp_price,
         price_tiers: row.price_tiers,
+        factory_match_status: row.factory_match_status,
       }));
     }
 
@@ -1798,7 +1914,11 @@
         a.setAttribute("aria-current", a.getAttribute("href") === `#/${view}` ? "page" : "false");
       }
 
+      if (view === "offers") renderAllOffers();
+      if (view === "bundles") renderBundles();
       if (view === "expo") renderSeasonalExpo();
+      if (view === "calculator") recalculateQuote();
+      if (view === "governance") renderAuditLogs();
     }
 
     function acceptMasterData(data, sourceLabel) {
@@ -1816,8 +1936,11 @@
       renderCategoryView(activeCategory);
       renderCatalogMedia();
       renderExpoMediaFeature();
+      renderAllOffers();
+      renderBundles();
       configureExpoFilters();
       renderSeasonalExpo();
+      recalculateQuote();
     }
 
     function renderCategoryView(catSlug) {
@@ -1883,12 +2006,14 @@
             </div>
             <div class="badges">
               <span class="badge available">พร้อมจำหน่าย</span>
-              <span class="badge bundle_only">${item.code}</span>
+              <span class="badge bundle_only">${item.product_master || item.code}</span>
+              ${item.packaging_carton ? `<span class="badge ${item.packaging_carton.chargeable_basis === 'weight' ? 'tier-signature' : 'ready'}">📦 ${item.packaging_carton.cbm_per_unit} CBM/ชิ้น (${item.packaging_carton.density_kg_per_cbm} kg/CBM · คิดตาม${item.packaging_carton.chargeable_basis === 'weight' ? 'น้ำหนัก' : 'ปริมาตร'})</span>` : ''}
             </div>
             ${item.dimensions_cm ? `
               <div style="font-size: 11px; color: var(--muted); margin: 6px 0; background: var(--soft); padding: 6px 10px; border-radius: 6px; display: flex; gap: 12px; flex-wrap: wrap;">
                 <span>📐 ขนาด: <strong>${item.dimensions_cm.length}×${item.dimensions_cm.width}×${item.dimensions_cm.height} cm</strong></span>
                 <span>⚖️ น้ำหนัก: <strong>${item.unit_weight_kg} kg</strong></span>
+                <span>🚛 ค่าส่งจีน-ไทยประเมิน: <strong>${fmtMoney(item.logistics_freight_est?.freight_thb_per_unit || 15.0)}/ชิ้น</strong></span>
               </div>
             ` : ''}
             ${singleTierRows}
@@ -1922,7 +2047,7 @@
           card.innerHTML = `
             <div class="card-top">
               <div>
-                <span class="category-label">${item.offer_code}</span>
+                <span class="category-label">${item.offer_code} · ${item.supplier_code || "P-00"}</span>
                 <h3>${item.name}</h3>
               </div>
               <div class="price-block">
@@ -1933,11 +2058,13 @@
             <div class="badges">
               <span class="badge ${item.gift_tier === 'Signature' ? 'tier-signature' : 'available'}">${item.gift_tier || 'Select Tier'}</span>
               <span class="badge ${item.sub_catalog === 'draft_bom_catalog' || item.source_kind === 'derived_recipe_pending_approval' ? 'pending' : 'available'}">${item.catalog_match_status || (item.source_kind === 'derived_recipe_pending_approval' ? 'รออนุมัติ recipe' : 'Approved Offer')}</span>
+              ${item.packaging_carton ? `<span class="badge ready">📦 ${item.packaging_carton.cbm_per_unit} CBM/ชุด</span>` : ''}
             </div>
             ${item.dimensions_cm ? `
               <div style="font-size: 11px; color: var(--muted); margin: 6px 0; background: var(--soft); padding: 6px 10px; border-radius: 6px; display: flex; gap: 12px; flex-wrap: wrap;">
                 <span>📐 กล่อง: <strong>${item.dimensions_cm.length}×${item.dimensions_cm.width}×${item.dimensions_cm.height} cm</strong></span>
                 <span>⚖️ น้ำหนัก: <strong>${item.unit_weight_kg} kg</strong></span>
+                <span>🚛 ค่าส่งจีน-ไทย: <strong>${fmtMoney(item.logistics_freight_est?.freight_thb_per_unit || 25.0)}/ชุด</strong></span>
               </div>
             ` : ''}
             ${tierRows}
@@ -1947,6 +2074,120 @@
           `;
           container.append(card);
         }
+      }
+    }
+
+    function renderAllOffers() {
+      const grid = document.querySelector("#all-offers-grid");
+      if (!grid || !catalogMaster) return;
+      grid.replaceChildren();
+
+      const query = (document.querySelector("#search-offers")?.value || "").toLowerCase().trim();
+      const allOffers = catalogMaster.catalog_offers || [];
+      const filtered = allOffers.filter(o => {
+        if (!query) return true;
+        return (o.offer_code || "").toLowerCase().includes(query) ||
+               (o.name || "").toLowerCase().includes(query) ||
+               (o.supplier_code || "").toLowerCase().includes(query) ||
+               (o.interest_theme || "").toLowerCase().includes(query);
+      });
+
+      document.querySelector("#offers-count").textContent = `แสดง ${filtered.length} จากทั้งหมด ${allOffers.length} รายการ`;
+
+      for (const item of filtered.slice(0, 60)) {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-top">
+            <div>
+              <span class="category-label">${item.offer_code} · ${item.supplier_code || "P-00"}</span>
+              <h3>${item.name}</h3>
+              <div style="font-size: 11px; color: var(--muted);">${item.interest_theme || "Corporate Gift"}</div>
+            </div>
+            <div class="price-block">
+              <div class="srp-price">${fmtMaybeMoney(item.srp_price ?? item.price_tiers?.[0]?.unit_price)}</div>
+              <div class="srp-sub">SRP</div>
+            </div>
+          </div>
+          <div class="badges">
+            <span class="badge ${item.gift_tier === 'Signature' ? 'tier-signature' : 'available'}">${item.gift_tier || 'Select'}</span>
+            <span class="badge ${item.source_kind === 'derived_recipe_pending_approval' ? 'pending' : 'available'}">${item.catalog_match_status || (item.source_kind === 'derived_recipe_pending_approval' ? 'รออนุมัติ recipe' : 'Active')}</span>
+          </div>
+        `;
+        grid.append(card);
+      }
+    }
+
+    function renderBundles() {
+      const container = document.querySelector("#bundles-container");
+      if (!container || !catalogMaster) return;
+      container.replaceChildren();
+      const notice = document.createElement("div");
+      notice.className = "expo-empty";
+      notice.innerHTML = `ข้อมูลด้านล่างเป็น corporate bundle รุ่นเก่า ใช้สำหรับอ้างอิงเท่านั้น; เปิด <a href="#/expo">Seasonal Expo</a> เพื่อดู package ที่ใช้ gate ฿25,000 และ BOM จาก projection ล่าสุด`;
+      container.append(notice);
+
+      for (const b of (catalogMaster.corporate_bundles || [])) {
+        const card = document.createElement("article");
+        card.className = "bundle-card";
+
+        let bomRows = "";
+        const skuList = b.bom_breakdown?.physical_sku_bom || b.bom_breakdown?.physical_sku_deductions || [];
+        if (skuList && skuList.length > 0) {
+          bomRows = `
+            <table class="bom-table">
+              <thead><tr><th>รหัส SKU</th><th>ชื่อสินค้าชิ้นส่วน</th><th>หมวด</th><th class="num">จำนวน</th><th class="num">ต้นทุน/หน่วย</th><th class="num">ต้นทุนรวม</th></tr></thead>
+              <tbody>
+                ${skuList.map(sku => `
+                  <tr>
+                    <td><strong>${sku.product_code}</strong></td>
+                    <td>${sku.name_th}</td>
+                    <td><span style="font-size: 11px; color: var(--muted);">${sku.category}</span></td>
+                    <td class="num"><strong>${sku.total_units_required}</strong></td>
+                    <td class="num">${fmtMoney(sku.unit_cost)}</td>
+                    <td class="num"><strong>${fmtMoney(sku.total_cost)}</strong></td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          `;
+        }
+
+        card.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;">
+            <div>
+              <span class="category-label">${b.bundle_code}</span>
+              <h3 style="margin: 3px 0 6px; font-size: 20px; font-weight: 800;">${b.name}</h3>
+              <p style="margin: 0; color: var(--muted); font-size: 13px;">${b.description || ""}</p>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 24px; font-weight: 900; color: var(--ink);">${fmtMaybeMoney(b.total_price)}</div>
+              <div style="font-size: 12px; color: var(--muted);">ราคาเสนอขายรวม (${b.target_recipients ?? "รอจำนวน"} ผู้รับ)</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+            <span class="badge pending">Legacy reference · ไม่ใช้เป็น gate</span>
+            <span class="badge pending">ต้นทุน/กำไรต้อง reconcile ใหม่</span>
+            <a class="badge available" href="#/expo">เปิด Seasonal Expo</a>
+          </div>
+
+          <div style="background: var(--soft); padding: 14px; border-radius: 10px; font-size: 13px;">
+            <div style="font-weight: 800; margin-bottom: 6px; color: var(--ink);">โครงสร้างการกระจายชุดของขวัญ (Tier Breakdown):</div>
+            ${Object.entries(b.tier_breakdown || {}).map(([tier, desc]) => `
+              <div style="display: grid; grid-template-columns: 180px 1fr; gap: 10px; margin-top: 4px;">
+                <strong style="color: var(--accent);">${tier}</strong>
+                <span>${desc}</span>
+              </div>
+            `).join("")}
+          </div>
+
+          <div>
+            <div style="font-weight: 800; font-size: 14px; margin-top: 4px;">ตารางถอดชิ้นส่วนสินค้าจริง (Physical SKU BOM):</div>
+            ${bomRows}
+          </div>
+        `;
+        container.append(card);
       }
     }
 
@@ -1978,6 +2219,14 @@
         select.addEventListener("change", renderSeasonalExpo);
         select.dataset.bound = "true";
       }
+      const safeToggle = document.querySelector("#expo-customer-safe");
+      if (safeToggle && safeToggle.dataset.bound !== "true") {
+        safeToggle.addEventListener("change", () => {
+          expoCustomerSafe = safeToggle.checked;
+          renderSeasonalExpo();
+        });
+        safeToggle.dataset.bound = "true";
+      }
     }
 
     function expoProductRows(pkg) {
@@ -1993,7 +2242,21 @@
         qty: component.qty,
         name_th: component.product_code,
         name_en: "รอข้อมูล ProductMaster",
+        unit_srp_qty1: null,
+        cbm_per_unit: null,
+        factory_cost_thb: null,
+        cost_status: "mapping_pending",
       })));
+    }
+
+    function expoPriceSummary(pkg) {
+      const ref = pkg.price_reference || {};
+      if (ref.offer_price_tiers) {
+        const qty1 = ref.offer_price_qty1;
+        const tiers = (ref.offer_price_tiers || []).slice(0, 3).map(tier => `${fmtNum(tier.min_qty)}+: ${fmtMaybeMoney(tier.unit_price)}`).join(" · ");
+        return { qty1: fmtMaybeMoney(qty1), ladder: tiers || "รอข้อมูล" };
+      }
+      return { qty1: "หลาย offer", ladder: "รอจำนวนและราคา parent" };
     }
 
     function renderSeasonalExpo() {
@@ -2003,6 +2266,7 @@
       const event = document.querySelector("#expo-event")?.value || "all";
       const tier = document.querySelector("#expo-tier")?.value || "all";
       const segment = document.querySelector("#expo-segment")?.value || "all";
+      const safe = expoCustomerSafe || Boolean(document.querySelector("#expo-customer-safe")?.checked);
       const allPackages = (catalogMaster.pkg || []).filter(pkg => ["christmas_2026", "new_year_2027"].includes(pkg.occasion));
       const packages = allPackages.filter(pkg =>
         (event === "all" || pkg.occasion === event) &&
@@ -2010,7 +2274,7 @@
         (segment === "all" || pkg.recipient_segment === segment)
       );
       const count = document.querySelector("#expo-count");
-      if (count) count.textContent = `${packages.length} packages`;
+      if (count) count.textContent = `${packages.length} packages${safe ? " · customer-safe" : " · internal"}`;
       grid.replaceChildren();
       if (packages.length === 0) {
         grid.innerHTML = `<div class="expo-empty">ยังไม่มี package ตามตัวกรองนี้</div>`;
@@ -2020,6 +2284,7 @@
       for (const pkg of packages) {
         const [statusClass, statusText] = packageStatus(pkg.status);
         const creative = pkg.ad_creative || {};
+        const price = expoPriceSummary(pkg);
         const rows = expoProductRows(pkg);
         const uniqueProducts = [...new Map(rows.map(row => [row.product_code, row])).values()];
         const productPills = uniqueProducts.length
@@ -2031,10 +2296,14 @@
                 <td><strong>${escapeHtml(row.product_code)}</strong><div class="expo-id">${escapeHtml(row.product_master_id)}</div></td>
                 <td>${escapeHtml(row.name_th || row.name_en || "—")}</td>
                 <td class="num">${fmtNum(row.qty)}</td>
+                ${safe ? "" : `<td class="num">${fmtMaybeMoney(row.unit_srp_qty1)}</td><td class="num">${fmtMaybeMoney(row.factory_cost_thb)}</td><td>${escapeHtml(row.cost_status || "รอตรวจ")}</td>`}
+                <td class="num">${safe ? "—" : (row.cbm_per_unit == null ? "รอข้อมูล" : `${escapeHtml(row.cbm_per_unit)} CBM`)}</td>
               </tr>
             `).join("")
-          : `<tr><td colspan="3" class="expo-disclosure">ยังไม่มี BOM ที่มีจำนวนยืนยันได้</td></tr>`;
-        const bomHead = "<tr><th>ProductMaster</th><th>สินค้า</th><th class=\"num\">จำนวน</th></tr>";
+          : `<tr><td colspan="${safe ? 4 : 7}" class="expo-disclosure">ยังไม่มี BOM ที่มีจำนวนยืนยันได้</td></tr>`;
+        const bomHead = safe
+          ? "<tr><th>ProductMaster</th><th>สินค้า</th><th class=\"num\">จำนวน</th><th class=\"num\">CBM</th></tr>"
+          : "<tr><th>ProductMaster</th><th>สินค้า</th><th class=\"num\">จำนวน</th><th class=\"num\">SRP @1</th><th class=\"num\">Factory</th><th>Cost status</th><th class=\"num\">CBM</th></tr>";
         const details = pkg.options?.length
           ? pkg.options.map(option => `<div class="expo-disclosure">${escapeHtml(option.offer_code || option.offer_id)} × ${option.qty == null ? "รอจำนวน" : fmtNum(option.qty)} · ${escapeHtml(option.bom_status || "รอตรวจ")}</div>`).join("")
           : `<div class="expo-disclosure">${pkg.gift_tier === "Bespoke" ? "รอ brief เพื่อเลือก CatalogOffer และ BOM" : "ยังไม่มีรายการย่อย"}</div>`;
@@ -2059,9 +2328,9 @@
             <div class="expo-facts">
               <div class="expo-fact-row"><span>Tier / Segment</span><strong>${escapeHtml(pkg.gift_tier || "Mixed")} · ${escapeHtml(pkg.recipient_segment || "mixed")}</strong></div>
               <div class="expo-fact-row"><span>จำนวนผู้รับ</span><strong>${pkg.target_recipients == null ? "รอ order brief" : fmtNum(pkg.target_recipients)}</strong></div>
-              <div class="expo-fact-row"><span>ราคา offer @1</span><strong>สอบถามราคา</strong></div>
-              <div class="expo-fact-row"><span>Offer ladder</span><strong>สอบถามราคา</strong></div>
-              <div class="expo-fact-row"><span>ราคา package</span><strong>สอบถามราคา</strong></div>
+              <div class="expo-fact-row"><span>ราคา offer @1</span><strong>${safe ? "สอบถามราคา" : price.qty1}</strong></div>
+              <div class="expo-fact-row"><span>Offer ladder</span><strong>${safe ? "สอบถามราคา" : escapeHtml(price.ladder)}</strong></div>
+              <div class="expo-fact-row"><span>${safe ? "ราคา package" : "Profit / Gate"}</span><strong>${safe ? "สอบถามราคา" : `${fmtMaybeMoney(pkg.profit_evaluation?.profit)} / ฿25,000`}</strong></div>
               <div class="expo-products" aria-label="ส่วนประกอบสินค้า">${productPills}</div>
             </div>
           </div>
@@ -2073,11 +2342,136 @@
                 <tbody>${bomRows}</tbody>
               </table>
               ${details}
+              ${safe ? "" : `<div class=\"expo-disclosure\">CBM/ต้นทุนที่ยังไม่ verified จะแสดงเป็น “รอข้อมูล” และไม่ทำให้ package ผ่าน Profit Gate</div>`}
             </div>
           </details>
         `;
         grid.append(card);
       }
+    }
+
+    function recalculateQuote() {
+      const rmb = parseFloat(document.querySelector("#calc-rmb")?.value || "50");
+      const fx = parseFloat(document.querySelector("#calc-fx")?.value || "5.0");
+      const upc = parseInt(document.querySelector("#calc-upc")?.value || "20");
+      const cbm = parseFloat(document.querySelector("#calc-cbm")?.value || "0.08");
+      const kg = parseFloat(document.querySelector("#calc-kg")?.value || "12");
+      const profile = document.querySelector("#calc-profile")?.value || "corporate";
+      const logo = document.querySelector("#calc-logo")?.value || "silk";
+
+      const resultsDiv = document.querySelector("#calculator-results");
+      if (!resultsDiv) return;
+
+      const breaks = profile === "corporate" ? [100, 300, 500, 1000] : [10, 20, 50, 100, 300, 500, 1000];
+      const factors = profile === "corporate" ? [0.80, 0.77, 0.75, 0.73] : [1.00, 0.90, 0.85, 0.80, 0.77, 0.75, 0.73];
+      const anchor = profile === "corporate" ? 1000 : 500;
+      const anchorIdx = breaks.indexOf(anchor);
+
+      const density = (kg / cbm);
+      const chargedBy = density >= 400 ? "น้ำหนัก (Weight)" : "ปริมาตร (Volume)";
+
+      function getLanded(qty) {
+        const sof = qty <= 20 ? 1.5 : (qty <= 50 ? 1.4 : (qty <= 100 ? 1.3 : (qty <= 300 ? 1.2 : (qty <= 499 ? 1.1 : 1.0))));
+        const factory = rmb * fx * sof;
+        const cartons = Math.ceil(qty / upc);
+        const freight = cartons * cbm * 6400; // Guangzhou Truck Electronic TISI
+        const freightPer = freight / qty;
+        const logoPer = logo === "none" ? 0 : (logo === "silk" ? 8.5 : 12.0);
+        const inland = 2.0 * fx;
+        return {
+          total: factory + freightPer + logoPer + inland,
+          factory, freightPer, logoPer, inland, sof
+        };
+      }
+
+      const anchorLanded = getLanded(anchor);
+      const markup = profile === "corporate" ? 1.47 : 2.14;
+      const anchorPrice = anchorLanded.total * markup;
+
+      const ladderRows = breaks.map((q, idx) => {
+        const L = getLanded(q);
+        const ladderPrice = anchorPrice * (factors[idx] / factors[anchorIdx]);
+        const minProfit = q <= 20 ? 5000 : 3000;
+        const floorPrice = L.total + (minProfit / q);
+        const finalPrice = Math.ceil(Math.max(ladderPrice, floorPrice) / 10) * 10;
+        const profit = (finalPrice - L.total) * q;
+        const margin = (profit / (finalPrice * q)) * 100;
+        return { q, landed: L.total, price: finalPrice, totalOrder: finalPrice * q, profit, margin, basis: floorPrice > ladderPrice ? "Profit Floor" : "Ladder" };
+      });
+
+      resultsDiv.innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 12px;">
+          <div class="card" style="padding: 14px;">
+            <div style="font-size: 11px; color: var(--muted); font-weight: 700;">เกณฑ์คิดค่าขนส่งจีน-ไทย</div>
+            <div style="font-size: 16px; font-weight: 800; color: var(--accent);">${chargedBy}</div>
+            <div style="font-size: 11px; color: var(--muted);">ความหนาแน่น: ${density.toFixed(1)} kg/CBM (จุดสวิตช์ 400)</div>
+          </div>
+          <div class="card" style="padding: 14px;">
+            <div style="font-size: 11px; color: var(--muted); font-weight: 700;">ต้นทุน Landed Cost ที่ ${anchor} ชุด</div>
+            <div style="font-size: 16px; font-weight: 800; color: var(--ink);">${fmtMoney(anchorLanded.total)} / ชุด</div>
+            <div style="font-size: 11px; color: var(--muted);">Markup ที่ใช้: ${markup}x</div>
+          </div>
+        </div>
+
+        <div class="panel" style="overflow: hidden;">
+          <table class="ladder-table" style="margin: 0;">
+            <thead>
+              <tr>
+                <th>จำนวนสั่งซื้อ (ชิ้น)</th>
+                <th>ต้นทุน Landed Cost</th>
+                <th>ราคาเสนอขาย/ชิ้น</th>
+                <th>ยอดรวมออเดอร์</th>
+                <th>กำไรสุทธิ</th>
+                <th>Gross Margin</th>
+                <th>ตัวกำหนดราคา</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${ladderRows.map(r => `
+                <tr>
+                  <td><strong>${fmtNum(r.q)} ชุด</strong></td>
+                  <td>${fmtMoney(r.landed)}</td>
+                  <td><strong style="color: var(--accent); font-size: 14px;">${fmtMoney(r.price)}</strong></td>
+                  <td><strong>${fmtMoney(r.totalOrder)}</strong></td>
+                  <td><span style="color: var(--good); font-weight: 700;">${fmtMoney(r.profit)}</span></td>
+                  <td>${r.margin.toFixed(1)}%</td>
+                  <td><span class="badge ${r.basis === 'Profit Floor' ? 'pending' : 'available'}">${r.basis}</span></td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    function renderAuditLogs() {
+      const container = document.querySelector("#audit-list-container");
+      if (!container) return;
+      container.replaceChildren();
+
+      fetch("/api/audit-logs")
+        .then(r => r.ok ? r.json() : [])
+        .then(logs => {
+          auditLogs = logs;
+          document.querySelector("#audit-count").textContent = `${logs.length} events logged`;
+          for (const item of logs.slice(-40).reverse()) {
+            const card = document.createElement("div");
+            card.className = "audit-card";
+            card.innerHTML = `
+              <div class="audit-time">${new Date(item.timestamp).toLocaleString("th-TH")}</div>
+              <div><span class="badge available">${item.event_type || "INGESTED"}</span></div>
+              <div>
+                <strong>${item.provenance?.action || item.action || "DATA_PROVENANCE_RECORD"}</strong>
+                <div style="color: var(--muted); font-size: 12px;">${item.provenance?.filename || item.source_ref?.file || item.entity_id || ""}</div>
+              </div>
+              <div class="audit-hash">${(item.provenance?.sha256 || item.source_ref?.sha256 || "—").slice(0, 14)}...</div>
+            `;
+            container.append(card);
+          }
+        })
+        .catch(() => {
+          container.innerHTML = `<div style="padding: 24px; text-align: center; color: var(--muted);">ไม่พบประวัติ Audit Log ในขณะนี้</div>`;
+        });
     }
 
     // Set up Category Anatomy Interactions
@@ -2098,6 +2492,23 @@
       btn.addEventListener("click", () => renderCategoryView(slug));
       jumpContainer.append(btn);
     }
+
+    // Event listeners
+    document.querySelector("#search-offers")?.addEventListener("input", renderAllOffers);
+    for (const id of ["calc-rmb", "calc-fx", "calc-upc", "calc-cbm", "calc-kg", "calc-profile", "calc-logo"]) {
+      document.querySelector(`#${id}`)?.addEventListener("input", recalculateQuote);
+    }
+
+    document.querySelector("#file")?.addEventListener("change", async e => {
+      const f = e.target.files?.[0];
+      if (!f) return;
+      try {
+        const text = await f.text();
+        acceptMasterData(JSON.parse(text), f.name);
+      } catch (err) {
+        alert("ไม่สามารถอ่านไฟล์ Snapshot ได้");
+      }
+    });
 
     // 3D View Mode vs 2D Schematic Toggle
     const btnMode3D = document.querySelector("#btn-mode-3d");
@@ -2145,8 +2556,9 @@
     window.addEventListener("hashchange", route);
     route();
 
-    // Fetch the customer-safe catalog and media projections for the
-    // Anatomy Explorer and Seasonal Expo views.
+    // Fetch catalog and price projection together so the Seasonal Expo can show
+    // schema IDs, BOM provenance and price/cost readiness without changing the
+    // customer-facing catalog source.
     const fetchJson = url => fetch(url).then(r => r.ok ? r.json() : Promise.reject(new Error(url)));
     Promise.all([
       fetchJson("/api/catalog").catch(() => null),
@@ -2165,8 +2577,12 @@
         acceptMasterData(merged, pricelist ? "Live Catalog + Price Projection" : "Live Master Catalog");
       })
       .catch(() => {
-        document.querySelector("#source").textContent = "ยังไม่สามารถโหลดข้อมูล Catalog ได้ในขณะนี้";
-        window.CustomerCatalog?.setError();
+        fetchJson("./data-pipeline/02_prepared/smartgift_catalog_master.json")
+          .then(d => fetchJson("./data/catalog_media.json").catch(() => null).then(media => acceptMasterData({ ...d, catalog_media: media }, "Local Prepared Catalog")))
+          .catch(() => {
+            document.querySelector("#source").textContent = "ยังไม่มีข้อมูล Master Catalog · โปรดเลือกไฟล์ JSON";
+            window.CustomerCatalog?.setError();
+          });
       });
   </script>
   <script src="./gift-anatomy-25d.js"></script>

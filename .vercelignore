@@ -38,3 +38,7 @@ package.json
 package-lock.json
 public/serve.py
 public/__pycache__/
+
+# Internal dashboard (full BOM/cost/governance UI) — local review only.
+# The deployed customer surface is index.html (catalog + expo, customer-safe).
+public/internal.html
