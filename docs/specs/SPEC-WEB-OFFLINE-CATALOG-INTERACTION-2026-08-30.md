@@ -192,7 +192,7 @@ Boss อนุมัติและสั่ง build offline bundle เมื�
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
-| 0.2.1b | 2026-08-30 | beta | ฝัง Sarabun OFL subset ใน HTML/PDF ตามอนุมัติ; rebuild bundle; ปิด deviation ฟอนต์ | uncommitted | Claude |
+| 0.2.1b | 2026-08-30 | beta | ฝัง Sarabun OFL subset ใน HTML/PDF ตามอนุมัติ; rebuild bundle; ปิด deviation ฟอนต์ | 18891ec | Claude |
 | 0.2.0b | 2026-08-30 | beta | Boss อนุมัติ; build offline bundle แรก (HTML 51 หน้า/PDF/ZIP) ผ่าน acceptance + boundary scan; deviation ฟอนต์บันทึกแล้ว | 9b4f749 | Claude |
 | 0.1.3b | 2026-08-30 | candidate | แยก internal dashboard ไป internal.html (ไม่ deploy); index.html เหลือ catalog+expo customer-safe ถาวร; เพิ่ม public surface boundary test | ac52752 | Claude |
 | 0.1.2b | 2026-08-30 | candidate | ปิด blocker product_manifest: แยก public/internal manifest, slice allowlist ตัด freight/CBM, boundary scan + tests; note ความเสี่ยง index.html | 374278e | Claude |
