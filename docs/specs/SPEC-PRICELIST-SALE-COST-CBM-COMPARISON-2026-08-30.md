@@ -1,13 +1,13 @@
 ---
-version: "0.1.0b"
+version: "0.3.0b"
 created_at: "2026-08-30T13:14:02+07:00,ATHER"
-last_update: "2026-08-30T13:14:02+07:00,ATHER"
-status: "candidate"
+last_update: "2026-08-30T15:25:41+07:00,ATHER"
+status: "beta"
 superseded_by: null
 attributes:
   domain: "catalog-pricing"
   doc_type: "comparison-report-and-specification"
-  scope: "read-only sale versus factory-reference cost and CBM comparison; proposed JSON extension"
+  scope: "read-only sale versus factory-reference cost and CBM comparison; JSON extension implemented"
   language: "th"
 ---
 
@@ -15,7 +15,7 @@ attributes:
 
 **Complexity / Risk:** C-2 / MEDIUM
 
-ผลเปรียบเทียบในเอกสารนี้คำนวณจากไฟล์ที่ตรวจจริง ส่วนการเพิ่มฟิลด์หรือแก้ exporter เป็นข้อเสนอรออนุมัติตาม AGENTS.md R5 ยังไม่แก้ JSON, code, Excel, schema, engine หรือ vault ในรอบนี้
+ผลเปรียบเทียบในเอกสารนี้คำนวณจากไฟล์ที่ตรวจจริง และ export ลง JSON แบบ local review-only; ไม่แก้ Excel, schema, engine หรือ vault
 
 อ้างอิง parent/peer: [ADR-002](../decisions/ADR-002-PRICELIST-MASTER-SQL-SNAPSHOT.md), [ontology](../../config/schema_genesisblock.yaml), [สูตรราคา](../../config/pricing_rules_formula.yaml), [pricing calculator](../../src/cascade_engine/pricing_calculator.py), [Price Boss schema](../../price-boss/sql/schema.sql)
 
@@ -123,9 +123,11 @@ GiftTier `Reach / Select / Signature / Bespoke` เป็นระดับแ�
 
 ค่า `base_cost == srp_price` เป็นข้อสังเกตที่พิสูจน์จากข้อมูลได้ แต่ยังไม่ยืนยันว่า process ใดเขียนค่า จึงไม่กล่าวอ้าง RCA ของการเขียนทับและไม่แก้ค่าเหล่านั้นในงานนี้
 
-## 6. สเปกเพิ่มตารางเปรียบเทียบใน JSON — รออนุมัติ
+## 6. ตารางเปรียบเทียบใน JSON — implementation local
 
-เพิ่ม `price_comparisons` ใน `pricelist_master.json` โดยคง prices ต้นฉบับครบ **669 แถว** มี 1 comparison ต่อ price ID และไม่ drop 265 unmatched rows ไม่ปรับ sale price หรือ cost เดิม
+เพิ่ม `price_comparisons` ใน `pricelist_master.json` โดยคง prices ต้นฉบับครบ **669 แถว** มี 1 comparison ต่อ price ID และไม่ drop แถวที่จับคู่ไม่ได้ ไม่ปรับ sale price หรือ cost เดิม
+
+เพิ่ม `srp_reference_products` 16 แถว และ `srp_qty_comparisons` **128 แถว** (16 สินค้า × qty `1, 10, 20, 50, 100, 300, 500, 1000`) เพื่อให้มีราคาชิ้นเดียวตามคำยืนยันล่าสุดของผู้ใช้ แหล่ง SRP คือ `canonical_products.price_tiers` ใน `smartgift_catalog_master.json`; ไม่ใช้ `base_cost` ที่เท่ากับ SRP เป็นทุนโรงงาน
 
 ฟิลด์ที่เสนอ:
 
@@ -139,6 +141,8 @@ GiftTier `Reach / Select / Signature / Bespoke` เป็นระดับแ�
 `factory_reference_thb` และ `factory_adjusted_estimate_thb` ต้องบอกชัดว่าเป็นราคาอ้างอิง/model estimate และไม่เขียนลง `ProductMaster.base_cost` อัตโนมัติ
 
 สถานะ: `missing_factory_match`, `invalid_sale_or_qty`, `factory_reference_only`, `freight_estimate_only`, `complete_reference_comparison` แยกจาก quote approval และ pkg profit approval โดยชัดเจน ข้อมูล/ฐานภาษีไม่ครบให้ `delivered_unit_cost`, `unit_profit`, `margin_percent` เป็น null
+
+ผล local snapshot นี้มี exact factory match สำหรับ price rows 404/669 (131 offer codes) แต่ไม่มี exact code match ระหว่าง `PM-*` ทั้ง 16 รายการกับ `price-boss/ราคา.sql`; ดังนั้นแถว SRP ทั้ง 128 แถวมี `factory_cost_thb=null` และสถานะ `missing_factory_match` โดยไม่เดาชื่อหรือ variant
 
 ใช้ [pricing_calculator.py](../../src/cascade_engine/pricing_calculator.py) เดิมสำหรับสูตร แต่ตรวจ input/context ก่อนเรียก ไม่ใช้ fallback warehouse/rate, upc=1, kg หาย หรือค่าทุนที่เดาเองเป็นหลักฐานว่าราคาพร้อมใช้ ไม่ขยายงานไปแก้ engine/config หากจำเป็นต้องแก้ให้แยก RCA และขออนุมัติ scope
 
@@ -158,21 +162,25 @@ GiftTier `Reach / Select / Signature / Bespoke` เป็นระดับแ�
 |---|---|
 | `price-boss/ราคา.sql` | `d85e114018a4792d7a3aa8fc9b4f35475f40e9948bffd5aa04cf0171b5c9cb24` |
 | `price-boss/sql/smartgiftpricelist.postgres.sql` | `263556642064f6398e4cd00a7a4897ca7ba841b7c3bae5b8d2165b3186b2fdd4` |
-| `pricelist_master.json` | `bb084abbc2ca9a7d36f97269b9dd32077969e34bc7d7600304fe2b815c336bc6` |
+| `pricelist_master.json` หลังเพิ่ม seasonal projection | `d0cde107f8351bf3e59487204987cfde5584817ccbc2f1bc31a100691fbe447a` |
 | `smartgift_catalog_master.json` ณ ตรวจ | `63f3e5668de6818cc3517543bdf0d1331bf7926d1769815290dbcd5f740c0ac7` |
 | `config/pricing_rules_formula.yaml` | `f4473230f10b59133936974a0cacf84bbe84865d61db76553d8cc2a58ba635fc` |
 | `src/cascade_engine/pricing_calculator.py` | `c09de992ca1001fbc6abc4ee39e68a1eb6b326a33054bb8cc0c0c2cee8a811d1` |
 | FlowAccount product export ที่ตรง lineage SQL | `da7452ffd91baca7c5e24198e0418585f8da17265bd190447f7c83b755fca318` |
 | Product Excel อีกสำเนาที่ `01_raw/` | `38be21ae9ba0748e4249d99097b7923a87c1dee3b7ac0510d40774f6f87c4032` |
 
-ตรวจ parse/match/count, คอลัมน์ BuyPrice ของ Excel ทั้งสองสำเนาแบบ read-only และผล `calculate_freight` สำหรับ BW16-2 แล้ว ยังไม่เขียน price_comparisons ลง JSON และไม่ได้รัน regression suite ในรอบ docs-only นี้
+ตรวจ parse/match/count, คอลัมน์ BuyPrice ของ Excel ทั้งสองสำเนาแบบ read-only และผล `calculate_freight` สำหรับ BW16-2 แล้ว; implementation เพิ่ม parser/export comparison และ seasonal package/BOM projection ใน [exporter](../../pipeline/export_pricelist_master.py) และตรวจด้วย targeted tests 18/18 ผ่าน พร้อม `py -3 pipeline/export_pricelist_master.py --check` ผ่าน
 
 ## Version diff
 
 ไม่มีเอกสาร → `0.1.0b candidate`: เพิ่มผลเปรียบเทียบตัวอย่าง อัตรา/ตัวอย่าง CBM, source coverage, ข้อจำกัด และข้อเสนอ JSON extension ไม่เปลี่ยนราคา master หรือสูตร
+`0.1.0b → 0.2.0b beta`: implement `price_comparisons` 669 แถว, SRP quantity matrix 128 แถวรวม qty 1, exact-code factory reference และ CBM declared scenario โดยคง null เมื่อข้อมูลไม่ครบ
+`0.2.0b → 0.3.0b beta`: อัปเดต artifact hash หลังเพิ่ม seasonal offers 6, packages 11 และ proposed BOM 17; cost identity ของ PM canonical ยังเป็น missing
 
 ## CHANGELOG
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---------|------|--------|---------|-------------|-------|
+| 0.3.0b | 2026-08-30 | beta | อัปเดต comparison artifact หลังเพิ่ม seasonal package/BOM projection; exact factory match ของ PM 0/16 จึงไม่เติมต้นทุน | uncommitted | ATHER |
+| 0.2.0b | 2026-08-30 | beta | Implement comparison JSON 669 + SRP/qty 128 รวม qty 1; exact factory match และ CBM scenario แบบไม่เดาต้นทุน | uncommitted | ATHER |
 | 0.1.0b | 2026-08-30 | candidate | ตรวจเทียบ sale/factory-reference/CBM และเสนอ extension โดยไม่เดาต้นทุนที่ขาด | uncommitted | ATHER |

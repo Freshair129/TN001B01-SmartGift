@@ -1,7 +1,7 @@
 ---
-version: "1.1.1b"
+version: "1.3.0b"
 created_at: "2026-08-30T10:33:17+07:00,ATHER"
-last_update: "2026-08-30T11:08:07+07:00,ATHER"
+last_update: "2026-08-30T15:25:41+07:00,ATHER"
 status: "beta"
 superseded_by: null
 attributes:
@@ -23,7 +23,7 @@ attributes:
 
 ผู้ใช้ขอ `pricelist_master.json` ซึ่งครอบคลุม ProductMaster, product family, pkg และ BOM โดยใช้ข้อมูลจาก `price-boss/sql` ได้
 
-**คำชี้แจงจากผู้ใช้ 2026-08-30:** pkg หมายถึงแพ็กเกจที่ mapping กับ **4 catalog + customer 4 tier** เช่น **ชุดต้อนรับพนักงานใหม่** จึงยกเลิกข้อเสนอเดิมที่ใช้ pkg เป็น index ของ 1,080 SQL sets ความหมายของ pkg ได้รับการชี้แจงแล้ว แต่รายละเอียด schema และชื่อ customer tiers ยังรอยืนยัน ไม่ถือว่าคำชี้แจงนี้เป็นการอนุมัติ implementation ทั้งฉบับ
+**คำชี้แจงจากผู้ใช้ 2026-08-30:** pkg หมายถึงแพ็กเกจที่ mapping กับ **4 catalog + customer 4 tier** เช่น **ชุดต้อนรับพนักงานใหม่** จึงยกเลิกข้อเสนอเดิมที่ใช้ pkg เป็น index ของ 1,080 SQL sets ผู้ใช้ยืนยันให้ยึด `config/schema_genesisblock.yaml` และต้องมีราคา qty `1` รวมอยู่ในทุก quantity tier
 
 **ข้อกำหนดเพิ่มเติมจากผู้ใช้:** ทุก pkg ต้องมีกำไร **ไม่ต่ำกว่า 25,000 บาทต่อ pkg** เป็นข้อบังคับ ไม่ใช่เป้าหมายเฉลี่ยหรือคำแนะนำ หลักเกณฑ์การคำนวณที่เสนออยู่ใน D5
 
@@ -48,13 +48,17 @@ attributes:
 
 ## Decision
 
-ดำเนินการเฉพาะ local JSON/exporter ตามคำขอสร้างไฟล์เดิมและคำยืนยัน schema รอบล่าสุด ส่วนข้อมูล package options/BOM/จำนวน/ต้นทุนที่ยังไม่มีหลักฐานคงสถานะ missing ไม่ใช่การอนุมัติ implementation ในระบบอื่น
+ดำเนินการเฉพาะ local JSON/exporter และ local Expo projection ตามคำขอสร้างไฟล์เดิมและคำยืนยัน
+schema รอบล่าสุด ส่วนข้อมูล package options/BOM/จำนวน/ต้นทุนที่ยังไม่มีหลักฐานคงสถานะ missing
+ไม่ใช่การอนุมัติ implementation ในระบบอื่น
 
 ### D1 — สร้าง local projection แยกจาก master เดิม
 
-เสนอไฟล์เป้าหมาย `data-pipeline/02_prepared/pricelist_master.json` ใช้ UTF-8 ไม่มี BOM และตั้ง `schema_version="1.1.0b"`, `status="review_required"` ใน metadata
+ไฟล์เป้าหมาย `data-pipeline/02_prepared/pricelist_master.json` ใช้ UTF-8 ไม่มี BOM และตั้ง
+`schema_version="1.3.0b"`, `status="review_required"` ใน metadata; seasonal projection ยังเป็น
+review-only จน cost evidence และ package brief ครบ
 
-ใช้ `price-boss/sql/smartgiftpricelist.postgres.sql` เป็น input เดียวสำหรับแถวสินค้า/ราคาในรอบนี้ MySQL copy ใช้ประกอบการตรวจเท่านั้น ไม่โหลดทั้งสองไฟล์รวมกัน และไม่เปิด connection ไปยังฐานข้อมูลหรือ upstream store
+ใช้ `price-boss/sql/smartgiftpricelist.postgres.sql` เป็นแหล่งแถวสินค้า/ราคาขาย และ `price-boss/ราคา.sql` เป็น factory catalog reference แบบ read-only; ไม่เปิด connection ไปยังฐานข้อมูลหรือ upstream store
 
 ใช้ Category/GiftTier จาก YAML เป็น authority และอ่าน `top_level_categories` จาก master เดิมเฉพาะชื่อสี่ catalog โดยตรวจ slug ให้ตรงกัน ไม่อ่านราคา/BOM ของ master เดิมมาผสม SQL อัตโนมัติ ส่วน pkg ตามโอกาสใช้งานและ tier mapping มาจากนิยามธุรกิจที่ผู้ใช้ยืนยัน ไม่อ้างว่า SQL export มีข้อมูลนี้แล้ว
 
@@ -75,10 +79,13 @@ attributes:
 | `portfolio_catalogs` | นิยามสี่ catalog ตาม ADR-001 และ master เดิม แยกจาก 32 types และสี่ source groups ใน SQL | 4 จากแหล่ง portfolio |
 | `customer_tiers` | ชื่อ key สำหรับผู้ใช้ แต่ `entity_type="GiftTier"` และค่า Reach / Select / Signature / Bespoke อ่านจาก YAML ตามที่ผู้ใช้ยืนยัน; ไม่ใช่ CRM tier | 4 |
 | `catalog_offers` | ทุก `smartgift_offer`; ใช้ code เดิม เก็บชนิด/ชื่อ/รายละเอียด/ราคาอ้างอิง/สถานะ ไม่เปลี่ยน set เป็น single จากการอ่านข้อความ | 1,110 |
-| `pkg` | แพ็กเกจตามโอกาสใช้งาน เช่น ชุดต้อนรับพนักงานใหม่ มีตัวเลือก mapping ไป portfolio catalog + customer tier และอ้าง BOM ของตัวเลือกนั้น | ยังไม่กำหนดจำนวน; ไม่ใช่จำนวน SQL sets |
+| `pkg` | แพ็กเกจตามโอกาสใช้งาน เช่น ชุดต้อนรับพนักงานใหม่ มีตัวเลือก mapping ไป portfolio catalog + customer tier และอ้าง BOM ของตัวเลือกนั้น | 11 ใน projection (seasonal 10 + legacy reference 1); ไม่ใช่จำนวน SQL sets |
 | `offer_product_links` | คลี่ `smartgift_model.offer_codes` เป็นคู่ source product ID–offer code; relation เป็น `source_association` ไม่ใช่ BOM | 3,200 |
-| `bom` | array ของ BOM ที่มีหลักฐานและจำนวนจริงเท่านั้น; snapshot นี้ส่งออกเป็น `[]` พร้อม coverage=`not_exported` | 0 |
+| `bom` | SQL snapshot ไม่มี BOM ที่ยืนยันได้; seasonal projection มี recipe edges ที่เสนอและติด `verified=false` พร้อม provenance | 17 proposed; 0 verified |
 | `prices` | ทุก `smartgift_price` พร้อม source ID, offer_code, qty_tier, ราคา/VAT, missing flag, supplier group, FlowAccount code และวัน export | 669 |
+| `price_comparisons` | 1 ต่อ `price_id`; เทียบราคาขายกับ factory reference/CBM โดย exact code และคง null เมื่อข้อมูลไม่ครบ | 669 |
+| `srp_reference_products` | 16 canonical products จาก master เดิม พร้อมสถานะ factory identity | 16 |
+| `srp_qty_comparisons` | ราคา SRP ตาม qty `1,10,20,50,100,300,500,1000` ต่อ canonical product | 128 |
 | `metadata` | source/run/hash/scope/counts/coverage, profit_policy ตาม D5 และข้อจำกัดการใช้งาน | 1 object |
 
 ProductMaster ในไฟล์ใหม่นี้เป็น **source model projection** ไม่ใช่การ promote ให้เป็น canonical ProductMaster ที่อนุมัติแล้ว และไม่ใช่ replacement ของ ontology/vault contract เดิมที่ต้องมี base_cost ไม่สร้าง SKU หรือ stock value จากข้อมูลที่ไม่มี
@@ -108,28 +115,42 @@ ProductMaster ในไฟล์ใหม่นี้เป็น **source model
 
 **ผู้ใช้ยืนยันแล้ว:** ใช้ `Reach`, `Select`, `Signature`, `Bespoke` จาก GiftTier ใน `config/schema_genesisblock.yaml` เป็น authority พร้อม Category slugs และ edge contracts ในไฟล์เดียวกัน ไม่ใช้ CRM tiers (`P1`, `A`, `B`, `C`, `WINBACK`) บันทึก hash ของ YAML และ master ที่อ่านเฉพาะชื่อ catalog ด้วย; ห้ามแก้ source ที่มีงานค้าง
 
-pkg ตัวอย่าง `PKG-NEW-EMPLOYEE-WELCOME` เป็น draft ของ BundleOffer มีขอบเขตการออกแบบอ้างสี่ Category และสี่ GiftTier แต่ `options=[]`, `target_recipients=null`, `total_price=null` และยังไม่ผ่าน contract required fields จนกว่าจะมีข้อมูลจริง ProductMaster/CatalogOffer จาก SQL ก็ต้องรายงาน required fields ที่ขาดตาม YAML โดยไม่สร้างค่า default เพื่อให้ผ่าน schema
+pkg ตัวอย่าง `PKG-NEW-EMPLOYEE-WELCOME` ยังคงเป็น legacy reference ของ BundleOffer; seasonal
+packages ใหม่ใช้ `bundle:` เป็น PK และมี options/BOM ตามที่ exporter สร้างจาก ProductMaster/CatalogOffer
+ที่มีอยู่ แต่ `target_recipients`, `total_price` และต้นทุนจริงยังเป็น null จนกว่าจะมีหลักฐานเพิ่ม
 
 ### D3 — ราคาเป็น snapshot และ BOM ที่ขาดต้องเห็นได้ชัด
 
 - เก็บราคาต้นทางและ `price_missing` ตามจริง ไม่เติมราคาที่หาย ไม่เปลี่ยน 0 ให้เป็นราคาขายที่ใช้ได้
 - `price_tiers` เดิมของ models/offers เก็บใน `source_price_tiers` เพื่อรักษาหลักฐาน แต่ไม่รวมซ้ำกับตาราง prices และไม่ถือเป็นราคาชิ้นส่วน standalone เมื่อ source ระบุ `via_offer`
 - `unit_price_with_vat` เป็น field จากต้นทาง ไม่คำนวณ VAT ใหม่; `rmb` เป็นค่าอ้างอิงจาก source ไม่ใช่ landed/base cost
-- metadata ต้องบอก `quote_ready=false`, `inventory_ready=false`, `bom_coverage="not_exported"` จนผ่าน gate ที่เกี่ยวข้อง ไม่ยกระดับ price-boss snapshot ให้แทน price authority ตาม AGENTS.md
+- metadata ต้องบอก `quote_ready=false`, `inventory_ready=false`; SQL source ยังไม่มี verified BOM และ
+  seasonal recipe ใช้ `bom_coverage="proposed_recipe"` จนผ่าน gate ที่เกี่ยวข้อง ไม่ยกระดับ price-boss
+  snapshot ให้แทน price authority ตาม AGENTS.md
 - ความสัมพันธ์ model–offer ไม่มี quantity: ห้ามใส่ `qty=1` หรือใช้การเดาจากชื่อเป็น BOM
 - ห้ามผสม BOM/ต้นทุน 16 product masters และ 2 corporate bundles จากไฟล์เดิมโดยไม่มี identity reconciliation และการอนุมัติแยก
 
 ### D4 — ขอบเขตข้อมูลและไฟล์ที่อนุญาตหลังอนุมัติ
 
-ขอบเขต implementation ที่เสนอมีเพียง exporter หนึ่งไฟล์, JSON เป้าหมายที่รวม package definitions/mappings ตามอนุมัติ, การตรวจ parser/reconciliation ที่จำเป็น และผลตรวจใน ADR นี้ ไม่เปลี่ยน application, price formula, inventory logic, database schema, seed, UI หรือ vault state
+ขอบเขต implementation มี exporter หนึ่งไฟล์, JSON เป้าหมายที่รวม package definitions/mappings และ price comparison,
+การตรวจ parser/reconciliation ที่จำเป็น, Expo view แบบ local และผลตรวจใน ADR นี้ ไม่เปลี่ยน price formula,
+inventory logic, database schema, seed, หรือ vault state
 
-อ่านเฉพาะตาราง export_run/type/model/offer/price และ field allowlist ร่วมกับนิยาม portfolio catalogs และ package/customer-tier definitions ที่อนุมัติ ไม่ดึง CRM customer records, contact, employee, quotation, supplier contact หรือ free-form sourcing notes นิยาม tier และแพ็กเกจเก็บเฉพาะข้อมูลระดับกลุ่ม ไม่มีตัวบุคคล ตรวจข้อความสินค้าที่ส่งออกด้วย หากพบข้อมูลส่วนบุคคลที่น่าสงสัยให้หยุดส่งออกเพื่อ review ไม่อ้างว่า allowlist เพียงอย่างเดียวพิสูจน์ Zero-PII ได้
+อ่านเฉพาะตาราง export_run/type/model/offer/price และ factory `catalogs/products` ตาม field allowlist ร่วมกับนิยาม portfolio catalogs และ package/customer-tier definitions ที่อนุมัติ ไม่ดึง CRM customer records, contact, employee, quotation, supplier contact หรือ free-form sourcing notes นิยาม tier และแพ็กเกจเก็บเฉพาะข้อมูลระดับกลุ่ม ไม่มีตัวบุคคล ตรวจข้อความสินค้าที่ส่งออกด้วย หากพบข้อมูลส่วนบุคคลที่น่าสงสัยให้หยุดส่งออกเพื่อ review ไม่อ้างว่า allowlist เพียงอย่างเดียวพิสูจน์ Zero-PII ได้
 
 ไม่รัน `run_pipeline.py`, sync, import SQL, embedding, migration หรือ write ไป repo อื่น การอนุมัติเอกสารนี้ไม่ใช่การอนุมัติ quote, publish, deploy หรือ upstream/vault promotion
 
 ### D5 — กำไรขั้นต่ำ 25,000 บาทต่อ pkg
 
 `profit_policy` กำหนด `minimum_profit=25000`, `currency="THB"`, `scope="per_configured_pkg"` และใช้กับทุก catalog/customer tier เท่ากัน ไม่เฉลี่ยหรือชดเชยกำไรระหว่างคนละ pkg และไม่ใช้ target เดิม 30,000 บาทมาแทนข้อบังคับใหม่นี้
+
+### D6 — เทียบราคาขาย/โรงงาน/SRP/CBM ครบทุก qty ที่ยืนยัน
+
+`price_comparisons` มี 669 แถวตาม `smartgift_price` และจับคู่ factory ด้วย `offer_code == products.code` เท่านั้น; พบ exact match 404 แถวจาก 131 offer codes และไม่ทำ fuzzy matching. `srp_qty_comparisons` มี 16 × 8 = 128 แถวจาก canonical products โดยรวม qty 1 ตามที่ผู้ใช้ยืนยัน. Seasonal projection เพิ่ม 6 derived/source offers, 10 seasonal packages และ 17 proposed BOM edges โดยไม่ทำให้ตัวเลข factory match ของ SQL เปลี่ยน
+
+SRP ใช้ `smartgift_catalog_master.json.canonical_products.price_tiers` เป็นราคาที่ประกาศไว้; ไม่ใช้ `base_cost` ที่เท่ากับ SRP เป็นต้นทุนโรงงาน. Factory reference ใช้ `products.rmb × FX 5.00` และ small-order factor ใน pricing rules เป็น estimate แยกจาก `ProductMaster.base_cost`. CBM/freight แสดงตาม declared scenario กวางโจว–เซินเจิ้น รถ GOLD และติดป้าย estimate จาก carton dimensions/UPC; ไม่ใช่ measured freight หรือ quote ผู้ขนส่ง
+
+ไม่พบ exact factory code สำหรับ `PM-*` ทั้ง 16 รายการ จึงให้ `factory_cost_thb`, `delivered_unit_cost`, `unit_profit` และ `margin_percent` เป็น `null` ใน SRP comparison และให้สถานะ `missing_factory_match`. ทุก pkg ยังคง `profit_evaluation.status=missing_inputs` จนมี BOM, จำนวน, ต้นทุนตรง และฐาน VAT ครบ; ไม่ประกาศผ่านขั้นต่ำ 25,000 บาทจากตารางนี้
 
 [ASSUMPTIONS]
 
@@ -165,24 +186,27 @@ pkg ตัวอย่าง `PKG-NEW-EMPLOYEE-WELCOME` เป็น draft ข�
 2. JSON parse ผ่าน; IDs ไม่ซ้ำ; model/type/offer/price references ไม่มี orphan; null type ทั้ง 50 ไม่ถูกแปลงเป็นหมวดที่เดาเอง
 3. Counts ตรงตาราง D2; ทุก source row ถูกเก็บครบครั้งเดียว; decimal, NULL, boolean, Thai, apostrophe และ nested JSON ไม่สูญหายระหว่าง parse
 4. Missing price ทั้ง 102 และ invalid/absent tier ทั้ง 118 ยังตรวจพบได้; ไม่มีการประกาศราคาใช้งานได้จากค่าที่ขาด
-5. BOM เป็น empty พร้อม not_exported ไม่ใช่ verified-empty; ไม่มีการแปลง associations เป็น quantity-bearing edges
+5. SQL association ไม่ถูกแปลงเป็น quantity-bearing BOM โดยอัตโนมัติ; seasonal BOM 17 edges เป็น
+   proposed recipe ที่มี qty แต่ `verified=false` และไม่ถูกนับเป็น verified BOM
 6. Provenance ครบ; ตรวจ field allowlist และข้อความเสี่ยง PII; metadata ไม่อ้าง quote/inventory readiness
 7. เขียน output หลัง validation ผ่านเท่านั้น; regeneration ให้ข้อมูลเรียงลำดับคงที่และ counts/content เดิมสำหรับ source bytes เดิม
 8. Relevant parser/export checks และ `py -3 -m unittest discover tests` ผ่านหลัง implementation; ไม่เรียก master pipeline ที่อาจ sync ข้อมูล
 9. ตรวจ version diff และ working-tree scope; source files, master เดิม, vaults และงานค้างของ session อื่นไม่เปลี่ยน
 10. pkg แต่ละ option อ้าง catalog และ customer tier ที่อนุมัติและมีอยู่จริง; ไม่สร้าง 16 คู่โดยอัตโนมัติ และไม่ถือว่า pkg count เท่ากับ SQL set count; BOM ที่ยังไม่กำหนดต้องมี null reference และสถานะ missing ชัดเจน
 11. Profit gate ตรวจขอบเขต 24,999.99 = below_minimum, 25,000.00 = pass เมื่อข้อมูลครบ; missing cost/quantity/BOM/VAT basis = missing_inputs; ไม่รวมทางเลือกที่ไม่ได้ขาย ไม่ใช้กำไร pkg อื่นชดเชย และไม่คัดลอกผลผ่านจาก threshold เดิม 20,000
+12. `price_comparisons` ครบ 669 price IDs; `srp_qty_comparisons` ครบ 16 สินค้า × 8 qty รวม qty 1; exact factory identity เท่านั้นและค่าทุนที่ไม่มี identity เป็น null
+13. CBM ตรวจ cm→m³, ceil cartons, minimum chargeable CBM, density basis และ provenance ของ pricing rules; declared scenario ไม่ถูกยกระดับเป็น measured freight หรือ production quote
 
 **ผลตรวจ implementation 2026-08-30:**
 
 - สร้าง [exporter](../../pipeline/export_pricelist_master.py), [JSON master](../../data-pipeline/02_prepared/pricelist_master.json) และ [tests](../../tests/test_pricelist_master_export.py) แล้ว
-- Count: ProductMaster projections 427, source product families/types 32, Category 4, GiftTier 4, offers 1,110, draft pkg 1, model–offer associations 3,200, verified BOM 0, prices 669
-- YAML contract v1.3.0 SHA-256 ณ export: `bcd507d791e406e8114ab636f3905518a58c569791e6d1f87c7b1ef302c00419`; source hashes ทั้งหมดอยู่ใน metadata ของ artifact รวม master ที่อ่านเฉพาะ labels
-- Tests ใหม่ 15/15 ผ่าน: SQL Thai/quotes/NULL/JSON/ON CONFLICT, reject expressions, orphan/duplicate checks, missing price/BOM, contact-pattern quarantine, deterministic export, no overwrite on validation failure และ profit floor 24,999.99 / 25,000
+- Count: ProductMaster projections 427, source product families/types 32, Category 4, GiftTier 4, source offers 1,110, seasonal offers 6, packages 11 (seasonal 10 + legacy 1), model–offer associations 3,200, proposed BOM 17, verified BOM 0, prices 669, price comparisons 669, SRP references 16, SRP qty comparisons 128
+- YAML contract v1.3.0 SHA-256 ณ export: `bcd507d791e406e8114ab636f3905518a58c569791e6d1f87c7b1ef302c00419`; source hashes ทั้งหมดอยู่ใน metadata ของ artifact รวม factory catalog และ pricing rules
+- Tests ใหม่ 18/18 ผ่าน: SQL/factory literal parsing, source counts, SRP qty1/all tiers, exact-code matching, seasonal offer/package/BOM FK checks, orphan/duplicate checks, missing price/BOM, contact-pattern quarantine, deterministic export, no overwrite on validation failure และ profit floor 24,999.99 / 25,000
 - เปรียบเทียบ price cells ทั้ง 669 แถวกับ SQLite ใน memory เป็น independent parser check; exporter เองไม่ execute SQL
-- Baseline เดิม 42 tests และหลังเพิ่มงานใหม่รวม 57 tests ผ่านในสำเนาทดสอบชั่วคราว เพื่อกัน archiver tests เขียน source registry/audit log ใน shared checkout
+- Baseline เดิม 42 tests และหลังเพิ่มงานใหม่รวม 58 tests ผ่านในสำเนาทดสอบชั่วคราว เพื่อกัน archiver tests เขียน source registry/audit log ใน shared checkout
 - `py -3 pipeline/export_pricelist_master.py --check` ผ่าน โดยเทียบ output bytes กับการสร้างใหม่จาก sources ปัจจุบัน
-- ยังไม่ยืนยัน BOM, package quantities, cost coverage, ราคาอนุมัติ หรือ Zero-PII แบบ human-reviewed; ไม่รัน sync/vault/quote/publish
+- ยังไม่ยืนยัน package quantities, exact factory identity ของ canonical PM, cost coverage, ราคาอนุมัติ หรือ Zero-PII แบบ human-reviewed; proposed BOM และ Expo เป็น local review projection เท่านั้น ไม่รัน sync/vault/quote/publish
 
 สร้างใหม่: `py -3 pipeline/export_pricelist_master.py` โดย exporter จำกัด input hash ของ SQL, allowlist tables/fields, ตรวจ input ไม่เปลี่ยนระหว่างรัน และเขียน output แบบ atomic หลังตรวจผ่านเท่านั้น JSON ใช้ UTF-8 ไม่มี BOM; ไม่ overwrite artifact ที่ระบุ generator อื่น
 
@@ -192,19 +216,23 @@ pkg ตัวอย่าง `PKG-NEW-EMPLOYEE-WELCOME` เป็น draft ข�
 
 กำไรขั้นต่ำยึดตามผู้ใช้ที่ **25,000 บาทต่อ pkg** โดยมีสมมติฐานฐานคำนวณใน D5 เพื่อทบทวนพร้อม schema ไม่ถือเป็นการอนุมัติค่า BOM/ราคา/ต้นทุนที่ยังไม่มีหลักฐาน
 
-ปิดคำถามเรื่องชื่อ tier แล้วด้วยคำยืนยันผู้ใช้ให้ยึด YAML ดำเนินการ local source projection ได้ตามคำขอเดิม ส่วนประกอบ จำนวน ราคา ต้นทุน และ option mappings ที่ไม่มีหลักฐานยังรอข้อมูลจริง ไม่รวมถึงการแก้ engine/vault หรือ publication
+ปิดคำถามเรื่องชื่อ tier แล้วด้วยคำยืนยันผู้ใช้ให้ยึด YAML ดำเนินการ local source projection ได้ตามคำขอเดิม ส่วนประกอบ จำนวน ราคา ต้นทุน และ option mappings ที่ไม่มีหลักฐานยังรอข้อมูลจริง; seasonal local projection สร้างตาม ADR-003 แล้ว แต่ไม่รวมถึงการแก้ engine/vault หรือ publication
 
 ## Version diff
 
 - `0.1.0b → 1.0.0b`: ยกเลิก pkg=SQL sets เปลี่ยนเป็นแพ็กเกจตามโอกาสใช้งาน เพิ่ม portfolio catalogs, customer tiers และ option mappings; major bump เพราะเปลี่ยนโครงสร้างและความหมาย pkg
 - `1.0.0b → 1.1.0b candidate`: เพิ่มข้อบังคับกำไรขั้นต่ำ 25,000 บาทต่อ pkg, ฐานต้นทุนและกฎเมื่อข้อมูลขาด พร้อมเกณฑ์ตรวจขอบเขต
 - `1.1.0b → 1.1.1b beta`: ยืนยัน GiftTier/Category authority จาก YAML ตามผู้ใช้; local export เท่านั้นและแสดง contract gaps โดยไม่เดาข้อมูล
-- รอบ implementation เพิ่ม exporter/test/JSON เป้าหมายเท่านั้นและอัปเดต ADR นี้; ไม่แก้ schema, master เดิม, engine, vaults หรือ UI ที่มีงานจาก session อื่น
+- `1.1.1b → 1.2.0b beta`: เพิ่ม factory catalog reference, `price_comparisons` 669 แถว และ `srp_qty_comparisons` 128 แถวรวม qty 1 พร้อม CBM declared scenario; exact identity/missing data ยังคงเป็น null
+- `1.2.0b → 1.3.0b beta`: Boss อนุมัติ ADR-003; เพิ่ม seasonal offers 6, packages 10 + legacy 1, proposed BOM 17, package gate 25,000 แบบ fail-closed และ local Expo view พร้อม customer-safe presentation
+- รอบ implementation ไม่แก้ schema, master เดิม, engine, vaults หรือ inventory; UI เปลี่ยนเฉพาะ local Expo view ตาม ADR-003
 
 ## CHANGELOG
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---------|------|--------|---------|-------------|-------|
+| 1.3.0b | 2026-08-30 | beta | Boss อนุมัติ seasonal offers/packages/BOM projection, gate ฿25,000 แบบ fail-closed และ local Expo view; cost ยังรอ evidence | uncommitted | ATHER |
+| 1.2.0b | 2026-08-30 | beta | เพิ่ม comparison 669 + SRP qty 128 รวมชิ้นเดียว, factory exact-code reference และ CBM scenario แบบ review-only | uncommitted | ATHER |
 | 1.1.1b | 2026-08-30 | beta | ยืนยัน schema/tier ตามผู้ใช้; สร้าง local artifact และตรวจ 15 targeted / 57 regression tests โดยไม่ promote BOM/ราคา | uncommitted | ATHER |
 | 1.1.0b | 2026-08-30 | candidate | เพิ่มกำไรขั้นต่ำ 25,000 บาทต่อ pkg ตามผู้ใช้ พร้อม profit gate ที่ไม่ผ่านเมื่อข้อมูลขาด | uncommitted | ATHER |
 | 1.0.0b | 2026-08-30 | candidate | แก้ pkg ตามคำชี้แจงผู้ใช้เป็น occasion package + catalog/customer-tier mapping; ยังรอยืนยัน tier master | uncommitted | ATHER |

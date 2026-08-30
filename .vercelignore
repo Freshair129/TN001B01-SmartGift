@@ -1,0 +1,40 @@
+# Deploy only the customer-safe Expo surface and its allowlisted API functions.
+# Keep raw intake, internal price evidence, vault files and source code out of the
+# upload; a public deployment must not rely on a folder name to provide access control.
+.git/
+.git/**
+.pytest_cache/
+node_modules/
+pipeline/
+src/
+tests/
+vaults/
+config/
+price-boss/
+price-boss/*
+price-boss/**
+price-boss/ราคา.sql
+**/*.sql
+data-pipeline/01_raw/
+data-pipeline/01_raw/**
+data-pipeline/01_raw/*
+data-pipeline/**
+data-pipeline/02_prepared/pricelist_master.json
+data-pipeline/02_prepared/smartgift_catalog_master.json
+data-pipeline/04_review_reports/
+data-pipeline/04_review_reports/**
+docs/
+docs/**
+.brain/
+AGENTS.md
+README.md
+JULES_REPORT.md
+demo_app.py
+run_pipeline.py
+run_e2e_flowaccount_demo.py
+seed_genesisblock.mjs
+test_genesis.mjs
+package.json
+package-lock.json
+public/serve.py
+public/__pycache__/

@@ -931,10 +931,181 @@
       color: var(--accent);
       font-size: 12px;
     }
+    .expo-toolbar {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      padding: 14px;
+      margin-bottom: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+    .expo-filter {
+      display: grid;
+      gap: 4px;
+      min-width: 160px;
+    }
+    .expo-filter label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .expo-filter select {
+      min-height: 36px;
+      padding: 6px 9px;
+      border: 1px solid var(--strong);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--ink);
+    }
+    .expo-mode {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      margin-left: auto;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .expo-mode input { accent-color: var(--accent); }
+    .expo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 16px;
+    }
+    .expo-card {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: 0 5px 18px rgba(14,17,22,0.04);
+    }
+    .expo-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .expo-card h3 { margin: 3px 0 4px; font-size: 19px; line-height: 1.3; }
+    .expo-id {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 10px;
+      word-break: break-all;
+    }
+    .expo-split {
+      display: grid;
+      grid-template-columns: minmax(210px, .9fr) minmax(230px, 1.1fr);
+      gap: 12px;
+    }
+    .expo-ad {
+      position: relative;
+      min-height: 190px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 18px;
+      border-radius: 12px;
+      color: #fff;
+      background: radial-gradient(circle at 75% 15%, rgba(255,255,255,.28), transparent 32%), linear-gradient(145deg, #194d56, #0b1824 72%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.22);
+    }
+    .expo-ad.new-year { background: radial-gradient(circle at 78% 18%, rgba(255,231,151,.36), transparent 34%), linear-gradient(145deg, #3a3b63, #10182d 72%); }
+    .expo-ad::after {
+      content: "✦";
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: rgba(255,255,255,.7);
+      font-size: 38px;
+    }
+    .expo-ad h4 { position: relative; z-index: 1; margin: 0; font-size: 21px; line-height: 1.2; }
+    .expo-ad p { position: relative; z-index: 1; margin: 0; color: rgba(255,255,255,.82); font-size: 12px; }
+    .expo-ad .expo-cta {
+      position: relative;
+      z-index: 1;
+      align-self: flex-start;
+      padding: 4px 9px;
+      border: 1px solid rgba(255,255,255,.32);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .expo-facts {
+      display: grid;
+      align-content: start;
+      gap: 8px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--soft);
+    }
+    .expo-fact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 12px;
+    }
+    .expo-fact-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .expo-fact-row span:first-child { color: var(--muted); }
+    .expo-fact-row strong { text-align: right; word-break: break-word; }
+    .expo-bom {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--panel);
+    }
+    .expo-bom summary {
+      padding: 10px 12px;
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .expo-bom-body { padding: 0 12px 12px; overflow-x: auto; }
+    .expo-bom table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .expo-bom th, .expo-bom td { padding: 7px 6px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .expo-bom th { color: var(--muted); font-size: 10px; white-space: nowrap; }
+    .expo-bom .num { text-align: right; white-space: nowrap; }
+    .expo-empty {
+      padding: 34px 18px;
+      border: 1px dashed var(--strong);
+      border-radius: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .expo-disclosure {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .expo-products { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+    .expo-product-pill {
+      padding: 3px 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 700;
+    }
     @media(max-width: 1080px) {
       .workspace { grid-template-columns: 1fr; }
       .bundle-grid { grid-template-columns: 1fr; }
       .audit-card { grid-template-columns: 1fr; gap: 6px; }
+      .expo-grid { grid-template-columns: 1fr; }
     }
     @media(max-width: 680px) {
       .shell { padding: 14px 12px 24px; }
@@ -942,6 +1113,10 @@
       .load { justify-content: flex-start; }
       .box-schematic { grid-template-columns: 1fr; height: auto; }
       .category-slot { min-height: 120px; }
+      .expo-toolbar { align-items: stretch; }
+      .expo-filter { min-width: 100%; }
+      .expo-mode { margin-left: 0; }
+      .expo-split { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -969,6 +1144,7 @@
       <a href="#/catalog" aria-current="page">Anatomy Explorer</a>
       <a href="#/offers">ชุดของขวัญ (Offers)</a>
       <a href="#/bundles">แพ็กเกจองค์กร (Bundles & BOM)</a>
+      <a href="#/expo">Seasonal Expo</a>
       <a href="#/calculator">คำนวณราคา (Price Calculator)</a>
       <a href="#/governance">Data Governance & Logs</a>
     </nav>
@@ -1215,12 +1391,49 @@
             <div class="eyebrow">Corporate Packages & BOM Waterfall</div>
             <h2>แพ็กเกจองค์กรและการถอดชิ้นส่วน (BOM Breakdown)</h2>
           </div>
-          <p>แพ็กเกจสำหรับงานประชุมใหญ่และงานประจำปี พร้อมการันตีกำไรขั้นต่ำ ฿20,000 - ฿30,000 ต่อแพ็กเกจ</p>
+          <p>รายการ legacy สำหรับอ้างอิงเท่านั้น · package ใหม่ต้องตรวจ gate กำไรขั้นต่ำ ฿25,000 จากต้นทุนที่ยืนยันได้</p>
         </div>
         <div class="bundle-grid" id="bundles-container"></div>
       </section>
 
-      <!-- VIEW 4: LIVE PRICE CALCULATOR -->
+      <!-- VIEW 4: SEASONAL EXPO -->
+      <section id="expo-view" class="view" data-view="expo" hidden>
+        <div class="heading">
+          <div>
+            <div class="eyebrow">Seasonal Ad Creative & BOM Explorer</div>
+            <h2>Seasonal Expo: ชุด Christmas และ New Year</h2>
+          </div>
+          <p>เลือก package ตาม event, tier และโครงสร้างบริษัท แล้วเปิดดูชิ้นส่วนย่อยพร้อมราคา 1 ชิ้น, CBM และสถานะ Profit Gate</p>
+        </div>
+        <div class="expo-toolbar" aria-label="ตัวกรอง Seasonal Expo">
+          <div class="expo-filter">
+            <label for="expo-event">Event</label>
+            <select id="expo-event">
+              <option value="all">ทุก event</option>
+            </select>
+          </div>
+          <div class="expo-filter">
+            <label for="expo-tier">Gift tier</label>
+            <select id="expo-tier">
+              <option value="all">ทุก tier</option>
+            </select>
+          </div>
+          <div class="expo-filter">
+            <label for="expo-segment">Recipient segment</label>
+            <select id="expo-segment">
+              <option value="all">ทุก segment</option>
+            </select>
+          </div>
+          <label class="expo-mode" for="expo-customer-safe">
+            <input id="expo-customer-safe" type="checkbox">
+            Customer-safe ad preview
+          </label>
+          <span id="expo-count" style="color: var(--muted); font-size: 12px; font-weight: 700;">0 packages</span>
+        </div>
+        <div id="seasonal-expo-grid" class="expo-grid"></div>
+      </section>
+
+      <!-- VIEW 5: LIVE PRICE CALCULATOR -->
       <section id="calculator-view" class="view" data-view="calculator" hidden>
         <div class="heading">
           <div>
@@ -1273,7 +1486,7 @@
         </div>
       </section>
 
-      <!-- VIEW 5: DATA GOVERNANCE & LOGS -->
+      <!-- VIEW 6: DATA GOVERNANCE & LOGS -->
       <section id="governance-view" class="view" data-view="governance" hidden>
         <div class="heading">
           <div>
@@ -1297,19 +1510,85 @@
     let catalogMaster = null;
     let activeCategory = "eco-friendly";
     let auditLogs = [];
-    const views = new Set(["catalog", "offers", "bundles", "calculator", "governance"]);
+    let expoCustomerSafe = false;
+    const views = new Set(["catalog", "offers", "bundles", "expo", "calculator", "governance"]);
 
     const fmtMoney = v => (typeof v === "number" && !isNaN(v)) 
       ? new Intl.NumberFormat("th-TH", { style: "currency", currency: "THB", maximumFractionDigits: 2 }).format(v) 
       : "฿0.00";
 
     const fmtNum = v => (typeof v === "number" && !isNaN(v)) ? v.toLocaleString("th-TH") : "0";
+    const fmtMaybeMoney = v => (typeof v === "number" && Number.isFinite(v)) ? fmtMoney(v) : "รอข้อมูล";
+    const escapeHtml = value => String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+    const packageStatus = status => ({
+      draft: ["draft", "รอ brief"],
+      mapping_pending: ["pending", "รอ reconcile offer"],
+      cost_pending: ["pending", "รอต้นทุนจริง"],
+      missing_inputs: ["pending", "ข้อมูลต้นทุนไม่ครบ"],
+      below_minimum: ["bad", "ต่ำกว่า gate ฿25,000"],
+      pass: ["ready", "ผ่าน gate ฿25,000"],
+      approved: ["approved", "อนุมัติแล้ว"],
+      rejected: ["bad", "ไม่ใช้ package นี้"],
+    }[status] || ["pending", status || "ไม่ทราบสถานะ"]);
+
+    function canonicalProducts(data) {
+      if (Array.isArray(data.canonical_products)) return data.canonical_products;
+      return (data.srp_reference_products || []).map(row => ({
+        code: row.product_code,
+        name_th: row.name_th,
+        name_en: row.name_en,
+        product_master: row.product_master_id || `pm:${row.product_code}`,
+        product_family: row.product_family,
+        category_slug: row.category_slug,
+        category: row.category_slug,
+        srp_price: row.srp_price,
+        price_tiers: row.price_tiers,
+        factory_match_status: row.factory_match_status,
+      }));
+    }
+
+    function normalizeMasterData(data) {
+      const normalized = { ...data };
+      normalized.canonical_products = canonicalProducts(data);
+      if (!Array.isArray(normalized.catalog_offers)) normalized.catalog_offers = [];
+      if (Array.isArray(data.seasonal_offers)) {
+        const sourceCodes = new Set(normalized.catalog_offers.map(offer => offer.offer_code || offer.code));
+        const seasonal = data.seasonal_offers
+          .filter(offer => !sourceCodes.has(offer.code))
+          .map(offer => ({
+            offer_code: offer.code,
+            code: offer.code,
+            name: offer.name,
+            name_en: offer.name_en,
+            gift_tier: offer.gift_tier,
+            unboxing_experience: offer.unboxing_experience,
+            price_tiers: offer.price_tiers || [],
+            components: (offer.contains || []).map(component => ({
+              product_code: component.product_code,
+              qty: component.qty,
+            })),
+            interest_theme_slug: offer.catalog_slug,
+            source_kind: offer.source_kind,
+            schema_id: offer.id,
+          }));
+        normalized.catalog_offers = normalized.catalog_offers.concat(seasonal);
+      }
+      normalized.corporate_bundles = normalized.corporate_bundles || [];
+      normalized.pkg = Array.isArray(data.pkg) ? data.pkg : [];
+      normalized.bom = Array.isArray(data.bom) ? data.bom : [];
+      return normalized;
+    }
 
     const catInfo = {
       "eco-friendly": { title: "Eco-Friendly & Sustainability", desc: "สินค้าที่เป็นมิตรต่อสิ่งแวดล้อม แก้วทัมเบลอร์ ร่มกันแดด และกระบอกน้ำ Smart LED" },
       "executive-smart-tech": { title: "Executive Smart Tech", desc: "ชุดนวัตกรรมสำหรับผู้บริหาร สมุดพาวเวอร์แบงก์ ลำโพงบลูทูธ และแก้วกาแฟ 3-Way" },
       "classic-oriental": { title: "Classic Oriental & Mindfulness", desc: "ชุดของขวัญอัตลักษณ์ตะวันออก กระบอกชงชา Borosilicate และปากกาไม้แท้" },
-      "novelty-lifestyle": { title: "Novelty & Lifestyle", desc: "ชุดของขวัญเพื่อความผ่อนคลายและไลฟ์สไตล์ เครื่องนวดคอ และเทียนหอมอโรมา" }
+      "novelty-self-care": { title: "Novelty & Self-Care", desc: "ชุดของขวัญเพื่อความผ่อนคลายและไลฟ์สไตล์ เครื่องนวดคอ และเทียนหอมอโรมา" }
     };
 
     function route() {
@@ -1326,22 +1605,26 @@
 
       if (view === "offers") renderAllOffers();
       if (view === "bundles") renderBundles();
+      if (view === "expo") renderSeasonalExpo();
       if (view === "calculator") recalculateQuote();
       if (view === "governance") renderAuditLogs();
     }
 
     function acceptMasterData(data, sourceLabel) {
-      catalogMaster = data;
-      document.querySelector("#source").textContent = `${sourceLabel} (v${data.metadata?.version || "2026.08.30"})`;
-      document.querySelector("#stat-canonical").textContent = (data.canonical_products || []).length;
-      document.querySelector("#stat-offers").textContent = (data.catalog_offers || []).length;
-      document.querySelector("#stat-bundles").textContent = (data.corporate_bundles || []).length;
-      document.querySelector("#stat-subcatalogs").textContent = (data.sub_catalogs || []).length;
-      document.querySelector("#stat-updated").textContent = data.metadata?.last_updated ? new Date(data.metadata.last_updated).toLocaleString("th-TH") : "2026-08-30";
+      catalogMaster = normalizeMasterData(data);
+      const metadata = catalogMaster.metadata || {};
+      document.querySelector("#source").textContent = `${sourceLabel} (v${metadata.schema_version || metadata.version || "2026.08.30"})`;
+      document.querySelector("#stat-canonical").textContent = catalogMaster.canonical_products.length;
+      document.querySelector("#stat-offers").textContent = catalogMaster.catalog_offers.length;
+      document.querySelector("#stat-bundles").textContent = catalogMaster.pkg.length || catalogMaster.corporate_bundles.length;
+      document.querySelector("#stat-subcatalogs").textContent = (catalogMaster.portfolio_catalogs || catalogMaster.top_level_categories || catalogMaster.sub_catalogs || []).length;
+      document.querySelector("#stat-updated").textContent = metadata.last_updated ? new Date(metadata.last_updated).toLocaleString("th-TH") : (metadata.generated_at || "2026-08-30");
 
       renderCategoryView(activeCategory);
       renderAllOffers();
       renderBundles();
+      configureExpoFilters();
+      renderSeasonalExpo();
       recalculateQuote();
     }
 
@@ -1453,13 +1736,13 @@
                 <h3>${item.name}</h3>
               </div>
               <div class="price-block">
-                <div class="srp-price">${fmtMoney(item.srp_price || (item.price_tiers?.[0]?.unit_price || 0))}</div>
+                <div class="srp-price">${fmtMaybeMoney(item.srp_price ?? item.price_tiers?.[0]?.unit_price)}</div>
                 <div class="srp-sub">ราคาต่อชุด (1-Piece SRP)</div>
               </div>
             </div>
             <div class="badges">
               <span class="badge ${item.gift_tier === 'Signature' ? 'tier-signature' : 'available'}">${item.gift_tier || 'Select Tier'}</span>
-              <span class="badge ${item.sub_catalog === 'draft_bom_catalog' ? 'pending' : 'available'}">${item.catalog_match_status || 'Approved Offer'}</span>
+              <span class="badge ${item.sub_catalog === 'draft_bom_catalog' || item.source_kind === 'derived_recipe_pending_approval' ? 'pending' : 'available'}">${item.catalog_match_status || (item.source_kind === 'derived_recipe_pending_approval' ? 'รออนุมัติ recipe' : 'Approved Offer')}</span>
               ${item.packaging_carton ? `<span class="badge ready">📦 ${item.packaging_carton.cbm_per_unit} CBM/ชุด</span>` : ''}
             </div>
             ${item.dimensions_cm ? `
@@ -1507,13 +1790,13 @@
               <div style="font-size: 11px; color: var(--muted);">${item.interest_theme || "Corporate Gift"}</div>
             </div>
             <div class="price-block">
-              <div class="srp-price">${fmtMoney(item.srp_price || item.price_tiers?.[0]?.unit_price || 0)}</div>
+              <div class="srp-price">${fmtMaybeMoney(item.srp_price ?? item.price_tiers?.[0]?.unit_price)}</div>
               <div class="srp-sub">SRP</div>
             </div>
           </div>
           <div class="badges">
             <span class="badge ${item.gift_tier === 'Signature' ? 'tier-signature' : 'available'}">${item.gift_tier || 'Select'}</span>
-            <span class="badge available">${item.catalog_match_status || 'Active'}</span>
+            <span class="badge ${item.source_kind === 'derived_recipe_pending_approval' ? 'pending' : 'available'}">${item.catalog_match_status || (item.source_kind === 'derived_recipe_pending_approval' ? 'รออนุมัติ recipe' : 'Active')}</span>
           </div>
         `;
         grid.append(card);
@@ -1524,6 +1807,10 @@
       const container = document.querySelector("#bundles-container");
       if (!container || !catalogMaster) return;
       container.replaceChildren();
+      const notice = document.createElement("div");
+      notice.className = "expo-empty";
+      notice.innerHTML = `ข้อมูลด้านล่างเป็น corporate bundle รุ่นเก่า ใช้สำหรับอ้างอิงเท่านั้น; เปิด <a href="#/expo">Seasonal Expo</a> เพื่อดู package ที่ใช้ gate ฿25,000 และ BOM จาก projection ล่าสุด`;
+      container.append(notice);
 
       for (const b of (catalogMaster.corporate_bundles || [])) {
         const card = document.createElement("article");
@@ -1559,18 +1846,15 @@
               <p style="margin: 0; color: var(--muted); font-size: 13px;">${b.description || ""}</p>
             </div>
             <div style="text-align: right;">
-              <div style="font-size: 24px; font-weight: 900; color: var(--ink);">${fmtMoney(b.total_price)}</div>
-              <div style="font-size: 12px; color: var(--muted);">ราคาเสนอขายรวม (${b.target_recipients} ผู้รับ)</div>
+              <div style="font-size: 24px; font-weight: 900; color: var(--ink);">${fmtMaybeMoney(b.total_price)}</div>
+              <div style="font-size: 12px; color: var(--muted);">ราคาเสนอขายรวม (${b.target_recipients ?? "รอจำนวน"} ผู้รับ)</div>
             </div>
           </div>
 
           <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-            <span class="profit-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              กำไรสุทธิ: ${fmtMoney(b.gross_profit || b.est_gross_profit)} (${b.gross_margin_percent?.toFixed(1) || '64.9'}%)
-            </span>
-            <span class="badge available">ต้นทุนรวม: ${fmtMoney(b.landed_cost || b.est_landed_cost)}</span>
-            <span class="badge ready">เกณฑ์ขั้นต่ำ ฿20k: ผ่านสมบูรณ์</span>
+            <span class="badge pending">Legacy reference · ไม่ใช้เป็น gate</span>
+            <span class="badge pending">ต้นทุน/กำไรต้อง reconcile ใหม่</span>
+            <a class="badge available" href="#/expo">เปิด Seasonal Expo</a>
           </div>
 
           <div style="background: var(--soft); padding: 14px; border-radius: 10px; font-size: 13px;">
@@ -1589,6 +1873,165 @@
           </div>
         `;
         container.append(card);
+      }
+    }
+
+    function configureExpoFilters() {
+      const packages = (catalogMaster?.pkg || []).filter(pkg => ["christmas_2026", "new_year_2027"].includes(pkg.occasion));
+      const eventSelect = document.querySelector("#expo-event");
+      const tierSelect = document.querySelector("#expo-tier");
+      const segmentSelect = document.querySelector("#expo-segment");
+      if (!eventSelect || !tierSelect || !segmentSelect) return;
+
+      const current = {
+        event: eventSelect.value || "all",
+        tier: tierSelect.value || "all",
+        segment: segmentSelect.value || "all",
+      };
+      const events = [...new Set(packages.map(pkg => pkg.occasion))];
+      const tiers = [...new Set(packages.map(pkg => pkg.gift_tier).filter(Boolean))];
+      const segments = [...new Set(packages.map(pkg => pkg.recipient_segment).filter(Boolean))];
+      const eventLabels = { christmas_2026: "Christmas 2026", new_year_2027: "New Year 2027" };
+      eventSelect.innerHTML = `<option value="all">ทุก event</option>${events.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(eventLabels[value] || value)}</option>`).join("")}`;
+      tierSelect.innerHTML = `<option value="all">ทุก tier</option>${tiers.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("")}`;
+      segmentSelect.innerHTML = `<option value="all">ทุก segment</option>${segments.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("")}`;
+      if (events.includes(current.event)) eventSelect.value = current.event;
+      if (tiers.includes(current.tier)) tierSelect.value = current.tier;
+      if (segments.includes(current.segment)) segmentSelect.value = current.segment;
+
+      for (const select of [eventSelect, tierSelect, segmentSelect]) {
+        if (select.dataset.bound === "true") continue;
+        select.addEventListener("change", renderSeasonalExpo);
+        select.dataset.bound = "true";
+      }
+      const safeToggle = document.querySelector("#expo-customer-safe");
+      if (safeToggle && safeToggle.dataset.bound !== "true") {
+        safeToggle.addEventListener("change", () => {
+          expoCustomerSafe = safeToggle.checked;
+          renderSeasonalExpo();
+        });
+        safeToggle.dataset.bound = "true";
+      }
+    }
+
+    function expoProductRows(pkg) {
+      const rows = (catalogMaster?.bom || []).filter(row => row.bundle_id === pkg.id);
+      if (rows.length > 0) return rows;
+      const offers = new Map((catalogMaster?.seasonal_offers || []).map(offer => [offer.id, offer]));
+      const options = pkg.options || [];
+      return options.flatMap(option => (offers.get(option.offer_id)?.contains || []).map(component => ({
+        bundle_id: pkg.id,
+        offer_id: option.offer_id,
+        product_master_id: component.product_master_id,
+        product_code: component.product_code,
+        qty: component.qty,
+        name_th: component.product_code,
+        name_en: "รอข้อมูล ProductMaster",
+        unit_srp_qty1: null,
+        cbm_per_unit: null,
+        factory_cost_thb: null,
+        cost_status: "mapping_pending",
+      })));
+    }
+
+    function expoPriceSummary(pkg) {
+      const ref = pkg.price_reference || {};
+      if (ref.offer_price_tiers) {
+        const qty1 = ref.offer_price_qty1;
+        const tiers = (ref.offer_price_tiers || []).slice(0, 3).map(tier => `${fmtNum(tier.min_qty)}+: ${fmtMaybeMoney(tier.unit_price)}`).join(" · ");
+        return { qty1: fmtMaybeMoney(qty1), ladder: tiers || "รอข้อมูล" };
+      }
+      return { qty1: "หลาย offer", ladder: "รอจำนวนและราคา parent" };
+    }
+
+    function renderSeasonalExpo() {
+      const grid = document.querySelector("#seasonal-expo-grid");
+      if (!grid || !catalogMaster) return;
+      configureExpoFilters();
+      const event = document.querySelector("#expo-event")?.value || "all";
+      const tier = document.querySelector("#expo-tier")?.value || "all";
+      const segment = document.querySelector("#expo-segment")?.value || "all";
+      const safe = expoCustomerSafe || Boolean(document.querySelector("#expo-customer-safe")?.checked);
+      const allPackages = (catalogMaster.pkg || []).filter(pkg => ["christmas_2026", "new_year_2027"].includes(pkg.occasion));
+      const packages = allPackages.filter(pkg =>
+        (event === "all" || pkg.occasion === event) &&
+        (tier === "all" || pkg.gift_tier === tier) &&
+        (segment === "all" || pkg.recipient_segment === segment)
+      );
+      const count = document.querySelector("#expo-count");
+      if (count) count.textContent = `${packages.length} packages${safe ? " · customer-safe" : " · internal"}`;
+      grid.replaceChildren();
+      if (packages.length === 0) {
+        grid.innerHTML = `<div class="expo-empty">ยังไม่มี package ตามตัวกรองนี้</div>`;
+        return;
+      }
+
+      for (const pkg of packages) {
+        const [statusClass, statusText] = packageStatus(pkg.status);
+        const creative = pkg.ad_creative || {};
+        const price = expoPriceSummary(pkg);
+        const rows = expoProductRows(pkg);
+        const uniqueProducts = [...new Map(rows.map(row => [row.product_code, row])).values()];
+        const productPills = uniqueProducts.length
+          ? uniqueProducts.map(row => `<span class="expo-product-pill">${escapeHtml(row.product_code)}</span>`).join("")
+          : `<span class="expo-product-pill">รอ brief สินค้า</span>`;
+        const bomRows = rows.length
+          ? rows.map(row => `
+              <tr>
+                <td><strong>${escapeHtml(row.product_code)}</strong><div class="expo-id">${escapeHtml(row.product_master_id)}</div></td>
+                <td>${escapeHtml(row.name_th || row.name_en || "—")}</td>
+                <td class="num">${fmtNum(row.qty)}</td>
+                ${safe ? "" : `<td class="num">${fmtMaybeMoney(row.unit_srp_qty1)}</td><td class="num">${fmtMaybeMoney(row.factory_cost_thb)}</td><td>${escapeHtml(row.cost_status || "รอตรวจ")}</td>`}
+                <td class="num">${safe ? "—" : (row.cbm_per_unit == null ? "รอข้อมูล" : `${escapeHtml(row.cbm_per_unit)} CBM`)}</td>
+              </tr>
+            `).join("")
+          : `<tr><td colspan="${safe ? 4 : 7}" class="expo-disclosure">ยังไม่มี BOM ที่มีจำนวนยืนยันได้</td></tr>`;
+        const bomHead = safe
+          ? "<tr><th>ProductMaster</th><th>สินค้า</th><th class=\"num\">จำนวน</th><th class=\"num\">CBM</th></tr>"
+          : "<tr><th>ProductMaster</th><th>สินค้า</th><th class=\"num\">จำนวน</th><th class=\"num\">SRP @1</th><th class=\"num\">Factory</th><th>Cost status</th><th class=\"num\">CBM</th></tr>";
+        const details = pkg.options?.length
+          ? pkg.options.map(option => `<div class="expo-disclosure">${escapeHtml(option.offer_code || option.offer_id)} × ${option.qty == null ? "รอจำนวน" : fmtNum(option.qty)} · ${escapeHtml(option.bom_status || "รอตรวจ")}</div>`).join("")
+          : `<div class="expo-disclosure">${pkg.gift_tier === "Bespoke" ? "รอ brief เพื่อเลือก CatalogOffer และ BOM" : "ยังไม่มีรายการย่อย"}</div>`;
+        const card = document.createElement("article");
+        card.className = "expo-card";
+        card.innerHTML = `
+          <div class="expo-card-head">
+            <div>
+              <div class="category-label">${escapeHtml(pkg.code)} · ${escapeHtml(pkg.occasion)}</div>
+              <h3>${escapeHtml(pkg.name)}</h3>
+              <div class="expo-id">PK ${escapeHtml(pkg.id)}</div>
+            </div>
+            <span class="badge ${statusClass}">${escapeHtml(statusText)}</span>
+          </div>
+          <div class="expo-split">
+            <div class="expo-ad ${pkg.occasion === "new_year_2027" ? "new-year" : ""}">
+              <div class="category-label" style="color: rgba(255,255,255,.74);">${escapeHtml(creative.claim_status || "draft creative")}</div>
+              <h4>${escapeHtml(creative.headline_th || "Seasonal SmartGift")}</h4>
+              <p>${escapeHtml(creative.supporting_copy_th || "ชุดของขวัญองค์กรจากสินค้าที่มี")}</p>
+              <span class="expo-cta">${escapeHtml(creative.cta_th || "ดูของในชุด")}</span>
+            </div>
+            <div class="expo-facts">
+              <div class="expo-fact-row"><span>Tier / Segment</span><strong>${escapeHtml(pkg.gift_tier || "Mixed")} · ${escapeHtml(pkg.recipient_segment || "mixed")}</strong></div>
+              <div class="expo-fact-row"><span>จำนวนผู้รับ</span><strong>${pkg.target_recipients == null ? "รอ order brief" : fmtNum(pkg.target_recipients)}</strong></div>
+              <div class="expo-fact-row"><span>ราคา offer @1</span><strong>${safe ? "สอบถามราคา" : price.qty1}</strong></div>
+              <div class="expo-fact-row"><span>Offer ladder</span><strong>${safe ? "สอบถามราคา" : escapeHtml(price.ladder)}</strong></div>
+              <div class="expo-fact-row"><span>${safe ? "ราคา package" : "Profit / Gate"}</span><strong>${safe ? "สอบถามราคา" : `${fmtMaybeMoney(pkg.profit_evaluation?.profit)} / ฿25,000`}</strong></div>
+              <div class="expo-products" aria-label="ส่วนประกอบสินค้า">${productPills}</div>
+            </div>
+          </div>
+          <details class="expo-bom">
+            <summary>ดูชิ้นส่วนย่อยและ provenance (${rows.length} รายการ)</summary>
+            <div class="expo-bom-body">
+              <table>
+                <thead>${bomHead}</thead>
+                <tbody>${bomRows}</tbody>
+              </table>
+              ${details}
+              ${safe ? "" : `<div class=\"expo-disclosure\">CBM/ต้นทุนที่ยังไม่ verified จะแสดงเป็น “รอข้อมูล” และไม่ทำให้ package ผ่าน Profit Gate</div>`}
+            </div>
+          </details>
+        `;
+        grid.append(card);
       }
     }
 
@@ -1798,13 +2241,26 @@
     window.addEventListener("hashchange", route);
     route();
 
-    // Fetch initial master catalog
-    fetch("/api/catalog")
-      .then(r => r.ok ? r.json() : Promise.reject())
-      .then(d => acceptMasterData(d, "Live Master Catalog"))
+    // Fetch catalog and price projection together so the Seasonal Expo can show
+    // schema IDs, BOM provenance and price/cost readiness without changing the
+    // customer-facing catalog source.
+    const fetchJson = url => fetch(url).then(r => r.ok ? r.json() : Promise.reject(new Error(url)));
+    Promise.all([
+      fetchJson("/api/catalog").catch(() => null),
+      fetchJson("/api/pricelist").catch(() => null),
+    ])
+      .then(([catalog, pricelist]) => {
+        if (!catalog && !pricelist) throw new Error("no local master source");
+        const merged = { ...(catalog || {}), ...(pricelist || {}) };
+        merged.metadata = { ...(catalog?.metadata || {}), ...(pricelist?.metadata || {}) };
+        merged.canonical_products = catalog?.canonical_products || pricelist?.canonical_products;
+        merged.catalog_offers = catalog?.catalog_offers || pricelist?.catalog_offers;
+        merged.top_level_categories = catalog?.top_level_categories || pricelist?.portfolio_catalogs;
+        merged.corporate_bundles = catalog?.corporate_bundles || [];
+        acceptMasterData(merged, pricelist ? "Live Catalog + Price Projection" : "Live Master Catalog");
+      })
       .catch(() => {
-        fetch("./data-pipeline/02_prepared/smartgift_catalog_master.json")
-          .then(r => r.ok ? r.json() : Promise.reject())
+        fetchJson("./data-pipeline/02_prepared/smartgift_catalog_master.json")
           .then(d => acceptMasterData(d, "Local Prepared Catalog"))
           .catch(() => {
             document.querySelector("#source").textContent = "ยังไม่มีข้อมูล Master Catalog · โปรดเลือกไฟล์ JSON";

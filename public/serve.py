@@ -16,6 +16,7 @@ PORT = 5180
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 PUBLIC_DIR = os.path.join(BASE_DIR, "public")
 CATALOG_PATH = os.path.join(BASE_DIR, "data-pipeline", "02_prepared", "smartgift_catalog_master.json")
+PRICELIST_PATH = os.path.join(BASE_DIR, "data-pipeline", "02_prepared", "pricelist_master.json")
 AUDIT_LOG_PATH = os.path.join(BASE_DIR, "data-pipeline", "04_review_reports", "provenance_audit_log.jsonl")
 FORMULA_PATH = os.path.join(BASE_DIR, "config", "pricing_rules_formula.yaml")
 DIFF_REPORT_PATH = os.path.join(BASE_DIR, "data-pipeline", "04_review_reports", "catalog_version_diff_report.json")
@@ -30,6 +31,9 @@ class SmartGiftHTTPHandler(SimpleHTTPRequestHandler):
 
         if path == "/api/catalog":
             self.serve_json_file(CATALOG_PATH)
+        elif path == "/api/pricelist":
+            # Local review endpoint only: the projection contains internal cost/evidence fields.
+            self.serve_json_file(PRICELIST_PATH)
         elif path == "/api/audit-logs":
             self.serve_audit_logs()
         elif path == "/api/diff-report":

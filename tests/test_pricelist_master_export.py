@@ -11,9 +11,10 @@ import unittest
 from unittest.mock import patch
 
 from pipeline.export_pricelist_master import (
-    CATALOG_PATH, GENERATOR, OUTPUT_PATH, ROOT, SCHEMA_PATH, SQL_PATH,
-    build_master, evaluate_profit, export_master, parse_snapshot, parse_values,
-    validate_master,
+    CATALOG_PATH, FACTORY_PATH, GENERATOR, OUTPUT_PATH, PRICING_RULES_PATH, PUBLIC_OUTPUT_PATH, ROOT,
+    SCHEMA_PATH, SQL_PATH, SRP_QTY_TIERS, build_master, evaluate_profit, export_master,
+    build_public_projection, parse_factory_catalog, parse_snapshot, parse_values,
+    validate_master, validate_public_projection,
 )
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -76,6 +77,12 @@ class TestPackageProfitGate(unittest.TestCase):
         self.assertIn("bom", result["missing_inputs"])
         self.assertIn("quantity", result["missing_inputs"])
 
+    def test_extra_cost_evidence_gate_cannot_be_bypassed(self):
+        result = evaluate_profit(100000, 50000, **self.complete, extra_missing=("factory_identity",))
+        self.assertEqual(result["status"], "missing_inputs")
+        self.assertIsNone(result["profit"])
+        self.assertIn("factory_identity", result["missing_inputs"])
+
 
 class TestPricelistMasterExport(unittest.TestCase):
     @classmethod
@@ -85,8 +92,10 @@ class TestPricelistMasterExport(unittest.TestCase):
     def test_snapshot_counts_and_independent_sql_price_reconciliation(self):
         self.assertEqual(self.data["metadata"]["counts"], {
             "product_masters": 427, "product_families": 32, "portfolio_catalogs": 4,
-            "customer_tiers": 4, "catalog_offers": 1110, "pkg": 1,
-            "offer_product_links": 3200, "bom": 0, "prices": 669,
+            "customer_tiers": 4, "catalog_offers": 1110, "seasonal_offers": 6, "pkg": 11,
+            "offer_product_links": 3200, "bom": 17, "prices": 669,
+            "price_comparisons": 669, "srp_reference_products": 16,
+            "srp_qty_comparisons": 128,
         })
         # Independent SQL engine checks every price cell against the dump.
         with sqlite3.connect(":memory:") as db:
@@ -110,6 +119,37 @@ class TestPricelistMasterExport(unittest.TestCase):
         self.assertEqual(pkg["profit_evaluation"]["status"], "missing_inputs")
         self.assertFalse(pkg["quote_ready"])
 
+    def test_seasonal_packages_use_schema_ids_and_explicit_bom(self):
+        seasonal = [pkg for pkg in self.data["pkg"] if pkg["occasion"] in ("christmas_2026", "new_year_2027")]
+        self.assertEqual(len(seasonal), 10)
+        self.assertTrue(all(pkg["id"].startswith("bundle:") for pkg in seasonal))
+        self.assertTrue(all(pkg["code"].startswith("PKG-") for pkg in seasonal))
+        self.assertTrue(all(pkg["profit_evaluation"]["minimum_profit"] == 25000 for pkg in seasonal))
+        self.assertTrue(all(pkg["profit_evaluation"]["status"] == "missing_inputs" for pkg in seasonal))
+        self.assertEqual(self.data["metadata"]["bom_coverage"], "proposed_recipe")
+        self.assertEqual(self.data["metadata"]["quality_summary"]["verified_bom_edges"], 0)
+        self.assertEqual(self.data["metadata"]["quality_summary"]["proposed_bom_edges"], 17)
+
+        offers = {offer["id"]: offer for offer in self.data["seasonal_offers"]}
+        self.assertEqual(offers["offer:TDD03-2"]["gift_tier"], "Select")
+        self.assertEqual(offers["offer:TWL01-8"]["gift_tier"], "Select")
+        self.assertEqual(offers["offer:TGC06-4"]["gift_tier"], "Signature")
+        self.assertEqual(offers["offer:TMK0215"]["gift_tier"], "Signature")
+        self.assertEqual(offers["offer:smartgift-2026-christmas-reach-operations"]["gift_tier"], "Reach")
+        self.assertEqual(offers["offer:smartgift-2027-new-year-reach-operations"]["gift_tier"], "Reach")
+        self.assertTrue(all(offer["id"].startswith("offer:") for offer in offers.values()))
+        self.assertTrue(all(component["product_master_id"] == f"pm:{component['product_code']}"
+                            for offer in offers.values() for component in offer["contains"]))
+
+        package_ids = {pkg["id"] for pkg in self.data["pkg"]}
+        self.assertTrue(all(row["bundle_id"] in package_ids for row in self.data["bom"]))
+        self.assertTrue(all(row["verified"] is False and row["factory_cost_thb"] is None
+                            for row in self.data["bom"]))
+        fixed_options = [option for pkg in seasonal for option in pkg["options"] if option["qty"] is not None]
+        self.assertEqual(len(fixed_options), 6)
+        self.assertTrue(all(option["bundle_id"] in package_ids for option in fixed_options))
+        self.assertTrue(all(option["offer_id"] in offers for option in fixed_options))
+
     def test_missing_prices_and_contract_gaps_remain_visible(self):
         prices = self.data["prices"]
         self.assertEqual(sum(row["price_missing"] for row in prices), 102)
@@ -118,8 +158,40 @@ class TestPricelistMasterExport(unittest.TestCase):
         self.assertTrue(all(row["base_cost"] is None and row["category"] is None
                             and row["contract_validation"]["status"] == "incomplete"
                             for row in self.data["product_masters"]))
-        self.assertEqual(self.data["bom"], [])
+        self.assertEqual(len(self.data["bom"]), 17)
+        self.assertTrue(all(row["cost_status"] == "missing_factory_identity" for row in self.data["bom"]))
         self.assertFalse(any("qty" in link for link in self.data["offer_product_links"]))
+
+    def test_factory_catalog_and_srp_quantity_matrix_are_explicit(self):
+        factory = parse_factory_catalog((ROOT / FACTORY_PATH).read_text(encoding="utf-8-sig"))
+        self.assertEqual({key: len(rows) for key, rows in factory.items()}, {"catalogs": 2, "products": 1087})
+        self.assertEqual(self.data["metadata"]["quality_summary"]["factory_exact_match_price_rows"], 404)
+        self.assertEqual(self.data["metadata"]["quality_summary"]["factory_exact_matches_for_price_rows"], 131)
+        self.assertEqual({row["qty"] for row in self.data["srp_qty_comparisons"]}, set(SRP_QTY_TIERS))
+        self.assertEqual(sum(row["qty"] == 1 for row in self.data["srp_qty_comparisons"]), 16)
+        self.assertTrue(all(row["srp_source"] == "master_declared" for row in self.data["srp_qty_comparisons"]))
+        self.assertTrue(all(row["factory_product_code"] is None and row["factory_cost_thb"] is None
+                            for row in self.data["srp_qty_comparisons"]))
+        matched = next(row for row in self.data["price_comparisons"]
+                       if row["factory_product_code"] is not None and row["factory_cost_thb"] is not None)
+        self.assertEqual(matched["factory_cost_thb"], matched["factory_reference_thb"])
+        self.assertTrue(all(row["cbm_per_unit"] is not None and row["freight_per_unit_thb"] is not None
+                            for row in self.data["srp_qty_comparisons"]))
+        self.assertEqual(sum(row["comparison_status"] == "factory_reference_only"
+                             for row in self.data["price_comparisons"]), 333)
+
+    def test_public_projection_is_allowlisted_and_cost_safe(self):
+        public = build_public_projection(self.data)
+        validate_public_projection(public)
+        self.assertEqual(public["metadata"]["status"], "customer_safe")
+        self.assertEqual(public["metadata"]["counts"]["product_masters"], 427)
+        self.assertEqual(len(public["pkg"]), 11)
+        self.assertNotIn("factory_cost_thb", public["bom"][0])
+        self.assertNotIn("cbm_per_unit", public["bom"][0])
+        self.assertNotIn("profit_evaluation", public["pkg"][1])
+        self.assertNotIn("provenance", public["catalog_offers"][0])
+        artifact = json.loads((ROOT / PUBLIC_OUTPUT_PATH).read_text(encoding="utf-8"))
+        self.assertEqual(artifact, public)
 
     def test_orphan_duplicate_and_fabricated_bom_are_rejected(self):
         mutations = (
@@ -145,7 +217,7 @@ class TestPricelistMasterExport(unittest.TestCase):
     def test_repeat_export_is_deterministic_and_source_change_fails_closed(self):
         with tempfile.TemporaryDirectory(prefix="pricelist-export-test-") as folder:
             root = Path(folder)
-            for relative in (SQL_PATH, SCHEMA_PATH, CATALOG_PATH):
+            for relative in (SQL_PATH, FACTORY_PATH, SCHEMA_PATH, CATALOG_PATH, PRICING_RULES_PATH):
                 target = root / relative
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(ROOT / relative, target)
