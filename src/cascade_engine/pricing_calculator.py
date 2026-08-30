@@ -80,9 +80,58 @@ RATES = {
     }
 }
 
+import os
+import json
+try:
+    import yaml
+except ImportError:
+    yaml = None
+
 class SmartGiftPricingCalculator:
-    def __init__(self, fx: float = 5.0):
+    def __init__(self, fx: float = 5.0, config_path: Optional[str] = None):
         self.fx = fx
+        self.rates = RATES
+        self.config_path = config_path
+        self._load_config()
+
+    def _load_config(self):
+        candidate_paths = [
+            self.config_path,
+            os.path.join(os.path.dirname(__file__), "..", "..", "config", "shipping_rate_matrix.yaml"),
+            "config/shipping_rate_matrix.yaml",
+            "config/shipping_rate_matrix.json"
+        ]
+        for path in candidate_paths:
+            if path and os.path.exists(path):
+                try:
+                    with open(path, "r", encoding="utf-8") as f:
+                        if path.endswith(".yaml") or path.endswith(".yml"):
+                            data = yaml.safe_load(f) if yaml else None
+                        else:
+                            data = json.load(f)
+                    if data:
+                        if "currency_fx" in data and "cny_to_thb" in data["currency_fx"]:
+                            self.fx = data["currency_fx"]["cny_to_thb"]
+                        if "shipping_rates" in data:
+                            self._merge_rates(data["shipping_rates"])
+                        elif "rates" in data:
+                            self._merge_rates(data["rates"])
+                        break
+                except Exception:
+                    pass
+
+    def _merge_rates(self, new_rates: Dict[str, Any]):
+        # Normalize and merge rates table
+        for wh, wh_data in new_rates.items():
+            wh_key = "guangzhou_shenzhen" if "guangzhou" in wh.lower() else "yiwu"
+            if wh_key not in self.rates:
+                self.rates[wh_key] = {}
+            for mode, mode_data in wh_data.items():
+                if mode not in self.rates[wh_key]:
+                    self.rates[wh_key][mode] = {}
+                for cat, cat_data in mode_data.items():
+                    cat_key = "electronic_tisi" if ("electronic" in cat.lower() or "tis" in cat.lower()) else cat.lower()
+                    self.rates[wh_key][mode][cat_key] = {k.lower(): v for k, v in cat_data.items()}
 
     def get_small_order_factor(self, qty: int) -> float:
         for tier in SMALL_ORDER_FACTORS:
@@ -115,7 +164,7 @@ class SmartGiftPricingCalculator:
         charged_by = "weight" if density >= DENSITY_SWITCH else "volume"
         resolved_mode = self.resolve_shipping_mode(mode, month, volume_cbm)
 
-        rate_table = RATES.get(warehouse, {}).get(resolved_mode, {}).get(goods_type, {}).get(tier, {"cbm": 6400, "kg": 16})
+        rate_table = self.rates.get(warehouse, {}).get(resolved_mode, {}).get(goods_type, {}).get(tier, {"cbm": 6400, "kg": 16})
         
         if charged_by == "weight" and weight_kg:
             order_freight = round(weight_kg * rate_table["kg"], 2)
