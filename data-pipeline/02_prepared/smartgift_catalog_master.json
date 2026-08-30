@@ -9981,7 +9981,9 @@
       ],
       "est_landed_cost": 16187.499999999998,
       "est_gross_profit": 30062.5,
-      "meets_min_profit_threshold": true
+      "meets_min_profit_threshold": true,
+      "landed_cost": 16187.499999999998,
+      "gross_profit": 30062.5
     },
     {
       "bundle_code": "PKG-ENTERPRISE-160",
@@ -10010,7 +10012,9 @@
       ],
       "est_landed_cost": 64749.99999999999,
       "est_gross_profit": 120250.0,
-      "meets_min_profit_threshold": true
+      "meets_min_profit_threshold": true,
+      "landed_cost": 64749.99999999999,
+      "gross_profit": 120250.0
     }
   ],
   "sub_catalogs": [

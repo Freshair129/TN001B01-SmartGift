@@ -144,20 +144,43 @@ def main():
 
     print(f"Total catalog offers in master data: {len(master_data['catalog_offers'])}")
 
-    # 4. Enforce Corporate Package Profit Minimum Threshold Guardrail (฿20,000 - ฿30,000 / pkg)
-    print("\n=== Step 2: Enforcing Corporate Package Profit Thresholds ===")
+    # 4. Enforce Corporate Package Profit Minimum Threshold Guardrail & Attach BOM Breakdown
+    print("\n=== Step 2: Enforcing Corporate Package Profit Thresholds & Attaching BOM ===")
     MIN_PKG_PROFIT = 20000.0
     TARGET_PKG_PROFIT = 30000.0
 
+    try:
+        from src.cascade_engine import InventoryCascadeEngine
+        inv_engine = InventoryCascadeEngine()
+    except Exception:
+        inv_engine = None
+
     for b in master_data.get("corporate_bundles", []):
         total_sell = b.get("total_price", 0.0)
-        # Calculate cost from items if present or baseline 35% cost ratio
-        est_cost = total_sell * 0.35
-        profit = total_sell - est_cost
-        b["est_landed_cost"] = est_cost
-        b["est_gross_profit"] = profit
-        b["meets_min_profit_threshold"] = profit >= MIN_PKG_PROFIT
-        print(f"Package {b['bundle_code']} ({b['name']}): Selling=฿{total_sell:,.2f}, Est Cost=฿{est_cost:,.2f}, Profit=฿{profit:,.2f} (Meets Min ฿20k: {profit >= MIN_PKG_PROFIT})")
+        code = b.get("bundle_code", "")
+
+        if inv_engine:
+            dec = inv_engine.decompose_bundle(code, 1)
+            total_cost = dec.get("total_cost_price", total_sell * 0.35)
+            profit = dec.get("gross_profit", total_sell - total_cost)
+            margin = dec.get("gross_margin_percent", (profit / total_sell) * 100 if total_sell else 0)
+            
+            b["landed_cost"] = total_cost
+            b["gross_profit"] = profit
+            b["gross_margin_percent"] = margin
+            b["meets_min_profit_threshold"] = profit >= MIN_PKG_PROFIT
+            b["bom_breakdown"] = {
+                "included_sets": dec.get("sets_breakdown", []),
+                "physical_sku_bom": dec.get("physical_sku_deductions", [])
+            }
+        else:
+            est_cost = total_sell * 0.35
+            profit = total_sell - est_cost
+            b["landed_cost"] = est_cost
+            b["gross_profit"] = profit
+            b["meets_min_profit_threshold"] = profit >= MIN_PKG_PROFIT
+
+        print(f"Package {b['bundle_code']} ({b['name']}): Selling=฿{total_sell:,.2f}, Cost=฿{b['landed_cost']:,.2f}, Profit=฿{b['gross_profit']:,.2f} (Meets Min ฿20k: {b['meets_min_profit_threshold']})")
 
     # 5. Save updated master data
     with open(MASTER_JSON_PATH, "w", encoding="utf-8") as f:
