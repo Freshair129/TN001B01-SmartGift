@@ -1,0 +1,38 @@
+{
+  "artifact": "offline_customer_catalog",
+  "catalog_version": "v1.3.0-2026.08.30-f31f38cf",
+  "snapshot_sha256": "a9fbe53c2f8dbd551f889164c4b95f58e250c2a77ba23180430a4eb851c65333",
+  "generated_at": "2026-08-30T15:24:19.444041+00:00",
+  "pages": 51,
+  "embedded_images": 154,
+  "size_bytes": {
+    "html": 1884121,
+    "pdf": 10507706,
+    "zip": 11407906
+  },
+  "size_budget_bytes": 26214400,
+  "font_strategy": "system Thai font stack (embedded OFL subset pending font asset approval)",
+  "sources": {
+    "pricelist_public": {
+      "path": "/data/pricelist_public.json",
+      "size_bytes": 1400871,
+      "sha256": "f31f38cf34b7a6f92a8d866aa56971d811797943a065d0e0f84484891e03d597"
+    },
+    "catalog_media": {
+      "path": "/data/catalog_media.json",
+      "size_bytes": 57584,
+      "sha256": "990b553c2806d93a39e74801fe276d6dc40d323e930ffa74b240be9b10f918b1"
+    }
+  },
+  "boundary_scan": "passed (forbidden markers + external references)",
+  "deliverables": [
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.html",
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.pdf",
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.zip"
+  ],
+  "sha256": {
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.html": "b506cf91d02d07be0af3c5a1608c3228b56f7da7d70225064a03a363f076abc0",
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.pdf": "70d179c31da25819eb16eedd8ffc95af96a5d8b94d340330a206ea08f714d15a",
+    "SmartGift-Catalog-Offline-v1.3.0-2026.08.30-f31f38cf.zip": "0485943f04c6a122e61145435dfc2319cdc652948932976de6824a786794d8ff"
+  }
+}

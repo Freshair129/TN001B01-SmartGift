@@ -1,8 +1,8 @@
 ---
-version: "0.1.3b"
+version: "0.2.0b"
 created_at: "2026-08-30T19:30:00+07:00,ATHER"
-last_update: "2026-08-30T21:35:00+07:00,Claude"
-status: "candidate"
+last_update: "2026-08-30T22:05:00+07:00,Claude"
+status: "beta"
 superseded_by: null
 attributes:
   domain: "smartgift-customer-catalog"
@@ -173,13 +173,16 @@ SmartGift จะทำให้ชัดและทันสมัยขึ้�
 
 ## 12. Approval gate
 
-รอบนี้จัดทำข้อเสนอแยก Web/Offline และภาพแนวทาง interaction แล้ว แต่ยังไม่แก้ code, ยังไม่สร้าง offline bundle และยังไม่ deploy
+Boss อนุมัติและสั่ง build offline bundle เมื่อ 2026-08-30 — สร้างแล้วด้วย `pipeline/build_offline_catalog.py` (deliverables ใน `output/offline/`, audit manifest ใน `data-pipeline/04_review_reports/offline_bundle_manifest.json`)
 
-**Please review and approve this documentation. I will generate the code and customer files once approved.**
+**ผล offline acceptance (2026-08-30):** ไฟล์ HTML เดี่ยว 1.88 MB / 51 หน้า มี network request เดียวคือตัวเอกสารเอง (ไม่มี subresource/fetch/`<link>`/`@import`) จึงเปิดจาก `file://` ได้โดยไม่พึ่ง network; ทดสอบจริงผ่านเบราว์เซอร์: สารบัญ, เปลี่ยนหน้า/กระโดดหน้า, thumbnails 51 รายการ, ค้นหาในเล่ม, ซูม/fit, Auto Flip (เริ่มต้นปิด, ปิดถาวรเมื่อ reduced motion), เต็มจอ, overlay "สินค้าในหน้านี้", dialog "แชร์ไฟล์", keyboard navigation ทำงานครบ; ปก/หน้าท้ายแสดง version + snapshot hash + disclaimer; boundary scan (forbidden markers + external refs) และ size gate ผ่าน; PDF proof 10.5 MB สร้างผ่าน headless Chrome (selectable Thai text; ไม่มี bookmarks — ข้อจำกัดของ print-to-pdf); ZIP 11.4 MB มี HTML + PDF + README
+
+**Deviation ที่บันทึกไว้:** ฟอนต์ไทยใช้ system font stack (Leelawadee UI/Tahoma/Noto Sans Thai) ยังไม่ฝัง Sarabun subset — ต้องดาวน์โหลดไฟล์ฟอนต์ OFL ซึ่งรอ approve แยก; ผลกระทบ: การ render ต่างเครื่องอาจต่างกันเล็กน้อย แต่ไม่มีการโหลดฟอนต์จาก network
 
 ## Version diff
 
 - `0.1.0b candidate`: เพิ่มข้อเสนอแยก web catalog กับ offline single-file/PDF, interaction baseline จาก FlipHTML5, SmartGift Orange visual system, customer-safe data boundary และ verification gates
+- `0.1.3b` → `0.2.0b` (beta): Boss อนุมัติ; build offline bundle ครั้งแรก — flipbook HTML เดี่ยว 51 หน้า + PDF proof + ZIP ผ่าน `pipeline/build_offline_catalog.py`, offline acceptance และ boundary scan ผ่าน, บันทึก deviation เรื่องฟอนต์ (system stack, Sarabun subset รอ approve)
 - `0.1.2b` → `0.1.3b`: แยก internal dashboard ออกจาก `public/index.html` — หน้า deploy เหลือ catalog + expo แบบ customer-safe ถาวร, dashboard เต็มย้ายไป `public/internal.html` (vercelignore), เพิ่ม boundary regression test สำหรับไฟล์ deploy
 - `0.1.1b` → `0.1.2b`: ปิด Blocker ของ `product_manifest.json` — แยก public/internal manifest, allowlist ให้ category slices (ตัด freight/CBM/carton/`product_master`), `catalog_version` จาก hash ของ `pricelist_public`, เพิ่ม boundary scan + tests; บันทึกความเสี่ยงที่เหลือของ `public/index.html`
 - `0.1.0b` → `0.1.1b` (review pass): บันทึก Blocker ของ `product_manifest.json` ที่มี source path/hash ภายในใน `public/`; เพิ่ม lineage ของ category slices และ customer-safe manifest; กำหนด size budget ≤25 MB กับฟอนต์ไทย subset ฝังไฟล์; auto-flip เริ่มต้นปิดและเคารพ reduced motion; ระบุ dependency ว่า BOM ยัง `verified=false` ทั้ง 17 แถว และ scanner ระดับ bundle ยังต้องสร้าง; เพิ่ม peer SPEC-EXPO-CATALOG-MEDIA และเงื่อนไขภาพ generated ที่มี source reference
@@ -188,6 +191,7 @@ SmartGift จะทำให้ชัดและทันสมัยขึ้�
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
+| 0.2.0b | 2026-08-30 | beta | Boss อนุมัติ; build offline bundle แรก (HTML 51 หน้า/PDF/ZIP) ผ่าน acceptance + boundary scan; deviation ฟอนต์บันทึกแล้ว | uncommitted | Claude |
 | 0.1.3b | 2026-08-30 | candidate | แยก internal dashboard ไป internal.html (ไม่ deploy); index.html เหลือ catalog+expo customer-safe ถาวร; เพิ่ม public surface boundary test | ac52752 | Claude |
 | 0.1.2b | 2026-08-30 | candidate | ปิด blocker product_manifest: แยก public/internal manifest, slice allowlist ตัด freight/CBM, boundary scan + tests; note ความเสี่ยง index.html | 374278e | Claude |
 | 0.1.1b | 2026-08-30 | candidate | review pass: blocker product_manifest, lineage หมวด/manifest, size/font budget, reduced motion, BOM/scanner dependency, peer media spec | cd5d7d2 | Claude |

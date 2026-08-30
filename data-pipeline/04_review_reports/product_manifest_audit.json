@@ -4,7 +4,7 @@
   "business_id": "SmartGift",
   "operating_entity": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)",
   "catalog_version": "v1.3.0-2026.08.30-f31f38cf",
-  "generated_at": "2026-08-30T14:36:34.867141+00:00",
+  "generated_at": "2026-08-30T15:25:37.718056+00:00",
   "data_integrity_hashes": {
     "smartgift_catalog_master": {
       "path": "data-pipeline/02_prepared/smartgift_catalog_master.json",
