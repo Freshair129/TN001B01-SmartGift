@@ -36,7 +36,7 @@ node_ontology:
     properties:
       name_th: { type: "string", required: true }
       name_en: { type: "string", required: true }
-      slug: { type: "enum", values: ["pastel-series", "classic-oriental", "novelty-self-care", "executive-smart-tech"], required: true }
+      slug: { type: "enum", values: ["eco-friendly", "classic-oriental", "novelty-self-care", "executive-smart-tech"], required: true }
       vibe: { type: "string" }
       target_recipient: { type: "string" }
       guardrail: { type: "string" }

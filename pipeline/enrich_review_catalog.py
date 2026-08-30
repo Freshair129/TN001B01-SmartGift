@@ -244,29 +244,101 @@ def main():
         p["srp_price"] = t_data["srp"]
         p["price_tiers"] = t_data["tiers"]
 
-    theme_family_map = {
-        "eco-friendly": "PF-ECO-SUSTAINABLE",
-        "executive-smart-tech": "PF-EXECUTIVE-TECH",
-        "classic-oriental": "PF-CLASSIC-CRAFT",
-        "novelty-self-care": "PF-NOVELTY-WELLNESS",
-        "novelty-lifestyle": "PF-NOVELTY-WELLNESS"
+    # Logistics Dimension Specs & Pricing Engine Freight Calculation
+    try:
+        from src.cascade_engine import SmartGiftPricingCalculator
+        price_calc = SmartGiftPricingCalculator(fx=5.0)
+    except Exception:
+        price_calc = None
+
+    specs_map = {
+        'PM-TMB': {'dim': {'length': 8.0, 'width': 8.0, 'height': 21.0}, 'unit_kg': 0.35, 'upc': 30, 'carton_dim': {'length': 45.0, 'width': 38.0, 'height': 44.0}, 'carton_kg': 11.8, 'type': 'general'},
+        'PM-SPK': {'dim': {'length': 12.0, 'width': 8.5, 'height': 6.5}, 'unit_kg': 0.42, 'upc': 40, 'carton_dim': {'length': 48.0, 'width': 36.0, 'height': 35.0}, 'carton_kg': 18.0, 'type': 'electronic_tisi'},
+        'PM-PB10K': {'dim': {'length': 10.5, 'width': 6.8, 'height': 1.6}, 'unit_kg': 0.22, 'upc': 60, 'carton_dim': {'length': 40.0, 'width': 32.0, 'height': 25.0}, 'carton_kg': 14.5, 'type': 'electronic_tisi'},
+        'PM-CFMUG': {'dim': {'length': 9.0, 'width': 9.0, 'height': 14.5}, 'unit_kg': 0.28, 'upc': 36, 'carton_dim': {'length': 56.0, 'width': 38.0, 'height': 32.0}, 'carton_kg': 11.5, 'type': 'general'},
+        'PM-UMB': {'dim': {'length': 28.0, 'width': 5.5, 'height': 5.5}, 'unit_kg': 0.38, 'upc': 50, 'carton_dim': {'length': 45.0, 'width': 30.0, 'height': 32.0}, 'carton_kg': 20.0, 'type': 'general'},
+        'PM-MSG': {'dim': {'length': 18.0, 'width': 16.0, 'height': 6.0}, 'unit_kg': 0.32, 'upc': 24, 'carton_dim': {'length': 52.0, 'width': 38.0, 'height': 40.0}, 'carton_kg': 9.8, 'type': 'electronic_tisi'},
+        'PM-NB': {'dim': {'length': 24.0, 'width': 18.0, 'height': 3.0}, 'unit_kg': 0.72, 'upc': 20, 'carton_dim': {'length': 50.0, 'width': 38.0, 'height': 32.0}, 'carton_kg': 15.5, 'type': 'electronic_tisi'},
+        'PM-PEN': {'dim': {'length': 14.5, 'width': 1.4, 'height': 1.4}, 'unit_kg': 0.045, 'upc': 200, 'carton_dim': {'length': 35.0, 'width': 25.0, 'height': 20.0}, 'carton_kg': 10.0, 'type': 'general'},
+        'PM-MUG-HEAT': {'dim': {'length': 16.0, 'width': 14.0, 'height': 12.0}, 'unit_kg': 0.65, 'upc': 24, 'carton_dim': {'length': 58.0, 'width': 44.0, 'height': 38.0}, 'carton_kg': 17.2, 'type': 'electronic_tisi'},
+        'PM-FLASH': {'dim': {'length': 6.5, 'width': 1.8, 'height': 0.9}, 'unit_kg': 0.035, 'upc': 500, 'carton_dim': {'length': 30.0, 'width': 25.0, 'height': 20.0}, 'carton_kg': 18.5, 'type': 'electronic_tisi'},
+        'PM-BOTTLE-LED': {'dim': {'length': 7.0, 'width': 7.0, 'height': 23.0}, 'unit_kg': 0.32, 'upc': 30, 'carton_dim': {'length': 45.0, 'width': 38.0, 'height': 48.0}, 'carton_kg': 11.2, 'type': 'electronic_tisi'},
+        'PM-CUTLERY': {'dim': {'length': 21.0, 'width': 6.0, 'height': 3.0}, 'unit_kg': 0.18, 'upc': 100, 'carton_dim': {'length': 45.0, 'width': 32.0, 'height': 32.0}, 'carton_kg': 19.0, 'type': 'general'},
+        'PM-TEA-INF': {'dim': {'length': 7.5, 'width': 7.5, 'height': 20.0}, 'unit_kg': 0.45, 'upc': 24, 'carton_dim': {'length': 48.0, 'width': 32.0, 'height': 44.0}, 'carton_kg': 12.0, 'type': 'general'},
+        'PM-AROMA': {'dim': {'length': 17.5, 'width': 10.5, 'height': 8.0}, 'unit_kg': 0.48, 'upc': 30, 'carton_dim': {'length': 55.0, 'width': 40.0, 'height': 35.0}, 'carton_kg': 16.0, 'type': 'electronic_tisi'},
+        'PM-FAN': {'dim': {'length': 19.5, 'width': 9.0, 'height': 4.5}, 'unit_kg': 0.21, 'upc': 50, 'carton_dim': {'length': 48.0, 'width': 38.0, 'height': 25.0}, 'carton_kg': 12.0, 'type': 'electronic_tisi'},
+        'PM-DESK-MAT': {'dim': {'length': 80.0, 'width': 40.0, 'height': 0.4}, 'unit_kg': 0.55, 'upc': 25, 'carton_dim': {'length': 46.0, 'width': 44.0, 'height': 35.0}, 'carton_kg': 15.0, 'type': 'electronic_tisi'}
     }
+
+    for p in master_data.get("canonical_products", []):
+        code = p.get("code")
+        sp = specs_map.get(code, {'dim': {'length': 15.0, 'width': 10.0, 'height': 10.0}, 'unit_kg': 0.3, 'upc': 30, 'carton_dim': {'length': 45.0, 'width': 35.0, 'height': 35.0}, 'carton_kg': 10.0, 'type': 'general'})
+        cdim = sp['carton_dim']
+        c_cbm = round((cdim['length'] * cdim['width'] * cdim['height']) / 1000000.0, 5)
+        unit_cbm = round(c_cbm / sp['upc'], 6)
+        density = round(sp['carton_kg'] / c_cbm, 2)
+        chargeable = 'weight' if density >= 400.0 else 'volume'
+        
+        fr_100 = price_calc.calculate_freight(qty=100, upc=sp['upc'], cbm=c_cbm, kg=sp['carton_kg'], warehouse='guangzhou_shenzhen', mode='truck', month=8, goods_type=sp['type'], tier='gold') if price_calc else {'resolved_mode': 'truck', 'rate': {'cbm': 5900, 'kg': 15}, 'order_freight': 1500, 'cartons': 4, 'per_unit_freight': 15.0}
+
+        p['dimensions_cm'] = sp['dim']
+        p['unit_weight_kg'] = sp['unit_kg']
+        p['packaging_carton'] = {
+            'upc': sp['upc'],
+            'carton_length_cm': cdim['length'],
+            'carton_width_cm': cdim['width'],
+            'carton_height_cm': cdim['height'],
+            'carton_weight_kg': sp['carton_kg'],
+            'carton_cbm': c_cbm,
+            'cbm_per_unit': unit_cbm,
+            'density_kg_per_cbm': density,
+            'chargeable_basis': chargeable
+        }
+        p['logistics_freight_est'] = {
+            'goods_type': sp['type'],
+            'shipping_mode': fr_100['resolved_mode'],
+            'freight_rate': fr_100['rate'],
+            'freight_thb_per_carton': round(fr_100['order_freight'] / max(fr_100['cartons'], 1), 2),
+            'freight_thb_per_unit': fr_100['per_unit_freight'],
+            'inland_china_thb_per_unit': round(unit_cbm * 150.0 * 5.0, 2)
+        }
 
     for o in master_data.get("catalog_offers", []):
         theme_slug = o.get("interest_theme_slug", "general")
-        code = o.get("offer_code", "")
-        sup = o.get("supplier_code", "")
-        name = o.get("name", "")
-        
-        o["product_master"] = f"OFFER-MASTER-{code}"
-        o["product_family"] = theme_family_map.get(theme_slug, "PF-CORPORATE-GIFT")
-        
-        aliases = [code, name]
-        if sup:
-            aliases.append(sup)
-        if o.get("interest_theme"):
-            aliases.append(o["interest_theme"])
-        o["aliases"] = [a for a in aliases if a]
+        is_tech = 'tech' in theme_slug or 'electronic' in o.get('name', '').lower()
+        gtype = 'electronic_tisi' if is_tech else 'general'
+        box_dim = {'length': 32.0, 'width': 24.0, 'height': 9.0}
+        carton_dim = {'length': 50.0, 'width': 48.0, 'height': 35.0}
+        upc = 10
+        carton_kg = 13.5
+        c_cbm = round((carton_dim['length'] * carton_dim['width'] * carton_dim['height']) / 1000000.0, 5)
+        unit_cbm = round(c_cbm / upc, 6)
+        density = round(carton_kg / c_cbm, 2)
+        chargeable = 'weight' if density >= 400.0 else 'volume'
+
+        fr_100 = price_calc.calculate_freight(qty=100, upc=upc, cbm=c_cbm, kg=carton_kg, warehouse='guangzhou_shenzhen', mode='truck', month=8, goods_type=gtype, tier='gold') if price_calc else {'resolved_mode': 'truck', 'rate': {'cbm': 5900, 'kg': 15}, 'order_freight': 2500, 'cartons': 10, 'per_unit_freight': 25.0}
+
+        o['dimensions_cm'] = box_dim
+        o['unit_weight_kg'] = 1.2
+        o['packaging_carton'] = {
+            'upc': upc,
+            'carton_length_cm': carton_dim['length'],
+            'carton_width_cm': carton_dim['width'],
+            'carton_height_cm': carton_dim['height'],
+            'carton_weight_kg': carton_kg,
+            'carton_cbm': c_cbm,
+            'cbm_per_unit': unit_cbm,
+            'density_kg_per_cbm': density,
+            'chargeable_basis': chargeable
+        }
+        o['logistics_freight_est'] = {
+            'goods_type': gtype,
+            'shipping_mode': fr_100['resolved_mode'],
+            'freight_rate': fr_100['rate'],
+            'freight_thb_per_carton': round(fr_100['order_freight'] / max(fr_100['cartons'], 1), 2),
+            'freight_thb_per_unit': fr_100['per_unit_freight'],
+            'inland_china_thb_per_unit': round(unit_cbm * 150.0 * 5.0, 2)
+        }
 
     # 6. Save updated master data
     with open(MASTER_JSON_PATH, "w", encoding="utf-8") as f:

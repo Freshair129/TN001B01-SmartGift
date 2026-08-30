@@ -1409,7 +1409,15 @@
             <div class="badges">
               <span class="badge available">พร้อมจำหน่าย</span>
               <span class="badge bundle_only">${item.product_master || item.code}</span>
+              ${item.packaging_carton ? `<span class="badge ${item.packaging_carton.chargeable_basis === 'weight' ? 'tier-signature' : 'ready'}">📦 ${item.packaging_carton.cbm_per_unit} CBM/ชิ้น (${item.packaging_carton.density_kg_per_cbm} kg/CBM · คิดตาม${item.packaging_carton.chargeable_basis === 'weight' ? 'น้ำหนัก' : 'ปริมาตร'})</span>` : ''}
             </div>
+            ${item.dimensions_cm ? `
+              <div style="font-size: 11px; color: var(--muted); margin: 6px 0; background: var(--soft); padding: 6px 10px; border-radius: 6px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <span>📐 ขนาด: <strong>${item.dimensions_cm.length}×${item.dimensions_cm.width}×${item.dimensions_cm.height} cm</strong></span>
+                <span>⚖️ น้ำหนัก: <strong>${item.unit_weight_kg} kg</strong></span>
+                <span>🚛 ค่าส่งจีน-ไทยประเมิน: <strong>${fmtMoney(item.logistics_freight_est?.freight_thb_per_unit || 15.0)}/ชิ้น</strong></span>
+              </div>
+            ` : ''}
             ${singleTierRows}
           `;
           container.append(card);
@@ -1452,7 +1460,15 @@
             <div class="badges">
               <span class="badge ${item.gift_tier === 'Signature' ? 'tier-signature' : 'available'}">${item.gift_tier || 'Select Tier'}</span>
               <span class="badge ${item.sub_catalog === 'draft_bom_catalog' ? 'pending' : 'available'}">${item.catalog_match_status || 'Approved Offer'}</span>
+              ${item.packaging_carton ? `<span class="badge ready">📦 ${item.packaging_carton.cbm_per_unit} CBM/ชุด</span>` : ''}
             </div>
+            ${item.dimensions_cm ? `
+              <div style="font-size: 11px; color: var(--muted); margin: 6px 0; background: var(--soft); padding: 6px 10px; border-radius: 6px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <span>📐 กล่อง: <strong>${item.dimensions_cm.length}×${item.dimensions_cm.width}×${item.dimensions_cm.height} cm</strong></span>
+                <span>⚖️ น้ำหนัก: <strong>${item.unit_weight_kg} kg</strong></span>
+                <span>🚛 ค่าส่งจีน-ไทย: <strong>${fmtMoney(item.logistics_freight_est?.freight_thb_per_unit || 25.0)}/ชุด</strong></span>
+              </div>
+            ` : ''}
             ${tierRows}
             <div class="unboxing">
               <strong>Unboxing Experience:</strong> ${item.unboxing_experience || "ชุดของขวัญพรีเมียมคัดสรรพิเศษสำหรับลูกค้าองค์กร"}

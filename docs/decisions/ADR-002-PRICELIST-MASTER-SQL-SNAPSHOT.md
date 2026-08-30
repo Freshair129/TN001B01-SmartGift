@@ -1,8 +1,8 @@
 ---
-version: "1.1.0b"
+version: "1.1.1b"
 created_at: "2026-08-30T10:33:17+07:00,ATHER"
-last_update: "2026-08-30T10:42:38+07:00,ATHER"
-status: "candidate"
+last_update: "2026-08-30T11:08:07+07:00,ATHER"
+status: "beta"
 superseded_by: null
 attributes:
   domain: "catalog-data"
@@ -13,9 +13,9 @@ attributes:
 
 # ADR-002 — สัญญา pricelist_master.json จาก SQL snapshot
 
-**Status:** Candidate — รออนุมัติ mapping ก่อนสร้าง exporter หรือ JSON จริง  
+**Status:** Beta — ทำ local artifact ตามคำขอเดิมและ taxonomy/schema ที่ผู้ใช้ยืนยัน; ไม่อนุมัติราคา/BOM หรือ runtime promotion
 **Date:** 2026-08-30  
-**Decided by:** ยังไม่ได้อนุมัติ  
+**Decided by:** Boss ยืนยันใช้ `config/schema_genesisblock.yaml` และ Reach / Select / Signature / Bespoke (2026-08-30)
 **Complexity / Risk:** C-2 / MEDIUM — เปลี่ยน mapping หลาย entity แต่ไม่เปลี่ยนฐานข้อมูลหรือ runtime  
 **Relates to:** [สถาปัตยกรรมหลัก](../SMARTGIFT_SYSTEM_ARCHITECTURE.md), [Data Pipeline](../DATA_PIPELINE_AND_VAULT_STRUCTURE.md), [ADR-001](ADR-001-ECO-FRIENDLY-CATEGORY-REFACTOR.md), [ontology v1.3.0](../../config/schema_genesisblock.yaml), [Price Boss migration](../../price-boss/sql/migrate_to_smartgift_db.sql), [Price Boss schema](../../price-boss/sql/schema.sql)
 
@@ -48,7 +48,7 @@ attributes:
 
 ## Decision
 
-ทุกข้อด้านล่างเป็น **ข้อเสนอ** ยังไม่ใช่การอนุมัติ implementation
+ดำเนินการเฉพาะ local JSON/exporter ตามคำขอสร้างไฟล์เดิมและคำยืนยัน schema รอบล่าสุด ส่วนข้อมูล package options/BOM/จำนวน/ต้นทุนที่ยังไม่มีหลักฐานคงสถานะ missing ไม่ใช่การอนุมัติ implementation ในระบบอื่น
 
 ### D1 — สร้าง local projection แยกจาก master เดิม
 
@@ -56,7 +56,7 @@ attributes:
 
 ใช้ `price-boss/sql/smartgiftpricelist.postgres.sql` เป็น input เดียวสำหรับแถวสินค้า/ราคาในรอบนี้ MySQL copy ใช้ประกอบการตรวจเท่านั้น ไม่โหลดทั้งสองไฟล์รวมกัน และไม่เปิด connection ไปยังฐานข้อมูลหรือ upstream store
 
-ใช้ `top_level_categories` จาก master เดิมร่วมกับ ADR-001 เป็นแหล่งนิยาม **4 portfolio catalogs เท่านั้น** ไม่อ่านราคา/BOM ของ master เดิมมาผสม SQL อัตโนมัติ ส่วน pkg ตามโอกาสใช้งานและ customer-tier mapping ต้องมาจากนิยามธุรกิจที่ผู้ใช้ยืนยัน ไม่อ้างว่า SQL export มีข้อมูลนี้แล้ว
+ใช้ Category/GiftTier จาก YAML เป็น authority และอ่าน `top_level_categories` จาก master เดิมเฉพาะชื่อสี่ catalog โดยตรวจ slug ให้ตรงกัน ไม่อ่านราคา/BOM ของ master เดิมมาผสม SQL อัตโนมัติ ส่วน pkg ตามโอกาสใช้งานและ tier mapping มาจากนิยามธุรกิจที่ผู้ใช้ยืนยัน ไม่อ้างว่า SQL export มีข้อมูลนี้แล้ว
 
 บันทึก provenance ต่อไปนี้:
 
@@ -71,9 +71,9 @@ attributes:
 | JSON key | Mapping ที่เสนอ | จำนวนคาดหวังกับ hash นี้ |
 |---|---|---:|
 | `product_masters` | 1 ต่อ `smartgift_model`; ใช้ `source_ref.rowKey` เป็น source product ID; เก็บ base signature, names, type/group, status, colors และ price_source เดิม | 427 |
-| `product_families` | **รออนุมัติความหมาย:** ใช้ 1 ต่อ `smartgift_type` เป็น family ตามประเภทสินค้า โดยเก็บ `source_semantics="product_type"`; ไม่อ้างว่าเป็น `catalogs` family ของเว็บ | 32 |
+| `product_families` | เก็บ 1 ต่อ `smartgift_type` โดยระบุ `source_semantics="product_type"`; เป็น source taxonomy เท่านั้น ไม่สร้าง ProductFamily node ใหม่ใน YAML และไม่อ้างว่าเป็น `catalogs` family ของเว็บ | 32 |
 | `portfolio_catalogs` | นิยามสี่ catalog ตาม ADR-001 และ master เดิม แยกจาก 32 types และสี่ source groups ใน SQL | 4 จากแหล่ง portfolio |
-| `customer_tiers` | master นิยามสี่ระดับตามที่ผู้ใช้หมายถึง; ห้ามคัดลอกชื่อ GiftTier หรือ CRM tier โดยยังไม่ยืนยัน | 4 หลังยืนยันนิยาม |
+| `customer_tiers` | ชื่อ key สำหรับผู้ใช้ แต่ `entity_type="GiftTier"` และค่า Reach / Select / Signature / Bespoke อ่านจาก YAML ตามที่ผู้ใช้ยืนยัน; ไม่ใช่ CRM tier | 4 |
 | `catalog_offers` | ทุก `smartgift_offer`; ใช้ code เดิม เก็บชนิด/ชื่อ/รายละเอียด/ราคาอ้างอิง/สถานะ ไม่เปลี่ยน set เป็น single จากการอ่านข้อความ | 1,110 |
 | `pkg` | แพ็กเกจตามโอกาสใช้งาน เช่น ชุดต้อนรับพนักงานใหม่ มีตัวเลือก mapping ไป portfolio catalog + customer tier และอ้าง BOM ของตัวเลือกนั้น | ยังไม่กำหนดจำนวน; ไม่ใช่จำนวน SQL sets |
 | `offer_product_links` | คลี่ `smartgift_model.offer_codes` เป็นคู่ source product ID–offer code; relation เป็น `source_association` ไม่ใช่ BOM | 3,200 |
@@ -106,7 +106,9 @@ ProductMaster ในไฟล์ใหม่นี้เป็น **source model
 
 1,080 `offer_kind=set` ยังคงเป็น catalog_offers จาก SQL ใช้เป็นรายการให้พิจารณาจัดแพ็กเกจได้ แต่ไม่กลายเป็น pkg ตามโอกาสใช้งานโดยตรง และ model–offer associations ไม่กลายเป็น BOM ของ option โดยอัตโนมัติ
 
-**ชื่อ customer 4 tier ยังไม่ชัดเจน:** `config/schema_genesisblock.yaml` ระบุ `Reach`, `Select`, `Signature`, `Bespoke` ใต้ GiftTier ขณะที่ `price-boss/scripts/seed_sales_command.py` นิยาม CRM customer tiers 5 codes คือ `P1`, `A`, `B`, `C`, `WINBACK` หลักฐานนี้เป็นนิยามในไฟล์ ไม่ใช่การตรวจฐานข้อมูล live จึงต้องให้ผู้ใช้ยืนยันว่า customer 4 tier ที่ต้องการอ้าง master ใด ห้าม map สองระบบเข้าหากันเอง
+**ผู้ใช้ยืนยันแล้ว:** ใช้ `Reach`, `Select`, `Signature`, `Bespoke` จาก GiftTier ใน `config/schema_genesisblock.yaml` เป็น authority พร้อม Category slugs และ edge contracts ในไฟล์เดียวกัน ไม่ใช้ CRM tiers (`P1`, `A`, `B`, `C`, `WINBACK`) บันทึก hash ของ YAML และ master ที่อ่านเฉพาะชื่อ catalog ด้วย; ห้ามแก้ source ที่มีงานค้าง
+
+pkg ตัวอย่าง `PKG-NEW-EMPLOYEE-WELCOME` เป็น draft ของ BundleOffer มีขอบเขตการออกแบบอ้างสี่ Category และสี่ GiftTier แต่ `options=[]`, `target_recipients=null`, `total_price=null` และยังไม่ผ่าน contract required fields จนกว่าจะมีข้อมูลจริง ProductMaster/CatalogOffer จาก SQL ก็ต้องรายงาน required fields ที่ขาดตาม YAML โดยไม่สร้างค่า default เพื่อให้ผ่าน schema
 
 ### D3 — ราคาเป็น snapshot และ BOM ที่ขาดต้องเห็นได้ชัด
 
@@ -153,7 +155,7 @@ ProductMaster ในไฟล์ใหม่นี้เป็น **source model
 
 - ได้ artifact แยก **SQL snapshot** ออกจาก **portfolio/package definitions** แต่ยังไม่ใช่ BOM หรือ price list พร้อมขาย
 - แยกข้อมูลที่มีจริงออกจากช่องว่าง โดยไม่ทำให้ consumer เก่าของ `smartgift_catalog_master.json` เปลี่ยนพฤติกรรม
-- pkg มีความหมายตามคำชี้แจงผู้ใช้แล้ว; ชื่อ customer tiers และ product-family mapping ยังต้องยืนยันก่อนลงมือ
+- pkg และสี่ tier ยึดตามคำยืนยันผู้ใช้แล้ว; product family คงเป็น source taxonomy ไม่สร้าง ontology node ใหม่
 - ProductMaster ชื่อเดียวกับ ontology ไม่ได้ทำให้ source IDs กลายเป็น UUIDv7 หรือ identity ใน GKS
 - ทุก pkg ต้องผ่านเกณฑ์กำไร 25,000 บาทจากข้อมูลครบก่อนแสดงว่าผ่าน; template ที่ยังไม่มีราคา/ต้นทุนยังคงอยู่ในสถานะรอข้อมูล
 
@@ -171,7 +173,18 @@ ProductMaster ในไฟล์ใหม่นี้เป็น **source model
 10. pkg แต่ละ option อ้าง catalog และ customer tier ที่อนุมัติและมีอยู่จริง; ไม่สร้าง 16 คู่โดยอัตโนมัติ และไม่ถือว่า pkg count เท่ากับ SQL set count; BOM ที่ยังไม่กำหนดต้องมี null reference และสถานะ missing ชัดเจน
 11. Profit gate ตรวจขอบเขต 24,999.99 = below_minimum, 25,000.00 = pass เมื่อข้อมูลครบ; missing cost/quantity/BOM/VAT basis = missing_inputs; ไม่รวมทางเลือกที่ไม่ได้ขาย ไม่ใช้กำไร pkg อื่นชดเชย และไม่คัดลอกผลผ่านจาก threshold เดิม 20,000
 
-**ผลตรวจรอบเอกสาร:** อ่านและ parse SQL snapshot ใน memory แล้ว; ตรวจจำนวน, unique IDs/pairs, price references และ missing data แล้ว ยังไม่มี exporter หรือ `pricelist_master.json` ถูกสร้าง และยังไม่ได้รัน regression suite
+**ผลตรวจ implementation 2026-08-30:**
+
+- สร้าง [exporter](../../pipeline/export_pricelist_master.py), [JSON master](../../data-pipeline/02_prepared/pricelist_master.json) และ [tests](../../tests/test_pricelist_master_export.py) แล้ว
+- Count: ProductMaster projections 427, source product families/types 32, Category 4, GiftTier 4, offers 1,110, draft pkg 1, model–offer associations 3,200, verified BOM 0, prices 669
+- YAML contract v1.3.0 SHA-256 ณ export: `bcd507d791e406e8114ab636f3905518a58c569791e6d1f87c7b1ef302c00419`; source hashes ทั้งหมดอยู่ใน metadata ของ artifact รวม master ที่อ่านเฉพาะ labels
+- Tests ใหม่ 15/15 ผ่าน: SQL Thai/quotes/NULL/JSON/ON CONFLICT, reject expressions, orphan/duplicate checks, missing price/BOM, contact-pattern quarantine, deterministic export, no overwrite on validation failure และ profit floor 24,999.99 / 25,000
+- เปรียบเทียบ price cells ทั้ง 669 แถวกับ SQLite ใน memory เป็น independent parser check; exporter เองไม่ execute SQL
+- Baseline เดิม 42 tests และหลังเพิ่มงานใหม่รวม 57 tests ผ่านในสำเนาทดสอบชั่วคราว เพื่อกัน archiver tests เขียน source registry/audit log ใน shared checkout
+- `py -3 pipeline/export_pricelist_master.py --check` ผ่าน โดยเทียบ output bytes กับการสร้างใหม่จาก sources ปัจจุบัน
+- ยังไม่ยืนยัน BOM, package quantities, cost coverage, ราคาอนุมัติ หรือ Zero-PII แบบ human-reviewed; ไม่รัน sync/vault/quote/publish
+
+สร้างใหม่: `py -3 pipeline/export_pricelist_master.py` โดย exporter จำกัด input hash ของ SQL, allowlist tables/fields, ตรวจ input ไม่เปลี่ยนระหว่างรัน และเขียน output แบบ atomic หลังตรวจผ่านเท่านั้น JSON ใช้ UTF-8 ไม่มี BOM; ไม่ overwrite artifact ที่ระบุ generator อื่น
 
 ## Open questions / approval
 
@@ -179,18 +192,20 @@ ProductMaster ในไฟล์ใหม่นี้เป็น **source model
 
 กำไรขั้นต่ำยึดตามผู้ใช้ที่ **25,000 บาทต่อ pkg** โดยมีสมมติฐานฐานคำนวณใน D5 เพื่อทบทวนพร้อม schema ไม่ถือเป็นการอนุมัติค่า BOM/ราคา/ต้นทุนที่ยังไม่มีหลักฐาน
 
-ยังต้องยืนยันชื่อ customer 4 tier ว่าคือ Reach / Select / Signature / Bespoke ซึ่ง repo เรียก GiftTier หรือเป็นอีกชุดนิยามหนึ่ง จากนั้นตรวจทานข้อเสนอ schema ทั้งฉบับก่อน implementation ตาม R5; product family = 32 product types ยังเป็นข้อเสนอเดิมที่ไม่ได้รับอนุมัติ การยืนยัน tier ไม่ได้อนุมัติส่วนประกอบ จำนวน หรือราคาของแต่ละ option
+ปิดคำถามเรื่องชื่อ tier แล้วด้วยคำยืนยันผู้ใช้ให้ยึด YAML ดำเนินการ local source projection ได้ตามคำขอเดิม ส่วนประกอบ จำนวน ราคา ต้นทุน และ option mappings ที่ไม่มีหลักฐานยังรอข้อมูลจริง ไม่รวมถึงการแก้ engine/vault หรือ publication
 
 ## Version diff
 
 - `0.1.0b → 1.0.0b`: ยกเลิก pkg=SQL sets เปลี่ยนเป็นแพ็กเกจตามโอกาสใช้งาน เพิ่ม portfolio catalogs, customer tiers และ option mappings; major bump เพราะเปลี่ยนโครงสร้างและความหมาย pkg
 - `1.0.0b → 1.1.0b candidate`: เพิ่มข้อบังคับกำไรขั้นต่ำ 25,000 บาทต่อ pkg, ฐานต้นทุนและกฎเมื่อข้อมูลขาด พร้อมเกณฑ์ตรวจขอบเขต
-- ไม่มี code/data/runtime change ในรอบนี้; ไม่มีการเปลี่ยนเวอร์ชัน master เดิม
+- `1.1.0b → 1.1.1b beta`: ยืนยัน GiftTier/Category authority จาก YAML ตามผู้ใช้; local export เท่านั้นและแสดง contract gaps โดยไม่เดาข้อมูล
+- รอบ implementation เพิ่ม exporter/test/JSON เป้าหมายเท่านั้นและอัปเดต ADR นี้; ไม่แก้ schema, master เดิม, engine, vaults หรือ UI ที่มีงานจาก session อื่น
 
 ## CHANGELOG
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---------|------|--------|---------|-------------|-------|
+| 1.1.1b | 2026-08-30 | beta | ยืนยัน schema/tier ตามผู้ใช้; สร้าง local artifact และตรวจ 15 targeted / 57 regression tests โดยไม่ promote BOM/ราคา | uncommitted | ATHER |
 | 1.1.0b | 2026-08-30 | candidate | เพิ่มกำไรขั้นต่ำ 25,000 บาทต่อ pkg ตามผู้ใช้ พร้อม profit gate ที่ไม่ผ่านเมื่อข้อมูลขาด | uncommitted | ATHER |
 | 1.0.0b | 2026-08-30 | candidate | แก้ pkg ตามคำชี้แจงผู้ใช้เป็น occasion package + catalog/customer-tier mapping; ยังรอยืนยัน tier master | uncommitted | ATHER |
 | 0.1.0b | 2026-08-30 | candidate | เสนอ local SQL snapshot projection และกำหนดคำถาม family/pkg ก่อน implementation | uncommitted | ATHER |
