@@ -184,5 +184,5 @@ SmartGift จะทำให้ชัดและทันสมัยขึ้�
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
-| 0.1.1b | 2026-08-30 | candidate | review pass: blocker product_manifest, lineage หมวด/manifest, size/font budget, reduced motion, BOM/scanner dependency, peer media spec | uncommitted | Claude |
-| 0.1.0b | 2026-08-30 | candidate | เสนอ web/offline catalog แยก runtime พร้อม flipbook interactions และ offline acceptance | uncommitted | ATHER |
+| 0.1.1b | 2026-08-30 | candidate | review pass: blocker product_manifest, lineage หมวด/manifest, size/font budget, reduced motion, BOM/scanner dependency, peer media spec | cd5d7d2 | Claude |
+| 0.1.0b | 2026-08-30 | candidate | เสนอ web/offline catalog แยก runtime พร้อม flipbook interactions และ offline acceptance | cd5d7d2 | ATHER |
