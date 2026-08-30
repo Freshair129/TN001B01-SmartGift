@@ -9982,8 +9982,195 @@
       "est_landed_cost": 16187.499999999998,
       "est_gross_profit": 30062.5,
       "meets_min_profit_threshold": true,
-      "landed_cost": 16187.499999999998,
-      "gross_profit": 30062.5
+      "landed_cost": 16400.0,
+      "gross_profit": 29850.0,
+      "gross_margin_percent": 64.54,
+      "bom_breakdown": {
+        "included_sets": [
+          {
+            "offer_code": "TGC06-4",
+            "offer_name": "ชุดของขวัญ Executive Smart Tech (Smart Notebook + Power Bank + Metal Pen)",
+            "tier": "Signature",
+            "sets_count": 10,
+            "components": [
+              {
+                "product_code": "PM-NB",
+                "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+                "category": "Executive Smart Tech (Modern & Work)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 10,
+                "unit_cost": 350.0,
+                "total_cost": 3500.0
+              },
+              {
+                "product_code": "PM-PB10K",
+                "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+                "category": "Executive Smart Tech (Modern & Work)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 10,
+                "unit_cost": 320.0,
+                "total_cost": 3200.0
+              },
+              {
+                "product_code": "PM-PEN",
+                "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+                "category": "Classic Oriental (Mindfulness & Craft)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 10,
+                "unit_cost": 85.0,
+                "total_cost": 850.0
+              }
+            ],
+            "subtotal_cost": 7550.0
+          },
+          {
+            "offer_code": "TDD03-2",
+            "offer_name": "ชุดของขวัญ Pastel Series (ร่มพาสเทล + สมุด Skin-touch + กระบอกน้ำสุญญากาศ)",
+            "tier": "Select",
+            "sets_count": 5,
+            "components": [
+              {
+                "product_code": "PM-UMB",
+                "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+                "category": "Eco-Friendly & Sustainability (Green & Earth)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 5,
+                "unit_cost": 110.0,
+                "total_cost": 550.0
+              },
+              {
+                "product_code": "PM-BOTTLE-LED",
+                "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+                "category": "Eco-Friendly & Sustainability (Green & Earth)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 5,
+                "unit_cost": 130.0,
+                "total_cost": 650.0
+              },
+              {
+                "product_code": "PM-TMB",
+                "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+                "category": "Eco-Friendly & Sustainability (Green & Earth)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 5,
+                "unit_cost": 150.0,
+                "total_cost": 750.0
+              }
+            ],
+            "subtotal_cost": 1950.0
+          },
+          {
+            "offer_code": "TMK0215",
+            "offer_name": "ชุดของขวัญ Classic Oriental (สมุดคลิปโลหะ + ปากกาไม้แท้ + ที่คั่นหนังสือเมฆมงคล)",
+            "tier": "Signature",
+            "sets_count": 20,
+            "components": [
+              {
+                "product_code": "PM-PEN",
+                "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+                "category": "Classic Oriental (Mindfulness & Craft)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 20,
+                "unit_cost": 85.0,
+                "total_cost": 1700.0
+              },
+              {
+                "product_code": "PM-FLASH",
+                "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+                "category": "Classic Oriental (Mindfulness & Craft)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 20,
+                "unit_cost": 95.0,
+                "total_cost": 1900.0
+              },
+              {
+                "product_code": "PM-TEA-INF",
+                "name_th": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+                "category": "Classic Oriental (Mindfulness & Craft)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 20,
+                "unit_cost": 165.0,
+                "total_cost": 3300.0
+              }
+            ],
+            "subtotal_cost": 6900.0
+          }
+        ],
+        "physical_sku_bom": [
+          {
+            "product_code": "PM-NB",
+            "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+            "category": "Executive Smart Tech (Modern & Work)",
+            "total_units_required": 10,
+            "unit_cost": 350.0,
+            "total_cost": 3500.0,
+            "current_stock": 300
+          },
+          {
+            "product_code": "PM-PB10K",
+            "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+            "category": "Executive Smart Tech (Modern & Work)",
+            "total_units_required": 10,
+            "unit_cost": 320.0,
+            "total_cost": 3200.0,
+            "current_stock": 400
+          },
+          {
+            "product_code": "PM-PEN",
+            "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+            "category": "Classic Oriental (Mindfulness & Craft)",
+            "total_units_required": 30,
+            "unit_cost": 85.0,
+            "total_cost": 2550.0,
+            "current_stock": 800
+          },
+          {
+            "product_code": "PM-UMB",
+            "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+            "category": "Eco-Friendly & Sustainability (Green & Earth)",
+            "total_units_required": 5,
+            "unit_cost": 110.0,
+            "total_cost": 550.0,
+            "current_stock": 600
+          },
+          {
+            "product_code": "PM-BOTTLE-LED",
+            "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+            "category": "Eco-Friendly & Sustainability (Green & Earth)",
+            "total_units_required": 5,
+            "unit_cost": 130.0,
+            "total_cost": 650.0,
+            "current_stock": 400
+          },
+          {
+            "product_code": "PM-TMB",
+            "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+            "category": "Eco-Friendly & Sustainability (Green & Earth)",
+            "total_units_required": 5,
+            "unit_cost": 150.0,
+            "total_cost": 750.0,
+            "current_stock": 500
+          },
+          {
+            "product_code": "PM-FLASH",
+            "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+            "category": "Classic Oriental (Mindfulness & Craft)",
+            "total_units_required": 20,
+            "unit_cost": 95.0,
+            "total_cost": 1900.0,
+            "current_stock": 500
+          },
+          {
+            "product_code": "PM-TEA-INF",
+            "name_th": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+            "category": "Classic Oriental (Mindfulness & Craft)",
+            "total_units_required": 20,
+            "unit_cost": 165.0,
+            "total_cost": 3300.0,
+            "current_stock": 250
+          }
+        ]
+      }
     },
     {
       "bundle_code": "PKG-ENTERPRISE-160",
@@ -10013,8 +10200,195 @@
       "est_landed_cost": 64749.99999999999,
       "est_gross_profit": 120250.0,
       "meets_min_profit_threshold": true,
-      "landed_cost": 64749.99999999999,
-      "gross_profit": 120250.0
+      "landed_cost": 67950.0,
+      "gross_profit": 117050.0,
+      "gross_margin_percent": 63.27,
+      "bom_breakdown": {
+        "included_sets": [
+          {
+            "offer_code": "TGC06-4",
+            "offer_name": "ชุดของขวัญ Executive Smart Tech (Smart Notebook + Power Bank + Metal Pen)",
+            "tier": "Signature",
+            "sets_count": 30,
+            "components": [
+              {
+                "product_code": "PM-NB",
+                "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+                "category": "Executive Smart Tech (Modern & Work)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 30,
+                "unit_cost": 350.0,
+                "total_cost": 10500.0
+              },
+              {
+                "product_code": "PM-PB10K",
+                "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+                "category": "Executive Smart Tech (Modern & Work)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 30,
+                "unit_cost": 320.0,
+                "total_cost": 9600.0
+              },
+              {
+                "product_code": "PM-PEN",
+                "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+                "category": "Classic Oriental (Mindfulness & Craft)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 30,
+                "unit_cost": 85.0,
+                "total_cost": 2550.0
+              }
+            ],
+            "subtotal_cost": 22650.0
+          },
+          {
+            "offer_code": "TDD03-2",
+            "offer_name": "ชุดของขวัญ Pastel Series (ร่มพาสเทล + สมุด Skin-touch + กระบอกน้ำสุญญากาศ)",
+            "tier": "Select",
+            "sets_count": 10,
+            "components": [
+              {
+                "product_code": "PM-UMB",
+                "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+                "category": "Eco-Friendly & Sustainability (Green & Earth)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 10,
+                "unit_cost": 110.0,
+                "total_cost": 1100.0
+              },
+              {
+                "product_code": "PM-BOTTLE-LED",
+                "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+                "category": "Eco-Friendly & Sustainability (Green & Earth)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 10,
+                "unit_cost": 130.0,
+                "total_cost": 1300.0
+              },
+              {
+                "product_code": "PM-TMB",
+                "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+                "category": "Eco-Friendly & Sustainability (Green & Earth)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 10,
+                "unit_cost": 150.0,
+                "total_cost": 1500.0
+              }
+            ],
+            "subtotal_cost": 3900.0
+          },
+          {
+            "offer_code": "TMK0215",
+            "offer_name": "ชุดของขวัญ Classic Oriental (สมุดคลิปโลหะ + ปากกาไม้แท้ + ที่คั่นหนังสือเมฆมงคล)",
+            "tier": "Signature",
+            "sets_count": 120,
+            "components": [
+              {
+                "product_code": "PM-PEN",
+                "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+                "category": "Classic Oriental (Mindfulness & Craft)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 120,
+                "unit_cost": 85.0,
+                "total_cost": 10200.0
+              },
+              {
+                "product_code": "PM-FLASH",
+                "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+                "category": "Classic Oriental (Mindfulness & Craft)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 120,
+                "unit_cost": 95.0,
+                "total_cost": 11400.0
+              },
+              {
+                "product_code": "PM-TEA-INF",
+                "name_th": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+                "category": "Classic Oriental (Mindfulness & Craft)",
+                "unit_qty_per_set": 1,
+                "total_qty_needed": 120,
+                "unit_cost": 165.0,
+                "total_cost": 19800.0
+              }
+            ],
+            "subtotal_cost": 41400.0
+          }
+        ],
+        "physical_sku_bom": [
+          {
+            "product_code": "PM-NB",
+            "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+            "category": "Executive Smart Tech (Modern & Work)",
+            "total_units_required": 30,
+            "unit_cost": 350.0,
+            "total_cost": 10500.0,
+            "current_stock": 300
+          },
+          {
+            "product_code": "PM-PB10K",
+            "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+            "category": "Executive Smart Tech (Modern & Work)",
+            "total_units_required": 30,
+            "unit_cost": 320.0,
+            "total_cost": 9600.0,
+            "current_stock": 400
+          },
+          {
+            "product_code": "PM-PEN",
+            "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+            "category": "Classic Oriental (Mindfulness & Craft)",
+            "total_units_required": 150,
+            "unit_cost": 85.0,
+            "total_cost": 12750.0,
+            "current_stock": 800
+          },
+          {
+            "product_code": "PM-UMB",
+            "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+            "category": "Eco-Friendly & Sustainability (Green & Earth)",
+            "total_units_required": 10,
+            "unit_cost": 110.0,
+            "total_cost": 1100.0,
+            "current_stock": 600
+          },
+          {
+            "product_code": "PM-BOTTLE-LED",
+            "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+            "category": "Eco-Friendly & Sustainability (Green & Earth)",
+            "total_units_required": 10,
+            "unit_cost": 130.0,
+            "total_cost": 1300.0,
+            "current_stock": 400
+          },
+          {
+            "product_code": "PM-TMB",
+            "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+            "category": "Eco-Friendly & Sustainability (Green & Earth)",
+            "total_units_required": 10,
+            "unit_cost": 150.0,
+            "total_cost": 1500.0,
+            "current_stock": 500
+          },
+          {
+            "product_code": "PM-FLASH",
+            "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+            "category": "Classic Oriental (Mindfulness & Craft)",
+            "total_units_required": 120,
+            "unit_cost": 95.0,
+            "total_cost": 11400.0,
+            "current_stock": 500
+          },
+          {
+            "product_code": "PM-TEA-INF",
+            "name_th": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+            "category": "Classic Oriental (Mindfulness & Craft)",
+            "total_units_required": 120,
+            "unit_cost": 165.0,
+            "total_cost": 19800.0,
+            "current_stock": 250
+          }
+        ]
+      }
     }
   ],
   "sub_catalogs": [

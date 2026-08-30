@@ -10,6 +10,7 @@ import csv
 import json
 import re
 
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 sys.stdout.reconfigure(encoding='utf-8')
 
 REVIEW_DIR = r"D:\workspace\Bussiness-01-SmartGift\data\review"
