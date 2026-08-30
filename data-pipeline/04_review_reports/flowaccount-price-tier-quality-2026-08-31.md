@@ -99,4 +99,4 @@ quantity tier ใด ๆ (อาจเป็นราคาเดี่ยวแ
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
-| 0.1.0b | 2026-08-31 | candidate | บันทึก 5 non_standard_qty_tier + 16 priced_without_qty_tier พร้อม fix ใน exporter/offline builder | uncommitted | Claude |
+| 0.1.0b | 2026-08-31 | candidate | บันทึก 5 non_standard_qty_tier + 16 priced_without_qty_tier พร้อม fix ใน exporter/offline builder | c222ce6 | Claude |
