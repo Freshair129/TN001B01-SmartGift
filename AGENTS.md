@@ -1,7 +1,7 @@
 ---
-version: "1.0.0b"
+version: "1.0.1b"
 created_at: "2026-08-30T22:10:00+07:00,ATHER,uncommitted"
-last_update: "2026-08-30T22:10:00+07:00,ATHER"
+last_update: "2026-08-31T01:20:00+07:00,Claude"
 status: "beta"
 superseded_by: null
 attributes:
@@ -46,7 +46,7 @@ This file defines the domain role, governance invariants, and execution constrai
 ## 🛡️ Non-Negotiable Invariants for AI Agents
 
 1. **Zero-PII in Vector Vault:** `vlt-catalog-product` must contain ONLY canonical product masters, gift offers, BOM edges, and sensory unboxing vectors. NEVER store customer contacts, PIC names, or quotation history in this vault.
-2. **Price Authority:** Never edit raw Excel files (`บริษัท เทราบิส จำกัด_product.xlsx`). Price authority is strictly derived from FlowAccount export (`smartgift-portfolio.postgres.sql`) and [`src/cascade_engine/pricing_calculator.py`](file:///O:/Org-EtohGroup/SmartGift/src/cascade_engine/pricing_calculator.py).
+2. **Price Authority:** Never edit raw Excel files (`บริษัท เทราบิส จำกัด_product.xlsx`). Price authority is strictly derived from the FlowAccount export (`price-boss/sql/smartgiftpricelist.postgres.sql` — hash-pinned as `SQL_SHA256` in `pipeline/export_pricelist_master.py`; the filename `smartgift-portfolio.postgres.sql` cited here previously does not exist anywhere in the repo) and [`src/cascade_engine/pricing_calculator.py`](file:///O:/Org-EtohGroup/SmartGift/src/cascade_engine/pricing_calculator.py).
 3. **Inventory Integrity:** Never alter non-negative stock constraints (`inventory_qty >= 0`) or bypass waterfall stock deduction logic.
 4. **UTF-8 Output:** Always configure stdout UTF-8 encoding in Python scripts (`sys.stdout.reconfigure(encoding='utf-8')`).
 5. **Zero-PII in Version Control by default — one approved private-repository exception.** Customer or personally identifying data must not be committed in any lane or format unless covered by [ADR-006](docs/decisions/ADR-006-PRIVATE-REPOSITORY-SOURCE-DATA-EXCEPTION.md), explicitly approved by Boss on 2026-08-30. That exception covers only the frozen 13-file allowlist in `.gitignore` (9 existing customer intake/copy files and 4 cost workbooks) and only private `Freshair129/TN001B01-SmartGift`. Cost workbooks use exact-path Git LFS rules. Recheck private visibility, upload scope, LFS quota, and public/integration exclusions before upload; stop if those gates cannot be verified. New files, materially changed contents, another repository, public exposure, or expanded access require separate approval. Never add customer data to prepared catalog JSON, product vaults, public assets/API responses, CI logs/artifacts, or test fixtures. The store of record remains zuri-ai's CRM domain behind its scope chain and consent controls (FR-103/SEC-005); `01_raw` remains intake, not the CRM store. This exception does not permit ingestion or change any vault, schema, pricing, or inventory invariant.
@@ -121,6 +121,9 @@ Questions for the Claude side: write them into your CR under an
 
 Unversioned project directive → 1.0.0b: add version metadata and the user-approved ADR-006 exception to repository storage only; all vault, schema, pricing, inventory and cross-repo rules remain unchanged.
 
+`1.0.0b` → `1.0.1b`: corrected the filename cited in invariant #2 — the actual hash-pinned price authority is `price-boss/sql/smartgiftpricelist.postgres.sql`; `smartgift-portfolio.postgres.sql` never existed in the repo (it was only ever a metadata label string in `pipeline/02_normalize_mapper.py`, not a real file). The invariant itself is unchanged — never edit raw Excel, price authority stays FlowAccount-derived.
+
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
+| 1.0.1b | 2026-08-31 | beta | Fix invariant #2's wrong price-authority filename to the real hash-pinned SQL source | uncommitted | Claude |
 | 1.0.0b | 2026-08-30 | beta | Version project directive and record scoped private-repository source-data exception | uncommitted | ATHER |
