@@ -5,17 +5,16 @@
   "last_updated": "2026-08-29T22:59:00.712910+00:00",
   "total_ingested_versions": 4,
   "files": {
-    "บริษัท เทราบิส จำกัด_BillingNoteReport_.xlsx": {
-      "original_filename": "บริษัท เทราบิส จำกัด_BillingNoteReport_.xlsx",
+    "fb2e52a9c315960e": {
       "current_sha256": "daafaf11bbab69cf6eb5cf9d76a03daaf667a58ab07f41c7790a450f4fdced96",
       "versions_count": 1,
       "history": [
         {
-          "version_id": "ver-บริษัท เทราบิส จำกัด_BillingNoteReport_-v1-daafaf11",
+          "version_id": "ver-fb2e52a9c315960e-v1-daafaf11",
           "version_number": 1,
           "sha256": "daafaf11bbab69cf6eb5cf9d76a03daaf667a58ab07f41c7790a450f4fdced96",
           "size_bytes": 137463,
-          "archive_path": "data-pipeline/01_raw/archive\\20260829T225859Z_daafaf11bbab_บริษัท เทราบิส จำกัด_BillingNoteReport_.xlsx",
+          "archive_path": "data-pipeline/01_raw/archive/20260829T225859Z_daafaf11bbab_fb2e52a9c315960e.xlsx",
           "ingested_at": "2026-08-29T22:58:59.146503+00:00",
           "total_rows": 1600,
           "row_diff_from_previous": 1600,
@@ -39,17 +38,16 @@
         }
       ]
     },
-    "บริษัท เทราบิส จำกัด_QuotationReport_.xlsx": {
-      "original_filename": "บริษัท เทราบิส จำกัด_QuotationReport_.xlsx",
+    "c504ec6543c43e34": {
       "current_sha256": "0d5acee8a0fe399f57b0a641fb1d16aa4bb599ed9bc1d743cf01d074c4a1f18c",
       "versions_count": 1,
       "history": [
         {
-          "version_id": "ver-บริษัท เทราบิส จำกัด_QuotationReport_-v1-0d5acee8",
+          "version_id": "ver-c504ec6543c43e34-v1-0d5acee8",
           "version_number": 1,
           "sha256": "0d5acee8a0fe399f57b0a641fb1d16aa4bb599ed9bc1d743cf01d074c4a1f18c",
           "size_bytes": 560016,
-          "archive_path": "data-pipeline/01_raw/archive\\20260829T225859Z_0d5acee8a0fe_บริษัท เทราบิส จำกัด_QuotationReport_.xlsx",
+          "archive_path": "data-pipeline/01_raw/archive/20260829T225859Z_0d5acee8a0fe_c504ec6543c43e34.xlsx",
           "ingested_at": "2026-08-29T22:58:59.317404+00:00",
           "total_rows": 6695,
           "row_diff_from_previous": 6695,
@@ -75,17 +73,16 @@
         }
       ]
     },
-    "บริษัท เทราบิส จำกัด_contact.xlsx": {
-      "original_filename": "บริษัท เทราบิส จำกัด_contact.xlsx",
+    "b595c9351cf5e9db": {
       "current_sha256": "708b556b60790ca98f440f0b6a5dbedee484d63493dbf2da277ea7339f52c6c3",
       "versions_count": 1,
       "history": [
         {
-          "version_id": "ver-บริษัท เทราบิส จำกัด_contact-v1-708b556b",
+          "version_id": "ver-b595c9351cf5e9db-v1-708b556b",
           "version_number": 1,
           "sha256": "708b556b60790ca98f440f0b6a5dbedee484d63493dbf2da277ea7339f52c6c3",
           "size_bytes": 508153,
-          "archive_path": "data-pipeline/01_raw/archive\\20260829T225900Z_708b556b6079_บริษัท เทราบิส จำกัด_contact.xlsx",
+          "archive_path": "data-pipeline/01_raw/archive/20260829T225900Z_708b556b6079_b595c9351cf5e9db.xlsx",
           "ingested_at": "2026-08-29T22:59:00.006737+00:00",
           "total_rows": 4680,
           "row_diff_from_previous": 4680,
@@ -112,17 +109,16 @@
         }
       ]
     },
-    "บริษัท เทราบิส จำกัด_product.xlsx": {
-      "original_filename": "บริษัท เทราบิส จำกัด_product.xlsx",
+    "e40e1d26241481fc": {
       "current_sha256": "da7452ffd91baca7c5e24198e0418585f8da17265bd190447f7c83b755fca318",
       "versions_count": 1,
       "history": [
         {
-          "version_id": "ver-บริษัท เทราบิส จำกัด_product-v1-da7452ff",
+          "version_id": "ver-e40e1d26241481fc-v1-da7452ff",
           "version_number": 1,
           "sha256": "da7452ffd91baca7c5e24198e0418585f8da17265bd190447f7c83b755fca318",
           "size_bytes": 123476,
-          "archive_path": "data-pipeline/01_raw/archive\\20260829T225900Z_da7452ffd91b_บริษัท เทราบิส จำกัด_product.xlsx",
+          "archive_path": "data-pipeline/01_raw/archive/20260829T225900Z_da7452ffd91b_e40e1d26241481fc.xlsx",
           "ingested_at": "2026-08-29T22:59:00.613561+00:00",
           "total_rows": 1321,
           "row_diff_from_previous": 1321,

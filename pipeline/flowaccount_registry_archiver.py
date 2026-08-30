@@ -26,6 +26,23 @@ TENANT_ID = "Org-EtohGroup"
 BUSINESS_ID = "SmartGift"
 VAULT_ID = "vlt-catalog-product"
 
+def file_key(filename: str) -> str:
+    """Stable, non-identifying registry key for a source file.
+
+    FlowAccount export filenames carry the customer's registered company name,
+    so keying the registry on the filename put a named legal entity — and the
+    documents exchanged with it — into a tracked JSON file (CR-006, CR-007).
+
+    This hashes the NAME, not the content: it stays the same across every
+    version of the same export, which is what a registry key has to do, while
+    revealing nothing. Do not switch it to a content hash — `sha256` of the file
+    already lives in each history entry and changes on every ingest; a key that
+    moves is not a key, and the version history would fragment into one entry
+    per version.
+    """
+    return hashlib.sha256(filename.encode("utf-8")).hexdigest()[:16]
+
+
 def compute_file_sha256(filepath: str) -> str:
     h = hashlib.sha256()
     with open(filepath, "rb") as f:
@@ -90,15 +107,17 @@ class FlowAccountRegistryArchiver:
         timestamp_iso = now_utc.isoformat()
         date_prefix = now_utc.strftime("%Y%m%dT%H%M%SZ")
 
-        if filename not in self.registry["files"]:
-            self.registry["files"][filename] = {
-                "original_filename": filename,
+        # Keyed on a hash of the filename, never the filename itself — the
+        # export names carry a customer's company name (CR-006/CR-007).
+        key = file_key(filename)
+        if key not in self.registry["files"]:
+            self.registry["files"][key] = {
                 "current_sha256": None,
                 "versions_count": 0,
                 "history": []
             }
 
-        file_record = self.registry["files"][filename]
+        file_record = self.registry["files"][key]
 
         # Check if identical hash already exists
         for hist in file_record["history"]:
@@ -113,8 +132,12 @@ class FlowAccountRegistryArchiver:
 
         # New version detected!
         version_num = file_record["versions_count"] + 1
-        version_id = f"ver-{filename.split('.')[0]}-v{version_num}-{sha256[:8]}"
-        archive_filename = f"{date_prefix}_{sha256[:12]}_{filename}"
+        # Both of these previously embedded `filename`, so the customer's name
+        # travelled into the registry, the audit log, and every archived file's
+        # name on disk. The key identifies the source; the extension is kept so
+        # the archive stays openable.
+        version_id = f"ver-{key}-v{version_num}-{sha256[:8]}"
+        archive_filename = f"{date_prefix}_{sha256[:12]}_{key}{os.path.splitext(filename)[1]}"
         archive_filepath = os.path.join(ARCHIVE_DIR, archive_filename)
 
         # Copy to immutable archive
@@ -152,7 +175,7 @@ class FlowAccountRegistryArchiver:
             "entity_type": "FlowAccountExportSnapshot",
             "entity_id": version_id,
             "source_ref": {
-                "original_filename": filename,
+                "file_key": key,
                 "archive_path": archive_filepath,
                 "sha256": sha256,
                 "size_bytes": size_bytes
