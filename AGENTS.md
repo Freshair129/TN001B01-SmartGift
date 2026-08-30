@@ -36,6 +36,14 @@ This file defines the domain role, governance invariants, and execution constrai
 2. **Price Authority:** Never edit raw Excel files (`บริษัท เทราบิส จำกัด_product.xlsx`). Price authority is strictly derived from FlowAccount export (`smartgift-portfolio.postgres.sql`) and [`src/cascade_engine/pricing_calculator.py`](file:///O:/Org-EtohGroup/SmartGift/src/cascade_engine/pricing_calculator.py).
 3. **Inventory Integrity:** Never alter non-negative stock constraints (`inventory_qty >= 0`) or bypass waterfall stock deduction logic.
 4. **UTF-8 Output:** Always configure stdout UTF-8 encoding in Python scripts (`sys.stdout.reconfigure(encoding='utf-8')`).
+5. **Zero-PII in Version Control — customer data never goes to GitHub.** This is invariant #1 with the scope it was missing. #1 forbids customer contacts, PIC names and quotation history in the *vector vault*; it says nothing about git, and on 2026-08-30 that exact data — a named legal entity's contact list, its quotation report, and a per-customer purchase history — was found tracked in this repository and live on a **public** remote. The rule was right and could not reach the failure, because a vault is not a repository. So: **no customer or personally identifying data is ever committed, in any lane, in any format.** Not in `01_raw`, not in a prepared JSON, not in a review report, not in a test fixture. The store of record is zuri-ai's CRM domain, behind its scope chain and PDPA consent controls (FR-103/SEC-005) — anything under `data-pipeline/01_raw/` is an intake artifact, never a store.
+
+   **Two mechanics that fail silently, and the reason this invariant exists rather than a `.gitignore` line existing:**
+
+   - **`.gitignore` does not untrack anything.** A rule added after the first commit changes nothing: the file keeps being staged, committed and pushed while the rule sits there looking like it works. Untracking is `git rm --cached`; the rule only stops it returning. Both are needed and they are not interchangeable.
+   - **`git status` will not warn you.** A tracked file with no local edits is neither untracked nor modified, so nothing appears. Silence there is not evidence of safety. To check a specific path, use `git ls-files <path>` (lists it → tracked) and `git check-ignore <path>` (exit 1 → not ignored). Those two disagree with each other in exactly the case that matters, which is why both are named here.
+
+   `data-pipeline/01_raw/05_crm_customer_data/` was untracked and ignored on 2026-08-30 (commit `4c818e2`). The files remain on disk. **The history still contains them**, and the repository was public during the exposure window, so that data must be treated as disclosed rather than as at-risk — see `docs/change-requests/CR-006-PII-IN-VERSION-CONTROL-AND-ZURI-FILE-INTAKE-READINESS.md`. Before adding any new file under `data-pipeline/`, ask what is inside it, not what its folder is called.
 
 ---
 
