@@ -162,3 +162,62 @@ hql_contracts:
 
   tiered_context_expansion: |
     CONTEXT FOR "offer:{offer_code}" TIER H2 BUDGET 2048
+
+# ADR-007 approved 2026-08-31. Isolated registry contract; catalog v1.3.0 unchanged.
+registry_contract:
+  schema_ref: "smartgift://knowledge/registry/v1"
+  version: "0.1.0b"
+  vault_id: "vlt-knowledge-registry"
+  tenant_id: "Org-EtohGroup"
+  business_id: "SmartGift"
+  classification: "product_metadata"
+  access_scope_ref: "smartgift:internal:product-metadata"
+  id_format: "typed-prefix:UUIDv7"
+  writer_authority: "immutable-ledger-generations"
+  graph_role: "rebuildable-projection-no-independent-writes"
+  embeddings_enabled: false
+  common_required: [id, type, tenant_id, business_id, classification, access_scope_ref, registry_contract_version, registered_at, updated_at, lifecycle_status, props]
+  query_limits: {default_depth: 4, max_depth: 6, max_nodes: 500, max_edges: 1000, page_size: 100, time_budget_ms: 1000}
+  unique_keys: [scoped_id, origin_identity, asset_sha256, attachment_binding, source_locator]
+
+registry_node_ontology:
+  Document:
+    prefix: "doc:"
+    required_properties: [origin_key, visual_origin, usage_rights, identity_status]
+  Picture:
+    prefix: "pic:"
+    required_properties: [origin_key, visual_origin, usage_rights, identity_status]
+  Media:
+    prefix: "media:"
+    required_properties: [origin_key, visual_origin, usage_rights, identity_status]
+  Attachment:
+    prefix: "att:"
+    required_properties: [owner_version_id, target_version_id, locator, role]
+  AssetVersion:
+    prefix: "ver:"
+    required_properties: [owner_asset_id, sha256, size_bytes, detected_mime, ordinal]
+  FileLocation:
+    prefix: "loc:"
+    required_properties: [path, storage_scope]
+  EvidenceRecord:
+    prefix: "ev:"
+    required_properties: [source_version_id, source_sha256, locator, record_kind, locator_status]
+  ProcessingRun:
+    prefix: "run:"
+    required_properties: [operation, implementation, configuration_sha256, started_at, finished_at, status]
+  CatalogEntityReference:
+    prefix: "eref:"
+    required_properties: [target_entity_type, target_vault_id, canonical_id, business_code, resolution_status, authority_schema_hash]
+
+registry_edge_ontology:
+  HAS_VERSION: {from: [Document, Picture, Media], to: [AssetVersion]}
+  STORED_AT: {from: [AssetVersion], to: [FileLocation]}
+  HAS_ATTACHMENT: {from: [AssetVersion], to: [Attachment]}
+  ATTACHES_VERSION: {from: [Attachment], to: [AssetVersion]}
+  GENERATED_BY: {from: [AssetVersion, EvidenceRecord], to: [ProcessingRun]}
+  USED_INPUT: {from: [ProcessingRun], to: [AssetVersion]}
+  DERIVED_FROM: {from: [AssetVersion], to: [AssetVersion], acyclic: true}
+  EXTRACTED_FROM: {from: [EvidenceRecord], to: [AssetVersion]}
+  DEPENDS_ON: {from: [EvidenceRecord], to: [EvidenceRecord], acyclic: true}
+  ABOUT_ENTITY: {from: [EvidenceRecord], to: [CatalogEntityReference]}
+  ILLUSTRATES: {from: [AssetVersion], to: [CatalogEntityReference], verified_only: true}

@@ -1,6 +1,6 @@
 # 🏛️ Data Pipeline, Multi-Vault RAG & Static DB Architecture
 
-**Document Version:** 1.2.0  
+**Document Version:** 1.3.1b
 **Project:** SmartGift B2B E-commerce & Intelligent Portfolio System (`O:\Org-EtohGroup\SmartGift`)  
 **Scope:** Multi-Vault RAG, Data Governance Pipeline, Review Gates, Edge Static DB & Upstream Sync
 
@@ -184,3 +184,26 @@ O:\Org-EtohGroup\SmartGift\
 1. **รองรับ Edge Device 100%:** ไฟล์ `projection.sqlite` และ GenesisBlockDB ทำงานแบบ Offline อ่านข้อมูลได้เร็ว < 1ms โดยไม่ต้องต่อ Cloud
 2. **รองรับ Data Analytics:** มี Static DB (`projection.sqlite` / DuckDB) ให้ฝ่ายวิเคราะห์รันคำนวณ Gross Margin, BOM Cost, และสถิติยอดสั่งซื้อได้ทันที
 3. **Data Quality & Governance สูงสุด:** ผ่านการเตรียมข้อมูลและตรวจสอบ (Review + Approve) ก่อนใช้งานเสมอ — การส่งเข้า `zuri-ai` / Supabase Cloud DB เป็น opt-in ที่ยังไม่ได้เปิดใช้ในสภาพปัจจุบันของ repo นี้ (ดู Stage 5 ใน §1)
+
+## 5. Knowledge Registry — local provenance sidecar (ADR-007)
+
+[ADR-007](decisions/ADR-007-KNOWLEDGE-REGISTRY-AND-PROVENANCE.md) และ [SPEC](specs/SPEC-KNOWLEDGE-REGISTRY-2026-08-31.md) ได้รับ approval ทั้ง design และ frozen pilot manifest แล้ว; P2 publish ในเครื่องและตรวจ lineage/idempotency/native projection ผ่านตาม SPEC §13:
+
+- `doc:` / `pic:` / `media:` / `att:` ใช้ UUIDv7 ใน registry namespace แยกจาก catalog IDs; `pic:` หมายถึงภาพ ไม่ใช่บุคคล
+- Canonical registration ledger: `data-pipeline/00_knowledge_registry/generations/` + atomic `CURRENT`; graph เป็น rebuildable projection ใน `vaults/vlt-knowledge-registry/genesis-db/` เท่านั้น
+- Source-first pilot ที่ publish: 3 cost documents, 3 archive locations, 1,166 cost records (14 ไม่มีราคา), 160 รูป/160 attachment references; raw-cell exact ยังเป็น 0 ไม่เท่ากับข้อมูลสูญหาย
+- คำสั่ง `python -m pipeline.knowledge_registry dry-run` / `verify-plan --plan <relative-path>` ไม่แก้ raw files และไม่ publish CURRENT; registry ไม่ได้เชื่อมเข้า master orchestrator อัตโนมัติ
+- Outputs/registry vault ถูก ignore และอยู่ใน deployment denylist; ไม่ ingest CRM/customer metadata ไม่เพิ่ม price authority หรือสร้าง canonical ProductMaster จากชื่อไฟล์
+- `lookup_asset`, `trace_origin`, `find_usages`, `list_attachments` อ่าน validated local ledger; scope checks ไม่ใช่ authentication service ที่ติดตั้งแล้ว
+- Exact Excel/PDF locator recovery, verified image-to-product resolver และ backfill นอก pilot เป็น gate ถัดไปตาม SPEC ไม่อ้าง production-ready
+
+## Version diff / CHANGELOG
+
+`1.2.0` → `1.3.0b`: เพิ่มเฉพาะ knowledge-registry lifecycle แยกจาก pipeline เดิม; รักษาการแก้ Stage 3 และ price-authority filename จากอีก session
+
+`1.3.0b` → `1.3.1b`: บันทึก approved P2 pilot publish ใน local ledger/graph โดยไม่เปลี่ยน automatic pipeline หรือ source authority
+
+| Version | Date | Status | Summary | Commit Hash | Agent |
+|---|---|---|---|---|---|
+| 1.3.1b | 2026-08-31 | beta | Record approved local pilot publication and verified lineage; exact P3 locators pending | uncommitted | ATHER |
+| 1.3.0b | 2026-08-31 | beta | Add approved ADR-007 isolated registry and frozen-backfill gate; no automatic sync | uncommitted | ATHER |
