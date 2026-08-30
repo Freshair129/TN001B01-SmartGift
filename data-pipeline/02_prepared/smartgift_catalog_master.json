@@ -9978,7 +9978,10 @@
           "offer_code": "TMK0215",
           "qty": 20
         }
-      ]
+      ],
+      "est_landed_cost": 16187.499999999998,
+      "est_gross_profit": 30062.5,
+      "meets_min_profit_threshold": true
     },
     {
       "bundle_code": "PKG-ENTERPRISE-160",
@@ -10004,7 +10007,27 @@
           "offer_code": "TMK0215",
           "qty": 120
         }
-      ]
+      ],
+      "est_landed_cost": 64749.99999999999,
+      "est_gross_profit": 120250.0,
+      "meets_min_profit_threshold": true
+    }
+  ],
+  "sub_catalogs": [
+    {
+      "code": "canonical_catalog",
+      "name": "Canonical Product Catalog (Single SKUs & Verified Offers)",
+      "description": "สินค้าและเซ็ตเสนอขายที่มี PID และรหัส FlowAccount สมบูรณ์ พร้อมออกใบเสนอราคาอัตโนมัติ"
+    },
+    {
+      "code": "bundle_only_catalog",
+      "name": "Bundle-Only Product Catalog (Single Items Sold in Sets Only)",
+      "description": "สินค้าเดี่ยวชิ้นส่วนจริงที่ไม่มีราคาขายแยกเดี่ยว (จำหน่ายเฉพาะในชุดของขวัญ)"
+    },
+    {
+      "code": "draft_bom_catalog",
+      "name": "Draft BOM & Unassigned Family Catalog",
+      "description": "ชุดของขวัญและชิ้นส่วน BOM ที่อยู่ระหว่างรอการกำหนด PID / อนุมัติราคาจากทีมงาน"
     }
   ]
 }
