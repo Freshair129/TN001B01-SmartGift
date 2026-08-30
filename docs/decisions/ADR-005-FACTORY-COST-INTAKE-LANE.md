@@ -1,7 +1,7 @@
 ---
-version: "0.1.0b"
+version: "0.3.0b"
 created_at: "2026-08-30T17:10:00+07:00,CLAUDE,uncommitted"
-last_update: "2026-08-30T17:10:00+07:00,CLAUDE"
+last_update: "2026-08-31T00:05:00+07:00,Claude"
 status: "beta"
 superseded_by: null
 attributes:
@@ -57,6 +57,36 @@ attributes:
    ซัพพลายเออร์ ไม่มีข้อมูลลูกค้า; บรรทัด contact ของซัพพลายเออร์ในหัวไฟล์จะไม่ถูกดึงเข้า
    prepared JSON
 
+## Decision (extended 2026-08-31): apply confirmed cost to `ProductMaster.base_cost`
+
+Decision 4 above deliberately kept extraction separate from *writing* cost, and the
+2026-08-30 pass only wrote confirmed EXW cost into seasonal package BOM edges inside
+`pricelist_master.json` — the standalone `data-pipeline/02_prepared/ProductMaster.json`
+export's own `base_cost` field stayed `null` for all 16 records even after Boss's
+confirmation, because nothing in the pipeline wrote to that file.
+
+`pipeline/apply_factory_cost_to_product_master.py` closes that gap as its own write step,
+gated the same way as the BOM path:
+
+- Fails closed (raises, writes nothing) unless `factory_cost_pm_mapping.json`
+  `metadata.status == "confirmed"`.
+- Writes `base_cost` = EXW cost in THB for the 9 confirmed `pm_code` pairs only; the 7
+  `unmatched_pm` records are left untouched (`base_cost` stays `null`,
+  `factory_match_status` stays `missing_factory_match`).
+- Every touched record keeps full provenance — factory item code/name, EXW price,
+  currency, FX rate, confidence, source file/hash, the mapping's own hash, and the
+  `cost_basis_note` reminder that this is EXW only, not landed cost.
+- `contract_validation.promoted` never flips from this step; canonical promotion stays a
+  separate, human-reviewed gate.
+- Idempotent — a second run reports "already applied" and writes nothing.
+
+Wired into `master_orchestrator.py` as **Stage 1.5**, right after the Stage 1 archivers,
+since cost lineage begins there. Audit trail: `data-pipeline/04_review_reports/product_master_cost_apply_report.json`.
+
+This does not change the profit gate: package-level profit still needs commercial inputs
+(order quantity, package price, target recipients) beyond product cost, so all 11
+packages remain `missing_inputs` as before.
+
 ## Consequences
 
 - ไฟล์ต้นทุน 3 ไฟล์เข้าระบบพร้อม provenance ถูกประเภท และ pipeline มี lane ถาวรสำหรับ
@@ -72,10 +102,12 @@ attributes:
 - `py -3 pipeline/pricing_formula_archiver.py` ทำงานได้กับ path ใหม่
 - `py -3 pipeline/factory_cost_archiver.py` ลงทะเบียน 3 ไฟล์ status `NEW_VERSION_ARCHIVED`
 - extract ออก `factory_costs.json` โดยไม่มีชื่อบุคคล/email/skype จากหัวไฟล์
+- `py -3 pipeline/apply_factory_cost_to_product_master.py` ปฏิเสธการเขียนเมื่อ mapping ยัง `status != confirmed`; เขียน `base_cost` ให้ 9 รหัสที่ยืนยันเท่านั้น; รันซ้ำแล้วไม่มีอะไรเปลี่ยน (idempotent); `contract_validation.promoted` ต้องยังเป็น `false` เสมอ
 
 ## CHANGELOG
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
+| 0.3.0b | 2026-08-31 | beta | เพิ่ม `apply_factory_cost_to_product_master.py` เติม `base_cost` เข้า ProductMaster.json 9/16 records พร้อม provenance; wire เป็น Stage 1.5 ใน orchestrator; tests 7 ตัวใหม่ผ่าน | uncommitted | Claude |
 | 0.2.0b | 2026-08-30 | beta | Boss ยืนยัน mapping 9 คู่; exporter รับ `factory_cost_pm_mapping.json` เป็น input ที่ 6 (hash-pinned, ตรวจ status=confirmed) เติมต้นทุน EXW เข้า seasonal BOM 13/17 edges; field ต้นทุนใหม่ทั้งหมดถูกเพิ่มใน PUBLIC_FORBIDDEN_FIELDS; tests 61 ผ่าน | uncommitted | CLAUDE |
 | 0.1.0b | 2026-08-30 | beta | ตั้ง lane 08_factory_costs, ย้าย 02_pricing_formulas→07, รองรับ .xls, extraction แบบ proposed mapping | uncommitted | CLAUDE |

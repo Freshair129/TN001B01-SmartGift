@@ -1,0 +1,35 @@
+{
+  "artifact": "product_master_cost_apply_report",
+  "generated_at": "2026-08-30T16:59:26.804277+00:00",
+  "product_master_path": "data-pipeline/02_prepared/ProductMaster.json",
+  "mapping_source": {
+    "path": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+    "sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+    "status": "confirmed",
+    "confirmed_by": "Boss",
+    "confirmed_at": "2026-08-30"
+  },
+  "applied_this_run": [],
+  "already_applied": [
+    "PM-BOTTLE-LED",
+    "PM-CFMUG",
+    "PM-FLASH",
+    "PM-MSG",
+    "PM-MUG-HEAT",
+    "PM-NB",
+    "PM-PB10K",
+    "PM-TMB",
+    "PM-UMB"
+  ],
+  "still_missing_factory_match": [
+    "PM-AROMA",
+    "PM-CUTLERY",
+    "PM-DESK-MAT",
+    "PM-FAN",
+    "PM-PEN",
+    "PM-SPK",
+    "PM-TEA-INF"
+  ],
+  "unmatched_reason": "ไม่มี single-item cost ใน 3 ไฟล์ต้นทุนชุด 2026-08-12; ต้องขอ quote แยกชิ้นหรือหาไฟล์เพิ่ม",
+  "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml"
+}

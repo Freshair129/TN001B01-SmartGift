@@ -1,14 +1,17 @@
 """
 SmartGift Master Pipeline Orchestrator
 Executes the end-to-end 5-stage Data Governance Pipeline in sequence:
-  Stage 1: FlowAccount Export Ingestion & SHA-256 Versioned Archiving
-  Stage 2: Normalization & Regex Entity Extraction (ID-Bound Provenance)
-  Stage 3: Staging SQL & Review Report Generation
-  Stage 4: Catalog Versioning & Automated Diff Tracking
-  Stage 5: Dual Publishing (Edge GenesisBlockDB + Static SQLite Sync)
+  Stage 1:   FlowAccount Export Ingestion & SHA-256 Versioned Archiving
+  Stage 1.5: Apply Boss-Confirmed Factory Cost Mapping to ProductMaster.base_cost
+  Stage 2:   Normalization & Regex Entity Extraction (ID-Bound Provenance)
+  Stage 3:   Review Catalog Enrichment & Package BOM Breakdown
+  Stage 4:   Catalog Versioning & Automated Diff Tracking
+  Stage 4.5: Public Web Manifest, Integrity Hashes & Category Slices
+  Stage 5:   Dual Publishing (Edge GenesisBlockDB + Static SQLite Sync)
 """
 
 import os
+import subprocess
 import sys
 import time
 import uuid
@@ -55,10 +58,25 @@ def run_master_pipeline():
         print(f"  {status_sym} [{r['status']}] {r['filename']:<42} (SHA: {r['sha256'][:10]})")
 
     # -------------------------------------------------------------
+    # STAGE 1.5: Apply Boss-Confirmed Factory Cost Mapping → ProductMaster
+    # (ADR-005 — write step stays separate from extraction; runs only when
+    # factory_cost_pm_mapping.json metadata.status == "confirmed", and is a
+    # no-op once every confirmed pair is already applied.)
+    # -------------------------------------------------------------
+    print("\n💰 [STAGE 1.5/5] Applying confirmed factory cost mapping to ProductMaster.base_cost...")
+    sub15 = subprocess.run([sys.executable, "pipeline/apply_factory_cost_to_product_master.py"],
+                           capture_output=True, text=True, encoding="utf-8")
+    if sub15.returncode == 0:
+        for line in sub15.stdout.strip().split("\n"):
+            if line.startswith(("✅", "⏳", "ℹ️", "⏸️")):
+                print(f"  {line}")
+    else:
+        print(f"  ⚠️ Stage 1.5 note: {sub15.stdout or sub15.stderr}")
+
+    # -------------------------------------------------------------
     # STAGE 2: Normalization & Entity Extraction (ID-Bound Provenance)
     # -------------------------------------------------------------
     print("\n🔍 [STAGE 2/5] Normalizing Embedded Product IDs & Logging Provenance...")
-    import subprocess
     sub2 = subprocess.run([sys.executable, "pipeline/02_normalize_mapper.py"], capture_output=True, text=True, encoding="utf-8")
     if sub2.returncode == 0:
         print("  ✅ Stage 2 complete: Normalized 2,445 items and recorded provenance logs.")

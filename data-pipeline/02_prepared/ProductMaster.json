@@ -128,7 +128,7 @@
       "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
       "name_en": "Smart LED Temperature Thermos Bottle",
       "category": "eco-friendly",
-      "base_cost": null,
+      "base_cost": 75.0,
       "specs": {
         "product_family": "PF-DRINKWARE",
         "category_slug": "eco-friendly"
@@ -171,11 +171,30 @@
           "unit_price": 155.0
         }
       ],
-      "factory_match_status": "missing_factory_match",
-      "factory_product_code": null,
+      "factory_match_status": "confirmed_supplier_mapping",
+      "factory_product_code": "TDK01-1",
       "factory_catalog_key": null,
       "factory_unit_cny": null,
-      "factory_provenance": null,
+      "factory_provenance": {
+        "kind": "confirmed_factory_cost_pm_mapping",
+        "factory_item_code": "TDK01-1",
+        "factory_item_name": "Vacuum Cup with Drawer Box Packing",
+        "price_basis": "EXW",
+        "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml",
+        "exw_price": 2.30769230769231,
+        "currency": "USD",
+        "fx_rate_to_thb": 32.5,
+        "exw_cost_thb": 75.0,
+        "confidence": "high",
+        "note": "450ml 304SS + temperature display",
+        "source_file": "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "mapping_confirmed_by": "Boss",
+        "mapping_confirmed_at": "2026-08-30",
+        "mapping_source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "mapping_source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "applied_at": "2026-08-30T16:57:45.328773+00:00"
+      },
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
         "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
@@ -183,10 +202,8 @@
       },
       "identity_status": "canonical_reference",
       "contract_validation": {
-        "status": "incomplete",
-        "missing_fields": [
-          "base_cost"
-        ],
+        "status": "required_fields_present",
+        "missing_fields": [],
         "promoted": false
       }
     },
@@ -197,7 +214,7 @@
       "name_th": "แก้วกาแฟพกพาสแตนเลส 316 พร้อมฝา 3 ระบบ",
       "name_en": "Stainless Coffee Mug 3-Way Lid",
       "category": "novelty-self-care",
-      "base_cost": null,
+      "base_cost": 155.0,
       "specs": {
         "product_family": "PF-DRINKWARE",
         "category_slug": "novelty-self-care"
@@ -240,11 +257,30 @@
           "unit_price": 165.0
         }
       ],
-      "factory_match_status": "missing_factory_match",
-      "factory_product_code": null,
+      "factory_match_status": "confirmed_supplier_mapping",
+      "factory_product_code": "TJS00-1",
       "factory_catalog_key": null,
       "factory_unit_cny": null,
-      "factory_provenance": null,
+      "factory_provenance": {
+        "kind": "confirmed_factory_cost_pm_mapping",
+        "factory_item_code": "TJS00-1",
+        "factory_item_name": "Coffee Mug",
+        "price_basis": "EXW",
+        "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml",
+        "exw_price": 4.76923076923077,
+        "currency": "USD",
+        "fx_rate_to_thb": 32.5,
+        "exw_cost_thb": 155.0,
+        "confidence": "high",
+        "note": "316SUS ตรงวัสดุ; 380ml เก็บอุณหภูมิ 6 ชม.",
+        "source_file": "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "mapping_confirmed_by": "Boss",
+        "mapping_confirmed_at": "2026-08-30",
+        "mapping_source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "mapping_source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "applied_at": "2026-08-30T16:57:45.328773+00:00"
+      },
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
         "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
@@ -252,10 +288,8 @@
       },
       "identity_status": "canonical_reference",
       "contract_validation": {
-        "status": "incomplete",
-        "missing_fields": [
-          "base_cost"
-        ],
+        "status": "required_fields_present",
+        "missing_fields": [],
         "promoted": false
       }
     },
@@ -473,7 +507,7 @@
       "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
       "name_en": "Dual Interface Metal Flash Drive",
       "category": "classic-oriental",
-      "base_cost": null,
+      "base_cost": 84.0,
       "specs": {
         "product_family": "PF-STORAGE-TECH",
         "category_slug": "classic-oriental"
@@ -516,11 +550,30 @@
           "unit_price": 115.0
         }
       ],
-      "factory_match_status": "missing_factory_match",
+      "factory_match_status": "confirmed_supplier_mapping",
       "factory_product_code": null,
       "factory_catalog_key": null,
-      "factory_unit_cny": null,
-      "factory_provenance": null,
+      "factory_unit_cny": 16.8,
+      "factory_provenance": {
+        "kind": "confirmed_factory_cost_pm_mapping",
+        "factory_item_code": null,
+        "factory_item_name": "Swivel usb shell + PCBA chip 64G USB 3.0",
+        "price_basis": "EXW",
+        "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml",
+        "exw_price": 16.8,
+        "currency": "RMB",
+        "fx_rate_to_thb": 5.0,
+        "exw_cost_thb": 84.0,
+        "confidence": "medium",
+        "note": "ราคา composite shell+chip; capacity 64G ตามที่ Boss ยืนยัน; dual Type-C ไม่ระบุในตาราง chip",
+        "source_file": "ต้นทุน USB Flashdrive.xls",
+        "source_sha256": "13e284c53bce55ae375ef487b340e21b3d34f98ce11b83bdc46b84cf2d5717a6",
+        "mapping_confirmed_by": "Boss",
+        "mapping_confirmed_at": "2026-08-30",
+        "mapping_source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "mapping_source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "applied_at": "2026-08-30T16:57:45.328773+00:00"
+      },
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
         "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
@@ -528,10 +581,8 @@
       },
       "identity_status": "canonical_reference",
       "contract_validation": {
-        "status": "incomplete",
-        "missing_fields": [
-          "base_cost"
-        ],
+        "status": "required_fields_present",
+        "missing_fields": [],
         "promoted": false
       }
     },
@@ -542,7 +593,7 @@
       "name_th": "เครื่องนวดคอพกพาคลื่นความถี่ต่ำ Low Pulse & ประคบร้อน",
       "name_en": "Portable Low Pulse Neck Massager",
       "category": "novelty-self-care",
-      "base_cost": null,
+      "base_cost": 117.0,
       "specs": {
         "product_family": "PF-WELLNESS-HEALTH",
         "category_slug": "novelty-self-care"
@@ -585,11 +636,30 @@
           "unit_price": 460.0
         }
       ],
-      "factory_match_status": "missing_factory_match",
-      "factory_product_code": null,
+      "factory_match_status": "confirmed_supplier_mapping",
+      "factory_product_code": "TBY17-1",
       "factory_catalog_key": null,
       "factory_unit_cny": null,
-      "factory_provenance": null,
+      "factory_provenance": {
+        "kind": "confirmed_factory_cost_pm_mapping",
+        "factory_item_code": "TBY17-1",
+        "factory_item_name": "Neck massager",
+        "price_basis": "EXW",
+        "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml",
+        "exw_price": 3.6,
+        "currency": "USD",
+        "fx_rate_to_thb": 32.5,
+        "exw_cost_thb": 117.0,
+        "confidence": "high",
+        "note": "low pulse 15 levels ตรงสเปค",
+        "source_file": "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "mapping_confirmed_by": "Boss",
+        "mapping_confirmed_at": "2026-08-30",
+        "mapping_source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "mapping_source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "applied_at": "2026-08-30T16:57:45.328773+00:00"
+      },
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
         "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
@@ -597,10 +667,8 @@
       },
       "identity_status": "canonical_reference",
       "contract_validation": {
-        "status": "incomplete",
-        "missing_fields": [
-          "base_cost"
-        ],
+        "status": "required_fields_present",
+        "missing_fields": [],
         "promoted": false
       }
     },
@@ -611,7 +679,7 @@
       "name_th": "ชุดแก้วเซรามิกพร้อมแท่นอุ่นอุณหภูมิคงที่ 55°C",
       "name_en": "Ceramic Mug with 55C Heating Base",
       "category": "novelty-self-care",
-      "base_cost": null,
+      "base_cost": 75.0,
       "specs": {
         "product_family": "PF-DRINKWARE",
         "category_slug": "novelty-self-care"
@@ -654,11 +722,30 @@
           "unit_price": 195.0
         }
       ],
-      "factory_match_status": "missing_factory_match",
-      "factory_product_code": null,
+      "factory_match_status": "confirmed_supplier_mapping",
+      "factory_product_code": "TN00-2",
       "factory_catalog_key": null,
       "factory_unit_cny": null,
-      "factory_provenance": null,
+      "factory_provenance": {
+        "kind": "confirmed_factory_cost_pm_mapping",
+        "factory_item_code": "TN00-2",
+        "factory_item_name": "55℃ Cup set",
+        "price_basis": "EXW",
+        "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml",
+        "exw_price": 2.30769230769231,
+        "currency": "USD",
+        "fx_rate_to_thb": 32.5,
+        "exw_cost_thb": 75.0,
+        "confidence": "high",
+        "note": "ceramic 350ml + heating pad 55C ตรงสเปค",
+        "source_file": "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "mapping_confirmed_by": "Boss",
+        "mapping_confirmed_at": "2026-08-30",
+        "mapping_source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "mapping_source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "applied_at": "2026-08-30T16:57:45.328773+00:00"
+      },
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
         "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
@@ -666,10 +753,8 @@
       },
       "identity_status": "canonical_reference",
       "contract_validation": {
-        "status": "incomplete",
-        "missing_fields": [
-          "base_cost"
-        ],
+        "status": "required_fields_present",
+        "missing_fields": [],
         "promoted": false
       }
     },
@@ -680,7 +765,7 @@
       "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
       "name_en": "Smart Leather Powerbank Notebook",
       "category": "executive-smart-tech",
-      "base_cost": null,
+      "base_cost": 610.0,
       "specs": {
         "product_family": "PF-SMART-OFFICE",
         "category_slug": "executive-smart-tech"
@@ -723,11 +808,30 @@
           "unit_price": 420.0
         }
       ],
-      "factory_match_status": "missing_factory_match",
-      "factory_product_code": null,
+      "factory_match_status": "confirmed_supplier_mapping",
+      "factory_product_code": "TNA0014",
       "factory_catalog_key": null,
       "factory_unit_cny": null,
-      "factory_provenance": null,
+      "factory_provenance": {
+        "kind": "confirmed_factory_cost_pm_mapping",
+        "factory_item_code": "TNA0014",
+        "factory_item_name": "Wireless & cable charging, light up logo, card slots, bills interlayer",
+        "price_basis": "EXW",
+        "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml",
+        "exw_price": 18.7692307692308,
+        "currency": "USD",
+        "fx_rate_to_thb": 32.5,
+        "exw_cost_thb": 610.0,
+        "confidence": "high",
+        "note": "A4 PU wireless+cable 8000mAh; แถม flash 32G + ปากกา",
+        "source_file": "02-ต้นทุน-20260417 Power bank notebook catalog.xlsx",
+        "source_sha256": "9c8b51678f0aea3c7cfb35e3449a2d0b4d3dd371808dd42050f7eea56b377e1f",
+        "mapping_confirmed_by": "Boss",
+        "mapping_confirmed_at": "2026-08-30",
+        "mapping_source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "mapping_source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "applied_at": "2026-08-30T16:57:45.328773+00:00"
+      },
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
         "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
@@ -735,10 +839,8 @@
       },
       "identity_status": "canonical_reference",
       "contract_validation": {
-        "status": "incomplete",
-        "missing_fields": [
-          "base_cost"
-        ],
+        "status": "required_fields_present",
+        "missing_fields": [],
         "promoted": false
       }
     },
@@ -749,7 +851,7 @@
       "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
       "name_en": "MagSafe Wireless Powerbank 10000mAh",
       "category": "executive-smart-tech",
-      "base_cost": null,
+      "base_cost": 232.5,
       "specs": {
         "product_family": "PF-POWER-CHARGING",
         "category_slug": "executive-smart-tech"
@@ -792,11 +894,30 @@
           "unit_price": 390.0
         }
       ],
-      "factory_match_status": "missing_factory_match",
-      "factory_product_code": null,
+      "factory_match_status": "confirmed_supplier_mapping",
+      "factory_product_code": "TZJ00-1",
       "factory_catalog_key": null,
       "factory_unit_cny": null,
-      "factory_provenance": null,
+      "factory_provenance": {
+        "kind": "confirmed_factory_cost_pm_mapping",
+        "factory_item_code": "TZJ00-1",
+        "factory_item_name": "Four cables power bank stand",
+        "price_basis": "EXW",
+        "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml",
+        "exw_price": 7.15384615384615,
+        "currency": "USD",
+        "fx_rate_to_thb": 32.5,
+        "exw_cost_thb": 232.5,
+        "confidence": "medium",
+        "note": "10000mAh + stand; เป็นสาย 4 หัว ไม่ใช่ MagSafe — Boss ยอมรับ gap",
+        "source_file": "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "mapping_confirmed_by": "Boss",
+        "mapping_confirmed_at": "2026-08-30",
+        "mapping_source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "mapping_source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "applied_at": "2026-08-30T16:57:45.328773+00:00"
+      },
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
         "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
@@ -804,10 +925,8 @@
       },
       "identity_status": "canonical_reference",
       "contract_validation": {
-        "status": "incomplete",
-        "missing_fields": [
-          "base_cost"
-        ],
+        "status": "required_fields_present",
+        "missing_fields": [],
         "promoted": false
       }
     },
@@ -1025,7 +1144,7 @@
       "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
       "name_en": "Thermal Tumbler SUS316",
       "category": "eco-friendly",
-      "base_cost": null,
+      "base_cost": 75.0,
       "specs": {
         "product_family": "PF-DRINKWARE",
         "category_slug": "eco-friendly"
@@ -1068,11 +1187,30 @@
           "unit_price": 185.0
         }
       ],
-      "factory_match_status": "missing_factory_match",
-      "factory_product_code": null,
+      "factory_match_status": "confirmed_supplier_mapping",
+      "factory_product_code": "BW00-0",
       "factory_catalog_key": null,
       "factory_unit_cny": null,
-      "factory_provenance": null,
+      "factory_provenance": {
+        "kind": "confirmed_factory_cost_pm_mapping",
+        "factory_item_code": "BW00-0",
+        "factory_item_name": "Vacuum cup in simple dark blue gift bag packing",
+        "price_basis": "EXW",
+        "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml",
+        "exw_price": 2.30769230769231,
+        "currency": "USD",
+        "fx_rate_to_thb": 32.5,
+        "exw_cost_thb": 75.0,
+        "confidence": "medium",
+        "note": "450ml 304SS (canonical ระบุ 316) — Boss ยอมรับ gap",
+        "source_file": "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "mapping_confirmed_by": "Boss",
+        "mapping_confirmed_at": "2026-08-30",
+        "mapping_source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "mapping_source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "applied_at": "2026-08-30T16:57:45.328773+00:00"
+      },
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
         "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
@@ -1080,10 +1218,8 @@
       },
       "identity_status": "canonical_reference",
       "contract_validation": {
-        "status": "incomplete",
-        "missing_fields": [
-          "base_cost"
-        ],
+        "status": "required_fields_present",
+        "missing_fields": [],
         "promoted": false
       }
     },
@@ -1094,7 +1230,7 @@
       "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
       "name_en": "Auto 6-Fold UPF50+ Umbrella",
       "category": "eco-friendly",
-      "base_cost": null,
+      "base_cost": 80.0,
       "specs": {
         "product_family": "PF-OUTDOOR-LIFESTYLE",
         "category_slug": "eco-friendly"
@@ -1137,11 +1273,30 @@
           "unit_price": 130.0
         }
       ],
-      "factory_match_status": "missing_factory_match",
-      "factory_product_code": null,
+      "factory_match_status": "confirmed_supplier_mapping",
+      "factory_product_code": "TYS01-1",
       "factory_catalog_key": null,
       "factory_unit_cny": null,
-      "factory_provenance": null,
+      "factory_provenance": {
+        "kind": "confirmed_factory_cost_pm_mapping",
+        "factory_item_code": "TYS01-1",
+        "factory_item_name": "Umbrella in simple gift bag packing",
+        "price_basis": "EXW",
+        "cost_basis_note": "EXW ต่อหน่วย ยังไม่รวม freight/duty — landed cost ต้องผ่าน pricing_rules_formula.yaml",
+        "exw_price": 2.46153846153846,
+        "currency": "USD",
+        "fx_rate_to_thb": 32.5,
+        "exw_cost_thb": 80.0,
+        "confidence": "medium",
+        "note": "8K auto open&close; ไม่ระบุ 6 ตอน/UPF50+ — Boss ยอมรับ gap",
+        "source_file": "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "mapping_confirmed_by": "Boss",
+        "mapping_confirmed_at": "2026-08-30",
+        "mapping_source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "mapping_source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "applied_at": "2026-08-30T16:57:45.328773+00:00"
+      },
       "srp_provenance": {
         "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
         "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
@@ -1149,10 +1304,8 @@
       },
       "identity_status": "canonical_reference",
       "contract_validation": {
-        "status": "incomplete",
-        "missing_fields": [
-          "base_cost"
-        ],
+        "status": "required_fields_present",
+        "missing_fields": [],
         "promoted": false
       }
     }
