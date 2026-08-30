@@ -237,136 +237,318 @@
     }
     .gift-stage {
       position: relative;
-      min-height: 580px;
+      min-height: 620px;
       overflow: hidden;
-      border-radius: 12px;
-      background: #0f141a;
+      border-radius: 14px;
+      background: radial-gradient(circle at 50% 25%, #1e293b 0%, #0a0f16 100%);
       color: #e2e8f0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+      perspective: 1300px;
     }
-    .gift-canvas {
+    .glass-orb {
       position: absolute;
-      inset: 0;
+      border-radius: 50%;
+      filter: blur(65px);
+      pointer-events: none;
+      opacity: 0.55;
+      z-index: 1;
+    }
+    .glass-orb-cyan {
+      width: 260px;
+      height: 260px;
+      background: #08798a;
+      top: -40px;
+      left: 20%;
+    }
+    .glass-orb-gold {
+      width: 220px;
+      height: 220px;
+      background: #d4af37;
+      bottom: -30px;
+      right: 15%;
+    }
+    .glass-orb-blue {
+      width: 280px;
+      height: 280px;
+      background: #3b82f6;
+      top: 40%;
+      left: -50px;
+      opacity: 0.3;
+    }
+    .deck-isometric-container {
+      position: relative;
+      z-index: 2;
       width: 100%;
-      height: 100%;
-      touch-action: pan-y;
-      display: block;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
     }
-    .anatomy-label-layer {
+    .deck-viewport {
+      position: relative;
+      width: 480px;
+      height: 380px;
+      transform-style: preserve-3d;
+      transform: rotateX(52deg) rotateZ(-26deg);
+      transition: transform 0.08s ease-out;
+    }
+    .deck-layer {
       position: absolute;
       inset: 0;
-      z-index: 3;
-      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       pointer-events: none;
     }
-    .anatomy-label-layer svg {
+    .layer-grid-plane {
+      position: absolute;
+      inset: -30px;
+      border: 1px dashed rgba(56, 214, 223, 0.2);
+      border-radius: 20px;
+      background: radial-gradient(circle, rgba(8, 121, 138, 0.1) 0%, transparent 70%);
+      box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    }
+    .glass-slab-base {
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      overflow: visible;
+      border-radius: 18px;
+      background: rgba(30, 41, 59, 0.45);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 0 20px rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
     }
-    .pc-anatomy-label {
-      position: absolute;
-      width: 146px;
-      transform: translateY(-50%);
-      color: #aeb9bf;
+    .box-brand-badge {
       font-size: 10px;
-      line-height: 1.28;
-      text-shadow: 0 1px 3px #000;
-      transition: color .18s;
-      pointer-events: auto;
-      cursor: pointer;
+      font-weight: 800;
+      color: rgba(212, 175, 55, 0.9);
+      letter-spacing: 0.1em;
     }
-    .pc-anatomy-label strong, .pc-anatomy-label span {
-      display: block;
+    .velvet-compartments {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+      height: 100%;
+      margin-top: 10px;
+    }
+    .cutout-slot {
+      border-radius: 12px;
+      background: rgba(10, 15, 22, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 3px 8px rgba(0,0,0,0.8);
+    }
+    .layer-2-products {
+      pointer-events: auto;
+    }
+    .glass-product-card {
+      position: absolute;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+    }
+    .glass-product-card:hover, .glass-product-card:focus-visible {
+      background: rgba(30, 41, 59, 0.9);
+      border-color: #38d6df;
+      transform: translateZ(40px) scale(1.06);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 25px rgba(56, 214, 223, 0.45);
+      z-index: 10;
+    }
+    .glass-product-card.selected-active {
+      border-color: #d4af37;
+      background: rgba(8, 121, 138, 0.35);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 30px rgba(212, 175, 55, 0.6);
+      transform: translateZ(45px) scale(1.08);
+      z-index: 12;
+    }
+    .prod-nb { top: 18px; left: 18px; width: 220px; }
+    .prod-pb { bottom: 18px; left: 18px; width: 200px; }
+    .prod-tmb { top: 18px; right: 18px; width: 210px; }
+    .prod-led { bottom: 18px; right: 18px; width: 210px; }
+    .prod-pen { top: 135px; left: 120px; width: 190px; }
+    .prod-tea { top: 75px; right: 80px; width: 210px; }
+    .prod-umb { bottom: 75px; left: 100px; width: 210px; }
+    .prod-flash { bottom: 120px; right: 100px; width: 190px; }
+
+    .prod-icon {
+      font-size: 22px;
+      line-height: 1;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+    .prod-details {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      flex: 1;
+    }
+    .prod-sku {
+      font-size: 10px;
+      font-weight: 800;
+      color: #38d6df;
+      letter-spacing: 0.05em;
+    }
+    .prod-details strong {
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap;
     }
-    .pc-anatomy-label strong {
-      color: #dce4e7;
+    .prod-spec {
+      font-size: 10px;
+      color: #94a3b8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .prod-float-badge {
       font-size: 11px;
       font-weight: 800;
-    }
-    .pc-anatomy-label span {
-      margin-top: 2px;
-      color: #7f9199;
-    }
-    .pc-anatomy-label.is-active strong {
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(56, 214, 223, 0.2);
       color: #38d6df;
+      border: 1px solid rgba(56, 214, 223, 0.4);
     }
-    .pc-anatomy-label.is-active span {
-      color: #d7e5e8;
-    }
-    .viewport-controls {
+    .glass-custom-plate {
       position: absolute;
-      left: 14px;
-      bottom: 14px;
-      z-index: 5;
-      display: flex;
-      gap: 5px;
-      padding: 5px;
-      border: 1px solid #334155;
-      border-radius: 9px;
-      background: rgba(15, 23, 42, 0.88);
-      backdrop-filter: blur(6px);
-    }
-    .viewport-controls button {
+      inset: 20px;
       display: grid;
       place-items: center;
-      min-width: 38px;
-      min-height: 34px;
-      padding: 4px 8px;
-      border: 0;
-      border-radius: 6px;
-      background: transparent;
-      color: #f8fafc;
-      font-weight: 800;
-      font-size: 12px;
-      cursor: pointer;
-      transition: background 0.15s;
+      pointer-events: none;
     }
-    .viewport-controls button:hover {
-      background: #1e293b;
-      color: #38d6df;
+    .laser-plate {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
-    .viewport-help {
-      position: absolute;
-      right: 14px;
-      bottom: 14px;
-      z-index: 4;
-      margin: 0;
-      color: #64748b;
+    .laser-text {
       font-size: 11px;
-      background: rgba(15, 23, 42, 0.7);
-      padding: 4px 8px;
-      border-radius: 6px;
+      font-weight: 800;
+      color: #d4af37;
+      letter-spacing: 0.08em;
     }
-    .view-mode-switch {
+    .glass-slab-lid {
+      position: absolute;
+      inset: -5px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 0 25px rgba(255,255,255,0.1);
       display: flex;
-      gap: 4px;
-      background: var(--soft);
-      padding: 3px;
-      border-radius: 8px;
-      border: 1px solid var(--line);
+      align-items: center;
+      justify-content: center;
+      transform: translate(-15px, -15px);
     }
-    .view-mode-btn {
-      padding: 4px 9px;
-      border: 0;
-      border-radius: 6px;
-      background: transparent;
-      color: var(--muted);
+    .lid-gold-emblem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .emblem-sg {
+      font-size: 14px;
+      font-weight: 900;
+      color: #d4af37;
+      letter-spacing: 0.15em;
+    }
+    .emblem-sub {
+      font-size: 9px;
+      color: #cbd5e1;
+      letter-spacing: 0.05em;
+    }
+    .glass-controls-bar {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 18px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      flex-wrap: wrap;
+    }
+    .slider-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #cbd5e1;
+      font-size: 12px;
+    }
+    .slider-group label {
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+    }
+    .slider-group strong {
+      color: #38d6df;
+      font-size: 13px;
+    }
+    .slider-group input[type=range] {
+      accent-color: #38d6df;
+      cursor: pointer;
+      width: 160px;
+    }
+    .preset-buttons {
+      display: flex;
+      gap: 6px;
+    }
+    .glass-pill-btn {
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #e2e8f0;
       font-size: 11px;
       font-weight: 700;
       cursor: pointer;
+      transition: all 0.15s;
     }
-    .view-mode-btn[aria-pressed=true] {
-      background: var(--panel);
-      color: var(--accent);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    .glass-pill-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: #38d6df;
+      color: #38d6df;
+    }
+    .glass-pill-btn[aria-pressed=true] {
+      background: rgba(8, 121, 138, 0.35);
+      border-color: #38d6df;
+      color: #38d6df;
+      box-shadow: 0 0 12px rgba(56, 214, 223, 0.3);
+    }
+    .glass-pill-btn.active-pulse {
+      animation: pulseGlow 1.5s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      from { box-shadow: 0 0 4px #38d6df; }
+      to { box-shadow: 0 0 16px #38d6df; }
     }
     .box-schematic {
       position: relative;
@@ -815,97 +997,175 @@
           <section class="panel anatomy-panel">
             <div class="panel-bar">
               <div style="display: flex; align-items: center; gap: 10px;">
-                <strong id="anatomy-title">Corporate Gift Box Anatomy</strong>
-                <div class="view-mode-switch">
-                  <button id="btn-mode-3d" class="view-mode-btn" type="button" aria-pressed="true">🎮 3D Exploded</button>
-                  <button id="btn-mode-2d" class="view-mode-btn" type="button" aria-pressed="false">📦 2D Schematic</button>
-                </div>
+                <strong id="anatomy-title">Corporate Gift Box 2.5D Anatomy</strong>
+                <span class="badge available" style="font-size: 11px;">✨ Floating Glassmorphism</span>
               </div>
-              <span id="webgl-status" style="color: var(--good); font-weight: 700;">กำลังโหลด 3D Model…</span>
+              <span id="category-status" style="color: var(--accent); font-weight: 700;">เลือกชิ้นส่วนเพื่อดู BOM</span>
             </div>
 
-            <div id="gift-anatomy-stage" class="gift-stage">
-              <!-- 3D WebGL Canvas Layer -->
-              <canvas id="gift-anatomy-canvas" class="gift-canvas" role="img" aria-label="โมเดลกล่องของขวัญองค์กรสามมิติแบบแยกชิ้นส่วน"></canvas>
-              
-              <!-- 2D SVG Leader Line & HTML Labels Layer -->
-              <div id="gift-anatomy-labels" class="anatomy-label-layer" aria-hidden="true">
-                <svg focusable="false" aria-hidden="true"></svg>
+            <div id="gift-anatomy-stage" class="gift-stage" style="--explode-z: 75px;">
+              <!-- Ambient Glassmorphism Glowing Orbs -->
+              <div class="glass-orb glass-orb-cyan" aria-hidden="true"></div>
+              <div class="glass-orb glass-orb-gold" aria-hidden="true"></div>
+              <div class="glass-orb glass-orb-blue" aria-hidden="true"></div>
+
+              <!-- 2.5D Isometric Exploded Deck -->
+              <div class="deck-isometric-container">
+                <div id="deck-viewport" class="deck-viewport">
+                  
+                  <!-- Layer 0: Shadow Base Footprint -->
+                  <div class="deck-layer layer-0-shadow" style="transform: translateZ(0px);">
+                    <div class="layer-grid-plane"></div>
+                  </div>
+
+                  <!-- Layer 1: Frosted Luxury Base Presentation Box & Velvet Inset -->
+                  <div class="deck-layer layer-1-box-base" style="transform: translateZ(calc(var(--explode-z) * 0.35));">
+                    <div class="glass-slab-base">
+                      <div class="box-brand-badge"><span>THERABIS · SMARTGIFT B2B PORTFOLIO</span></div>
+                      <div class="velvet-compartments">
+                        <div class="cutout-slot slot-nb"></div>
+                        <div class="cutout-slot slot-pb"></div>
+                        <div class="cutout-slot slot-tmb"></div>
+                        <div class="cutout-slot slot-pen"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Layer 2: Floating 2.5D Physical BOM Product SKUs -->
+                  <div class="deck-layer layer-2-products" style="transform: translateZ(calc(var(--explode-z) * 1.0));">
+                    
+                    <!-- PM-NB: Smart Powerbank Notebook -->
+                    <div class="glass-product-card prod-nb" data-part="PM-NB" tabindex="0">
+                      <div class="prod-icon">📓</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-NB · Tech</span>
+                        <strong>Smart PU Notebook</strong>
+                        <span class="prod-spec">ฝัง Powerbank ไร้สาย</span>
+                      </div>
+                      <div class="prod-float-badge">฿350</div>
+                    </div>
+
+                    <!-- PM-PB10K: Wireless MagSafe Powerbank -->
+                    <div class="glass-product-card prod-pb" data-part="PM-PB10K" tabindex="0">
+                      <div class="prod-icon">⚡</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-PB10K · Tech</span>
+                        <strong>MagSafe 10,000mAh</strong>
+                        <span class="prod-spec">ชาร์จแม่เหล็ก & ขาตั้ง</span>
+                      </div>
+                      <div class="prod-float-badge">฿320</div>
+                    </div>
+
+                    <!-- PM-TMB: SUS316 Tumbler -->
+                    <div class="glass-product-card prod-tmb" data-part="PM-TMB" tabindex="0">
+                      <div class="prod-icon">🥤</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-TMB · Eco</span>
+                        <strong>Tumbler SUS316</strong>
+                        <span class="prod-spec">แก้วเก็บความเย็น 2 ชั้น</span>
+                      </div>
+                      <div class="prod-float-badge">฿150</div>
+                    </div>
+
+                    <!-- PM-BOTTLE-LED: Smart LED Bottle -->
+                    <div class="glass-product-card prod-led" data-part="PM-BOTTLE-LED" tabindex="0">
+                      <div class="prod-icon">🌡️</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-BOTTLE-LED · Eco</span>
+                        <strong>Smart LED Bottle</strong>
+                        <span class="prod-spec">หน้าจอบอกอุณหภูมิ</span>
+                      </div>
+                      <div class="prod-float-badge">฿130</div>
+                    </div>
+
+                    <!-- PM-PEN: Solid Walnut Brass Gel Pen -->
+                    <div class="glass-product-card prod-pen" data-part="PM-PEN" tabindex="0">
+                      <div class="prod-icon">✒️</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-PEN · Craft</span>
+                        <strong>Walnut Brass Pen</strong>
+                        <span class="prod-spec">ปากกาไม้แท้วอลนัท</span>
+                      </div>
+                      <div class="prod-float-badge">฿85</div>
+                    </div>
+
+                    <!-- PM-UMB: UPF50+ Auto Umbrella -->
+                    <div class="glass-product-card prod-umb" data-part="PM-UMB" tabindex="0">
+                      <div class="prod-icon">☂️</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-UMB · Eco</span>
+                        <strong>Auto Umbrella 6-Fold</strong>
+                        <span class="prod-spec">เคลือบกันแดด UPF50+</span>
+                      </div>
+                      <div class="prod-float-badge">฿110</div>
+                    </div>
+
+                    <!-- PM-TEA-INF: Borosilicate Glass Tea Infuser -->
+                    <div class="glass-product-card prod-tea" data-part="PM-TEA-INF" tabindex="0">
+                      <div class="prod-icon">🍵</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-TEA-INF · Craft</span>
+                        <strong>Borosilicate Tea Infuser</strong>
+                        <span class="prod-spec">กระบอกชงชาแยกกาก</span>
+                      </div>
+                      <div class="prod-float-badge">฿165</div>
+                    </div>
+
+                    <!-- PM-FLASH: Dual Metal USB Flash -->
+                    <div class="glass-product-card prod-flash" data-part="PM-FLASH" tabindex="0">
+                      <div class="prod-icon">💾</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-FLASH · Craft</span>
+                        <strong>Dual Metal Flash Drive</strong>
+                        <span class="prod-spec">Type-C / USB 3.0</span>
+                      </div>
+                      <div class="prod-float-badge">฿95</div>
+                    </div>
+
+                  </div>
+
+                  <!-- Layer 3: Floating Customization & Silk Ribbon Plate -->
+                  <div class="deck-layer layer-3-branding" style="transform: translateZ(calc(var(--explode-z) * 1.7));">
+                    <div class="glass-custom-plate">
+                      <div class="laser-plate">
+                        <span class="laser-text">✨ LASER ENGRAVED / HOTSTAMP FOIL LOGO</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Layer 4: Floating Frosted Glass Presentation Lid -->
+                  <div class="deck-layer layer-4-lid" style="transform: translateZ(calc(var(--explode-z) * 2.35));">
+                    <div class="glass-slab-lid">
+                      <div class="lid-gold-emblem">
+                        <span class="emblem-sg">SMARTGIFT</span>
+                        <span class="emblem-sub">EXECUTIVE B2B GIFT SET · UNBOXING BOM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
-              <!-- 3D Viewport Controls -->
-              <div class="viewport-controls" aria-label="ควบคุมมุมมอง 3 มิติ">
-                <button id="rotate-3d-left" type="button" title="หมุนซ้าย">↶</button>
-                <button id="rotate-3d-right" type="button" title="หมุนขวา">↷</button>
-                <button id="zoom-3d-in" type="button" title="ซูมเข้า">＋</button>
-                <button id="zoom-3d-out" type="button" title="ซูมออก">−</button>
-                <button id="reset-3d-view" type="button" style="font-size: 11px;">รีเซ็ต</button>
+              <!-- Glassmorphism 2.5D Controls Bar -->
+              <div class="glass-controls-bar">
+                <div class="slider-group">
+                  <label for="explode-slider">
+                    <span>ระยะการแยกชิ้นส่วน:</span>
+                    <strong id="explode-val-text">75px</strong>
+                  </label>
+                  <input id="explode-slider" type="range" min="0" max="160" value="75" step="5">
+                </div>
+                <div class="preset-buttons">
+                  <button id="preset-compact" type="button" class="glass-pill-btn" aria-pressed="false">📦 Compact</button>
+                  <button id="preset-float" type="button" class="glass-pill-btn" aria-pressed="true">🪟 2.5D Float</button>
+                  <button id="preset-explode" type="button" class="glass-pill-btn" aria-pressed="false">💥 Full Explode</button>
+                  <button id="preset-rotate" type="button" class="glass-pill-btn" aria-pressed="false">🔄 Auto-Rotate</button>
+                </div>
               </div>
-              <p class="viewport-help">ลากเมาส์เพื่อหมุนมุมมอง · หมุนล้อเพื่อซูม · คลิกชิ้นส่วนเพื่อเลือก</p>
 
-              <!-- 2D Schematic Grid (Toggleable/Fallback) -->
-              <div id="box-schematic-grid" class="box-schematic" style="display: none;">
-                <div class="category-slot" data-cat="eco-friendly" aria-pressed="true" tabindex="0">
-                  <div class="slot-header">
-                    <span class="slot-icon">🌱</span>
-                    <span class="slot-count" id="count-eco">4 SKUs</span>
-                  </div>
-                  <div class="slot-body">
-                    <h4>Eco-Friendly & Green</h4>
-                    <p>แก้วทัมเบลอร์ SUS316, กระบอกน้ำ LED, ร่มพับ UPF50+, พัดลมพกพา</p>
-                    <div class="slot-signatures">
-                      <span class="sig-tag">Tumbler</span>
-                      <span class="sig-tag">LED Bottle</span>
-                      <span class="sig-tag">UPF50+</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="category-slot" data-cat="executive-smart-tech" aria-pressed="false" tabindex="0">
-                  <div class="slot-header">
-                    <span class="slot-icon">⚡</span>
-                    <span class="slot-count" id="count-tech">4 SKUs</span>
-                  </div>
-                  <div class="slot-body">
-                    <h4>Executive Smart Tech</h4>
-                    <p>สมุดโน้ตฝัง Powerbank, ลำโพงบลูทูธ, พาวเวอร์แบงก์ MagSafe, แก้วกาแฟ 3-Way</p>
-                    <div class="slot-signatures">
-                      <span class="sig-tag">Powerbank Notebook</span>
-                      <span class="sig-tag">MagSafe 10K</span>
-                      <span class="sig-tag">Bluetooth</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="category-slot" data-cat="classic-oriental" aria-pressed="false" tabindex="0">
-                  <div class="slot-header">
-                    <span class="slot-icon">🏮</span>
-                    <span class="slot-count" id="count-oriental">4 SKUs</span>
-                  </div>
-                  <div class="slot-body">
-                    <h4>Classic Oriental & Craft</h4>
-                    <p>กระบอกชงชา Borosilicate, ปากกาไม้แท้, แฟลชไดร์ฟโลหะ, แก้วทัมเบลอร์สลักลาย</p>
-                    <div class="slot-signatures">
-                      <span class="sig-tag">Tea Infuser</span>
-                      <span class="sig-tag">Walnut Pen</span>
-                      <span class="sig-tag">Metal Flash</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="category-slot" data-cat="novelty-lifestyle" aria-pressed="false" tabindex="0">
-                  <div class="slot-header">
-                    <span class="slot-icon">✨</span>
-                    <span class="slot-count" id="count-novelty">4 SKUs</span>
-                  </div>
-                  <div class="slot-body">
-                    <h4>Novelty & Lifestyle</h4>
-                    <p>เครื่องนวดคอพรีเมียม, แก้วเก็บความเย็น, สมุดปกหนังสัมผัสนุ่ม, เทียนหอมธรรมชาติ</p>
-                    <div class="slot-signatures">
-                      <span class="sig-tag">Neck Massager</span>
-                      <span class="sig-tag">Skin-touch</span>
-                      <span class="sig-tag">Fragrance</span>
-                    </div>
+              <div class="category-bar-list" id="category-jump-buttons"></div>
+            </div>
+          </section>
                   </div>
                 </div>
               </div>
@@ -1521,6 +1781,6 @@
           });
       });
   </script>
-  <script type="module" src="./gift-anatomy-3d.js"></script>
+  <script src="./gift-anatomy-25d.js"></script>
 </body>
 </html>
