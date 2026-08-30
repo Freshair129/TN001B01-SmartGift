@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "business_id": "SmartGift",
+  "automation_services": [
+    {
+      "name": "Headless Quote Automation Service",
+      "entry_point": "pipeline/auto_quote_service.py",
+      "triggers": ["agent_quote_request", "line_oa_quotation_webhook", "cart_checkout_simulation"],
+      "capabilities": [
+        "Dynamic Shipping Rate Lookup by Member Tier (ELITE, GOLD, SILVER, MEMBER)",
+        "Volume vs Weight Density Calculation (Threshold: 400 kg/CBM)",
+        "Landed Cost Ladder Quotes (Standard & Corporate Profiles)",
+        "Profit Floor Guardrail (5,000 THB / 3,000 THB)"
+      ]
+    },
+    {
+      "name": "Catalog Master Ingestion & SHA-256 Versioning Cron",
+      "entry_point": "run_pipeline.py",
+      "triggers": ["flowaccount_export_event", "scheduled_daily_sync_cron", "admin_manual_trigger"]
+    }
+  ],
+  "connector_protocols": {
+    "line_oa": {
+      "webhook_path": "/api/connectors/line-oa/smartgift",
+      "supported_commands": ["ขอใบเสนอราคา", "คำนวณราคา", "เช็คสต็อก", "ค้นหาชุดของขวัญ"]
+    },
+    "mcp_pricing_tool": {
+      "tool_name": "smartgift_calculate_ladder_quote",
+      "parameters": ["factory_cny", "weight_kg", "cbm", "quantity", "member_tier", "shipping_method", "warehouse"]
+    }
+  }
+}

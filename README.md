@@ -101,4 +101,5 @@ py -3 demo_app.py
   * 🔹 [CR-002: Scope Chain to GKS/MSP Catalog Vault Resolution](docs/change-requests/CR-002-GKS-MSP-CATALOG-VAULT-RESOLUTION.md)
   * 🔹 [CR-003: Data Pipeline Governance Dashboard & Approval Gates](docs/change-requests/CR-003-DATA-PIPELINE-GOVERNANCE-AND-APPROVAL-GATES.md)
   * 🔹 [CR-004: GitHub Integration & "Files" Tab File Tree Explorer](docs/change-requests/CR-004-GITHUB-INTEGRATION-AND-FILES-TAB-EXPLORER.md)
+  * 🔹 [CR-005: Shipping Rate Matrix Settings & Omnichannel Agent Connectors (LINE OA / Plugins)](docs/change-requests/CR-005-SHIPPING-RATE-MATRIX-AND-OMNICHANNEL-AGENT-CONNECTORS.md)
 * 🛡️ [AI Agent Rules & Governance Invariants](AGENTS.md)

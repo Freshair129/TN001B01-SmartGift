@@ -1,0 +1,121 @@
+{
+  "version": "2026.1",
+  "density_threshold_kg_per_cbm": 400,
+  "tiers": ["ELITE", "GOLD", "SILVER", "MEMBER"],
+  "tier_thresholds": {
+    "ELITE": { "min_cbm": 10.0, "min_weight_tons": 3.0 },
+    "GOLD": { "min_cbm": 5.0, "min_weight_tons": 1.5 },
+    "SILVER": { "min_cbm": 1.0, "min_weight_kg": 300.0 },
+    "MEMBER": { "min_cbm": 0.01, "min_weight_kg": 1.0 }
+  },
+  "rates": {
+    "guangzhou": {
+      "truck": {
+        "general": {
+          "ELITE": { "cbm": 5900, "kg": 15 },
+          "GOLD": { "cbm": 6400, "kg": 16 },
+          "SILVER": { "cbm": 6900, "kg": 18 },
+          "MEMBER": { "cbm": 7400, "kg": 19 }
+        },
+        "electronic_tis": {
+          "ELITE": { "cbm": 6400, "kg": 16 },
+          "GOLD": { "cbm": 6900, "kg": 18 },
+          "SILVER": { "cbm": 7400, "kg": 19 },
+          "MEMBER": { "cbm": 7900, "kg": 20 }
+        },
+        "cosmetic_fda": {
+          "ELITE": { "cbm": 7000, "kg": 18 },
+          "GOLD": { "cbm": 7500, "kg": 19 },
+          "SILVER": { "cbm": 8000, "kg": 20 },
+          "MEMBER": { "cbm": 8500, "kg": 22 }
+        },
+        "others": {
+          "ELITE": { "cbm": 9000, "kg": 23 },
+          "GOLD": { "cbm": 9500, "kg": 24 },
+          "SILVER": { "cbm": 10000, "kg": 25 },
+          "MEMBER": { "cbm": 10500, "kg": 27 }
+        }
+      },
+      "sea": {
+        "general": {
+          "ELITE": { "cbm": 3900, "kg": 10 },
+          "GOLD": { "cbm": 4400, "kg": 11 },
+          "SILVER": { "cbm": 4900, "kg": 13 },
+          "MEMBER": { "cbm": 5400, "kg": 14 }
+        },
+        "electronic_tis": {
+          "ELITE": { "cbm": 4400, "kg": 11 },
+          "GOLD": { "cbm": 4900, "kg": 13 },
+          "SILVER": { "cbm": 5400, "kg": 14 },
+          "MEMBER": { "cbm": 5900, "kg": 15 }
+        },
+        "cosmetic_fda": {
+          "ELITE": { "cbm": 5500, "kg": 14 },
+          "GOLD": { "cbm": 6000, "kg": 15 },
+          "SILVER": { "cbm": 6500, "kg": 17 },
+          "MEMBER": { "cbm": 7000, "kg": 18 }
+        },
+        "others": {
+          "ELITE": { "cbm": 7500, "kg": 19 },
+          "GOLD": { "cbm": 8000, "kg": 20 },
+          "SILVER": { "cbm": 8500, "kg": 22 },
+          "MEMBER": { "cbm": 9000, "kg": 23 }
+        }
+      }
+    },
+    "yiwu": {
+      "truck": {
+        "general": {
+          "ELITE": { "cbm": 6400, "kg": 16 },
+          "GOLD": { "cbm": 6900, "kg": 18 },
+          "SILVER": { "cbm": 7400, "kg": 19 },
+          "MEMBER": { "cbm": 7900, "kg": 20 }
+        },
+        "electronic_tis": {
+          "ELITE": { "cbm": 6900, "kg": 18 },
+          "GOLD": { "cbm": 7400, "kg": 19 },
+          "SILVER": { "cbm": 7900, "kg": 20 },
+          "MEMBER": { "cbm": 8400, "kg": 21 }
+        },
+        "cosmetic_fda": {
+          "ELITE": { "cbm": 7500, "kg": 19 },
+          "GOLD": { "cbm": 8000, "kg": 20 },
+          "SILVER": { "cbm": 8500, "kg": 22 },
+          "MEMBER": { "cbm": 9000, "kg": 23 }
+        },
+        "others": {
+          "ELITE": { "cbm": 9500, "kg": 24 },
+          "GOLD": { "cbm": 10000, "kg": 25 },
+          "SILVER": { "cbm": 10500, "kg": 27 },
+          "MEMBER": { "cbm": 11000, "kg": 28 }
+        }
+      },
+      "sea": {
+        "general": {
+          "ELITE": { "cbm": 3900, "kg": 10 },
+          "GOLD": { "cbm": 4400, "kg": 11 },
+          "SILVER": { "cbm": 4900, "kg": 13 },
+          "MEMBER": { "cbm": 5400, "kg": 14 }
+        },
+        "electronic_tis": {
+          "ELITE": { "cbm": 4400, "kg": 11 },
+          "GOLD": { "cbm": 4900, "kg": 13 },
+          "SILVER": { "cbm": 5400, "kg": 14 },
+          "MEMBER": { "cbm": 5900, "kg": 15 }
+        },
+        "cosmetic_fda": {
+          "ELITE": { "cbm": 5500, "kg": 14 },
+          "GOLD": { "cbm": 6000, "kg": 15 },
+          "SILVER": { "cbm": 6500, "kg": 17 },
+          "MEMBER": { "cbm": 7000, "kg": 18 }
+        },
+        "others": {
+          "ELITE": { "cbm": 7500, "kg": 19 },
+          "GOLD": { "cbm": 8000, "kg": 20 },
+          "SILVER": { "cbm": 8500, "kg": 22 },
+          "MEMBER": { "cbm": 9000, "kg": 23 }
+        }
+      }
+    }
+  }
+}
