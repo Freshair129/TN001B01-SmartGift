@@ -1,10 +1,11 @@
 ---
 doc_type: change-request
 id: CR-006
-status: proposed
-version: "1.0.0"
+status: beta
+version: "2.0.0b"
 created_at: "2026-08-30T08:20:00+07:00"
-updated_at: "2026-08-30T08:20:00+07:00"
+updated_at: "2026-08-30T22:10:00+07:00"
+last_update: "2026-08-30T22:10:00+07:00,ATHER"
 owner: "zuri-ai session (Claude)"
 origin: "D:\\zuri-ai — written back into this workspace because files are the shared channel"
 impacted_domains:
@@ -15,6 +16,19 @@ severity: "blocking"
 ---
 
 # CR-006 — Customer PII is in version control on a public remote, and what that means for the zuri-ai file intake
+
+## Current policy amendment — ADR-006 approved 2026-08-30
+
+Boss explicitly approved [ADR-006](../decisions/ADR-006-PRIVATE-REPOSITORY-SOURCE-DATA-EXCEPTION.md): a frozen allowlist of 9 existing customer intake/copy files and 4 cost workbooks may be stored only in private `Freshair129/TN001B01-SmartGift`, subject to its visibility, LFS/quota, scope and public-boundary gates. This narrowly supersedes the absolute repository-storage prohibition below for those files only. It does not approve public deployment, catalog/vault ingestion, new customer files or a change of CRM store of record.
+
+The remainder of this CR records the original incident and its original remediation proposal. Public exposure, historical copies and the unresolved cross-repo integration concerns are not erased by this amendment. A blanket file-browser/CRM sync remains unapproved. Upload status is recorded separately in ADR-006; approval is not evidence that push succeeded.
+
+### Version diff / CHANGELOG
+
+| Version | Date | Status | Summary | Commit Hash | Agent |
+|---|---|---|---|---|---|
+| 2.0.0b | 2026-08-30 | beta | Approved narrow private-repository exception in ADR-006; preserve historical incident and all other privacy boundaries | uncommitted | ATHER |
+| 1.0.0 | 2026-08-30 | proposed | Original public-exposure incident and remediation proposal | historical | zuri-ai session |
 
 ## 0. Read this part first
 

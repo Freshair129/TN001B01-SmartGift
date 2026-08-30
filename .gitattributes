@@ -1,0 +1,5 @@
+# ADR-006: exact approved cost workbook paths; do not apply LFS to all spreadsheets.
+"data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx" filter=lfs diff=lfs merge=lfs -text
+"data-pipeline/01_raw/08_factory_costs/02-ต้นทุน-20260417 Power bank notebook catalog.xlsx" filter=lfs diff=lfs merge=lfs -text
+"data-pipeline/01_raw/archive/factory_costs/20260830T103306Z_515ecf8464b5_01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx" filter=lfs diff=lfs merge=lfs -text
+"data-pipeline/01_raw/archive/factory_costs/20260830T103307Z_9c8b51678f0a_02-ต้นทุน-20260417 Power bank notebook catalog.xlsx" filter=lfs diff=lfs merge=lfs -text

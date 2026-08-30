@@ -19,7 +19,7 @@ test-db/
 .DS_Store
 Thumbs.db
 
-# Customer personal data — never in version control (CR-006)
+# Customer personal data — ignored by default (CR-006); ADR-006 exceptions below.
 #
 # These spreadsheets carry a named legal entity's contact list, quotation report
 # and per-customer purchase history. They were tracked and pushed to a public
@@ -36,7 +36,7 @@ Thumbs.db
 # The files remain on disk. The store of record for customer data is zuri-ai's
 # CRM domain, behind its scope chain and PDPA consent controls (FR-103/SEC-005),
 # not this repository. Anything under 01_raw is an intake artifact, not a store.
-data-pipeline/01_raw/05_crm_customer_data/
+data-pipeline/01_raw/05_crm_customer_data/*
 
 # The same three documents also live under lanes named after their SOURCE rather
 # than their contents, which is how the first pass missed them: the fix was
@@ -53,3 +53,19 @@ data-pipeline/01_raw/05_crm_customer_data/
 data-pipeline/01_raw/08_factory_costs/*.xlsx
 # Ignore archived raw cost Excel files
 data-pipeline/01_raw/archive/factory_costs/*.xlsx
+
+# ADR-006: approved 2026-08-30, private Freshair129/TN001B01-SmartGift only.
+# Frozen 13-file allowlist. Future files remain ignored; public/vault exclusions stay.
+!/data-pipeline/01_raw/01_flowaccount_exports/บริษัท เทราบิส จำกัด_BillingNoteReport_.xlsx
+!/data-pipeline/01_raw/01_flowaccount_exports/บริษัท เทราบิส จำกัด_contact.xlsx
+!/data-pipeline/01_raw/01_flowaccount_exports/บริษัท เทราบิส จำกัด_QuotationReport_.xlsx
+!/data-pipeline/01_raw/05_crm_customer_data/2.1-รายชื่อลูกค้า-บริษัท เทราบิส จำกัด_contact.xlsx
+!/data-pipeline/01_raw/05_crm_customer_data/2.2 ประวัติการสั่งซื้อ-ลูกค้าแต่ละรายละซื้ออะไร – เมื่อใด - มูลค่าเท่าใด.xlsx
+!/data-pipeline/01_raw/05_crm_customer_data/บริษัท เทราบิส จำกัด_QuotationReport_.xlsx
+!/data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx
+!/data-pipeline/01_raw/08_factory_costs/02-ต้นทุน-20260417 Power bank notebook catalog.xlsx
+!/data-pipeline/01_raw/archive/20260829T225859Z_0d5acee8a0fe_บริษัท เทราบิส จำกัด_QuotationReport_.xlsx
+!/data-pipeline/01_raw/archive/20260829T225859Z_daafaf11bbab_บริษัท เทราบิส จำกัด_BillingNoteReport_.xlsx
+!/data-pipeline/01_raw/archive/20260829T225900Z_708b556b6079_บริษัท เทราบิส จำกัด_contact.xlsx
+!/data-pipeline/01_raw/archive/factory_costs/20260830T103306Z_515ecf8464b5_01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx
+!/data-pipeline/01_raw/archive/factory_costs/20260830T103307Z_9c8b51678f0a_02-ต้นทุน-20260417 Power bank notebook catalog.xlsx

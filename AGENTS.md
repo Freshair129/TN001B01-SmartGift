@@ -1,3 +1,15 @@
+---
+version: "1.0.0b"
+created_at: "2026-08-30T22:10:00+07:00,ATHER,uncommitted"
+last_update: "2026-08-30T22:10:00+07:00,ATHER"
+status: "beta"
+superseded_by: null
+attributes:
+  domain: "agent-governance"
+  doc_type: "core-directive"
+  scope: "SmartGift repository"
+---
+
 # 🛡️ AGENTS.md — Business 01: SmartGift
 
 This file defines the domain role, governance invariants, and execution constraints for AI agents operating in **Business 01: SmartGift** (`O:\Org-EtohGroup\SmartGift`).
@@ -37,7 +49,9 @@ This file defines the domain role, governance invariants, and execution constrai
 2. **Price Authority:** Never edit raw Excel files (`บริษัท เทราบิส จำกัด_product.xlsx`). Price authority is strictly derived from FlowAccount export (`smartgift-portfolio.postgres.sql`) and [`src/cascade_engine/pricing_calculator.py`](file:///O:/Org-EtohGroup/SmartGift/src/cascade_engine/pricing_calculator.py).
 3. **Inventory Integrity:** Never alter non-negative stock constraints (`inventory_qty >= 0`) or bypass waterfall stock deduction logic.
 4. **UTF-8 Output:** Always configure stdout UTF-8 encoding in Python scripts (`sys.stdout.reconfigure(encoding='utf-8')`).
-5. **Zero-PII in Version Control — customer data never goes to GitHub.** This is invariant #1 with the scope it was missing. #1 forbids customer contacts, PIC names and quotation history in the *vector vault*; it says nothing about git, and on 2026-08-30 that exact data — a named legal entity's contact list, its quotation report, and a per-customer purchase history — was found tracked in this repository and live on a **public** remote. The rule was right and could not reach the failure, because a vault is not a repository. So: **no customer or personally identifying data is ever committed, in any lane, in any format.** Not in `01_raw`, not in a prepared JSON, not in a review report, not in a test fixture. The store of record is zuri-ai's CRM domain, behind its scope chain and PDPA consent controls (FR-103/SEC-005) — anything under `data-pipeline/01_raw/` is an intake artifact, never a store.
+5. **Zero-PII in Version Control by default — one approved private-repository exception.** Customer or personally identifying data must not be committed in any lane or format unless covered by [ADR-006](docs/decisions/ADR-006-PRIVATE-REPOSITORY-SOURCE-DATA-EXCEPTION.md), explicitly approved by Boss on 2026-08-30. That exception covers only the frozen 13-file allowlist in `.gitignore` (9 existing customer intake/copy files and 4 cost workbooks) and only private `Freshair129/TN001B01-SmartGift`. Cost workbooks use exact-path Git LFS rules. Recheck private visibility, upload scope, LFS quota, and public/integration exclusions before upload; stop if those gates cannot be verified. New files, materially changed contents, another repository, public exposure, or expanded access require separate approval. Never add customer data to prepared catalog JSON, product vaults, public assets/API responses, CI logs/artifacts, or test fixtures. The store of record remains zuri-ai's CRM domain behind its scope chain and consent controls (FR-103/SEC-005); `01_raw` remains intake, not the CRM store. This exception does not permit ingestion or change any vault, schema, pricing, or inventory invariant.
+
+   **Historical exposure remains recorded:** on 2026-08-30 customer contacts, quotation reports and purchase history were found tracked on a public remote. Making the repository private or approving ADR-006 does not revoke prior clones or erase that disclosure. CR-006 remains the historical evidence; its repository-storage policy is amended only by the approved narrow exception above.
 
    **Two mechanics that fail silently, and the reason this invariant exists rather than a `.gitignore` line existing:**
 
@@ -102,3 +116,11 @@ our shared channel. Three rules keep your CRs landable:
 
 Questions for the Claude side: write them into your CR under an
 `## Open questions` heading — zuri-ai sessions review these files.
+
+## Version diff / CHANGELOG
+
+Unversioned project directive → 1.0.0b: add version metadata and the user-approved ADR-006 exception to repository storage only; all vault, schema, pricing, inventory and cross-repo rules remain unchanged.
+
+| Version | Date | Status | Summary | Commit Hash | Agent |
+|---|---|---|---|---|---|
+| 1.0.0b | 2026-08-30 | beta | Version project directive and record scoped private-repository source-data exception | uncommitted | ATHER |
