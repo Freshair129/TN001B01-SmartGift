@@ -23,13 +23,13 @@
                                               │ (AuthContext / Server-Resolved Scope)
                                               ▼
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 2: Session, Memory & Vault Gatekeeper (MSP)                                        │
+│  Tier 2: Session, Memory & Vault Gatekeeper — Memory-and-Soul-Passport (MSP)             │
 │  • API-010 (msp_vault_resolve): Maps workspace/project scope to Authorized Vault IDs     │
 └─────────────────────────────────────────────┬────────────────────────────────────────────┘
                                               │ (Authorized Vault Set: [vlt-catalog-product])
                                               ▼
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 3: Canonical Knowledge & GraphRAG Orchestrator (GKS)                               │
+│  Tier 3: Canonical Knowledge & GraphRAG Orchestrator — Genesis-Knowledge-System (GKS)    │
 │  • Governs: Entity Ontology, Schema Contracts (smartgift://b2b/portfolio/v1)             │
 │  • GraphRAG Engine: Hybrid Dense Vector (bge-m3 1024-dim) + Graph Traversal (query-ir.v1)│
 └─────────────────────────────────────────────┬────────────────────────────────────────────┘
