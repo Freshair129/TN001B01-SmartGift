@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import FadeContent from '../components/bits/FadeContent'
-import { api, type Offer, type PriceTier } from '../lib/api'
+import { PriceWarnings } from '../components/ui/PriceWarnings'
+import { api, type Offer, type PriceTier, type PriceWarning } from '../lib/api'
 
 const PAGE = 20
 
@@ -14,6 +15,7 @@ export default function OffersPage() {
   const [error, setError] = useState('')
   const [selected, setSelected] = useState<Offer | null>(null)
   const [tiers, setTiers] = useState<PriceTier[]>([])
+  const [tierWarnings, setTierWarnings] = useState<PriceWarning[]>([])
 
   useEffect(() => {
     let alive = true
@@ -37,6 +39,7 @@ export default function OffersPage() {
     setSelected(o)
     const r = await api.offerPrices(o.code)
     setTiers(r.rows)
+    setTierWarnings(r.warnings)
   }
 
   function onSearch(e: FormEvent) {
@@ -173,6 +176,7 @@ export default function OffersPage() {
                 )}
               </tbody>
             </table>
+            <PriceWarnings warnings={tierWarnings} />
             <button
               type="button"
               className="mt-4 rounded-[2px] border border-rule px-3 py-2 text-sm"

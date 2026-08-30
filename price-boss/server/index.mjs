@@ -2,6 +2,7 @@ import 'dotenv/config'
 import cors from 'cors'
 import express from 'express'
 import mysql from 'mysql2/promise'
+import { priceTierWarnings } from './lib/priceWarnings.mjs'
 
 const PORT = Number(process.env.API_PORT || 3850)
 const pool = mysql.createPool({
@@ -197,7 +198,10 @@ app.get('/api/offers/:code/prices', async (req, res) => {
      ORDER BY p.qty_tier IS NULL, p.qty_tier`,
     [req.params.code],
   )
-  res.json({ rows })
+  const warnings = priceTierWarnings(
+    rows.map((r) => ({ qty: r.qty_tier, unit_price: r.price_missing ? null : r.unit_price })),
+  )
+  res.json({ rows, warnings })
 })
 
 app.get('/api/customers', async (req, res) => {
@@ -583,10 +587,14 @@ app.get('/api/quotations/:id', async (req, res) => {
      ORDER BY l.id`,
     [id],
   )
-  const itemsOut = items.map((it) => ({
-    ...it,
-    breaks: breaks.filter((b) => Number(b.quotation_item_id) === Number(it.id)),
-  }))
+  const itemsOut = items.map((it) => {
+    const itemBreaks = breaks.filter((b) => Number(b.quotation_item_id) === Number(it.id))
+    return {
+      ...it,
+      breaks: itemBreaks,
+      warnings: priceTierWarnings(itemBreaks),
+    }
+  })
   const selectedContact = qrow.contact_id
     ? contacts.find((c) => Number(c.id) === Number(qrow.contact_id)) || null
     : contacts.find((c) => c.is_primary) || contacts[0] || null

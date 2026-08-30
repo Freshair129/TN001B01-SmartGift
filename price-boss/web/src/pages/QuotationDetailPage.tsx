@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import PageHeader from '../components/ui/PageHeader'
 import ListState from '../components/ui/ListState'
 import { StatusBadge } from '../components/ui/StatusBadge'
+import { PriceWarnings } from '../components/ui/PriceWarnings'
 import { useToast } from '../components/ui/Toast'
 import {
   api,
@@ -234,6 +235,7 @@ export default function QuotationDetailPage() {
                         {it.qty} × {fmt(Number(it.unit_price))} ฿
                       </p>
                     )}
+                    <PriceWarnings warnings={it.warnings} />
                   </article>
                 ))}
               </div>

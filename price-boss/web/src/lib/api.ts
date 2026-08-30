@@ -64,7 +64,9 @@ export const api = {
       `/api/offers?q=${encodeURIComponent(q)}&offset=${offset}&limit=${limit}`,
     ),
   offerPrices: (code: string) =>
-    req<{ rows: PriceTier[] }>(`/api/offers/${encodeURIComponent(code)}/prices`),
+    req<{ rows: PriceTier[]; warnings: PriceWarning[] }>(
+      `/api/offers/${encodeURIComponent(code)}/prices`,
+    ),
   customers: (q = '') => req<{ rows: Customer[] }>(`/api/customers?q=${encodeURIComponent(q)}`),
   customer: (id: number) =>
     req<{ customer: Customer; contacts: CustomerContact[]; readiness: { ready: boolean; quoteReady: boolean; missing: string[]; warnings: string[] } }>(
@@ -186,6 +188,17 @@ export type PriceTier = {
   flow_account_code: string | null
 }
 
+/**
+ * Sanity check on a price ladder (qty, unit_price) — a strict subset of the
+ * pricing-engine warnings (pricing.html / SmartGift calculator): only what's
+ * derivable from persisted (qty, unit_price) pairs, since quotation_items and
+ * smartgift_price don't store the underlying cost inputs.
+ */
+export type PriceWarning = {
+  level: 'crit' | 'warn'
+  message: string
+}
+
 export type Customer = {
   id: number
   customer_code: string
@@ -261,6 +274,7 @@ export type QuoteItem = {
   carton_note: string | null
   profile_code: string | null
   breaks: QuoteLineBreak[]
+  warnings: PriceWarning[]
 }
 
 export type QuoteLog = {
