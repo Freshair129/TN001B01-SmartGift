@@ -72,7 +72,6 @@
       "name_en": "Thermal Tumbler SUS316",
       "category": "Eco-Friendly & Sustainability (Green & Earth)",
       "category_slug": "eco-friendly",
-      "base_cost": 150.0,
       "product_master": "PROD-MASTER-TMB-01",
       "product_family": "PF-DRINKWARE",
       "aliases": [
@@ -83,6 +82,41 @@
         "กระบอกน้ำสแตนเลส",
         "TMB-316",
         "Tumbler SUS316"
+      ],
+      "srp_price": 320.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 320.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 290.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 270.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 250.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 230.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 215.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 200.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 185.0
+        }
       ]
     },
     {
@@ -91,7 +125,6 @@
       "name_en": "Dual Stereo Bluetooth Speaker",
       "category": "Executive Smart Tech (Modern & Work)",
       "category_slug": "executive-smart-tech",
-      "base_cost": 220.0,
       "product_master": "PROD-MASTER-SPK-01",
       "product_family": "PF-AUDIO-TECH",
       "aliases": [
@@ -102,6 +135,41 @@
         "ลำโพงพกพา 5W",
         "SPK-5W",
         "Wireless Speaker"
+      ],
+      "srp_price": 480.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 480.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 440.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 410.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 380.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 350.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 320.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 295.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 275.0
+        }
       ]
     },
     {
@@ -110,7 +178,6 @@
       "name_en": "MagSafe Wireless Powerbank 10000mAh",
       "category": "Executive Smart Tech (Modern & Work)",
       "category_slug": "executive-smart-tech",
-      "base_cost": 320.0,
       "product_master": "PROD-MASTER-PB10K-01",
       "product_family": "PF-POWER-CHARGING",
       "aliases": [
@@ -121,6 +188,41 @@
         "ที่ชาร์จไร้สาย",
         "PB10K",
         "Magnetic Battery Pack"
+      ],
+      "srp_price": 690.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 690.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 620.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 580.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 540.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 490.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 450.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 420.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 390.0
+        }
       ]
     },
     {
@@ -129,7 +231,6 @@
       "name_en": "Stainless Coffee Mug 3-Way Lid",
       "category": "Novelty & Self-Care (Warm & Wellness)",
       "category_slug": "novelty-self-care",
-      "base_cost": 140.0,
       "product_master": "PROD-MASTER-CFMUG-01",
       "product_family": "PF-DRINKWARE",
       "aliases": [
@@ -140,6 +241,41 @@
         "แก้วกาแฟพกพา 316",
         "CF-MUG",
         "Travel Coffee Mug"
+      ],
+      "srp_price": 299.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 299.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 270.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 250.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 230.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 210.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 195.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 180.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 165.0
+        }
       ]
     },
     {
@@ -148,7 +284,6 @@
       "name_en": "Auto 6-Fold UPF50+ Umbrella",
       "category": "Eco-Friendly & Sustainability (Green & Earth)",
       "category_slug": "eco-friendly",
-      "base_cost": 110.0,
       "product_master": "PROD-MASTER-UMB-01",
       "product_family": "PF-OUTDOOR-LIFESTYLE",
       "aliases": [
@@ -159,6 +294,41 @@
         "ร่มพับ 6 ตอน",
         "UMB-UPF50",
         "Sun & Rain Umbrella"
+      ],
+      "srp_price": 250.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 250.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 220.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 200.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 185.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 170.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 155.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 140.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 130.0
+        }
       ]
     },
     {
@@ -167,7 +337,6 @@
       "name_en": "Portable Low Pulse Neck Massager",
       "category": "Novelty & Self-Care (Warm & Wellness)",
       "category_slug": "novelty-self-care",
-      "base_cost": 380.0,
       "product_master": "PROD-MASTER-MSG-01",
       "product_family": "PF-WELLNESS-HEALTH",
       "aliases": [
@@ -178,6 +347,41 @@
         "เครื่องนวดประคบร้อน",
         "MSG-PULSE",
         "Cervical Massager"
+      ],
+      "srp_price": 850.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 780.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 720.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 660.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 600.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 550.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 500.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 460.0
+        }
       ]
     },
     {
@@ -186,7 +390,6 @@
       "name_en": "Smart Leather Powerbank Notebook",
       "category": "Executive Smart Tech (Modern & Work)",
       "category_slug": "executive-smart-tech",
-      "base_cost": 350.0,
       "product_master": "PROD-MASTER-NB-01",
       "product_family": "PF-SMART-OFFICE",
       "aliases": [
@@ -197,6 +400,41 @@
         "สมุดอัจฉริยะ",
         "NB-PWR",
         "Wireless Charging Notebook"
+      ],
+      "srp_price": 750.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 750.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 680.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 630.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 590.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 540.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 490.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 450.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 420.0
+        }
       ]
     },
     {
@@ -205,7 +443,6 @@
       "name_en": "Solid Walnut Brass Gel Pen",
       "category": "Classic Oriental (Mindfulness & Craft)",
       "category_slug": "classic-oriental",
-      "base_cost": 85.0,
       "product_master": "PROD-MASTER-PEN-01",
       "product_family": "PF-CRAFT-STATIONERY",
       "aliases": [
@@ -216,6 +453,41 @@
         "ปากกาหัวทองเหลือง",
         "PEN-WOOD",
         "Executive Signature Pen"
+      ],
+      "srp_price": 190.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 190.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 160.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 145.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 130.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 120.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 110.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 100.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 90.0
+        }
       ]
     },
     {
@@ -224,7 +496,6 @@
       "name_en": "Ceramic Mug with 55C Heating Base",
       "category": "Novelty & Self-Care (Warm & Wellness)",
       "category_slug": "novelty-self-care",
-      "base_cost": 160.0,
       "product_master": "PROD-MASTER-MUG-HEAT-01",
       "product_family": "PF-DRINKWARE",
       "aliases": [
@@ -235,6 +506,41 @@
         "แท่นอุ่นแก้ว",
         "MUG-HEAT",
         "Constant Temperature Cup"
+      ],
+      "srp_price": 350.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 350.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 310.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 290.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 270.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 245.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 225.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 210.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 195.0
+        }
       ]
     },
     {
@@ -243,7 +549,6 @@
       "name_en": "Dual Interface Metal Flash Drive",
       "category": "Classic Oriental (Mindfulness & Craft)",
       "category_slug": "classic-oriental",
-      "base_cost": 95.0,
       "product_master": "PROD-MASTER-FLASH-01",
       "product_family": "PF-STORAGE-TECH",
       "aliases": [
@@ -254,6 +559,41 @@
         "Type-C USB Drive",
         "FLASH-DUAL",
         "OTG Thumb Drive"
+      ],
+      "srp_price": 220.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 220.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 190.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 175.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 160.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 145.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 135.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 125.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 115.0
+        }
       ]
     },
     {
@@ -262,7 +602,6 @@
       "name_en": "Smart LED Temperature Thermos Bottle",
       "category": "Eco-Friendly & Sustainability (Green & Earth)",
       "category_slug": "eco-friendly",
-      "base_cost": 130.0,
       "product_master": "PROD-MASTER-BOTTLE-LED-01",
       "product_family": "PF-DRINKWARE",
       "aliases": [
@@ -273,6 +612,41 @@
         "กระบอกน้ำสุญญากาศ LED",
         "BOTTLE-LED",
         "Smart Thermos"
+      ],
+      "srp_price": 290.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 290.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 260.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 240.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 220.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 200.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 185.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 170.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 155.0
+        }
       ]
     },
     {
@@ -281,7 +655,6 @@
       "name_en": "Portable Stainless Steel Cutlery Set",
       "category": "Novelty & Self-Care (Warm & Wellness)",
       "category_slug": "novelty-self-care",
-      "base_cost": 75.0,
       "product_master": "PROD-MASTER-CUTLERY-01",
       "product_family": "PF-ECO-LIFESTYLE",
       "aliases": [
@@ -292,6 +665,41 @@
         "ชุดช้อนส้อมฟู้ดเกรด",
         "CUTLERY-SS",
         "Travel Dining Set"
+      ],
+      "srp_price": 165.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 165.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 140.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 130.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 120.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 110.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 100.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 92.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 85.0
+        }
       ]
     },
     {
@@ -300,7 +708,6 @@
       "name_en": "Double Wall Borosilicate Tea Infuser",
       "category": "Classic Oriental (Mindfulness & Craft)",
       "category_slug": "classic-oriental",
-      "base_cost": 165.0,
       "product_master": "PROD-MASTER-TEA-INF-01",
       "product_family": "PF-DRINKWARE",
       "aliases": [
@@ -311,6 +718,41 @@
         "ขวดชงชาแยกกาก",
         "TEA-INF",
         "Double Wall Tea Tumbler"
+      ],
+      "srp_price": 360.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 360.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 320.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 300.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 280.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 255.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 235.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 220.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 205.0
+        }
       ]
     },
     {
@@ -319,7 +761,6 @@
       "name_en": "Ultrasonic Flame Aroma Diffuser",
       "category": "Novelty & Self-Care (Warm & Wellness)",
       "category_slug": "novelty-self-care",
-      "base_cost": 240.0,
       "product_master": "PROD-MASTER-AROMA-01",
       "product_family": "PF-WELLNESS-HEALTH",
       "aliases": [
@@ -330,6 +771,41 @@
         "เครื่องพ่นไอน้ำเปลวไฟ",
         "AROMA-DIFF",
         "Essential Oil Humidifier"
+      ],
+      "srp_price": 550.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 550.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 490.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 460.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 420.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 380.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 350.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 320.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 295.0
+        }
       ]
     },
     {
@@ -338,7 +814,6 @@
       "name_en": "Digital Display Mini Handheld Fan",
       "category": "Eco-Friendly & Sustainability (Green & Earth)",
       "category_slug": "eco-friendly",
-      "base_cost": 115.0,
       "product_master": "PROD-MASTER-FAN-01",
       "product_family": "PF-ECO-LIFESTYLE",
       "aliases": [
@@ -349,6 +824,41 @@
         "พัดลมดิจิทัล 4000mAh",
         "FAN-4000",
         "Portable Rechargeable Fan"
+      ],
+      "srp_price": 260.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 260.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 230.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 210.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 195.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 175.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 160.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 148.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 138.0
+        }
       ]
     },
     {
@@ -357,7 +867,6 @@
       "name_en": "Wireless Charging Vegan Desk Mat",
       "category": "Executive Smart Tech (Modern & Work)",
       "category_slug": "executive-smart-tech",
-      "base_cost": 260.0,
       "product_master": "PROD-MASTER-DESK-MAT-01",
       "product_family": "PF-SMART-OFFICE",
       "aliases": [
@@ -368,6 +877,41 @@
         "แผ่นรองเมาส์ขนาดใหญ่",
         "DESK-MAT",
         "Executive Desk Blotter"
+      ],
+      "srp_price": 590.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 590.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 530.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 490.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 450.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 410.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 375.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 345.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 320.0
+        }
       ]
     }
   ],

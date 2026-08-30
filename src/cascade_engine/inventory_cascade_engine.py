@@ -70,7 +70,11 @@ class InventoryCascadeEngine:
             unit_qty = comp.get("qty", 1)
             total_needed = unit_qty * set_quantity
             prod_info = self.products.get(pcode, {})
-            unit_cost = prod_info.get("base_cost", 0.0)
+            # Unit cost from lowest ladder tier (1000 pcs) or srp_price / base_cost
+            if prod_info.get("price_tiers"):
+                unit_cost = prod_info["price_tiers"][-1]["unit_price"]
+            else:
+                unit_cost = prod_info.get("srp_price", prod_info.get("base_cost", 0.0))
 
             breakdown.append({
                 "product_code": pcode,

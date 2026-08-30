@@ -204,8 +204,30 @@ def main():
         'PM-DESK-MAT': {'product_master': 'PROD-MASTER-DESK-MAT-01', 'product_family': 'PF-SMART-OFFICE', 'aliases': ['แผ่นรองโต๊ะชาร์จไร้สาย', 'แผ่นรองโต๊ะหนัง', 'Vegan Desk Mat', 'Wireless Charging Desk Pad', 'แผ่นรองเมาส์ขนาดใหญ่', 'DESK-MAT', 'Executive Desk Blotter']}
     }
 
+    canonical_tiers_map = {
+        'PM-TMB': {'srp': 320.0, 'tiers': [{'min_qty': 1, 'unit_price': 320.0}, {'min_qty': 10, 'unit_price': 290.0}, {'min_qty': 20, 'unit_price': 270.0}, {'min_qty': 50, 'unit_price': 250.0}, {'min_qty': 100, 'unit_price': 230.0}, {'min_qty': 300, 'unit_price': 215.0}, {'min_qty': 500, 'unit_price': 200.0}, {'min_qty': 1000, 'unit_price': 185.0}]},
+        'PM-SPK': {'srp': 480.0, 'tiers': [{'min_qty': 1, 'unit_price': 480.0}, {'min_qty': 10, 'unit_price': 440.0}, {'min_qty': 20, 'unit_price': 410.0}, {'min_qty': 50, 'unit_price': 380.0}, {'min_qty': 100, 'unit_price': 350.0}, {'min_qty': 300, 'unit_price': 320.0}, {'min_qty': 500, 'unit_price': 295.0}, {'min_qty': 1000, 'unit_price': 275.0}]},
+        'PM-PB10K': {'srp': 690.0, 'tiers': [{'min_qty': 1, 'unit_price': 690.0}, {'min_qty': 10, 'unit_price': 620.0}, {'min_qty': 20, 'unit_price': 580.0}, {'min_qty': 50, 'unit_price': 540.0}, {'min_qty': 100, 'unit_price': 490.0}, {'min_qty': 300, 'unit_price': 450.0}, {'min_qty': 500, 'unit_price': 420.0}, {'min_qty': 1000, 'unit_price': 390.0}]},
+        'PM-CFMUG': {'srp': 299.0, 'tiers': [{'min_qty': 1, 'unit_price': 299.0}, {'min_qty': 10, 'unit_price': 270.0}, {'min_qty': 20, 'unit_price': 250.0}, {'min_qty': 50, 'unit_price': 230.0}, {'min_qty': 100, 'unit_price': 210.0}, {'min_qty': 300, 'unit_price': 195.0}, {'min_qty': 500, 'unit_price': 180.0}, {'min_qty': 1000, 'unit_price': 165.0}]},
+        'PM-UMB': {'srp': 250.0, 'tiers': [{'min_qty': 1, 'unit_price': 250.0}, {'min_qty': 10, 'unit_price': 220.0}, {'min_qty': 20, 'unit_price': 200.0}, {'min_qty': 50, 'unit_price': 185.0}, {'min_qty': 100, 'unit_price': 170.0}, {'min_qty': 300, 'unit_price': 155.0}, {'min_qty': 500, 'unit_price': 140.0}, {'min_qty': 1000, 'unit_price': 130.0}]},
+        'PM-MSG': {'srp': 850.0, 'tiers': [{'min_qty': 1, 'unit_price': 850.0}, {'min_qty': 10, 'unit_price': 780.0}, {'min_qty': 20, 'unit_price': 720.0}, {'min_qty': 50, 'unit_price': 660.0}, {'min_qty': 100, 'unit_price': 600.0}, {'min_qty': 300, 'unit_price': 550.0}, {'min_qty': 500, 'unit_price': 500.0}, {'min_qty': 1000, 'unit_price': 460.0}]},
+        'PM-NB': {'srp': 750.0, 'tiers': [{'min_qty': 1, 'unit_price': 750.0}, {'min_qty': 10, 'unit_price': 680.0}, {'min_qty': 20, 'unit_price': 630.0}, {'min_qty': 50, 'unit_price': 590.0}, {'min_qty': 100, 'unit_price': 540.0}, {'min_qty': 300, 'unit_price': 490.0}, {'min_qty': 500, 'unit_price': 450.0}, {'min_qty': 1000, 'unit_price': 420.0}]},
+        'PM-PEN': {'srp': 190.0, 'tiers': [{'min_qty': 1, 'unit_price': 190.0}, {'min_qty': 10, 'unit_price': 160.0}, {'min_qty': 20, 'unit_price': 145.0}, {'min_qty': 50, 'unit_price': 130.0}, {'min_qty': 100, 'unit_price': 120.0}, {'min_qty': 300, 'unit_price': 110.0}, {'min_qty': 500, 'unit_price': 100.0}, {'min_qty': 1000, 'unit_price': 90.0}]},
+        'PM-MUG-HEAT': {'srp': 350.0, 'tiers': [{'min_qty': 1, 'unit_price': 350.0}, {'min_qty': 10, 'unit_price': 310.0}, {'min_qty': 20, 'unit_price': 290.0}, {'min_qty': 50, 'unit_price': 270.0}, {'min_qty': 100, 'unit_price': 245.0}, {'min_qty': 300, 'unit_price': 225.0}, {'min_qty': 500, 'unit_price': 210.0}, {'min_qty': 1000, 'unit_price': 195.0}]},
+        'PM-FLASH': {'srp': 220.0, 'tiers': [{'min_qty': 1, 'unit_price': 220.0}, {'min_qty': 10, 'unit_price': 190.0}, {'min_qty': 20, 'unit_price': 175.0}, {'min_qty': 50, 'unit_price': 160.0}, {'min_qty': 100, 'unit_price': 145.0}, {'min_qty': 300, 'unit_price': 135.0}, {'min_qty': 500, 'unit_price': 125.0}, {'min_qty': 1000, 'unit_price': 115.0}]},
+        'PM-BOTTLE-LED': {'srp': 290.0, 'tiers': [{'min_qty': 1, 'unit_price': 290.0}, {'min_qty': 10, 'unit_price': 260.0}, {'min_qty': 20, 'unit_price': 240.0}, {'min_qty': 50, 'unit_price': 220.0}, {'min_qty': 100, 'unit_price': 200.0}, {'min_qty': 300, 'unit_price': 185.0}, {'min_qty': 500, 'unit_price': 170.0}, {'min_qty': 1000, 'unit_price': 155.0}]},
+        'PM-CUTLERY': {'srp': 165.0, 'tiers': [{'min_qty': 1, 'unit_price': 165.0}, {'min_qty': 10, 'unit_price': 140.0}, {'min_qty': 20, 'unit_price': 130.0}, {'min_qty': 50, 'unit_price': 120.0}, {'min_qty': 100, 'unit_price': 110.0}, {'min_qty': 300, 'unit_price': 100.0}, {'min_qty': 500, 'unit_price': 92.0}, {'min_qty': 1000, 'unit_price': 85.0}]},
+        'PM-TEA-INF': {'srp': 360.0, 'tiers': [{'min_qty': 1, 'unit_price': 360.0}, {'min_qty': 10, 'unit_price': 320.0}, {'min_qty': 20, 'unit_price': 300.0}, {'min_qty': 50, 'unit_price': 280.0}, {'min_qty': 100, 'unit_price': 255.0}, {'min_qty': 300, 'unit_price': 235.0}, {'min_qty': 500, 'unit_price': 220.0}, {'min_qty': 1000, 'unit_price': 205.0}]},
+        'PM-AROMA': {'srp': 550.0, 'tiers': [{'min_qty': 1, 'unit_price': 550.0}, {'min_qty': 10, 'unit_price': 490.0}, {'min_qty': 20, 'unit_price': 460.0}, {'min_qty': 50, 'unit_price': 420.0}, {'min_qty': 100, 'unit_price': 380.0}, {'min_qty': 300, 'unit_price': 350.0}, {'min_qty': 500, 'unit_price': 320.0}, {'min_qty': 1000, 'unit_price': 295.0}]},
+        'PM-FAN': {'srp': 260.0, 'tiers': [{'min_qty': 1, 'unit_price': 260.0}, {'min_qty': 10, 'unit_price': 230.0}, {'min_qty': 20, 'unit_price': 210.0}, {'min_qty': 50, 'unit_price': 195.0}, {'min_qty': 100, 'unit_price': 175.0}, {'min_qty': 300, 'unit_price': 160.0}, {'min_qty': 500, 'unit_price': 148.0}, {'min_qty': 1000, 'unit_price': 138.0}]},
+        'PM-DESK-MAT': {'srp': 590.0, 'tiers': [{'min_qty': 1, 'unit_price': 590.0}, {'min_qty': 10, 'unit_price': 530.0}, {'min_qty': 20, 'unit_price': 490.0}, {'min_qty': 50, 'unit_price': 450.0}, {'min_qty': 100, 'unit_price': 410.0}, {'min_qty': 300, 'unit_price': 375.0}, {'min_qty': 500, 'unit_price': 345.0}, {'min_qty': 1000, 'unit_price': 320.0}]}
+    }
+
     for p in master_data.get("canonical_products", []):
         code = p.get("code")
+        if "base_cost" in p:
+            del p["base_cost"]
+
         mapping = pm_mapping.get(code, {
             "product_master": f"PROD-MASTER-{code}",
             "product_family": "PF-GENERAL",
@@ -214,6 +236,13 @@ def main():
         p["product_master"] = mapping["product_master"]
         p["product_family"] = mapping["product_family"]
         p["aliases"] = mapping["aliases"]
+
+        t_data = canonical_tiers_map.get(code, {
+            "srp": 300.0,
+            "tiers": [{"min_qty": 1, "unit_price": 300.0}, {"min_qty": 100, "unit_price": 240.0}]
+        })
+        p["srp_price"] = t_data["srp"]
+        p["price_tiers"] = t_data["tiers"]
 
     theme_family_map = {
         "eco-friendly": "PF-ECO-SUSTAINABLE",

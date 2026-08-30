@@ -1381,22 +1381,36 @@
         for (const item of singleItems) {
           const card = document.createElement("article");
           card.className = "card";
+
+          let singleTierRows = "";
+          if (item.price_tiers && item.price_tiers.length > 0) {
+            singleTierRows = `
+              <table class="ladder-table">
+                <thead><tr><th>จำนวน (ชิ้น)</th><th>ราคาต่อชิ้น</th><th>รวมทั้งออเดอร์</th></tr></thead>
+                <tbody>
+                  ${item.price_tiers.map(t => `<tr><td>${fmtNum(t.min_qty)} ${t.min_qty === 1 ? 'ชิ้น (SRP)' : 'ชิ้น+'}</td><td>${fmtMoney(t.unit_price)}</td><td>${fmtMoney(t.min_qty * t.unit_price)}</td></tr>`).join("")}
+                </tbody>
+              </table>
+            `;
+          }
+
           card.innerHTML = `
             <div class="card-top">
               <div>
-                <span class="category-label">${item.code}</span>
+                <span class="category-label">${item.code} · ${item.product_family || "PF-MASTER"}</span>
                 <h3>${item.name_th || item.name_en}</h3>
                 <div style="font-size: 12px; color: var(--muted);">${item.name_en || ""}</div>
               </div>
               <div class="price-block">
-                <div class="srp-price">${fmtMoney(item.srp_price || item.base_cost * 2.14)}</div>
-                <div class="srp-sub">ราคา SRP อ้างอิง</div>
+                <div class="srp-price">${fmtMoney(item.srp_price)}</div>
+                <div class="srp-sub">ราคาต่อ 1 ชิ้น (SRP)</div>
               </div>
             </div>
             <div class="badges">
               <span class="badge available">พร้อมจำหน่าย</span>
-              <span class="badge bundle_only">ต้นทุนโรงงาน: ${fmtMoney(item.base_cost)}</span>
+              <span class="badge bundle_only">${item.product_master || item.code}</span>
             </div>
+            ${singleTierRows}
           `;
           container.append(card);
         }
