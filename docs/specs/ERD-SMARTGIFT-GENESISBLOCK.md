@@ -1,6 +1,6 @@
 ---
 version: "0.1.1b"
-created_at: "2026-08-30T20:29:43+07:00,ATHER,uncommitted"
+created_at: "2026-08-30T20:29:43+07:00,ATHER,1b56ac7"
 last_update: "2026-08-30T20:34:34+07:00,Claude"
 status: "draft"
 superseded_by: null
@@ -204,5 +204,5 @@ Version diff: ไม่มีเอกสาร → `0.1.0b`: เพิ่ม ER
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
-| 0.1.1b | 2026-08-30 | draft | review pass: แก้ชนิด ORDERED.amount, เพิ่ม vector spaces/labels/HQL notes, อ้างอิง ADR-005, ยืนยันตัวเลข §5 จาก disk | uncommitted | Claude |
-| 0.1.0b | 2026-08-30 | draft | บันทึก ERD ตาม GenesisBlock schema 1.3.0 และสถานะ JSON exports | uncommitted | ATHER |
+| 0.1.1b | 2026-08-30 | draft | review pass: แก้ชนิด ORDERED.amount, เพิ่ม vector spaces/labels/HQL notes, อ้างอิง ADR-005, ยืนยันตัวเลข §5 จาก disk | fb8a7e8 | Claude |
+| 0.1.0b | 2026-08-30 | draft | บันทึก ERD ตาม GenesisBlock schema 1.3.0 และสถานะ JSON exports | 1b56ac7 | ATHER |
