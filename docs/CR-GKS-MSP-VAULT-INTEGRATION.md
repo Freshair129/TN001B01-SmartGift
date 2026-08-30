@@ -79,7 +79,15 @@
 #### **A. ฝั่ง Tier 1: `D:\zuri-ai` (`prisma/schema.prisma` & Next.js/React UI)**
 1. **เพิ่มฟิลด์ใน Model `Workspace` หรือ `Project` (`prisma/schema.prisma`):**
    ```prisma
-   // prisma/schema.prisma
+   model Business {
+     // ... existing fields ...
+     githubRepoUrl    String?   // e.g. "https://github.com/Freshair129/TN001B01-SmartGift.git"
+     githubBranch     String?   @default("main")
+     githubSyncStatus String?   // "SYNCED" | "BEHIND" | "FAILED"
+     lastCommitSha    String?   // Latest commit SHA
+     lastGithubSyncAt DateTime?
+   }
+
    model Workspace {
      // ... existing fields ...
      catalogVaultId   String?   // UUIDv7 / vlt-{tenant_code} (เช่น vlt-catalog-product)
@@ -115,7 +123,22 @@
    * **Traceability & Provenance Search:**
      - กล่องค้นหาด้วย `event_id`, `product_id`, หรือ `source_ref` เพื่อดูประวัติการคำนวณราคาและที่มาของข้อมูลแบบครบวงจร
 
-3. **อัปเดต AuthContext Resolver (`src/modules/agent/auth-context.js`):**
+3. **พัฒนาแท็บ "Files" (GitHub Repository File Tree Explorer — `/platform/workspaces/[id]/files`):**
+   * **GitHub Integration & Webhook Auto-Sync:**
+     - เชื่อมต่อกับ GitHub Repo ของแต่ละธุรกิจ (เช่น `https://github.com/Freshair129/TN001B01-SmartGift.git`)
+     - มีปุ่ม **"Sync GitHub"** และ Webhook (`/api/webhooks/github`) เพื่อดึง Tree ล่าสุดผ่าน Octokit/GitHub API (`GET /repos/{owner}/{repo}/git/trees/{branch}?recursive=1`)
+   * **Interactive File Tree View (ฝั่งซ้าย):**
+     - แสดงแผนผังโครงสร้างโฟลเดอร์ของธุรกิจแบบพับย่อ-ขยายได้ (`config/`, `data-pipeline/`, `docs/`, `pipeline/`, `src/`, `vaults/`, `tests/`)
+     - แสดง Badge หมวดหมู่ไฟล์กำกับ (เช่น `[Raw Data]`, `[Prepared Catalog]`, `[Review Report]`, `[Vault DB]`)
+   * **In-App File Content Previewer (ฝั่งขวา):**
+     - คลิกเลือกไฟล์เพื่อดูเนื้อหาได้ทันทีในหน้าเว็บ รองรับ:
+       * **Markdown (`.md`)**: Render formatted Markdown & Mermaid diagrams
+       * **Code (`.py`, `.ts`, `.tsx`, `.sql`, `.json`, `.yaml`)**: Syntax highlighting พร้อมหมายเลขบรรทัด
+       * **Audit Logs (`.jsonl`)**: ตารางสรุป Audit Events แบบ Interactive
+       * **PDF & Images (`.pdf`, `.png`, `.jpg`)**: Inline preview viewer
+     - แสดง Metadata: ขนาดไฟล์, Commit SHA ล่าสุด, Commit Message, และเวลาอัปเดต
+
+4. **อัปเดต AuthContext Resolver (`src/modules/agent/auth-context.js`):**
    * ให้แนบ `catalogVaultId` เข้าไปใน Request Envelope เมื่อเรียกใช้งาน Agent ในบริบท B2B Gift Catalog
 
 ---
