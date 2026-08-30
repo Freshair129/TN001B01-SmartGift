@@ -188,7 +188,7 @@ SmartGift จะทำให้ชัดและทันสมัยขึ้�
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
-| 0.1.3b | 2026-08-30 | candidate | แยก internal dashboard ไป internal.html (ไม่ deploy); index.html เหลือ catalog+expo customer-safe ถาวร; เพิ่ม public surface boundary test | uncommitted | Claude |
+| 0.1.3b | 2026-08-30 | candidate | แยก internal dashboard ไป internal.html (ไม่ deploy); index.html เหลือ catalog+expo customer-safe ถาวร; เพิ่ม public surface boundary test | ac52752 | Claude |
 | 0.1.2b | 2026-08-30 | candidate | ปิด blocker product_manifest: แยก public/internal manifest, slice allowlist ตัด freight/CBM, boundary scan + tests; note ความเสี่ยง index.html | 374278e | Claude |
 | 0.1.1b | 2026-08-30 | candidate | review pass: blocker product_manifest, lineage หมวด/manifest, size/font budget, reduced motion, BOM/scanner dependency, peer media spec | cd5d7d2 | Claude |
 | 0.1.0b | 2026-08-30 | candidate | เสนอ web/offline catalog แยก runtime พร้อม flipbook interactions และ offline acceptance | cd5d7d2 | ATHER |
