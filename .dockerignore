@@ -1,0 +1,15 @@
+node_modules
+web/node_modules
+web/dist
+.git
+.env
+.env.local
+*.log
+__pycache__
+*.pyc
+.vite
+coverage
+.idea
+.vscode
+sql/smartgiftpricelist.postgres.sql
+sql/_fail_sample.txt

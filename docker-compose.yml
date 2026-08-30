@@ -1,0 +1,85 @@
+# Price Boss stack: MySQL (smartgift) + API + Web
+#
+# Start:
+#   docker compose up -d --build
+#   → Web  http://localhost:5180
+#   → API  http://localhost:3850/api/health
+#   → MySQL 127.0.0.1:3312  (root / password from .env / smartgift)
+#
+# Use existing tms-mysql (port 3310) instead of bundled MySQL:
+#   docker compose -f docker-compose.external-mysql.yml up -d --build
+#
+# Login demo: admin | manager | sale01
+
+name: price_boss
+
+services:
+  mysql:
+    image: mysql:8.0.36
+    container_name: price-boss-mysql
+    ports:
+      - "127.0.0.1:${PRICE_BOSS_MYSQL_PORT:-3312}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpass}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smartgift}
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=mysql_native_password
+    volumes:
+      - price_boss_mysql_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
+      - ./sql:/migrations:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p${MYSQL_ROOT_PASSWORD:-rootpass}"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    container_name: price-boss-api
+    ports:
+      - "${PRICE_BOSS_API_PORT:-3850}:3850"
+    environment:
+      API_PORT: 3850
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smartgift}
+      MYSQL_USER: ${MYSQL_USER:-root}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-rootpass}
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3850/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web/Dockerfile
+    container_name: price-boss-web
+    ports:
+      - "${PRICE_BOSS_WEB_PORT:-5180}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  price_boss_mysql_data:
