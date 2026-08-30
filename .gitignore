@@ -18,3 +18,22 @@ test-db/
 # OS Metadata
 .DS_Store
 Thumbs.db
+
+# Customer personal data — never in version control (CR-006)
+#
+# These spreadsheets carry a named legal entity's contact list, quotation report
+# and per-customer purchase history. They were tracked and pushed to a public
+# remote until 2026-08-30; the repository is private now and the files have been
+# untracked with `git rm --cached`, which is what this rule keeps from undoing.
+#
+# The rule alone would not have helped: **.gitignore has no effect on a file
+# that is already tracked.** Adding it after the first commit changes nothing —
+# the file keeps being staged, committed and pushed while the rule sits here
+# looking like it works, and `git status` stays silent because a tracked file
+# with no local edits is neither untracked nor modified. Untracking is what
+# removed them; this only stops them coming back.
+#
+# The files remain on disk. The store of record for customer data is zuri-ai's
+# CRM domain, behind its scope chain and PDPA consent controls (FR-103/SEC-005),
+# not this repository. Anything under 01_raw is an intake artifact, not a store.
+data-pipeline/01_raw/05_crm_customer_data/
