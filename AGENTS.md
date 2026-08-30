@@ -21,6 +21,15 @@ This file defines the domain role, governance invariants, and execution constrai
 
 ---
 
+## 📐 Documentation & Architecture Decision Records (ADRs)
+
+* **ADR Directory:** `docs/decisions/`
+* **Template Standard:** Strictly follows the zuri-ai decision template (`D:\zuri-ai\docs\decisions`).
+* **Naming Convention:** `ADR-XXX-TITLE.md` (e.g. `ADR-001-ECO-FRIENDLY-CATEGORY-REFACTOR.md`).
+* **Governance Invariant:** Any strategic changes to top-level product categories, portfolio blueprints, data pipeline mappings, or vault substrate bindings must be documented in `docs/decisions/`.
+
+---
+
 ## 🛡️ Non-Negotiable Invariants for AI Agents
 
 1. **Zero-PII in Vector Vault:** `vlt-catalog-product` must contain ONLY canonical product masters, gift offers, BOM edges, and sensory unboxing vectors. NEVER store customer contacts, PIC names, or quotation history in this vault.
