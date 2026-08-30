@@ -55,8 +55,15 @@ def run_master_pipeline():
     sub2 = subprocess.run([sys.executable, "pipeline/02_normalize_mapper.py"], capture_output=True, text=True, encoding="utf-8")
     if sub2.returncode == 0:
         print("  ✅ Stage 2 complete: Normalized 2,445 items and recorded provenance logs.")
+    # -------------------------------------------------------------
+    # STAGE 3: Review Catalog Dataset Ingestion & Package BOM Enrichment
+    # -------------------------------------------------------------
+    print("\n📊 [STAGE 3/5] Enriching Review Catalogs, Quantity Tiers & Package BOMs...")
+    sub3 = subprocess.run([sys.executable, "pipeline/enrich_review_catalog.py"], capture_output=True, text=True, encoding="utf-8")
+    if sub3.returncode == 0:
+        print("  ✅ Stage 3 complete: Enriched sub-catalogs, price tiers, SRP and package BOM breakdowns.")
     else:
-        print(f"  ⚠️ Stage 2 warning: {sub2.stderr}")
+        print(f"  ⚠️ Stage 3 warning: {sub3.stderr}")
 
     # -------------------------------------------------------------
     # STAGE 4: Catalog Versioning & Automated Diff Tracking

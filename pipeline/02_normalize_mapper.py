@@ -258,15 +258,15 @@ def main():
     with open(OUTPUT_REPORT_PATH, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
-    # Save JSONL provenance audit log
-    with open(OUTPUT_AUDIT_LOG_PATH, "w", encoding="utf-8") as f:
+    # Append JSONL provenance audit log (Append-only audit trail)
+    with open(OUTPUT_AUDIT_LOG_PATH, "a", encoding="utf-8") as f:
         for log in audit_log_entries:
             f.write(json.dumps(log, ensure_ascii=False) + "\n")
 
-    print(f"✅ Product ID Mapping Complete with Full ID Bindings!")
+    print(f"✅ Product ID Mapping Complete with Full ID Bindings & Sub-Catalog Provenance!")
     print(f"📊 Summary: Run ID '{pipeline_run_id}' | Analyzed {len(mapping_results)} items.")
     print(f"💾 Saved Audit Report to '{OUTPUT_REPORT_PATH}'.")
-    print(f"📜 Saved Provenance Audit Log (JSONL) with {len(audit_log_entries)} events to '{OUTPUT_AUDIT_LOG_PATH}'.")
+    print(f"📜 Appended Provenance Audit Log (JSONL) with {len(audit_log_entries)} events to '{OUTPUT_AUDIT_LOG_PATH}'.")
 
 if __name__ == "__main__":
     main()
