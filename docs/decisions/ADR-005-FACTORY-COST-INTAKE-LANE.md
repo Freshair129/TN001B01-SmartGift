@@ -108,6 +108,6 @@ packages remain `missing_inputs` as before.
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
-| 0.3.0b | 2026-08-31 | beta | เพิ่ม `apply_factory_cost_to_product_master.py` เติม `base_cost` เข้า ProductMaster.json 9/16 records พร้อม provenance; wire เป็น Stage 1.5 ใน orchestrator; tests 7 ตัวใหม่ผ่าน | uncommitted | Claude |
+| 0.3.0b | 2026-08-31 | beta | เพิ่ม `apply_factory_cost_to_product_master.py` เติม `base_cost` เข้า ProductMaster.json 9/16 records พร้อม provenance; wire เป็น Stage 1.5 ใน orchestrator; tests 7 ตัวใหม่ผ่าน | 908b567 | Claude |
 | 0.2.0b | 2026-08-30 | beta | Boss ยืนยัน mapping 9 คู่; exporter รับ `factory_cost_pm_mapping.json` เป็น input ที่ 6 (hash-pinned, ตรวจ status=confirmed) เติมต้นทุน EXW เข้า seasonal BOM 13/17 edges; field ต้นทุนใหม่ทั้งหมดถูกเพิ่มใน PUBLIC_FORBIDDEN_FIELDS; tests 61 ผ่าน | uncommitted | CLAUDE |
 | 0.1.0b | 2026-08-30 | beta | ตั้ง lane 08_factory_costs, ย้าย 02_pricing_formulas→07, รองรับ .xls, extraction แบบ proposed mapping | uncommitted | CLAUDE |
