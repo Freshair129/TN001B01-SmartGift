@@ -21,7 +21,8 @@
                                               │ (AuthContext / Server-Resolved Scope)
                                               ▼
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 2: Memory & Vault Gatekeeper (MSP / D:\msp)                                        │
+│  Tier 2: Memory & Vault Gatekeeper                                                       │
+│          (MSP / Memory-and-Soul-Passport: D:\Memory-and-Soul-Passport [alias: D:\msp])    │
 ├──────────────────────────────────────────────────────────────────────────────────────────┤
 │  • Governs: Unified Thread ID, Episodic Memory, Token Budget, H0-H4 Ceilings             │
 │  • API-010 (msp_vault_resolve): Resolves Workspace Scope ➔ [vlt-catalog-product]        │
@@ -29,7 +30,8 @@
                                               │ (Authorized Vault Set)
                                               ▼
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 3: Canonical Knowledge & GraphRAG Orchestrator (GKS / D:\gks)                      │
+│  Tier 3: Canonical Knowledge & GraphRAG Orchestrator                                     │
+│          (GKS / Genesis-Knowledge-System: D:\Genesis-Knowledge-System [alias: D:\gks])   │
 ├──────────────────────────────────────────────────────────────────────────────────────────┤
 │  • Governs: Canonical Ontology Registry, Radius (R0-R6) GraphRAG Routing, Deduplication │
 │  • Contract: smartgift://b2b/portfolio/v1 (v1.3.0) via Query IR (query-ir.v1)            │
