@@ -22869,7 +22869,7 @@
         "name_en": "Christmas 2026",
         "date_status": "year_assumption_pending_confirmation"
       },
-      "status": "cost_pending",
+      "status": "missing_inputs",
       "target_recipients": null,
       "total_price": null,
       "gift_tier": "Select",

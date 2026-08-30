@@ -11,7 +11,8 @@ import unittest
 from unittest.mock import patch
 
 from pipeline.export_pricelist_master import (
-    CATALOG_PATH, FACTORY_PATH, GENERATOR, OUTPUT_PATH, PRICING_RULES_PATH, PUBLIC_OUTPUT_PATH, ROOT,
+    CATALOG_PATH, COST_MAPPING_PATH, FACTORY_PATH, GENERATOR, OUTPUT_PATH, PRICING_RULES_PATH,
+    PUBLIC_OUTPUT_PATH, ROOT,
     SCHEMA_PATH, SQL_PATH, SRP_QTY_TIERS, build_master, evaluate_profit, export_master,
     build_public_projection, parse_factory_catalog, parse_snapshot, parse_values,
     validate_master, validate_public_projection,
@@ -143,8 +144,18 @@ class TestPricelistMasterExport(unittest.TestCase):
 
         package_ids = {pkg["id"] for pkg in self.data["pkg"]}
         self.assertTrue(all(row["bundle_id"] in package_ids for row in self.data["bom"]))
-        self.assertTrue(all(row["verified"] is False and row["factory_cost_thb"] is None
-                            for row in self.data["bom"]))
+        # BOM edges stay unverified; costs may appear only via the confirmed mapping,
+        # always paired with a factory identity and mapping provenance (ADR-005).
+        self.assertTrue(all(row["verified"] is False for row in self.data["bom"]))
+        for row in self.data["bom"]:
+            if row["factory_cost_thb"] is not None:
+                self.assertIsNotNone(row["factory_product_code"])
+                self.assertEqual(row["cost_provenance"]["source_file"], COST_MAPPING_PATH)
+                self.assertEqual(row["factory_cost_basis"], "EXW_confirmed_mapping")
+            else:
+                self.assertIsNone(row["factory_product_code"])
+                self.assertIsNone(row["cost_provenance"])
+        self.assertEqual(sum(row["factory_cost_thb"] is not None for row in self.data["bom"]), 13)
         fixed_options = [option for pkg in seasonal for option in pkg["options"] if option["qty"] is not None]
         self.assertEqual(len(fixed_options), 6)
         self.assertTrue(all(option["bundle_id"] in package_ids for option in fixed_options))
@@ -159,7 +170,10 @@ class TestPricelistMasterExport(unittest.TestCase):
                             and row["contract_validation"]["status"] == "incomplete"
                             for row in self.data["product_masters"]))
         self.assertEqual(len(self.data["bom"]), 17)
-        self.assertTrue(all(row["cost_status"] == "missing_factory_identity" for row in self.data["bom"]))
+        for row in self.data["bom"]:
+            expected = "exw_cost_confirmed" if row["factory_cost_thb"] is not None else "missing_factory_identity"
+            self.assertEqual(row["cost_status"], expected)
+        self.assertEqual(sum(row["cost_status"] == "missing_factory_identity" for row in self.data["bom"]), 4)
         self.assertFalse(any("qty" in link for link in self.data["offer_product_links"]))
 
     def test_factory_catalog_and_srp_quantity_matrix_are_explicit(self):
@@ -217,7 +231,8 @@ class TestPricelistMasterExport(unittest.TestCase):
     def test_repeat_export_is_deterministic_and_source_change_fails_closed(self):
         with tempfile.TemporaryDirectory(prefix="pricelist-export-test-") as folder:
             root = Path(folder)
-            for relative in (SQL_PATH, FACTORY_PATH, SCHEMA_PATH, CATALOG_PATH, PRICING_RULES_PATH):
+            for relative in (SQL_PATH, FACTORY_PATH, SCHEMA_PATH, CATALOG_PATH, PRICING_RULES_PATH,
+                             COST_MAPPING_PATH):
                 target = root / relative
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(ROOT / relative, target)

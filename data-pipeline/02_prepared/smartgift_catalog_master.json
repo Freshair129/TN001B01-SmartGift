@@ -146,7 +146,9 @@
         "freight_thb_per_unit": 19.2,
         "inland_china_thb_per_unit": 1.88
       },
-      "base_cost": 320.0
+      "base_cost": 320.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-SPK",
@@ -228,7 +230,9 @@
         "freight_thb_per_unit": 12.42,
         "inland_china_thb_per_unit": 1.13
       },
-      "base_cost": 480.0
+      "base_cost": 480.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-PB10K",
@@ -310,7 +314,9 @@
         "freight_thb_per_unit": 5.22,
         "inland_china_thb_per_unit": 0.4
       },
-      "base_cost": 690.0
+      "base_cost": 690.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-CFMUG",
@@ -392,7 +398,9 @@
         "freight_thb_per_unit": 12.8,
         "inland_china_thb_per_unit": 1.42
       },
-      "base_cost": 299.0
+      "base_cost": 299.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-UMB",
@@ -474,7 +482,9 @@
         "freight_thb_per_unit": 6.4,
         "inland_china_thb_per_unit": 0.65
       },
-      "base_cost": 250.0
+      "base_cost": 250.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-MSG",
@@ -556,7 +566,9 @@
         "freight_thb_per_unit": 27.6,
         "inland_china_thb_per_unit": 2.47
       },
-      "base_cost": 850.0
+      "base_cost": 850.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-NB",
@@ -638,7 +650,9 @@
         "freight_thb_per_unit": 20.7,
         "inland_china_thb_per_unit": 2.28
       },
-      "base_cost": 750.0
+      "base_cost": 750.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-PEN",
@@ -720,7 +734,9 @@
         "freight_thb_per_unit": 1.6,
         "inland_china_thb_per_unit": 0.07
       },
-      "base_cost": 190.0
+      "base_cost": 190.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-MUG-HEAT",
@@ -802,7 +818,9 @@
         "freight_thb_per_unit": 33.12,
         "inland_china_thb_per_unit": 3.03
       },
-      "base_cost": 350.0
+      "base_cost": 350.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-FLASH",
@@ -884,7 +902,9 @@
         "freight_thb_per_unit": 3.33,
         "inland_china_thb_per_unit": 0.02
       },
-      "base_cost": 220.0
+      "base_cost": 220.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-BOTTLE-LED",
@@ -966,7 +986,9 @@
         "freight_thb_per_unit": 22.77,
         "inland_china_thb_per_unit": 2.05
       },
-      "base_cost": 290.0
+      "base_cost": 290.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-CUTLERY",
@@ -1048,7 +1070,9 @@
         "freight_thb_per_unit": 3.04,
         "inland_china_thb_per_unit": 0.35
       },
-      "base_cost": 165.0
+      "base_cost": 165.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-TEA-INF",
@@ -1130,7 +1154,9 @@
         "freight_thb_per_unit": 21.76,
         "inland_china_thb_per_unit": 2.11
       },
-      "base_cost": 360.0
+      "base_cost": 360.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-AROMA",
@@ -1212,7 +1238,9 @@
         "freight_thb_per_unit": 21.39,
         "inland_china_thb_per_unit": 1.93
       },
-      "base_cost": 550.0
+      "base_cost": 550.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-FAN",
@@ -1294,7 +1322,9 @@
         "freight_thb_per_unit": 6.21,
         "inland_china_thb_per_unit": 0.68
       },
-      "base_cost": 260.0
+      "base_cost": 260.0,
+      "material": "generic",
+      "color": "unspecified"
     },
     {
       "code": "PM-DESK-MAT",
@@ -1376,7 +1406,9 @@
         "freight_thb_per_unit": 19.32,
         "inland_china_thb_per_unit": 2.13
       },
-      "base_cost": 590.0
+      "base_cost": 590.0,
+      "material": "generic",
+      "color": "unspecified"
     }
   ],
   "catalog_offers": [

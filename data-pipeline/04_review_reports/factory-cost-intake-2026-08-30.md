@@ -1,7 +1,7 @@
 ---
 version: "0.1.0b"
-created_at: "2026-08-30T17:34:25+07:00,CLAUDE"
-last_update: "2026-08-30T17:34:25+07:00,CLAUDE"
+created_at: "2026-08-30T17:35:19+07:00,CLAUDE"
+last_update: "2026-08-30T17:35:19+07:00,CLAUDE"
 status: "beta"
 superseded_by: null
 attributes:
@@ -20,19 +20,19 @@ attributes:
 
 | File | SHA-256 (12) | Records extracted |
 |---|---|---:|
-| 01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx | `515ecf8464b5` | 1034 |
+| 01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx | `515ecf8464b5` | 1031 |
 | 02-ต้นทุน-20260417 Power bank notebook catalog.xlsx | `9c8b51678f0a` | 71 |
 | ต้นทุน USB Flashdrive.xls | `13e284c53bce` | 64 |
 
-รวม 1169 records (มีราคา 1152); unmapped 41 records
+รวม 1166 records (มีราคา 1152); unmapped 38 records
 
 ## Proposed PM mapping candidates (ยังไม่ยืนยัน)
 
 | PM code | จำนวน records ที่เข้าเกณฑ์ keyword |
 |---|---:|
 | PM-AROMA | 15 |
-| PM-BOTTLE-LED | 77 |
-| PM-CFMUG | 563 |
+| PM-BOTTLE-LED | 71 |
+| PM-CFMUG | 559 |
 | PM-CUTLERY | 12 |
 | PM-DESK-MAT | 3 |
 | PM-FAN | 147 |
@@ -40,7 +40,7 @@ attributes:
 | PM-MSG | 209 |
 | PM-NB | 283 |
 | PM-PB10K | 428 |
-| PM-PEN | 608 |
+| PM-PEN | 363 |
 | PM-SPK | 120 |
 | PM-TEA-INF | 66 |
 | PM-UMB | 319 |

@@ -49,3 +49,7 @@ data-pipeline/01_raw/05_crm_customer_data/
 **/*_contact.xlsx
 **/*_QuotationReport_.xlsx
 **/*_BillingNoteReport_.xlsx
+# Ignore large raw cost Excel files
+data-pipeline/01_raw/08_factory_costs/*.xlsx
+# Ignore archived raw cost Excel files
+data-pipeline/01_raw/archive/factory_costs/*.xlsx

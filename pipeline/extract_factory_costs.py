@@ -32,20 +32,20 @@ USB_FILE = "ต้นทุน USB Flashdrive.xls"
 # Keyword → canonical PM candidates. Proposals only; a human confirms each pair
 # before any cost is allowed near pricelist_master.
 PM_KEYWORD_RULES = [
-    (r"\bfan\b",                 "PM-FAN"),
-    (r"umbrella",                "PM-UMB"),
-    (r"notebook|note book",      "PM-NB"),
-    (r"power ?bank",             "PM-PB10K"),
-    (r"usb|flash ?drive",        "PM-FLASH"),
-    (r"tumbler|thermos|bottle",  "PM-BOTTLE-LED"),
-    (r"mug|cup",                 "PM-CFMUG"),
-    (r"speaker",                 "PM-SPK"),
-    (r"massag",                  "PM-MSG"),
-    (r"pen\b",                   "PM-PEN"),
-    (r"aroma|diffuser|humidifier", "PM-AROMA"),
-    (r"tea infus",               "PM-TEA-INF"),
-    (r"cutlery|spoon|fork",      "PM-CUTLERY"),
-    (r"desk mat|mouse pad",      "PM-DESK-MAT"),
+    (r"\bfan\b",                     "PM-FAN"),
+    (r"\bumbrella\b",                "PM-UMB"),
+    (r"\bnotebook\b|\bnote book\b",  "PM-NB"),
+    (r"\bpower ?bank\b",             "PM-PB10K"),
+    (r"\busb\b|\bflash ?drive\b",    "PM-FLASH"),
+    (r"\btumbler\b|\bthermos\b|\bbottle\b", "PM-BOTTLE-LED"),
+    (r"\bmug\b|\bcup\b",             "PM-CFMUG"),
+    (r"\bspeaker\b",                 "PM-SPK"),
+    (r"\bmassag",                    "PM-MSG"),
+    (r"\bpen\b",                     "PM-PEN"),
+    (r"\baroma\b|\bdiffuser\b|\bhumidifier\b", "PM-AROMA"),
+    (r"\btea infus",                 "PM-TEA-INF"),
+    (r"\bcutlery\b|\bspoon\b|\bfork\b", "PM-CUTLERY"),
+    (r"\bdesk ?mat\b|\bmouse ?pad\b", "PM-DESK-MAT"),
 ]
 
 
@@ -67,9 +67,14 @@ def parse_giftset(path: str) -> list:
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     ws = wb["Business Office Gift set"]
     records, current = [], None
+    in_table = False  # skip supplier header/contact rows above the "Item No." header
     for row in ws.iter_rows(values_only=True):
         a, c, d, e = norm(row[0]), norm(row[2]), norm(row[3]), row[4]
-        if a and a not in ("Item No.",) and not a.startswith("*"):
+        if not in_table:
+            if a == "Item No.":
+                in_table = True
+            continue
+        if a and not a.startswith("*"):
             if current:
                 records.append(current)
             current = {

@@ -31,10 +31,11 @@ def run_master_pipeline():
     # -------------------------------------------------------------
     # STAGE 1: FlowAccount Export Registry & Formula Archiving
     # -------------------------------------------------------------
-    print("\n📦 [STAGE 1/5] Ingesting FlowAccount Exports & Pricing Formula YAML Rules...")
+    print("\n📦 [STAGE 1/5] Ingesting FlowAccount Exports, Pricing Formula YAML Rules & Factory Costs...")
     from pipeline.flowaccount_registry_archiver import FlowAccountRegistryArchiver
     from pipeline.pricing_formula_archiver import PricingFormulaArchiver
-    
+    from pipeline.factory_cost_archiver import FactoryCostRegistryArchiver
+
     archiver = FlowAccountRegistryArchiver()
     stage1_res = archiver.process_all_exports()
     for r in stage1_res:
@@ -44,6 +45,12 @@ def run_master_pipeline():
     formula_archiver = PricingFormulaArchiver()
     f_res = formula_archiver.process_all_formulas()
     for r in f_res:
+        status_sym = "✅" if r["status"] == "NEW_VERSION_ARCHIVED" else "⏸️"
+        print(f"  {status_sym} [{r['status']}] {r['filename']:<42} (SHA: {r['sha256'][:10]})")
+
+    cost_archiver = FactoryCostRegistryArchiver()
+    c_res = cost_archiver.process_all_cost_files()
+    for r in c_res:
         status_sym = "✅" if r["status"] == "NEW_VERSION_ARCHIVED" else "⏸️"
         print(f"  {status_sym} [{r['status']}] {r['filename']:<42} (SHA: {r['sha256'][:10]})")
 

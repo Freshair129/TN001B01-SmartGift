@@ -32,10 +32,14 @@ PUBLIC_FORBIDDEN_FIELDS = frozenset({
     "freight_total_thb", "freight_per_unit_thb", "delivered_unit_cost", "supplier",
     "flow_account_code", "flow_account_name", "provenance", "source_ref", "source_file",
     "source_sha256", "customer_contacts", "contact", "email", "phone",
+    "cost_reference", "exw_cost_thb", "exw_cost_per_set_thb", "factory_unit_price",
+    "factory_currency", "factory_cost_basis", "fx_rate_to_thb", "indicative_set_profit_thb",
 })
 SQL_SHA256 = "263556642064f6398e4cd00a7a4897ca7ba841b7c3bae5b8d2165b3186b2fdd4"
 FACTORY_SHA256 = "d85e114018a4792d7a3aa8fc9b4f35475f40e9948bffd5aa04cf0171b5c9cb24"
 PRICING_RULES_SHA256 = "f4473230f10b59133936974a0cacf84bbe84865d61db76553d8cc2a58ba635fc"
+COST_MAPPING_PATH = "data-pipeline/02_prepared/factory_cost_pm_mapping.json"
+COST_MAPPING_SHA256 = "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503"
 MIN_PROFIT = Decimal("25000.00")
 GENERATOR = "pipeline/export_pricelist_master.py"
 TABLE_COLUMNS = {
@@ -473,16 +477,20 @@ def _build_seasonal_offers(catalog, catalog_hash):
     return [offers[key] for key in sorted(offers)]
 
 
-def _package_missing_inputs(*, offer, target_recipients=None):
-    missing = [
-        "factory_identity",
-        "factory_cost",
+def _package_missing_inputs(*, offer, target_recipients=None,
+                            factory_identity_complete=False, factory_cost_complete=False):
+    missing = []
+    if not factory_identity_complete:
+        missing.append("factory_identity")
+    if not factory_cost_complete:
+        missing.append("factory_cost")
+    missing.extend((
         "freight_or_cbm_evidence",
         "direct_cost_breakdown",
         "vat_basis",
         "package_price",
         "quote_quantity",
-    ]
+    ))
     if offer is None:
         missing.extend(("catalog_offer", "bom"))
     if target_recipients is None:
@@ -490,7 +498,25 @@ def _package_missing_inputs(*, offer, target_recipients=None):
     return tuple(missing)
 
 
-def _build_package_bom(bundle_id, offer, canonical_products, catalog_hash):
+def _cost_mapping_entry(cost_mapping, product_code):
+    entry = cost_mapping.get(product_code)
+    if entry is None:
+        return None
+    # A composite entry (e.g. USB shell + chip) carries no single supplier code.
+    factory_code = entry.get("factory_item_code") or f"COMPOSITE:{entry.get('factory_item_name')}"
+    return {
+        "factory_product_code": factory_code,
+        "factory_unit_price": entry["exw_price"],
+        "factory_currency": entry["currency"],
+        "factory_unit_cny": entry["exw_price"] if entry["currency"] == "RMB" else None,
+        "fx_rate_to_thb": entry["fx_rate_to_thb"],
+        "factory_cost_thb": entry["exw_cost_thb"],
+        "factory_cost_basis": "EXW_confirmed_mapping",
+        "confidence": entry.get("confidence"),
+    }
+
+
+def _build_package_bom(bundle_id, offer, canonical_products, catalog_hash, cost_mapping):
     rows = []
     if offer is None:
         return rows
@@ -498,6 +524,7 @@ def _build_package_bom(bundle_id, offer, canonical_products, catalog_hash):
         product = canonical_products[component["product_code"]]
         packaging = product.get("packaging_carton") or {}
         logistics = product.get("logistics_freight_est") or {}
+        cost = _cost_mapping_entry(cost_mapping, component["product_code"])
         rows.append({
             "bundle_id": bundle_id,
             "offer_id": offer["id"],
@@ -509,26 +536,70 @@ def _build_package_bom(bundle_id, offer, canonical_products, catalog_hash):
             "product_family": product["product_family"],
             "category_slug": product["category_slug"],
             "unit_srp_qty1": _price_at_qty(product.get("price_tiers"), 1),
-            "factory_product_code": None,
-            "factory_unit_cny": None,
-            "factory_cost_thb": None,
-            "factory_match_status": "missing_factory_match",
+            "factory_product_code": cost["factory_product_code"] if cost else None,
+            "factory_unit_price": cost["factory_unit_price"] if cost else None,
+            "factory_currency": cost["factory_currency"] if cost else None,
+            "factory_unit_cny": cost["factory_unit_cny"] if cost else None,
+            "fx_rate_to_thb": cost["fx_rate_to_thb"] if cost else None,
+            "factory_cost_thb": cost["factory_cost_thb"] if cost else None,
+            "factory_cost_basis": cost["factory_cost_basis"] if cost else None,
+            "factory_match_status": ("confirmed_supplier_mapping" if cost else "missing_factory_match"),
             "cbm_per_unit": packaging.get("cbm_per_unit"),
             "cbm_source": "master_packaging_estimate",
             "declared_freight_reference_per_unit_thb": logistics.get("freight_thb_per_unit"),
             "freight_basis": "declared_scenario" if logistics.get("freight_thb_per_unit") is not None else None,
-            "cost_status": "missing_factory_identity",
+            "cost_status": "exw_cost_confirmed" if cost else "missing_factory_identity",
             "verified": False,
             "provenance": _canonical_provenance(
                 catalog_hash,
                 f"{offer['code']}:{component['product_code']}",
                 kind="canonical_offer_component",
             ),
+            "cost_provenance": ({
+                "source_file": COST_MAPPING_PATH,
+                "source_sha256": COST_MAPPING_SHA256,
+                "source_key": component["product_code"],
+                "kind": "confirmed_factory_cost_mapping",
+            } if cost else None),
         })
     return rows
 
 
-def _build_seasonal_packages(catalog, schema, catalog_hash, category_slugs):
+def _package_cost_reference(offer, bom_rows, canonical_products):
+    """Internal-only EXW cost roll-up per set. Never enters the public projection."""
+    if offer is None:
+        return None
+    components = offer.get("contains", [])
+    costed = [row for row in bom_rows if row["factory_cost_thb"] is not None]
+    fully_costed = len(costed) == len(components) and components
+    exw_total = round(sum(row["factory_cost_thb"] * row["qty"] for row in costed), 2) if fully_costed else None
+    lowest_tier = min(offer.get("price_tiers") or [], key=lambda tier: tier["min_qty"], default=None)
+    indicative = None
+    if fully_costed and lowest_tier is not None:
+        indicative = {
+            "basis": f"offer_price_at_min_qty_{int(lowest_tier['min_qty'])}_minus_exw_component_cost",
+            "offer_unit_price": lowest_tier["unit_price"],
+            "at_qty": int(lowest_tier["min_qty"]),
+            "indicative_set_profit_thb": round(lowest_tier["unit_price"] - exw_total, 2),
+            "excludes": ["freight", "duty", "packaging", "branding", "vat_alignment"],
+        }
+    srp_total = sum(
+        (_price_at_qty(canonical_products[component["product_code"]].get("price_tiers"), 1) or 0)
+        * component["qty"] for component in components
+    ) if components else None
+    return {
+        "costed_components": len(costed),
+        "total_components": len(components),
+        "coverage": "full" if fully_costed else ("partial" if costed else "none"),
+        "exw_cost_per_set_thb": exw_total,
+        "component_srp_qty1_total": srp_total if components else None,
+        "cost_basis": "EXW_confirmed_mapping_no_freight_no_duty",
+        "indicative_profit": indicative,
+        "quote_ready": False,
+    }
+
+
+def _build_seasonal_packages(catalog, schema, catalog_hash, category_slugs, cost_mapping):
     canonical_products = {row["code"]: row for row in catalog["canonical_products"]}
     seasonal_offers = _build_seasonal_offers(catalog, catalog_hash)
     offer_by_id = {row["id"]: row for row in seasonal_offers}
@@ -539,6 +610,7 @@ def _build_seasonal_packages(catalog, schema, catalog_hash, category_slugs):
             bundle_id = f"bundle:smartgift-{event['event_key']}-{definition['slug']}"
             offer = offer_by_id.get(definition["offer_id"]) if definition["offer_id"] else None
             options = []
+            package_bom = []
             if offer is not None:
                 options.append({
                     "option_id": f"option:{bundle_id.removeprefix('bundle:')}:{offer['code']}",
@@ -553,10 +625,18 @@ def _build_seasonal_packages(catalog, schema, catalog_hash, category_slugs):
                     "bom_status": "proposed_recipe",
                 })
                 fixed.append((definition, offer))
-                bom.extend(_build_package_bom(bundle_id, offer, canonical_products, catalog_hash))
-            status = "cost_pending" if offer is not None and not definition["derived"] else (
-                "mapping_pending" if offer is not None else "draft"
-            )
+                package_bom = _build_package_bom(bundle_id, offer, canonical_products, catalog_hash, cost_mapping)
+                bom.extend(package_bom)
+            cost_reference = _package_cost_reference(offer, package_bom, canonical_products)
+            fully_costed = cost_reference is not None and cost_reference["coverage"] == "full"
+            if offer is None:
+                status = "draft"
+            elif definition["derived"]:
+                status = "mapping_pending"
+            elif fully_costed:
+                status = "missing_inputs"  # factory cost landed; commercial inputs still open
+            else:
+                status = "cost_pending"
             package = {
                 "id": bundle_id,
                 "code": definition["pkg_code"],
@@ -592,10 +672,15 @@ def _build_seasonal_packages(catalog, schema, catalog_hash, category_slugs):
                 "bom_status": "proposed_recipe" if offer is not None else "not_designed",
                 "quote_ready": False,
                 "price_reference": _offer_price_reference(offer, canonical_products),
+                "cost_reference": cost_reference,
                 "profit_evaluation": evaluate_profit(
                     bom_complete=offer is not None,
                     quantity_complete=False,
-                    extra_missing=_package_missing_inputs(offer=offer, target_recipients=None),
+                    extra_missing=_package_missing_inputs(
+                        offer=offer, target_recipients=None,
+                        factory_identity_complete=fully_costed,
+                        factory_cost_complete=fully_costed,
+                    ),
                 ),
                 "ad_creative": {
                     "customer_safe": True,
@@ -1151,7 +1236,7 @@ def validate_public_projection(data):
 def build_master(root=ROOT):
     root = Path(root)
     inputs = {path: (root / path).read_bytes() for path in (
-        SQL_PATH, FACTORY_PATH, SCHEMA_PATH, CATALOG_PATH, PRICING_RULES_PATH)}
+        SQL_PATH, FACTORY_PATH, SCHEMA_PATH, CATALOG_PATH, PRICING_RULES_PATH, COST_MAPPING_PATH)}
     hashes = {path: hashlib.sha256(content).hexdigest() for path, content in inputs.items()}
     if hashes[SQL_PATH] != SQL_SHA256:
         raise ValueError("SQL snapshot hash changed; review source diff before exporting")
@@ -1159,6 +1244,8 @@ def build_master(root=ROOT):
         raise ValueError("Factory catalog hash changed; review source diff before exporting")
     if hashes[PRICING_RULES_PATH] != PRICING_RULES_SHA256:
         raise ValueError("Pricing rules hash changed; review source diff before exporting")
+    if hashes[COST_MAPPING_PATH] != COST_MAPPING_SHA256:
+        raise ValueError("Confirmed cost mapping hash changed; review mapping diff before exporting")
     tables = parse_snapshot(inputs[SQL_PATH].decode("utf-8-sig"))
     if {table: len(rows) for table, rows in tables.items()} != EXPECTED_COUNTS:
         raise ValueError("SQL snapshot counts do not reconcile")
@@ -1188,8 +1275,12 @@ def build_master(root=ROOT):
         _build_price_comparison(row, factory_by_code.get(row["offer_code"]), pricing_rules, run["run_id"])
         for row in sorted(tables["smartgift_price"], key=lambda row: row["id"])
     ]
+    cost_mapping_doc = json.loads(inputs[COST_MAPPING_PATH].decode("utf-8-sig"))
+    if cost_mapping_doc.get("metadata", {}).get("status") != "confirmed":
+        raise ValueError("Cost mapping artifact is not confirmed; refusing to apply costs")
+    cost_mapping = {row["pm_code"]: row for row in cost_mapping_doc["mapping"]}
     seasonal_offers, seasonal_packages, seasonal_bom = _build_seasonal_packages(
-        catalog, schema, hashes[CATALOG_PATH], category_slugs)
+        catalog, schema, hashes[CATALOG_PATH], category_slugs, cost_mapping)
     data = {
         "metadata": {
             "schema_version": "1.3.0b", "generator": GENERATOR,
@@ -1201,6 +1292,7 @@ def build_master(root=ROOT):
                          "scope": ("catalog_srp_and_labels" if path == CATALOG_PATH else
                                    "factory_catalog_reference" if path == FACTORY_PATH else
                                    "pricing_formula_and_shipping_scenario" if path == PRICING_RULES_PATH else
+                                   "confirmed_factory_cost_mapping" if path == COST_MAPPING_PATH else
                                    "snapshot_or_contract")}
                         for path, content in inputs.items()],
             "quote_ready": False, "inventory_ready": False, "bom_coverage": "proposed_recipe",
@@ -1292,6 +1384,14 @@ def build_master(root=ROOT):
         "proposed_bom_edges": len(data["bom"]),
         "seasonal_offer_count": len(data["seasonal_offers"]),
         "seasonal_package_count": len(seasonal_packages),
+        "bom_edges_with_confirmed_cost": sum(row.get("factory_cost_thb") is not None for row in data["bom"]),
+        "confirmed_cost_mapping_pairs": len(cost_mapping),
+        "packages_fully_costed": sum(
+            1 for row in data["pkg"]
+            if (row.get("cost_reference") or {}).get("coverage") == "full"),
+        "packages_partially_costed": sum(
+            1 for row in data["pkg"]
+            if (row.get("cost_reference") or {}).get("coverage") == "partial"),
         "package_gate_status_counts": {status: sum(row["profit_evaluation"]["status"] == status for row in data["pkg"])
                                         for status in sorted({row["profit_evaluation"]["status"] for row in data["pkg"]})},
         "factory_catalog_product_count": len(factory_tables["products"]),
