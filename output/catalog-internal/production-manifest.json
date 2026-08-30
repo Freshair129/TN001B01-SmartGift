@@ -1,0 +1,69 @@
+{
+  "version": "0.2.0b",
+  "status": "creative-proof",
+  "scope": "4 source-matched sets plus 6 individual models; not full inventory",
+  "source_authority": "same-page PDF product code, image and caption; canonical BOM excluded because of documented conflicts",
+  "sources": {
+    "business": {"path":"data-pipeline/01_raw/02_factory_pricelists_pdf/02-ใบราคา2025-ชุดของขวัญธุรกิจ-ฺBusinessGift.pdf","sha256":"1369832F7DF36D9F00230AE2CFC872965246804A9EF1F4BE5F4518B798F95002"},
+    "update": {"path":"data-pipeline/01_raw/02_factory_pricelists_pdf/SmartGift-ใบราคา-update.pdf","sha256":"27AAFA89082EA1491450C759B85DD89C2E0689252ADE3017EF59C06D79B83107"},
+    "novelty": {"path":"data-pipeline/01_raw/02_factory_pricelists_pdf/04-ใบราคา2025-ชุดขวัญแปลกใหม่-NoveltyGift.pdf","sha256":"C3A3527D08B66A33A6331653BF68F5FE1B6F7C95E793ED6661581013796CEC32"},
+    "tech": {"path":"data-pipeline/01_raw/03_product_catalogs/2026 new catalogue of power banks&car charger&wireless charger.pdf","sha256":"066037E15F855D22D9D08B7E3ED440224EE6EC67D03A0D2CADB7F24325B25456"}
+  },
+  "sets": [
+    {
+      "code":"FXD66-3","source":"business","page":1,
+      "reference":"refs/set-FXD66-3-source.png","artwork":"artwork/FXD66-3-adcreative-v1.png",
+      "title":"ชุดแก้ว พาวเวอร์แบงค์ และพัดลม",
+      "eyebrow":"A BRIGHTER EVERYDAY",
+      "short_title_lines":["เติมสีสัน","ให้ทุกวัน"],
+      "headline_lines":["เติมสีสัน","ให้ทุกวัน"],
+      "copy_lines":["สีส้มสดกับโทนไอวอรี","จับคู่ของใช้สำหรับวันทำงาน","ในกล่องเดียวกัน"],
+      "components":["แก้วมัค","พาวเวอร์แบงค์","พัดลมพับได้"],
+      "dark":false
+    },
+    {
+      "code":"TMK00-4","source":"update","page":2,
+      "reference":"refs/set-TMK00-4-source.png","artwork":"artwork/TMK00-4-adcreative-v1.png",
+      "title":"ชุดแก้ว แท่นชาร์จ และแปรงทำความสะอาด",
+      "eyebrow":"A CONSIDERED DESK",
+      "short_title_lines":["เรียบง่าย","บนโต๊ะทำงาน"],
+      "headline_lines":["เรียบง่าย","บนโต๊ะทำงาน"],
+      "copy_lines":["ดำกับรายละเอียดสีทอง","นำเสนอของใช้ประจำวัน","ด้วยบรรยากาศที่สุขุม"],
+      "components":["แก้ว","แท่นชาร์จแม่เหล็ก","แปรงทำความสะอาด"],
+      "dark":true
+    },
+    {
+      "code":"FXD6064","source":"novelty","page":2,
+      "reference":"refs/set-FXD6064-source.png","artwork":"artwork/FXD6064-adcreative-v1.png",
+      "title":"ชุดแก้วลายดอกไม้และโคมไฟหนังสือ",
+      "eyebrow":"A GENTLE THANK YOU",
+      "short_title_lines":["ขอบคุณด้วย","รายละเอียด"],
+      "headline_lines":["ขอบคุณด้วย","รายละเอียด"],
+      "copy_lines":["โทนชมพู ไอวอรี และแสงอุ่น","เล่าเรื่องความใส่ใจ","ผ่านสิ่งของและการจัดวาง"],
+      "components":["แก้วลาย Lily of the Valley","โคมไฟรูปหนังสือ","ช่อดอกไม้ และการ์ดอวยพร"],
+      "note":"Greeting card is listed in PDF caption but not separately visible; no loose card was invented in generated image.",
+      "dark":false
+    },
+    {
+      "code":"TGC09-3","source":"business","page":22,
+      "reference":"refs/set-TGC09-3-source.png","artwork":"artwork/TGC09-3-adcreative-v1.png",
+      "title":"ชุดกระบอกน้ำ สมุด A5 และปากกา",
+      "eyebrow":"EVERYDAY ESSENTIALS",
+      "short_title_lines":["พร้อมสำหรับ","วันใหม่"],
+      "headline_lines":["พร้อมสำหรับ","วันใหม่"],
+      "copy_lines":["ของใช้เรียบง่ายสามชิ้น","สีดำที่เข้ากันทั้งชุด","สำหรับจังหวะของวันทำงาน"],
+      "components":["กระบอกน้ำ","สมุด A5","ปากกา"],
+      "dark":false
+    }
+  ],
+  "products": [
+    {"code":"S-1052","source":"tech","page":2,"image":"refs/single-S-1052-source.png","title_lines":["พาวเวอร์แบงค์","ทรงจัตุรัสพร้อมสายคล้อง"]},
+    {"code":"BST61401","source":"tech","page":3,"image":"refs/single-BST61401-source.png","title_lines":["พาวเวอร์แบงค์","สีขาวผิวร่อง"]},
+    {"code":"DW03","source":"tech","page":4,"image":"refs/single-DW03-source.png","title_lines":["พาวเวอร์แบงค์","สีส้มพร้อมสายในตัว"]},
+    {"code":"UT3056","source":"tech","page":5,"image":"artwork/UT3056-clean-v1.png","title_lines":["พาวเวอร์แบงค์","ลายคาโมพร้อมสายคล้อง"]},
+    {"code":"S1033","source":"tech","page":6,"image":"artwork/S1033-clean-v1.png","title_lines":["พาวเวอร์แบงค์","สีขาวพร้อมขาตั้งพับ"]},
+    {"code":"W502","source":"tech","page":7,"image":"refs/single-W502-source.png","title_lines":["พาวเวอร์แบงค์","สีไอวอรีพร้อมขาตั้ง"]}
+  ],
+  "commercial_gates": {"image_rights":"not verified","stock":"not verified","prices":"not included","certification_claims":"excluded","print_pdfx":"not validated"},
+  "source_constraints": ["Set reference crops are only 236-352 pixels wide; fine generated lettering and geometry are not product truth.","Some single-product reference photos show two views of one model; this is not two units.","No customer contacts, internal prices or canonical BOM data are used."]
+}

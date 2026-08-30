@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "FXD6064-adcreative-v1",
+  "created_at": "2026-08-30T10:08:01.624Z",
+  "internal_only": true,
+  "status": "generated_ai_adcreative_review_required",
+  "generated": true,
+  "generation_method": "built-in image_gen.imagegen",
+  "cli_fallback_used": false,
+  "model_id": null,
+  "source": {
+    "role": "edit_target_and_fidelity_reference",
+    "path": "C:\\Users\\freshair\\.codex\\visualizations\\2026\\08\\30\\01a05202-029a-7c33-9911-d7fa0ebb1446\\adcreative-source-review\\set-FXD6064-source.png",
+    "sha256": "08D7FDB95DDD5EB6813DB62C3EE1500C8A7F5960B19C21A4DAFB5BB8F9C4C699",
+    "width_px": 352,
+    "height_px": 379
+  },
+  "output": {
+    "path": "O:/Org-EtohGroup/SmartGift/output/catalog-internal/artwork/FXD6064-adcreative-v1.png",
+    "sha256": "04EE4B66C1A79C47FC1D65542D4C1CD81C924B12357D7A11BCFC0854F3E3D10E",
+    "width_px": 1536,
+    "height_px": 1024,
+    "aspect_ratio": "3:2",
+    "format": "PNG",
+    "bytes": 1914432,
+    "resolution_request": "maximum available via built-in tool",
+    "resampled_or_postprocessed": false
+  },
+  "selected_tool_result": {
+    "path": "C:\\Users\\freshair\\.codex\\generated_images\\01a05202-d15d-75f2-ba2b-5140027f0479\\exec-ed68c7aa-c893-48b3-ac0e-e5ff22fb392e.png",
+    "attempt": 2
+  },
+  "prompts": [
+    {
+      "attempt": 1,
+      "prompt": "Use case: precise-object-edit.\nAsset type: high-end corporate gift catalog ad creative, photorealistic landscape 3:2, at the maximum available output resolution.\nInput image 1 is the EDIT TARGET, the actual FXD6064 gift set. It is not merely style inspiration.\n\nChange only the background, photographic lighting, and overall placement of the intact gift-set group in a wider frame. Preserve the actual product identities, count, shapes, relative proportions, colors, material textures, printed motifs, packaging, and arrangement in the source. Keep exactly these five original group elements: one tall ivory drink vessel with its pale-gold lid/base, lily-of-the-valley decoration and carry loop; one open glowing ivory accordion book lamp; one pink/ivory bouquet in its original pink gingham wrapping and lace; one original pastel open gift box; one original matching bag behind the box. Keep the items together inside their original box as shown. Preserve the original bag without inventing unseen decorations. Do not add, remove, duplicate, redesign, or substitute products, flowers, ribbons, accessories, props, or packaging.\n\nScene/backdrop: seamless warm pearl-pink studio floor and backdrop, clean and quiet.\nComposition/framing: the complete original gift-set group is the hero on the right two-thirds of the landscape canvas; keep the left one-third as calm uninterrupted negative space for later PDF typography. No cropped vessel, lamp, bouquet, or gift box. Preserve the source viewing angle and convincing scale.\nLighting/mood: soft side light, warm refined highlights, elegant grounded shadows; retain the gentle warm glow of the accordion lamp. Premium restrained catalog photography, realistic materials, no heavy filters.\n\nPrinted markings: preserve existing legible source artwork and motifs as they appear. For source text too small to read, retain only its understated visual character; do not invent readable words, slogans, brand names, or claims.\nNo added headline, no added typography, no new logo, no watermark, no promotional badges, no invented product claims. Keep the scene free of additional props.",
+      "result_path": "C:/Users/freshair/.codex/generated_images/01a05202-d15d-75f2-ba2b-5140027f0479/exec-6494f33d-e97e-4c50-a769-522462d60997.png",
+      "selected": false,
+      "revision_reason": "Small source lettering became newly readable/invented in the generated candidate."
+    },
+    {
+      "attempt": 2,
+      "prompt": "Use case: precise-object-edit. Single targeted correction to catalog image.\nInput image 1 is the EDIT TARGET: the existing 3:2 pearl-pink studio ad creative.\nInput image 2 is the original FXD6064 SOURCE OF TRUTH for product printing and motifs.\n\nKeep image 1's composition, 3:2 landscape dimensions, negative space on the left, studio background, lighting, five original group elements, product positions, packaging, colors, shapes and material textures unchanged. This is not a redesign.\nCorrect ONLY the newly invented readable microtext and printed artwork fidelity on the bag and drink vessel. The original source is low resolution: do not decipher or invent words that cannot be reliably read in input image 2. Retain only the source's existing clear \"Best Gift\" inscription on the bag within its original thin gold rectangle. The rest of the bag's small print must be subdued and non-legible, like the source at its native resolution, rather than generating a new readable phrase or claim. On the vessel preserve the delicate original lily-of-the-valley printed motif and treat uncertain tiny source lettering as soft, low-contrast indistinct printed detail, not newly legible words. No readable new phrases such as \"FOR YOUR LOVE\", no new logos, no headline or watermark.\nPreserve exactly one ivory/pale-gold decorated drink vessel with carry loop, one open glowing ivory accordion book lamp, one pink/ivory bouquet with pink gingham wrapping and lace, one original pastel open gift box, and one matching original bag. No additional products or props.\nOutput maximum available resolution. Do not change anything else.",
+      "result_path": "C:\\Users\\freshair\\.codex\\generated_images\\01a05202-d15d-75f2-ba2b-5140027f0479\\exec-ed68c7aa-c893-48b3-ac0e-e5ff22fb392e.png",
+      "selected": true
+    }
+  ],
+  "visual_review": {
+    "checked_against_source": true,
+    "five_primary_elements_preserved": true,
+    "primary_elements": [
+      "one ivory drink vessel with pale-gold detailing and carry loop",
+      "one open glowing ivory accordion book lamp",
+      "one bouquet in pink gingham wrapping and lace",
+      "one pastel open gift box",
+      "one original-style matching bag"
+    ],
+    "landscape_3_2_verified": true,
+    "left_negative_space": true,
+    "added_product_or_prop_detected": false,
+    "added_headline_or_watermark_detected": false,
+    "uncertain_microtext_made_nonlegible_in_revision": true,
+    "print_fidelity": "Approximate AI reconstruction; not pixel-identical or supplier-approved.",
+    "material_limitations": [
+      "The 352x379 source cannot establish exact small lettering, fine printed motifs, flower details, or unseen bag geometry.",
+      "AI reconstructed fine product and packaging details; original artwork fidelity is not certified.",
+      "Selected revision suppresses uncertain small source lettering; it is unsuitable as an exact packaging proof.",
+      "1536x1024 is the actual native tool output. No upscaling was applied."
+    ],
+    "publication_ready": false,
+    "required_before_external_use": "Owner review of product and printed-artwork fidelity, plus clear treatment as an AI-generated ad creative rather than an exact product photograph."
+  }
+}
+

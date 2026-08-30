@@ -22,7 +22,7 @@ except ImportError:
 sys.stdout.reconfigure(encoding='utf-8')
 
 FORMULA_CONFIG_PATH = "config/pricing_rules_formula.yaml"
-RAW_FORMULAS_DIR = "data-pipeline/01_raw/02_pricing_formulas"
+RAW_FORMULAS_DIR = "data-pipeline/01_raw/07_pricing_formulas"
 ARCHIVE_DIR = "data-pipeline/01_raw/archive/pricing_formulas"
 REGISTRY_PATH = "data-pipeline/01_raw/pricing_formula_registry.json"
 AUDIT_LOG_PATH = "data-pipeline/04_review_reports/provenance_audit_log.jsonl"

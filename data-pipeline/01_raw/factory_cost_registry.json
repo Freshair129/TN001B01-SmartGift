@@ -1,0 +1,99 @@
+{
+  "tenant_id": "Org-EtohGroup",
+  "business_id": "SmartGift",
+  "lane": "08_factory_costs",
+  "created_at": "2026-08-30T10:33:05.839988+00:00",
+  "last_updated": "2026-08-30T10:33:08.169190+00:00",
+  "total_ingested_versions": 3,
+  "files": {
+    "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx": {
+      "original_filename": "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+      "current_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+      "versions_count": 1,
+      "history": [
+        {
+          "version_id": "ver-01-ต้นทุน-20260612 Business Office Gift set catalog-v1-515ecf84",
+          "version_number": 1,
+          "sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+          "size_bytes": 376612464,
+          "archive_path": "data-pipeline/01_raw/archive/factory_costs/20260830T103306Z_515ecf8464b5_01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+          "ingested_at": "2026-08-30T10:33:06.694327+00:00",
+          "total_rows": 5954,
+          "row_diff_from_previous": 5954,
+          "sheets": [
+            {
+              "name": "Business Office Gift set",
+              "rows": 5952
+            },
+            {
+              "name": "Sheet2",
+              "rows": 1
+            },
+            {
+              "name": "Sheet3",
+              "rows": 1
+            }
+          ]
+        }
+      ]
+    },
+    "02-ต้นทุน-20260417 Power bank notebook catalog.xlsx": {
+      "original_filename": "02-ต้นทุน-20260417 Power bank notebook catalog.xlsx",
+      "current_sha256": "9c8b51678f0aea3c7cfb35e3449a2d0b4d3dd371808dd42050f7eea56b377e1f",
+      "versions_count": 1,
+      "history": [
+        {
+          "version_id": "ver-02-ต้นทุน-20260417 Power bank notebook catalog-v1-9c8b5167",
+          "version_number": 1,
+          "sha256": "9c8b51678f0aea3c7cfb35e3449a2d0b4d3dd371808dd42050f7eea56b377e1f",
+          "size_bytes": 95121343,
+          "archive_path": "data-pipeline/01_raw/archive/factory_costs/20260830T103307Z_9c8b51678f0a_02-ต้นทุน-20260417 Power bank notebook catalog.xlsx",
+          "ingested_at": "2026-08-30T10:33:07.948757+00:00",
+          "total_rows": 666,
+          "row_diff_from_previous": 666,
+          "sheets": [
+            {
+              "name": "Sheet1",
+              "rows": 666
+            }
+          ]
+        }
+      ]
+    },
+    "ต้นทุน USB Flashdrive.xls": {
+      "original_filename": "ต้นทุน USB Flashdrive.xls",
+      "current_sha256": "13e284c53bce55ae375ef487b340e21b3d34f98ce11b83bdc46b84cf2d5717a6",
+      "versions_count": 1,
+      "history": [
+        {
+          "version_id": "ver-ต้นทุน USB Flashdrive-v1-13e284c5",
+          "version_number": 1,
+          "sha256": "13e284c53bce55ae375ef487b340e21b3d34f98ce11b83bdc46b84cf2d5717a6",
+          "size_bytes": 16395776,
+          "archive_path": "data-pipeline/01_raw/archive/factory_costs/20260830T103308Z_13e284c53bce_ต้นทุน USB Flashdrive.xls",
+          "ingested_at": "2026-08-30T10:33:08.120748+00:00",
+          "total_rows": 39,
+          "row_diff_from_previous": 39,
+          "sheets": [
+            {
+              "name": "UDP Shell",
+              "rows": 9
+            },
+            {
+              "name": "PCBA Shell  ",
+              "rows": 10
+            },
+            {
+              "name": "Wrist Shell ",
+              "rows": 5
+            },
+            {
+              "name": "Chip price ",
+              "rows": 15
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

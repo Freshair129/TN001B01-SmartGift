@@ -1101,11 +1101,180 @@
       font-size: 10px;
       font-weight: 700;
     }
+    .catalog-media-proof {
+      display: grid;
+      gap: 12px;
+      margin: 16px 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: 0 5px 18px rgba(14,17,22,0.04);
+    }
+    .catalog-media-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .catalog-media-head h3 { margin: 3px 0 3px; font-size: 19px; }
+    .catalog-media-head p { margin: 0; color: var(--muted); font-size: 12px; }
+    .catalog-media-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .catalog-media-hero {
+      position: relative;
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--soft);
+    }
+    .catalog-media-hero img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+    .catalog-media-hero figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--panel);
+      font-size: 12px;
+    }
+    .catalog-media-hero figcaption strong { color: var(--ink); }
+    .catalog-media-hero figcaption span { color: var(--muted); text-align: right; }
+    .catalog-media-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 4px 8px;
+      border: 1px solid rgba(255,255,255,.42);
+      border-radius: 999px;
+      background: rgba(10, 23, 34, .72);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .catalog-media-sets {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .catalog-media-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--soft);
+    }
+    .catalog-media-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .catalog-media-card figcaption { padding: 8px 9px 9px; }
+    .catalog-media-code {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 10px;
+      font-weight: 800;
+    }
+    .catalog-media-title {
+      margin-top: 3px;
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .catalog-media-status { margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .catalog-media-products {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .catalog-media-product { min-width: 0; }
+    .catalog-media-product img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fff;
+    }
+    .catalog-media-product .catalog-media-title { font-size: 10px; }
+    .catalog-media-note {
+      margin: 0;
+      padding: 9px 11px;
+      border-left: 3px solid var(--accent);
+      color: var(--muted);
+      background: var(--soft);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+    .expo-image-note {
+      margin-top: 2px;
+      padding: 7px 9px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.09);
+      color: rgba(255,255,255,.78);
+      font-size: 10px;
+      line-height: 1.4;
+    }
+    .expo-media-feature {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+    .expo-media-feature-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .expo-media-feature-head h3 { margin: 2px 0 3px; font-size: 17px; }
+    .expo-media-feature-head p { margin: 0; color: var(--muted); font-size: 11px; }
+    .expo-media-feature-grid {
+      display: grid;
+      grid-template-columns: minmax(250px, 1.25fr) repeat(4, minmax(120px, .75fr));
+      gap: 9px;
+    }
+    .expo-media-feature figure { margin: 0; min-width: 0; }
+    .expo-media-feature img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--soft);
+    }
+    .expo-media-feature .expo-media-hero img { aspect-ratio: 3 / 2; }
+    .expo-media-feature figcaption { padding: 5px 3px 0; }
+    .expo-media-feature .catalog-media-code { font-size: 9px; }
+    .expo-media-feature .catalog-media-title { font-size: 10px; }
+    .expo-media-feature .catalog-media-status { font-size: 9px; }
     @media(max-width: 1080px) {
       .workspace { grid-template-columns: 1fr; }
       .bundle-grid { grid-template-columns: 1fr; }
       .audit-card { grid-template-columns: 1fr; gap: 6px; }
       .expo-grid { grid-template-columns: 1fr; }
+      .catalog-media-products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .expo-media-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .expo-media-feature .expo-media-hero { grid-column: 1 / -1; }
     }
     @media(max-width: 680px) {
       .shell { padding: 14px 12px 24px; }
@@ -1117,6 +1286,10 @@
       .expo-filter { min-width: 100%; }
       .expo-mode { margin-left: 0; }
       .expo-split { grid-template-columns: 1fr; }
+      .catalog-media-layout { grid-template-columns: 1fr; }
+      .catalog-media-sets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .catalog-media-products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .expo-media-feature-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -1164,19 +1337,33 @@
         <div class="heading">
           <div>
             <div class="eyebrow">Interactive B2B Gift Set Anatomy</div>
-            <h2>เลือกดูชิ้นส่วนและชุดของขวัญตามหมวดหลัก</h2>
+            <h2>ภาพสินค้าจริงและชุดของขวัญตามหมวดหลัก</h2>
           </div>
-          <p>คลิกเลือกหมวดหมู่กล่องของขวัญเพื่อดูรายการสินค้าจริง, รหัสซัพพลายเออร์ P-xx และโครงสร้างบันไดราคา</p>
+          <p>เริ่มจากภาพใน Catalog ที่ตรวจรหัสแล้ว แล้วเปิด 2.5D เพื่อดูโครงสร้าง BOM และรายละเอียดราคา</p>
         </div>
+
+        <section class="catalog-media-proof" aria-labelledby="catalog-media-title">
+          <div class="catalog-media-head">
+            <div>
+              <div class="eyebrow">Catalog visual proof</div>
+              <h3 id="catalog-media-title">ภาพสร้างสรรค์จากสินค้าจริงใน Catalog</h3>
+              <p>ภาพชุดและภาพสินค้าแยกจาก BOM เพื่อให้เห็นของจริงก่อนอ่านราคาและส่วนประกอบ</p>
+            </div>
+            <span class="badge available">Source-based preview</span>
+          </div>
+          <div id="catalog-media-content" class="catalog-media-content">
+            <p class="catalog-media-note">กำลังโหลดภาพจาก Catalog…</p>
+          </div>
+        </section>
 
         <div class="workspace">
           <section class="panel anatomy-panel">
             <div class="panel-bar">
               <div style="display: flex; align-items: center; gap: 10px;">
-                <strong id="anatomy-title">Corporate Gift Box 2.5D Anatomy</strong>
-                <span class="badge available" style="font-size: 11px;">✨ Floating Glassmorphism</span>
+                <strong id="anatomy-title">BOM Anatomy · ภาพประกอบจาก Catalog</strong>
+                <span class="badge available" style="font-size: 11px;">✨ 2.5D map</span>
               </div>
-              <span id="category-status" style="color: var(--accent); font-weight: 700;">เลือกชิ้นส่วนเพื่อดู BOM</span>
+              <span id="category-status" style="color: var(--accent); font-weight: 700;">เลือกหมวดหรือภาพเพื่อดู BOM</span>
             </div>
 
             <div id="gift-anatomy-stage" class="gift-stage" style="--explode-z: 75px;">
@@ -1405,6 +1592,7 @@
           </div>
           <p>เลือก package ตาม event, tier และโครงสร้างบริษัท แล้วเปิดดูชิ้นส่วนย่อยพร้อมราคา 1 ชิ้น, CBM และสถานะ Profit Gate</p>
         </div>
+        <section id="expo-media-feature" class="expo-media-feature" aria-labelledby="expo-media-title" hidden></section>
         <div class="expo-toolbar" aria-label="ตัวกรอง Seasonal Expo">
           <div class="expo-filter">
             <label for="expo-event">Event</label>
@@ -1508,6 +1696,7 @@
 
   <script>
     let catalogMaster = null;
+    let catalogMedia = null;
     let activeCategory = "eco-friendly";
     let auditLogs = [];
     let expoCustomerSafe = false;
@@ -1525,6 +1714,71 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+    const mediaPath = value => {
+      const path = String(value || "");
+      return /^\/assets\/catalog-media\/[A-Za-z0-9._/-]+$/.test(path) ? path : "";
+    };
+    const mediaLabel = item => item?.generated_from_catalog
+      ? "ภาพสร้างใหม่จากภาพอ้างอิงใน Catalog"
+      : (item?.source_label || "ภาพอ้างอิงจาก Catalog");
+
+    function renderCatalogMedia() {
+      const container = document.querySelector("#catalog-media-content");
+      if (!container) return;
+      const media = catalogMedia;
+      if (!media?.hero || !Array.isArray(media.sets) || !Array.isArray(media.products)) {
+        container.innerHTML = `<p class="catalog-media-note">ยังไม่มี media manifest ที่จับคู่รหัสภาพได้ จึงไม่ใช้ภาพแทนสินค้าแบบเดา</p>`;
+        return;
+      }
+      const heroSrc = mediaPath(media.hero.image);
+      const hero = heroSrc ? `
+        <figure class="catalog-media-hero">
+          <span class="catalog-media-badge">${escapeHtml(mediaLabel(media.hero))}</span>
+          <img src="${heroSrc}" alt="${escapeHtml(media.hero.title || "ภาพชุดสินค้าใน Catalog")}" loading="eager">
+          <figcaption>
+            <strong>${escapeHtml(media.hero.code)} · ${escapeHtml(media.hero.title || "ภาพชุดสินค้า")}</strong>
+            <span>ภาพนำสำหรับทำความเข้าใจชุด<br>ไม่ใช่หลักฐาน BOM</span>
+          </figcaption>
+        </figure>
+      ` : `<p class="catalog-media-note">ไม่มีภาพนำที่ผ่าน path allowlist</p>`;
+      const sets = media.sets.map(item => {
+        const src = mediaPath(item.image);
+        if (!src) return "";
+        return `
+          <figure class="catalog-media-card">
+            <img src="${src}" alt="${escapeHtml(item.title || item.code)}" loading="lazy">
+            <figcaption>
+              <div class="catalog-media-code">${escapeHtml(item.code)}</div>
+              <div class="catalog-media-title">${escapeHtml(item.title || "ชุดของขวัญ")}</div>
+              <div class="catalog-media-status">${escapeHtml(mediaLabel(item))}</div>
+            </figcaption>
+          </figure>
+        `;
+      }).join("");
+      const products = media.products.map(item => {
+        const src = mediaPath(item.image);
+        if (!src) return "";
+        return `
+          <article class="catalog-media-product">
+            <img src="${src}" alt="${escapeHtml(item.title || item.code)}" loading="lazy">
+            <div class="catalog-media-code">${escapeHtml(item.code)}</div>
+            <div class="catalog-media-title">${escapeHtml(item.title || "สินค้าเดี่ยว")}</div>
+            <div class="catalog-media-status">${escapeHtml(mediaLabel(item))}</div>
+          </article>
+        `;
+      }).join("");
+      container.innerHTML = `
+        <div class="catalog-media-layout">
+          ${hero}
+          <div class="catalog-media-sets" aria-label="ภาพชุดจาก Catalog">${sets}</div>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin: 3px 0 8px;">Single product references</div>
+          <div class="catalog-media-products" aria-label="ภาพสินค้าเดี่ยวจาก Catalog">${products}</div>
+        </div>
+        <p class="catalog-media-note">${escapeHtml(media.disclaimer_th || "ภาพนี้เป็น creative preview จากภาพอ้างอิง ไม่ใช้แทนข้อมูลราคา ต้นทุน stock หรือ BOM")}</p>
+      `;
+    }
     const packageStatus = status => ({
       draft: ["draft", "รอ brief"],
       mapping_pending: ["pending", "รอ reconcile offer"],
@@ -1612,6 +1866,7 @@
 
     function acceptMasterData(data, sourceLabel) {
       catalogMaster = normalizeMasterData(data);
+      catalogMedia = data.catalog_media || null;
       const metadata = catalogMaster.metadata || {};
       document.querySelector("#source").textContent = `${sourceLabel} (v${metadata.schema_version || metadata.version || "2026.08.30"})`;
       document.querySelector("#stat-canonical").textContent = catalogMaster.canonical_products.length;
@@ -1621,6 +1876,7 @@
       document.querySelector("#stat-updated").textContent = metadata.last_updated ? new Date(metadata.last_updated).toLocaleString("th-TH") : (metadata.generated_at || "2026-08-30");
 
       renderCategoryView(activeCategory);
+      renderCatalogMedia();
       renderAllOffers();
       renderBundles();
       configureExpoFilters();
@@ -2248,8 +2504,9 @@
     Promise.all([
       fetchJson("/api/catalog").catch(() => null),
       fetchJson("/api/pricelist").catch(() => null),
+      fetchJson("/api/media").catch(() => fetchJson("./data/catalog_media.json").catch(() => null)),
     ])
-      .then(([catalog, pricelist]) => {
+      .then(([catalog, pricelist, media]) => {
         if (!catalog && !pricelist) throw new Error("no local master source");
         const merged = { ...(catalog || {}), ...(pricelist || {}) };
         merged.metadata = { ...(catalog?.metadata || {}), ...(pricelist?.metadata || {}) };
@@ -2257,11 +2514,12 @@
         merged.catalog_offers = catalog?.catalog_offers || pricelist?.catalog_offers;
         merged.top_level_categories = catalog?.top_level_categories || pricelist?.portfolio_catalogs;
         merged.corporate_bundles = catalog?.corporate_bundles || [];
+        merged.catalog_media = media;
         acceptMasterData(merged, pricelist ? "Live Catalog + Price Projection" : "Live Master Catalog");
       })
       .catch(() => {
         fetchJson("./data-pipeline/02_prepared/smartgift_catalog_master.json")
-          .then(d => acceptMasterData(d, "Local Prepared Catalog"))
+          .then(d => fetchJson("./data/catalog_media.json").catch(() => null).then(media => acceptMasterData({ ...d, catalog_media: media }, "Local Prepared Catalog")))
           .catch(() => {
             document.querySelector("#source").textContent = "ยังไม่มีข้อมูล Master Catalog · โปรดเลือกไฟล์ JSON";
           });

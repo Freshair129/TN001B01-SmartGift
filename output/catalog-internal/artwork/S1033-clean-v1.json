@@ -1,0 +1,57 @@
+{
+  "record_version": "0.1.0b",
+  "created_at": "2026-08-30T17:14:53+07:00",
+  "agent": "ATHER",
+  "classification": "internal-only",
+  "product_code": "S1033",
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "use_case": "precise-object-edit",
+  "cli_used": false,
+  "source": {
+    "role": "edit_target_and_product_reference",
+    "path": "O:/Org-EtohGroup/SmartGift/output/catalog-internal/refs/single-S1033-source.png",
+    "sha256": "13611D39277EC28AA19C4A18C975EBFA304DD23B5750409A59B204D1C79464A2",
+    "width_px": 413,
+    "height_px": 397
+  },
+  "exact_prompt": "Use case: precise-object-edit\nAsset type: cleaned single-product catalog photograph\nInput image 1 is the EDIT TARGET and the only product truth: white S1033 powerbank product image.\nPrimary request: remove ONLY the external editorial measurement lines, dimension guides, numbers, and annotations around the product (including 69.3mm, 106.4mm and 17.1mm). Replace those annotation pixels with clean white background. Do not redesign or re-render the product into a different model.\n\nPreserve product invariants exactly: one white rectangular powerbank in the same tilted three-quarter view, the same body proportions and edge thickness, the same raised round wireless pad on its front, the same folding stand and its visible orientation, the same ports and original surface details. Preserve the two visible attached cable runs exactly as photographed, at the same angles and lengths, with the same tips and colors: the cable going to upper-left retains its original rectangular tip and orange insert, and the cable going to upper-right retains its original light-grey tip. Do not invent any additional cables or connectors; do not merge, split, shorten or reposition the existing cables. The visible lower-left support/stand remains part of the same device.\nScene/backdrop: clean pure white seamless background, only a very subtle natural grey contact shadow. No props.\nComposition/framing: square 1:1 output, whole product and both existing cable tips fully visible, same relative pose and layout as source, centered with generous clean white margin.\nText: remove only external dimension annotations. No added branding, words, headlines, technical claims or watermark. Do not invent a logo or new product markings.\nAvoid: product changes, new cables, changed tip colors, extra objects, altered charging pad, invented ports, changed stand, new surface details, any measurements or dimension guides.\nOutput: highest native resolution available, square. Faithful preservation of the provided visible product identity and cable geometry has priority over sharpening or beautification. Fine details unreadable in the low-resolution source must not be treated as permission to invent them.",
+  "output": {
+    "path": "O:/Org-EtohGroup/SmartGift/output/catalog-internal/artwork/S1033-clean-v1.png",
+    "generated_original_path": "C:/Users/freshair/.codex/generated_images/01a05202-bd0a-7772-b37c-dc7f459b93ab/exec-45e909fd-9a37-409b-af90-83d972b09387.png",
+    "sha256": "CAE9244E6389E97E77A32865DCF5884F8221C22D50FADF41EE4B020AB9EB5063",
+    "width_px": 1254,
+    "height_px": 1254,
+    "aspect_ratio": "1:1",
+    "format": "PNG",
+    "bytes": 987954,
+    "highest_native_resolution_requested": true,
+    "upscaled_after_generation": false,
+    "status": "selected_for_catalog_layout_review",
+    "background_edit_status": "external_dimension_annotations_removed_clean_white_background",
+    "is_generated_cleanup": true,
+    "is_product_truth": false
+  },
+  "visual_review": {
+    "compared_against_source": true,
+    "dimension_annotations_removed": true,
+    "one_powerbank_body_visible": true,
+    "two_original_cable_runs_visible": true,
+    "additional_cables_observed": false,
+    "left_tip_orange_insert_retained": true,
+    "right_tip_light_grey_retained": true,
+    "round_wireless_pad_retained": true,
+    "folding_stand_retained": true,
+    "main_pose_and_color_preserved": true,
+    "added_headlines_branding_or_watermarks_observed": false,
+    "exact_pixel_geometry_preservation_verified": false,
+    "revision_count": 0,
+    "review_scope": "Main visual identity, one device, two visible cable runs, relative tip positions/colors, pad and support checked against the source. Fine port/connector geometry is not certified."
+  },
+  "limitations": [
+    "The input is a pale 413x397 image. The built-in edit reconstructed and sharpened fine surfaces rather than retaining exact original product pixels.",
+    "The main visual identity and visible cable count match, but small connector/port geometry and subtle body proportions cannot be certified as unchanged from this source.",
+    "Use as generated cleanup for layout review, not as evidence of charging specifications, connector standards, material, dimensions or any other technical claim.",
+    "The source remains unchanged and remains the product reference. No post-generation raster editing or upscaling was performed."
+  ]
+}

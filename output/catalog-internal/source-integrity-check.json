@@ -1,0 +1,38 @@
+[
+  {
+    "source": "business",
+    "match": true
+  },
+  {
+    "source": "update",
+    "match": true
+  },
+  {
+    "source": "novelty",
+    "match": true
+  },
+  {
+    "source": "tech",
+    "match": true
+  },
+  {
+    "source": "Architecture_of_Appreciation.pdf",
+    "match": true
+  },
+  {
+    "source": "Smart_Gift.pdf",
+    "match": true
+  },
+  {
+    "source": "SmartGift_2026_Portfolio_Blueprint.pdf",
+    "match": true
+  },
+  {
+    "source": "Sovereign_Group_Digital_Infrastructure.pdf",
+    "match": true
+  },
+  {
+    "source": "Unboxing_Engineering.pdf",
+    "match": true
+  }
+]

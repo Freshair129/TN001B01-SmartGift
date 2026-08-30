@@ -1,0 +1,44 @@
+{
+  "archive": "output\\artwork\\smartgift-adcreative-4sets-v0.2.zip",
+  "bytes": 9064013,
+  "sha256": "a01bdae5301eb4043cb3ff3b6136eb85b04ef3776248770a9113691a4bc87157",
+  "files": [
+    {
+      "code": "FXD66-3",
+      "file": "FXD66-3-adcreative-v1.png",
+      "sha256": "cf20ebed646f3512e1c1271c474a0fb8e289fd25252364cf3ca2c11268a926a7",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "code": "TMK00-4",
+      "file": "TMK00-4-adcreative-v1.png",
+      "sha256": "710893190d162c3c100151051943309b45760de962a692ee763c5c8f8caced3f",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "code": "FXD6064",
+      "file": "FXD6064-adcreative-v1.png",
+      "sha256": "04ee4b66c1a79c47fc1d65542d4c1cd81c924b12357d7a11bcfc0854f3e3d10e",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "code": "TGC09-3",
+      "file": "TGC09-3-adcreative-v1.png",
+      "sha256": "53bc5eedeb59832d6c6dd292557057a30d463aa9976c1ad57aa63dfcd12fc165",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
+  ],
+  "source_hash_matches": 9
+}

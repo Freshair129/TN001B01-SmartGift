@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "UT3056-clean-v1",
+  "created_at": "2026-08-30T10:14:59.059Z",
+  "internal_only": true,
+  "status": "edited_background_ai_cleanup_review_required",
+  "generated": true,
+  "ai_edited": true,
+  "generation_method": "built-in image_gen.imagegen",
+  "cli_fallback_used": false,
+  "edit_intent": "Remove water/splashes/droplets from original product photograph to avoid visually implying waterproof capability.",
+  "source": {
+    "path": "O:\\Org-EtohGroup\\SmartGift\\output\\catalog-internal\\refs\\single-UT3056-source.png",
+    "sha256": "37E81F1E234A0348F1DD069A697FE893941E0FB591FDF86595FFDD297EC62AD3",
+    "width_px": 608,
+    "height_px": 608
+  },
+  "output": {
+    "path": "O:/Org-EtohGroup/SmartGift/output/catalog-internal/artwork/UT3056-clean-v1.png",
+    "sha256": "179E61AFD54BDD036FF9DB08168AAE78819FA612881954F0F090896BEF89E0E6",
+    "width_px": 1254,
+    "height_px": 1254,
+    "aspect_ratio": "1:1",
+    "format": "PNG",
+    "bytes": 1469537,
+    "resolution_request": "maximum available via built-in tool",
+    "resampled_or_postprocessed": false
+  },
+  "selected_tool_result": {
+    "path": "C:\\Users\\freshair\\.codex\\generated_images\\01a05202-d15d-75f2-ba2b-5140027f0479\\exec-38ac3904-97de-4419-ae2f-1628bf89907d.png",
+    "attempt": 1
+  },
+  "prompt": "Use case: precise-object-edit.\nAsset type: clean product catalog image for UT3056.\nInput image 1 is the EDIT TARGET and the only product identity source.\n\nRemove ONLY all visible water, splashes, flowing water arcs, droplets and wet sheen from the source image, including water crossing in front of the product and braided strap. Reconstruct only the small product/background areas formerly obscured by water from their immediate surrounding appearance. The image must no longer visually suggest a waterproof claim.\n\nPreserve the exact single camouflage powerbank: unchanged rugged outline, silhouette, proportions, orientation, perspective, olive/khaki camouflage patterns, casing geometry and seams, the same oval button, exactly THREE red indicator lights, the same ports/openings, side details, and all existing source markings without adding or rewriting text. Preserve the exact braided strap attachment, camouflage braid colors, knots, curved shape, black end piece, length and placement from the source. Keep one object only. Do not redesign, smooth away details, duplicate anything, add parts or change specifications.\n\nBackground: plain clean white studio background. Add only a subtle neutral grounded shadow immediately under the existing product/strap to avoid a floating cutout look. Retain the original composition and complete strap framing.\nSquare composition, maximum available output resolution.\nNo water anywhere, no puddles, no splashes, no droplets, no waterproof symbols, no text overlays, no new logos, no specs, no badges, no watermark, no additional products or props.",
+  "visual_review": {
+    "comparison_count": 1,
+    "extra_variants_created": 0,
+    "water_splashes_droplets_removed": true,
+    "single_object_retained": true,
+    "background": "plain white with subtle grounded shadow",
+    "overall_rugged_product_outline_retained": true,
+    "oval_button_retained": true,
+    "red_indicator_count": 3,
+    "overall_braided_strap_curve_and_attachment_retained": true,
+    "added_headline_or_badge_detected": false,
+    "exact_camouflage_pattern_match": false,
+    "exact_port_and_marking_fidelity_certified": false,
+    "material_limitations": [
+      "AI regenerated fine camouflage and casing/port details, especially where original water obscured the 608x608 source; exact pattern positions and small markings are not pixel-identical.",
+      "This image removes visual water context but is not evidence of any waterproof rating or product specification.",
+      "Native tool result is 1254x1254; no upscaling was applied."
+    ],
+    "publication_ready": false,
+    "required_before_external_use": "Owner should check fine product, camouflage, port and strap identity against a verified dry product photograph."
+  }
+}
+

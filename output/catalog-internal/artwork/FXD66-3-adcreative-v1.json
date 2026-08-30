@@ -1,0 +1,26 @@
+{
+  "tool": "built-in image_gen",
+  "status": "generated_ai_adcreative_review_required",
+  "set_code": "FXD66-3",
+  "source": "../refs/set-FXD66-3-source.png",
+  "source_dimensions": [
+    236,
+    199
+  ],
+  "output_dimensions": [
+    1536,
+    1024
+  ],
+  "selected_generation": "exec-bc9be31a-641d-41f9-9938-9ebbda23d8bc.png",
+  "prompts": [
+    "Use case: precise-object-edit / ads-marketing. Asset: landscape 3:2 premium SmartGift catalog ad creative, highest available resolution. Input image 1 is the authoritative EDIT TARGET photograph of set FXD66-3, not merely mood reference. It is low-resolution; preserve every product identity and do not invent finer printed features. Keep the same THREE physical products: (1) an ivory/off-white tall ribbed handled tumbler with a brown lid, small metallic gold top detail, brown circular side strap attachment and hanging pale strap; (2) the bright orange rounded rectangular power bank with a small black display strip near the top; (3) the white foldable handheld fan with circular radial grille, warm neutral center, handle with a black circular display and light gray lower section. Keep their exact reference silhouettes, proportions, colors, relative arrangement, and the bright orange square presentation box with white inset. No added products or duplicate fans, no extra glass, no invented cables or accessories. Keep the fan visibly a fan and preserve its circular grille. Transform only backdrop, photographic lighting, and staging into a polished real-material studio advertisement: warm pearl/stone background with an understated peach glow, clean grounded shadows and soft directional light, crisp product edges, natural plastic and matte-paper texture. Place the full orange gift box and its original contents on the RIGHT two-thirds of a wide landscape composition; leave the LEFT third calm and mostly empty for text to be typeset later. The reference object layout should remain recognizable from a gentle near-top-down view. Do not generate headlines, labels, new logos, branding or watermarks. Where the reference's fine text/display is illegible, keep it subtle/soft instead of inventing readable writing or new specs. No decorative props. This is a product-faithful ad creative derived from the reference, not a replacement product design.",
+    "Targeted correction only. Image 1 is the generated FXD66-3 advertisement to edit. Image 2 is the original authoritative catalog photo. Keep Image 1 composition, lighting, orange box, all THREE products and their exact arrangement unchanged. Correct only small markings that drifted: the fan's black circular display must show the plain white number 100 as in the original, not 0.0 or a new icon. The hanging ivory tumbler strap must not have newly invented readable branding: preserve the subtle small original printed-mark appearance from Image 2, at similarly indistinct readability, without inventing a word. Do not alter the actual strap shape, brown round attachment, tumbler lid/ribs, power bank, grille, shadows, colors, box, or background. No additional text, props, devices or redesign. Landscape 3:2, retain the image's current resolution."
+  ],
+  "visual_review": {
+    "main_product_count": 3,
+    "main_shapes_and_colors": "retained at catalog-reference level",
+    "fine_markings": "reconstructed from low-resolution reference; not manufacturing or specification proof",
+    "revisions": 1,
+    "claims_authorized": false
+  }
+}

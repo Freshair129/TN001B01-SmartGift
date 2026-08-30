@@ -1,0 +1,59 @@
+{
+  "record_version": "0.1.0b",
+  "created_at": "2026-08-30T17:06:26+07:00",
+  "agent": "ATHER",
+  "classification": "internal-only",
+  "set_code": "TMK00-4",
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "use_case": "precise-object-edit",
+  "cli_used": false,
+  "source": {
+    "role": "edit_target_and_product_reference",
+    "path": "C:/Users/freshair/.codex/visualizations/2026/08/30/01a05202-029a-7c33-9911-d7fa0ebb1446/adcreative-source-review/set-TMK00-4-source.png",
+    "sha256": "9FE6533C26358F441973A0FA803B81D6DBAA9DCFCBCDE0DEE7F95F34537CDA6E",
+    "width_px": 279,
+    "height_px": 252
+  },
+  "exact_prompt": "Use case: precise-object-edit\nAsset type: luxury landscape 3:2 catalog ad creative, product photography\nInput image 1 is the EDIT TARGET and the only product truth: the attached low-resolution TMK00-4 source product photograph.\nPrimary request: Replace only the plain white background and improve the studio lighting. Preserve the actual gift set exactly; do not redesign or reinterpret the products.\n\nScene/backdrop: a clean charcoal and dark stone studio desk surface with a restrained neutral dark background, soft side light, and gentle warm gold edge highlights.\nComposition/framing: landscape 3:2. Place the complete existing group together in the RIGHT TWO-THIRDS, leaving clean empty LEFT-THIRD negative space for copy to be added later. Keep the same relative arrangement and viewing angle within the group as the source: the open presentation box at left/front of the group and its matching upright bag behind/to its right. Keep every original object fully inside the frame.\nSubject invariants: preserve exactly one open black presentation box with its existing lid, compartments, insert, front handle and thin gold edge detail; exactly one matching black gift bag with thin gold rectangular outline and its original handles; exactly one black handled mug in the original left compartment, including its original lid silhouette and finish; exactly one black square magnetic charging stand/pad with the white circular ring and central detail in the upper-right compartment; and exactly one compact white/grey cleaning-brush tool in the lower-right compartment. Preserve their exact shapes, colors, proportions, visible materials, orientation, relative layout and count. The box handle, bag handles and insert remain parts of the original packaging, not new separate objects. Do not turn the brush into a pen, add contents, or introduce an extra charging device.\nLighting/mood: quiet premium commercial product photography, realistic soft contact shadows, legible black-on-black edges, controlled highlights, no dramatic glare obscuring details.\nText: no added text, no headlines, no logos, no watermarks, no certifications or claims.\nAvoid: any extra physical props, plants, decorations, hands, people, cables, replacement products, recoloring, changed product geometry, invented markings, or labels. Do not infer new fine product details from the low-resolution reference.\nOutput: highest native resolution available, landscape 3:2. Faithful product preservation takes priority over beautification.",
+  "output": {
+    "path": "O:/Org-EtohGroup/SmartGift/output/catalog-internal/artwork/TMK00-4-adcreative-v1.png",
+    "generated_original_path": "C:/Users/freshair/.codex/generated_images/01a05202-bd0a-7772-b37c-dc7f459b93ab/exec-6cb755bf-b836-4f6e-8748-d7e1fed3f1df.png",
+    "sha256": "710893190D162C3C100151051943309B45760DE962A692EE763C5C8F8CACED3F",
+    "width_px": 1536,
+    "height_px": 1024,
+    "aspect_ratio": "3:2",
+    "format": "PNG",
+    "bytes": 2430740,
+    "highest_native_resolution_requested": true,
+    "upscaled_after_generation": false,
+    "status": "selected_for_catalog_layout_review",
+    "is_generated_creative": true,
+    "is_product_truth": false
+  },
+  "visual_review": {
+    "compared_against_source": true,
+    "expected_count": {
+      "open_presentation_box": 1,
+      "matching_black_bag": 1,
+      "black_handled_mug": 1,
+      "black_magnetic_charging_pad": 1,
+      "white_grey_cleaning_brush": 1
+    },
+    "visible_object_count_matches": true,
+    "basic_color_and_relative_layout_preserved": true,
+    "major_object_or_count_drift": false,
+    "extra_physical_props_observed": false,
+    "added_headlines_logos_or_watermarks_observed": false,
+    "left_negative_space": "approximately one third",
+    "targeted_revision_used": false,
+    "revision_count": 0,
+    "review_scope": "Visual comparison of visible objects, count, basic shapes, color, relative arrangement and composition; not a technical product certification."
+  },
+  "limitations": [
+    "The 279x252 source is too small to verify fine geometry, textures or small markings; generated fine detail is reconstructed and not authoritative.",
+    "The charging pad central detail and other small edges are not readable enough in the source to certify exact reproduction.",
+    "Use this image as generated presentation artwork alongside independently verified source imagery and copy; never use it to establish product specifications, material claims, dimensions or BOM.",
+    "The built-in tool returned 1536x1024 pixels. No post-generation upscaling was applied; suitability for print depends on final placement size and preflight."
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "record_version": "0.1.0b",
+  "checked_at": "2026-08-30T17:25:56+07:00",
+  "classification": "internal-only; product-only audit",
+  "source_pdf": "output/pdf/smartgift-catalog-adcreative-proof-v0.2.pdf",
+  "sha256": "91d8e8f355d6d1752715d87649992ab1bae021b3e90c072f46d0221b94efffbf",
+  "expected_sha256_match": true,
+  "bytes": 4035654,
+  "unchanged_during_read_only_inspection": true,
+  "status": "pass",
+  "scope": "Text/content, font resources, metadata, bookmarks, links and attachments; not PDF/X or complete visual/print preflight.",
+  "content": {
+    "page_count": 12,
+    "page_size_mm": [
+      297,
+      210
+    ],
+    "all_pages_a4_landscape": true,
+    "thai_text_pages": 12,
+    "replacement_characters": 0,
+    "null_characters": 0,
+    "gift_set_codes": [
+      "FXD66-3",
+      "TMK00-4",
+      "FXD6064",
+      "TGC09-3"
+    ],
+    "gift_set_detail_page_checks": {
+      "FXD66-3": true,
+      "TMK00-4": true,
+      "FXD6064": true,
+      "TGC09-3": true
+    },
+    "single_product_count": 6,
+    "single_product_pages": {
+      "8": {
+        "expected_codes": [
+          "S-1052",
+          "BST61401",
+          "DW03"
+        ],
+        "found_unique_codes": [
+          "S-1052",
+          "BST61401",
+          "DW03"
+        ],
+        "count": 3
+      },
+      "9": {
+        "expected_codes": [
+          "UT3056",
+          "S1033",
+          "W502"
+        ],
+        "found_unique_codes": [
+          "UT3056",
+          "S1033",
+          "W502"
+        ],
+        "count": 3
+      }
+    },
+    "page_9_ai_disclosure_corrected": true
+  },
+  "fonts": {
+    "all_resources_embedded": true,
+    "resources": [
+      {
+        "name": "/AAAAAA+LeelawadeeUI-Bold",
+        "subtype": "/TrueType",
+        "embedded": true,
+        "resource_page_count": 12,
+        "nonempty_text_page_count": 12
+      },
+      {
+        "name": "/AAAAAA+LeelawadeeUI",
+        "subtype": "/TrueType",
+        "embedded": true,
+        "resource_page_count": 12,
+        "nonempty_text_page_count": 12
+      }
+    ],
+    "helvetica_resource_present": false
+  },
+  "navigation": {
+    "bookmark_count": 12,
+    "bookmark_destinations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "all_bookmarks_valid": true,
+    "link_count": 4,
+    "links": [
+      {
+        "source_page": 3,
+        "kind": "internal",
+        "target_page": 4,
+        "rectangle_in_page": true
+      },
+      {
+        "source_page": 3,
+        "kind": "internal",
+        "target_page": 5,
+        "rectangle_in_page": true
+      },
+      {
+        "source_page": 3,
+        "kind": "internal",
+        "target_page": 6,
+        "rectangle_in_page": true
+      },
+      {
+        "source_page": 3,
+        "kind": "internal",
+        "target_page": 7,
+        "rectangle_in_page": true
+      }
+    ],
+    "all_links_valid": true
+  },
+  "privacy": {
+    "scan_pattern_hit_counts": {
+      "source_paths": 0,
+      "hashes": 0,
+      "internal_cost_or_provenance": 0,
+      "email": 0,
+      "phone_like": 0
+    },
+    "info_metadata_field_count": 9,
+    "xmp_or_object_metadata_stream_count": 0,
+    "attachment_name_count": 0,
+    "embedded_file_object_count": 0,
+    "filespec_object_count": 0,
+    "form_field_count": 0,
+    "other_annotation_types": [],
+    "raw_potential_pii_values_saved": false
+  },
+  "issues": []
+}

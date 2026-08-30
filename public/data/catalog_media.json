@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0b",
+  "status": "catalog_visual_proof",
+  "disclaimer_th": "ภาพสร้างสรรค์จากภาพสินค้าอ้างอิงใน catalog ใช้เพื่อดูรูปทรงและบรรยากาศเท่านั้น ไม่ใช่หลักฐานสเปก ราคา stock หรือ BOM",
+  "hero": {
+    "code": "FXD66-3",
+    "title": "ภาพชุดจริงใน catalog ที่สร้างฉากใหม่",
+    "image": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+    "generated_from_catalog": true,
+    "visual_status": "generated_from_source_reference"
+  },
+  "sets": [
+    {
+      "code": "FXD66-3",
+      "title": "ชุดแก้ว พาวเวอร์แบงค์ และพัดลม",
+      "image": "/assets/catalog-media/set-FXD66-3.webp",
+      "generated_from_catalog": true,
+      "visual_status": "source_matched_creative_proof",
+      "source_label": "รหัส + ภาพอยู่ใน catalog หน้าเดียวกัน"
+    },
+    {
+      "code": "TMK00-4",
+      "title": "ชุดแก้ว แท่นชาร์จ และแปรงทำความสะอาด",
+      "image": "/assets/catalog-media/set-TMK00-4.webp",
+      "generated_from_catalog": true,
+      "visual_status": "source_matched_creative_proof",
+      "source_label": "รหัส + ภาพอยู่ใน catalog หน้าเดียวกัน"
+    },
+    {
+      "code": "FXD6064",
+      "title": "ชุดแก้วลายดอกไม้และโคมไฟหนังสือ",
+      "image": "/assets/catalog-media/set-FXD6064.webp",
+      "generated_from_catalog": true,
+      "visual_status": "source_matched_creative_proof",
+      "source_label": "รหัส + ภาพอยู่ใน catalog หน้าเดียวกัน"
+    },
+    {
+      "code": "TGC09-3",
+      "title": "ชุดกระบอกน้ำ สมุด A5 และปากกา",
+      "image": "/assets/catalog-media/set-TGC09-3.webp",
+      "generated_from_catalog": true,
+      "visual_status": "source_matched_creative_proof",
+      "source_label": "รหัส + ภาพอยู่ใน catalog หน้าเดียวกัน"
+    }
+  ],
+  "products": [
+    {
+      "code": "S-1052",
+      "title": "พาวเวอร์แบงค์ทรงจัตุรัสพร้อมสายคล้อง",
+      "image": "/assets/catalog-media/product-s_1052.webp",
+      "generated_from_catalog": false,
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับใน catalog"
+    },
+    {
+      "code": "BST61401",
+      "title": "พาวเวอร์แบงค์สีขาวผิวร่อง",
+      "image": "/assets/catalog-media/product-bst61401.webp",
+      "generated_from_catalog": false,
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับใน catalog"
+    },
+    {
+      "code": "DW03",
+      "title": "พาวเวอร์แบงค์สีส้มพร้อมสายในตัว",
+      "image": "/assets/catalog-media/product-dw03.webp",
+      "generated_from_catalog": false,
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับใน catalog"
+    },
+    {
+      "code": "UT3056",
+      "title": "พาวเวอร์แบงค์ลายคาโมพร้อมสายคล้อง",
+      "image": "/assets/catalog-media/product-ut3056.webp",
+      "generated_from_catalog": true,
+      "visual_status": "generated-clean",
+      "source_label": "ภาพจัดแสงใหม่จากภาพต้นฉบับ"
+    },
+    {
+      "code": "S1033",
+      "title": "พาวเวอร์แบงค์สีขาวพร้อมขาตั้งพับ",
+      "image": "/assets/catalog-media/product-s1033.webp",
+      "generated_from_catalog": true,
+      "visual_status": "generated-clean",
+      "source_label": "ภาพจัดแสงใหม่จากภาพต้นฉบับ"
+    },
+    {
+      "code": "W502",
+      "title": "พาวเวอร์แบงค์สีไอวอรีพร้อมขาตั้ง",
+      "image": "/assets/catalog-media/product-w502.webp",
+      "generated_from_catalog": false,
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับใน catalog"
+    }
+  ]
+}

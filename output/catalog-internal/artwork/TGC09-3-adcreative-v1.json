@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "asset_code": "TGC09-3",
+  "asset_type": "adcreative-proof",
+  "created_at": "2026-08-30T10:12:59.416Z",
+  "status": "VISUALLY_REVIEWED_INTERNAL_PROOF",
+  "generator": {
+    "mode": "built-in image_gen",
+    "calls": 2,
+    "selected_revision": 1,
+    "cli_used": false,
+    "requested_resolution": "Maximum native resolution available, landscape 3:2",
+    "returned_resolution": [
+      1536,
+      1024
+    ]
+  },
+  "source": {
+    "image_path": "C:/Users/freshair/.codex/visualizations/2026/08/30/01a05202-029a-7c33-9911-d7fa0ebb1446/adcreative-source-review/set-TGC09-3-source.png",
+    "image_sha256": "92ef0306d2b87343d0f90aa16f39400ac4231f20789e52c4846f4bf07b65af99",
+    "image_resolution": [
+      256,
+      222
+    ],
+    "catalogue_path": "O:/Org-EtohGroup/SmartGift/data-pipeline/01_raw/02_factory_pricelists_pdf/02-ใบราคา2025-ชุดของขวัญธุรกิจ-ฺBusinessGift.pdf",
+    "catalogue_sha256": "1369832f7df36d9f00230ae2cfc872965246804a9ef1f4be5f4518b798f95002",
+    "catalogue_page": 22,
+    "embedded_image": "Image222",
+    "identity_evidence": "Product code, product text and photograph on the same PDF page; canonical BOM not used"
+  },
+  "product_constraints": {
+    "count": 3,
+    "products": [
+      "Black cylindrical vacuum bottle",
+      "Slim black pen",
+      "Closed black A5 notebook"
+    ],
+    "arrangement": "Bottle left, pen in narrow middle channel, closed notebook right, within original dark rectangular box and pale fitted insert",
+    "added_products": false
+  },
+  "prompts": {
+    "initial_exact": "Use case: ads-marketing / reference-preserving product mockup.\nAsset type: premium landscape 3:2 catalogue ad creative, at the maximum native resolution available.\nInput image: the attached local image is the sole product identity and packaging reference for SmartGift set TGC09-3. It is a low-resolution source, so preserve only what is actually visible and do not invent product details.\n\nCreate a photorealistic studio presentation of exactly this complete gift set on a warm ivory / pale stone studio surface, with calm architectural light and an elegant soft shadow. Place the whole hero set in the right two-thirds of the landscape composition, leaving generous clean empty space on the left for copy that will be typeset later. No text should be rendered in the image.\n\nProduct invariants: exactly THREE objects inside the original open rectangular dark charcoal rigid gift box with its pale white fitted insert: (1) one tall straight black cylindrical vacuum bottle on the left, with the same flat capped top, cap seam, diameter, and height; (2) one very slim black pen immediately to the bottle's right, aligned vertically in the narrow central channel, keeping its small metal clip/highlights as shown; (3) one CLOSED black A5 notebook on the right with the same softly rounded corners, subtle leather-like grain, edge stitching, and short fastening strap with round unbranded button on its right edge. Keep the original relative scale, ordering, spacing and packaging arrangement. Retain the original near-overhead product viewpoint. Make the original box sit naturally in the new studio environment; preserve its contents and geometry.\n\nColors and materials must remain faithful to the reference: black bottle, black slim pen, closed black notebook, dark charcoal outer box, pale fitted insert. Improve studio lighting and the surrounding composition only; do not redesign or reinterpret the products. Preserve the visible silhouettes and proportions, with restrained believable reflections.\n\nNo added products or props, no extra mug, charger, cable, plant, ribbon, flower, paper, open notebook or second box; no duplicated item; no hands; no people; no invented logos, readable text, certification badges or watermark. Do not add decorative hardware or change the bottle into a tumbler. Do not change product shape, material, color, count, or its arrangement. The final visual is a high-quality ad-creative proof based on a real catalogue reference, not evidence of a newly photographed or newly certified product.",
+    "revision1_exact": "Use case: precise-object-edit.\nEdit target: the attached generated TGC09-3 ad-creative image.\nMake ONE small local correction only: remove the tiny invented lettering/emblem from the circular fastening button on the black notebook. Keep the exact same round button, metallic rim, center color, diameter, position and reflected light, but its center must be completely plain and unbranded, with no logo, symbol, engraving or readable text.\n\nKeep absolutely everything else unchanged: the 3:2 landscape canvas; warm ivory stone background; the empty left side; the light and shadows; the exact box and pale insert; one black cylindrical vacuum bottle at left, one slim black pen at center, one CLOSED black A5 notebook at right; the original proportions, black colors, materials, stitching, strap, count and product arrangement. Exactly three products. No extra object, no new logo, no text, no watermark. Do not alter the bottle, pen, notebook body, box or background. Use maximum native resolution available."
+  },
+  "generated_files": {
+    "first_candidate": "C:/Users/freshair/.codex/generated_images/01a05202-abe7-7433-867c-5f470e9471cb/exec-d5ca9ed4-5f31-4a8a-8fc7-2b7f06ece455.png",
+    "selected_candidate": "C:/Users/freshair/.codex/generated_images/01a05202-abe7-7433-867c-5f470e9471cb/exec-1cbcf39d-26b3-4270-9124-5555acda6c34.png"
+  },
+  "output": {
+    "path": "O:/Org-EtohGroup/SmartGift/output/catalog-internal/artwork/TGC09-3-adcreative-v1.png",
+    "sha256": "53bc5eedeb59832d6c6dd292557057a30d463aa9976c1ad57aa63dfcd12fc165",
+    "format": "PNG",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "bytes": 2577135,
+    "aspect_ratio": "3:2",
+    "post_generation_image_editing": "None; selected built-in output copied unchanged"
+  },
+  "visual_review": {
+    "status": "PASS_FOR_INTERNAL_CREATIVE_PROOF",
+    "checked": [
+      "Three intended products only",
+      "Reference ordering and original box arrangement retained",
+      "Black bottle, pen and closed notebook retained",
+      "Landscape framing with negative space on the left",
+      "No added props, mug or charger",
+      "No readable text or logo visible after revision"
+    ],
+    "revision_reason": "First candidate had an invented tiny emblem or lettering on the notebook fastening button. One targeted built-in edit replaced it with a plain unbranded button.",
+    "limitations": [
+      "The reference is only 256x222 pixels; exact material finish and small construction details cannot be established from it.",
+      "Generative reconstruction is not a pixel-identical reproduction of the source.",
+      "This is an AI-generated ad-creative proof based on a real catalogue photograph, not a newly captured product photograph.",
+      "No stock, price, dimensions, certification, performance, materials specification or manufacturing fidelity is certified by this image.",
+      "Image ownership and external publication authorization were not verified in this bounded task."
+    ]
+  }
+}

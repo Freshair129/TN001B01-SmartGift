@@ -1,0 +1,82 @@
+{
+  "pdf": "O:\\Org-EtohGroup\\SmartGift\\output\\pdf\\smartgift-catalog-adcreative-proof-v0.2.pdf",
+  "pages": 12,
+  "page_mm": [
+    297,
+    210
+  ],
+  "set_count": 4,
+  "single_product_pages": {
+    "8": 3,
+    "9": 3
+  },
+  "sha256": "91d8e8f355d6d1752715d87649992ab1bae021b3e90c072f46d0221b94efffbf",
+  "bytes": 4035654,
+  "font_shaping": true,
+  "pdfx_preflight": "NOT_PERFORMED",
+  "status": "creative-proof",
+  "attachments": 0,
+  "text_chars": 3806,
+  "embedded_images": {
+    "artwork/FXD66-3-adcreative-v1.png": {
+      "pixels": [
+        1536,
+        1024
+      ],
+      "jpeg_quality": 95,
+      "resized": false,
+      "source_bytes": 2658618,
+      "embedded_bytes": 492788
+    },
+    "artwork/TMK00-4-adcreative-v1.png": {
+      "pixels": [
+        1536,
+        1024
+      ],
+      "jpeg_quality": 95,
+      "resized": false,
+      "source_bytes": 2430740,
+      "embedded_bytes": 459381
+    },
+    "artwork/FXD6064-adcreative-v1.png": {
+      "pixels": [
+        1536,
+        1024
+      ],
+      "jpeg_quality": 95,
+      "resized": false,
+      "source_bytes": 1914432,
+      "embedded_bytes": 363363
+    },
+    "artwork/TGC09-3-adcreative-v1.png": {
+      "pixels": [
+        1536,
+        1024
+      ],
+      "jpeg_quality": 95,
+      "resized": false,
+      "source_bytes": 2577135,
+      "embedded_bytes": 484478
+    },
+    "artwork/UT3056-clean-v1.png": {
+      "pixels": [
+        1254,
+        1254
+      ],
+      "jpeg_quality": 95,
+      "resized": false,
+      "source_bytes": 1469537,
+      "embedded_bytes": 342881
+    },
+    "artwork/S1033-clean-v1.png": {
+      "pixels": [
+        1254,
+        1254
+      ],
+      "jpeg_quality": 95,
+      "resized": false,
+      "source_bytes": 987954,
+      "embedded_bytes": 162936
+    }
+  }
+}
