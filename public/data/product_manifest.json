@@ -3,33 +3,18 @@
   "tenant_id": "Org-EtohGroup",
   "business_id": "SmartGift",
   "operating_entity": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)",
-  "catalog_version": "v1.3.0-2026.08.30-d4227ecd",
-  "generated_at": "2026-08-30T11:57:23.287945+00:00",
+  "catalog_version": "v1.3.0-2026.08.30-f31f38cf",
+  "generated_at": "2026-08-30T14:01:28.001095+00:00",
   "data_integrity_hashes": {
-    "smartgift_catalog_master": {
-      "path": "data-pipeline/02_prepared/smartgift_catalog_master.json",
-      "size_bytes": 854047,
-      "sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
-    },
-    "pricelist_master": {
-      "path": "data-pipeline/02_prepared/pricelist_master.json",
-      "size_bytes": 6242664,
-      "sha256": "729bebdb0dde3706560d568f000b2f6dbccd40fa5de03189dbfe761e0edf7d74"
-    },
-    "factory_costs": {
-      "path": "data-pipeline/02_prepared/factory_costs.json",
-      "size_bytes": 1001858,
-      "sha256": "c28956c932b659ffe4244d938979703827205db9149c34cd66e9c82927d69a9d"
-    },
-    "catalog_media": {
-      "path": "public/data/catalog_media.json",
-      "size_bytes": 4683,
-      "sha256": "d81403c7a34024e5bad3b2269111732f10a128ce758dd9d14c3dee439fd0b4e8"
-    },
     "pricelist_public": {
-      "path": "public/data/pricelist_public.json",
+      "path": "/data/pricelist_public.json",
       "size_bytes": 1400871,
       "sha256": "f31f38cf34b7a6f92a8d866aa56971d811797943a065d0e0f84484891e03d597"
+    },
+    "catalog_media": {
+      "path": "/data/catalog_media.json",
+      "size_bytes": 4683,
+      "sha256": "d81403c7a34024e5bad3b2269111732f10a128ce758dd9d14c3dee439fd0b4e8"
     }
   },
   "multi_file_index": [
@@ -39,7 +24,7 @@
       "name_en": "Eco-Friendly & Sustainability (Green & Earth)",
       "endpoint_url": "/data/categories/eco-friendly.json",
       "total_products": 4,
-      "sha256": "be516a5355c80281b2aba466ee417755a406a0fcbfe07c4650e223fc5cd4c53f"
+      "sha256": "aaca32b8f98abbc54e3513d3c3423aa1db2b143f2293288808ff4f8004eb3c6e"
     },
     {
       "slug": "classic-oriental",
@@ -47,7 +32,7 @@
       "name_en": "Classic Oriental (Mindfulness & Craft)",
       "endpoint_url": "/data/categories/classic-oriental.json",
       "total_products": 3,
-      "sha256": "18b85ec323777775e2760ab1a049f19ff6a95ba4a4af9dafcf1e8d6693bf8425"
+      "sha256": "19991a97d6016c2d335efe2f7a6e5c1f5008ebf76426a80592b3f0813fb76824"
     },
     {
       "slug": "novelty-self-care",
@@ -55,7 +40,7 @@
       "name_en": "Novelty & Self-Care (Warm & Wellness)",
       "endpoint_url": "/data/categories/novelty-self-care.json",
       "total_products": 5,
-      "sha256": "1daf833d8f7ea0901e6eef324a6ff75baf4f60da8b4e136f4fcc785c02b96044"
+      "sha256": "93d707f14f8499aecb83914e4408615ce971cfd1b3568f28d21ef8a6fd10caf7"
     },
     {
       "slug": "executive-smart-tech",
@@ -63,7 +48,7 @@
       "name_en": "Executive Smart Tech (Modern & Work)",
       "endpoint_url": "/data/categories/executive-smart-tech.json",
       "total_products": 4,
-      "sha256": "5f14f1c5ba096ac1cdf58e31d5a7a692abed474c5505e87ae178c9c03a96c258"
+      "sha256": "47dc4fb81c1f637bd7d1948ed0d4dd703d33a69e22670335c6f3daed026b24ac"
     }
   ],
   "product_image_index": {

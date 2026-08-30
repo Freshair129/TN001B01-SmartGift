@@ -1,7 +1,7 @@
 ---
-version: "0.1.1b"
+version: "0.1.2b"
 created_at: "2026-08-30T19:30:00+07:00,ATHER"
-last_update: "2026-08-30T20:52:00+07:00,Claude"
+last_update: "2026-08-30T21:05:00+07:00,Claude"
 status: "candidate"
 superseded_by: null
 attributes:
@@ -65,7 +65,9 @@ SmartGift จะทำให้ชัดและทันสมัยขึ้�
 
 การซ่อนเมนูไม่ใช่ access control: web endpoint ต้องตอบเฉพาะ projection ที่ผ่าน allowlist; offline package ต้องสร้างจาก projection เดียวกันและตรวจด้วย forbidden-field scan ก่อนส่ง
 
-**Blocker ที่พบตอน review (2026-08-30):** `public/data/product_manifest.json` ปัจจุบันมี `data_integrity_hashes` ที่ระบุ path/size/hash ของ source ภายใน (`data-pipeline/02_prepared/pricelist_master.json`, `factory_costs.json`, `smartgift_catalog_master.json`) ในโฟลเดอร์ `public/` ที่ถูก deploy ซึ่งขัดกับข้อห้ามข้างต้นและ ADR-004 ข้อ 3; ต้องแยก manifest ภายในออกจากฉบับ customer-safe ก่อน deploy web หรือ build offline package ใด ๆ
+**Blocker ที่พบตอน review (2026-08-30) — แก้แล้ว 0.1.2b:** `public/data/product_manifest.json` เคยมี `data_integrity_hashes` ที่ระบุ path/size/hash ของ source ภายใน (`pricelist_master.json`, `factory_costs.json`, `smartgift_catalog_master.json`) ในโฟลเดอร์ `public/` ที่ถูก deploy ซึ่งขัดกับข้อห้ามข้างต้นและ ADR-004 ข้อ 3. ตอน fix ยังพบว่า category slices (`public/data/categories/*.json`) ฝัง `logistics_freight_est` (อัตรา freight ต่อ CBM/kg, ต้นทุน inland China ต่อชิ้น) และ `packaging_carton` (CBM) ซึ่งต้องห้ามเช่นกัน. `generate_product_manifest.py` ถูกแก้ให้: (1) public manifest มี hash เฉพาะ `pricelist_public`/`catalog_media` ด้วย endpoint path ไม่ใช่ repo path, (2) lineage ภายในเต็มย้ายไป audit manifest ใต้ `data-pipeline/04_review_reports/` ที่ไม่ถูก deploy, (3) slice products ผ่าน field allowlist ตัด freight/carton/`product_master` ออก, (4) `catalog_version` คิดจาก hash ของ `pricelist_public` ไม่ใช่ master, (5) เพิ่ม fail-closed boundary scan ใน generator และ unit tests
+
+**ความเสี่ยงที่ยังเหลือ (แยก track):** `public/index.html` (internal dashboard) อยู่ใน deploy scope และฝัง client code ที่มีสูตร landed cost, คอลัมน์ factory cost/CBM และ path `data-pipeline/` — ข้อมูลภายในไม่ได้ถูก deploy จึงไม่รั่วเป็นตัวเลข แต่โครงสูตรและชื่อ field ภายในเปิดเผยในไฟล์สาธารณะ; ควรแยก internal dashboard ออกจาก public Expo surface ก่อน cutover ตาม §3 ข้อ 1
 
 ## 5. ประสบการณ์ Catalog หน้าเว็บ
 
@@ -178,11 +180,13 @@ SmartGift จะทำให้ชัดและทันสมัยขึ้�
 ## Version diff
 
 - `0.1.0b candidate`: เพิ่มข้อเสนอแยก web catalog กับ offline single-file/PDF, interaction baseline จาก FlipHTML5, SmartGift Orange visual system, customer-safe data boundary และ verification gates
+- `0.1.1b` → `0.1.2b`: ปิด Blocker ของ `product_manifest.json` — แยก public/internal manifest, allowlist ให้ category slices (ตัด freight/CBM/carton/`product_master`), `catalog_version` จาก hash ของ `pricelist_public`, เพิ่ม boundary scan + tests; บันทึกความเสี่ยงที่เหลือของ `public/index.html`
 - `0.1.0b` → `0.1.1b` (review pass): บันทึก Blocker ของ `product_manifest.json` ที่มี source path/hash ภายในใน `public/`; เพิ่ม lineage ของ category slices และ customer-safe manifest; กำหนด size budget ≤25 MB กับฟอนต์ไทย subset ฝังไฟล์; auto-flip เริ่มต้นปิดและเคารพ reduced motion; ระบุ dependency ว่า BOM ยัง `verified=false` ทั้ง 17 แถว และ scanner ระดับ bundle ยังต้องสร้าง; เพิ่ม peer SPEC-EXPO-CATALOG-MEDIA และเงื่อนไขภาพ generated ที่มี source reference
 
 ## CHANGELOG
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
+| 0.1.2b | 2026-08-30 | candidate | ปิด blocker product_manifest: แยก public/internal manifest, slice allowlist ตัด freight/CBM, boundary scan + tests; note ความเสี่ยง index.html | uncommitted | Claude |
 | 0.1.1b | 2026-08-30 | candidate | review pass: blocker product_manifest, lineage หมวด/manifest, size/font budget, reduced motion, BOM/scanner dependency, peer media spec | cd5d7d2 | Claude |
 | 0.1.0b | 2026-08-30 | candidate | เสนอ web/offline catalog แยก runtime พร้อม flipbook interactions และ offline acceptance | cd5d7d2 | ATHER |

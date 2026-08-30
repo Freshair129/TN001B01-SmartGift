@@ -1,10 +1,16 @@
 """
 SmartGift Product & Catalog Manifest Generator
 Generates:
-  1. SHA-256 Data Integrity Hashes for all catalog sub-datasets
+  1. SHA-256 Data Integrity Hashes for catalog sub-datasets
   2. Multi-File Category Slices under public/data/categories/<slug>.json
   3. Product Image Asset Path Index for Frontend & Web Applications
-  4. Public Web Manifest (public/data/product_manifest.json) & Audit Log
+  4. Public Web Manifest (public/data/product_manifest.json) & Internal Audit Manifest
+
+Customer-safe boundary (ADR-004 Decision #3, SPEC-WEB-OFFLINE-CATALOG §4):
+the public manifest and category slices must not carry internal repo paths,
+source hashes, factory cost, CBM/freight, or supplier lineage. Full source
+lineage lives only in the internal audit manifest under data-pipeline/,
+which .vercelignore keeps out of every deployment.
 """
 
 import os
@@ -56,7 +62,26 @@ class ProductManifestGenerator:
                 return json.load(f)
         return {}
 
-    def compute_integrity_hashes(self) -> Dict[str, Dict[str, Any]]:
+    @staticmethod
+    def _hash_entry(filepath: str, served_path: str) -> Dict[str, Any]:
+        if os.path.exists(filepath):
+            return {
+                "path": served_path,
+                "size_bytes": os.path.getsize(filepath),
+                "sha256": compute_file_sha256(filepath)
+            }
+        return {"path": served_path, "size_bytes": 0, "sha256": ""}
+
+    def compute_public_integrity_hashes(self) -> Dict[str, Dict[str, Any]]:
+        """Hashes of customer-safe artifacts the web surface actually serves.
+        Paths are the public endpoint URLs, never internal repo paths."""
+        return {
+            "pricelist_public": self._hash_entry(PRICELIST_PUBLIC_PATH, "/data/pricelist_public.json"),
+            "catalog_media": self._hash_entry(CATALOG_MEDIA_PATH, "/data/catalog_media.json")
+        }
+
+    def compute_internal_integrity_hashes(self) -> Dict[str, Dict[str, Any]]:
+        """Full source lineage with repo paths — internal audit manifest only."""
         target_files = {
             "smartgift_catalog_master": MASTER_CATALOG_PATH,
             "pricelist_master": PRICELIST_MASTER_PATH,
@@ -64,22 +89,7 @@ class ProductManifestGenerator:
             "catalog_media": CATALOG_MEDIA_PATH,
             "pricelist_public": PRICELIST_PUBLIC_PATH
         }
-        
-        hashes = {}
-        for key, filepath in target_files.items():
-            if os.path.exists(filepath):
-                hashes[key] = {
-                    "path": filepath,
-                    "size_bytes": os.path.getsize(filepath),
-                    "sha256": compute_file_sha256(filepath)
-                }
-            else:
-                hashes[key] = {
-                    "path": filepath,
-                    "size_bytes": 0,
-                    "sha256": ""
-                }
-        return hashes
+        return {key: self._hash_entry(path, path) for key, path in target_files.items()}
 
     def build_product_image_index(self) -> Dict[str, Dict[str, Any]]:
         """Maps product/offer code to image path, title, visual status and fallback details."""
@@ -152,11 +162,18 @@ class ProductManifestGenerator:
 
         return index
 
+    # Customer-safe product fields for the public category slices (SPEC-WEB-OFFLINE-CATALOG §4).
+    # Freight/CBM/carton logistics and internal master references must never be listed here.
+    PUBLIC_PRODUCT_FIELDS = (
+        "code", "name_th", "name_en", "category", "category_slug", "product_family",
+        "material", "color", "dimensions_cm", "unit_weight_kg", "srp_price", "price_tiers"
+    )
+
     def build_multi_file_category_slices(self, image_index: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Splits products into category JSON files under public/data/categories/<slug>.json."""
         categories = self.master_data.get("top_level_categories", [])
         canonical_products = self.master_data.get("canonical_products", [])
-        
+
         category_index_list = []
 
         for cat in categories:
@@ -170,10 +187,10 @@ class ProductManifestGenerator:
                 if p.get("category_slug") == slug or cat.get("name_en", "") in p.get("category", "")
             ]
 
-            # Attach image paths to category items
+            # Project onto the customer-safe allowlist and attach image paths
             enriched_products = []
             for p in cat_products:
-                p_copy = dict(p)
+                p_copy = {k: p[k] for k in self.PUBLIC_PRODUCT_FIELDS if k in p}
                 code = p_copy.get("code")
                 p_copy["image_info"] = image_index.get(code, {
                     "image_url": DEFAULT_FALLBACK_IMAGE,
@@ -207,16 +224,19 @@ class ProductManifestGenerator:
 
     def generate_manifest(self) -> Dict[str, Any]:
         print("🔨 Generating SmartGift Product & Catalog Manifest...")
-        
-        integrity_hashes = self.compute_integrity_hashes()
+
+        public_hashes = self.compute_public_integrity_hashes()
+        internal_hashes = self.compute_internal_integrity_hashes()
         image_index = self.build_product_image_index()
         category_slices = self.build_multi_file_category_slices(image_index)
 
         now_utc = datetime.now(timezone.utc)
         date_tag = now_utc.strftime("%Y.%m.%d")
-        
-        master_sha = integrity_hashes.get("smartgift_catalog_master", {}).get("sha256", "")[:8]
-        catalog_version = f"v1.3.0-{date_tag}-{master_sha}"
+
+        # Customer-visible version derives from the customer-safe snapshot itself,
+        # never from an internal source artifact hash (SPEC-WEB-OFFLINE-CATALOG §3.3).
+        public_sha = public_hashes.get("pricelist_public", {}).get("sha256", "")[:8]
+        catalog_version = f"v1.3.0-{date_tag}-{public_sha}"
 
         manifest = {
             "schema_version": "1.3.0",
@@ -225,7 +245,7 @@ class ProductManifestGenerator:
             "operating_entity": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)",
             "catalog_version": catalog_version,
             "generated_at": now_utc.isoformat(),
-            "data_integrity_hashes": integrity_hashes,
+            "data_integrity_hashes": public_hashes,
             "multi_file_index": category_slices,
             "product_image_index": image_index,
             "summary_stats": {
@@ -236,19 +256,55 @@ class ProductManifestGenerator:
             }
         }
 
-        # Write Web-facing Manifest
+        # Write Web-facing Manifest (customer-safe only)
         with open(PUBLIC_MANIFEST_PATH, "w", encoding="utf-8") as f:
             json.dump(manifest, f, ensure_ascii=False, indent=2)
 
-        # Write Audit Manifest Report
+        # Write Internal Audit Manifest with full source lineage (non-deployed path)
+        audit_manifest = {
+            **manifest,
+            "data_integrity_hashes": internal_hashes,
+            "source_catalog_version_basis": {
+                "public_snapshot": "pricelist_public",
+                "master_sha256": internal_hashes.get("smartgift_catalog_master", {}).get("sha256", "")
+            },
+            "published_public_hashes": public_hashes
+        }
         with open(AUDIT_MANIFEST_PATH, "w", encoding="utf-8") as f:
-            json.dump(manifest, f, ensure_ascii=False, indent=2)
+            json.dump(audit_manifest, f, ensure_ascii=False, indent=2)
+
+        self.verify_public_boundary()
 
         print(f"✅ Product Manifest published to '{PUBLIC_MANIFEST_PATH}'")
         print(f"✅ Audit Manifest saved to '{AUDIT_MANIFEST_PATH}'")
         print(f"📊 Categories Sliced: {len(category_slices)}")
         print(f"🖼️ Images Indexed   : {len(image_index)}")
         return manifest
+
+    FORBIDDEN_PUBLIC_SUBSTRINGS = (
+        "data-pipeline/", "factory_cost", "pricelist_master", "smartgift_catalog_master",
+        "freight", "cbm", "flowaccount", "supplier"
+    )
+
+    def verify_public_boundary(self) -> None:
+        """Fail-closed scan: generated public data files must not contain
+        internal source paths or forbidden cost/logistics markers."""
+        targets = [PUBLIC_MANIFEST_PATH] + [
+            os.path.join(CATEGORIES_DIR, f)
+            for f in sorted(os.listdir(CATEGORIES_DIR)) if f.endswith(".json")
+        ]
+        violations = []
+        for path in targets:
+            with open(path, "r", encoding="utf-8") as f:
+                content = f.read().lower()
+            for marker in self.FORBIDDEN_PUBLIC_SUBSTRINGS:
+                if marker in content:
+                    violations.append(f"{path}: contains '{marker}'")
+        if violations:
+            for v in violations:
+                print(f"⛔ PUBLIC BOUNDARY VIOLATION: {v}")
+            raise SystemExit(1)
+        print("🛡️ Public boundary scan passed (no internal paths / cost / logistics markers)")
 
 def main():
     generator = ProductManifestGenerator()

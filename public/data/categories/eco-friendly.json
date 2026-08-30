@@ -21,17 +21,15 @@
       "name_en": "Thermal Tumbler SUS316",
       "category": "Eco-Friendly & Sustainability (Green & Earth)",
       "category_slug": "eco-friendly",
-      "product_master": "PROD-MASTER-TMB-01",
       "product_family": "PF-DRINKWARE",
-      "aliases": [
-        "แก้วทัมเบลอร์",
-        "แก้วเก็บความเย็น",
-        "Thermal Tumbler",
-        "SUS316 Tumbler",
-        "กระบอกน้ำสแตนเลส",
-        "TMB-316",
-        "Tumbler SUS316"
-      ],
+      "material": "generic",
+      "color": "unspecified",
+      "dimensions_cm": {
+        "length": 8.0,
+        "width": 8.0,
+        "height": 21.0
+      },
+      "unit_weight_kg": 0.35,
       "srp_price": 320.0,
       "price_tiers": [
         {
@@ -67,36 +65,6 @@
           "unit_price": 185.0
         }
       ],
-      "dimensions_cm": {
-        "length": 8.0,
-        "width": 8.0,
-        "height": 21.0
-      },
-      "unit_weight_kg": 0.35,
-      "packaging_carton": {
-        "upc": 30,
-        "carton_length_cm": 45.0,
-        "carton_width_cm": 38.0,
-        "carton_height_cm": 44.0,
-        "carton_weight_kg": 11.8,
-        "carton_cbm": 0.07524,
-        "cbm_per_unit": 0.002508,
-        "density_kg_per_cbm": 156.83,
-        "chargeable_basis": "volume"
-      },
-      "logistics_freight_est": {
-        "goods_type": "general",
-        "shipping_mode": "truck",
-        "freight_rate": {
-          "cbm": 6400,
-          "kg": 16
-        },
-        "freight_thb_per_carton": 480.0,
-        "freight_thb_per_unit": 19.2,
-        "inland_china_thb_per_unit": 1.88
-      },
-      "material": "generic",
-      "color": "unspecified",
       "image_info": {
         "code": "PM-TMB",
         "title": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
@@ -112,17 +80,15 @@
       "name_en": "Auto 6-Fold UPF50+ Umbrella",
       "category": "Eco-Friendly & Sustainability (Green & Earth)",
       "category_slug": "eco-friendly",
-      "product_master": "PROD-MASTER-UMB-01",
       "product_family": "PF-OUTDOOR-LIFESTYLE",
-      "aliases": [
-        "ร่มพับ",
-        "ร่มกันแดด",
-        "Auto Umbrella",
-        "UPF50+ Umbrella",
-        "ร่มพับ 6 ตอน",
-        "UMB-UPF50",
-        "Sun & Rain Umbrella"
-      ],
+      "material": "generic",
+      "color": "unspecified",
+      "dimensions_cm": {
+        "length": 28.0,
+        "width": 5.5,
+        "height": 5.5
+      },
+      "unit_weight_kg": 0.38,
       "srp_price": 250.0,
       "price_tiers": [
         {
@@ -158,36 +124,6 @@
           "unit_price": 130.0
         }
       ],
-      "dimensions_cm": {
-        "length": 28.0,
-        "width": 5.5,
-        "height": 5.5
-      },
-      "unit_weight_kg": 0.38,
-      "packaging_carton": {
-        "upc": 50,
-        "carton_length_cm": 45.0,
-        "carton_width_cm": 30.0,
-        "carton_height_cm": 32.0,
-        "carton_weight_kg": 20.0,
-        "carton_cbm": 0.0432,
-        "cbm_per_unit": 0.000864,
-        "density_kg_per_cbm": 462.96,
-        "chargeable_basis": "weight"
-      },
-      "logistics_freight_est": {
-        "goods_type": "general",
-        "shipping_mode": "truck",
-        "freight_rate": {
-          "cbm": 6400,
-          "kg": 16
-        },
-        "freight_thb_per_carton": 320.0,
-        "freight_thb_per_unit": 6.4,
-        "inland_china_thb_per_unit": 0.65
-      },
-      "material": "generic",
-      "color": "unspecified",
       "image_info": {
         "code": "PM-UMB",
         "title": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
@@ -203,17 +139,15 @@
       "name_en": "Smart LED Temperature Thermos Bottle",
       "category": "Eco-Friendly & Sustainability (Green & Earth)",
       "category_slug": "eco-friendly",
-      "product_master": "PROD-MASTER-BOTTLE-LED-01",
       "product_family": "PF-DRINKWARE",
-      "aliases": [
-        "กระบอกน้ำ LED",
-        "กระบอกน้ำบอกอุณหภูมิ",
-        "LED Thermos Bottle",
-        "Smart Temperature Flask",
-        "กระบอกน้ำสุญญากาศ LED",
-        "BOTTLE-LED",
-        "Smart Thermos"
-      ],
+      "material": "generic",
+      "color": "unspecified",
+      "dimensions_cm": {
+        "length": 7.0,
+        "width": 7.0,
+        "height": 23.0
+      },
+      "unit_weight_kg": 0.32,
       "srp_price": 290.0,
       "price_tiers": [
         {
@@ -249,36 +183,6 @@
           "unit_price": 155.0
         }
       ],
-      "dimensions_cm": {
-        "length": 7.0,
-        "width": 7.0,
-        "height": 23.0
-      },
-      "unit_weight_kg": 0.32,
-      "packaging_carton": {
-        "upc": 30,
-        "carton_length_cm": 45.0,
-        "carton_width_cm": 38.0,
-        "carton_height_cm": 48.0,
-        "carton_weight_kg": 11.2,
-        "carton_cbm": 0.08208,
-        "cbm_per_unit": 0.002736,
-        "density_kg_per_cbm": 136.45,
-        "chargeable_basis": "volume"
-      },
-      "logistics_freight_est": {
-        "goods_type": "electronic_tisi",
-        "shipping_mode": "truck",
-        "freight_rate": {
-          "cbm": 6900,
-          "kg": 18
-        },
-        "freight_thb_per_carton": 569.25,
-        "freight_thb_per_unit": 22.77,
-        "inland_china_thb_per_unit": 2.05
-      },
-      "material": "generic",
-      "color": "unspecified",
       "image_info": {
         "code": "PM-BOTTLE-LED",
         "title": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
@@ -294,17 +198,15 @@
       "name_en": "Digital Display Mini Handheld Fan",
       "category": "Eco-Friendly & Sustainability (Green & Earth)",
       "category_slug": "eco-friendly",
-      "product_master": "PROD-MASTER-FAN-01",
       "product_family": "PF-ECO-LIFESTYLE",
-      "aliases": [
-        "พัดลมพกพา",
-        "พัดลมมือถือ",
-        "Mini Handheld Fan",
-        "Digital Display Fan",
-        "พัดลมดิจิทัล 4000mAh",
-        "FAN-4000",
-        "Portable Rechargeable Fan"
-      ],
+      "material": "generic",
+      "color": "unspecified",
+      "dimensions_cm": {
+        "length": 19.5,
+        "width": 9.0,
+        "height": 4.5
+      },
+      "unit_weight_kg": 0.21,
       "srp_price": 260.0,
       "price_tiers": [
         {
@@ -340,36 +242,6 @@
           "unit_price": 138.0
         }
       ],
-      "dimensions_cm": {
-        "length": 19.5,
-        "width": 9.0,
-        "height": 4.5
-      },
-      "unit_weight_kg": 0.21,
-      "packaging_carton": {
-        "upc": 50,
-        "carton_length_cm": 48.0,
-        "carton_width_cm": 38.0,
-        "carton_height_cm": 25.0,
-        "carton_weight_kg": 12.0,
-        "carton_cbm": 0.0456,
-        "cbm_per_unit": 0.000912,
-        "density_kg_per_cbm": 263.16,
-        "chargeable_basis": "volume"
-      },
-      "logistics_freight_est": {
-        "goods_type": "electronic_tisi",
-        "shipping_mode": "truck",
-        "freight_rate": {
-          "cbm": 6900,
-          "kg": 18
-        },
-        "freight_thb_per_carton": 310.5,
-        "freight_thb_per_unit": 6.21,
-        "inland_china_thb_per_unit": 0.68
-      },
-      "material": "generic",
-      "color": "unspecified",
       "image_info": {
         "code": "PM-FAN",
         "title": "พัดลมพกพาดีไซน์มินิมอลหน้าจอดิจิทัลแบต 4000mAh",
