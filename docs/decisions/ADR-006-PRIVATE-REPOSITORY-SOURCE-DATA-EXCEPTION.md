@@ -1,25 +1,25 @@
 ---
-version: "0.1.1b"
+version: "0.1.2b"
 created_at: "2026-08-30T22:03:00+07:00,ATHER,uncommitted"
-last_update: "2026-08-30T22:10:00+07:00,ATHER"
+last_update: "2026-08-30T22:19:00+07:00,ATHER"
 status: "beta"
 superseded_by: null
 attributes:
   domain: "repository-data-governance"
   doc_type: "architecture-decision"
-  scope: "Proposed private-repository exception for existing cost workbooks and customer intake files"
+  scope: "Approved private-repository exception for existing cost workbooks and customer intake files"
   language: "th"
 ---
 
 # ADR-006 — ข้อเสนอเก็บไฟล์ต้นทุนและข้อมูลลูกค้าใน private repository
 
-**สถานะ:** ผู้ใช้ตอบ “approve” อนุมัติ v0.1.0b เมื่อ 2026-08-30; อยู่ระหว่าง implementation ตามขอบเขต ไม่ใช่หลักฐานว่า remote upload สำเร็จแล้ว
+**สถานะ:** ผู้ใช้ตอบ “approve” อนุมัติ v0.1.0b เมื่อ 2026-08-30; อัปโหลดชุดที่อนุมัติและตรวจ remote retrieval/hash สำเร็จแล้วตามหลักฐานด้านล่าง ไม่มีการ deploy หรือขยายสิทธิ์
 
 **Complexity / Risk:** C-3 / HIGH — เปลี่ยนขอบเขตการเก็บข้อมูลลูกค้าและเพิ่ม large-file storage
 
 **Parent / peer:** AGENTS.md ข้อ 5, CR-006, ADR-004 (public boundary), ADR-005 (factory intake)
 
-## Context และหลักฐานปัจจุบัน
+## Context และหลักฐานก่อนอนุมัติ
 
 ผู้ใช้ขอให้นำ Excel ต้นทุนและข้อมูลลูกค้าขึ้น repository เพราะตั้ง private แล้ว คำขอนี้มีเจตนาให้อัปโหลด แต่ขัดกฎเดิมที่ห้าม customer PII เข้า Git ทุกกรณี จึงเสนอข้อยกเว้นเฉพาะงานก่อนปรับกฎตาม Doc-first
 
@@ -83,7 +83,7 @@ Private จำกัดการเข้าถึง repository แต่ข้
 - ตรวจ repo ยัง private และไม่มี customer/raw assets ใน public artifact ที่เกี่ยวข้อง
 - รายงานผลแยก Git commit/push, LFS upload, CI/deployment boundary และสิ่งที่ยังไม่ได้ยืนยัน ไม่กล่าวว่า uploaded แล้วจากการแก้ ignore เพียงอย่างเดียว
 
-## Version diff
+## Implementation evidence
 
 ### Pre-upload verification หลังอนุมัติ
 
@@ -97,6 +97,22 @@ Private จำกัดการเข้าถึง repository แต่ข้
 - ตรวจ index ก่อน commit มี 18 paths ตรงรายการอนุมัติ (13 data + 5 governance/config); customer blobs 9/9 hash ตรง, LFS pointers 4/4 มี size/OID ตรงและ local objects 2/2 hash ตรง; สอง dirty manifests ไม่อยู่ใน index
 - ตรวจ `git diff --cached --check` ผ่าน; ก่อน commit ไม่มี local commits ที่รอ push และ remote main ตรงฐาน `56241fbc0f23ba2bda28058d5cd3fde105181ad7`
 
+### Post-upload verification — 2026-08-30 ประมาณ 22:19 ICT
+
+- Data/governance commit `b23fb4e92a3bcd42e8aa8c9d4de063f77bef54aa` มีเฉพาะ 18 paths ที่ตรวจไว้; push ไป `origin/main` สำเร็จและ `git ls-remote` ยืนยัน commit ตรงกัน
+- Git LFS upload สำเร็จ 2 unique objects / 471733807 bytes สำหรับ cost paths ทั้ง 4; ไม่มีการแก้ billing, quota, collaborators หรือ repository visibility
+- ตรวจหลัง push ผ่าน API อีกครั้ง: `visibility=PRIVATE`, `isPrivate=true`
+- ดึง remote Git tree และ 8 unique Git blobs ผ่าน GitHub API: paths ทั้ง 13 ตรง commit, customer files ทั้ง 9 มี SHA256/size ตรงต้นฉบับ และ LFS pointers ทั้ง 4 มี OID/size ตรงรายการอนุมัติ
+- `git lfs fetch --refetch origin b23fb4e92a3bcd42e8aa8c9d4de063f77bef54aa` สำเร็จ; ตรวจ SHA256/size ของ LFS objects ที่ดึงกลับทั้ง 2 ตรงต้นฉบับ และ `git lfs fsck --objects --pointers` ผ่าน
+- SHA256 ของไฟล์ต้นฉบับบนดิสก์ทั้ง 13 ยังตรง baseline; ไม่แก้เนื้อหา workbook และไม่ลบไฟล์ซ้ำ
+- สอง dirty manifests ของงานอื่นไม่ได้อยู่ใน commit และยังคงอยู่ใน working tree; index ว่างหลัง data commit
+- งานนี้ไม่เปลี่ยน `public/`, `src/`, `.github/` หรือ `.vercelignore`; กฎกัน `data-pipeline/**` ยังอยู่ ไม่รัน pipeline/build/deploy และไม่ตรวจรับ public deployment เดิมแทนงานอื่น
+- API ที่ source commit พบ check-runs 0, status contexts ว่าง (combined state `pending`) และ deployments 0: ไม่มี CI result ให้รายงานว่าผ่าน; verification งานนี้เป็น Git/LFS integrity และ scope checks ไม่ใช่ application test หรือการรับรอง account-level integrations ทั้งหมด
+
+## Version diff
+
+`0.1.1b → 0.1.2b beta`: บันทึกผล push, private status และ remote Git/LFS retrieval/hash ที่ตรวจผ่าน; ไม่มีการขยาย allowlist หรือเปลี่ยนข้อมูล
+
 `0.1.0b candidate → 0.1.1b beta`: บันทึกอนุมัติและ pre-upload evidence พร้อมเริ่ม scoped allowlist/LFS setup; push และ remote verification ต้องตรวจแยก
 
 ไม่มีเอกสารเดิม → `0.1.0b candidate`: เสนอข้อยกเว้น private-repo source storage และ LFS สำหรับไฟล์ใหญ่; ยังไม่เปลี่ยน AGENTS.md, CR-006, `.gitignore`, `.gitattributes`, index หรือ remote
@@ -105,5 +121,6 @@ Private จำกัดการเข้าถึง repository แต่ข้
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
-| 0.1.1b | 2026-08-30 | beta | บันทึกอนุมัติและ private/quota/security preflight; เริ่ม implementation แบบ scoped | uncommitted | ATHER |
+| 0.1.2b | 2026-08-30 | beta | บันทึก private upload และ remote Git/LFS hash verification สำเร็จ | source: b23fb4e | ATHER |
+| 0.1.1b | 2026-08-30 | beta | บันทึกอนุมัติและ private/quota/security preflight; เริ่ม implementation แบบ scoped | b23fb4e | ATHER |
 | 0.1.0b | 2026-08-30 | candidate | ตรวจ private/ขนาดไฟล์ และเสนอ scoped customer-data exception + LFS ก่อนอัปโหลด | uncommitted | ATHER |
