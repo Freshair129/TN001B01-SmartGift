@@ -34,7 +34,11 @@ class SmartGiftAutoQuoteService:
         warehouse: str = "guangzhou_shenzhen",
         shipping_mode: str = "auto",
         custom_logo_thb: float = 0.0,
-        logo_method: str = "none"
+        logo_method: str = "none",
+        logo_positions: int = 1,
+        logo_colors: int = 1,
+        logo_rate: float = 0.0,
+        logo_uv_rate: float = 0.0
     ) -> Dict[str, Any]:
         """
         Calculates quotes across multiple order breaks and compares Member Tier shipping rates.
@@ -44,6 +48,14 @@ class SmartGiftAutoQuoteService:
             wh_normalized = "guangzhou_shenzhen"
         else:
             wh_normalized = "yiwu"
+
+        logo_kwargs = {
+            "logo_method": logo_method,
+            "logo_positions": logo_positions,
+            "logo_colors": logo_colors,
+            "logo_rate": logo_rate,
+            "logo_uv_rate": logo_uv_rate
+        }
 
         corp_quote = self.calc.generate_quote(
             rmb=factory_cny,
@@ -55,7 +67,8 @@ class SmartGiftAutoQuoteService:
             mode=shipping_mode,
             goods_type="electronic_tisi",
             tier=tier_normalized,
-            logo_method=logo_method
+            custom_ucost=custom_logo_thb,
+            **logo_kwargs
         )
 
         std_quote = self.calc.generate_quote(
@@ -68,7 +81,8 @@ class SmartGiftAutoQuoteService:
             mode=shipping_mode,
             goods_type="electronic_tisi",
             tier=tier_normalized,
-            logo_method=logo_method
+            custom_ucost=custom_logo_thb,
+            **logo_kwargs
         )
 
         single_landed = self.calc.calculate_landed_cost(
@@ -82,7 +96,7 @@ class SmartGiftAutoQuoteService:
             goods_type="electronic_tisi",
             tier=tier_normalized,
             custom_ucost=custom_logo_thb,
-            logo_method=logo_method
+            **logo_kwargs
         )
 
         return {
@@ -95,7 +109,12 @@ class SmartGiftAutoQuoteService:
                 "member_tier": member_tier.upper(),
                 "warehouse": wh_normalized,
                 "shipping_mode": shipping_mode,
-                "custom_logo_thb": custom_logo_thb
+                "custom_logo_thb": custom_logo_thb,
+                "logo_method": logo_method,
+                "logo_positions": logo_positions,
+                "logo_colors": logo_colors,
+                "logo_rate": logo_rate,
+                "logo_uv_rate": logo_uv_rate
             },
             "single_order_landed_cost": single_landed,
             "corporate_quote_summary": corp_quote,

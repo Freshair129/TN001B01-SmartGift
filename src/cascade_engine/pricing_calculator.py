@@ -88,11 +88,16 @@ except ImportError:
     yaml = None
 
 class SmartGiftPricingCalculator:
-    def __init__(self, fx: float = 5.0, config_path: Optional[str] = None):
+    def __init__(self, fx: float = 5.0, config_path: Optional[str] = None,
+                 usd_to_thb: Optional[float] = None):
         self.fx = fx
         self.rates = RATES
         self.config_path = config_path
+        self.usd_to_thb = usd_to_thb
         self._load_config()
+        if self.usd_to_thb is None:
+            # Last-resort estimate when no explicit rate and no config: ~6.5 CNY per USD
+            self.usd_to_thb = self.fx * 6.5
 
     def _load_config(self):
         candidate_paths = [
@@ -114,6 +119,9 @@ class SmartGiftPricingCalculator:
                     if data:
                         if "currency_fx" in data and "cny_to_thb" in data["currency_fx"]:
                             self.fx = data["currency_fx"]["cny_to_thb"]
+                        if (self.usd_to_thb is None and "currency_fx" in data
+                                and "usd_to_thb" in data["currency_fx"]):
+                            self.usd_to_thb = data["currency_fx"]["usd_to_thb"]
                         if "shipping_rates" in data:
                             self._merge_rates(data["shipping_rates"])
                         elif "rates" in data:
@@ -185,9 +193,15 @@ class SmartGiftPricingCalculator:
             "per_unit_freight": round(order_freight / qty, 4)
         }
 
+    @staticmethod
+    def round_up_to_step(value: float, step: float) -> float:
+        # Round value/step to 6 dp before ceil so float noise (e.g. 42.000000000000006)
+        # does not bump the price to the next step.
+        return round(math.ceil(round(value / step, 6)) * step, 6)
+
     def calculate_logo_cost(self, method: str, qty: int, positions: int = 1, colors: int = 1,
                             rate: float = 0.0, uv_rate: float = 0.0) -> float:
-        usd_to_thb = self.fx * 6.5
+        usd_to_thb = self.usd_to_thb
         if method == "none":
             return 0.0
         elif method == "flat":
@@ -211,12 +225,14 @@ class SmartGiftPricingCalculator:
                               warehouse: str = "guangzhou_shenzhen", mode: str = "auto", month: int = 8,
                               goods_type: str = "general", tier: str = "gold",
                               inland_rmb: float = 2.0, custom_ucost: float = 0.0,
-                              logo_method: str = "none", logo_positions: int = 1, logo_colors: int = 1) -> Dict[str, Any]:
+                              logo_method: str = "none", logo_positions: int = 1, logo_colors: int = 1,
+                              logo_rate: float = 0.0, logo_uv_rate: float = 0.0) -> Dict[str, Any]:
         sof = self.get_small_order_factor(qty)
         factory_cost_thb = round(rmb * self.fx * sof, 4)
-        
+
         fr = self.calculate_freight(qty, upc, cbm, kg, warehouse, mode, month, goods_type, tier)
-        order_logo_thb = self.calculate_logo_cost(logo_method, qty, logo_positions, logo_colors)
+        order_logo_thb = self.calculate_logo_cost(logo_method, qty, logo_positions, logo_colors,
+                                                  rate=logo_rate, uv_rate=logo_uv_rate)
         logo_per_unit = round(order_logo_thb / qty, 4) if qty > 0 else 0.0
         inland_cost_thb = round(inland_rmb * self.fx, 4)
 
@@ -237,16 +253,20 @@ class SmartGiftPricingCalculator:
                        profile_key: str = "corporate", warehouse: str = "guangzhou_shenzhen",
                        mode: str = "auto", month: int = 8, goods_type: str = "general",
                        tier: str = "gold", logo_method: str = "none", logo_positions: int = 1,
-                       order_cost: float = 0.0) -> Dict[str, Any]:
+                       logo_colors: int = 1, logo_rate: float = 0.0, logo_uv_rate: float = 0.0,
+                       custom_ucost: float = 0.0, order_cost: float = 0.0) -> Dict[str, Any]:
         prof = PROFILES.get(profile_key, PROFILES["corporate"])
         anchor = prof["anchor"]
         ref_goods = prof.get("ref_goods", goods_type)
+        logo_kwargs = {"logo_method": logo_method, "logo_positions": logo_positions,
+                       "logo_colors": logo_colors, "logo_rate": logo_rate,
+                       "logo_uv_rate": logo_uv_rate}
 
         # Calculate Anchor
         anchor_landed = self.calculate_landed_cost(
             rmb=rmb, qty=anchor, upc=upc, cbm=cbm, kg=kg,
             warehouse=warehouse, mode=mode, month=month, goods_type=ref_goods,
-            tier=tier, logo_method=logo_method, logo_positions=logo_positions
+            tier=tier, custom_ucost=custom_ucost, **logo_kwargs
         )
 
         basis_type = prof["basis"]
@@ -270,14 +290,14 @@ class SmartGiftPricingCalculator:
             L = self.calculate_landed_cost(
                 rmb=rmb, qty=q, upc=upc, cbm=cbm, kg=kg,
                 warehouse=warehouse, mode=mode, month=month, goods_type=goods_type,
-                tier=tier, logo_method=logo_method, logo_positions=logo_positions
+                tier=tier, custom_ucost=custom_ucost, **logo_kwargs
             )
             factor = prof["factors"][idx]
             ladder_price = anchor_price * (factor / anchor_factor)
             min_profit = self.get_floor_profit(q)
             floor_price = L["total_landed_cost"] + (min_profit + order_cost) / q
 
-            final_price = math.ceil(max(ladder_price, floor_price) / 10.0) * 10.0
+            final_price = self.round_up_to_step(max(ladder_price, floor_price), 10.0)
             profit = (final_price - L["total_landed_cost"]) * q - order_cost
             margin_pct = (profit / (final_price * q) * 100.0) if final_price > 0 else 0.0
 
