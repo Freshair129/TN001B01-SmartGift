@@ -89,6 +89,19 @@ class TestPricingBugFixes(unittest.TestCase):
             with_ucost["anchor_basis_cost"], without["anchor_basis_cost"] + 10.0
         )
 
+    def test_zero_cbm_falls_back_to_volume_charging(self):
+        # cbm=0 with a weight must NOT produce infinite density and flip to
+        # weight-based charging; it falls back to volume on MIN_CBM (0.01)
+        fr = self.calc.calculate_freight(
+            qty=100, upc=20, cbm=0.0, kg=12.0,
+            warehouse="guangzhou_shenzhen", mode="truck", month=6,
+            goods_type="general", tier="gold"
+        )
+        self.assertEqual(fr["charged_by"], "volume")
+        self.assertEqual(fr["density"], 0.0)
+        # 5 cartons * MIN_CBM * gold truck rate (6400)
+        self.assertAlmostEqual(fr["order_freight"], round(5 * 0.01 * 6400, 2))
+
     def test_round_up_to_step_ignores_float_noise(self):
         self.assertEqual(self.calc.round_up_to_step(420.00000000000006, 10.0), 420.0)
         self.assertEqual(self.calc.round_up_to_step(411.0, 10.0), 420.0)
