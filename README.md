@@ -95,6 +95,9 @@ py -3 demo_app.py
 
 * 🌐 [Zuri Ecosystem System Boundaries & Integration Blueprint](docs/ZURI_ECOSYSTEM_BOUNDARIES.md)
 * 🏛️ [System Architecture Blueprint](docs/SMARTGIFT_SYSTEM_ARCHITECTURE.md)
-* 📋 [Change Request (CR) for Zuri-AI, MSP & GKS Integration](docs/CR-GKS-MSP-VAULT-INTEGRATION.md)
 * 📖 [Data Pipeline & Multi-Vault Structure Specification](docs/DATA_PIPELINE_AND_VAULT_STRUCTURE.md)
+* 📋 **Change Requests สำหรับ Zuri-AI (`docs/change-requests/`):**
+  * 🔹 [CR-002: Scope Chain to GKS/MSP Catalog Vault Resolution](docs/change-requests/CR-002-GKS-MSP-CATALOG-VAULT-RESOLUTION.md)
+  * 🔹 [CR-003: Data Pipeline Governance Dashboard & Approval Gates](docs/change-requests/CR-003-DATA-PIPELINE-GOVERNANCE-AND-APPROVAL-GATES.md)
+  * 🔹 [CR-004: GitHub Integration & "Files" Tab File Tree Explorer](docs/change-requests/CR-004-GITHUB-INTEGRATION-AND-FILES-TAB-EXPLORER.md)
 * 🛡️ [AI Agent Rules & Governance Invariants](AGENTS.md)
