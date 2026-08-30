@@ -2,9 +2,9 @@
 doc_type: change-request
 id: CR-002
 status: proposed
-version: "1.0.0"
+version: "1.1.0"
 created_at: "2026-08-30T07:30:00+07:00"
-updated_at: "2026-08-30T07:30:00+07:00"
+updated_at: "2026-08-30T07:32:00+07:00"
 owner: "SmartGift Data Architecture Team"
 impacted_domains:
   - agent
@@ -12,39 +12,46 @@ impacted_domains:
   - workspace
   - knowledge
   - memory
+  - edge-device
 proposed_domains:
   - catalog-vault
 ---
 
-# CR-002 — Multi-Tier Scope Chain to GKS/MSP Catalog Vault Resolution
+# CR-002 — Multi-Tier Scope Chain to Zuri Edge Device, GKS & MSP Catalog Vault Resolution
 
 ## 1. Change Summary
 
-Establish the formal resolution bridge from **Zuri Application Scope Chain (`Workspace` / `Project`)** to **MSP (Tier 2)** and **GKS (Tier 3)** Catalog Knowledge Vaults, enabling AI Agents to query domain-specific product catalogs with sub-millisecond latency while enforcing a strict **Zero-PII Vector Vault Invariant**.
+Establish the formal resolution bridge from **Zuri Application Scope Chain (`Workspace` / `Project`)** to **MSP (Tier 2)**, **GKS (Tier 3)**, and **Zuri Edge Device (`zuri-edge-device`)** Catalog Knowledge Vaults, enabling AI Agents to query domain-specific product catalogs with sub-millisecond latency on local edge hardware while enforcing a strict **Zero-PII Vector Vault Invariant**.
 
 ```text
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 1: Application & Scope Authority (zuri-ai)                                         │
-│  • Scope Chain: Portfolio → Tenant (Org-EtohGroup) → Business (SmartGift) → Workspace    │
-│  • Manages: CRM, Client PII, Financial Ledger Orders, Row Level Security (RLS)           │
+│  Tier 1: Application & Scope Authority (zuri-ai & zuri-edge-device)                      │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│  • zuri-ai (D:\zuri-ai): Cloud PostgreSQL / Supabase, CRM, Orders, Invoices (PII)       │
+│  • zuri-edge-device (D:\workspace\zuri-edge-device): Local Host Runtime, Edge Gateway,   │
+│    Local Thai LLMs (Ollama / Pathumma / Typhoon-S) & zuri-rag-service (:8888)            │
 └─────────────────────────────────────────────┬────────────────────────────────────────────┘
                                               │ (AuthContext / Server-Resolved Scope)
                                               ▼
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 2: Session, Memory & Vault Gatekeeper (MSP)                                        │
+│  Tier 2: Session, Memory & Vault Gatekeeper (MSP / D:\msp)                                │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│  • Governs: Unified Thread ID, Episodic Memory, Token Budget, H0-H4 Access Ceilings      │
 │  • API-010 (msp_vault_resolve): Maps workspace/project scope to Authorized Vault IDs     │
 └─────────────────────────────────────────────┬────────────────────────────────────────────┘
                                               │ (Authorized Vault Set: [vlt-catalog-product])
                                               ▼
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 3: Canonical Knowledge & GraphRAG Orchestrator (GKS)                               │
+│  Tier 3: Canonical Knowledge & GraphRAG Orchestrator (GKS / D:\gks)                      │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
 │  • Governs: Entity Ontology, Schema Contracts (smartgift://b2b/portfolio/v1)             │
 │  • GraphRAG Engine: Hybrid Dense Vector (bge-m3 1024-dim) + Graph Traversal (query-ir.v1)│
 └─────────────────────────────────────────────┬────────────────────────────────────────────┘
-                                              │ (In-Process Native Rust C-ABI)
+                                              │ (In-Process Native Rust C-ABI NAPI)
                                               ▼
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
 │  Tier 4: Local Storage Substrate (GenesisBlockDB Native / SmartGift Vault)                │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
 │  • 6-Lane Substrate: Vector, Lexical, Graph, SQLite, Bitemporal, Provenance             │
 │  • Invariant: Stores ONLY Product Masters, Gift Offers & Sensory Vectors (Zero-PII)      │
 └──────────────────────────────────────────────────────────────────────────────────────────┘
@@ -66,12 +73,26 @@ Establish the formal resolution bridge from **Zuri Application Scope Chain (`Wor
 2. **Update AuthContext Resolver (`src/modules/agent/auth-context.js`):**
    * Pass `catalogVaultId` into request envelopes for B2B Catalog agent conversations.
 
-### B. `D:\msp` (Tier 2: Memory Gatekeeper)
+---
+
+### B. `D:\workspace\zuri-edge-device` (Tier 1 Edge Runtime & Local LLM Hub)
+1. **Edge Local Inference Routing:**
+   * Provide local high-speed inference endpoints via Ollama (`bge-m3:latest` 1024-dim embeddings and Local Thai LLMs: `pathumma` / `typhoon-s` / `qwen3.5`).
+2. **Edge RAG Gateway (`zuri-rag-service:8888`):**
+   * Route edge knowledge retrieval requests to local GenesisBlockDB substrates and SQLite projections.
+3. **Atomic Cutover Isolation:**
+   * Central store (`data/genesis_smartgift_store_v4/`) maintains atomic cutover via `CURRENT` pointer. Domain business vaults (such as `O:\Org-EtohGroup\SmartGift\vaults\vlt-catalog-product\genesis-db`) operate as dedicated, isolated substrates.
+
+---
+
+### C. `D:\msp` (Tier 2: Memory Gatekeeper)
 1. **Update API-010 `msp_vault_resolve`:**
    * Resolve `catalogVaultId` into the `Authorized Vault Set` for the active conversation turn.
    * Apply Security Ceilings (H0-H4) and Token Budget constraints.
 
-### C. `D:\gks` (Tier 3: Knowledge Authority)
+---
+
+### D. `D:\gks` (Tier 3: Knowledge Authority)
 1. **Register Schema Contract:**
    * Register `smartgift://b2b/portfolio/v1` (v1.3.0) with Vector Spaces: `unboxing_sensory` (1024-dim `bge-m3`) and `product_features`.
 2. **Query IR Routing:**
@@ -82,4 +103,5 @@ Establish the formal resolution bridge from **Zuri Application Scope Chain (`Wor
 ## 3. Non-Negotiable Invariants
 
 1. **Zero-PII in Vector Vaults:** `vlt-catalog-product` must store ONLY canonical product masters, gift offers, BOMs, and sensory vectors. NEVER store customer contacts or order histories in Vector Vaults.
-2. **Canonical Identity Authority:** Never mint `gks:` prefixed references outside GKS.
+2. **Edge Device Store Isolation:** Outside agents must never directly write to `D:\workspace\zuri-edge-device\data\genesis_smartgift_store_v4\`. Domain workspaces maintain their own local database instances.
+3. **Canonical Identity Authority:** Never mint `gks:` prefixed references outside GKS.
