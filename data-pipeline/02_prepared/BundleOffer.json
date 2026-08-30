@@ -1,0 +1,2381 @@
+{
+  "metadata": {
+    "artifact": "BundleOffer",
+    "schema_ref": "smartgift://b2b/portfolio/v1",
+    "schema_version": "1.3.0",
+    "schema_node": "BundleOffer",
+    "id_prefix": "bundle:",
+    "projection": "pkg_alias_to_schema_bundle_offer",
+    "status": "review_required",
+    "canonical_promotion": false,
+    "source_artifact": {
+      "path": "data-pipeline/02_prepared/pricelist_master.json",
+      "sha256": "729bebdb0dde3706560d568f000b2f6dbccd40fa5de03189dbfe761e0edf7d74",
+      "generator": "pipeline/export_pricelist_master.py",
+      "source_run_id": "2026-08-24T08-46-40-226Z",
+      "exported_at": "2026-08-29T15:13:46.720Z"
+    },
+    "schema_source": {
+      "path": "config/schema_genesisblock.yaml",
+      "sha256": "bcd507d791e406e8114ab636f3905518a58c569791e6d1f87c7b1ef302c00419",
+      "node": "BundleOffer"
+    },
+    "record_counts": {
+      "canonical_records": 11,
+      "source_projection_records": 0
+    },
+    "privacy_review": {
+      "classification": "internal_product_catalog",
+      "customer_data_excluded": true,
+      "human_review_status": "pending"
+    },
+    "canonical_id_rule": "bundle:<stable_slug>",
+    "business_key": "code (PKG-*; alternate key only)",
+    "alias_mapping": {
+      "pkg": "BundleOffer",
+      "pkg_id": "id",
+      "pkg_code": "code"
+    },
+    "profit_gate": {
+      "minimum_profit_thb": 25000,
+      "scope": "per_configured_pkg",
+      "status": "fail_closed",
+      "passed_count": 0,
+      "review_required_count": 11
+    },
+    "bom_reference": {
+      "rows": 17,
+      "coverage": "proposed_recipe",
+      "verified_rows": 0,
+      "proposed_rows": 17
+    }
+  },
+  "records": [
+    {
+      "id": "bundle:smartgift-christmas_2026-bespoke",
+      "code": "PKG-XMAS-2026-BESPOKE",
+      "name": "ชุด Bespoke สำหรับผู้บริหารตาม brief",
+      "occasion": "christmas_2026",
+      "event": {
+        "id": "campaign:smartgift-2026-christmas",
+        "name_th": "Christmas 2026",
+        "name_en": "Christmas 2026",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "draft",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": "Bespoke",
+      "gift_tier_id": "tier:Bespoke",
+      "recipient_segment": "C-Level",
+      "recipient_segment_id": "seg:C-Level",
+      "tier_breakdown": {
+        "C-Level": {
+          "segment_id": "seg:C-Level",
+          "tier_id": "tier:Bespoke",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [],
+        "gift_tiers": [
+          "Bespoke"
+        ],
+        "status": "seasonal_candidate"
+      },
+      "options": [],
+      "bom_status": "not_designed",
+      "quote_ready": false,
+      "price_reference": {
+        "offer_price_qty1": null,
+        "offer_price_tiers": [],
+        "component_srp_qty1_reference_total": null,
+        "component_srp_qty1_reference": [],
+        "price_basis": "canonical_master_declared_reference",
+        "quote_ready": false
+      },
+      "cost_reference": null,
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "bom",
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "factory_identity",
+          "factory_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown",
+          "package_price",
+          "quote_quantity",
+          "catalog_offer",
+          "target_recipients"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "ของขวัญปลายปีที่ทีมอยากหยิบใช้จริง",
+        "supporting_copy_th": "เลือกชุดตามบทบาท ตั้งแต่ทีมปฏิบัติการถึงผู้บริหาร",
+        "visual_direction": "warm red/green accent, product-first unboxing",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "christmas_2026:bespoke",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-christmas_2026-corporate-mix",
+      "code": "PKG-XMAS-2026-CORP-MIX",
+      "name": "แพ็กเกจองค์กร Christmas 2026 (Corporate Mix)",
+      "occasion": "christmas_2026",
+      "event": {
+        "id": "campaign:smartgift-2026-christmas",
+        "name_th": "Christmas 2026",
+        "name_en": "Christmas 2026",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "draft",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": null,
+      "gift_tier_id": null,
+      "recipient_segment": "mixed",
+      "recipient_segment_id": null,
+      "tier_breakdown": {
+        "Operations": {
+          "segment_id": "seg:Operations",
+          "tier_id": "tier:Reach",
+          "offer_id": "offer:smartgift-2026-christmas-reach-operations",
+          "count": null
+        },
+        "Mid-Management": {
+          "segment_id": "seg:Mid-Management",
+          "tier_id": "tier:Select",
+          "offer_id": "offer:TDD03-2",
+          "count": null
+        },
+        "C-Level": {
+          "segment_id": "seg:C-Level",
+          "tier_id": "tier:Signature",
+          "offer_id": "offer:TGC06-4",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [
+          "eco-friendly",
+          "executive-smart-tech"
+        ],
+        "gift_tiers": [
+          "Reach",
+          "Select",
+          "Signature"
+        ],
+        "status": "company_order_brief_required"
+      },
+      "options": [
+        {
+          "option_id": "option:smartgift-christmas_2026-corporate-mix:SG-OFFER-XMAS-2026-REACH-OPS",
+          "bundle_id": "bundle:smartgift-christmas_2026-corporate-mix",
+          "catalog_slug": "eco-friendly",
+          "gift_tier_id": "tier:Reach",
+          "recipient_segment_id": "seg:Operations",
+          "offer_id": "offer:smartgift-2026-christmas-reach-operations",
+          "offer_code": "SG-OFFER-XMAS-2026-REACH-OPS",
+          "qty": null,
+          "qty_source": "company_order_brief",
+          "bom_ref": null,
+          "bom_status": "pending_segment_counts"
+        },
+        {
+          "option_id": "option:smartgift-christmas_2026-corporate-mix:TDD03-2",
+          "bundle_id": "bundle:smartgift-christmas_2026-corporate-mix",
+          "catalog_slug": "eco-friendly",
+          "gift_tier_id": "tier:Select",
+          "recipient_segment_id": "seg:Mid-Management",
+          "offer_id": "offer:TDD03-2",
+          "offer_code": "TDD03-2",
+          "qty": null,
+          "qty_source": "company_order_brief",
+          "bom_ref": null,
+          "bom_status": "pending_segment_counts"
+        },
+        {
+          "option_id": "option:smartgift-christmas_2026-corporate-mix:TGC06-4",
+          "bundle_id": "bundle:smartgift-christmas_2026-corporate-mix",
+          "catalog_slug": "executive-smart-tech",
+          "gift_tier_id": "tier:Signature",
+          "recipient_segment_id": "seg:C-Level",
+          "offer_id": "offer:TGC06-4",
+          "offer_code": "TGC06-4",
+          "qty": null,
+          "qty_source": "company_order_brief",
+          "bom_ref": null,
+          "bom_status": "pending_segment_counts"
+        }
+      ],
+      "bom_status": "pending_segment_counts",
+      "quote_ready": false,
+      "price_reference": {
+        "offer:smartgift-2026-christmas-reach-operations": {
+          "offer_price_qty1": null,
+          "offer_price_tiers": [],
+          "component_srp_qty1_reference_total": 860.0,
+          "component_srp_qty1_reference": [
+            {
+              "product_master_id": "pm:PM-UMB",
+              "product_code": "PM-UMB",
+              "qty": 1,
+              "srp_qty1": 250.0
+            },
+            {
+              "product_master_id": "pm:PM-BOTTLE-LED",
+              "product_code": "PM-BOTTLE-LED",
+              "qty": 1,
+              "srp_qty1": 290.0
+            },
+            {
+              "product_master_id": "pm:PM-TMB",
+              "product_code": "PM-TMB",
+              "qty": 1,
+              "srp_qty1": 320.0
+            }
+          ],
+          "price_basis": "canonical_master_declared_reference",
+          "quote_ready": false
+        },
+        "offer:TDD03-2": {
+          "offer_price_qty1": null,
+          "offer_price_tiers": [
+            {
+              "min_qty": 10,
+              "unit_price": 550.0
+            },
+            {
+              "min_qty": 50,
+              "unit_price": 490.0
+            },
+            {
+              "min_qty": 100,
+              "unit_price": 440.0
+            }
+          ],
+          "component_srp_qty1_reference_total": 860.0,
+          "component_srp_qty1_reference": [
+            {
+              "product_master_id": "pm:PM-UMB",
+              "product_code": "PM-UMB",
+              "qty": 1,
+              "srp_qty1": 250.0
+            },
+            {
+              "product_master_id": "pm:PM-BOTTLE-LED",
+              "product_code": "PM-BOTTLE-LED",
+              "qty": 1,
+              "srp_qty1": 290.0
+            },
+            {
+              "product_master_id": "pm:PM-TMB",
+              "product_code": "PM-TMB",
+              "qty": 1,
+              "srp_qty1": 320.0
+            }
+          ],
+          "price_basis": "canonical_master_declared_reference",
+          "quote_ready": false
+        },
+        "offer:TGC06-4": {
+          "offer_price_qty1": null,
+          "offer_price_tiers": [
+            {
+              "min_qty": 10,
+              "unit_price": 930.0
+            },
+            {
+              "min_qty": 50,
+              "unit_price": 880.0
+            },
+            {
+              "min_qty": 100,
+              "unit_price": 820.0
+            }
+          ],
+          "component_srp_qty1_reference_total": 1630.0,
+          "component_srp_qty1_reference": [
+            {
+              "product_master_id": "pm:PM-NB",
+              "product_code": "PM-NB",
+              "qty": 1,
+              "srp_qty1": 750.0
+            },
+            {
+              "product_master_id": "pm:PM-PB10K",
+              "product_code": "PM-PB10K",
+              "qty": 1,
+              "srp_qty1": 690.0
+            },
+            {
+              "product_master_id": "pm:PM-PEN",
+              "product_code": "PM-PEN",
+              "qty": 1,
+              "srp_qty1": 190.0
+            }
+          ],
+          "price_basis": "canonical_master_declared_reference",
+          "quote_ready": false
+        }
+      },
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "bom",
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "segment_counts",
+          "package_price",
+          "quote_quantity",
+          "factory_identity",
+          "factory_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "ของขวัญปลายปีที่ทีมอยากหยิบใช้จริง",
+        "supporting_copy_th": "จัดชุดตามโครงสร้าง C-Level, Mid-Management และ Operations",
+        "visual_direction": "warm red/green accent, product-first unboxing",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "christmas_2026-corporate-mix",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-christmas_2026-reach-operations",
+      "code": "PKG-XMAS-2026-REACH-OPS",
+      "name": "ชุดส่งต่อความอบอุ่นสำหรับทีมปฏิบัติการ",
+      "occasion": "christmas_2026",
+      "event": {
+        "id": "campaign:smartgift-2026-christmas",
+        "name_th": "Christmas 2026",
+        "name_en": "Christmas 2026",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "mapping_pending",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": "Reach",
+      "gift_tier_id": "tier:Reach",
+      "recipient_segment": "Operations",
+      "recipient_segment_id": "seg:Operations",
+      "tier_breakdown": {
+        "Operations": {
+          "segment_id": "seg:Operations",
+          "tier_id": "tier:Reach",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [
+          "eco-friendly"
+        ],
+        "gift_tiers": [
+          "Reach"
+        ],
+        "status": "seasonal_candidate"
+      },
+      "options": [
+        {
+          "option_id": "option:smartgift-christmas_2026-reach-operations:SG-OFFER-XMAS-2026-REACH-OPS",
+          "bundle_id": "bundle:smartgift-christmas_2026-reach-operations",
+          "catalog_slug": "eco-friendly",
+          "gift_tier_id": "tier:Reach",
+          "recipient_segment_id": "seg:Operations",
+          "offer_id": "offer:smartgift-2026-christmas-reach-operations",
+          "offer_code": "SG-OFFER-XMAS-2026-REACH-OPS",
+          "qty": 1,
+          "bom_ref": {
+            "bundle_id": "bundle:smartgift-christmas_2026-reach-operations",
+            "offer_id": "offer:smartgift-2026-christmas-reach-operations"
+          },
+          "bom_status": "proposed_recipe"
+        }
+      ],
+      "bom_status": "proposed_recipe",
+      "quote_ready": false,
+      "price_reference": {
+        "offer_price_qty1": null,
+        "offer_price_tiers": [],
+        "component_srp_qty1_reference_total": 860.0,
+        "component_srp_qty1_reference": [
+          {
+            "product_master_id": "pm:PM-UMB",
+            "product_code": "PM-UMB",
+            "qty": 1,
+            "srp_qty1": 250.0
+          },
+          {
+            "product_master_id": "pm:PM-BOTTLE-LED",
+            "product_code": "PM-BOTTLE-LED",
+            "qty": 1,
+            "srp_qty1": 290.0
+          },
+          {
+            "product_master_id": "pm:PM-TMB",
+            "product_code": "PM-TMB",
+            "qty": 1,
+            "srp_qty1": 320.0
+          }
+        ],
+        "price_basis": "canonical_master_declared_reference",
+        "quote_ready": false
+      },
+      "cost_reference": {
+        "costed_components": 3,
+        "total_components": 3,
+        "coverage": "full",
+        "exw_cost_per_set_thb": 230.0,
+        "component_srp_qty1_total": 860.0,
+        "cost_basis": "EXW_confirmed_mapping_no_freight_no_duty",
+        "indicative_profit": null,
+        "quote_ready": false
+      },
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown",
+          "package_price",
+          "quote_quantity",
+          "target_recipients"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "ของขวัญปลายปีที่ทีมอยากหยิบใช้จริง",
+        "supporting_copy_th": "เลือกชุดตามบทบาท ตั้งแต่ทีมปฏิบัติการถึงผู้บริหาร",
+        "visual_direction": "warm red/green accent, product-first unboxing",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "christmas_2026:reach-operations",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-christmas_2026-select-mid-management",
+      "code": "PKG-XMAS-2026-SELECT-MID",
+      "name": "ชุดดูแลใจและโต๊ะทำงานสำหรับหัวหน้าทีม",
+      "occasion": "christmas_2026",
+      "event": {
+        "id": "campaign:smartgift-2026-christmas",
+        "name_th": "Christmas 2026",
+        "name_en": "Christmas 2026",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "missing_inputs",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": "Select",
+      "gift_tier_id": "tier:Select",
+      "recipient_segment": "Mid-Management",
+      "recipient_segment_id": "seg:Mid-Management",
+      "tier_breakdown": {
+        "Mid-Management": {
+          "segment_id": "seg:Mid-Management",
+          "tier_id": "tier:Select",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [
+          "eco-friendly"
+        ],
+        "gift_tiers": [
+          "Select"
+        ],
+        "status": "seasonal_candidate"
+      },
+      "options": [
+        {
+          "option_id": "option:smartgift-christmas_2026-select-mid-management:TDD03-2",
+          "bundle_id": "bundle:smartgift-christmas_2026-select-mid-management",
+          "catalog_slug": "eco-friendly",
+          "gift_tier_id": "tier:Select",
+          "recipient_segment_id": "seg:Mid-Management",
+          "offer_id": "offer:TDD03-2",
+          "offer_code": "TDD03-2",
+          "qty": 1,
+          "bom_ref": {
+            "bundle_id": "bundle:smartgift-christmas_2026-select-mid-management",
+            "offer_id": "offer:TDD03-2"
+          },
+          "bom_status": "proposed_recipe"
+        }
+      ],
+      "bom_status": "proposed_recipe",
+      "quote_ready": false,
+      "price_reference": {
+        "offer_price_qty1": null,
+        "offer_price_tiers": [
+          {
+            "min_qty": 10,
+            "unit_price": 550.0
+          },
+          {
+            "min_qty": 50,
+            "unit_price": 490.0
+          },
+          {
+            "min_qty": 100,
+            "unit_price": 440.0
+          }
+        ],
+        "component_srp_qty1_reference_total": 860.0,
+        "component_srp_qty1_reference": [
+          {
+            "product_master_id": "pm:PM-UMB",
+            "product_code": "PM-UMB",
+            "qty": 1,
+            "srp_qty1": 250.0
+          },
+          {
+            "product_master_id": "pm:PM-BOTTLE-LED",
+            "product_code": "PM-BOTTLE-LED",
+            "qty": 1,
+            "srp_qty1": 290.0
+          },
+          {
+            "product_master_id": "pm:PM-TMB",
+            "product_code": "PM-TMB",
+            "qty": 1,
+            "srp_qty1": 320.0
+          }
+        ],
+        "price_basis": "canonical_master_declared_reference",
+        "quote_ready": false
+      },
+      "cost_reference": {
+        "costed_components": 3,
+        "total_components": 3,
+        "coverage": "full",
+        "exw_cost_per_set_thb": 230.0,
+        "component_srp_qty1_total": 860.0,
+        "cost_basis": "EXW_confirmed_mapping_no_freight_no_duty",
+        "indicative_profit": {
+          "basis": "offer_price_at_min_qty_10_minus_exw_component_cost",
+          "offer_unit_price": 550.0,
+          "at_qty": 10,
+          "indicative_set_profit_thb": 320.0,
+          "excludes": [
+            "freight",
+            "duty",
+            "packaging",
+            "branding",
+            "vat_alignment"
+          ]
+        },
+        "quote_ready": false
+      },
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown",
+          "package_price",
+          "quote_quantity",
+          "target_recipients"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "ของขวัญปลายปีที่ทีมอยากหยิบใช้จริง",
+        "supporting_copy_th": "เลือกชุดตามบทบาท ตั้งแต่ทีมปฏิบัติการถึงผู้บริหาร",
+        "visual_direction": "warm red/green accent, product-first unboxing",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "christmas_2026:select-mid-management",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-christmas_2026-signature-c-level",
+      "code": "PKG-XMAS-2026-SIGNATURE-CLEVEL",
+      "name": "ชุด Smart Executive สำหรับผู้บริหาร",
+      "occasion": "christmas_2026",
+      "event": {
+        "id": "campaign:smartgift-2026-christmas",
+        "name_th": "Christmas 2026",
+        "name_en": "Christmas 2026",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "cost_pending",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": "Signature",
+      "gift_tier_id": "tier:Signature",
+      "recipient_segment": "C-Level",
+      "recipient_segment_id": "seg:C-Level",
+      "tier_breakdown": {
+        "C-Level": {
+          "segment_id": "seg:C-Level",
+          "tier_id": "tier:Signature",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [
+          "classic-oriental",
+          "executive-smart-tech"
+        ],
+        "gift_tiers": [
+          "Signature"
+        ],
+        "status": "seasonal_candidate"
+      },
+      "options": [
+        {
+          "option_id": "option:smartgift-christmas_2026-signature-c-level:TGC06-4",
+          "bundle_id": "bundle:smartgift-christmas_2026-signature-c-level",
+          "catalog_slug": "executive-smart-tech",
+          "gift_tier_id": "tier:Signature",
+          "recipient_segment_id": "seg:C-Level",
+          "offer_id": "offer:TGC06-4",
+          "offer_code": "TGC06-4",
+          "qty": 1,
+          "bom_ref": {
+            "bundle_id": "bundle:smartgift-christmas_2026-signature-c-level",
+            "offer_id": "offer:TGC06-4"
+          },
+          "bom_status": "proposed_recipe"
+        }
+      ],
+      "bom_status": "proposed_recipe",
+      "quote_ready": false,
+      "price_reference": {
+        "offer_price_qty1": null,
+        "offer_price_tiers": [
+          {
+            "min_qty": 10,
+            "unit_price": 930.0
+          },
+          {
+            "min_qty": 50,
+            "unit_price": 880.0
+          },
+          {
+            "min_qty": 100,
+            "unit_price": 820.0
+          }
+        ],
+        "component_srp_qty1_reference_total": 1630.0,
+        "component_srp_qty1_reference": [
+          {
+            "product_master_id": "pm:PM-NB",
+            "product_code": "PM-NB",
+            "qty": 1,
+            "srp_qty1": 750.0
+          },
+          {
+            "product_master_id": "pm:PM-PB10K",
+            "product_code": "PM-PB10K",
+            "qty": 1,
+            "srp_qty1": 690.0
+          },
+          {
+            "product_master_id": "pm:PM-PEN",
+            "product_code": "PM-PEN",
+            "qty": 1,
+            "srp_qty1": 190.0
+          }
+        ],
+        "price_basis": "canonical_master_declared_reference",
+        "quote_ready": false
+      },
+      "cost_reference": {
+        "costed_components": 2,
+        "total_components": 3,
+        "coverage": "partial",
+        "exw_cost_per_set_thb": null,
+        "component_srp_qty1_total": 1630.0,
+        "cost_basis": "EXW_confirmed_mapping_no_freight_no_duty",
+        "indicative_profit": null,
+        "quote_ready": false
+      },
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "factory_identity",
+          "factory_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown",
+          "package_price",
+          "quote_quantity",
+          "target_recipients"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "ของขวัญปลายปีที่ทีมอยากหยิบใช้จริง",
+        "supporting_copy_th": "เลือกชุดตามบทบาท ตั้งแต่ทีมปฏิบัติการถึงผู้บริหาร",
+        "visual_direction": "warm red/green accent, product-first unboxing",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "christmas_2026:signature-c-level",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-new-employee-welcome",
+      "code": "PKG-NEW-EMPLOYEE-WELCOME",
+      "name": "ชุดต้อนรับพนักงานใหม่",
+      "occasion": "new_employee_welcome",
+      "status": "draft",
+      "target_recipients": null,
+      "total_price": null,
+      "tier_breakdown": {},
+      "design_scope": {
+        "catalog_slugs": [
+          "eco-friendly",
+          "classic-oriental",
+          "novelty-self-care",
+          "executive-smart-tech"
+        ],
+        "gift_tiers": [
+          "Reach",
+          "Select",
+          "Signature",
+          "Bespoke"
+        ],
+        "status": "configuration_space_only"
+      },
+      "options": [],
+      "bom_status": "not_designed",
+      "quote_ready": false,
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "bom",
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost"
+        ]
+      },
+      "source_ref": {
+        "kind": "user_requirement",
+        "date": "2026-08-30"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-new_year_2027-bespoke",
+      "code": "PKG-NY-2027-BESPOKE",
+      "name": "ชุด Bespoke สำหรับผู้บริหารตาม brief",
+      "occasion": "new_year_2027",
+      "event": {
+        "id": "campaign:smartgift-2027-new-year",
+        "name_th": "New Year 2027",
+        "name_en": "New Year 2027",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "draft",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": "Bespoke",
+      "gift_tier_id": "tier:Bespoke",
+      "recipient_segment": "C-Level",
+      "recipient_segment_id": "seg:C-Level",
+      "tier_breakdown": {
+        "C-Level": {
+          "segment_id": "seg:C-Level",
+          "tier_id": "tier:Bespoke",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [],
+        "gift_tiers": [
+          "Bespoke"
+        ],
+        "status": "seasonal_candidate"
+      },
+      "options": [],
+      "bom_status": "not_designed",
+      "quote_ready": false,
+      "price_reference": {
+        "offer_price_qty1": null,
+        "offer_price_tiers": [],
+        "component_srp_qty1_reference_total": null,
+        "component_srp_qty1_reference": [],
+        "price_basis": "canonical_master_declared_reference",
+        "quote_ready": false
+      },
+      "cost_reference": null,
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "bom",
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "factory_identity",
+          "factory_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown",
+          "package_price",
+          "quote_quantity",
+          "catalog_offer",
+          "target_recipients"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "เริ่มปีใหม่ด้วยของขวัญที่บอกว่าองค์กรใส่ใจ",
+        "supporting_copy_th": "จัดชุดให้เหมาะกับทุกระดับ พร้อมดูรายละเอียดในชุดได้",
+        "visual_direction": "clean gold/blue accent, fresh-start utility",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "new_year_2027:bespoke",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-new_year_2027-corporate-mix",
+      "code": "PKG-NY-2027-CORP-MIX",
+      "name": "แพ็กเกจองค์กร New Year 2027 (Corporate Mix)",
+      "occasion": "new_year_2027",
+      "event": {
+        "id": "campaign:smartgift-2027-new-year",
+        "name_th": "New Year 2027",
+        "name_en": "New Year 2027",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "draft",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": null,
+      "gift_tier_id": null,
+      "recipient_segment": "mixed",
+      "recipient_segment_id": null,
+      "tier_breakdown": {
+        "Operations": {
+          "segment_id": "seg:Operations",
+          "tier_id": "tier:Reach",
+          "offer_id": "offer:smartgift-2027-new-year-reach-operations",
+          "count": null
+        },
+        "Mid-Management": {
+          "segment_id": "seg:Mid-Management",
+          "tier_id": "tier:Select",
+          "offer_id": "offer:TWL01-8",
+          "count": null
+        },
+        "C-Level": {
+          "segment_id": "seg:C-Level",
+          "tier_id": "tier:Signature",
+          "offer_id": "offer:TMK0215",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [
+          "classic-oriental",
+          "eco-friendly",
+          "novelty-self-care"
+        ],
+        "gift_tiers": [
+          "Reach",
+          "Select",
+          "Signature"
+        ],
+        "status": "company_order_brief_required"
+      },
+      "options": [
+        {
+          "option_id": "option:smartgift-new_year_2027-corporate-mix:SG-OFFER-NY-2027-REACH-OPS",
+          "bundle_id": "bundle:smartgift-new_year_2027-corporate-mix",
+          "catalog_slug": "eco-friendly",
+          "gift_tier_id": "tier:Reach",
+          "recipient_segment_id": "seg:Operations",
+          "offer_id": "offer:smartgift-2027-new-year-reach-operations",
+          "offer_code": "SG-OFFER-NY-2027-REACH-OPS",
+          "qty": null,
+          "qty_source": "company_order_brief",
+          "bom_ref": null,
+          "bom_status": "pending_segment_counts"
+        },
+        {
+          "option_id": "option:smartgift-new_year_2027-corporate-mix:TWL01-8",
+          "bundle_id": "bundle:smartgift-new_year_2027-corporate-mix",
+          "catalog_slug": "novelty-self-care",
+          "gift_tier_id": "tier:Select",
+          "recipient_segment_id": "seg:Mid-Management",
+          "offer_id": "offer:TWL01-8",
+          "offer_code": "TWL01-8",
+          "qty": null,
+          "qty_source": "company_order_brief",
+          "bom_ref": null,
+          "bom_status": "pending_segment_counts"
+        },
+        {
+          "option_id": "option:smartgift-new_year_2027-corporate-mix:TMK0215",
+          "bundle_id": "bundle:smartgift-new_year_2027-corporate-mix",
+          "catalog_slug": "classic-oriental",
+          "gift_tier_id": "tier:Signature",
+          "recipient_segment_id": "seg:C-Level",
+          "offer_id": "offer:TMK0215",
+          "offer_code": "TMK0215",
+          "qty": null,
+          "qty_source": "company_order_brief",
+          "bom_ref": null,
+          "bom_status": "pending_segment_counts"
+        }
+      ],
+      "bom_status": "pending_segment_counts",
+      "quote_ready": false,
+      "price_reference": {
+        "offer:smartgift-2027-new-year-reach-operations": {
+          "offer_price_qty1": null,
+          "offer_price_tiers": [],
+          "component_srp_qty1_reference_total": 610.0,
+          "component_srp_qty1_reference": [
+            {
+              "product_master_id": "pm:PM-TMB",
+              "product_code": "PM-TMB",
+              "qty": 1,
+              "srp_qty1": 320.0
+            },
+            {
+              "product_master_id": "pm:PM-BOTTLE-LED",
+              "product_code": "PM-BOTTLE-LED",
+              "qty": 1,
+              "srp_qty1": 290.0
+            }
+          ],
+          "price_basis": "canonical_master_declared_reference",
+          "quote_ready": false
+        },
+        "offer:TWL01-8": {
+          "offer_price_qty1": null,
+          "offer_price_tiers": [
+            {
+              "min_qty": 10,
+              "unit_price": 680.0
+            },
+            {
+              "min_qty": 50,
+              "unit_price": 620.0
+            },
+            {
+              "min_qty": 100,
+              "unit_price": 570.0
+            }
+          ],
+          "component_srp_qty1_reference_total": 1699.0,
+          "component_srp_qty1_reference": [
+            {
+              "product_master_id": "pm:PM-AROMA",
+              "product_code": "PM-AROMA",
+              "qty": 1,
+              "srp_qty1": 550.0
+            },
+            {
+              "product_master_id": "pm:PM-CFMUG",
+              "product_code": "PM-CFMUG",
+              "qty": 1,
+              "srp_qty1": 299.0
+            },
+            {
+              "product_master_id": "pm:PM-MSG",
+              "product_code": "PM-MSG",
+              "qty": 1,
+              "srp_qty1": 850.0
+            }
+          ],
+          "price_basis": "canonical_master_declared_reference",
+          "quote_ready": false
+        },
+        "offer:TMK0215": {
+          "offer_price_qty1": null,
+          "offer_price_tiers": [
+            {
+              "min_qty": 10,
+              "unit_price": 850.0
+            },
+            {
+              "min_qty": 50,
+              "unit_price": 790.0
+            },
+            {
+              "min_qty": 100,
+              "unit_price": 730.0
+            }
+          ],
+          "component_srp_qty1_reference_total": 770.0,
+          "component_srp_qty1_reference": [
+            {
+              "product_master_id": "pm:PM-PEN",
+              "product_code": "PM-PEN",
+              "qty": 1,
+              "srp_qty1": 190.0
+            },
+            {
+              "product_master_id": "pm:PM-FLASH",
+              "product_code": "PM-FLASH",
+              "qty": 1,
+              "srp_qty1": 220.0
+            },
+            {
+              "product_master_id": "pm:PM-TEA-INF",
+              "product_code": "PM-TEA-INF",
+              "qty": 1,
+              "srp_qty1": 360.0
+            }
+          ],
+          "price_basis": "canonical_master_declared_reference",
+          "quote_ready": false
+        }
+      },
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "bom",
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "segment_counts",
+          "package_price",
+          "quote_quantity",
+          "factory_identity",
+          "factory_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "เริ่มปีใหม่ด้วยของขวัญที่บอกว่าองค์กรใส่ใจ",
+        "supporting_copy_th": "จัดชุดตามโครงสร้าง C-Level, Mid-Management และ Operations",
+        "visual_direction": "clean gold/blue accent, fresh-start utility",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "new_year_2027-corporate-mix",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-new_year_2027-reach-operations",
+      "code": "PKG-NY-2027-REACH-OPS",
+      "name": "ชุด Fresh Start Essentials สำหรับทีมปฏิบัติการ",
+      "occasion": "new_year_2027",
+      "event": {
+        "id": "campaign:smartgift-2027-new-year",
+        "name_th": "New Year 2027",
+        "name_en": "New Year 2027",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "mapping_pending",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": "Reach",
+      "gift_tier_id": "tier:Reach",
+      "recipient_segment": "Operations",
+      "recipient_segment_id": "seg:Operations",
+      "tier_breakdown": {
+        "Operations": {
+          "segment_id": "seg:Operations",
+          "tier_id": "tier:Reach",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [
+          "eco-friendly"
+        ],
+        "gift_tiers": [
+          "Reach"
+        ],
+        "status": "seasonal_candidate"
+      },
+      "options": [
+        {
+          "option_id": "option:smartgift-new_year_2027-reach-operations:SG-OFFER-NY-2027-REACH-OPS",
+          "bundle_id": "bundle:smartgift-new_year_2027-reach-operations",
+          "catalog_slug": "eco-friendly",
+          "gift_tier_id": "tier:Reach",
+          "recipient_segment_id": "seg:Operations",
+          "offer_id": "offer:smartgift-2027-new-year-reach-operations",
+          "offer_code": "SG-OFFER-NY-2027-REACH-OPS",
+          "qty": 1,
+          "bom_ref": {
+            "bundle_id": "bundle:smartgift-new_year_2027-reach-operations",
+            "offer_id": "offer:smartgift-2027-new-year-reach-operations"
+          },
+          "bom_status": "proposed_recipe"
+        }
+      ],
+      "bom_status": "proposed_recipe",
+      "quote_ready": false,
+      "price_reference": {
+        "offer_price_qty1": null,
+        "offer_price_tiers": [],
+        "component_srp_qty1_reference_total": 610.0,
+        "component_srp_qty1_reference": [
+          {
+            "product_master_id": "pm:PM-TMB",
+            "product_code": "PM-TMB",
+            "qty": 1,
+            "srp_qty1": 320.0
+          },
+          {
+            "product_master_id": "pm:PM-BOTTLE-LED",
+            "product_code": "PM-BOTTLE-LED",
+            "qty": 1,
+            "srp_qty1": 290.0
+          }
+        ],
+        "price_basis": "canonical_master_declared_reference",
+        "quote_ready": false
+      },
+      "cost_reference": {
+        "costed_components": 2,
+        "total_components": 2,
+        "coverage": "full",
+        "exw_cost_per_set_thb": 150.0,
+        "component_srp_qty1_total": 610.0,
+        "cost_basis": "EXW_confirmed_mapping_no_freight_no_duty",
+        "indicative_profit": null,
+        "quote_ready": false
+      },
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown",
+          "package_price",
+          "quote_quantity",
+          "target_recipients"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "เริ่มปีใหม่ด้วยของขวัญที่บอกว่าองค์กรใส่ใจ",
+        "supporting_copy_th": "จัดชุดให้เหมาะกับทุกระดับ พร้อมดูรายละเอียดในชุดได้",
+        "visual_direction": "clean gold/blue accent, fresh-start utility",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "new_year_2027:reach-operations",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-new_year_2027-select-mid-management",
+      "code": "PKG-NY-2027-SELECT-MID",
+      "name": "ชุด Reset & Recharge สำหรับหัวหน้าทีม",
+      "occasion": "new_year_2027",
+      "event": {
+        "id": "campaign:smartgift-2027-new-year",
+        "name_th": "New Year 2027",
+        "name_en": "New Year 2027",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "cost_pending",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": "Select",
+      "gift_tier_id": "tier:Select",
+      "recipient_segment": "Mid-Management",
+      "recipient_segment_id": "seg:Mid-Management",
+      "tier_breakdown": {
+        "Mid-Management": {
+          "segment_id": "seg:Mid-Management",
+          "tier_id": "tier:Select",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [
+          "novelty-self-care"
+        ],
+        "gift_tiers": [
+          "Select"
+        ],
+        "status": "seasonal_candidate"
+      },
+      "options": [
+        {
+          "option_id": "option:smartgift-new_year_2027-select-mid-management:TWL01-8",
+          "bundle_id": "bundle:smartgift-new_year_2027-select-mid-management",
+          "catalog_slug": "novelty-self-care",
+          "gift_tier_id": "tier:Select",
+          "recipient_segment_id": "seg:Mid-Management",
+          "offer_id": "offer:TWL01-8",
+          "offer_code": "TWL01-8",
+          "qty": 1,
+          "bom_ref": {
+            "bundle_id": "bundle:smartgift-new_year_2027-select-mid-management",
+            "offer_id": "offer:TWL01-8"
+          },
+          "bom_status": "proposed_recipe"
+        }
+      ],
+      "bom_status": "proposed_recipe",
+      "quote_ready": false,
+      "price_reference": {
+        "offer_price_qty1": null,
+        "offer_price_tiers": [
+          {
+            "min_qty": 10,
+            "unit_price": 680.0
+          },
+          {
+            "min_qty": 50,
+            "unit_price": 620.0
+          },
+          {
+            "min_qty": 100,
+            "unit_price": 570.0
+          }
+        ],
+        "component_srp_qty1_reference_total": 1699.0,
+        "component_srp_qty1_reference": [
+          {
+            "product_master_id": "pm:PM-AROMA",
+            "product_code": "PM-AROMA",
+            "qty": 1,
+            "srp_qty1": 550.0
+          },
+          {
+            "product_master_id": "pm:PM-CFMUG",
+            "product_code": "PM-CFMUG",
+            "qty": 1,
+            "srp_qty1": 299.0
+          },
+          {
+            "product_master_id": "pm:PM-MSG",
+            "product_code": "PM-MSG",
+            "qty": 1,
+            "srp_qty1": 850.0
+          }
+        ],
+        "price_basis": "canonical_master_declared_reference",
+        "quote_ready": false
+      },
+      "cost_reference": {
+        "costed_components": 2,
+        "total_components": 3,
+        "coverage": "partial",
+        "exw_cost_per_set_thb": null,
+        "component_srp_qty1_total": 1699.0,
+        "cost_basis": "EXW_confirmed_mapping_no_freight_no_duty",
+        "indicative_profit": null,
+        "quote_ready": false
+      },
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "factory_identity",
+          "factory_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown",
+          "package_price",
+          "quote_quantity",
+          "target_recipients"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "เริ่มปีใหม่ด้วยของขวัญที่บอกว่าองค์กรใส่ใจ",
+        "supporting_copy_th": "จัดชุดให้เหมาะกับทุกระดับ พร้อมดูรายละเอียดในชุดได้",
+        "visual_direction": "clean gold/blue accent, fresh-start utility",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "new_year_2027:select-mid-management",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    },
+    {
+      "id": "bundle:smartgift-new_year_2027-signature-c-level",
+      "code": "PKG-NY-2027-SIGNATURE-CLEVEL",
+      "name": "ชุด Plan & Power สำหรับผู้บริหาร",
+      "occasion": "new_year_2027",
+      "event": {
+        "id": "campaign:smartgift-2027-new-year",
+        "name_th": "New Year 2027",
+        "name_en": "New Year 2027",
+        "date_status": "year_assumption_pending_confirmation"
+      },
+      "status": "cost_pending",
+      "target_recipients": null,
+      "total_price": null,
+      "gift_tier": "Signature",
+      "gift_tier_id": "tier:Signature",
+      "recipient_segment": "C-Level",
+      "recipient_segment_id": "seg:C-Level",
+      "tier_breakdown": {
+        "C-Level": {
+          "segment_id": "seg:C-Level",
+          "tier_id": "tier:Signature",
+          "count": null
+        }
+      },
+      "design_scope": {
+        "catalog_slugs": [
+          "classic-oriental"
+        ],
+        "gift_tiers": [
+          "Signature"
+        ],
+        "status": "seasonal_candidate"
+      },
+      "options": [
+        {
+          "option_id": "option:smartgift-new_year_2027-signature-c-level:TMK0215",
+          "bundle_id": "bundle:smartgift-new_year_2027-signature-c-level",
+          "catalog_slug": "classic-oriental",
+          "gift_tier_id": "tier:Signature",
+          "recipient_segment_id": "seg:C-Level",
+          "offer_id": "offer:TMK0215",
+          "offer_code": "TMK0215",
+          "qty": 1,
+          "bom_ref": {
+            "bundle_id": "bundle:smartgift-new_year_2027-signature-c-level",
+            "offer_id": "offer:TMK0215"
+          },
+          "bom_status": "proposed_recipe"
+        }
+      ],
+      "bom_status": "proposed_recipe",
+      "quote_ready": false,
+      "price_reference": {
+        "offer_price_qty1": null,
+        "offer_price_tiers": [
+          {
+            "min_qty": 10,
+            "unit_price": 850.0
+          },
+          {
+            "min_qty": 50,
+            "unit_price": 790.0
+          },
+          {
+            "min_qty": 100,
+            "unit_price": 730.0
+          }
+        ],
+        "component_srp_qty1_reference_total": 770.0,
+        "component_srp_qty1_reference": [
+          {
+            "product_master_id": "pm:PM-PEN",
+            "product_code": "PM-PEN",
+            "qty": 1,
+            "srp_qty1": 190.0
+          },
+          {
+            "product_master_id": "pm:PM-FLASH",
+            "product_code": "PM-FLASH",
+            "qty": 1,
+            "srp_qty1": 220.0
+          },
+          {
+            "product_master_id": "pm:PM-TEA-INF",
+            "product_code": "PM-TEA-INF",
+            "qty": 1,
+            "srp_qty1": 360.0
+          }
+        ],
+        "price_basis": "canonical_master_declared_reference",
+        "quote_ready": false
+      },
+      "cost_reference": {
+        "costed_components": 1,
+        "total_components": 3,
+        "coverage": "partial",
+        "exw_cost_per_set_thb": null,
+        "component_srp_qty1_total": 770.0,
+        "cost_basis": "EXW_confirmed_mapping_no_freight_no_duty",
+        "indicative_profit": null,
+        "quote_ready": false
+      },
+      "profit_evaluation": {
+        "net_revenue": null,
+        "total_cost": null,
+        "profit": null,
+        "minimum_profit": 25000,
+        "currency": "THB",
+        "status": "missing_inputs",
+        "missing_inputs": [
+          "quantity",
+          "cost_breakdown",
+          "vat_basis",
+          "net_revenue",
+          "total_cost",
+          "factory_identity",
+          "factory_cost",
+          "freight_or_cbm_evidence",
+          "direct_cost_breakdown",
+          "package_price",
+          "quote_quantity",
+          "target_recipients"
+        ]
+      },
+      "ad_creative": {
+        "customer_safe": true,
+        "headline_th": "เริ่มปีใหม่ด้วยของขวัญที่บอกว่าองค์กรใส่ใจ",
+        "supporting_copy_th": "จัดชุดให้เหมาะกับทุกระดับ พร้อมดูรายละเอียดในชุดได้",
+        "visual_direction": "clean gold/blue accent, fresh-start utility",
+        "cta_th": "ดูของในชุด",
+        "claim_status": "draft_copy"
+      },
+      "source_ref": {
+        "kind": "approved_seasonal_design",
+        "definition_key": "new_year_2027:signature-c-level",
+        "catalog_source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "catalog_source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26"
+      },
+      "entity_type": "BundleOffer",
+      "contract_validation": {
+        "status": "incomplete",
+        "missing_fields": [
+          "target_recipients",
+          "total_price"
+        ],
+        "promoted": false
+      },
+      "identity_status": "schema_projection"
+    }
+  ],
+  "edges": {
+    "INCLUDES_OFFER": [
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-christmas_2026-reach-operations",
+        "target_id": "offer:smartgift-2026-christmas-reach-operations",
+        "qty": 1
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-christmas_2026-select-mid-management",
+        "target_id": "offer:TDD03-2",
+        "qty": 1
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-christmas_2026-signature-c-level",
+        "target_id": "offer:TGC06-4",
+        "qty": 1
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-new_year_2027-reach-operations",
+        "target_id": "offer:smartgift-2027-new-year-reach-operations",
+        "qty": 1
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-new_year_2027-select-mid-management",
+        "target_id": "offer:TWL01-8",
+        "qty": 1
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-new_year_2027-signature-c-level",
+        "target_id": "offer:TMK0215",
+        "qty": 1
+      }
+    ],
+    "INCLUDES_OFFER_PENDING": [
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-christmas_2026-corporate-mix",
+        "target_id": "offer:smartgift-2026-christmas-reach-operations",
+        "qty": null,
+        "status": "pending_segment_counts"
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-christmas_2026-corporate-mix",
+        "target_id": "offer:TDD03-2",
+        "qty": null,
+        "status": "pending_segment_counts"
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-christmas_2026-corporate-mix",
+        "target_id": "offer:TGC06-4",
+        "qty": null,
+        "status": "pending_segment_counts"
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-new_year_2027-corporate-mix",
+        "target_id": "offer:smartgift-2027-new-year-reach-operations",
+        "qty": null,
+        "status": "pending_segment_counts"
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-new_year_2027-corporate-mix",
+        "target_id": "offer:TWL01-8",
+        "qty": null,
+        "status": "pending_segment_counts"
+      },
+      {
+        "edge_type": "INCLUDES_OFFER",
+        "source_id": "bundle:smartgift-new_year_2027-corporate-mix",
+        "target_id": "offer:TMK0215",
+        "qty": null,
+        "status": "pending_segment_counts"
+      }
+    ]
+  },
+  "bom": [
+    {
+      "bundle_id": "bundle:smartgift-christmas_2026-reach-operations",
+      "offer_id": "offer:smartgift-2026-christmas-reach-operations",
+      "product_master_id": "pm:PM-BOTTLE-LED",
+      "product_code": "PM-BOTTLE-LED",
+      "qty": 1,
+      "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+      "name_en": "Smart LED Temperature Thermos Bottle",
+      "product_family": "PF-DRINKWARE",
+      "category_slug": "eco-friendly",
+      "unit_srp_qty1": 290.0,
+      "factory_product_code": "TDK01-1",
+      "factory_unit_price": 2.30769230769231,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 75.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.002736,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 22.77,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "SG-OFFER-XMAS-2026-REACH-OPS:PM-BOTTLE-LED",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-BOTTLE-LED",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-christmas_2026-reach-operations",
+      "offer_id": "offer:smartgift-2026-christmas-reach-operations",
+      "product_master_id": "pm:PM-TMB",
+      "product_code": "PM-TMB",
+      "qty": 1,
+      "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+      "name_en": "Thermal Tumbler SUS316",
+      "product_family": "PF-DRINKWARE",
+      "category_slug": "eco-friendly",
+      "unit_srp_qty1": 320.0,
+      "factory_product_code": "BW00-0",
+      "factory_unit_price": 2.30769230769231,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 75.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.002508,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 19.2,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "SG-OFFER-XMAS-2026-REACH-OPS:PM-TMB",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-TMB",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-christmas_2026-reach-operations",
+      "offer_id": "offer:smartgift-2026-christmas-reach-operations",
+      "product_master_id": "pm:PM-UMB",
+      "product_code": "PM-UMB",
+      "qty": 1,
+      "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+      "name_en": "Auto 6-Fold UPF50+ Umbrella",
+      "product_family": "PF-OUTDOOR-LIFESTYLE",
+      "category_slug": "eco-friendly",
+      "unit_srp_qty1": 250.0,
+      "factory_product_code": "TYS01-1",
+      "factory_unit_price": 2.46153846153846,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 80.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.000864,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 6.4,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "SG-OFFER-XMAS-2026-REACH-OPS:PM-UMB",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-UMB",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-christmas_2026-select-mid-management",
+      "offer_id": "offer:TDD03-2",
+      "product_master_id": "pm:PM-BOTTLE-LED",
+      "product_code": "PM-BOTTLE-LED",
+      "qty": 1,
+      "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+      "name_en": "Smart LED Temperature Thermos Bottle",
+      "product_family": "PF-DRINKWARE",
+      "category_slug": "eco-friendly",
+      "unit_srp_qty1": 290.0,
+      "factory_product_code": "TDK01-1",
+      "factory_unit_price": 2.30769230769231,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 75.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.002736,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 22.77,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TDD03-2:PM-BOTTLE-LED",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-BOTTLE-LED",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-christmas_2026-select-mid-management",
+      "offer_id": "offer:TDD03-2",
+      "product_master_id": "pm:PM-TMB",
+      "product_code": "PM-TMB",
+      "qty": 1,
+      "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+      "name_en": "Thermal Tumbler SUS316",
+      "product_family": "PF-DRINKWARE",
+      "category_slug": "eco-friendly",
+      "unit_srp_qty1": 320.0,
+      "factory_product_code": "BW00-0",
+      "factory_unit_price": 2.30769230769231,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 75.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.002508,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 19.2,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TDD03-2:PM-TMB",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-TMB",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-christmas_2026-select-mid-management",
+      "offer_id": "offer:TDD03-2",
+      "product_master_id": "pm:PM-UMB",
+      "product_code": "PM-UMB",
+      "qty": 1,
+      "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+      "name_en": "Auto 6-Fold UPF50+ Umbrella",
+      "product_family": "PF-OUTDOOR-LIFESTYLE",
+      "category_slug": "eco-friendly",
+      "unit_srp_qty1": 250.0,
+      "factory_product_code": "TYS01-1",
+      "factory_unit_price": 2.46153846153846,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 80.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.000864,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 6.4,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TDD03-2:PM-UMB",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-UMB",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-christmas_2026-signature-c-level",
+      "offer_id": "offer:TGC06-4",
+      "product_master_id": "pm:PM-NB",
+      "product_code": "PM-NB",
+      "qty": 1,
+      "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+      "name_en": "Smart Leather Powerbank Notebook",
+      "product_family": "PF-SMART-OFFICE",
+      "category_slug": "executive-smart-tech",
+      "unit_srp_qty1": 750.0,
+      "factory_product_code": "TNA0014",
+      "factory_unit_price": 18.7692307692308,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 610.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.00304,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 20.7,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TGC06-4:PM-NB",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-NB",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-christmas_2026-signature-c-level",
+      "offer_id": "offer:TGC06-4",
+      "product_master_id": "pm:PM-PB10K",
+      "product_code": "PM-PB10K",
+      "qty": 1,
+      "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+      "name_en": "MagSafe Wireless Powerbank 10000mAh",
+      "product_family": "PF-POWER-CHARGING",
+      "category_slug": "executive-smart-tech",
+      "unit_srp_qty1": 690.0,
+      "factory_product_code": "TZJ00-1",
+      "factory_unit_price": 7.15384615384615,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 232.5,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.000533,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 5.22,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TGC06-4:PM-PB10K",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-PB10K",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-christmas_2026-signature-c-level",
+      "offer_id": "offer:TGC06-4",
+      "product_master_id": "pm:PM-PEN",
+      "product_code": "PM-PEN",
+      "qty": 1,
+      "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+      "name_en": "Solid Walnut Brass Gel Pen",
+      "product_family": "PF-CRAFT-STATIONERY",
+      "category_slug": "classic-oriental",
+      "unit_srp_qty1": 190.0,
+      "factory_product_code": null,
+      "factory_unit_price": null,
+      "factory_currency": null,
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": null,
+      "factory_cost_thb": null,
+      "factory_cost_basis": null,
+      "factory_match_status": "missing_factory_match",
+      "cbm_per_unit": 8.8e-05,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 1.6,
+      "freight_basis": "declared_scenario",
+      "cost_status": "missing_factory_identity",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TGC06-4:PM-PEN",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": null
+    },
+    {
+      "bundle_id": "bundle:smartgift-new_year_2027-reach-operations",
+      "offer_id": "offer:smartgift-2027-new-year-reach-operations",
+      "product_master_id": "pm:PM-BOTTLE-LED",
+      "product_code": "PM-BOTTLE-LED",
+      "qty": 1,
+      "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+      "name_en": "Smart LED Temperature Thermos Bottle",
+      "product_family": "PF-DRINKWARE",
+      "category_slug": "eco-friendly",
+      "unit_srp_qty1": 290.0,
+      "factory_product_code": "TDK01-1",
+      "factory_unit_price": 2.30769230769231,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 75.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.002736,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 22.77,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "SG-OFFER-NY-2027-REACH-OPS:PM-BOTTLE-LED",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-BOTTLE-LED",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-new_year_2027-reach-operations",
+      "offer_id": "offer:smartgift-2027-new-year-reach-operations",
+      "product_master_id": "pm:PM-TMB",
+      "product_code": "PM-TMB",
+      "qty": 1,
+      "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+      "name_en": "Thermal Tumbler SUS316",
+      "product_family": "PF-DRINKWARE",
+      "category_slug": "eco-friendly",
+      "unit_srp_qty1": 320.0,
+      "factory_product_code": "BW00-0",
+      "factory_unit_price": 2.30769230769231,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 75.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.002508,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 19.2,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "SG-OFFER-NY-2027-REACH-OPS:PM-TMB",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-TMB",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-new_year_2027-select-mid-management",
+      "offer_id": "offer:TWL01-8",
+      "product_master_id": "pm:PM-AROMA",
+      "product_code": "PM-AROMA",
+      "qty": 1,
+      "name_th": "เครื่องกระจายกลิ่นอโรมาอัลตราโซนิกเปลวไฟแสงไฟ Ambient",
+      "name_en": "Ultrasonic Flame Aroma Diffuser",
+      "product_family": "PF-WELLNESS-HEALTH",
+      "category_slug": "novelty-self-care",
+      "unit_srp_qty1": 550.0,
+      "factory_product_code": null,
+      "factory_unit_price": null,
+      "factory_currency": null,
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": null,
+      "factory_cost_thb": null,
+      "factory_cost_basis": null,
+      "factory_match_status": "missing_factory_match",
+      "cbm_per_unit": 0.002567,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 21.39,
+      "freight_basis": "declared_scenario",
+      "cost_status": "missing_factory_identity",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TWL01-8:PM-AROMA",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": null
+    },
+    {
+      "bundle_id": "bundle:smartgift-new_year_2027-select-mid-management",
+      "offer_id": "offer:TWL01-8",
+      "product_master_id": "pm:PM-CFMUG",
+      "product_code": "PM-CFMUG",
+      "qty": 1,
+      "name_th": "แก้วกาแฟพกพาสแตนเลส 316 พร้อมฝา 3 ระบบ",
+      "name_en": "Stainless Coffee Mug 3-Way Lid",
+      "product_family": "PF-DRINKWARE",
+      "category_slug": "novelty-self-care",
+      "unit_srp_qty1": 299.0,
+      "factory_product_code": "TJS00-1",
+      "factory_unit_price": 4.76923076923077,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 155.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.001892,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 12.8,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TWL01-8:PM-CFMUG",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-CFMUG",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-new_year_2027-select-mid-management",
+      "offer_id": "offer:TWL01-8",
+      "product_master_id": "pm:PM-MSG",
+      "product_code": "PM-MSG",
+      "qty": 1,
+      "name_th": "เครื่องนวดคอพกพาคลื่นความถี่ต่ำ Low Pulse & ประคบร้อน",
+      "name_en": "Portable Low Pulse Neck Massager",
+      "product_family": "PF-WELLNESS-HEALTH",
+      "category_slug": "novelty-self-care",
+      "unit_srp_qty1": 850.0,
+      "factory_product_code": "TBY17-1",
+      "factory_unit_price": 3.6,
+      "factory_currency": "USD",
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": 32.5,
+      "factory_cost_thb": 117.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 0.003293,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 27.6,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TWL01-8:PM-MSG",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-MSG",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-new_year_2027-signature-c-level",
+      "offer_id": "offer:TMK0215",
+      "product_master_id": "pm:PM-FLASH",
+      "product_code": "PM-FLASH",
+      "qty": 1,
+      "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+      "name_en": "Dual Interface Metal Flash Drive",
+      "product_family": "PF-STORAGE-TECH",
+      "category_slug": "classic-oriental",
+      "unit_srp_qty1": 220.0,
+      "factory_product_code": "COMPOSITE:Swivel usb shell + PCBA chip 64G USB 3.0",
+      "factory_unit_price": 16.8,
+      "factory_currency": "RMB",
+      "factory_unit_cny": 16.8,
+      "fx_rate_to_thb": 5.0,
+      "factory_cost_thb": 84.0,
+      "factory_cost_basis": "EXW_confirmed_mapping",
+      "factory_match_status": "confirmed_supplier_mapping",
+      "cbm_per_unit": 3e-05,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 3.33,
+      "freight_basis": "declared_scenario",
+      "cost_status": "exw_cost_confirmed",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TMK0215:PM-FLASH",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": {
+        "source_file": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+        "source_sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503",
+        "source_key": "PM-FLASH",
+        "kind": "confirmed_factory_cost_mapping"
+      }
+    },
+    {
+      "bundle_id": "bundle:smartgift-new_year_2027-signature-c-level",
+      "offer_id": "offer:TMK0215",
+      "product_master_id": "pm:PM-PEN",
+      "product_code": "PM-PEN",
+      "qty": 1,
+      "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+      "name_en": "Solid Walnut Brass Gel Pen",
+      "product_family": "PF-CRAFT-STATIONERY",
+      "category_slug": "classic-oriental",
+      "unit_srp_qty1": 190.0,
+      "factory_product_code": null,
+      "factory_unit_price": null,
+      "factory_currency": null,
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": null,
+      "factory_cost_thb": null,
+      "factory_cost_basis": null,
+      "factory_match_status": "missing_factory_match",
+      "cbm_per_unit": 8.8e-05,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 1.6,
+      "freight_basis": "declared_scenario",
+      "cost_status": "missing_factory_identity",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TMK0215:PM-PEN",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": null
+    },
+    {
+      "bundle_id": "bundle:smartgift-new_year_2027-signature-c-level",
+      "offer_id": "offer:TMK0215",
+      "product_master_id": "pm:PM-TEA-INF",
+      "product_code": "PM-TEA-INF",
+      "qty": 1,
+      "name_th": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+      "name_en": "Double Wall Borosilicate Tea Infuser",
+      "product_family": "PF-DRINKWARE",
+      "category_slug": "classic-oriental",
+      "unit_srp_qty1": 360.0,
+      "factory_product_code": null,
+      "factory_unit_price": null,
+      "factory_currency": null,
+      "factory_unit_cny": null,
+      "fx_rate_to_thb": null,
+      "factory_cost_thb": null,
+      "factory_cost_basis": null,
+      "factory_match_status": "missing_factory_match",
+      "cbm_per_unit": 0.002816,
+      "cbm_source": "master_packaging_estimate",
+      "declared_freight_reference_per_unit_thb": 21.76,
+      "freight_basis": "declared_scenario",
+      "cost_status": "missing_factory_identity",
+      "verified": false,
+      "provenance": {
+        "source_file": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+        "source_sha256": "5559fb176097009103f93ba22a3c6835dc596ed30032843245f7dc256bb59e26",
+        "source_key": "TMK0215:PM-TEA-INF",
+        "kind": "canonical_offer_component"
+      },
+      "cost_provenance": null
+    }
+  ]
+}

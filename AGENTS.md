@@ -18,6 +18,7 @@ This file defines the domain role, governance invariants, and execution constrai
 * **Primary Vault ID:** `vlt-catalog-product` (UUIDv7 Zero-PII Substrate)
 * **Contract Reference:** `smartgift://b2b/portfolio/v1` (Version 1.3.0)
 * **Local Substrate:** `vaults/vlt-catalog-product/genesis-db/` (GenesisBlockDB Native v0.2.5)
+* **GenesisBlock Schema Authority:** `config/schema_genesisblock.yaml` is the canonical authority for SmartGift entity names, required properties, ID prefixes, and graph relationships. Any JSON, API, web catalog, offline catalog, pipeline output, or database projection must map back to this schema before it is treated as canonical.
 
 ---
 
@@ -37,6 +38,16 @@ This file defines the domain role, governance invariants, and execution constrai
 3. **Inventory Integrity:** Never alter non-negative stock constraints (`inventory_qty >= 0`) or bypass waterfall stock deduction logic.
 4. **UTF-8 Output:** Always configure stdout UTF-8 encoding in Python scripts (`sys.stdout.reconfigure(encoding='utf-8')`).
 5. **Zero-PII in Version Control — customer data never goes to GitHub.** This is invariant #1 with the scope it was missing. #1 forbids customer contacts, PIC names and quotation history in the *vector vault*; it says nothing about git, and on 2026-08-30 that exact data — a named legal entity's contact list, its quotation report, and a per-customer purchase history — was found tracked in this repository and live on a **public** remote. The rule was right and could not reach the failure, because a vault is not a repository. So: **no customer or personally identifying data is ever committed, in any lane, in any format.** Not in `01_raw`, not in a prepared JSON, not in a review report, not in a test fixture. The store of record is zuri-ai's CRM domain, behind its scope chain and PDPA consent controls (FR-103/SEC-005) — anything under `data-pipeline/01_raw/` is an intake artifact, never a store.
+
+6. **GenesisBlock schema is the canonical data contract.** Before adding or changing a catalog entity, validate it against `config/schema_genesisblock.yaml` and preserve the schema identity and edge semantics:
+   - `Category` → `cat:`
+   - `ProductMaster` → `pm:`
+   - `CatalogOffer` → `offer:`
+   - `BundleOffer` → `bundle:` (a serialized `pkg` array is only an alias; `PKG-*` is a business code, not the canonical primary key)
+   - `GiftTier` → `tier:`
+   - `RecipientSegment` → `seg:`
+
+   Canonical IDs are the primary keys; business codes and presentation field names are not substitutes. Serialized aliases such as `portfolio_catalogs`, `customer_tiers`, and `pkg` must record their mapping to the schema entity. `product_families` is an extension/helper unless a reviewed schema revision adds a `ProductFamily` node. Keep `IN_CATEGORY`, `CONTAINS`, `BELONGS_TO_TIER`, `RECOMMENDED_TIER`, and `INCLUDES_OFFER` references type-correct, and fail closed when required properties or referenced canonical IDs are missing. A schema or ontology change requires a documented decision in `docs/decisions/` before implementation.
 
    **Two mechanics that fail silently, and the reason this invariant exists rather than a `.gitignore` line existing:**
 
