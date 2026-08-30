@@ -43,7 +43,7 @@ class SmartGiftGraphRAGAgent:
         scored_offers = []
 
         keywords = {
-            "pastel-series": ["pastel", "พาสเทล", "อ่อนหวาน", "ละมุน", "สดใส", "ร่ม", "น่ารัก", "วัยรุ่น", "soft", "friendly"],
+            "eco-friendly": ["eco", "friendly", "รักษ์โลก", "ยั่งยืน", "สิ่งแวดล้อม", "รีไซเคิล", "ฟางข้าว", "ชีวภาพ", "green", "earth", "sustainability", "pastel", "พาสเทล"],
             "classic-oriental": ["oriental", "ตะวันออก", "จีน", "คลาสสิก", "ประณีต", "ทรงคุณค่า", "ไม้", "ชา", "มงคล", "craft", "mindfulness"],
             "novelty-self-care": ["novelty", "self-care", "wellness", "สุขภาพ", "อบอุ่น", "ผ่อนคลาย", "เทียนหอม", "นวด", "อโรมา", "ใส่ใจ", "ผู้หญิง"],
             "executive-smart-tech": ["executive", "tech", "smart", "ไอที", "อัจฉริยะ", "พาวเวอร์แบงก์", "สมุดชาร์จ", "ผู้บริหาร", "นวัตกรรม", "modern"]

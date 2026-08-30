@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS categories (
 
 -- Seed Data: Top Level 4 Main Categories
 INSERT INTO categories (name_th, name_en, slug, vibe, target_recipient, guardrail, description) VALUES
-('ชุดธีมสีพาสเทล (Pastel Series)', 'Pastel Series (Soft & Friendly)', 'pastel-series', 'อ่อนหวาน ละมุน เป็นมิตร', 'กลุ่มวัยรุ่น, แคมเปญเข้าถึงง่าย', 'คุมโทนสีให้เป็นเฉดเดียวกันทั้งกล่อง', 'การคุมโทนเฉดสีอ่อนหวาน ละมุน และเป็นมิตร (ฟ้าพาสเทล, ส้มสว่าง, ชมพู)'),
+('ชุดผลิตภัณฑ์รักษ์โลกและสิ่งแวดล้อม (Eco-Friendly Series)', 'Eco-Friendly & Sustainability (Green & Earth)', 'eco-friendly', 'ยั่งยืน รักษ์โลก เป็นมิตรต่อธรรมชาติ', 'องค์กรสาย ESG, แคมเปญเพื่อสิ่งแวดล้อม', 'เน้นใช้วัสดุรีไซเคิล ย่อยสลายได้ หรือลดขยะพลาสติก', 'เน้นผลิตภัณฑ์ยั่งยืนเป็นมิตรต่อสิ่งแวดล้อม (Eco-Friendly)'),
 ('ชุดศิลปะร่วมสมัยและตะวันออก (Classic Oriental)', 'Classic Oriental (Mindfulness & Craft)', 'classic-oriental', 'ประณีต ทรงคุณค่า คลาสสิก', 'ผู้ใหญ่, แขก VIP ต่างชาติ', 'ตรวจเช็คความหมายมงคลของลวดลาย', 'ผสมผสานความร่วมสมัยสไตล์จีนคลาสสิก (Classical Chinese Craft) ประณีต ทรงคุณค่า และมีเอกลักษณ์'),
 ('ชุด Novelty & Self-Care', 'Novelty & Self-Care (Warm & Wellness)', 'novelty-self-care', 'ผ่อนคลาย อบอุ่น ใส่ใจ', 'กลุ่มผู้หญิง, พนักงานสาย Wellness', 'ห้ามเคลมสรรพคุณ Medical โดยไม่มีหลักฐาน', 'ชุดของขวัญที่เน้นความรู้สึกผ่อนคลาย อบอุ่น เหมาะสำหรับแคมเปญสาย Wellness ของกลุ่มผู้หญิงหรือพนักงาน'),
 ('ชุดนวัตกรรมทางการทำงานอัจฉริยะ (Executive Smart Tech)', 'Executive Smart Tech (Modern & Work)', 'executive-smart-tech', 'ทันสมัย นวัตกรรม เป็นมืออาชีพ', 'ผู้บริหาร, กลุ่มนักธุรกิจยุคใหม่', 'ตรวจสเปกแบตเตอรี่และการรับรองความปลอดภัย', 'เซ็ตไอทีพรีเมียมที่เน้นความทันสมัย ตอบสนองไลฟ์สไตล์การทำงานยุคใหม่ของระดับบริหาร')

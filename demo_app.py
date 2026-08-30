@@ -53,7 +53,7 @@ def main():
         elif choice == "1":
             print_header("ค้นหาและคัดกรองสินค้าตาม Top Level 4 หมวดหลัก (Interest Themes 2026 Blueprint)")
             print("  หมวดสินค้าหลัก 4 ธีม:")
-            print("    [1] Pastel Series (Soft & Friendly — ชุดสีพาสเทล อ่อนหวาน ละมุน)")
+            print("    [1] Eco-Friendly & Sustainability (Green & Earth — ชุดผลิตภัณฑ์รักษ์โลก ยั่งยืน)")
             print("    [2] Classic Oriental (Mindfulness & Craft — ชุดศิลปะร่วมสมัยและตะวันออก)")
             print("    [3] Novelty & Self-Care (Warm & Wellness — ชุดผ่อนคลาย อบอุ่น สุขภาพ)")
             print("    [4] Executive Smart Tech (Modern & Work — ชุดนวัตกรรมไอทีอัจฉริยะ)")
@@ -61,7 +61,7 @@ def main():
             
             cat_choice = input("\nเลือกหมวดสินค้า (1-4) หรือกด Enter เพื่อค้นหาอิสระ: ").strip()
             cat_map = {
-                "1": ("pastel-series", "Pastel Series (Soft & Friendly)"),
+                "1": ("eco-friendly", "Eco-Friendly & Sustainability (Green & Earth)"),
                 "2": ("classic-oriental", "Classic Oriental (Mindfulness & Craft)"),
                 "3": ("novelty-self-care", "Novelty & Self-Care (Warm & Wellness)"),
                 "4": ("executive-smart-tech", "Executive Smart Tech (Modern & Work)")

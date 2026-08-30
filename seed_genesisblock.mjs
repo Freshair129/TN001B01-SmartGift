@@ -46,7 +46,7 @@ async function main() {
   console.log('=== Step 4: Seeding Categories, Tiers & Segments ===');
   // Top-Level 4 Main Categories (Interest Themes 2026 Blueprint)
   const categories = [
-    { id: 'cat:pastel-series', name: 'Pastel Series (Soft & Friendly)', name_th: 'ชุดธีมสีพาสเทล', slug: 'pastel-series', vibe: 'Soft & Friendly' },
+    { id: 'cat:eco-friendly', name: 'Eco-Friendly & Sustainability (Green & Earth)', name_th: 'ชุดผลิตภัณฑ์รักษ์โลกและสิ่งแวดล้อม', slug: 'eco-friendly', vibe: 'Green & Earth' },
     { id: 'cat:classic-oriental', name: 'Classic Oriental (Mindfulness & Craft)', name_th: 'ชุดศิลปะร่วมสมัยและตะวันออก', slug: 'classic-oriental', vibe: 'Mindfulness & Craft' },
     { id: 'cat:novelty-self-care', name: 'Novelty & Self-Care (Warm & Wellness)', name_th: 'ชุด Novelty & Self-Care', slug: 'novelty-self-care', vibe: 'Warm & Wellness' },
     { id: 'cat:executive-smart-tech', name: 'Executive Smart Tech (Modern & Work)', name_th: 'ชุดนวัตกรรมทางการทำงานอัจฉริยะ', slug: 'executive-smart-tech', vibe: 'Modern & Work' }

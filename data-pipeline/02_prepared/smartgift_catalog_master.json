@@ -9,17 +9,17 @@
   },
   "top_level_categories": [
     {
-      "slug": "pastel-series",
-      "name_th": "ชุดธีมสีพาสเทล (Pastel Series)",
-      "name_en": "Pastel Series (Soft & Friendly)",
-      "vibe": "อ่อนหวาน ละมุน เป็นมิตร",
-      "target_recipient": "กลุ่มวัยรุ่น, แคมเปญเข้าถึงง่าย",
-      "guardrail": "คุมโทนสีให้เป็นเฉดเดียวกันทั้งกล่อง",
+      "slug": "eco-friendly",
+      "name_th": "ชุดผลิตภัณฑ์รักษ์โลกและสิ่งแวดล้อม (Eco-Friendly Series)",
+      "name_en": "Eco-Friendly & Sustainability (Green & Earth)",
+      "vibe": "ยั่งยืน รักษ์โลก เป็นมิตรต่อธรรมชาติ",
+      "target_recipient": "องค์กรสาย ESG, แคมเปญเพื่อสิ่งแวดล้อม",
+      "guardrail": "เน้นใช้วัสดุรีไซเคิล ย่อยสลายได้ หรือลดขยะพลาสติก",
       "core_signatures": [
-        "ร่มพาสเทลออโต้ 8 ก้าน",
-        "สมุด Skin-touch",
-        "กระบอกน้ำสุญญากาศ",
-        "ปากกาหมึกซึม"
+        "กระบอกน้ำฟางข้าวพกพา",
+        "สมุดปกกระดาษรีไซเคิล",
+        "กระเป๋าผ้าแคนวาสออร์แกนิก",
+        "ชุดช้อนส้อมพกพาวัสดุชีวภาพ"
       ]
     },
     {
@@ -70,8 +70,8 @@
       "code": "PM-TMB",
       "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
       "name_en": "Thermal Tumbler SUS316",
-      "category": "Pastel Series (Soft & Friendly)",
-      "category_slug": "pastel-series",
+      "category": "Eco-Friendly & Sustainability (Green & Earth)",
+      "category_slug": "eco-friendly",
       "base_cost": 150.0
     },
     {
@@ -102,8 +102,8 @@
       "code": "PM-UMB",
       "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
       "name_en": "Auto 6-Fold UPF50+ Umbrella",
-      "category": "Pastel Series (Soft & Friendly)",
-      "category_slug": "pastel-series",
+      "category": "Eco-Friendly & Sustainability (Green & Earth)",
+      "category_slug": "eco-friendly",
       "base_cost": 110.0
     },
     {
@@ -150,8 +150,8 @@
       "code": "PM-BOTTLE-LED",
       "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
       "name_en": "Smart LED Temperature Thermos Bottle",
-      "category": "Pastel Series (Soft & Friendly)",
-      "category_slug": "pastel-series",
+      "category": "Eco-Friendly & Sustainability (Green & Earth)",
+      "category_slug": "eco-friendly",
       "base_cost": 130.0
     },
     {
@@ -182,8 +182,8 @@
       "code": "PM-FAN",
       "name_th": "พัดลมพกพาดีไซน์มินิมอลหน้าจอดิจิทัลแบต 4000mAh",
       "name_en": "Digital Display Mini Handheld Fan",
-      "category": "Pastel Series (Soft & Friendly)",
-      "category_slug": "pastel-series",
+      "category": "Eco-Friendly & Sustainability (Green & Earth)",
+      "category_slug": "eco-friendly",
       "base_cost": 115.0
     },
     {
@@ -238,8 +238,8 @@
       "page": 6,
       "name": "ชุดของขวัญ Pastel Series (ร่มพาสเทล + สมุด Skin-touch + กระบอกน้ำสุญญากาศ)",
       "gift_tier": "Select",
-      "interest_theme": "Pastel Series (Soft & Friendly)",
-      "interest_theme_slug": "pastel-series",
+      "interest_theme": "Eco-Friendly & Sustainability (Green & Earth)",
+      "interest_theme_slug": "eco-friendly",
       "components": [
         {
           "product_code": "PM-UMB",

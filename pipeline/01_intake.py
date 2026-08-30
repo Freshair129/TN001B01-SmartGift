@@ -51,10 +51,10 @@ def parse_google_sheet_csv() -> Dict[str, Dict[str, Any]]:
             # Determine gift tier & theme slug based on category / components
             theme_slug = "executive-smart-tech"
             gift_tier = "Signature"
-            if "พาสเทล" in name.lower() or "pastel" in name.lower():
-                theme_slug = "pastel-series"
+            if "eco" in name.lower() or "รักษ์โลก" in name.lower() or "พาสเทล" in name.lower() or "pastel" in name.lower():
+                theme_slug = "eco-friendly"
                 gift_tier = "Select"
-                theme_name = "Pastel Series (Soft & Friendly)"
+                theme_name = "Eco-Friendly & Sustainability (Green & Earth)"
             elif "ชา" in name or " oriental" in name.lower():
                 theme_slug = "classic-oriental"
                 gift_tier = "Select"
