@@ -95,5 +95,105 @@ class TestPricingBugFixes(unittest.TestCase):
         self.assertEqual(self.calc.round_up_to_step(420.0, 10.0), 420.0)
 
 
+class TestQuoteWarnings(unittest.TestCase):
+    """Sanity warnings ported from the price-boss reference engine."""
+
+    def setUp(self):
+        self.calc = SmartGiftPricingCalculator(fx=5.0, usd_to_thb=32.5)
+
+    @staticmethod
+    def _messages(quote, level=None):
+        return [w["message"] for w in quote["warnings"]
+                if level is None or w["level"] == level]
+
+    def _contains(self, quote, text, level=None):
+        return any(text in m for m in self._messages(quote, level))
+
+    def test_warns_when_floor_drives_price(self):
+        # Cheap item at tiny quantities: the profit floor must drive the price
+        q = self.calc.generate_quote(rmb=5.0, upc=20, cbm=0.08, kg=12.0,
+                                     profile_key="standard")
+        self.assertTrue(any(r["price_driven_by"] == "floor" for r in q["ladder_quotes"]))
+        self.assertTrue(self._contains(q, "พื้นกำไร", level="warn"))
+
+    def test_warns_on_missing_logo_method(self):
+        q = self.calc.generate_quote(rmb=50.0, upc=20, cbm=0.08, kg=12.0,
+                                     logo_method="none")
+        self.assertTrue(self._contains(q, "สกรีน", level="warn"))
+
+    def test_warns_on_uv_without_rate(self):
+        q = self.calc.generate_quote(rmb=50.0, upc=20, cbm=0.08, kg=12.0,
+                                     logo_method="uv", logo_uv_rate=0.0)
+        self.assertTrue(self._contains(q, "UV", level="warn"))
+
+    def test_info_when_no_weight_given(self):
+        q = self.calc.generate_quote(rmb=50.0, upc=20, cbm=0.08, kg=None)
+        self.assertTrue(self._contains(q, "ปริมาตร", level="info"))
+
+    def test_info_when_no_extra_costs(self):
+        q = self.calc.generate_quote(rmb=50.0, upc=20, cbm=0.08, kg=12.0)
+        self.assertTrue(self._contains(q, "กล่องของขวัญ", level="info"))
+        q2 = self.calc.generate_quote(rmb=50.0, upc=20, cbm=0.08, kg=12.0,
+                                      custom_ucost=5.0)
+        self.assertFalse(self._contains(q2, "กล่องของขวัญ", level="info"))
+
+    def test_warns_on_small_order_premium(self):
+        # standard profile spans qty 10-1000, so sof > 1 breaks must be flagged
+        q = self.calc.generate_quote(rmb=50.0, upc=20, cbm=0.08, kg=12.0,
+                                     profile_key="standard")
+        self.assertTrue(self._contains(q, "ออเดอร์เล็ก", level="warn"))
+
+    def test_warns_on_mixed_shipping_modes(self):
+        # Off-season, 1 unit per carton at 0.06 CBM: big breaks cross the
+        # 5-CBM sea threshold while small breaks stay on truck
+        q = self.calc.generate_quote(rmb=50.0, upc=1, cbm=0.06, kg=None,
+                                     profile_key="standard", mode="auto", month=5)
+        modes = {r["shipping_mode"] for r in q["ladder_quotes"]}
+        self.assertGreater(len(modes), 1)
+        self.assertTrue(self._contains(q, "วิธีส่งไม่เหมือนกัน", level="warn"))
+
+    def test_crit_on_price_inversion(self):
+        rows = [
+            {"quantity": 100, "unit_selling_price": 400.0, "gross_profit": 10000.0,
+             "price_driven_by": "ladder", "shipping_mode": "truck",
+             "small_order_factor": 1.0, "min_profit_floor": 3000.0},
+            {"quantity": 300, "unit_selling_price": 450.0, "gross_profit": 40000.0,
+             "price_driven_by": "ladder", "shipping_mode": "truck",
+             "small_order_factor": 1.0, "min_profit_floor": 3000.0},
+        ]
+        warns = self.calc.build_warnings(rows, kg=12.0, cbm=0.08, custom_ucost=5.0,
+                                         order_cost=100.0, logo_method="flat")
+        self.assertTrue(any(w["level"] == "crit" and "แพงกว่า" in w["message"]
+                            for w in warns))
+
+    def test_crit_on_profit_inversion(self):
+        rows = [
+            {"quantity": 100, "unit_selling_price": 450.0, "gross_profit": 40000.0,
+             "price_driven_by": "ladder", "shipping_mode": "truck",
+             "small_order_factor": 1.0, "min_profit_floor": 3000.0},
+            {"quantity": 300, "unit_selling_price": 400.0, "gross_profit": 10000.0,
+             "price_driven_by": "ladder", "shipping_mode": "truck",
+             "small_order_factor": 1.0, "min_profit_floor": 3000.0},
+        ]
+        warns = self.calc.build_warnings(rows, kg=12.0, cbm=0.08, custom_ucost=5.0,
+                                         order_cost=100.0, logo_method="flat")
+        self.assertTrue(any(w["level"] == "crit" and "กำไรน้อยกว่า" in w["message"]
+                            for w in warns))
+
+    def test_warn_on_steep_price_drop(self):
+        rows = [
+            {"quantity": 100, "unit_selling_price": 600.0, "gross_profit": 10000.0,
+             "price_driven_by": "ladder", "shipping_mode": "truck",
+             "small_order_factor": 1.0, "min_profit_floor": 3000.0},
+            {"quantity": 300, "unit_selling_price": 400.0, "gross_profit": 40000.0,
+             "price_driven_by": "ladder", "shipping_mode": "truck",
+             "small_order_factor": 1.0, "min_profit_floor": 3000.0},
+        ]
+        warns = self.calc.build_warnings(rows, kg=12.0, cbm=0.08, custom_ucost=5.0,
+                                         order_cost=100.0, logo_method="flat")
+        self.assertTrue(any(w["level"] == "warn" and "ราคาตกลง" in w["message"]
+                            for w in warns))
+
+
 if __name__ == "__main__":
     unittest.main()

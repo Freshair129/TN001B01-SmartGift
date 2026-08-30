@@ -240,6 +240,7 @@ class SmartGiftPricingCalculator:
 
         return {
             "qty": qty,
+            "sof": sof,
             "factory_cost_thb": factory_cost_thb,
             "freight_per_unit": fr["per_unit_freight"],
             "logo_per_unit": logo_per_unit,
@@ -308,7 +309,10 @@ class SmartGiftPricingCalculator:
                 "total_order_amount": final_price * q,
                 "gross_profit": round(profit, 2),
                 "gross_margin_percent": round(margin_pct, 2),
-                "price_driven_by": "floor" if floor_price > ladder_price else "ladder"
+                "price_driven_by": "floor" if floor_price > ladder_price else "ladder",
+                "shipping_mode": L["freight_details"]["resolved_mode"],
+                "small_order_factor": L["sof"],
+                "min_profit_floor": min_profit
             })
 
         return {
@@ -316,8 +320,77 @@ class SmartGiftPricingCalculator:
             "anchor_quantity": anchor,
             "anchor_basis_cost": anchor_basis,
             "applied_markup": markup,
-            "ladder_quotes": ladder_quotes
+            "ladder_quotes": ladder_quotes,
+            "warnings": self.build_warnings(
+                ladder_quotes, logo_method=logo_method, logo_uv_rate=logo_uv_rate,
+                kg=kg, cbm=cbm, custom_ucost=custom_ucost, order_cost=order_cost
+            )
         }
+
+    def build_warnings(self, rows: List[Dict[str, Any]], logo_method: str = "none",
+                       logo_uv_rate: float = 0.0, kg: Optional[float] = None,
+                       cbm: float = 0.0, custom_ucost: float = 0.0,
+                       order_cost: float = 0.0) -> List[Dict[str, str]]:
+        """Sanity checks on a quote ladder, ported from the price-boss engine."""
+        fmt = lambda v: f"{v:,.0f}"
+        warns: List[Dict[str, str]] = []
+
+        for prev, cur in zip(rows, rows[1:]):
+            if cur["unit_selling_price"] > prev["unit_selling_price"]:
+                warns.append({"level": "crit", "message":
+                    f"สั่ง {cur['quantity']} ชุดแพงกว่าสั่ง {prev['quantity']} ชุด — ตรวจการบรรจุกล่อง"})
+            if cur["gross_profit"] < prev["gross_profit"]:
+                warns.append({"level": "crit", "message":
+                    f"ออเดอร์ {cur['quantity']} ชุดได้กำไรน้อยกว่า {prev['quantity']} ชุด "
+                    f"({fmt(cur['gross_profit'])} เทียบ {fmt(prev['gross_profit'])} บาท) — "
+                    f"สูตรนี้ไม่เหมาะกับสินค้าราคานี้"})
+            drop = 1 - cur["unit_selling_price"] / prev["unit_selling_price"]
+            if drop > 0.25:
+                warns.append({"level": "warn", "message":
+                    f"ราคาตกลง {round(drop * 100)}% ระหว่าง {prev['quantity']} กับ {cur['quantity']} ชุด — "
+                    f"ควรเสนอขั้นนี้เมื่อลูกค้าถาม ไม่ใช่พิมพ์ไว้ข้าง ๆ กัน"})
+
+        floored = [r for r in rows if r["price_driven_by"] == "floor"]
+        if floored:
+            detail = ", ".join(f"{r['quantity']} ชุด (ให้ถึง {fmt(r['min_profit_floor'])} บาท)"
+                               for r in floored)
+            warns.append({"level": "warn", "message": f"พื้นกำไรดันราคาขึ้นที่ {detail}"})
+
+        modes = {r["shipping_mode"] for r in rows}
+        if len(modes) > 1:
+            sea_qtys = ", ".join(str(r["quantity"]) for r in rows if r["shipping_mode"] == "sea")
+            warns.append({"level": "warn", "message":
+                f"วิธีส่งไม่เหมือนกันทุกขั้น — {sea_qtys} ชุดไปทางเรือ ถูกกว่าแต่ช้ากว่า "
+                f"ต้องเช็ค lead time กับลูกค้า"})
+
+        premium = [r for r in rows if r["small_order_factor"] > 1]
+        if premium:
+            detail = ", ".join(f"{r['quantity']} ชุด (x{r['small_order_factor']})" for r in premium)
+            warns.append({"level": "warn", "message":
+                f"โรงงานคิดราคาสูงขึ้นสำหรับออเดอร์เล็กที่ {detail} — "
+                f"แคตตาล็อกบอกแค่ช่วง 1.1-1.5 เท่า ไม่ได้ระบุว่าจำนวนไหนได้เท่าไร ควรยืนยันกับโรงงาน"})
+
+        if logo_method == "none":
+            warns.append({"level": "warn", "message":
+                "ยังไม่ได้เลือกวิธีสกรีน จึงไม่มีค่าสกรีนในต้นทุน — "
+                "ใบราคาที่ส่งลูกค้าระบุว่ารวมสกรีนโลโก้ทุกชิ้นพร้อมกล่องและถุง"})
+        elif logo_method == "uv" and not logo_uv_rate:
+            warns.append({"level": "warn", "message":
+                "UV print ไม่มีเรทประกาศ แคตตาล็อกให้สอบถามฝ่ายขาย — "
+                "ตอนนี้คิดเป็นศูนย์ ทำให้ราคาต่ำกว่าความจริง"})
+
+        if not kg:
+            flip_kg = round(cbm * DENSITY_SWITCH, 2)
+            warns.append({"level": "info", "message":
+                f"ไม่ได้ระบุน้ำหนักกล่อง จึงคิดค่าขนส่งตามปริมาตร "
+                f"จะเปลี่ยนไปคิดตามน้ำหนักเมื่อกล่องหนักเกิน {flip_kg} กก."})
+
+        if custom_ucost == 0 and order_cost == 0:
+            warns.append({"level": "info", "message":
+                "ยังไม่ได้ใส่ค่ากล่องของขวัญ ถุง หรือค่าส่งในไทยนอกเหนือจากค่าสกรีน — "
+                "กำไรที่เห็นจึงสูงกว่าความจริง"})
+
+        return warns
 
 
 if __name__ == "__main__":
