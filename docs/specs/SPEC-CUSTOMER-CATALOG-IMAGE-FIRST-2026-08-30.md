@@ -1,8 +1,8 @@
 ---
-version: "0.1.0b"
+version: "0.1.1b"
 created_at: "2026-08-30T11:35:20+07:00,ATHER"
-last_update: "2026-08-30T11:35:20+07:00,ATHER"
-status: "candidate"
+last_update: "2026-08-30T18:29:00+07:00,ATHER"
+status: "beta"
 superseded_by: null
 attributes:
   domain: "customer-catalog-ui"
@@ -16,7 +16,7 @@ attributes:
 
 **ผู้ใช้ยืนยัน:** หน้า `http://localhost:5180/#/catalog` มี **ลูกค้า** เป็นผู้ใช้งานหลัก และต้องอิงสินค้าจริงใน catalog
 
-เอกสารนี้เป็นข้อเสนอเพื่ออนุมัติ ไม่ใช่การอนุมัติ code/data/runtime changes; Complexity **C-2**, Risk **MEDIUM** สำหรับการเปลี่ยน UI และผูกภาพกับสินค้า ไม่มี schema migration หรือ public deployment ในขอบเขต
+ผู้ใช้ตอบ **“ok”** อนุมัติข้อเสนอ v0.1.0b หลังยืนยันกลุ่มผู้ใช้เป็นลูกค้าแล้ว; Complexity **C-2**, Risk **MEDIUM** สำหรับการเปลี่ยน UI ไม่มี schema migration หรือ public deployment ในขอบเขต ปัจจุบัน implementation เป็น **local partial** ยังไม่ผ่านเกณฑ์จับคู่ภาพหนึ่ง SKU และหนึ่ง offer
 
 ความสำเร็จ: ลูกค้ามองภาพแล้วรู้ว่าเป็นสินค้าอะไร แยกสินค้ารายชิ้นกับชุดของขวัญได้ และเปิดดูรายละเอียดของรายการที่เลือกได้ตรงตัว โดยไม่ต้องเข้าใจคำว่า ProductMaster, BOM, CBM หรือ Data Governance
 
@@ -24,7 +24,7 @@ attributes:
 
 ## บริบทการออกแบบที่เสนอให้ยืนยัน
 
-ตาม `impeccable` ได้รับคำตอบผู้ใช้จริงเรื่องกลุ่มเป้าหมายแล้ว ส่วนต่อไปนี้เป็นข้อเสนอ ไม่ใช่ข้อเท็จจริงที่ผู้ใช้ยืนยันทั้งหมด และยังไม่เขียน PRODUCT.md จนกว่าได้รับอนุมัติ:
+ตาม `impeccable` ได้รับคำตอบเรื่องกลุ่มเป้าหมายและการอนุมัติบริบทต่อไปนี้แล้ว จึงบันทึกใน PRODUCT.md โดยไม่รีแบรนด์หรือเพิ่มขั้นตอนซื้อขาย:
 
 - **Register:** brand สำหรับ customer catalog/showroom ของ SmartGift; ไม่ใช่ dashboard จัดการคลัง
 - **Users / purpose:** ลูกค้าองค์กรเลือกดูสินค้าและชุดของขวัญก่อนคุยรายละเอียดกับทีมขาย
@@ -116,24 +116,69 @@ SmartGift                         สินค้าและชุดของ�
 5. ตรวจทุกหมวด รวม empty/loading/error state และราคา/quantity basis; เพิ่ม regression checks ป้องกันภาพผิดรายการ ข้อมูลค้างหลังสลับหมวด และ fallback ที่ทำให้ดู approved
 6. รัน relevant tests หลัง implementation และตรวจ diff ว่าไม่แตะ raw files, pricing/inventory engine, vaults หรือไฟล์งานอื่น; ไม่รัน master pipeline เพื่อทำ UI
 
-**Exit ของรอบเอกสาร:** ส่งข้อเสนอให้ผู้ใช้อนุมัติ; ยังไม่ถือว่า UI, image mapping, tests หรือ public-release gates เสร็จแล้ว
+**Exit ของรอบเอกสาร:** ผู้ใช้อนุมัติแล้ว แต่การอนุมัติไม่แทนผลตรวจรับ image mapping และ public-release gates
 
 ## Approval
 
-ขออนุมัติรูปแบบหน้าลูกค้าและบริบทการออกแบบในเอกสารนี้ โดยเฉพาะการถอด 2.5D ออกจากหน้าหลัก ใช้ภาพจริง และแยกข้อมูลทีมภายในออกจากการนำเสนอ
+อนุมัติผ่านคำตอบ “ok” ใน task นี้ เมื่อ 2026-08-30 ครอบคลุมรูปแบบหน้าลูกค้าและบริบทการออกแบบ โดยเฉพาะการถอด 2.5D ออกจากหน้าหลัก ใช้ภาพจริง และแยกข้อมูลทีมภายในออกจากการนำเสนอ
 
 การอนุมัตินี้ไม่รวม schema migration, public deployment, การอนุมัติราคา/BOM, ระบบส่งใบเสนอราคา หรือระบบสิทธิ์ใหม่
 
-Please review and approve this documentation. I will generate the code once approved.
+## ผล implementation และการตรวจรับในเครื่อง (2026-08-30)
+
+- เพิ่ม `public/customer-catalog.js` / `.css` และจุดเชื่อมใน `public/index.html`; ซ่อน UI ภายในเฉพาะ route catalog ไม่ลบ engine/เส้นทางเดิม และไม่เปลี่ยน master หรือ pricing/inventory logic
+- แยกข้อมูล canonical products 16 รายการกับ catalog offers 357 รายการจาก source เดิม; ไม่รวม seasonal records 2 รายการที่ normalizer ของหน้า internal เติมเข้าไป
+- ตัวกรองสินค้ารายชิ้นทั้งสี่หมวดได้ 4 / 4 / 3 / 5 รายการ; เพิ่มรายการจาก 24 เป็น 48 และเปิดรายละเอียดตรงรหัส พร้อมคืน focus เมื่อกดปิด
+- Renderer รับเฉพาะชื่อ รหัส หมวด ภาพที่ผ่านเงื่อนไข และส่วนประกอบที่ยืนยัน ไม่ส่งต้นทุน/metadata ภายในไปสร้าง DOM; ชื่อที่ลงท้าย `(P-xx)` ตัดออกเฉพาะ display ไม่แก้ source
+- รูปที่รับได้ต้องมีรหัสตรงชนิดรายการ, `generated_from_catalog === false`, `visual_status === source-photo` และ path ภายในที่อนุญาต; รูปซ้ำกำกวม/รูป generated ไม่ถูกใช้แทนภาพสินค้าจริง
+- รูปต้นฉบับ 4 รูปจาก media manifest เดิมยังไม่มีรหัสตรง master จึงแสดงเป็น **ภาพอ้างอิงที่ยังไม่จับคู่รายการขาย** แยกจาก list; ไม่แสดงราคา/ส่วนประกอบร่วมกัน ไม่ใช่ image coverage ของ 373 records
+- ราคายังแสดง “สอบถามราคา”; BOM ที่ยังไม่ verified แสดง “รูปแบบสินค้าและส่วนประกอบอยู่ระหว่างยืนยัน” รวมถึง TGC09-3 ที่มี conflict; ไม่แก้ส่วนประกอบโดยอนุมาน
+
+### Verification evidence
+
+| ตรวจ | ผล |
+|---|---|
+| `node --test tests/customer_catalog.test.cjs` | 10 ผ่าน; source identity, generated-image rejection, filters/empty input, price allowlist, BOM gate, invalid paths/duplicates, supplier display tags, neutral offer label, inline script syntax |
+| `node --check public/customer-catalog.js` และ scoped `git diff --check` ทั้ง staged/unstaged | ผ่าน |
+| Python 3.13: `test_pricing_calculator.py`, `test_auto_quote_service.py`, `test_cascade_inventory.py` | 21 + 6 + 4 ผ่าน; ไม่รัน full discovery เพราะมี archival/integration tests ที่เขียนข้อมูลจริง |
+| Browser 1440 / 768 / 390 / 320px | document width 1425 / 753 / 375 / 305px ไม่ล้นแนวนอน; ตรวจภาพ tablet/mobile และ modal บน 390px |
+| โหลดภาพต้นฉบับ | 4/4 โหลดสำเร็จ; object-fit contain; modal บนมือถือ scrollWidth เท่ากับ clientWidth |
+| Reduced motion | emulation reduce ได้ transition 0s; คืนค่า emulation หลังตรวจ |
+| Error + retry | block เฉพาะ catalog/pricelist/fallback requests ชั่วคราวได้ข้อความผิดพลาดและ 0 cards; คืน network แล้วกดลองใหม่ได้ 16 cards |
+| Existing route smoke | `#/offers` ยังแสดงเมนูภายในและ section เดิม; กลับ catalog ซ่อนเมนูได้ |
+| Keyboard | focus ชัด, ปุ่มปิดคืน focus; native Escape ยังไม่ยืนยันผ่าน automation จึงต้อง manual UAT เพิ่ม ไม่อ้าง WCAG conformance |
+| Loading / empty state | มี renderer และ unit coverage ของข้อมูลว่าง; ยังไม่ได้ browser fixture ของสองสถานะนี้ |
+
+### ข้อจำกัดและ gate ที่ยังไม่ผ่าน
+
+1. **ยังไม่ครบ image-first acceptance:** ต้องจับคู่ภาพจริงกับอย่างน้อยหนึ่ง canonical SKU และหนึ่ง offer พร้อม provenance ก่อนเรียกงานเสร็จ ไม่ใช้ภาพ AI หรือใกล้เคียงชดเชย
+2. **TGC09-3 conflict:** source reference หน้า 22 เป็นกระบอกน้ำ/สมุด/ปากกา แต่ master components เป็น PM-MSG/PM-PB10K; ห้ามแก้ BOM ในงาน presentation
+3. **ชนิดรายการในต้นทาง:** `catalog_offers` มีชื่อรายการที่ดูเป็นสินค้ารายชิ้น เช่น flash drive; จึงใช้ label กลาง “รายการจากแคตตาล็อก” แทนการอ้างว่าทั้งหมดเป็นชุด ไม่เดาชนิดจากชื่อ/BOM ที่ยังไม่ verified ต้องยืนยันชนิดข้อมูลก่อนแยก physical gift sets ได้ครบตามแบบเป้าหมาย
+4. **Media contract:** ไม่เพิ่ม/แก้ schema หรือสร้าง mapping ไปยัง PM SKU ที่ไม่มีหลักฐาน ต้องเสนออนุมัติส่วนนั้นแยก
+5. **Public readiness:** API เดิมยังมีข้อมูลภายใน, image rights ใน production manifest ยัง not verified; preview bind เฉพาะ 127.0.0.1 ไม่ deploy และไม่ถือว่าพร้อมเปิดให้ลูกค้าภายนอก
+6. Working tree มีงานอื่นแก้และ stage/commit ระหว่างทำงาน; ผลนี้อ้างไฟล์ในเครื่องขณะตรวจ ไม่ใช่ clean release snapshot งานนี้ไม่ได้สั่ง stage/commit/push
+
+### Provenance ของภาพอ้างอิงที่นำกลับมาใช้
+
+อ้าง metadata ใน `output/catalog-internal/production-manifest.json` และ `public/data/catalog_media.json` เดิม ไม่สร้าง contract ใหม่: source tech คือ `data-pipeline/01_raw/03_product_catalogs/2026 new catalogue of power banks&car charger&wireless charger.pdf`, SHA256 `066037E15F855D22D9D08B7E3ED440224EE6EC67D03A0D2CADB7F24325B25456` ตาม manifest; ไม่มี target master SKU ที่ยืนยัน จึงใช้เฉพาะ source-reference gallery
+
+| Source code / page | Public asset SHA256 (ตรวจไฟล์ในรอบนี้) |
+|---|---|
+| S-1052 / 2 | `3F7977862CAAF8E569FFF3500A1A47DEDABBCAFB6D92062591DE063CEE46BDD5` |
+| BST61401 / 3 | `B54D10AE7365D01C46A0C417127EC8973B877346C26DF95434E2D4D5B91E593E` |
+| DW03 / 4 | `6335F5FCCC76BA185B57D0F00FC0367A9F8C8A92C7587636A191BDB978606BDC` |
+| W502 / 7 | `3121549637246511E3AD5F06C85F64E60A4B10E0BAFA3E8148C996EF3D37EABF` |
 
 ## Version diff
 
 - ไม่มีเอกสารเดิม → `0.1.0b candidate`: เสนอ customer catalog แบบ image-first พร้อมขอบเขตข้อมูล ภาพ และเกณฑ์ตรวจรับ
 - RCA `0.1.0b → 0.1.1b`: บันทึกคำยืนยันว่าผู้ใช้หลักเป็นลูกค้า
-- Code/data/runtime: ไม่มีการเปลี่ยนจากงานนี้
+- `0.1.0b candidate → 0.1.1b beta`: บันทึกอนุมัติ, local presentation, test evidence และ gates ที่ยังไม่ผ่าน
+- Code/runtime: customer presentation + tests และ loopback preview; data/price/BOM/vault/pipeline ไม่เปลี่ยนจากงานนี้
 
 ## CHANGELOG
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
+| 0.1.1b | 2026-08-30 | beta | บันทึกอนุมัติและ local partial implementation; image mapping/public gates ยังไม่ผ่าน | uncommitted | ATHER |
 | 0.1.0b | 2026-08-30 | candidate | เสนอหน้าลูกค้า ใช้ภาพสินค้าจริงและรายละเอียดชุด แยกข้อมูลภายในและ public-release gate | uncommitted | ATHER |

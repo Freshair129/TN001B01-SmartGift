@@ -1,9 +1,9 @@
 {
-  "pipeline_run_id": "run-20260830T013225Z-f7f3b5",
+  "pipeline_run_id": "run-20260830T115633Z-da92ee",
   "tenant_id": "Org-EtohGroup",
   "business_id": "SmartGift",
   "vault_id": "vlt-catalog-product",
-  "timestamp": "2026-08-30T01:32:25.094707+00:00",
+  "timestamp": "2026-08-30T11:56:33.363396+00:00",
   "summary": {
     "total_items_analyzed": 2445,
     "flowaccount_sql_items": 1110,

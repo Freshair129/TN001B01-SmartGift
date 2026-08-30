@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./customer-catalog.css">
   <title>SmartGift — B2B Portfolio & BOM Cascade Catalog</title>
   <style>
     :root {
@@ -1293,7 +1294,8 @@
     }
   </style>
 </head>
-<body>
+<body class="customer-view">
+  <div id="customer-catalog" hidden></div>
   <div class="shell">
     <header>
       <div class="brand">
@@ -1694,6 +1696,7 @@
     </main>
   </div>
 
+  <script src="./customer-catalog.js"></script>
   <script>
     let catalogMaster = null;
     let catalogMedia = null;
@@ -1779,6 +1782,59 @@
         <p class="catalog-media-note">${escapeHtml(media.disclaimer_th || "ภาพนี้เป็น creative preview จากภาพอ้างอิง ไม่ใช้แทนข้อมูลราคา ต้นทุน stock หรือ BOM")}</p>
       `;
     }
+
+    function renderExpoMediaFeature() {
+      const container = document.querySelector("#expo-media-feature");
+      if (!container) return;
+      const media = catalogMedia;
+      if (!media?.hero || !Array.isArray(media.sets)) {
+        container.hidden = true;
+        container.replaceChildren();
+        return;
+      }
+      const heroSrc = mediaPath(media.hero.image);
+      const setCards = media.sets.slice(0, 4).map(item => {
+        const src = mediaPath(item.image);
+        if (!src) return "";
+        return `
+          <figure>
+            <img src="${src}" alt="${escapeHtml(item.title || item.code)}" loading="lazy">
+            <figcaption>
+              <div class="catalog-media-code">${escapeHtml(item.code)}</div>
+              <div class="catalog-media-title">${escapeHtml(item.title || "ชุดจาก Catalog")}</div>
+            </figcaption>
+          </figure>
+        `;
+      }).join("");
+      if (!heroSrc && !setCards) {
+        container.hidden = true;
+        container.replaceChildren();
+        return;
+      }
+      container.hidden = false;
+      container.innerHTML = `
+        <div class="expo-media-feature-head">
+          <div>
+            <div class="eyebrow">Source-based visual proof</div>
+            <h3 id="expo-media-title">ภาพชุดที่สร้างจากภาพสินค้าอ้างอิงจริง</h3>
+            <p>ดูรูปทรงและบรรยากาศของสินค้า ก่อนเปิด BOM และราคาในชุดที่เลือก</p>
+          </div>
+          <span class="badge available">${escapeHtml(mediaLabel(media.hero))}</span>
+        </div>
+        <div class="expo-media-feature-grid">
+          <figure class="expo-media-hero">
+            ${heroSrc ? `<img src="${heroSrc}" alt="${escapeHtml(media.hero.title || "ภาพชุดสินค้าใน Catalog")}" loading="eager">` : ""}
+            <figcaption>
+              <div class="catalog-media-code">${escapeHtml(media.hero.code || "Catalog")}</div>
+              <div class="catalog-media-title">${escapeHtml(media.hero.title || "ภาพชุดสินค้าจาก Catalog")}</div>
+            </figcaption>
+          </figure>
+          ${setCards}
+        </div>
+        <p class="catalog-media-note">ภาพเป็น creative preview จาก Catalog เท่านั้น ไม่ใช่หลักฐานราคา ต้นทุน stock หรือ BOM ของ package ที่เลือก</p>
+      `;
+    }
+
     const packageStatus = status => ({
       draft: ["draft", "รอ brief"],
       mapping_pending: ["pending", "รอ reconcile offer"],
@@ -1849,6 +1905,7 @@
       const hash = location.hash.replace(/^#\//, "");
       const view = views.has(hash) ? hash : "catalog";
       if (hash !== view) history.replaceState(null, "", `/#/${view}`);
+      window.CustomerCatalog?.setRoute(view === "catalog");
 
       for (const s of document.querySelectorAll("[data-view]")) {
         s.hidden = s.dataset.view !== view;
@@ -1867,6 +1924,7 @@
     function acceptMasterData(data, sourceLabel) {
       catalogMaster = normalizeMasterData(data);
       catalogMedia = data.catalog_media || null;
+      window.CustomerCatalog?.setData(data, catalogMedia);
       const metadata = catalogMaster.metadata || {};
       document.querySelector("#source").textContent = `${sourceLabel} (v${metadata.schema_version || metadata.version || "2026.08.30"})`;
       document.querySelector("#stat-canonical").textContent = catalogMaster.canonical_products.length;
@@ -1877,6 +1935,7 @@
 
       renderCategoryView(activeCategory);
       renderCatalogMedia();
+      renderExpoMediaFeature();
       renderAllOffers();
       renderBundles();
       configureExpoFilters();
@@ -2522,6 +2581,7 @@
           .then(d => fetchJson("./data/catalog_media.json").catch(() => null).then(media => acceptMasterData({ ...d, catalog_media: media }, "Local Prepared Catalog")))
           .catch(() => {
             document.querySelector("#source").textContent = "ยังไม่มีข้อมูล Master Catalog · โปรดเลือกไฟล์ JSON";
+            window.CustomerCatalog?.setError();
           });
       });
   </script>

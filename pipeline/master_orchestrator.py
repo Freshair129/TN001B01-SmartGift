@@ -85,6 +85,16 @@ def run_master_pipeline():
         print(f"  ⚠️ Stage 4 warning: {sub4.stderr}")
 
     # -------------------------------------------------------------
+    # STAGE 4.5: Generate Product & Catalog Web Manifest & Integrity Hashes
+    # -------------------------------------------------------------
+    print("\n📜 [STAGE 4.5/5] Generating Web Manifest, Integrity Hashes & Category Slices...")
+    sub45 = subprocess.run([sys.executable, "pipeline/generate_product_manifest.py"], capture_output=True, text=True, encoding="utf-8")
+    if sub45.returncode == 0:
+        print("  ✅ Stage 4.5 complete: Product Web Manifest & Image Asset Mapping generated.")
+    else:
+        print(f"  ⚠️ Stage 4.5 warning: {sub45.stderr}")
+
+    # -------------------------------------------------------------
     # STAGE 5: Sync Edge Substrates (GenesisBlockDB & Static SQLite)
     # -------------------------------------------------------------
     print("\n⚡ [STAGE 5/5] Synchronizing Edge GenesisBlockDB & Static SQLite Engine...")

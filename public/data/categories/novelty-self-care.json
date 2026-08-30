@@ -1,0 +1,474 @@
+{
+  "category_meta": {
+    "slug": "novelty-self-care",
+    "name_th": "ชุด Novelty & Self-Care",
+    "name_en": "Novelty & Self-Care (Warm & Wellness)",
+    "vibe": "ผ่อนคลาย อบอุ่น ใส่ใจ",
+    "target_recipient": "กลุ่มผู้หญิง, พนักงานสาย Wellness",
+    "guardrail": "ห้ามเคลมสรรพคุณ Medical โดยไม่มีหลักฐาน",
+    "core_signatures": [
+      "เทียนหอมอโรมา",
+      "แก้วน้ำอเนกประสงค์",
+      "ตุ๊กตาผ้าขนหนู",
+      "สบู่ธรรมชาติกลิ่นกุหลาบ"
+    ]
+  },
+  "total_products": 5,
+  "products": [
+    {
+      "code": "PM-CFMUG",
+      "name_th": "แก้วกาแฟพกพาสแตนเลส 316 พร้อมฝา 3 ระบบ",
+      "name_en": "Stainless Coffee Mug 3-Way Lid",
+      "category": "Novelty & Self-Care (Warm & Wellness)",
+      "category_slug": "novelty-self-care",
+      "product_master": "PROD-MASTER-CFMUG-01",
+      "product_family": "PF-DRINKWARE",
+      "aliases": [
+        "แก้วกาแฟ",
+        "แก้วเก็บความร้อน",
+        "Coffee Mug",
+        "Stainless Coffee Mug",
+        "แก้วกาแฟพกพา 316",
+        "CF-MUG",
+        "Travel Coffee Mug"
+      ],
+      "srp_price": 299.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 299.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 270.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 250.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 230.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 210.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 195.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 180.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 165.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 9.0,
+        "width": 9.0,
+        "height": 14.5
+      },
+      "unit_weight_kg": 0.28,
+      "packaging_carton": {
+        "upc": 36,
+        "carton_length_cm": 56.0,
+        "carton_width_cm": 38.0,
+        "carton_height_cm": 32.0,
+        "carton_weight_kg": 11.5,
+        "carton_cbm": 0.0681,
+        "cbm_per_unit": 0.001892,
+        "density_kg_per_cbm": 168.87,
+        "chargeable_basis": "volume"
+      },
+      "logistics_freight_est": {
+        "goods_type": "general",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6400,
+          "kg": 16
+        },
+        "freight_thb_per_carton": 426.67,
+        "freight_thb_per_unit": 12.8,
+        "inland_china_thb_per_unit": 1.42
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-CFMUG",
+        "title": "แก้วกาแฟพกพาสแตนเลส 316 พร้อมฝา 3 ระบบ",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    },
+    {
+      "code": "PM-MSG",
+      "name_th": "เครื่องนวดคอพกพาคลื่นความถี่ต่ำ Low Pulse & ประคบร้อน",
+      "name_en": "Portable Low Pulse Neck Massager",
+      "category": "Novelty & Self-Care (Warm & Wellness)",
+      "category_slug": "novelty-self-care",
+      "product_master": "PROD-MASTER-MSG-01",
+      "product_family": "PF-WELLNESS-HEALTH",
+      "aliases": [
+        "เครื่องนวดคอ",
+        "เครื่องนวดพกพา",
+        "Neck Massager",
+        "Pulse Massager",
+        "เครื่องนวดประคบร้อน",
+        "MSG-PULSE",
+        "Cervical Massager"
+      ],
+      "srp_price": 850.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 850.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 780.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 720.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 660.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 600.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 550.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 500.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 460.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 18.0,
+        "width": 16.0,
+        "height": 6.0
+      },
+      "unit_weight_kg": 0.32,
+      "packaging_carton": {
+        "upc": 24,
+        "carton_length_cm": 52.0,
+        "carton_width_cm": 38.0,
+        "carton_height_cm": 40.0,
+        "carton_weight_kg": 9.8,
+        "carton_cbm": 0.07904,
+        "cbm_per_unit": 0.003293,
+        "density_kg_per_cbm": 123.99,
+        "chargeable_basis": "volume"
+      },
+      "logistics_freight_est": {
+        "goods_type": "electronic_tisi",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6900,
+          "kg": 18
+        },
+        "freight_thb_per_carton": 552.0,
+        "freight_thb_per_unit": 27.6,
+        "inland_china_thb_per_unit": 2.47
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-MSG",
+        "title": "เครื่องนวดคอพกพาคลื่นความถี่ต่ำ Low Pulse & ประคบร้อน",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    },
+    {
+      "code": "PM-MUG-HEAT",
+      "name_th": "ชุดแก้วเซรามิกพร้อมแท่นอุ่นอุณหภูมิคงที่ 55°C",
+      "name_en": "Ceramic Mug with 55C Heating Base",
+      "category": "Novelty & Self-Care (Warm & Wellness)",
+      "category_slug": "novelty-self-care",
+      "product_master": "PROD-MASTER-MUG-HEAT-01",
+      "product_family": "PF-DRINKWARE",
+      "aliases": [
+        "แก้วอุ่นร้อน",
+        "ชุดแก้วอุ่น 55 องศา",
+        "Heating Mug",
+        "Ceramic Mug 55C",
+        "แท่นอุ่นแก้ว",
+        "MUG-HEAT",
+        "Constant Temperature Cup"
+      ],
+      "srp_price": 350.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 350.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 310.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 290.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 270.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 245.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 225.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 210.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 195.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 16.0,
+        "width": 14.0,
+        "height": 12.0
+      },
+      "unit_weight_kg": 0.65,
+      "packaging_carton": {
+        "upc": 24,
+        "carton_length_cm": 58.0,
+        "carton_width_cm": 44.0,
+        "carton_height_cm": 38.0,
+        "carton_weight_kg": 17.2,
+        "carton_cbm": 0.09698,
+        "cbm_per_unit": 0.004041,
+        "density_kg_per_cbm": 177.36,
+        "chargeable_basis": "volume"
+      },
+      "logistics_freight_est": {
+        "goods_type": "electronic_tisi",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6900,
+          "kg": 18
+        },
+        "freight_thb_per_carton": 662.4,
+        "freight_thb_per_unit": 33.12,
+        "inland_china_thb_per_unit": 3.03
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-MUG-HEAT",
+        "title": "ชุดแก้วเซรามิกพร้อมแท่นอุ่นอุณหภูมิคงที่ 55°C",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    },
+    {
+      "code": "PM-CUTLERY",
+      "name_th": "ชุดช้อนส้อมมีดสแตนเลสฟู้ดเกรดพกพา",
+      "name_en": "Portable Stainless Steel Cutlery Set",
+      "category": "Novelty & Self-Care (Warm & Wellness)",
+      "category_slug": "novelty-self-care",
+      "product_master": "PROD-MASTER-CUTLERY-01",
+      "product_family": "PF-ECO-LIFESTYLE",
+      "aliases": [
+        "ชุดช้อนส้อมพกพา",
+        "ช้อนส้อมสแตนเลส",
+        "Portable Cutlery Set",
+        "Stainless Flatware",
+        "ชุดช้อนส้อมฟู้ดเกรด",
+        "CUTLERY-SS",
+        "Travel Dining Set"
+      ],
+      "srp_price": 165.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 165.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 140.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 130.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 120.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 110.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 100.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 92.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 85.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 21.0,
+        "width": 6.0,
+        "height": 3.0
+      },
+      "unit_weight_kg": 0.18,
+      "packaging_carton": {
+        "upc": 100,
+        "carton_length_cm": 45.0,
+        "carton_width_cm": 32.0,
+        "carton_height_cm": 32.0,
+        "carton_weight_kg": 19.0,
+        "carton_cbm": 0.04608,
+        "cbm_per_unit": 0.000461,
+        "density_kg_per_cbm": 412.33,
+        "chargeable_basis": "weight"
+      },
+      "logistics_freight_est": {
+        "goods_type": "general",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6400,
+          "kg": 16
+        },
+        "freight_thb_per_carton": 304.0,
+        "freight_thb_per_unit": 3.04,
+        "inland_china_thb_per_unit": 0.35
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-CUTLERY",
+        "title": "ชุดช้อนส้อมมีดสแตนเลสฟู้ดเกรดพกพา",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    },
+    {
+      "code": "PM-AROMA",
+      "name_th": "เครื่องกระจายกลิ่นอโรมาอัลตราโซนิกเปลวไฟแสงไฟ Ambient",
+      "name_en": "Ultrasonic Flame Aroma Diffuser",
+      "category": "Novelty & Self-Care (Warm & Wellness)",
+      "category_slug": "novelty-self-care",
+      "product_master": "PROD-MASTER-AROMA-01",
+      "product_family": "PF-WELLNESS-HEALTH",
+      "aliases": [
+        "เครื่องพ่นอโรมา",
+        "เครื่องกระจายกลิ่น",
+        "Flame Aroma Diffuser",
+        "Ultrasonic Diffuser",
+        "เครื่องพ่นไอน้ำเปลวไฟ",
+        "AROMA-DIFF",
+        "Essential Oil Humidifier"
+      ],
+      "srp_price": 550.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 550.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 490.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 460.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 420.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 380.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 350.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 320.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 295.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 17.5,
+        "width": 10.5,
+        "height": 8.0
+      },
+      "unit_weight_kg": 0.48,
+      "packaging_carton": {
+        "upc": 30,
+        "carton_length_cm": 55.0,
+        "carton_width_cm": 40.0,
+        "carton_height_cm": 35.0,
+        "carton_weight_kg": 16.0,
+        "carton_cbm": 0.077,
+        "cbm_per_unit": 0.002567,
+        "density_kg_per_cbm": 207.79,
+        "chargeable_basis": "volume"
+      },
+      "logistics_freight_est": {
+        "goods_type": "electronic_tisi",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6900,
+          "kg": 18
+        },
+        "freight_thb_per_carton": 534.75,
+        "freight_thb_per_unit": 21.39,
+        "inland_china_thb_per_unit": 1.93
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-AROMA",
+        "title": "เครื่องกระจายกลิ่นอโรมาอัลตราโซนิกเปลวไฟแสงไฟ Ambient",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    }
+  ]
+}

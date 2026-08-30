@@ -1,12 +1,12 @@
 ---
-version: "0.1.1b"
+version: "0.1.2b"
 created_at: "2026-08-30T11:06:00+07:00,ATHER"
-last_update: "2026-08-30T11:35:20+07:00,ATHER"
-status: "candidate"
+last_update: "2026-08-30T18:32:00+07:00,ATHER"
+status: "beta"
 superseded_by: null
 attributes:
   domain: "catalog-ui"
-  scope: "localhost:5180/#/catalog; diagnosis and proposed prevention only"
+  scope: "localhost:5180/#/catalog; diagnosis and local presentation follow-up"
   language: "th"
 ---
 
@@ -99,13 +99,26 @@ attributes:
 
 ## Version diff
 
+### Follow-up หลังอนุมัติ implementation
+
+ผู้ใช้อนุมัติ customer spec v0.1.0b ด้วย “ok” แล้ว ดูผล local partial และ verification ใน spec v0.1.1b; เนื้อหาด้านบนเป็นหลักฐานก่อนอนุมัติ ไม่ใช่สถานะปัจจุบัน
+
+- ใช้ customer renderer แยกจากกล่อง hardcode โดยยังเก็บเส้นทางภายใน; ทำให้การเลือกหมวด/รายการใช้ข้อมูลจริงและเปิดรายละเอียดตรงรหัส
+- ตรวจ media manifest ปัจจุบันได้ source-photo 4 รูป แต่รหัสไม่ตรง canonical/offer; ภาพ generated ถูกตัดออกจากหน้าลูกค้า เหลือ gallery ภาพอ้างอิงที่ระบุว่ายังไม่จับคู่ ไม่เดารหัส PM จากรูปลักษณ์
+- พบหลักฐานเพิ่ม: `output/catalog-internal/production-manifest.json` และ `refs/set-TGC09-3-source.png` ระบุกระบอกน้ำ/สมุด/ปากกา แต่ master components เป็น PM-MSG/PM-PB10K; จึงปิดการอ้างส่วนประกอบที่ยังไม่ยืนยัน ไม่ซ่อม BOM ในงาน UI
+- `catalog_offers` มีรายการ flash drive ด้วย จึงใช้ชื่อกลุ่มกลาง “รายการจากแคตตาล็อก” ไม่อ้างว่าทุก offer เป็นชุดจริง; ไม่เปลี่ยน taxonomy/source records
+- Prevention: เพิ่ม regression tests 10 ข้อ, exact source-photo identity, data allowlist, unverified BOM/price gate; browser ตรวจ responsive, filters, pagination, modal close/focus, error/retry ตามผลใน spec
+- **ยังไม่ปิด RCA ทั้งหมด:** image-to-master mapping, verified BOM/type, keyboard Escape UAT และ public-release gates ยังเหลือ ไม่อ้างว่า root causes ด้านข้อมูลได้รับการแก้ครบ
+
 - ไม่มีเอกสารเดิม → `0.1.0b candidate`: เพิ่ม RCA, หลักฐานหน้าปัจจุบัน และแนวทางป้องกันเบื้องต้น
 - `0.1.0b → 0.1.1b candidate`: บันทึกคำยืนยันว่าผู้ใช้หลักเป็นลูกค้า และเชื่อมข้อเสนอเพื่ออนุมัติ
-- Code / runtime / master data: ไม่มีการเปลี่ยนจากงานนี้
+- `0.1.1b candidate → 0.1.2b beta`: บันทึกผลหลังอนุมัติและ data gates ที่ยังไม่แก้
+- Code/runtime: customer presentation + loopback preview; master data ไม่เปลี่ยนจากงานนี้
 
 ## CHANGELOG
 
 | Version | Date | Status | Summary | Commit Hash | Agent |
 |---|---|---|---|---|---|
+| 0.1.2b | 2026-08-30 | beta | บันทึก local presentation และ regression evidence; ยังไม่ปิด image/BOM/public gates | uncommitted | ATHER |
 | 0.1.1b | 2026-08-30 | candidate | บันทึกกลุ่มผู้ใช้หลักเป็นลูกค้า; ยังไม่แก้โค้ด | uncommitted | ATHER |
 | 0.1.0b | 2026-08-30 | candidate | บันทึก root cause ของภาพ anatomy อ่านยาก ข้อมูลไม่สัมพันธ์กัน และช่องว่าง image mapping | uncommitted | ATHER |

@@ -1,0 +1,295 @@
+{
+  "schema_version": "1.3.0",
+  "tenant_id": "Org-EtohGroup",
+  "business_id": "SmartGift",
+  "operating_entity": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)",
+  "catalog_version": "v1.3.0-2026.08.30-d4227ecd",
+  "generated_at": "2026-08-30T11:57:23.287945+00:00",
+  "data_integrity_hashes": {
+    "smartgift_catalog_master": {
+      "path": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+      "size_bytes": 854047,
+      "sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
+    },
+    "pricelist_master": {
+      "path": "data-pipeline/02_prepared/pricelist_master.json",
+      "size_bytes": 6242664,
+      "sha256": "729bebdb0dde3706560d568f000b2f6dbccd40fa5de03189dbfe761e0edf7d74"
+    },
+    "factory_costs": {
+      "path": "data-pipeline/02_prepared/factory_costs.json",
+      "size_bytes": 1001858,
+      "sha256": "c28956c932b659ffe4244d938979703827205db9149c34cd66e9c82927d69a9d"
+    },
+    "catalog_media": {
+      "path": "public/data/catalog_media.json",
+      "size_bytes": 4683,
+      "sha256": "d81403c7a34024e5bad3b2269111732f10a128ce758dd9d14c3dee439fd0b4e8"
+    },
+    "pricelist_public": {
+      "path": "public/data/pricelist_public.json",
+      "size_bytes": 1400871,
+      "sha256": "f31f38cf34b7a6f92a8d866aa56971d811797943a065d0e0f84484891e03d597"
+    }
+  },
+  "multi_file_index": [
+    {
+      "slug": "eco-friendly",
+      "name_th": "ชุดผลิตภัณฑ์รักษ์โลกและสิ่งแวดล้อม (Eco-Friendly Series)",
+      "name_en": "Eco-Friendly & Sustainability (Green & Earth)",
+      "endpoint_url": "/data/categories/eco-friendly.json",
+      "total_products": 4,
+      "sha256": "be516a5355c80281b2aba466ee417755a406a0fcbfe07c4650e223fc5cd4c53f"
+    },
+    {
+      "slug": "classic-oriental",
+      "name_th": "ชุดศิลปะร่วมสมัยและตะวันออก (Classic Oriental)",
+      "name_en": "Classic Oriental (Mindfulness & Craft)",
+      "endpoint_url": "/data/categories/classic-oriental.json",
+      "total_products": 3,
+      "sha256": "18b85ec323777775e2760ab1a049f19ff6a95ba4a4af9dafcf1e8d6693bf8425"
+    },
+    {
+      "slug": "novelty-self-care",
+      "name_th": "ชุด Novelty & Self-Care",
+      "name_en": "Novelty & Self-Care (Warm & Wellness)",
+      "endpoint_url": "/data/categories/novelty-self-care.json",
+      "total_products": 5,
+      "sha256": "1daf833d8f7ea0901e6eef324a6ff75baf4f60da8b4e136f4fcc785c02b96044"
+    },
+    {
+      "slug": "executive-smart-tech",
+      "name_th": "ชุดนวัตกรรมทางการทำงานอัจฉริยะ (Executive Smart Tech)",
+      "name_en": "Executive Smart Tech (Modern & Work)",
+      "endpoint_url": "/data/categories/executive-smart-tech.json",
+      "total_products": 4,
+      "sha256": "5f14f1c5ba096ac1cdf58e31d5a7a692abed474c5505e87ae178c9c03a96c258"
+    }
+  ],
+  "product_image_index": {
+    "FXD66-3": {
+      "code": "FXD66-3",
+      "title": "ชุดแก้ว พาวเวอร์แบงค์ และพัดลม",
+      "image_url": "/assets/catalog-media/set-FXD66-3.webp",
+      "visual_status": "source_matched_creative_proof",
+      "source_label": "รหัส + ภาพอยู่ใน catalog หน้าเดียวกัน",
+      "is_hero": false,
+      "generated_from_catalog": true
+    },
+    "TMK00-4": {
+      "code": "TMK00-4",
+      "title": "ชุดแก้ว แท่นชาร์จ และแปรงทำความสะอาด",
+      "image_url": "/assets/catalog-media/set-TMK00-4.webp",
+      "visual_status": "source_matched_creative_proof",
+      "source_label": "รหัส + ภาพอยู่ใน catalog หน้าเดียวกัน",
+      "is_hero": false,
+      "generated_from_catalog": true
+    },
+    "FXD6064": {
+      "code": "FXD6064",
+      "title": "ชุดแก้วลายดอกไม้และโคมไฟหนังสือ",
+      "image_url": "/assets/catalog-media/set-FXD6064.webp",
+      "visual_status": "source_matched_creative_proof",
+      "source_label": "รหัส + ภาพอยู่ใน catalog หน้าเดียวกัน",
+      "is_hero": false,
+      "generated_from_catalog": true
+    },
+    "TGC09-3": {
+      "code": "TGC09-3",
+      "title": "ชุดกระบอกน้ำ สมุด A5 และปากกา",
+      "image_url": "/assets/catalog-media/set-TGC09-3.webp",
+      "visual_status": "source_matched_creative_proof",
+      "source_label": "รหัส + ภาพอยู่ใน catalog หน้าเดียวกัน",
+      "is_hero": false,
+      "generated_from_catalog": true
+    },
+    "S-1052": {
+      "code": "S-1052",
+      "title": "พาวเวอร์แบงค์ทรงจัตุรัสพร้อมสายคล้อง",
+      "image_url": "/assets/catalog-media/product-s_1052.webp",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับใน catalog",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "BST61401": {
+      "code": "BST61401",
+      "title": "พาวเวอร์แบงค์สีขาวผิวร่อง",
+      "image_url": "/assets/catalog-media/product-bst61401.webp",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับใน catalog",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "DW03": {
+      "code": "DW03",
+      "title": "พาวเวอร์แบงค์สีส้มพร้อมสายในตัว",
+      "image_url": "/assets/catalog-media/product-dw03.webp",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับใน catalog",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "UT3056": {
+      "code": "UT3056",
+      "title": "พาวเวอร์แบงค์ลายคาโมพร้อมสายคล้อง",
+      "image_url": "/assets/catalog-media/product-ut3056.webp",
+      "visual_status": "generated-clean",
+      "source_label": "ภาพจัดแสงใหม่จากภาพต้นฉบับ",
+      "is_hero": false,
+      "generated_from_catalog": true
+    },
+    "S1033": {
+      "code": "S1033",
+      "title": "พาวเวอร์แบงค์สีขาวพร้อมขาตั้งพับ",
+      "image_url": "/assets/catalog-media/product-s1033.webp",
+      "visual_status": "generated-clean",
+      "source_label": "ภาพจัดแสงใหม่จากภาพต้นฉบับ",
+      "is_hero": false,
+      "generated_from_catalog": true
+    },
+    "W502": {
+      "code": "W502",
+      "title": "พาวเวอร์แบงค์สีไอวอรีพร้อมขาตั้ง",
+      "image_url": "/assets/catalog-media/product-w502.webp",
+      "visual_status": "source-photo",
+      "source_label": "ภาพต้นฉบับใน catalog",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-TMB": {
+      "code": "PM-TMB",
+      "title": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-SPK": {
+      "code": "PM-SPK",
+      "title": "ลำโพงบลูทูธสเตอริโอคู่พรีเมียม (Bluetooth Speaker 5W)",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-PB10K": {
+      "code": "PM-PB10K",
+      "title": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-CFMUG": {
+      "code": "PM-CFMUG",
+      "title": "แก้วกาแฟพกพาสแตนเลส 316 พร้อมฝา 3 ระบบ",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-UMB": {
+      "code": "PM-UMB",
+      "title": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-MSG": {
+      "code": "PM-MSG",
+      "title": "เครื่องนวดคอพกพาคลื่นความถี่ต่ำ Low Pulse & ประคบร้อน",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-NB": {
+      "code": "PM-NB",
+      "title": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-PEN": {
+      "code": "PM-PEN",
+      "title": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-MUG-HEAT": {
+      "code": "PM-MUG-HEAT",
+      "title": "ชุดแก้วเซรามิกพร้อมแท่นอุ่นอุณหภูมิคงที่ 55°C",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-FLASH": {
+      "code": "PM-FLASH",
+      "title": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-BOTTLE-LED": {
+      "code": "PM-BOTTLE-LED",
+      "title": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-CUTLERY": {
+      "code": "PM-CUTLERY",
+      "title": "ชุดช้อนส้อมมีดสแตนเลสฟู้ดเกรดพกพา",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-TEA-INF": {
+      "code": "PM-TEA-INF",
+      "title": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-AROMA": {
+      "code": "PM-AROMA",
+      "title": "เครื่องกระจายกลิ่นอโรมาอัลตราโซนิกเปลวไฟแสงไฟ Ambient",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-FAN": {
+      "code": "PM-FAN",
+      "title": "พัดลมพกพาดีไซน์มินิมอลหน้าจอดิจิทัลแบต 4000mAh",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    },
+    "PM-DESK-MAT": {
+      "code": "PM-DESK-MAT",
+      "title": "แผ่นรองโต๊ะทำงานหนัง Vegan Leather พร้อมที่ชาร์จไว",
+      "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+      "visual_status": "fallback-placeholder",
+      "is_hero": false,
+      "generated_from_catalog": false
+    }
+  },
+  "summary_stats": {
+    "total_categories": 4,
+    "total_canonical_products": 16,
+    "total_catalog_offers": 357,
+    "total_indexed_images": 26
+  }
+}

@@ -1,0 +1,383 @@
+{
+  "category_meta": {
+    "slug": "executive-smart-tech",
+    "name_th": "ชุดนวัตกรรมทางการทำงานอัจฉริยะ (Executive Smart Tech)",
+    "name_en": "Executive Smart Tech (Modern & Work)",
+    "vibe": "ทันสมัย นวัตกรรม เป็นมืออาชีพ",
+    "target_recipient": "ผู้บริหาร, กลุ่มนักธุรกิจยุคใหม่",
+    "guardrail": "ตรวจสเปกแบตเตอรี่และการรับรองความปลอดภัย",
+    "core_signatures": [
+      "Smart Powerbank Notebook",
+      "Power Bank 10000mAh",
+      "ปากกาโลหะหมึกเจล",
+      "แฟลชไดร์ฟสายรัดแม่เหล็ก"
+    ]
+  },
+  "total_products": 4,
+  "products": [
+    {
+      "code": "PM-SPK",
+      "name_th": "ลำโพงบลูทูธสเตอริโอคู่พรีเมียม (Bluetooth Speaker 5W)",
+      "name_en": "Dual Stereo Bluetooth Speaker",
+      "category": "Executive Smart Tech (Modern & Work)",
+      "category_slug": "executive-smart-tech",
+      "product_master": "PROD-MASTER-SPK-01",
+      "product_family": "PF-AUDIO-TECH",
+      "aliases": [
+        "ลำโพงบลูทูธ",
+        "ลำโพงไร้สาย",
+        "Bluetooth Speaker",
+        "Dual Stereo Speaker",
+        "ลำโพงพกพา 5W",
+        "SPK-5W",
+        "Wireless Speaker"
+      ],
+      "srp_price": 480.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 480.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 440.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 410.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 380.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 350.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 320.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 295.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 275.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 12.0,
+        "width": 8.5,
+        "height": 6.5
+      },
+      "unit_weight_kg": 0.42,
+      "packaging_carton": {
+        "upc": 40,
+        "carton_length_cm": 48.0,
+        "carton_width_cm": 36.0,
+        "carton_height_cm": 35.0,
+        "carton_weight_kg": 18.0,
+        "carton_cbm": 0.06048,
+        "cbm_per_unit": 0.001512,
+        "density_kg_per_cbm": 297.62,
+        "chargeable_basis": "volume"
+      },
+      "logistics_freight_est": {
+        "goods_type": "electronic_tisi",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6900,
+          "kg": 18
+        },
+        "freight_thb_per_carton": 414.0,
+        "freight_thb_per_unit": 12.42,
+        "inland_china_thb_per_unit": 1.13
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-SPK",
+        "title": "ลำโพงบลูทูธสเตอริโอคู่พรีเมียม (Bluetooth Speaker 5W)",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    },
+    {
+      "code": "PM-PB10K",
+      "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+      "name_en": "MagSafe Wireless Powerbank 10000mAh",
+      "category": "Executive Smart Tech (Modern & Work)",
+      "category_slug": "executive-smart-tech",
+      "product_master": "PROD-MASTER-PB10K-01",
+      "product_family": "PF-POWER-CHARGING",
+      "aliases": [
+        "พาวเวอร์แบงก์",
+        "แบตสำรอง",
+        "MagSafe Powerbank",
+        "Wireless Powerbank 10000mAh",
+        "ที่ชาร์จไร้สาย",
+        "PB10K",
+        "Magnetic Battery Pack"
+      ],
+      "srp_price": 690.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 690.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 620.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 580.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 540.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 490.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 450.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 420.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 390.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 10.5,
+        "width": 6.8,
+        "height": 1.6
+      },
+      "unit_weight_kg": 0.22,
+      "packaging_carton": {
+        "upc": 60,
+        "carton_length_cm": 40.0,
+        "carton_width_cm": 32.0,
+        "carton_height_cm": 25.0,
+        "carton_weight_kg": 14.5,
+        "carton_cbm": 0.032,
+        "cbm_per_unit": 0.000533,
+        "density_kg_per_cbm": 453.12,
+        "chargeable_basis": "weight"
+      },
+      "logistics_freight_est": {
+        "goods_type": "electronic_tisi",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6900,
+          "kg": 18
+        },
+        "freight_thb_per_carton": 261.0,
+        "freight_thb_per_unit": 5.22,
+        "inland_china_thb_per_unit": 0.4
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-PB10K",
+        "title": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    },
+    {
+      "code": "PM-NB",
+      "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+      "name_en": "Smart Leather Powerbank Notebook",
+      "category": "Executive Smart Tech (Modern & Work)",
+      "category_slug": "executive-smart-tech",
+      "product_master": "PROD-MASTER-NB-01",
+      "product_family": "PF-SMART-OFFICE",
+      "aliases": [
+        "สมุดโน้ตพาวเวอร์แบงก์",
+        "สมุดหนังชาร์จไร้สาย",
+        "Powerbank Notebook",
+        "Smart PU Notebook",
+        "สมุดอัจฉริยะ",
+        "NB-PWR",
+        "Wireless Charging Notebook"
+      ],
+      "srp_price": 750.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 750.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 680.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 630.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 590.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 540.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 490.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 450.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 420.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 24.0,
+        "width": 18.0,
+        "height": 3.0
+      },
+      "unit_weight_kg": 0.72,
+      "packaging_carton": {
+        "upc": 20,
+        "carton_length_cm": 50.0,
+        "carton_width_cm": 38.0,
+        "carton_height_cm": 32.0,
+        "carton_weight_kg": 15.5,
+        "carton_cbm": 0.0608,
+        "cbm_per_unit": 0.00304,
+        "density_kg_per_cbm": 254.93,
+        "chargeable_basis": "volume"
+      },
+      "logistics_freight_est": {
+        "goods_type": "electronic_tisi",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6900,
+          "kg": 18
+        },
+        "freight_thb_per_carton": 414.0,
+        "freight_thb_per_unit": 20.7,
+        "inland_china_thb_per_unit": 2.28
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-NB",
+        "title": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    },
+    {
+      "code": "PM-DESK-MAT",
+      "name_th": "แผ่นรองโต๊ะทำงานหนัง Vegan Leather พร้อมที่ชาร์จไว",
+      "name_en": "Wireless Charging Vegan Desk Mat",
+      "category": "Executive Smart Tech (Modern & Work)",
+      "category_slug": "executive-smart-tech",
+      "product_master": "PROD-MASTER-DESK-MAT-01",
+      "product_family": "PF-SMART-OFFICE",
+      "aliases": [
+        "แผ่นรองโต๊ะชาร์จไร้สาย",
+        "แผ่นรองโต๊ะหนัง",
+        "Vegan Desk Mat",
+        "Wireless Charging Desk Pad",
+        "แผ่นรองเมาส์ขนาดใหญ่",
+        "DESK-MAT",
+        "Executive Desk Blotter"
+      ],
+      "srp_price": 590.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 590.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 530.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 490.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 450.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 410.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 375.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 345.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 320.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 80.0,
+        "width": 40.0,
+        "height": 0.4
+      },
+      "unit_weight_kg": 0.55,
+      "packaging_carton": {
+        "upc": 25,
+        "carton_length_cm": 46.0,
+        "carton_width_cm": 44.0,
+        "carton_height_cm": 35.0,
+        "carton_weight_kg": 15.0,
+        "carton_cbm": 0.07084,
+        "cbm_per_unit": 0.002834,
+        "density_kg_per_cbm": 211.74,
+        "chargeable_basis": "volume"
+      },
+      "logistics_freight_est": {
+        "goods_type": "electronic_tisi",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6900,
+          "kg": 18
+        },
+        "freight_thb_per_carton": 483.0,
+        "freight_thb_per_unit": 19.32,
+        "inland_china_thb_per_unit": 2.13
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-DESK-MAT",
+        "title": "แผ่นรองโต๊ะทำงานหนัง Vegan Leather พร้อมที่ชาร์จไว",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "category_meta": {
+    "slug": "classic-oriental",
+    "name_th": "ชุดศิลปะร่วมสมัยและตะวันออก (Classic Oriental)",
+    "name_en": "Classic Oriental (Mindfulness & Craft)",
+    "vibe": "ประณีต ทรงคุณค่า คลาสสิก",
+    "target_recipient": "ผู้ใหญ่, แขก VIP ต่างชาติ",
+    "guardrail": "ตรวจเช็คความหมายมงคลของลวดลาย",
+    "core_signatures": [
+      "สมุดคลิปโลหะ/ปกหนัง",
+      "ปากกาไม้หัวทองเหลือง",
+      "แฟลชไดร์ฟหยูอี้",
+      "ชุดถ้วยชาเซรามิก"
+    ]
+  },
+  "total_products": 3,
+  "products": [
+    {
+      "code": "PM-PEN",
+      "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+      "name_en": "Solid Walnut Brass Gel Pen",
+      "category": "Classic Oriental (Mindfulness & Craft)",
+      "category_slug": "classic-oriental",
+      "product_master": "PROD-MASTER-PEN-01",
+      "product_family": "PF-CRAFT-STATIONERY",
+      "aliases": [
+        "ปากกาไม้แท้",
+        "ปากกาวอลนัท",
+        "Walnut Brass Pen",
+        "Gel Pen",
+        "ปากกาหัวทองเหลือง",
+        "PEN-WOOD",
+        "Executive Signature Pen"
+      ],
+      "srp_price": 190.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 190.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 160.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 145.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 130.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 120.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 110.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 100.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 90.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 14.5,
+        "width": 1.4,
+        "height": 1.4
+      },
+      "unit_weight_kg": 0.045,
+      "packaging_carton": {
+        "upc": 200,
+        "carton_length_cm": 35.0,
+        "carton_width_cm": 25.0,
+        "carton_height_cm": 20.0,
+        "carton_weight_kg": 10.0,
+        "carton_cbm": 0.0175,
+        "cbm_per_unit": 8.8e-05,
+        "density_kg_per_cbm": 571.43,
+        "chargeable_basis": "weight"
+      },
+      "logistics_freight_est": {
+        "goods_type": "general",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6400,
+          "kg": 16
+        },
+        "freight_thb_per_carton": 160.0,
+        "freight_thb_per_unit": 1.6,
+        "inland_china_thb_per_unit": 0.07
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-PEN",
+        "title": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    },
+    {
+      "code": "PM-FLASH",
+      "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+      "name_en": "Dual Interface Metal Flash Drive",
+      "category": "Classic Oriental (Mindfulness & Craft)",
+      "category_slug": "classic-oriental",
+      "product_master": "PROD-MASTER-FLASH-01",
+      "product_family": "PF-STORAGE-TECH",
+      "aliases": [
+        "แฟลชไดรฟ์",
+        "แฟลชไดร์ฟโลหะ",
+        "Metal Flash Drive",
+        "Dual USB Flash",
+        "Type-C USB Drive",
+        "FLASH-DUAL",
+        "OTG Thumb Drive"
+      ],
+      "srp_price": 220.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 220.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 190.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 175.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 160.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 145.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 135.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 125.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 115.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 6.5,
+        "width": 1.8,
+        "height": 0.9
+      },
+      "unit_weight_kg": 0.035,
+      "packaging_carton": {
+        "upc": 500,
+        "carton_length_cm": 30.0,
+        "carton_width_cm": 25.0,
+        "carton_height_cm": 20.0,
+        "carton_weight_kg": 18.5,
+        "carton_cbm": 0.015,
+        "cbm_per_unit": 3e-05,
+        "density_kg_per_cbm": 1233.33,
+        "chargeable_basis": "weight"
+      },
+      "logistics_freight_est": {
+        "goods_type": "electronic_tisi",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6900,
+          "kg": 18
+        },
+        "freight_thb_per_carton": 333.0,
+        "freight_thb_per_unit": 3.33,
+        "inland_china_thb_per_unit": 0.02
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-FLASH",
+        "title": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    },
+    {
+      "code": "PM-TEA-INF",
+      "name_th": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+      "name_en": "Double Wall Borosilicate Tea Infuser",
+      "category": "Classic Oriental (Mindfulness & Craft)",
+      "category_slug": "classic-oriental",
+      "product_master": "PROD-MASTER-TEA-INF-01",
+      "product_family": "PF-DRINKWARE",
+      "aliases": [
+        "กระบอกชงชา",
+        "แก้วชงชาสองชั้น",
+        "Tea Infuser Bottle",
+        "Borosilicate Tea Bottle",
+        "ขวดชงชาแยกกาก",
+        "TEA-INF",
+        "Double Wall Tea Tumbler"
+      ],
+      "srp_price": 360.0,
+      "price_tiers": [
+        {
+          "min_qty": 1,
+          "unit_price": 360.0
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 320.0
+        },
+        {
+          "min_qty": 20,
+          "unit_price": 300.0
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 280.0
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 255.0
+        },
+        {
+          "min_qty": 300,
+          "unit_price": 235.0
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 220.0
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 205.0
+        }
+      ],
+      "dimensions_cm": {
+        "length": 7.5,
+        "width": 7.5,
+        "height": 20.0
+      },
+      "unit_weight_kg": 0.45,
+      "packaging_carton": {
+        "upc": 24,
+        "carton_length_cm": 48.0,
+        "carton_width_cm": 32.0,
+        "carton_height_cm": 44.0,
+        "carton_weight_kg": 12.0,
+        "carton_cbm": 0.06758,
+        "cbm_per_unit": 0.002816,
+        "density_kg_per_cbm": 177.57,
+        "chargeable_basis": "volume"
+      },
+      "logistics_freight_est": {
+        "goods_type": "general",
+        "shipping_mode": "truck",
+        "freight_rate": {
+          "cbm": 6400,
+          "kg": 16
+        },
+        "freight_thb_per_carton": 435.2,
+        "freight_thb_per_unit": 21.76,
+        "inland_china_thb_per_unit": 2.11
+      },
+      "material": "generic",
+      "color": "unspecified",
+      "image_info": {
+        "code": "PM-TEA-INF",
+        "title": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+        "image_url": "/assets/catalog-media/hero-fxd66-3-generated.webp",
+        "visual_status": "fallback-placeholder",
+        "is_hero": false,
+        "generated_from_catalog": false
+      }
+    }
+  ]
+}
