@@ -32,27 +32,28 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 1: Application & Scope Authority (zuri-ai / D:\zuri-ai)                            │
+│  Tier 1: Application & Scope Authority (zuri-ai & zuri-edge-device)                      │
 ├──────────────────────────────────────────────────────────────────────────────────────────┤
-│  • Scope Chain: Portfolio → Tenant (Org-EtohGroup) → Business (SmartGift) → Workspace    │
-│  • Source of Truth: prisma/schema.prisma (PostgreSQL / Supabase / SQLite)                │
-│  • Manages: Users, Memberships, Customer PII, Financial Transactions, Ledger Orders      │
+│  • zuri-ai (D:\zuri-ai): Cloud PostgreSQL / Supabase, Users, CRM, Orders, Invoices (PII) │
+│  • zuri-edge-device (D:\workspace\zuri-edge-device): Host Runtime & Local LLM Gateway    │
 └─────────────────────────────────────────────┬────────────────────────────────────────────┘
                                               │ (AuthContext / Server-Resolved Scope)
                                               ▼
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 2: Session, Memory & Vault Gatekeeper (MSP / D:\msp)                               │
+│  Tier 2: Session, Memory & Vault Gatekeeper                                              │
+│          (MSP / Memory-and-Soul-Passport: D:\Memory-and-Soul-Passport [alias: D:\msp])    │
 ├──────────────────────────────────────────────────────────────────────────────────────────┤
-│  • Governs: Unified Thread ID, Episodic Memory, Token Budget, H0-H4 Access Ceilings     │
-│  • API-010 (msp_vault_resolve): Maps server-owned workspace/project scope to Vault IDs   │
+│  • Governs: Unified Thread ID, Episodic Memory, Token Budget, H0-H4 Ceilings             │
+│  • API-010 (msp_vault_resolve): Maps Workspace Scope ➔ [vlt-catalog-product]             │
 └─────────────────────────────────────────────┬────────────────────────────────────────────┘
-                                              │ (Authorized Vault Set: [vlt-catalog-product])
+                                              │ (Authorized Vault Set)
                                               ▼
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│  Tier 3: Canonical Knowledge & GraphRAG Orchestrator (GKS / D:\gks)                      │
+│  Tier 3: Canonical Knowledge & GraphRAG Orchestrator                                     │
+│          (GKS / Genesis-Knowledge-System: D:\Genesis-Knowledge-System [alias: D:\gks])   │
 ├──────────────────────────────────────────────────────────────────────────────────────────┤
-│  • Governs: Entity Canonicalization, Ontology Registry, Deduplication, Radius (R0-R6)    │
-│  • GraphRAG Engine: Hybrid Dense Vector (bge-m3) + Graph HQL Traversal via query-ir.v1   │
+│  • Governs: Canonical Ontology Registry, Radius (R0-R6) GraphRAG Routing, Deduplication │
+│  • Contract: smartgift://b2b/portfolio/v1 (v1.3.0) via Query IR (query-ir.v1)            │
 └─────────────────────────────────────────────┬────────────────────────────────────────────┘
                                               │ (In-Process Native Rust C-ABI)
                                               ▼
