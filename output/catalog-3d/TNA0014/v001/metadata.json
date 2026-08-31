@@ -1,0 +1,101 @@
+{
+  "asset_key": "TNA0014",
+  "asset_version": "v001",
+  "source_product_code": "TNA0014",
+  "canonical_product_id": null,
+  "mapping_status": "unresolved",
+  "evidence_binding": {
+    "candidate_product_master_id": "pm:PM-NB",
+    "candidate_category_id": "cat:executive-smart-tech",
+    "edge_type": "IN_CATEGORY",
+    "status": "estimated-visual-review-candidate",
+    "reason": "Boss-approved P8 construction from partial factory image evidence; identity and geometry remain pending owner review"
+  },
+  "registry_refs": {
+    "doc_id": null,
+    "pic_id": null,
+    "status": "unregistered"
+  },
+  "sources": [
+    {
+      "path": "tmp/pdfs/catalog3d-source-audit-images/PM-NB-front.png",
+      "sha256": "673d000570ac0f72b84dbace9bf283a469f9426ef63fe93b1bb9fa7fcfa21337",
+      "visual_origin": "original-extracted-factory-image"
+    },
+    {
+      "path": "output/catalog-3d/reference-images/TNA0014.png",
+      "sha256": "673d000570ac0f72b84dbace9bf283a469f9426ef63fe93b1bb9fa7fcfa21337",
+      "visual_origin": "viewer-allowlisted-reference-copy"
+    }
+  ],
+  "dimensions": {
+    "unit": "meter",
+    "body_xyz": [
+      0.21,
+      0.297,
+      0.018
+    ],
+    "assembled_bounds_xyz": [
+      0.20999999344348907,
+      0.296999990940094,
+      0.07119999825954437
+    ],
+    "source": "estimated from partial source dimensions and image proportions",
+    "source_annotation_not_factory_measurement": false
+  },
+  "dimension_status": "estimated",
+  "estimated_regions": [
+    "back/side geometry not visible in source",
+    "underside",
+    "ports and mechanisms",
+    "material finish and roughness",
+    "body dimensions derived from partial evidence/image proportion"
+  ],
+  "geometry_sha256": "c621c592312fbde3f806c7b78b767e9c9d2d1b7fe0a64905793acec71595ba35",
+  "glb_sha256": "99b7984b5b014de6530f9aac5153a0252fba52d87f507fc6a6ba81c95d3e6a82",
+  "generator": {
+    "name": "smartgift-catalog3d-evidence-estimated",
+    "version": "1.0.0",
+    "three": "0.160.0",
+    "chromium": "152.0.4191.53",
+    "models_sha256": "6dd3278cfccfd098d6fbc05d7543cad1e573ccfee372d1fab5a1f57ee12e943c",
+    "renderer_sha256": "e79f082f21a84182cea22fe50526a9b12cfb080222a866838fa08e7899b2dbba",
+    "method": "local-photo-referenced-estimated-parametric-mesh"
+  },
+  "review_status": "review-ready",
+  "rights_status": "pending-owner-review",
+  "public_ready": false,
+  "omitted_details": "unreadable labels, hidden mechanisms, and internal components are not fabricated",
+  "metrics": {
+    "triangles": 3364,
+    "meshes": 4,
+    "bounds": [
+      0.20999999344348907,
+      0.296999990940094,
+      0.07119999825954437
+    ],
+    "glb_bytes": 211952
+  },
+  "renders": {
+    "front": {
+      "path": "preview.png",
+      "sha256": "f464dcbd0fd42c70f3003cf863f1989f96c4c8851700488c108861ab55b86efd",
+      "visible_pixels": 258330
+    },
+    "back": {
+      "path": "preview-back.png",
+      "sha256": "c4ff3aef5a78848c3ee6a5af67940b5d215e0f09fd1832ecd2051a406187a2cb",
+      "visible_pixels": 264387
+    },
+    "side": {
+      "path": "preview-side.png",
+      "sha256": "c949cdde12cffb4dd4deced76239950998fb7dfbdf36105f80af9d968e67eca1",
+      "visible_pixels": 49151
+    },
+    "straight": {
+      "path": "preview-straight.png",
+      "sha256": "11bae7d69a4934e8c317cd91e84a43988e603243882089325e1d68bd240e1022",
+      "visible_pixels": 306722
+    }
+  }
+}

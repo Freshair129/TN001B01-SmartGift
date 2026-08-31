@@ -1,0 +1,372 @@
+{
+  "version": "1.0.0",
+  "captured_at": "2026-08-31T10:19:31.697Z",
+  "url": "http://127.0.0.1:5191/",
+  "browser": "Codex In-app Browser",
+  "models_inspected": 11,
+  "screenshots_count": 37,
+  "technical_tests": {
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0
+  },
+  "canonical_completion": 0,
+  "read_only_audit": true,
+  "assets": [
+    {
+      "code": "S1033",
+      "version": "v004",
+      "glb": "output/catalog-3d/S1033/v004/model.glb",
+      "glb_sha256": "53c627d127c0576fe0f750bb658815728bc7e8eb79dcbdec06f6fa72b39439c2",
+      "reference": "output/catalog-internal/refs/single-S1033-source.png",
+      "reference_sha256": "13611d39277ec28aa19c4a18c975ebfa304dd23b5750409a59b204d1c79464a2"
+    },
+    {
+      "code": "DW03",
+      "version": "v004",
+      "glb": "output/catalog-3d/DW03/v004/model.glb",
+      "glb_sha256": "25e25b5162ef8cad4086a9e38bcf79bec9b75293d26b63b5a4c5bd96d0b55240",
+      "reference": "output/catalog-internal/refs/single-DW03-source.png",
+      "reference_sha256": "5d35de381819f99158964f1c6ca86d6b5e8832335757aa31e095cbb309e72033"
+    },
+    {
+      "code": "W502",
+      "version": "v001",
+      "glb": "output/catalog-3d/W502/v001/model.glb",
+      "glb_sha256": "abc67c2c058dfb28769046cba9afab018d83a210f170f90d7c361accc35c9484",
+      "reference": "output/catalog-internal/refs/single-W502-source.png",
+      "reference_sha256": "d8ab63eebea3eba3e7ef2aaaabb25e69326fd8c9861714dc3e092a3fb4936bed"
+    },
+    {
+      "code": "BW00-0",
+      "version": "v001",
+      "glb": "output/catalog-3d/BW00-0/v001/model.glb",
+      "glb_sha256": "e6fc22ed7a0f242086deb92a1f4c9d8882f0bd06574ad5cd5060beaa470e221f",
+      "reference": "public/assets/catalog-media/source-offer-BW00-0.jpg",
+      "reference_sha256": "af3116e7f1d6d3ab8160d65f31c4afac03a54c7f15a6f7af20b59291310c3240"
+    },
+    {
+      "code": "TDK01-1",
+      "version": "v001",
+      "glb": "output/catalog-3d/TDK01-1/v001/model.glb",
+      "glb_sha256": "ba0cf258f95a74d7d415c7f46f21c381f6f181a57af6c50fc900229fb0e3f5dc",
+      "reference": "output/catalog-3d/reference-images/TDK01-1.jpeg",
+      "reference_sha256": "83245cd857e364eacef3fbde182a2caa15116aa94649381344488ab923ef45b2"
+    },
+    {
+      "code": "TJS00-1",
+      "version": "v001",
+      "glb": "output/catalog-3d/TJS00-1/v001/model.glb",
+      "glb_sha256": "b286451a927b9c827a79990773999770e1473ba7b691c4c054cd842982f14001",
+      "reference": "output/catalog-3d/reference-images/TJS00-1.png",
+      "reference_sha256": "8148558a491ebd28971d996b74a9a8646231c4ca40900ef3408c5e0f48f18203"
+    },
+    {
+      "code": "TBY17-1",
+      "version": "v001",
+      "glb": "output/catalog-3d/TBY17-1/v001/model.glb",
+      "glb_sha256": "57f3aa77b743035df06f089d17d219e9f977ec3b3de6c394d3864d820f291bc2",
+      "reference": "output/catalog-3d/reference-images/TBY17-1.png",
+      "reference_sha256": "8e6bc183949a3e1330157b92f7583ab2ebe314d89d5407fb45bbff69a159b13a"
+    },
+    {
+      "code": "TN00-2",
+      "version": "v001",
+      "glb": "output/catalog-3d/TN00-2/v001/model.glb",
+      "glb_sha256": "1bf874d728c98948910b8defa6f3ca138a6d4777be45c0d8780610aaf5a45628",
+      "reference": "output/catalog-3d/reference-images/TN00-2.png",
+      "reference_sha256": "6f503f8389b5fc88954b2d07850288dd8543bbdc0bfd9e758d5c7da71096816d"
+    },
+    {
+      "code": "TNA0014",
+      "version": "v001",
+      "glb": "output/catalog-3d/TNA0014/v001/model.glb",
+      "glb_sha256": "99b7984b5b014de6530f9aac5153a0252fba52d87f507fc6a6ba81c95d3e6a82",
+      "reference": "output/catalog-3d/reference-images/TNA0014.png",
+      "reference_sha256": "673d000570ac0f72b84dbace9bf283a469f9426ef63fe93b1bb9fa7fcfa21337"
+    },
+    {
+      "code": "TZJ00-1",
+      "version": "v001",
+      "glb": "output/catalog-3d/TZJ00-1/v001/model.glb",
+      "glb_sha256": "0d1ceb2e60bb14c91a329cfe13e7dac7e1027be88fa886a21907e9e8af607b68",
+      "reference": "output/catalog-3d/reference-images/TZJ00-1.png",
+      "reference_sha256": "9a1782f61161f2509140762566d212de417d041f9a031dece9ddb1f3c3f2e70e"
+    },
+    {
+      "code": "TYS01-1",
+      "version": "v001",
+      "glb": "output/catalog-3d/TYS01-1/v001/model.glb",
+      "glb_sha256": "bb5285246458f0d2b4f98e16600f6165513bc8fb42949752e5219b76db2c33cf",
+      "reference": "output/catalog-3d/reference-images/TYS01-1.png",
+      "reference_sha256": "a98a039afd98bd8dbd54243d6e346c2c9e52f5d84b209a611b8b47789dc5cc88"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "BW00-0-back-view.jpg",
+      "bytes": 45651,
+      "width": 984,
+      "height": 906,
+      "sha256": "1bbae7e1950491f656c075e40cf33ec0e31a98b37eda360bc6311d251cd78eb6"
+    },
+    {
+      "file": "BW00-0-default-view.jpg",
+      "bytes": 45862,
+      "width": 984,
+      "height": 906,
+      "sha256": "8a1a80e49be90b6dcd0bd1ff593be4e7b129742410fd193515b3bd74369e89ca"
+    },
+    {
+      "file": "BW00-0-side-view.jpg",
+      "bytes": 45697,
+      "width": 984,
+      "height": 906,
+      "sha256": "d15c74307179a170b1bb283bc32c151554831b544306531404f4e826b9c6a269"
+    },
+    {
+      "file": "BW00-0-silver-top-view.jpg",
+      "bytes": 48501,
+      "width": 984,
+      "height": 906,
+      "sha256": "371fe8897a65023837d3ab3408def3ba937eaabc77b412dae1433ddd01453395"
+    },
+    {
+      "file": "DW03-back-view.jpg",
+      "bytes": 59154,
+      "width": 984,
+      "height": 906,
+      "sha256": "713456a9b2658b225ab5c6955de7d760332da36c33f80f59788ba9355fba89e6"
+    },
+    {
+      "file": "DW03-default-view.jpg",
+      "bytes": 57588,
+      "width": 984,
+      "height": 906,
+      "sha256": "91265037eedc7bba65ba0305b090b8dc23d98e77ef0506eb8e7bd5637e2efc73"
+    },
+    {
+      "file": "DW03-side-view.jpg",
+      "bytes": 52569,
+      "width": 984,
+      "height": 906,
+      "sha256": "e03242b14bb227fbda97dbb1729973d7a1d894cb1dbad3f890c4ac0406240a01"
+    },
+    {
+      "file": "S1033-back-view.jpg",
+      "bytes": 49269,
+      "width": 984,
+      "height": 906,
+      "sha256": "8c80f0ed0b3d7f6a1fc397fbb06bb911f5528a95c4d93c7f38a409e25dc4da59"
+    },
+    {
+      "file": "S1033-default-view.jpg",
+      "bytes": 49423,
+      "width": 984,
+      "height": 906,
+      "sha256": "f470a76e1f354102bce00497094612dbb01da1346582c3d1d03b34abe41a5ada"
+    },
+    {
+      "file": "S1033-side-view.jpg",
+      "bytes": 47128,
+      "width": 984,
+      "height": 906,
+      "sha256": "11b6e3518b96ee6cadd92373f7837a172d6e2785aa6a4e356e992fec0895f27f"
+    },
+    {
+      "file": "TBY17-1-back-view.jpg",
+      "bytes": 56556,
+      "width": 984,
+      "height": 906,
+      "sha256": "ae9a2c2a014596b5429944eaeb8c95062a26e0340b8db45a61de3ce1a0ef66e8"
+    },
+    {
+      "file": "TBY17-1-default-view.jpg",
+      "bytes": 56457,
+      "width": 984,
+      "height": 906,
+      "sha256": "4f9196fe471ad64eed1668b983355cf219c6b1abbe80ed624a91da9a1f4bd24a"
+    },
+    {
+      "file": "TBY17-1-side-view.jpg",
+      "bytes": 52873,
+      "width": 984,
+      "height": 906,
+      "sha256": "fac6c87681d1b930ccf522881548787668fc2b0a0af4a62784b33e351fca9383"
+    },
+    {
+      "file": "TDK01-1-back-view.jpg",
+      "bytes": 56502,
+      "width": 984,
+      "height": 906,
+      "sha256": "c1f32530ab095e06b195b4dc735bc304b591ed22b3d22d126ee631a09fca8d17"
+    },
+    {
+      "file": "TDK01-1-blue-top-view.jpg",
+      "bytes": 55923,
+      "width": 984,
+      "height": 906,
+      "sha256": "00e039eaf27b7400046a3daa98190d23489db1a462a9bed427563297b9546033"
+    },
+    {
+      "file": "TDK01-1-default-view.jpg",
+      "bytes": 56840,
+      "width": 984,
+      "height": 906,
+      "sha256": "a25295ae04f6a406610b24f8b3a29ef64f0329cee53d839d5095f4c5280db925"
+    },
+    {
+      "file": "TDK01-1-side-view.jpg",
+      "bytes": 56674,
+      "width": 984,
+      "height": 906,
+      "sha256": "a5a2912fddb1f67f39f9a567bfd329672ded4aa64cf4c9ba0831d409953d4de9"
+    },
+    {
+      "file": "TJS00-1-back-view.jpg",
+      "bytes": 53068,
+      "width": 984,
+      "height": 906,
+      "sha256": "e72bdbaf43603777bc87d75dbe13c1e88ac0f59059681a3345a02c28fba0b570"
+    },
+    {
+      "file": "TJS00-1-default-view.jpg",
+      "bytes": 55152,
+      "width": 984,
+      "height": 906,
+      "sha256": "f53bcc894ef98e9385fb3bfed26a4b9d77c6341ce8f44d4fe109f96d2c6f7b1d"
+    },
+    {
+      "file": "TJS00-1-side-view.jpg",
+      "bytes": 55187,
+      "width": 984,
+      "height": 906,
+      "sha256": "4d0bf3787b65763ceb5c56db1d7e0f7b60e6367d48ca1dad65e48e699dbd7910"
+    },
+    {
+      "file": "TN00-2-back-view.jpg",
+      "bytes": 57287,
+      "width": 984,
+      "height": 906,
+      "sha256": "64a0d6e7725ac9137f3c42a39f3fcc82da9c24f236804224d3aa67d594d03b6c"
+    },
+    {
+      "file": "TN00-2-default-view.jpg",
+      "bytes": 58972,
+      "width": 984,
+      "height": 906,
+      "sha256": "e745ca8efac8bb4f61575b6e489269bb809a1e8115b7e9d791da9cb3964f2b8c"
+    },
+    {
+      "file": "TN00-2-side-view.jpg",
+      "bytes": 58161,
+      "width": 984,
+      "height": 906,
+      "sha256": "e1f804801ab2769ee4f8972a8217bf42352b7e077b13ae6792105e6e65540c48"
+    },
+    {
+      "file": "TNA0014-back-view.jpg",
+      "bytes": 59484,
+      "width": 984,
+      "height": 906,
+      "sha256": "983b3d9e1bc65d29d26505d5ec92447b53657469a24e715b4963d1815dce04a3"
+    },
+    {
+      "file": "TNA0014-default-view.jpg",
+      "bytes": 65423,
+      "width": 984,
+      "height": 906,
+      "sha256": "3312acc14f69c910daa22e7d5fc700551ddad901e13ec6dc17ded41bc4dfe3b3"
+    },
+    {
+      "file": "TNA0014-side-view.jpg",
+      "bytes": 59465,
+      "width": 984,
+      "height": 906,
+      "sha256": "7864560120cb6cbf0d1ecb0177873828ddd1256c6c3f41e61339be189ffe9bcf"
+    },
+    {
+      "file": "TYS01-1-back-view.jpg",
+      "bytes": 54113,
+      "width": 984,
+      "height": 906,
+      "sha256": "372da33ba9e4c3bce82683545592e0a513d45ea0e777c8ecd6a3bf30e5fbd079"
+    },
+    {
+      "file": "TYS01-1-default-view.jpg",
+      "bytes": 54851,
+      "width": 984,
+      "height": 906,
+      "sha256": "67d4942199dbdf6636c5ad065052bf3228abf72f68539f068150094d4d84ce24"
+    },
+    {
+      "file": "TYS01-1-side-view.jpg",
+      "bytes": 54281,
+      "width": 984,
+      "height": 906,
+      "sha256": "97c27d1f280654d0e2f57831a667e358435482ea902361a62ff525f1132e90c1"
+    },
+    {
+      "file": "TZJ00-1-back-view.jpg",
+      "bytes": 51761,
+      "width": 984,
+      "height": 906,
+      "sha256": "0c77b0d7ccab3f7ad610148bd74138bffe34345baecd9a82a294af9cee7345e6"
+    },
+    {
+      "file": "TZJ00-1-default-view.jpg",
+      "bytes": 52625,
+      "width": 984,
+      "height": 906,
+      "sha256": "d4bf85f09d61aca844db48b3543a9591a5e61896f64d6549df6c6cc55ee5ee0a"
+    },
+    {
+      "file": "TZJ00-1-side-view.jpg",
+      "bytes": 50479,
+      "width": 984,
+      "height": 906,
+      "sha256": "2e38a05f9c39ab4ec27d3da0f29629590df3bb45154aa4dc629a99dcc726ae3c"
+    },
+    {
+      "file": "TZJ00-1-white-view.jpg",
+      "bytes": 48898,
+      "width": 984,
+      "height": 906,
+      "sha256": "f47bbfd19f756afe525e372555840c3925eb5658f4df2b68c812bbd7b6a704ab"
+    },
+    {
+      "file": "W502-back-view.jpg",
+      "bytes": 49657,
+      "width": 984,
+      "height": 906,
+      "sha256": "d0aa00126e618c1d0582e762640a3d54639204358b62ea65f7bbec14ba1cc736"
+    },
+    {
+      "file": "W502-default-view.jpg",
+      "bytes": 51443,
+      "width": 984,
+      "height": 906,
+      "sha256": "5ca43cda8300b1acc1e394e8ac5d68a75ee5f8b8664d747b7bdfdac9036ea155"
+    },
+    {
+      "file": "W502-side-view.jpg",
+      "bytes": 49812,
+      "width": 984,
+      "height": 906,
+      "sha256": "11d74490d532af6fb2a95ce6d0ba260406669e75436faa835530914dc3ea5a89"
+    },
+    {
+      "file": "category-classic-oriental-empty-view.jpg",
+      "bytes": 38059,
+      "width": 999,
+      "height": 920,
+      "sha256": "4461d396662ee2b9f8857df32105b39515b658b7efcaa11c945ef092f866ce34"
+    }
+  ],
+  "excluded_capture_attempts": [
+    "S1033-default.jpg",
+    "S1033-side.jpg",
+    "S1033-back.jpg"
+  ],
+  "exclusion_reason": "Initial full-page/keyboard attempts had reflow or unconfirmed rotation. Replaced by normal viewport screenshots using actual mouse drags."
+}

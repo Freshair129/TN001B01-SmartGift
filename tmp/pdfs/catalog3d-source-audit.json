@@ -1,0 +1,1986 @@
+{
+  "scope": "non-PII product/business source documents only; archive and CRM/FlowAccount excluded",
+  "physical_files": 25,
+  "unique_files": 22,
+  "files": [
+    {
+      "file": "data-pipeline/01_raw/SmartGift-ใบราคา-update.pdf",
+      "sha256": "27aafa89082ea1491450c759b85dd89c2e0689252ade3017ef59c06d79b83107",
+      "type": ".pdf",
+      "units": 136,
+      "text_chars": 412751,
+      "matches": [
+        "PM-CFMUG",
+        "PM-FLASH",
+        "PM-MUG-HEAT",
+        "PM-PB10K",
+        "PM-TMB"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+      "sha256": "38be21ae9ba0748e4249d99097b7923a87c1dee3b7ac0510d40774f6f87c4032",
+      "type": ".xlsx",
+      "units": 1,
+      "text_chars": 228679,
+      "matches": [
+        "PM-AROMA",
+        "PM-BOTTLE-LED",
+        "PM-CFMUG",
+        "PM-CUTLERY",
+        "PM-FLASH",
+        "PM-MSG",
+        "PM-MUG-HEAT",
+        "PM-NB",
+        "PM-PB10K",
+        "PM-PEN",
+        "PM-SPK",
+        "PM-TEA-INF",
+        "PM-TMB",
+        "PM-UMB"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบราคา-2025   POWER BANK.pdf",
+      "sha256": "b9ba4c6f01f7d62cb8b334d44c12540324ad2833fdf66c176201bfc285767760",
+      "type": ".pdf",
+      "units": 5,
+      "text_chars": 11055,
+      "matches": [
+        "PM-PB10K"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+      "sha256": "6f9c82762c868960310f69e8178c5fd1a5bc7f38d4465f36c881a34479905161",
+      "type": ".pdf",
+      "units": 110,
+      "text_chars": 349820,
+      "matches": [
+        "PM-BOTTLE-LED",
+        "PM-CUTLERY",
+        "PM-FLASH",
+        "PM-MSG",
+        "PM-MUG-HEAT",
+        "PM-NB",
+        "PM-PB10K",
+        "PM-PEN",
+        "PM-TEA-INF",
+        "PM-TMB",
+        "PM-UMB"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/02-ใบราคา2025-ชุดของขวัญธุรกิจ-ฺBusinessGift.pdf",
+      "sha256": "1369832f7df36d9f00230ae2cfc872965246804a9ef1f4be5f4518b798f95002",
+      "type": ".pdf",
+      "units": 80,
+      "text_chars": 194766,
+      "matches": [
+        "PM-PB10K"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/03-ใบราคา-2025   POWER BANK-Fast Charging Series.pdf",
+      "sha256": "50de0453dfb01a2fff38e155f473930310314801fd96674895769df1ce7225ef",
+      "type": ".pdf",
+      "units": 5,
+      "text_chars": 14320,
+      "matches": [
+        "PM-PB10K"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/04-ใบราคา-2025   NoteBook-POWER BANK-100W.pdf",
+      "sha256": "a40f9954a3c8779984f4c942e64974e4a3bac2f46bac2a03d8000aea72b0c66c",
+      "type": ".pdf",
+      "units": 1,
+      "text_chars": 1695,
+      "matches": []
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/04-ใบราคา2025-ชุดขวัญแปลกใหม่-NoveltyGift.pdf",
+      "sha256": "c3a3527d08b66a33a6331653bf68f5fe1b6f7c95e793ed6661581013796cec32",
+      "type": ".pdf",
+      "units": 37,
+      "text_chars": 66077,
+      "matches": [
+        "PM-PB10K"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/05-ใบราคา-2025   POWER BANK-Wireless Charger - ชาร์จไร้สาย & แม็กเน็ต.pdf",
+      "sha256": "c4d198f5610a8890172023863e8306bbb77e16f45d47e127d58352c6f10259d9",
+      "type": ".pdf",
+      "units": 2,
+      "text_chars": 4278,
+      "matches": [
+        "PM-PB10K"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/Catalog-USBThailand.pdf",
+      "sha256": "bff10abc3e05191a35aa889852550507777edc10e142de656777cf906a2ead9a",
+      "type": ".pdf",
+      "units": 22,
+      "text_chars": 4422,
+      "matches": []
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/SmartGift-Premium_ใบราคาชุดของขวัญแปลไทย.pdf",
+      "sha256": "5f2ab55ecd1c54d0b3a76677422d0e899d3aa44d07f75645bc17596282ee95d2",
+      "type": ".pdf",
+      "units": 4,
+      "text_chars": 493,
+      "matches": []
+    },
+    {
+      "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/ใบราคาแฟลชไดร์ฟ - 4 ตค 67.pdf",
+      "sha256": "6273d547b09f29baf53cd216d7e3fe05a308fe8700356d5e23738aba50cf8a98",
+      "type": ".pdf",
+      "units": 3,
+      "text_chars": 2903,
+      "matches": [
+        "PM-FLASH"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/03_product_catalogs/2024_REEVES - Smart Electronics 2024 EN-OP.pdf",
+      "sha256": "4834e123bbd08639f04fd157e62237394a21b9181bb179812bd4959c2ee4d450",
+      "type": ".pdf",
+      "units": 66,
+      "text_chars": 54614,
+      "matches": [
+        "PM-AROMA",
+        "PM-PB10K"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/03_product_catalogs/2026 new catalogue of power banks&car charger&wireless charger.pdf",
+      "sha256": "066037e15f855d22d9d08b7e3ed440224ee6ec67d03a0d2cadb7f24325b25456",
+      "type": ".pdf",
+      "units": 10,
+      "text_chars": 2996,
+      "matches": [
+        "PM-PB10K"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/06_business_pdf/Architecture_of_Appreciation.pdf",
+      "sha256": "0c306630490f7e0d43df529d7a6e93f08e8f619a97d6e29e8f9ef950c8dd92e1",
+      "type": ".pdf",
+      "units": 6,
+      "text_chars": 0,
+      "matches": []
+    },
+    {
+      "file": "data-pipeline/01_raw/06_business_pdf/SmartGift_2026_Portfolio_Blueprint.pdf",
+      "sha256": "c9ee13ceac99a755d36a25ebf64ae162bfd8ccde4bc7bb6333840bf392f3a35e",
+      "type": ".pdf",
+      "units": 12,
+      "text_chars": 0,
+      "matches": []
+    },
+    {
+      "file": "data-pipeline/01_raw/06_business_pdf/Smart_Gift.pdf",
+      "sha256": "4f3a5c01a7a50c73a0a77d444ec3bbb393c35119229743efe8c984a0c4d36521",
+      "type": ".pdf",
+      "units": 15,
+      "text_chars": 0,
+      "matches": []
+    },
+    {
+      "file": "data-pipeline/01_raw/06_business_pdf/Sovereign_Group_Digital_Infrastructure.pdf",
+      "sha256": "d6fdb811f0a407d12753312005ae322211546532af7248df1dc7afb4d2e42b1a",
+      "type": ".pdf",
+      "units": 14,
+      "text_chars": 0,
+      "matches": []
+    },
+    {
+      "file": "data-pipeline/01_raw/06_business_pdf/Unboxing_Engineering.pdf",
+      "sha256": "1b50882c90cfd005cac2a1423fc9d62bcd4538dae133aca784315e813b10c69a",
+      "type": ".pdf",
+      "units": 15,
+      "text_chars": 0,
+      "matches": []
+    },
+    {
+      "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+      "sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+      "type": ".xlsx",
+      "units": 1,
+      "text_chars": 83486,
+      "matches": [
+        "PM-BOTTLE-LED",
+        "PM-CFMUG",
+        "PM-CUTLERY",
+        "PM-FAN",
+        "PM-FLASH",
+        "PM-MSG",
+        "PM-MUG-HEAT",
+        "PM-NB",
+        "PM-PB10K",
+        "PM-PEN",
+        "PM-SPK",
+        "PM-TEA-INF",
+        "PM-TMB",
+        "PM-UMB"
+      ]
+    },
+    {
+      "file": "data-pipeline/01_raw/08_factory_costs/02-ต้นทุน-20260417 Power bank notebook catalog.xlsx",
+      "sha256": "9c8b51678f0aea3c7cfb35e3449a2d0b4d3dd371808dd42050f7eea56b377e1f",
+      "type": ".xlsx",
+      "units": 1,
+      "text_chars": 8079,
+      "matches": [
+        "PM-FLASH",
+        "PM-NB",
+        "PM-PB10K"
+      ]
+    }
+  ],
+  "products": {
+    "PM-AROMA": [
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/03_product_catalogs/2024_REEVES - Smart Electronics 2024 EN-OP.pdf",
+        "hits": [
+          {
+            "locator": 48,
+            "dimension_lines": []
+          }
+        ]
+      }
+    ],
+    "PM-BOTTLE-LED": [
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "- Vacuum flask :450ml, 304+ PP silicon material, temperature display, one button open design, 67*205mm",
+              "- Vacuum flask :450ml, 304+ PP silicon material, temperature display, one button open design, 67*205mm"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 10,
+            "dimension_lines": []
+          },
+          {
+            "locator": 11,
+            "dimension_lines": []
+          },
+          {
+            "locator": 17,
+            "dimension_lines": []
+          },
+          {
+            "locator": 31,
+            "dimension_lines": []
+          },
+          {
+            "locator": 32,
+            "dimension_lines": []
+          },
+          {
+            "locator": 33,
+            "dimension_lines": []
+          },
+          {
+            "locator": 43,
+            "dimension_lines": [
+              "Vacuum cup 8.3*19.6cm, 500ml, 316 stainless steel + PP silicon, 335g, with sling",
+              "Vacuum cup 8.3*19.6cm, 500ml, 316 stainless steel + PP silicon, 335g, with sling"
+            ]
+          },
+          {
+            "locator": 44,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 650",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 670"
+            ]
+          },
+          {
+            "locator": 45,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 850",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 930"
+            ]
+          },
+          {
+            "locator": 46,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 1,020",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 1,070"
+            ]
+          },
+          {
+            "locator": 47,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 1,160",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 1,280"
+            ]
+          },
+          {
+            "locator": 48,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 660",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 730"
+            ]
+          },
+          {
+            "locator": 58,
+            "dimension_lines": []
+          },
+          {
+            "locator": 59,
+            "dimension_lines": []
+          },
+          {
+            "locator": 60,
+            "dimension_lines": []
+          },
+          {
+            "locator": 61,
+            "dimension_lines": []
+          },
+          {
+            "locator": 62,
+            "dimension_lines": []
+          },
+          {
+            "locator": 64,
+            "dimension_lines": [
+              "Vacuum jug 316 SUS, 1000ml, 166*99*118mm, food grade PP+stainless steel, ,temperature display 20 1,360"
+            ]
+          },
+          {
+            "locator": 65,
+            "dimension_lines": [
+              "Vacuum jug 316 SUS, 1000ml, 166*99*118mm, food grade PP+stainless steel, ,temperature display 20 1,190",
+              "Vacuum jug 316 SUS, 1000ml, 166*99*118mm, food grade PP+stainless steel, ,temperature display 20 1,040"
+            ]
+          },
+          {
+            "locator": 66,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "Glass, 350ml, 20*6.5cm, temperature display",
+              "450ml, 316 + PP silicon material, temperature display, with sling, 160*79mm"
+            ]
+          }
+        ]
+      }
+    ],
+    "PM-CFMUG": [
+      {
+        "file": "data-pipeline/01_raw/SmartGift-ใบราคา-update.pdf",
+        "hits": [
+          {
+            "locator": 55,
+            "dimension_lines": [
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP",
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP"
+            ]
+          },
+          {
+            "locator": 56,
+            "dimension_lines": [
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP",
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP"
+            ]
+          },
+          {
+            "locator": 57,
+            "dimension_lines": [
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP",
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP"
+            ]
+          },
+          {
+            "locator": 58,
+            "dimension_lines": [
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP",
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP"
+            ]
+          },
+          {
+            "locator": 59,
+            "dimension_lines": [
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP",
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP"
+            ]
+          },
+          {
+            "locator": 60,
+            "dimension_lines": [
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP",
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP"
+            ]
+          },
+          {
+            "locator": 61,
+            "dimension_lines": [
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP",
+              "แก้วกำแฟ (Coffee Mug) ควำมจุ 510 มล. ขนำด 90×170×70 มม. ผลิตจำกสแตนเลส SUS304 และซิลิโคน PP"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "- Coffee Mug (แก้วเก็บความร้อน/เย็น) ความจุ: 500ml ขนาด: 91 × 194 วัสดุ: สแตนเลสเกรดอาหาร 316 + ฝา PP ซิลิโคน ใช้งานได้ 2 แบบ: ดื่มโดยตรง หรือใช้กับหลอด"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      }
+    ],
+    "PM-CUTLERY": [
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 59,
+            "dimension_lines": [
+              "แก้วมัค Ceramic, 375ml, 12*8.5cm, with spoon 20 280"
+            ]
+          },
+          {
+            "locator": 61,
+            "dimension_lines": [
+              "แก้วมัค Ceramic, 400ml, 109*92mm, with spoon 100 1,070"
+            ]
+          },
+          {
+            "locator": 84,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "Ceramic,400ml, 109*92mm, with spoon",
+              "Ceramic, 250ml, with spoon, 91*88*50mm (excluding handle width 35mm)"
+            ]
+          }
+        ]
+      }
+    ],
+    "PM-DESK-MAT": [],
+    "PM-FAN": [
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      }
+    ],
+    "PM-FLASH": [
+      {
+        "file": "data-pipeline/01_raw/SmartGift-ใบราคา-update.pdf",
+        "hits": [
+          {
+            "locator": 114,
+            "dimension_lines": []
+          },
+          {
+            "locator": 115,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 10,
+            "dimension_lines": []
+          },
+          {
+            "locator": 11,
+            "dimension_lines": []
+          },
+          {
+            "locator": 29,
+            "dimension_lines": [
+              "USB flash drive 32G, 60*17*10mm 20 1,950"
+            ]
+          },
+          {
+            "locator": 30,
+            "dimension_lines": [
+              "USB flash drive 32G, 60*17*10mm 100 860",
+              "USB flash drive 32G, 60*17*10mm 300 750"
+            ]
+          },
+          {
+            "locator": 31,
+            "dimension_lines": [
+              "USB flash drive 32G, 60*17*10mm 100 470"
+            ]
+          },
+          {
+            "locator": 32,
+            "dimension_lines": []
+          },
+          {
+            "locator": 33,
+            "dimension_lines": [
+              "USB flash drive 32G, card type, ABS material, 8.3*5.2cm"
+            ]
+          },
+          {
+            "locator": 35,
+            "dimension_lines": []
+          },
+          {
+            "locator": 36,
+            "dimension_lines": [
+              "USB flash drive 16G, 2.8*6cm"
+            ]
+          },
+          {
+            "locator": 37,
+            "dimension_lines": []
+          },
+          {
+            "locator": 38,
+            "dimension_lines": []
+          },
+          {
+            "locator": 39,
+            "dimension_lines": []
+          },
+          {
+            "locator": 58,
+            "dimension_lines": []
+          },
+          {
+            "locator": 59,
+            "dimension_lines": []
+          },
+          {
+            "locator": 62,
+            "dimension_lines": []
+          },
+          {
+            "locator": 63,
+            "dimension_lines": []
+          },
+          {
+            "locator": 65,
+            "dimension_lines": []
+          },
+          {
+            "locator": 66,
+            "dimension_lines": []
+          },
+          {
+            "locator": 67,
+            "dimension_lines": []
+          },
+          {
+            "locator": 73,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/ใบราคาแฟลชไดร์ฟ - 4 ตค 67.pdf",
+        "hits": [
+          {
+            "locator": 3,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/02-ต้นทุน-20260417 Power bank notebook catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      }
+    ],
+    "PM-MSG": [
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "- เครื่องนวดคอ : มี 4 โหมดการนวด & 15 ระดับ, low pulse, ประคบร้อนอุณหภูมิคงที่, 2.5W, 150*145*45มม",
+              "- เครื่องนวดคอ : มี 4 โหมดการนวด & 15 ระดับ, low pulse, ประคบร้อนอุณหภูมิคงที่, 2.5W, 150*145*45มม"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 33,
+            "dimension_lines": [
+              "เครื่องนวดคอr 4 massage modes & 15 levels, low pulse, 42℃ hot compress, 2.5W, 150*145*45mm 50 1,070"
+            ]
+          },
+          {
+            "locator": 34,
+            "dimension_lines": []
+          },
+          {
+            "locator": 59,
+            "dimension_lines": [
+              "เครื่องนวดคอr 4 massage modes & 15 levels, low pulse, 42℃ hot compress, 2.5W, 150*145*45mm 100 1,100"
+            ]
+          },
+          {
+            "locator": 60,
+            "dimension_lines": []
+          },
+          {
+            "locator": 61,
+            "dimension_lines": []
+          },
+          {
+            "locator": 64,
+            "dimension_lines": []
+          },
+          {
+            "locator": 65,
+            "dimension_lines": []
+          },
+          {
+            "locator": 67,
+            "dimension_lines": []
+          },
+          {
+            "locator": 68,
+            "dimension_lines": []
+          },
+          {
+            "locator": 69,
+            "dimension_lines": []
+          },
+          {
+            "locator": 70,
+            "dimension_lines": []
+          },
+          {
+            "locator": 72,
+            "dimension_lines": []
+          },
+          {
+            "locator": 73,
+            "dimension_lines": []
+          },
+          {
+            "locator": 74,
+            "dimension_lines": []
+          },
+          {
+            "locator": 75,
+            "dimension_lines": []
+          },
+          {
+            "locator": 77,
+            "dimension_lines": []
+          },
+          {
+            "locator": 78,
+            "dimension_lines": []
+          },
+          {
+            "locator": 82,
+            "dimension_lines": []
+          },
+          {
+            "locator": 83,
+            "dimension_lines": []
+          },
+          {
+            "locator": 85,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "15 levels, low pulse, 2.5W, 150*145*45mm, arms are stretchable",
+              "15 levels, low pulse, 2.5W, 150*145*45mm"
+            ]
+          }
+        ]
+      }
+    ],
+    "PM-MUG-HEAT": [
+      {
+        "file": "data-pipeline/01_raw/SmartGift-ใบราคา-update.pdf",
+        "hits": [
+          {
+            "locator": 105,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "- Ceramic Mug (แก้วเซรามิก) ความจุ: 400ml ขนาด: 109 × 92 mm มาพร้อม ช้อนสแตนเลสสีทอง ดีไซน์หรู"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 1,
+            "dimension_lines": [
+              "กำรบรรจุ 20 sets/ctn, 52*43.7*55cm 500 520",
+              "กำรบรรจุ 20 sets/ctn, 52*43.7*55cm 500 690"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "20 sets/ctn, 52*43.7*55cm"
+            ]
+          }
+        ]
+      }
+    ],
+    "PM-NB": [
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "- สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) : Small writing screen notepad(115*78มม), wireless & cable charging, LED lamp, calculator,storage, 12000mah",
+              "- สมุดโน๊ตอัจฉริยะ (Notebook Powerbank) : Big writing screen notepad(115*165มม), wireless & cable charging, LED lamp, storage， 12000mah"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 10,
+            "dimension_lines": []
+          },
+          {
+            "locator": 16,
+            "dimension_lines": [
+              "Notebook 175*99mm, PU, 96 sheets, sprayed edges, ribbon bookmark with a tag 20 740"
+            ]
+          },
+          {
+            "locator": 17,
+            "dimension_lines": []
+          },
+          {
+            "locator": 29,
+            "dimension_lines": [
+              "Notebook 210*145mm, wheat straw, elastic band closure 300 1,560"
+            ]
+          },
+          {
+            "locator": 30,
+            "dimension_lines": [
+              "Notebook 210*145mm, wheat straw, elastic band closure 20 800",
+              "Notebook 210*145mm, wheat straw, elastic band closure 20 850"
+            ]
+          },
+          {
+            "locator": 31,
+            "dimension_lines": [
+              "Notebook 210*145mm, wheat straw, elastic band closure 20 310"
+            ]
+          },
+          {
+            "locator": 32,
+            "dimension_lines": []
+          },
+          {
+            "locator": 33,
+            "dimension_lines": [
+              "Notebook A5, 22*15cm, skin touch PU material 100 1,040"
+            ]
+          },
+          {
+            "locator": 34,
+            "dimension_lines": [
+              "Notebook A5, 14.7*21.2cm, 6 card slots in the magnetic separate sheet in the cover, pen loop, 96 "
+            ]
+          },
+          {
+            "locator": 36,
+            "dimension_lines": [
+              "Notebook A5, 17.3*23.3cm, loose leaf, long press to open buckle, 4 card slots + 1 ticket interlayer, "
+            ]
+          },
+          {
+            "locator": 37,
+            "dimension_lines": []
+          },
+          {
+            "locator": 38,
+            "dimension_lines": []
+          },
+          {
+            "locator": 39,
+            "dimension_lines": []
+          },
+          {
+            "locator": 58,
+            "dimension_lines": [
+              "Notebook A5, 22*15cm, auspicious clouds buckle closure 100 710",
+              "Notebook A5, 22*15cm, auspicious clouds buckle closure 300 830"
+            ]
+          },
+          {
+            "locator": 59,
+            "dimension_lines": [
+              "Notebook A5, 22*15cm, auspicious clouds buckle closure 300 1,030",
+              "Notebook A5, 22*15cm, auspicious clouds buckle closure 300 770"
+            ]
+          },
+          {
+            "locator": 61,
+            "dimension_lines": [
+              "Notebook Skin touch PU material, 102*82mm 20 1,260",
+              "Notebook A5, 22*15cm, skin touch PU material 100 570"
+            ]
+          },
+          {
+            "locator": 62,
+            "dimension_lines": [
+              "Notebook A5, 22*15cm, button closure 20 420",
+              "Notebook A5, 22*15cm, button closure 100 530"
+            ]
+          },
+          {
+            "locator": 63,
+            "dimension_lines": []
+          },
+          {
+            "locator": 66,
+            "dimension_lines": []
+          },
+          {
+            "locator": 67,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/02-ต้นทุน-20260417 Power bank notebook catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      }
+    ],
+    "PM-PB10K": [
+      {
+        "file": "data-pipeline/01_raw/SmartGift-ใบราคา-update.pdf",
+        "hits": [
+          {
+            "locator": 3,
+            "dimension_lines": []
+          },
+          {
+            "locator": 4,
+            "dimension_lines": []
+          },
+          {
+            "locator": 5,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh, ขนำด 68×147×20 มม., มำพร้อมแท่นวำงโทรศัพท์, สำยคล้อง "
+            ]
+          },
+          {
+            "locator": 6,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh, ขนำด 68×147×20 มม., มำพร้อมขำตั้งโทรศัพท์, สำยคล้อง, ",
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งโทรศัพท์ สำยคล้อง และ"
+            ]
+          },
+          {
+            "locator": 7,
+            "dimension_lines": [
+              "เพำเวอร์แบงก์ 10,000mAh ขนำด 11×6.9×2.1 ซม. รองรับ MagSafe; อินพุต: สำย"
+            ]
+          },
+          {
+            "locator": 8,
+            "dimension_lines": [
+              "10,000mAh ขนำด 11×6.9×2.1 ซม. รองรับ MagSafe; อินพุต: สำยชำร์จ USB + "
+            ]
+          },
+          {
+            "locator": 9,
+            "dimension_lines": [
+              "10,000mAh ขนำด 11×6.9×2.1 ซม. รองรับ MagSafe; อินพุต: สำยชำร์จ USB + ",
+              "10,000mAh ขนำด 11×6.9×2.1 ซม. รองรับ MagSafe; อินพุต: สำยชำร์จ USB + "
+            ]
+          },
+          {
+            "locator": 12,
+            "dimension_lines": []
+          },
+          {
+            "locator": 13,
+            "dimension_lines": []
+          },
+          {
+            "locator": 15,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และ",
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และ"
+            ]
+          },
+          {
+            "locator": 19,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และหน้ำจอแสดงผล;"
+            ]
+          },
+          {
+            "locator": 20,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และหน้ำจอแสดงผล;",
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และหน้ำจอแสดงผล;"
+            ]
+          },
+          {
+            "locator": 21,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และหน้ำจอแสดงผล;",
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และหน้ำจอแสดงผล;"
+            ]
+          },
+          {
+            "locator": 22,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และ",
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และ"
+            ]
+          },
+          {
+            "locator": 23,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และ",
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และ"
+            ]
+          },
+          {
+            "locator": 24,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh, ขนำด 80×90×28 มม., มำพร้อมสำยคล้อง, หน้ำจอแสดงระดับ",
+              "ควำมจุ 10000mAh, ขนำด 80×90×28 มม., มำพร้อมสำยคล้อง, หน้ำจอแสดงระดับ"
+            ]
+          },
+          {
+            "locator": 25,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh, ขนำด 80×90×28 มม., มำพร้อมสำยคล้อง, หน้ำจอแสดงระดับ",
+              "ควำมจุ 10000mAh, ขนำด 80×90×28 มม., มำพร้อมสำยคล้อง, หน้ำจอแสดงระดับ"
+            ]
+          },
+          {
+            "locator": 26,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh, ขนำด 80×90×28 มม., มำพร้อมสำยคล้อง, หน้ำจอแสดงระดับ"
+            ]
+          },
+          {
+            "locator": 27,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และ"
+            ]
+          },
+          {
+            "locator": 28,
+            "dimension_lines": [
+              "ควำมจุ 10000mAh, ขนำด 68×147×20 มม., มำพร้อมขำตั้งโทรศัพท์, สำยคล้อง, ",
+              "ควำมจุ 10000mAh ขนำด 68×147×20 มม. มำพร้อมขำตั้งมือถือ สำยคล้อง และ"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "- พาวเวอร์แบงค์ 10000mAh, 68*147*20 มม. พร้อมขาตั้งโทรศัพท์ สายคล้อง และไฟบอกสถานะบนหน้าจอ อินพุต: สาย USB พอร์ต Type-C และ Micro USB เอาท์พุต: สาย iPhone, Type-C และ Android พอร์ต",
+              "- พาวเวอร์แบงค์ 10000mAh, 68*147*20 มม. พร้อมขาตั้งโทรศัพท์ สายคล้อง และไฟบอกสถานะบนหน้าจอ อินพุต: สาย USB พอร์ต Type-C และ Micro USB เอาท์พุต: สาย iPhone, Type-C และ Android พอร์ต"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบราคา-2025   POWER BANK.pdf",
+        "hits": [
+          {
+            "locator": 1,
+            "dimension_lines": []
+          },
+          {
+            "locator": 2,
+            "dimension_lines": []
+          },
+          {
+            "locator": 3,
+            "dimension_lines": []
+          },
+          {
+            "locator": 5,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 2,
+            "dimension_lines": [
+              "ควำมจุ 10,000mAh, รองรับกำรชำร์จไร้สำย, MagSafe, 5V 2A, ขนำด 71.5×23.5×112.5 มม., "
+            ]
+          },
+          {
+            "locator": 3,
+            "dimension_lines": [
+              "ควำมจุ 10,000mAh, รองรับกำรชำร์จไร้สำย, MagSafe, 5V 2A, ขนำด 71.5×23.5×112.5 มม., ",
+              "ควำมจุ 10,000mAh, รองรับกำรชำร์จไร้สำย, MagSafe, 5V 2A, ขนำด 71.5×23.5×112.5 มม., "
+            ]
+          },
+          {
+            "locator": 4,
+            "dimension_lines": [
+              "ควำมจุ 10,000mAh, รองรับกำรชำร์จไร้สำย, MagSafe, 5V 2A, ขนำด 71.5×23.5×112.5 มม., ",
+              "ควำมจุ 10000mAh, ขนำด 68×147×20 มม., มำพร้อมแท่นวำงโทรศัพท์, สำยคล้อง และหน้ำจอ"
+            ]
+          },
+          {
+            "locator": 5,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          },
+          {
+            "locator": 6,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "พำวเวอร์แบงค์ เพำเวอร์แบงก์ 10,000mAh ขนำด 11×6.9×2.1 ซม. รองรับ MagSafe; อินพุต: สำยชำร์จ USB + "
+            ]
+          },
+          {
+            "locator": 7,
+            "dimension_lines": [
+              "พำวเวอร์แบงค์ 10,000mAh ขนำด 11×6.9×2.1 ซม. รองรับ MagSafe; อินพุต: สำยชำร์จ USB + พอร์ต Type-C 2 "
+            ]
+          },
+          {
+            "locator": 8,
+            "dimension_lines": [
+              "พำวเวอร์แบงค์ 10,000mAh ขนำด 11×6.9×2.1 ซม. รองรับ MagSafe; อินพุต: สำยชำร์จ USB + พอร์ต Type-C 2 ",
+              "พำวเวอร์แบงค์ 10,000mAh ขนำด 11×6.9×2.1 ซม. รองรับ MagSafe; อินพุต: สำยชำร์จ USB + พอร์ต Type-C 2 "
+            ]
+          },
+          {
+            "locator": 10,
+            "dimension_lines": []
+          },
+          {
+            "locator": 11,
+            "dimension_lines": []
+          },
+          {
+            "locator": 13,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          },
+          {
+            "locator": 17,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          },
+          {
+            "locator": 18,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          },
+          {
+            "locator": 19,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          },
+          {
+            "locator": 20,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          },
+          {
+            "locator": 21,
+            "dimension_lines": [
+              "10000mAh, 79*89*27mm, with landyard, 2.1A, battery status display, 2 light sources",
+              "10000mAh, 79*89*27mm, with landyard, 2.1A, battery status display, 2 light sources"
+            ]
+          },
+          {
+            "locator": 22,
+            "dimension_lines": [
+              "10000mAh, 79*89*27mm, with landyard, 2.1A, battery status display, 2 light sources",
+              "10000mAh, 79*89*27mm, with landyard, 2.1A, battery status display, 2 light sources"
+            ]
+          },
+          {
+            "locator": 23,
+            "dimension_lines": [
+              "10000mAh, 79*89*27mm, with landyard, 2.1A, battery status display, 2 light sources",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          },
+          {
+            "locator": 24,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          },
+          {
+            "locator": 25,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          },
+          {
+            "locator": 26,
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; "
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/02-ใบราคา2025-ชุดของขวัญธุรกิจ-ฺBusinessGift.pdf",
+        "hits": [
+          {
+            "locator": 1,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 2,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 7,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 8,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 9,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 10,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 13,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 14,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 16,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 17,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 18,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 19,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 20,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 24,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 40,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 44,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 45,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 46,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 50,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          },
+          {
+            "locator": 51,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ ",
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ "
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/03-ใบราคา-2025   POWER BANK-Fast Charging Series.pdf",
+        "hits": [
+          {
+            "locator": 1,
+            "dimension_lines": []
+          },
+          {
+            "locator": 2,
+            "dimension_lines": []
+          },
+          {
+            "locator": 3,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/04-ใบราคา2025-ชุดขวัญแปลกใหม่-NoveltyGift.pdf",
+        "hits": [
+          {
+            "locator": 3,
+            "dimension_lines": [
+              "10000mAh, 68*147*20 มม. พร ้อมขาตั้งโทรศัพท์ สายคล ้อง และไฟบอกสถานะบนหน ้าจอ อินพุต: สาย USB "
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/05-ใบราคา-2025   POWER BANK-Wireless Charger - ชาร์จไร้สาย & แม็กเน็ต.pdf",
+        "hits": [
+          {
+            "locator": 1,
+            "dimension_lines": []
+          },
+          {
+            "locator": 2,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/03_product_catalogs/2024_REEVES - Smart Electronics 2024 EN-OP.pdf",
+        "hits": [
+          {
+            "locator": 15,
+            "dimension_lines": []
+          },
+          {
+            "locator": 19,
+            "dimension_lines": []
+          },
+          {
+            "locator": 27,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/03_product_catalogs/2026 new catalogue of power banks&car charger&wireless charger.pdf",
+        "hits": [
+          {
+            "locator": 2,
+            "dimension_lines": []
+          },
+          {
+            "locator": 3,
+            "dimension_lines": []
+          },
+          {
+            "locator": 4,
+            "dimension_lines": []
+          },
+          {
+            "locator": 5,
+            "dimension_lines": []
+          },
+          {
+            "locator": 6,
+            "dimension_lines": []
+          },
+          {
+            "locator": 7,
+            "dimension_lines": []
+          },
+          {
+            "locator": 8,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "10000mAh, 68*147*20mm, with phone stand & lanyard & screen indication; ",
+              "10000mAh, 80*90*28mm, with landyard, battery display, 2 light sources"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/02-ต้นทุน-20260417 Power bank notebook catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      }
+    ],
+    "PM-PEN": [
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 14,
+            "dimension_lines": []
+          },
+          {
+            "locator": 62,
+            "dimension_lines": []
+          },
+          {
+            "locator": 63,
+            "dimension_lines": []
+          },
+          {
+            "locator": 65,
+            "dimension_lines": []
+          },
+          {
+            "locator": 73,
+            "dimension_lines": []
+          },
+          {
+            "locator": 81,
+            "dimension_lines": []
+          },
+          {
+            "locator": 88,
+            "dimension_lines": []
+          },
+          {
+            "locator": 89,
+            "dimension_lines": []
+          },
+          {
+            "locator": 90,
+            "dimension_lines": []
+          },
+          {
+            "locator": 91,
+            "dimension_lines": []
+          },
+          {
+            "locator": 92,
+            "dimension_lines": []
+          },
+          {
+            "locator": 104,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      }
+    ],
+    "PM-SPK": [
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      }
+    ],
+    "PM-TEA-INF": [
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 20,
+            "dimension_lines": [
+              "Flask 350ml, 65*163mm, 316 stainless steel, with tea infuser 20 750",
+              "Flask 350ml, 65*163mm, 316 stainless steel, with tea infuser 20 850"
+            ]
+          },
+          {
+            "locator": 21,
+            "dimension_lines": [
+              "Flask 350ml, 65*163mm, 316 stainless steel, with tea infuser 10 530",
+              "Flask 350ml, 65*163mm, 316 stainless steel, with tea infuser 10 570"
+            ]
+          },
+          {
+            "locator": 22,
+            "dimension_lines": [
+              "Flask 350ml, 65*163mm, 316 stainless steel, with tea infuser 20 990",
+              "Flask 350ml, 65*163mm, 316 stainless steel, with tea infuser 20 990"
+            ]
+          },
+          {
+            "locator": 23,
+            "dimension_lines": [
+              "Flask 350ml, 65*163mm, 316 stainless steel, with tea infuser 20 860",
+              "Flask 350ml, 65*163mm, 316 stainless steel, with tea infuser 50 1,240"
+            ]
+          },
+          {
+            "locator": 36,
+            "dimension_lines": [
+              "Vacuum bottle 450ml, wood + stainless steel material, 6.8*20.8cm, with tea infuser 20 1,310"
+            ]
+          },
+          {
+            "locator": 65,
+            "dimension_lines": [
+              "Tea แก้วมัค 350ml, 14*10.5cm, ceramic & wood, with tea infuser, ด ำ , แดง , น ้ำเงิน 300 850"
+            ]
+          },
+          {
+            "locator": 67,
+            "dimension_lines": [
+              "Vacuum flask 316L, 350ml, 22*6.5cm, temperature display, with Tea Infuser 20 970",
+              "Vacuum flask 316L, 350ml, 22*6.5cm, temperature display, with Tea Infuser 20 900"
+            ]
+          },
+          {
+            "locator": 72,
+            "dimension_lines": [
+              "Tea แก้วมัค 350ml, 14*10.5cm, ceramic & wood, with tea infuser 50 840",
+              "Tea แก้วมัค 350ml, 14*10.5cm, ceramic & wood, with tea infuser 50 860"
+            ]
+          },
+          {
+            "locator": 73,
+            "dimension_lines": [
+              "Tea แก้วมัค 350ml, 14*10.5cm, ceramic & wood, with tea infuser 50 1,020",
+              "Tea แก้วมัค 350ml, 14*10.5cm, ceramic & wood, with tea infuser 50 750"
+            ]
+          },
+          {
+            "locator": 81,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "Titanium-coated inner pot, silicon accessories, 160*65mm, 300ml, with 304 tea infuser, 192g",
+              "Titanium-coated inner pot, heat-proof cup lid, pp + silicon accessories, 177*70mm, 400ml, with tea infuser"
+            ]
+          }
+        ]
+      }
+    ],
+    "PM-TMB": [
+      {
+        "file": "data-pipeline/01_raw/SmartGift-ใบราคา-update.pdf",
+        "hits": [
+          {
+            "locator": 1,
+            "dimension_lines": []
+          },
+          {
+            "locator": 2,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "- Vacuum flask :450ml, 304+ PP silicon material, temperature display, one button open design, 67*205mm",
+              "- Vacuum flask :450ml, 304+ PP silicon material, temperature display, one button open design, 67*205mm"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 1,
+            "dimension_lines": [
+              "แก้วทัมเบลอร์ (Tumbler) แก้ว แก้วน ้ำแบบทัมเบลอร์ (Tumbler): สแตนเลส 316 ควำมจุ 420 มล. ขนำด 88×130 มม. ",
+              "แก้วน ้ำแบบทัมเบลอร์ (Tumbler)sแก้ว แก้วน ้ำแบบทัมเบลอร์ (Tumbler): สแตนเลส 316 ควำมจุ 420 มล. ขนำด 88×130 มม. "
+            ]
+          },
+          {
+            "locator": 10,
+            "dimension_lines": []
+          },
+          {
+            "locator": 11,
+            "dimension_lines": []
+          },
+          {
+            "locator": 17,
+            "dimension_lines": []
+          },
+          {
+            "locator": 31,
+            "dimension_lines": []
+          },
+          {
+            "locator": 32,
+            "dimension_lines": []
+          },
+          {
+            "locator": 33,
+            "dimension_lines": []
+          },
+          {
+            "locator": 43,
+            "dimension_lines": [
+              "Vacuum cup 8.3*19.6cm, 500ml, 316 stainless steel + PP silicon, 335g, with sling",
+              "Vacuum cup 8.3*19.6cm, 500ml, 316 stainless steel + PP silicon, 335g, with sling"
+            ]
+          },
+          {
+            "locator": 44,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 650",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 670"
+            ]
+          },
+          {
+            "locator": 45,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 850",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 930"
+            ]
+          },
+          {
+            "locator": 46,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 1,020",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 1,070"
+            ]
+          },
+          {
+            "locator": 47,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 1,160",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 1,280"
+            ]
+          },
+          {
+            "locator": 48,
+            "dimension_lines": [
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 660",
+              "Coffee แก้วมัค Around 510ml, 90*170*70mm, SUS304+PP silicon, temperature display lid 20 730"
+            ]
+          },
+          {
+            "locator": 58,
+            "dimension_lines": []
+          },
+          {
+            "locator": 59,
+            "dimension_lines": []
+          },
+          {
+            "locator": 60,
+            "dimension_lines": []
+          },
+          {
+            "locator": 61,
+            "dimension_lines": []
+          },
+          {
+            "locator": 62,
+            "dimension_lines": []
+          },
+          {
+            "locator": 64,
+            "dimension_lines": [
+              "Vacuum jug 316 SUS, 1000ml, 166*99*118mm, food grade PP+stainless steel, ,temperature display 20 1,360"
+            ]
+          },
+          {
+            "locator": 65,
+            "dimension_lines": [
+              "Vacuum jug 316 SUS, 1000ml, 166*99*118mm, food grade PP+stainless steel, ,temperature display 20 1,190",
+              "Vacuum jug 316 SUS, 1000ml, 166*99*118mm, food grade PP+stainless steel, ,temperature display 20 1,040"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "Glass, 350ml, 20*6.5cm, temperature display",
+              "450ml, 316 + PP silicon material, temperature display, with sling, 160*79mm"
+            ]
+          }
+        ]
+      }
+    ],
+    "PM-UMB": [
+      {
+        "file": "data-pipeline/01_raw/บริษัท เทราบิส จำกัด_product.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": [
+              "- Umbrella Five fold, folding length: 19cm; unfold diameter: ",
+              "Umbrella without box 50*280mm"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf",
+        "hits": [
+          {
+            "locator": 5,
+            "dimension_lines": []
+          },
+          {
+            "locator": 7,
+            "dimension_lines": []
+          },
+          {
+            "locator": 8,
+            "dimension_lines": []
+          },
+          {
+            "locator": 10,
+            "dimension_lines": [
+              "Umbrella 8K, automatic open & close, stainless steel stand, unfolded size: 108*53.5cm"
+            ]
+          },
+          {
+            "locator": 11,
+            "dimension_lines": [
+              "Umbrella 8K, automatic open & close, stainless steel stand, unfolded size: 108*53.5cm 20 1,520"
+            ]
+          },
+          {
+            "locator": 13,
+            "dimension_lines": []
+          },
+          {
+            "locator": 14,
+            "dimension_lines": []
+          },
+          {
+            "locator": 15,
+            "dimension_lines": []
+          },
+          {
+            "locator": 16,
+            "dimension_lines": []
+          },
+          {
+            "locator": 17,
+            "dimension_lines": []
+          },
+          {
+            "locator": 18,
+            "dimension_lines": []
+          },
+          {
+            "locator": 19,
+            "dimension_lines": []
+          },
+          {
+            "locator": 20,
+            "dimension_lines": []
+          },
+          {
+            "locator": 21,
+            "dimension_lines": []
+          },
+          {
+            "locator": 22,
+            "dimension_lines": []
+          },
+          {
+            "locator": 23,
+            "dimension_lines": []
+          },
+          {
+            "locator": 24,
+            "dimension_lines": []
+          },
+          {
+            "locator": 25,
+            "dimension_lines": []
+          },
+          {
+            "locator": 26,
+            "dimension_lines": []
+          },
+          {
+            "locator": 27,
+            "dimension_lines": []
+          }
+        ]
+      },
+      {
+        "file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "hits": [
+          {
+            "locator": "workbook",
+            "dimension_lines": []
+          }
+        ]
+      }
+    ]
+  },
+  "failures": [
+    {
+      "file": "data-pipeline/01_raw/08_factory_costs/ต้นทุน USB Flashdrive.xls",
+      "error": "xls extraction unavailable: `Import xlrd` failed. Install xlrd >= 2.0.1 for xls Excel support Use pip or conda to install the xlrd package."
+    }
+  ],
+  "status": "complete"
+}

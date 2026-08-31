@@ -1,0 +1,42 @@
+{
+  "geometry_sha256": "1f5353d1f05b84acd117fea753595399a0344494b2087a898df08b0d66c38c79",
+  "default": "Purple",
+  "color_evidence": "Factory workbook color names; RGB values and finish are visual estimates",
+  "variants": [
+    {
+      "name": "Purple",
+      "slots": {
+        "shell": "#71548d"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Blue",
+      "slots": {
+        "shell": "#246d9b"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Pink",
+      "slots": {
+        "shell": "#ce7d9e"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Green",
+      "slots": {
+        "shell": "#47876c"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Yellow",
+      "slots": {
+        "shell": "#d2ad3c"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    }
+  ]
+}

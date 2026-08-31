@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>SmartGift | โมเดลสินค้า 3D</title>
+  <link rel="stylesheet" href="/viewer.css">
+  <script type="importmap">{"imports":{"three":"/three/build/three.module.js","three/addons/":"/three/examples/jsm/"}}</script>
+  <script type="module" src="/viewer.mjs"></script>
+</head>
+<body>
+  <header>
+    <div class="identity"><span class="brand">SmartGift</span><h1>โมเดลสินค้า 3D</h1></div>
+    <span class="local">ดูบนเครื่องนี้เท่านั้น</span>
+  </header>
+  <main>
+    <div class="toolbar">
+      <label class="product-label" for="category">หมวด
+        <select id="category" disabled><option>กำลังโหลด…</option></select>
+      </label>
+      <label class="product-label" for="product">เลือกรุ่น
+        <select id="product" disabled><option>กำลังโหลด…</option></select>
+      </label>
+      <div class="color-picker"><span id="color-label">สี</span><div id="colors" role="group" aria-labelledby="color-label"></div><span id="color-name"></span></div>
+      <button id="reference-toggle" type="button" aria-expanded="false" aria-controls="reference-panel">เทียบภาพต้นฉบับ</button>
+      <a id="download" href="/assets/DW03/model.glb" download="DW03.glb" title="ไฟล์ต้นฉบับสีเริ่มต้น ไม่ใช่สีที่เลือกใน viewer">ดาวน์โหลด GLB</a>
+    </div>
+    <p id="coverage" class="coverage" role="status">กำลังโหลดสถานะ ProductMaster…</p>
+    <div class="compare-grid" id="compare-grid">
+      <section class="viewport" aria-label="พื้นที่ดูโมเดล 3D">
+        <div class="viewport-label"><strong id="model-name">DW03</strong><span>พื้นหลังโปร่งใส · ไม่มีพื้นหรือเงาฉาก</span></div>
+        <canvas id="model-canvas" tabindex="0" aria-label="โมเดล 3D ลากเพื่อหมุน ใช้ปุ่มลูกศรหมุน เครื่องหมายบวกลบซูม" aria-describedby="instructions"></canvas>
+        <div class="notice" id="notice" role="status">กำลังเปิดโมเดล…</div>
+        <div class="zoom-controls" role="group" aria-label="ควบคุมมุมมอง">
+          <button id="zoom-out" type="button" aria-label="ซูมออก" disabled>−</button>
+          <button id="zoom-in" type="button" aria-label="ซูมเข้า" disabled>+</button>
+          <button id="reset" type="button" disabled>คืนมุมเริ่มต้น</button>
+        </div>
+      </section>
+      <aside id="reference-panel" class="reference-panel" aria-label="ภาพต้นฉบับเพื่อเทียบ" hidden>
+        <h2>ภาพต้นฉบับใน catalog</h2>
+        <img id="reference-image" alt="">
+        <p>ใช้เทียบรูปทรงจาก catalog เท่านั้น ไม่ใช่ factory CAD หรือการยืนยัน canonical identity</p>
+      </aside>
+    </div>
+    <footer>
+      <p id="instructions">ลากเพื่อหมุน · เลื่อนล้อเมาส์เพื่อซูม · บนมือถือใช้สองนิ้วซูม</p>
+      <p class="disclaimer">โมเดลอ้างอิงภาพ catalog ยังอยู่ระหว่างตรวจรูปทรงและสี ไม่ใช่แบบผลิต</p>
+    </footer>
+  </main>
+</body>
+</html>

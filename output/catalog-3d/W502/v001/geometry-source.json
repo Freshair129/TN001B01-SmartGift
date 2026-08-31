@@ -1,0 +1,18 @@
+{
+  "code": "W502",
+  "body_mm": [
+    71,
+    110,
+    18
+  ],
+  "corner_mm": 5.5,
+  "generator": {
+    "name": "smartgift-catalog3d-w502",
+    "version": "1.0.0",
+    "three": "0.160.0",
+    "chromium": "149.0.7827.55",
+    "models_sha256": "a1286dadedf55e9e9504198ac3a4b81ad8bd4ada8d0294ac82446e95deb3afea",
+    "renderer_sha256": "23986519991be182599bfd413bbc2a8892d02a9f90084243cffeb629b952de5d",
+    "method": "local-photo-referenced-parametric-mesh"
+  }
+}

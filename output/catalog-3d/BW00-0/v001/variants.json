@@ -1,0 +1,31 @@
+{
+  "geometry_sha256": "cabb31eb0b18c51292273233f03b84b8cc5aab340bc0545ac33e5429daaa8ae6",
+  "default": "Black",
+  "color_evidence": "Business Gift catalog page 77 color list; RGB values are visual estimates",
+  "variants": [
+    {
+      "name": "Black",
+      "slots": {
+        "shell": "#111315",
+        "detail": "#24272a"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "Blue",
+      "slots": {
+        "shell": "#194c7c",
+        "detail": "#153a5c"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "Silver",
+      "slots": {
+        "shell": "#a3a7a8",
+        "detail": "#747b7d"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    }
+  ]
+}

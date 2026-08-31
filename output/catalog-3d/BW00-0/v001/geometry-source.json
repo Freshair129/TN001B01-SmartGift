@@ -1,0 +1,18 @@
+{
+  "code": "BW00-0",
+  "body_mm": [
+    65,
+    230,
+    65
+  ],
+  "dimension_status": "estimated",
+  "generator": {
+    "name": "smartgift-catalog3d-bw00-estimated",
+    "version": "1.0.0",
+    "three": "0.160.0",
+    "chromium": "149.0.7827.55",
+    "models_sha256": "424ed1bbe9231038cfbe56d40b840462a8bde8c1b2caa7058721654cce186ef1",
+    "renderer_sha256": "38719eec4118c3dbd406b083650bbbd8690e839fa76dcab060db1d20caf9c5f3",
+    "method": "local-photo-referenced-parametric-mesh"
+  }
+}

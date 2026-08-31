@@ -1,0 +1,20 @@
+{
+  "code": "DW03",
+  "body_mm": [
+    67.3,
+    108.3,
+    23
+  ],
+  "corner_mm": 6.5,
+  "shell": "#ff8a26",
+  "detail": "#e66b27",
+  "generator": {
+    "name": "smartgift-catalog3d",
+    "version": "0.1.0",
+    "three": "0.160.0",
+    "chromium": "149.0.7827.55",
+    "models_sha256": "fd809a21a423393fc70a4534e45a587cd5eb5e8ddbbdc6749302010b498c4b9e",
+    "renderer_sha256": "c93a0269fc0682d5dc82fda11d75a2c7abc7d5a4270b9f7d55199d56e141b724",
+    "method": "local-photo-referenced-parametric-mesh"
+  }
+}

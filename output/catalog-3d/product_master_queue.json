@@ -1,0 +1,246 @@
+{
+  "generator": "smartgift-catalog3d-product-master-queue",
+  "schema_ref": "smartgift://b2b/portfolio/v1",
+  "schema_version": "1.3.0",
+  "queue_scope": "canonical ProductMaster only; local review planning; no graph writes",
+  "categories": [
+    {
+      "id": "cat:eco-friendly",
+      "slug": "eco-friendly",
+      "product_master_ids": [
+        "pm:PM-BOTTLE-LED",
+        "pm:PM-FAN",
+        "pm:PM-TMB",
+        "pm:PM-UMB"
+      ]
+    },
+    {
+      "id": "cat:classic-oriental",
+      "slug": "classic-oriental",
+      "product_master_ids": [
+        "pm:PM-FLASH",
+        "pm:PM-PEN",
+        "pm:PM-TEA-INF"
+      ]
+    },
+    {
+      "id": "cat:novelty-self-care",
+      "slug": "novelty-self-care",
+      "product_master_ids": [
+        "pm:PM-AROMA",
+        "pm:PM-CFMUG",
+        "pm:PM-CUTLERY",
+        "pm:PM-MSG",
+        "pm:PM-MUG-HEAT"
+      ]
+    },
+    {
+      "id": "cat:executive-smart-tech",
+      "slug": "executive-smart-tech",
+      "product_master_ids": [
+        "pm:PM-DESK-MAT",
+        "pm:PM-NB",
+        "pm:PM-PB10K",
+        "pm:PM-SPK"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "product_master_id": "pm:PM-AROMA",
+      "product_code": "PM-AROMA",
+      "name_th": "เครื่องกระจายกลิ่นอโรมาอัลตราโซนิกเปลวไฟแสงไฟ Ambient",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-WELLNESS-HEALTH",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-BOTTLE-LED",
+      "product_code": "PM-BOTTLE-LED",
+      "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+      "category_id": "cat:eco-friendly",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-DRINKWARE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-CFMUG",
+      "product_code": "PM-CFMUG",
+      "name_th": "แก้วกาแฟพกพาสแตนเลส 316 พร้อมฝา 3 ระบบ",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-DRINKWARE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-CUTLERY",
+      "product_code": "PM-CUTLERY",
+      "name_th": "ชุดช้อนส้อมมีดสแตนเลสฟู้ดเกรดพกพา",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-ECO-LIFESTYLE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-DESK-MAT",
+      "product_code": "PM-DESK-MAT",
+      "name_th": "แผ่นรองโต๊ะทำงานหนัง Vegan Leather พร้อมที่ชาร์จไว",
+      "category_id": "cat:executive-smart-tech",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-SMART-OFFICE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-FAN",
+      "product_code": "PM-FAN",
+      "name_th": "พัดลมพกพาดีไซน์มินิมอลหน้าจอดิจิทัลแบต 4000mAh",
+      "category_id": "cat:eco-friendly",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-ECO-LIFESTYLE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-FLASH",
+      "product_code": "PM-FLASH",
+      "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+      "category_id": "cat:classic-oriental",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-STORAGE-TECH",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-MSG",
+      "product_code": "PM-MSG",
+      "name_th": "เครื่องนวดคอพกพาคลื่นความถี่ต่ำ Low Pulse & ประคบร้อน",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-WELLNESS-HEALTH",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-MUG-HEAT",
+      "product_code": "PM-MUG-HEAT",
+      "name_th": "ชุดแก้วเซรามิกพร้อมแท่นอุ่นอุณหภูมิคงที่ 55°C",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-DRINKWARE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-NB",
+      "product_code": "PM-NB",
+      "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+      "category_id": "cat:executive-smart-tech",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-SMART-OFFICE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-PB10K",
+      "product_code": "PM-PB10K",
+      "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+      "category_id": "cat:executive-smart-tech",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-POWER-CHARGING",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-PEN",
+      "product_code": "PM-PEN",
+      "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+      "category_id": "cat:classic-oriental",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-CRAFT-STATIONERY",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-SPK",
+      "product_code": "PM-SPK",
+      "name_th": "ลำโพงบลูทูธสเตอริโอคู่พรีเมียม (Bluetooth Speaker 5W)",
+      "category_id": "cat:executive-smart-tech",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-AUDIO-TECH",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-TEA-INF",
+      "product_code": "PM-TEA-INF",
+      "name_th": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+      "category_id": "cat:classic-oriental",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-DRINKWARE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-TMB",
+      "product_code": "PM-TMB",
+      "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+      "category_id": "cat:eco-friendly",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-DRINKWARE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    },
+    {
+      "product_master_id": "pm:PM-UMB",
+      "product_code": "PM-UMB",
+      "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+      "category_id": "cat:eco-friendly",
+      "edge_type": "IN_CATEGORY",
+      "product_family_hint": "PF-OUTDOOR-LIFESTYLE",
+      "media_status": "no-code-matched-media",
+      "queue_status": "hold_needs_verified_reference",
+      "hold_reason": "no code-matched source-photo media"
+    }
+  ],
+  "summary": {
+    "categories": 4,
+    "product_masters": 16,
+    "ready_for_reference_review": 0,
+    "hold_needs_verified_reference": 16
+  },
+  "source_snapshot": {
+    "product_master": {
+      "path": "data-pipeline/02_prepared/ProductMaster.json",
+      "sha256": "347311b5ce50f1c65570bacde91c08ac0c28bdb576b5c9271ae34fb24a553368"
+    },
+    "catalog_media": {
+      "path": "public/data/catalog_media.json",
+      "sha256": "990b553c2806d93a39e74801fe276d6dc40d323e930ffa74b240be9b10f918b1"
+    },
+    "schema": {
+      "path": "config/schema_genesisblock.yaml",
+      "sha256": "7147e74defa306839ec92e9f0895e3553f7b718e4c66a6de4c18980aaa0d7d71"
+    }
+  }
+}

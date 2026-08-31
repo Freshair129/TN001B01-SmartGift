@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1.0",
+  "pdf": {
+    "path": "data-pipeline/01_raw/03_product_catalogs/2026 new catalogue of power banks&car charger&wireless charger.pdf",
+    "sha256": "066037e15f855d22d9d08b7e3ed440224ee6ec67d03a0d2cadb7f24325b25456"
+  },
+  "manifest": {
+    "path": "output/catalog-internal/production-manifest.json",
+    "sha256": "55a0090ab4c25e1f23d41f2a3e73374b0f665c1c864af0f944fe0b1dc30cfb70"
+  },
+  "products": [
+    {"code":"S-1052","page":2,"path":"output/catalog-internal/refs/single-S-1052-source.png","sha256":"0b925563c88b5f39ac5d093d8890cf87ca1f57da03b6aa7cff6c1de339245c37"},
+    {"code":"BST61401","page":3,"path":"output/catalog-internal/refs/single-BST61401-source.png","sha256":"aeda95c943080e5011746dec1c1a691ae29bd2bda9cde613fcfbe8cdfbbcb180"},
+    {"code":"DW03","page":4,"path":"output/catalog-internal/refs/single-DW03-source.png","sha256":"5d35de381819f99158964f1c6ca86d6b5e8832335757aa31e095cbb309e72033","body_mm":[67.3,108.3,23],"dimension_source":"PDF page 4: Size 108.3*67.3*23mm; mapped H/W/D from product views","colors":["White","Blue","Purple","Orange","Black"]},
+    {"code":"UT3056","page":5,"path":"output/catalog-internal/refs/single-UT3056-source.png","sha256":"37e81f1e234a0348f1dd069a697fe893941e0fb591fdf86595ffdd297ec62ad3"},
+    {"code":"S1033","page":6,"path":"output/catalog-internal/refs/single-S1033-source.png","sha256":"13611d39277ec28aa19c4a18c975ebfa304dd23b5750409a59b204d1c79464a2","body_mm":[69.3,106.4,17.1],"dimension_source":"PDF page 6 original image annotations; text also says 69*106*17MM (rounded); body only, cables/stand excluded","colors":["White","Black","Gray","metal colour"]},
+    {"code":"W502","page":7,"path":"output/catalog-internal/refs/single-W502-source.png","sha256":"d8ab63eebea3eba3e7ef2aaaabb25e69326fd8c9861714dc3e092a3fb4936bed"}
+  ]
+}

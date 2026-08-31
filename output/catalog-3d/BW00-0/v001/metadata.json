@@ -1,0 +1,104 @@
+{
+  "asset_key": "BW00-0",
+  "asset_version": "v001",
+  "source_product_code": "BW00-0",
+  "canonical_product_id": null,
+  "mapping_status": "unresolved",
+  "evidence_binding": {
+    "candidate_product_master_id": "pm:PM-TMB",
+    "candidate_category_id": "cat:eco-friendly",
+    "edge_type": "IN_CATEGORY",
+    "status": "estimated-visual-review-candidate",
+    "reason": "Boss-approved visual estimate, not a verified ProductMaster mapping"
+  },
+  "registry_refs": {
+    "doc_id": null,
+    "pic_id": null,
+    "status": "unregistered"
+  },
+  "sources": [
+    {
+      "path": "data-pipeline/01_raw/02_factory_pricelists_pdf/02-ใบราคา2025-ชุดของขวัญธุรกิจ-ฺBusinessGift.pdf",
+      "sha256": "1369832f7df36d9f00230ae2cfc872965246804a9ef1f4be5f4518b798f95002",
+      "page": 77,
+      "locator_status": "page-code-visually-verified-2026-08-31"
+    },
+    {
+      "path": "public/assets/catalog-media/source-offer-BW00-0.jpg",
+      "sha256": "af3116e7f1d6d3ab8160d65f31c4afac03a54c7f15a6f7af20b59291310c3240",
+      "visual_origin": "original-catalog-photo"
+    }
+  ],
+  "dimensions": {
+    "unit": "meter",
+    "body_xyz": [
+      0.065,
+      0.23,
+      0.065
+    ],
+    "assembled_bounds_xyz": [
+      0.06764499843120575,
+      0.26340000213366005,
+      0.06764499843120575
+    ],
+    "source": "Boss-approved visual estimate from catalog image and 450ml capacity; not a supplier dimension drawing",
+    "source_annotation_not_factory_measurement": false
+  },
+  "dimension_status": "estimated",
+  "estimated_regions": [
+    "body dimensions",
+    "lid proportions",
+    "temperature-display size",
+    "base profile",
+    "wall thickness",
+    "underside",
+    "material roughness"
+  ],
+  "geometry_sha256": "cabb31eb0b18c51292273233f03b84b8cc5aab340bc0545ac33e5429daaa8ae6",
+  "glb_sha256": "e6fc22ed7a0f242086deb92a1f4c9d8882f0bd06574ad5cd5060beaa470e221f",
+  "generator": {
+    "name": "smartgift-catalog3d-bw00-estimated",
+    "version": "1.0.0",
+    "three": "0.160.0",
+    "chromium": "149.0.7827.55",
+    "models_sha256": "424ed1bbe9231038cfbe56d40b840462a8bde8c1b2caa7058721654cce186ef1",
+    "renderer_sha256": "38719eec4118c3dbd406b083650bbbd8690e839fa76dcab060db1d20caf9c5f3",
+    "method": "local-photo-referenced-parametric-mesh"
+  },
+  "review_status": "review-ready",
+  "rights_status": "pending-owner-review",
+  "public_ready": false,
+  "omitted_details": "unreadable labels and hidden mechanisms not fabricated",
+  "metrics": {
+    "triangles": 3200,
+    "meshes": 6,
+    "bounds": [
+      0.06764499843120575,
+      0.26340000213366005,
+      0.06764499843120575
+    ],
+    "glb_bytes": 134604
+  },
+  "renders": {
+    "front": {
+      "path": "preview.png",
+      "sha256": "a48b46a048e8ec3c88374f7af3f44ac8d401b66ebf2a9ae2d9c32d4ec6845566",
+      "visible_pixels": 109905
+    },
+    "back": {
+      "path": "preview-back.png",
+      "sha256": "bec54db398fe2b23fba344f5a5ba2f2686bb92d196ddd0939e7e85e6cea38ce9",
+      "visible_pixels": 109905
+    },
+    "side": {
+      "path": "preview-side.png",
+      "sha256": "0e009fe3a4ca2c817a0dddf5f13d7efd5d5513b1a60d6de95a06415944163334",
+      "visible_pixels": 110273
+    },
+    "straight": {
+      "path": "preview-straight.png",
+      "sha256": "9b1f4075eafb8e5fc4cfbace22c901e730974976157980b39be43a85d09ced5d",
+      "visible_pixels": 110765
+    }
+  }
+}

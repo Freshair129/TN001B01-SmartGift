@@ -9,6 +9,20 @@
   },
   "vaults": [
     {
+      "vault_id": "vlt-knowledge-registry",
+      "name": "Internal Source Provenance Registry Projection",
+      "scope": "Non-PII document, picture, media and attachment metadata only",
+      "schema_ref": "smartgift://knowledge/registry/v1",
+      "schema_version": "0.1.0b",
+      "storage_path": "./vaults/vlt-knowledge-registry/genesis-db",
+      "ledger_path": "./data-pipeline/00_knowledge_registry",
+      "vector_spaces": [],
+      "zero_pii": true,
+      "auto_sync": false,
+      "status": "local_pilot_published",
+      "access_scope_ref": "smartgift:internal:product-metadata"
+    },
+    {
       "vault_id": "vlt-catalog-product",
       "name": "Product Catalog & Unboxing Sensory Vault",
       "scope": "Product Catalog & Sensory Knowledge Only",

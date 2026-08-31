@@ -1,0 +1,786 @@
+{
+  "generator": "smartgift-catalog3d-product-master-coverage",
+  "schema_ref": "smartgift://b2b/portfolio/v1",
+  "schema_version": "1.3.0",
+  "scope": "canonical ProductMaster coverage only; local review planning; no graph writes",
+  "categories": [
+    {
+      "id": "cat:eco-friendly",
+      "slug": "eco-friendly",
+      "name": "Eco-Friendly",
+      "total": 4,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 4
+    },
+    {
+      "id": "cat:classic-oriental",
+      "slug": "classic-oriental",
+      "name": "Classic Oriental",
+      "total": 3,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 3
+    },
+    {
+      "id": "cat:novelty-self-care",
+      "slug": "novelty-self-care",
+      "name": "Novelty Self-Care",
+      "total": 5,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 5
+    },
+    {
+      "id": "cat:executive-smart-tech",
+      "slug": "executive-smart-tech",
+      "name": "Executive Smart Tech",
+      "total": 4,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 4
+    }
+  ],
+  "product_masters": [
+    {
+      "canonical_product_id": "pm:PM-AROMA",
+      "product_code": "PM-AROMA",
+      "name_th": "เครื่องกระจายกลิ่นอโรมาอัลตราโซนิกเปลวไฟแสงไฟ Ambient",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": null,
+      "source_image_sha256": null,
+      "source_locator": null,
+      "colors": [],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-BOTTLE-LED",
+      "product_code": "PM-BOTTLE-LED",
+      "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+      "category_id": "cat:eco-friendly",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": "TDK01-1",
+      "source_image_sha256": "83245cd857e364eacef3fbde182a2caa15116aa94649381344488ab923ef45b2",
+      "source_locator": "Factory cost workbook 01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx, Sheet1 row 54, embedded xl/media/image982.jpeg; factory_cost_pm_mapping.json confirmed by Boss",
+      "colors": [
+        "Black",
+        "Blue",
+        "Red"
+      ],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-CFMUG",
+      "product_code": "PM-CFMUG",
+      "name_th": "แก้วกาแฟพกพาสแตนเลส 316 พร้อมฝา 3 ระบบ",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": "TJS00-1",
+      "source_image_sha256": "8148558a491ebd28971d996b74a9a8646231c4ca40900ef3408c5e0f48f18203",
+      "source_locator": "Factory cost workbook 01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx, Sheet1 row 380, embedded xl/media/image937.png; factory_cost_pm_mapping.json confirmed by Boss; source states 145×90 mm only",
+      "colors": [
+        "Purple",
+        "Blue",
+        "Pink",
+        "Green",
+        "Yellow"
+      ],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-CUTLERY",
+      "product_code": "PM-CUTLERY",
+      "name_th": "ชุดช้อนส้อมมีดสแตนเลสฟู้ดเกรดพกพา",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": null,
+      "source_image_sha256": null,
+      "source_locator": null,
+      "colors": [],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-DESK-MAT",
+      "product_code": "PM-DESK-MAT",
+      "name_th": "แผ่นรองโต๊ะทำงานหนัง Vegan Leather พร้อมที่ชาร์จไว",
+      "category_id": "cat:executive-smart-tech",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": null,
+      "source_image_sha256": null,
+      "source_locator": null,
+      "colors": [],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-FAN",
+      "product_code": "PM-FAN",
+      "name_th": "พัดลมพกพาดีไซน์มินิมอลหน้าจอดิจิทัลแบต 4000mAh",
+      "category_id": "cat:eco-friendly",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": null,
+      "source_image_sha256": null,
+      "source_locator": null,
+      "colors": [],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-FLASH",
+      "product_code": "PM-FLASH",
+      "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+      "category_id": "cat:classic-oriental",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": null,
+      "source_image_sha256": null,
+      "source_locator": null,
+      "colors": [],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-MSG",
+      "product_code": "PM-MSG",
+      "name_th": "เครื่องนวดคอพกพาคลื่นความถี่ต่ำ Low Pulse & ประคบร้อน",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": "TBY17-1",
+      "source_image_sha256": "8e6bc183949a3e1330157b92f7583ab2ebe314d89d5407fb45bbff69a159b13a",
+      "source_locator": "Factory cost workbook 01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx, Sheet1 row 2311, embedded xl/media/image603.png; factory_cost_pm_mapping.json confirmed by Boss",
+      "colors": [
+        "White",
+        "Orange",
+        "Red",
+        "Blue"
+      ],
+      "dimensions": {
+        "body_mm": [
+          150,
+          145,
+          45
+        ],
+        "source": "factory_cost_pm_mapping.json attributes: 150*145*45mm"
+      },
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-MUG-HEAT",
+      "product_code": "PM-MUG-HEAT",
+      "name_th": "ชุดแก้วเซรามิกพร้อมแท่นอุ่นอุณหภูมิคงที่ 55°C",
+      "category_id": "cat:novelty-self-care",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": "TN00-2",
+      "source_image_sha256": "6f503f8389b5fc88954b2d07850288dd8543bbdc0bfd9e758d5c7da71096816d",
+      "source_locator": "Factory cost workbook 01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx, Sheet1 row 4804, embedded xl/media/image52.png; factory_cost_pm_mapping.json confirmed by Boss; source states mug 8×8 cm only, heater-pad dimensions absent",
+      "colors": [
+        "White",
+        "Pink",
+        "Red",
+        "Green"
+      ],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-NB",
+      "product_code": "PM-NB",
+      "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+      "category_id": "cat:executive-smart-tech",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": "TNA0014",
+      "source_image_sha256": "673d000570ac0f72b84dbace9bf283a469f9426ef63fe93b1bb9fa7fcfa21337",
+      "source_locator": "Factory cost workbook 02-ต้นทุน-20260417 Power bank notebook catalog.xlsx, Sheet1 row 6, embedded xl/media/image198.png and image199.png; factory_cost_pm_mapping.json confirmed by Boss; source states A4 and PU only, thickness absent",
+      "colors": [
+        "Black"
+      ],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-PB10K",
+      "product_code": "PM-PB10K",
+      "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+      "category_id": "cat:executive-smart-tech",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": "TZJ00-1",
+      "source_image_sha256": "9a1782f61161f2509140762566d212de417d041f9a031dece9ddb1f3c3f2e70e",
+      "source_locator": "Factory cost workbook 01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx, Sheet1 row 4696, embedded xl/media/image62.png; factory_cost_pm_mapping.json confirmed by Boss; magnetic/MagSafe likeness still requires review",
+      "colors": [
+        "Black",
+        "White"
+      ],
+      "dimensions": {
+        "body_mm": [
+          146,
+          69,
+          40
+        ],
+        "source": "factory_cost_pm_mapping.json attributes: 14.6*6.9*4cm"
+      },
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-PEN",
+      "product_code": "PM-PEN",
+      "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+      "category_id": "cat:classic-oriental",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": null,
+      "source_image_sha256": null,
+      "source_locator": null,
+      "colors": [],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-SPK",
+      "product_code": "PM-SPK",
+      "name_th": "ลำโพงบลูทูธสเตอริโอคู่พรีเมียม (Bluetooth Speaker 5W)",
+      "category_id": "cat:executive-smart-tech",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": null,
+      "source_image_sha256": null,
+      "source_locator": null,
+      "colors": [],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-TEA-INF",
+      "product_code": "PM-TEA-INF",
+      "name_th": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+      "category_id": "cat:classic-oriental",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": null,
+      "source_image_sha256": null,
+      "source_locator": null,
+      "colors": [],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "owner_verified_source_code_cross_reference",
+        "original_source_image_hash_and_locator",
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-TMB",
+      "product_code": "PM-TMB",
+      "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+      "category_id": "cat:eco-friendly",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": "BW00-0",
+      "source_image_sha256": "af3116e7f1d6d3ab8160d65f31c4afac03a54c7f15a6f7af20b59291310c3240",
+      "source_locator": "Business Gift catalog PDF page 77; product manifest code BW00-0; source-offer-BW00-0.jpg",
+      "colors": [
+        "Blue",
+        "Silver",
+        "Black",
+        "Red",
+        "Gold",
+        "Pink",
+        "Orange",
+        "Light Blue"
+      ],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    },
+    {
+      "canonical_product_id": "pm:PM-UMB",
+      "product_code": "PM-UMB",
+      "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+      "category_id": "cat:eco-friendly",
+      "edge_type": "IN_CATEGORY",
+      "selected_source_code": "TYS01-1",
+      "source_image_sha256": "a98a039afd98bd8dbd54243d6e346c2c9e52f5d84b209a611b8b47789dc5cc88",
+      "source_locator": "Factory cost workbook 01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx, Sheet1 row 5638, embedded xl/media/image777.png; factory_cost_pm_mapping.json confirmed by Boss; source gives unfolded 108×53.5 cm only",
+      "colors": [
+        "Black",
+        "Red",
+        "Gold",
+        "Blue",
+        "Light Blue",
+        "Pink",
+        "Orange"
+      ],
+      "dimensions": null,
+      "estimated_regions": [],
+      "lifecycle_status": "hold_needs_verified_reference",
+      "hold_reasons": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "required_evidence": [
+        "width_height_depth_dimensions",
+        "front_back_or_side_angle_evidence"
+      ],
+      "owner_review": "not-requested",
+      "geometry_review": "not-started"
+    }
+  ],
+  "summary": {
+    "product_masters": 16,
+    "total": 16,
+    "reference_ready": 0,
+    "geometry_review": 0,
+    "owner_approved": 0,
+    "local_ready": 0,
+    "held": 16,
+    "review_candidates": 11
+  },
+  "viewer_index": {
+    "schema_ref": "smartgift://b2b/portfolio/v1",
+    "generated_for": "local viewer only; no public catalog promotion",
+    "categories": [
+      {
+        "id": "cat:eco-friendly",
+        "slug": "eco-friendly",
+        "name": "Eco-Friendly",
+        "total": 4,
+        "reference_ready": 0,
+        "geometry_review": 0,
+        "owner_approved": 0,
+        "local_ready": 0,
+        "held": 4
+      },
+      {
+        "id": "cat:classic-oriental",
+        "slug": "classic-oriental",
+        "name": "Classic Oriental",
+        "total": 3,
+        "reference_ready": 0,
+        "geometry_review": 0,
+        "owner_approved": 0,
+        "local_ready": 0,
+        "held": 3
+      },
+      {
+        "id": "cat:novelty-self-care",
+        "slug": "novelty-self-care",
+        "name": "Novelty Self-Care",
+        "total": 5,
+        "reference_ready": 0,
+        "geometry_review": 0,
+        "owner_approved": 0,
+        "local_ready": 0,
+        "held": 5
+      },
+      {
+        "id": "cat:executive-smart-tech",
+        "slug": "executive-smart-tech",
+        "name": "Executive Smart Tech",
+        "total": 4,
+        "reference_ready": 0,
+        "geometry_review": 0,
+        "owner_approved": 0,
+        "local_ready": 0,
+        "held": 4
+      }
+    ],
+    "review_candidates": [
+      {
+        "asset_key": "S1033",
+        "asset_version": "v004",
+        "glb_sha256": "53c627d127c0576fe0f750bb658815728bc7e8eb79dcbdec06f6fa72b39439c2",
+        "source_product_code": "S1033",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": null,
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "S1033",
+          "sha256": "13611d39277ec28aa19c4a18c975ebfa304dd23b5750409a59b204d1c79464a2",
+          "source_path": "output/catalog-internal/refs/single-S1033-source.png"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "DW03",
+        "asset_version": "v004",
+        "glb_sha256": "25e25b5162ef8cad4086a9e38bcf79bec9b75293d26b63b5a4c5bd96d0b55240",
+        "source_product_code": "DW03",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": null,
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "DW03",
+          "sha256": "5d35de381819f99158964f1c6ca86d6b5e8832335757aa31e095cbb309e72033",
+          "source_path": "output/catalog-internal/refs/single-DW03-source.png"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "W502",
+        "asset_version": "v001",
+        "glb_sha256": "abc67c2c058dfb28769046cba9afab018d83a210f170f90d7c361accc35c9484",
+        "source_product_code": "W502",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": "cat:executive-smart-tech",
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "W502",
+          "sha256": "d8ab63eebea3eba3e7ef2aaaabb25e69326fd8c9861714dc3e092a3fb4936bed",
+          "source_path": "output/catalog-internal/refs/single-W502-source.png"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "BW00-0",
+        "asset_version": "v001",
+        "glb_sha256": "e6fc22ed7a0f242086deb92a1f4c9d8882f0bd06574ad5cd5060beaa470e221f",
+        "source_product_code": "BW00-0",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": "cat:eco-friendly",
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "BW00-0",
+          "sha256": "af3116e7f1d6d3ab8160d65f31c4afac03a54c7f15a6f7af20b59291310c3240",
+          "source_path": "public/assets/catalog-media/source-offer-BW00-0.jpg"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "TDK01-1",
+        "asset_version": "v001",
+        "glb_sha256": "ba0cf258f95a74d7d415c7f46f21c381f6f181a57af6c50fc900229fb0e3f5dc",
+        "source_product_code": "TDK01-1",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": "cat:eco-friendly",
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "TDK01-1",
+          "sha256": "83245cd857e364eacef3fbde182a2caa15116aa94649381344488ab923ef45b2",
+          "source_path": "output/catalog-3d/reference-images/TDK01-1.jpeg"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "TJS00-1",
+        "asset_version": "v001",
+        "glb_sha256": "b286451a927b9c827a79990773999770e1473ba7b691c4c054cd842982f14001",
+        "source_product_code": "TJS00-1",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": "cat:novelty-self-care",
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "TJS00-1",
+          "sha256": "8148558a491ebd28971d996b74a9a8646231c4ca40900ef3408c5e0f48f18203",
+          "source_path": "output/catalog-3d/reference-images/TJS00-1.png"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "TBY17-1",
+        "asset_version": "v001",
+        "glb_sha256": "57f3aa77b743035df06f089d17d219e9f977ec3b3de6c394d3864d820f291bc2",
+        "source_product_code": "TBY17-1",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": "cat:novelty-self-care",
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "TBY17-1",
+          "sha256": "8e6bc183949a3e1330157b92f7583ab2ebe314d89d5407fb45bbff69a159b13a",
+          "source_path": "output/catalog-3d/reference-images/TBY17-1.png"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "TN00-2",
+        "asset_version": "v001",
+        "glb_sha256": "1bf874d728c98948910b8defa6f3ca138a6d4777be45c0d8780610aaf5a45628",
+        "source_product_code": "TN00-2",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": "cat:novelty-self-care",
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "TN00-2",
+          "sha256": "6f503f8389b5fc88954b2d07850288dd8543bbdc0bfd9e758d5c7da71096816d",
+          "source_path": "output/catalog-3d/reference-images/TN00-2.png"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "TNA0014",
+        "asset_version": "v001",
+        "glb_sha256": "99b7984b5b014de6530f9aac5153a0252fba52d87f507fc6a6ba81c95d3e6a82",
+        "source_product_code": "TNA0014",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": "cat:executive-smart-tech",
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "TNA0014",
+          "sha256": "673d000570ac0f72b84dbace9bf283a469f9426ef63fe93b1bb9fa7fcfa21337",
+          "source_path": "output/catalog-3d/reference-images/TNA0014.png"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "TZJ00-1",
+        "asset_version": "v001",
+        "glb_sha256": "0d1ceb2e60bb14c91a329cfe13e7dac7e1027be88fa886a21907e9e8af607b68",
+        "source_product_code": "TZJ00-1",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": "cat:executive-smart-tech",
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "TZJ00-1",
+          "sha256": "9a1782f61161f2509140762566d212de417d041f9a031dece9ddb1f3c3f2e70e",
+          "source_path": "output/catalog-3d/reference-images/TZJ00-1.png"
+        },
+        "counts_toward_product_master_completion": false
+      },
+      {
+        "asset_key": "TYS01-1",
+        "asset_version": "v001",
+        "glb_sha256": "bb5285246458f0d2b4f98e16600f6165513bc8fb42949752e5219b76db2c33cf",
+        "source_product_code": "TYS01-1",
+        "canonical_product_id": null,
+        "mapping_status": "unresolved",
+        "candidate_category_id": "cat:eco-friendly",
+        "review_status": "review-ready",
+        "lifecycle": "review-candidate",
+        "reference": {
+          "route_key": "TYS01-1",
+          "sha256": "a98a039afd98bd8dbd54243d6e346c2c9e52f5d84b209a611b8b47789dc5cc88",
+          "source_path": "output/catalog-3d/reference-images/TYS01-1.png"
+        },
+        "counts_toward_product_master_completion": false
+      }
+    ],
+    "local_ready_assets": []
+  },
+  "source_snapshot": {
+    "queue": {
+      "path": "output/catalog-3d/product_master_queue.json",
+      "sha256": "90d07fa95888ff133592212c92caec097e3fa6451f8b2ab902bce36be53d23c9"
+    },
+    "model_catalog": {
+      "path": "output/catalog-3d/model_catalog.json",
+      "sha256": "3e0c82d828f5b4eeb08cffda4960460dccfe9a410d416b5410a7d30dc82ee6a9"
+    },
+    "evidence_input": {
+      "path": "output/catalog-3d/product_master_evidence_input.json",
+      "sha256": "2d677c26344a336dcd183c7b1293e18ec710ab2a0eb6f9d549157413c773c543"
+    }
+  }
+}

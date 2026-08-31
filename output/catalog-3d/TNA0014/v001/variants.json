@@ -1,0 +1,14 @@
+{
+  "geometry_sha256": "c621c592312fbde3f806c7b78b767e9c9d2d1b7fe0a64905793acec71595ba35",
+  "default": "Black",
+  "color_evidence": "Factory workbook color names; RGB values and finish are visual estimates",
+  "variants": [
+    {
+      "name": "Black",
+      "slots": {
+        "shell": "#212225"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    }
+  ]
+}

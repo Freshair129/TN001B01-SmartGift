@@ -1,0 +1,23 @@
+{
+  "geometry_sha256": "1c12e450dc13a736717a46e7f112de72553f7fdcd1b961729e298512ec4c9fda",
+  "default": "White",
+  "color_evidence": "PDF page 7 color list; RGB values are uncalibrated visual estimates",
+  "variants": [
+    {
+      "name": "White",
+      "slots": {
+        "shell": "#e3dfd2",
+        "detail": "#b8b1a4"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "Black",
+      "slots": {
+        "shell": "#232629",
+        "detail": "#343638"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "generator": "smartgift-catalog3d",
+  "schema_version": "0.1.0",
+  "models": [],
+  "review_candidates": [
+    {
+      "code": "S1033",
+      "path": "S1033/v004/model.glb",
+      "metadata": "S1033/v004/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "53c627d127c0576fe0f750bb658815728bc7e8eb79dcbdec06f6fa72b39439c2"
+    },
+    {
+      "code": "DW03",
+      "path": "DW03/v004/model.glb",
+      "metadata": "DW03/v004/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "25e25b5162ef8cad4086a9e38bcf79bec9b75293d26b63b5a4c5bd96d0b55240"
+    },
+    {
+      "code": "W502",
+      "path": "W502/v001/model.glb",
+      "metadata": "W502/v001/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "abc67c2c058dfb28769046cba9afab018d83a210f170f90d7c361accc35c9484"
+    },
+    {
+      "code": "BW00-0",
+      "path": "BW00-0/v001/model.glb",
+      "metadata": "BW00-0/v001/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "e6fc22ed7a0f242086deb92a1f4c9d8882f0bd06574ad5cd5060beaa470e221f"
+    },
+    {
+      "code": "TDK01-1",
+      "path": "TDK01-1/v001/model.glb",
+      "metadata": "TDK01-1/v001/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "ba0cf258f95a74d7d415c7f46f21c381f6f181a57af6c50fc900229fb0e3f5dc"
+    },
+    {
+      "code": "TJS00-1",
+      "path": "TJS00-1/v001/model.glb",
+      "metadata": "TJS00-1/v001/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "b286451a927b9c827a79990773999770e1473ba7b691c4c054cd842982f14001"
+    },
+    {
+      "code": "TBY17-1",
+      "path": "TBY17-1/v001/model.glb",
+      "metadata": "TBY17-1/v001/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "57f3aa77b743035df06f089d17d219e9f977ec3b3de6c394d3864d820f291bc2"
+    },
+    {
+      "code": "TN00-2",
+      "path": "TN00-2/v001/model.glb",
+      "metadata": "TN00-2/v001/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "1bf874d728c98948910b8defa6f3ca138a6d4777be45c0d8780610aaf5a45628"
+    },
+    {
+      "code": "TNA0014",
+      "path": "TNA0014/v001/model.glb",
+      "metadata": "TNA0014/v001/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "99b7984b5b014de6530f9aac5153a0252fba52d87f507fc6a6ba81c95d3e6a82"
+    },
+    {
+      "code": "TZJ00-1",
+      "path": "TZJ00-1/v001/model.glb",
+      "metadata": "TZJ00-1/v001/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "0d1ceb2e60bb14c91a329cfe13e7dac7e1027be88fa886a21907e9e8af607b68"
+    },
+    {
+      "code": "TYS01-1",
+      "path": "TYS01-1/v001/model.glb",
+      "metadata": "TYS01-1/v001/metadata.json",
+      "review_status": "review-ready",
+      "glb_sha256": "bb5285246458f0d2b4f98e16600f6165513bc8fb42949752e5219b76db2c33cf"
+    }
+  ],
+  "held": [
+    "S-1052",
+    "BST61401",
+    "UT3056"
+  ],
+  "hold_reason": "Owner likeness/identity review required before promotion",
+  "public_ready": false
+}
