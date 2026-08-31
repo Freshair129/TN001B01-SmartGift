@@ -1,0 +1,96 @@
+{
+  "asset_key": "DW03",
+  "asset_version": "v001",
+  "source_product_code": "DW03",
+  "canonical_product_id": null,
+  "mapping_status": "unresolved",
+  "registry_refs": {
+    "doc_id": null,
+    "pic_id": null,
+    "status": "unregistered",
+    "checked_by": "exact source SHA-256 search of local registry: no match, 2026-08-31"
+  },
+  "sources": [
+    {
+      "path": "data-pipeline/01_raw/03_product_catalogs/2026 new catalogue of power banks&car charger&wireless charger.pdf",
+      "sha256": "066037e15f855d22d9d08b7e3ed440224ee6ec67d03a0d2cadb7f24325b25456",
+      "page": 4,
+      "locator_status": "page-code-visually-verified-2026-08-31"
+    },
+    {
+      "path": "output/catalog-internal/refs/single-DW03-source.png",
+      "sha256": "5d35de381819f99158964f1c6ca86d6b5e8832335757aa31e095cbb309e72033",
+      "visual_origin": "original-catalog-crop"
+    }
+  ],
+  "dimensions": {
+    "unit": "meter",
+    "body_xyz": [
+      0.0673,
+      0.1083,
+      0.023
+    ],
+    "assembled_bounds_xyz": [
+      0.06729999929666519,
+      0.10830000042915344,
+      0.027500000003539027
+    ],
+    "source": "PDF page 4: Size 108.3*67.3*23mm; mapped H/W/D from product views",
+    "source_annotation_not_factory_measurement": true
+  },
+  "dimension_status": "source-annotated",
+  "estimated_regions": [
+    "sidewall details",
+    "underside",
+    "connector depth and channel depth",
+    "case thickness profile",
+    "material roughness"
+  ],
+  "geometry_sha256": "6faa6ff373358d8aea7a80dd5cac800e69ce8776290e10f9af20b8752fbbb3ea",
+  "glb_sha256": "320326bf5e2ebf503fe3032ddee528c07eb9d8ecea5ab2dbe7cfc9fbb035547b",
+  "generator": {
+    "name": "smartgift-catalog3d",
+    "version": "0.1.0",
+    "three": "0.160.0",
+    "chromium": "149.0.7827.55",
+    "models_sha256": "fac71cad9d0c37aa69453ffbed900166a57c972c5212d560beb6d73f7cfc78ea",
+    "renderer_sha256": "8f3f20e3261485769a65c1ce96221d1ec605fd419cd99ca6cb686cecb688a855",
+    "method": "local-photo-referenced-parametric-mesh"
+  },
+  "review_status": "review-ready",
+  "rights_status": "pending-owner-review",
+  "public_ready": false,
+  "omitted_details": "unreadable tiny labels/certification marks and hidden mechanisms not fabricated",
+  "metrics": {
+    "triangles": 17468,
+    "meshes": 30,
+    "bounds": [
+      0.06729999929666519,
+      0.10830000042915344,
+      0.027500000003539027
+    ],
+    "glb_bytes": 1567452
+  },
+  "renders": {
+    "front": {
+      "path": "preview.png",
+      "sha256": "ca7c00fe4f8d46942468de73be0a0724c27d1259295d87ef1a6c044b33ab3464",
+      "visible_pixels": 269359
+    },
+    "back": {
+      "path": "preview-back.png",
+      "sha256": "8ece70bac5d98af2a4265c61cca3af000bbd7f958c92a1b0d7d69a18e49b68ef",
+      "visible_pixels": 268274
+    },
+    "side": {
+      "path": "preview-side.png",
+      "sha256": "f718253e97bd1b6181c08ff505c7598f0ce2e7fdd0fe718feddbd8049d9868dc",
+      "visible_pixels": 121097
+    },
+    "straight": {
+      "path": "preview-straight.png",
+      "sha256": "1a3190ed79b272a646c476f96128a2e609dbb58a5075ff5d8271b93277c55a85",
+      "visible_pixels": 280206
+    }
+  }
+}

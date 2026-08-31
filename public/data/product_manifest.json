@@ -3,8 +3,8 @@
   "tenant_id": "Org-EtohGroup",
   "business_id": "SmartGift",
   "operating_entity": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)",
-  "catalog_version": "v1.3.0-2026.08.30-23c4c524",
-  "generated_at": "2026-08-30T18:27:47.441908+00:00",
+  "catalog_version": "v1.3.0-2026.08.31-23c4c524",
+  "generated_at": "2026-08-31T12:47:55.643274+00:00",
   "data_integrity_hashes": {
     "pricelist_public": {
       "path": "/data/pricelist_public.json",

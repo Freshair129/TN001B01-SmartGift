@@ -1,0 +1,52 @@
+{
+  "geometry_sha256": "1d4df38f169f4a219ca1a8de8fa00518afd913903272a15082e5e7be5a949119",
+  "default": "Orange",
+  "color_evidence": "PDF page 4 color list; RGB values are uncalibrated visual estimates",
+  "variants": [
+    {
+      "name": "White",
+      "slots": {
+        "shell": "#deded9",
+        "detail": "#cbcbc7",
+        "seam": "#999b97"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "Blue",
+      "slots": {
+        "shell": "#507ca7",
+        "detail": "#3a638d",
+        "seam": "#294463"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "Purple",
+      "slots": {
+        "shell": "#9877b0",
+        "detail": "#7e5d99",
+        "seam": "#604276"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "Orange",
+      "slots": {
+        "shell": "#ff8a26",
+        "detail": "#e66b27",
+        "seam": "#bc5420"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "Black",
+      "slots": {
+        "shell": "#232629",
+        "detail": "#343638",
+        "seam": "#111315"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    }
+  ]
+}

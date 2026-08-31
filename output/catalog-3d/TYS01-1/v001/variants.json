@@ -1,0 +1,56 @@
+{
+  "geometry_sha256": "67de8041a331dadcb256631344a8a72e30c4eb4295a553ebb5c1f0feb3e0b62a",
+  "default": "Black",
+  "color_evidence": "Factory workbook color names; RGB values and finish are visual estimates",
+  "variants": [
+    {
+      "name": "Black",
+      "slots": {
+        "shell": "#25282a"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Red",
+      "slots": {
+        "shell": "#b52e33"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Gold",
+      "slots": {
+        "shell": "#ba923a"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Blue",
+      "slots": {
+        "shell": "#2d6da8"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Light Blue",
+      "slots": {
+        "shell": "#6fa6c9"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Pink",
+      "slots": {
+        "shell": "#d28eaa"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Orange",
+      "slots": {
+        "shell": "#d87930"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    }
+  ]
+}

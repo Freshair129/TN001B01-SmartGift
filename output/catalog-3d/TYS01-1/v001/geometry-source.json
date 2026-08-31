@@ -1,0 +1,51 @@
+{
+  "code": "TYS01-1",
+  "product_master_id": "pm:PM-UMB",
+  "category_id": "cat:eco-friendly",
+  "kind": "folded-umbrella",
+  "body_mm": [
+    65,
+    280,
+    65
+  ],
+  "dimension_status": "estimated",
+  "colors": [
+    {
+      "name": "Black",
+      "hex": "#25282a"
+    },
+    {
+      "name": "Red",
+      "hex": "#b52e33"
+    },
+    {
+      "name": "Gold",
+      "hex": "#ba923a"
+    },
+    {
+      "name": "Blue",
+      "hex": "#2d6da8"
+    },
+    {
+      "name": "Light Blue",
+      "hex": "#6fa6c9"
+    },
+    {
+      "name": "Pink",
+      "hex": "#d28eaa"
+    },
+    {
+      "name": "Orange",
+      "hex": "#d87930"
+    }
+  ],
+  "generator": {
+    "name": "smartgift-catalog3d-evidence-estimated",
+    "version": "1.0.0",
+    "three": "0.160.0",
+    "chromium": "152.0.4191.53",
+    "models_sha256": "6dd3278cfccfd098d6fbc05d7543cad1e573ccfee372d1fab5a1f57ee12e943c",
+    "renderer_sha256": "e79f082f21a84182cea22fe50526a9b12cfb080222a866838fa08e7899b2dbba",
+    "method": "local-photo-referenced-estimated-parametric-mesh"
+  }
+}

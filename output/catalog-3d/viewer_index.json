@@ -1,0 +1,240 @@
+{
+  "schema_ref": "smartgift://b2b/portfolio/v1",
+  "generated_for": "local viewer only; no public catalog promotion",
+  "categories": [
+    {
+      "id": "cat:eco-friendly",
+      "slug": "eco-friendly",
+      "name": "Eco-Friendly",
+      "total": 4,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 4
+    },
+    {
+      "id": "cat:classic-oriental",
+      "slug": "classic-oriental",
+      "name": "Classic Oriental",
+      "total": 3,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 3
+    },
+    {
+      "id": "cat:novelty-self-care",
+      "slug": "novelty-self-care",
+      "name": "Novelty Self-Care",
+      "total": 5,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 5
+    },
+    {
+      "id": "cat:executive-smart-tech",
+      "slug": "executive-smart-tech",
+      "name": "Executive Smart Tech",
+      "total": 4,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 4
+    }
+  ],
+  "review_candidates": [
+    {
+      "asset_key": "S1033",
+      "asset_version": "v004",
+      "glb_sha256": "53c627d127c0576fe0f750bb658815728bc7e8eb79dcbdec06f6fa72b39439c2",
+      "source_product_code": "S1033",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": null,
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "S1033",
+        "sha256": "13611d39277ec28aa19c4a18c975ebfa304dd23b5750409a59b204d1c79464a2",
+        "source_path": "output/catalog-internal/refs/single-S1033-source.png"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "DW03",
+      "asset_version": "v004",
+      "glb_sha256": "25e25b5162ef8cad4086a9e38bcf79bec9b75293d26b63b5a4c5bd96d0b55240",
+      "source_product_code": "DW03",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": null,
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "DW03",
+        "sha256": "5d35de381819f99158964f1c6ca86d6b5e8832335757aa31e095cbb309e72033",
+        "source_path": "output/catalog-internal/refs/single-DW03-source.png"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "W502",
+      "asset_version": "v001",
+      "glb_sha256": "abc67c2c058dfb28769046cba9afab018d83a210f170f90d7c361accc35c9484",
+      "source_product_code": "W502",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": "cat:executive-smart-tech",
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "W502",
+        "sha256": "d8ab63eebea3eba3e7ef2aaaabb25e69326fd8c9861714dc3e092a3fb4936bed",
+        "source_path": "output/catalog-internal/refs/single-W502-source.png"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "BW00-0",
+      "asset_version": "v001",
+      "glb_sha256": "e6fc22ed7a0f242086deb92a1f4c9d8882f0bd06574ad5cd5060beaa470e221f",
+      "source_product_code": "BW00-0",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": "cat:eco-friendly",
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "BW00-0",
+        "sha256": "af3116e7f1d6d3ab8160d65f31c4afac03a54c7f15a6f7af20b59291310c3240",
+        "source_path": "public/assets/catalog-media/source-offer-BW00-0.jpg"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "TDK01-1",
+      "asset_version": "v001",
+      "glb_sha256": "ba0cf258f95a74d7d415c7f46f21c381f6f181a57af6c50fc900229fb0e3f5dc",
+      "source_product_code": "TDK01-1",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": "cat:eco-friendly",
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "TDK01-1",
+        "sha256": "83245cd857e364eacef3fbde182a2caa15116aa94649381344488ab923ef45b2",
+        "source_path": "output/catalog-3d/reference-images/TDK01-1.jpeg"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "TJS00-1",
+      "asset_version": "v001",
+      "glb_sha256": "b286451a927b9c827a79990773999770e1473ba7b691c4c054cd842982f14001",
+      "source_product_code": "TJS00-1",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": "cat:novelty-self-care",
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "TJS00-1",
+        "sha256": "8148558a491ebd28971d996b74a9a8646231c4ca40900ef3408c5e0f48f18203",
+        "source_path": "output/catalog-3d/reference-images/TJS00-1.png"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "TBY17-1",
+      "asset_version": "v001",
+      "glb_sha256": "57f3aa77b743035df06f089d17d219e9f977ec3b3de6c394d3864d820f291bc2",
+      "source_product_code": "TBY17-1",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": "cat:novelty-self-care",
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "TBY17-1",
+        "sha256": "8e6bc183949a3e1330157b92f7583ab2ebe314d89d5407fb45bbff69a159b13a",
+        "source_path": "output/catalog-3d/reference-images/TBY17-1.png"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "TN00-2",
+      "asset_version": "v001",
+      "glb_sha256": "1bf874d728c98948910b8defa6f3ca138a6d4777be45c0d8780610aaf5a45628",
+      "source_product_code": "TN00-2",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": "cat:novelty-self-care",
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "TN00-2",
+        "sha256": "6f503f8389b5fc88954b2d07850288dd8543bbdc0bfd9e758d5c7da71096816d",
+        "source_path": "output/catalog-3d/reference-images/TN00-2.png"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "TNA0014",
+      "asset_version": "v001",
+      "glb_sha256": "99b7984b5b014de6530f9aac5153a0252fba52d87f507fc6a6ba81c95d3e6a82",
+      "source_product_code": "TNA0014",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": "cat:executive-smart-tech",
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "TNA0014",
+        "sha256": "673d000570ac0f72b84dbace9bf283a469f9426ef63fe93b1bb9fa7fcfa21337",
+        "source_path": "output/catalog-3d/reference-images/TNA0014.png"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "TZJ00-1",
+      "asset_version": "v001",
+      "glb_sha256": "0d1ceb2e60bb14c91a329cfe13e7dac7e1027be88fa886a21907e9e8af607b68",
+      "source_product_code": "TZJ00-1",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": "cat:executive-smart-tech",
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "TZJ00-1",
+        "sha256": "9a1782f61161f2509140762566d212de417d041f9a031dece9ddb1f3c3f2e70e",
+        "source_path": "output/catalog-3d/reference-images/TZJ00-1.png"
+      },
+      "counts_toward_product_master_completion": false
+    },
+    {
+      "asset_key": "TYS01-1",
+      "asset_version": "v001",
+      "glb_sha256": "bb5285246458f0d2b4f98e16600f6165513bc8fb42949752e5219b76db2c33cf",
+      "source_product_code": "TYS01-1",
+      "canonical_product_id": null,
+      "mapping_status": "unresolved",
+      "candidate_category_id": "cat:eco-friendly",
+      "review_status": "review-ready",
+      "lifecycle": "review-candidate",
+      "reference": {
+        "route_key": "TYS01-1",
+        "sha256": "a98a039afd98bd8dbd54243d6e346c2c9e52f5d84b209a611b8b47789dc5cc88",
+        "source_path": "output/catalog-3d/reference-images/TYS01-1.png"
+      },
+      "counts_toward_product_master_completion": false
+    }
+  ],
+  "local_ready_assets": []
+}

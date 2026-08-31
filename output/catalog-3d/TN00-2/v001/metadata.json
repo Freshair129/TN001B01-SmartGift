@@ -1,0 +1,101 @@
+{
+  "asset_key": "TN00-2",
+  "asset_version": "v001",
+  "source_product_code": "TN00-2",
+  "canonical_product_id": null,
+  "mapping_status": "unresolved",
+  "evidence_binding": {
+    "candidate_product_master_id": "pm:PM-MUG-HEAT",
+    "candidate_category_id": "cat:novelty-self-care",
+    "edge_type": "IN_CATEGORY",
+    "status": "estimated-visual-review-candidate",
+    "reason": "Boss-approved P8 construction from partial factory image evidence; identity and geometry remain pending owner review"
+  },
+  "registry_refs": {
+    "doc_id": null,
+    "pic_id": null,
+    "status": "unregistered"
+  },
+  "sources": [
+    {
+      "path": "tmp/pdfs/catalog3d-source-audit-images/PM-MUG-HEAT.png",
+      "sha256": "6f503f8389b5fc88954b2d07850288dd8543bbdc0bfd9e758d5c7da71096816d",
+      "visual_origin": "original-extracted-factory-image"
+    },
+    {
+      "path": "output/catalog-3d/reference-images/TN00-2.png",
+      "sha256": "6f503f8389b5fc88954b2d07850288dd8543bbdc0bfd9e758d5c7da71096816d",
+      "visual_origin": "viewer-allowlisted-reference-copy"
+    }
+  ],
+  "dimensions": {
+    "unit": "meter",
+    "body_xyz": [
+      0.135,
+      0.095,
+      0.135
+    ],
+    "assembled_bounds_xyz": [
+      0.13500000536441803,
+      0.09023504978871967,
+      0.13500000536441803
+    ],
+    "source": "estimated from partial source dimensions and image proportions",
+    "source_annotation_not_factory_measurement": false
+  },
+  "dimension_status": "estimated",
+  "estimated_regions": [
+    "back/side geometry not visible in source",
+    "underside",
+    "ports and mechanisms",
+    "material finish and roughness",
+    "body dimensions derived from partial evidence/image proportion"
+  ],
+  "geometry_sha256": "c65d0b6df5c531279e2eb53932cbd05f0692a5ee3337b2c21a14477d0c805b9a",
+  "glb_sha256": "1bf874d728c98948910b8defa6f3ca138a6d4777be45c0d8780610aaf5a45628",
+  "generator": {
+    "name": "smartgift-catalog3d-evidence-estimated",
+    "version": "1.0.0",
+    "three": "0.160.0",
+    "chromium": "152.0.4191.53",
+    "models_sha256": "6dd3278cfccfd098d6fbc05d7543cad1e573ccfee372d1fab5a1f57ee12e943c",
+    "renderer_sha256": "e79f082f21a84182cea22fe50526a9b12cfb080222a866838fa08e7899b2dbba",
+    "method": "local-photo-referenced-estimated-parametric-mesh"
+  },
+  "review_status": "review-ready",
+  "rights_status": "pending-owner-review",
+  "public_ready": false,
+  "omitted_details": "unreadable labels, hidden mechanisms, and internal components are not fabricated",
+  "metrics": {
+    "triangles": 1740,
+    "meshes": 4,
+    "bounds": [
+      0.13500000536441803,
+      0.09023504978871967,
+      0.13500000536441803
+    ],
+    "glb_bytes": 104724
+  },
+  "renders": {
+    "front": {
+      "path": "preview.png",
+      "sha256": "17184ae5af09b9ab472fa386981a269c281ee63c09c1c7d94214c0ef19d7533f",
+      "visible_pixels": 213658
+    },
+    "back": {
+      "path": "preview-back.png",
+      "sha256": "8760c6221f52c85ea4dec3196c05280da1283c6741cfdf96dea14f0385d965a5",
+      "visible_pixels": 273210
+    },
+    "side": {
+      "path": "preview-side.png",
+      "sha256": "000165f4708c21150d6af6afdacbb2826d71ae5423beec50010ac67129918bf7",
+      "visible_pixels": 245656
+    },
+    "straight": {
+      "path": "preview-straight.png",
+      "sha256": "b2d4c74f4dbcce1bc7d5c4aa0c67f36e871d573fbea05ddeb62f3bc5c78f15be",
+      "visible_pixels": 136994
+    }
+  }
+}

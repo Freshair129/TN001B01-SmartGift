@@ -1,0 +1,102 @@
+{
+  "asset_key": "W502",
+  "asset_version": "v001",
+  "source_product_code": "W502",
+  "canonical_product_id": null,
+  "mapping_status": "unresolved",
+  "evidence_binding": {
+    "candidate_product_master_id": "pm:PM-PB10K",
+    "candidate_category_id": "cat:executive-smart-tech",
+    "edge_type": "IN_CATEGORY",
+    "status": "evidence-supported-review-candidate",
+    "reason": "PDF page 7 says magnetic wireless 10000mAh; 110*71*18mm and deployed stand; canonical reference is MagSafe 10000mAh + stand at 105*68*16mm"
+  },
+  "registry_refs": {
+    "doc_id": null,
+    "pic_id": null,
+    "status": "unregistered"
+  },
+  "sources": [
+    {
+      "path": "data-pipeline/01_raw/03_product_catalogs/2026 new catalogue of power banks&car charger&wireless charger.pdf",
+      "sha256": "066037e15f855d22d9d08b7e3ed440224ee6ec67d03a0d2cadb7f24325b25456",
+      "page": 7,
+      "locator_status": "page-code-visually-verified-2026-08-31"
+    },
+    {
+      "path": "output/catalog-internal/refs/single-W502-source.png",
+      "sha256": "d8ab63eebea3eba3e7ef2aaaabb25e69326fd8c9861714dc3e092a3fb4936bed",
+      "visual_origin": "original-catalog-crop"
+    }
+  ],
+  "dimensions": {
+    "unit": "meter",
+    "body_xyz": [
+      0.071,
+      0.11,
+      0.018
+    ],
+    "assembled_bounds_xyz": [
+      0.07100000232458115,
+      0.12466421156795804,
+      0.046257742629997496
+    ],
+    "source": "PDF page 7: Size 110*71*18mm; photographed deployed stand is visible",
+    "source_annotation_not_factory_measurement": true
+  },
+  "dimension_status": "source-annotated",
+  "estimated_regions": [
+    "underside",
+    "sidewall ports",
+    "stand hinge depth",
+    "connector details",
+    "material roughness"
+  ],
+  "geometry_sha256": "1c12e450dc13a736717a46e7f112de72553f7fdcd1b961729e298512ec4c9fda",
+  "glb_sha256": "abc67c2c058dfb28769046cba9afab018d83a210f170f90d7c361accc35c9484",
+  "generator": {
+    "name": "smartgift-catalog3d-w502",
+    "version": "1.0.0",
+    "three": "0.160.0",
+    "chromium": "149.0.7827.55",
+    "models_sha256": "a1286dadedf55e9e9504198ac3a4b81ad8bd4ada8d0294ac82446e95deb3afea",
+    "renderer_sha256": "23986519991be182599bfd413bbc2a8892d02a9f90084243cffeb629b952de5d",
+    "method": "local-photo-referenced-parametric-mesh"
+  },
+  "review_status": "review-ready",
+  "rights_status": "pending-owner-review",
+  "public_ready": false,
+  "omitted_details": "unreadable tiny labels/certification marks and hidden mechanisms not fabricated",
+  "metrics": {
+    "triangles": 6304,
+    "meshes": 10,
+    "bounds": [
+      0.07100000232458115,
+      0.12466421156795804,
+      0.046257742629997496
+    ],
+    "glb_bytes": 509840
+  },
+  "renders": {
+    "front": {
+      "path": "preview.png",
+      "sha256": "13d68abe65f624ff325fde701b54684ac07aa1e880b3748e200881dc7dc22203",
+      "visible_pixels": 215826
+    },
+    "back": {
+      "path": "preview-back.png",
+      "sha256": "853314424b64b2a5c38ee6835ae65d6bcde913292ab5f120fcb3c18fc5499ef5",
+      "visible_pixels": 233874
+    },
+    "side": {
+      "path": "preview-side.png",
+      "sha256": "4d1981770c308fe2fe9139b294acbb1e0281b767d795a03344cdd581fb5da46d",
+      "visible_pixels": 76986
+    },
+    "straight": {
+      "path": "preview-straight.png",
+      "sha256": "1a98afe68beb515c34e3783f35d00b74391e8f47b4f297f69281d4576675c244",
+      "visible_pixels": 251259
+    }
+  }
+}

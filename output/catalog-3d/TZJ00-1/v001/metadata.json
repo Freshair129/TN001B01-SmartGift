@@ -1,0 +1,100 @@
+{
+  "asset_key": "TZJ00-1",
+  "asset_version": "v001",
+  "source_product_code": "TZJ00-1",
+  "canonical_product_id": null,
+  "mapping_status": "unresolved",
+  "evidence_binding": {
+    "candidate_product_master_id": "pm:PM-PB10K",
+    "candidate_category_id": "cat:executive-smart-tech",
+    "edge_type": "IN_CATEGORY",
+    "status": "estimated-visual-review-candidate",
+    "reason": "Boss-approved P8 construction from partial factory image evidence; identity and geometry remain pending owner review"
+  },
+  "registry_refs": {
+    "doc_id": null,
+    "pic_id": null,
+    "status": "unregistered"
+  },
+  "sources": [
+    {
+      "path": "tmp/pdfs/catalog3d-source-audit-images/PM-PB10K.png",
+      "sha256": "9a1782f61161f2509140762566d212de417d041f9a031dece9ddb1f3c3f2e70e",
+      "visual_origin": "original-extracted-factory-image"
+    },
+    {
+      "path": "output/catalog-3d/reference-images/TZJ00-1.png",
+      "sha256": "9a1782f61161f2509140762566d212de417d041f9a031dece9ddb1f3c3f2e70e",
+      "visual_origin": "viewer-allowlisted-reference-copy"
+    }
+  ],
+  "dimensions": {
+    "unit": "meter",
+    "body_xyz": [
+      0.146,
+      0.069,
+      0.04
+    ],
+    "assembled_bounds_xyz": [
+      0.17085108160972595,
+      0.0689999982714653,
+      0.05162692972384393
+    ],
+    "source": "factory_cost_pm_mapping.json exact three-axis dimensions",
+    "source_annotation_not_factory_measurement": true
+  },
+  "dimension_status": "source-annotated",
+  "estimated_regions": [
+    "back/side geometry not visible in source",
+    "underside",
+    "ports and mechanisms",
+    "material finish and roughness"
+  ],
+  "geometry_sha256": "e158a2fdfeefe271fd744daaccb071e23003ad524f1debb95a6b3b261ce7b36d",
+  "glb_sha256": "0d1ceb2e60bb14c91a329cfe13e7dac7e1027be88fa886a21907e9e8af607b68",
+  "generator": {
+    "name": "smartgift-catalog3d-evidence-estimated",
+    "version": "1.0.0",
+    "three": "0.160.0",
+    "chromium": "152.0.4191.53",
+    "models_sha256": "6dd3278cfccfd098d6fbc05d7543cad1e573ccfee372d1fab5a1f57ee12e943c",
+    "renderer_sha256": "e79f082f21a84182cea22fe50526a9b12cfb080222a866838fa08e7899b2dbba",
+    "method": "local-photo-referenced-estimated-parametric-mesh"
+  },
+  "review_status": "review-ready",
+  "rights_status": "pending-owner-review",
+  "public_ready": false,
+  "omitted_details": "unreadable labels, hidden mechanisms, and internal components are not fabricated",
+  "metrics": {
+    "triangles": 1612,
+    "meshes": 4,
+    "bounds": [
+      0.17085108160972595,
+      0.0689999982714653,
+      0.05162692972384393
+    ],
+    "glb_bytes": 94128
+  },
+  "renders": {
+    "front": {
+      "path": "preview.png",
+      "sha256": "ff3b8ea81e85ed45f3f0bbbfef1805df634918e97c8d89479dda8fe8fc235a06",
+      "visible_pixels": 156717
+    },
+    "back": {
+      "path": "preview-back.png",
+      "sha256": "d81a96d0c20d0bb03ec44720ae8e2c6954c93ab9e2930432fe120f0f2e3c29d4",
+      "visible_pixels": 153657
+    },
+    "side": {
+      "path": "preview-side.png",
+      "sha256": "89b6a55754976bb95b6a551f45e256b5a6e8054a07d748d30374635edb38bfc2",
+      "visible_pixels": 63055
+    },
+    "straight": {
+      "path": "preview-straight.png",
+      "sha256": "a0db755669f779e471082f8c8f4d0096b474a6eb701ddbeb38a78412ddbb5df8",
+      "visible_pixels": 161501
+    }
+  }
+}

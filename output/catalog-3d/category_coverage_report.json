@@ -1,0 +1,56 @@
+{
+  "product_masters": 16,
+  "total": 16,
+  "reference_ready": 0,
+  "geometry_review": 0,
+  "owner_approved": 0,
+  "local_ready": 0,
+  "held": 16,
+  "review_candidates": 11,
+  "categories": [
+    {
+      "id": "cat:eco-friendly",
+      "slug": "eco-friendly",
+      "name": "Eco-Friendly",
+      "total": 4,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 4
+    },
+    {
+      "id": "cat:classic-oriental",
+      "slug": "classic-oriental",
+      "name": "Classic Oriental",
+      "total": 3,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 3
+    },
+    {
+      "id": "cat:novelty-self-care",
+      "slug": "novelty-self-care",
+      "name": "Novelty Self-Care",
+      "total": 5,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 5
+    },
+    {
+      "id": "cat:executive-smart-tech",
+      "slug": "executive-smart-tech",
+      "name": "Executive Smart Tech",
+      "total": 4,
+      "reference_ready": 0,
+      "geometry_review": 0,
+      "owner_approved": 0,
+      "local_ready": 0,
+      "held": 4
+    }
+  ]
+}

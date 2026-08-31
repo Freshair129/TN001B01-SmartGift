@@ -1,0 +1,1676 @@
+{
+  "metadata": {
+    "artifact": "factory_cost_srp_profit_comparison",
+    "version": "1.0.0b",
+    "generated_at": "2026-08-30T23:51:57+07:00",
+    "as_of_date": "2026-08-30",
+    "language": "th",
+    "scope": "16 สินค้าในตาราง SRP ของ master; ไม่ใช่สินค้าทุกตัวใน factory catalog",
+    "audience": "internal_only",
+    "currency": "THB",
+    "report_type": "read_only_analysis_snapshot",
+    "quote_ready": false,
+    "canonical_catalog_projection": false,
+    "schema_authority": "config/schema_genesisblock.yaml",
+    "product_code_semantics": "product_code อ้างอิง business code ของ ProductMaster.code เท่านั้น ไม่ใช่ canonical pm: primary key; รายงานนี้ไม่สร้างหรือแก้ catalog entity",
+    "price_basis": "EXW",
+    "profit_basis": "ส่วนต่างราคาขายกับต้นทุนหน้าโรงงานก่อนค่าใช้จ่ายอื่น ไม่ใช่กำไรสุทธิ",
+    "quantity_basis": "คำนวณ ณ จำนวนที่ระบุ โดยใช้ราคาขายต่อหน่วยใน master และทุนอ้างอิงคงที่ ไม่ใช่ใบเสนอราคาทุนโรงงานแยกตามจำนวน",
+    "vat_basis": "unverified_not_normalized",
+    "exclusions": [
+      "freight",
+      "import_duty",
+      "vat_adjustment",
+      "branding_and_logo",
+      "additional_packaging_and_assembly",
+      "operating_expenses",
+      "other_unconfirmed_costs"
+    ],
+    "fx_basis": "ใช้อัตราที่บันทึกใน confirmed mapping และ pricing_rules_formula.yaml ไม่ใช่อัตราแลกเปลี่ยนสด",
+    "fx_rates_thb_per_unit": {
+      "USD": 32.5,
+      "RMB": 5
+    },
+    "rounding": {
+      "money_decimal_places": 2,
+      "percentage_decimal_places": 1,
+      "percent_values_are": "percentage_points_76.6_means_76.6_percent"
+    },
+    "formulas": {
+      "unit_profit_thb": "selling_unit_price_thb - factory_cost_thb",
+      "order_profit_thb": "unit_profit_thb * quantity",
+      "margin_percent": "(selling_unit_price_thb - factory_cost_thb) / selling_unit_price_thb * 100",
+      "markup_percent": "(selling_unit_price_thb - factory_cost_thb) / factory_cost_thb * 100"
+    },
+    "null_policy": "ไม่มีทุนที่ยืนยัน หรือจำนวนต่ำกว่า MOQ โรงงาน: unit_profit_thb, order_profit_thb, margin_percent, markup_percent และ below_factory_cost เป็น null ไม่ใช่ 0",
+    "moq_note": "FLASH มี MOQ 500 ชิ้น; ยังไม่สมมติว่ามีสต็อกสำหรับขายจำนวนน้อยกว่า MOQ ส่วน factory_moq_qty=null หมายถึงไม่มี MOQ รายการนั้นใน mapping ไม่ใช่ไม่มีข้อจำกัด",
+    "specification_note": "การยืนยันจับคู่ไม่ได้แปลว่าสเปคเท่ากันทุกจุด ดู factory_reference.specification_note โดยเฉพาะ TMB, PB10K, UMB และ FLASH",
+    "source_policy": "อ่านราคาจาก smartgift_catalog_master.json ปัจจุบัน และต้นทุนจาก confirmed mapping ไม่ใช้ค่า base_cost เป็นทุนแทน ไม่แก้ราคาใน master",
+    "version_diff": "ไม่มีไฟล์รายงานนี้ → 1.0.0b: แปลงตารางวิเคราะห์เป็น JSON พร้อมสูตร ข้อจำกัด และ provenance"
+  },
+  "sources": [
+    {
+      "path": "data-pipeline/02_prepared/smartgift_catalog_master.json",
+      "sha256": "d4227ecdbd83afc95b7f9fe785181215c9eb0f46ffbd57f3b5f4bdfc1f6e2541"
+    },
+    {
+      "path": "data-pipeline/02_prepared/factory_cost_pm_mapping.json",
+      "sha256": "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503"
+    },
+    {
+      "path": "data-pipeline/02_prepared/factory_costs.json",
+      "sha256": "c28956c932b659ffe4244d938979703827205db9149c34cd66e9c82927d69a9d"
+    },
+    {
+      "path": "config/pricing_rules_formula.yaml",
+      "sha256": "f4473230f10b59133936974a0cacf84bbe84865d61db76553d8cc2a58ba635fc"
+    }
+  ],
+  "summary": {
+    "product_count": 16,
+    "confirmed_factory_cost_product_count": 9,
+    "missing_factory_cost_product_count": 7,
+    "quantities": [
+      1,
+      10,
+      20,
+      50,
+      100,
+      300,
+      500,
+      1000
+    ],
+    "comparison_count": 128,
+    "calculated_comparison_count": 66,
+    "below_moq_comparison_count": 6,
+    "missing_cost_comparison_count": 56,
+    "negative_profit_comparison_count": 5
+  },
+  "products": [
+    {
+      "product_code": "PM-TMB",
+      "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+      "srp_unit_price_thb": 320,
+      "factory_cost_thb": 75,
+      "factory_match_status": "confirmed",
+      "factory_moq_qty": null,
+      "factory_reference": {
+        "item_code": "BW00-0",
+        "item_name": "Vacuum cup in simple dark blue gift bag packing",
+        "source_file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "currency": "USD",
+        "exw_unit_price": 2.30769230769231,
+        "fx_rate_to_thb": 32.5,
+        "components": [],
+        "confidence": "medium",
+        "specification_note": "450ml 304SS (canonical ระบุ 316) — Boss ยอมรับ gap"
+      },
+      "missing_cost_reason": null,
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 320,
+          "unit_profit_thb": 245,
+          "order_profit_thb": 245,
+          "margin_percent": 76.6,
+          "markup_percent": 326.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 290,
+          "unit_profit_thb": 215,
+          "order_profit_thb": 2150,
+          "margin_percent": 74.1,
+          "markup_percent": 286.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 270,
+          "unit_profit_thb": 195,
+          "order_profit_thb": 3900,
+          "margin_percent": 72.2,
+          "markup_percent": 260,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 250,
+          "unit_profit_thb": 175,
+          "order_profit_thb": 8750,
+          "margin_percent": 70,
+          "markup_percent": 233.3,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 230,
+          "unit_profit_thb": 155,
+          "order_profit_thb": 15500,
+          "margin_percent": 67.4,
+          "markup_percent": 206.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 215,
+          "unit_profit_thb": 140,
+          "order_profit_thb": 42000,
+          "margin_percent": 65.1,
+          "markup_percent": 186.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 200,
+          "unit_profit_thb": 125,
+          "order_profit_thb": 62500,
+          "margin_percent": 62.5,
+          "markup_percent": 166.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 185,
+          "unit_profit_thb": 110,
+          "order_profit_thb": 110000,
+          "margin_percent": 59.5,
+          "markup_percent": 146.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-SPK",
+      "name_th": "ลำโพงบลูทูธสเตอริโอคู่พรีเมียม (Bluetooth Speaker 5W)",
+      "srp_unit_price_thb": 480,
+      "factory_cost_thb": null,
+      "factory_match_status": "missing_factory_cost",
+      "factory_moq_qty": null,
+      "factory_reference": null,
+      "missing_cost_reason": "ไม่มี single-item cost ใน 3 ไฟล์ต้นทุนชุด 2026-08-12; ต้องขอ quote แยกชิ้นหรือหาไฟล์เพิ่ม",
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 480,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 440,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 410,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 380,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 350,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 320,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 295,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 275,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-PB10K",
+      "name_th": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+      "srp_unit_price_thb": 690,
+      "factory_cost_thb": 232.5,
+      "factory_match_status": "confirmed",
+      "factory_moq_qty": null,
+      "factory_reference": {
+        "item_code": "TZJ00-1",
+        "item_name": "Four cables power bank stand",
+        "source_file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "currency": "USD",
+        "exw_unit_price": 7.15384615384615,
+        "fx_rate_to_thb": 32.5,
+        "components": [],
+        "confidence": "medium",
+        "specification_note": "10000mAh + stand; เป็นสาย 4 หัว ไม่ใช่ MagSafe — Boss ยอมรับ gap"
+      },
+      "missing_cost_reason": null,
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 690,
+          "unit_profit_thb": 457.5,
+          "order_profit_thb": 457.5,
+          "margin_percent": 66.3,
+          "markup_percent": 196.8,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 620,
+          "unit_profit_thb": 387.5,
+          "order_profit_thb": 3875,
+          "margin_percent": 62.5,
+          "markup_percent": 166.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 580,
+          "unit_profit_thb": 347.5,
+          "order_profit_thb": 6950,
+          "margin_percent": 59.9,
+          "markup_percent": 149.5,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 540,
+          "unit_profit_thb": 307.5,
+          "order_profit_thb": 15375,
+          "margin_percent": 56.9,
+          "markup_percent": 132.3,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 490,
+          "unit_profit_thb": 257.5,
+          "order_profit_thb": 25750,
+          "margin_percent": 52.6,
+          "markup_percent": 110.8,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 450,
+          "unit_profit_thb": 217.5,
+          "order_profit_thb": 65250,
+          "margin_percent": 48.3,
+          "markup_percent": 93.5,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 420,
+          "unit_profit_thb": 187.5,
+          "order_profit_thb": 93750,
+          "margin_percent": 44.6,
+          "markup_percent": 80.6,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 390,
+          "unit_profit_thb": 157.5,
+          "order_profit_thb": 157500,
+          "margin_percent": 40.4,
+          "markup_percent": 67.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-CFMUG",
+      "name_th": "แก้วกาแฟพกพาสแตนเลส 316 พร้อมฝา 3 ระบบ",
+      "srp_unit_price_thb": 299,
+      "factory_cost_thb": 155,
+      "factory_match_status": "confirmed",
+      "factory_moq_qty": null,
+      "factory_reference": {
+        "item_code": "TJS00-1",
+        "item_name": "Coffee Mug",
+        "source_file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "currency": "USD",
+        "exw_unit_price": 4.76923076923077,
+        "fx_rate_to_thb": 32.5,
+        "components": [],
+        "confidence": "high",
+        "specification_note": "316SUS ตรงวัสดุ; 380ml เก็บอุณหภูมิ 6 ชม."
+      },
+      "missing_cost_reason": null,
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 299,
+          "unit_profit_thb": 144,
+          "order_profit_thb": 144,
+          "margin_percent": 48.2,
+          "markup_percent": 92.9,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 270,
+          "unit_profit_thb": 115,
+          "order_profit_thb": 1150,
+          "margin_percent": 42.6,
+          "markup_percent": 74.2,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 250,
+          "unit_profit_thb": 95,
+          "order_profit_thb": 1900,
+          "margin_percent": 38,
+          "markup_percent": 61.3,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 230,
+          "unit_profit_thb": 75,
+          "order_profit_thb": 3750,
+          "margin_percent": 32.6,
+          "markup_percent": 48.4,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 210,
+          "unit_profit_thb": 55,
+          "order_profit_thb": 5500,
+          "margin_percent": 26.2,
+          "markup_percent": 35.5,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 195,
+          "unit_profit_thb": 40,
+          "order_profit_thb": 12000,
+          "margin_percent": 20.5,
+          "markup_percent": 25.8,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 180,
+          "unit_profit_thb": 25,
+          "order_profit_thb": 12500,
+          "margin_percent": 13.9,
+          "markup_percent": 16.1,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 165,
+          "unit_profit_thb": 10,
+          "order_profit_thb": 10000,
+          "margin_percent": 6.1,
+          "markup_percent": 6.5,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-UMB",
+      "name_th": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+      "srp_unit_price_thb": 250,
+      "factory_cost_thb": 80,
+      "factory_match_status": "confirmed",
+      "factory_moq_qty": null,
+      "factory_reference": {
+        "item_code": "TYS01-1",
+        "item_name": "Umbrella in simple gift bag packing",
+        "source_file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "currency": "USD",
+        "exw_unit_price": 2.46153846153846,
+        "fx_rate_to_thb": 32.5,
+        "components": [],
+        "confidence": "medium",
+        "specification_note": "8K auto open&close; ไม่ระบุ 6 ตอน/UPF50+ — Boss ยอมรับ gap"
+      },
+      "missing_cost_reason": null,
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 250,
+          "unit_profit_thb": 170,
+          "order_profit_thb": 170,
+          "margin_percent": 68,
+          "markup_percent": 212.5,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 220,
+          "unit_profit_thb": 140,
+          "order_profit_thb": 1400,
+          "margin_percent": 63.6,
+          "markup_percent": 175,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 200,
+          "unit_profit_thb": 120,
+          "order_profit_thb": 2400,
+          "margin_percent": 60,
+          "markup_percent": 150,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 185,
+          "unit_profit_thb": 105,
+          "order_profit_thb": 5250,
+          "margin_percent": 56.8,
+          "markup_percent": 131.3,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 170,
+          "unit_profit_thb": 90,
+          "order_profit_thb": 9000,
+          "margin_percent": 52.9,
+          "markup_percent": 112.5,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 155,
+          "unit_profit_thb": 75,
+          "order_profit_thb": 22500,
+          "margin_percent": 48.4,
+          "markup_percent": 93.8,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 140,
+          "unit_profit_thb": 60,
+          "order_profit_thb": 30000,
+          "margin_percent": 42.9,
+          "markup_percent": 75,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 130,
+          "unit_profit_thb": 50,
+          "order_profit_thb": 50000,
+          "margin_percent": 38.5,
+          "markup_percent": 62.5,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-MSG",
+      "name_th": "เครื่องนวดคอพกพาคลื่นความถี่ต่ำ Low Pulse & ประคบร้อน",
+      "srp_unit_price_thb": 850,
+      "factory_cost_thb": 117,
+      "factory_match_status": "confirmed",
+      "factory_moq_qty": null,
+      "factory_reference": {
+        "item_code": "TBY17-1",
+        "item_name": "Neck massager",
+        "source_file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "currency": "USD",
+        "exw_unit_price": 3.6,
+        "fx_rate_to_thb": 32.5,
+        "components": [],
+        "confidence": "high",
+        "specification_note": "low pulse 15 levels ตรงสเปค"
+      },
+      "missing_cost_reason": null,
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 850,
+          "unit_profit_thb": 733,
+          "order_profit_thb": 733,
+          "margin_percent": 86.2,
+          "markup_percent": 626.5,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 780,
+          "unit_profit_thb": 663,
+          "order_profit_thb": 6630,
+          "margin_percent": 85,
+          "markup_percent": 566.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 720,
+          "unit_profit_thb": 603,
+          "order_profit_thb": 12060,
+          "margin_percent": 83.8,
+          "markup_percent": 515.4,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 660,
+          "unit_profit_thb": 543,
+          "order_profit_thb": 27150,
+          "margin_percent": 82.3,
+          "markup_percent": 464.1,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 600,
+          "unit_profit_thb": 483,
+          "order_profit_thb": 48300,
+          "margin_percent": 80.5,
+          "markup_percent": 412.8,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 550,
+          "unit_profit_thb": 433,
+          "order_profit_thb": 129900,
+          "margin_percent": 78.7,
+          "markup_percent": 370.1,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 500,
+          "unit_profit_thb": 383,
+          "order_profit_thb": 191500,
+          "margin_percent": 76.6,
+          "markup_percent": 327.4,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 460,
+          "unit_profit_thb": 343,
+          "order_profit_thb": 343000,
+          "margin_percent": 74.6,
+          "markup_percent": 293.2,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-NB",
+      "name_th": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+      "srp_unit_price_thb": 750,
+      "factory_cost_thb": 610,
+      "factory_match_status": "confirmed",
+      "factory_moq_qty": null,
+      "factory_reference": {
+        "item_code": "TNA0014",
+        "item_name": "Wireless & cable charging, light up logo, card slots, bills interlayer",
+        "source_file": "data-pipeline/01_raw/08_factory_costs/02-ต้นทุน-20260417 Power bank notebook catalog.xlsx",
+        "source_sha256": "9c8b51678f0aea3c7cfb35e3449a2d0b4d3dd371808dd42050f7eea56b377e1f",
+        "currency": "USD",
+        "exw_unit_price": 18.7692307692308,
+        "fx_rate_to_thb": 32.5,
+        "components": [],
+        "confidence": "high",
+        "specification_note": "A4 PU wireless+cable 8000mAh; แถม flash 32G + ปากกา"
+      },
+      "missing_cost_reason": null,
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 750,
+          "unit_profit_thb": 140,
+          "order_profit_thb": 140,
+          "margin_percent": 18.7,
+          "markup_percent": 23,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 680,
+          "unit_profit_thb": 70,
+          "order_profit_thb": 700,
+          "margin_percent": 10.3,
+          "markup_percent": 11.5,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 630,
+          "unit_profit_thb": 20,
+          "order_profit_thb": 400,
+          "margin_percent": 3.2,
+          "markup_percent": 3.3,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 590,
+          "unit_profit_thb": -20,
+          "order_profit_thb": -1000,
+          "margin_percent": -3.4,
+          "markup_percent": -3.3,
+          "below_factory_cost": true,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 540,
+          "unit_profit_thb": -70,
+          "order_profit_thb": -7000,
+          "margin_percent": -13,
+          "markup_percent": -11.5,
+          "below_factory_cost": true,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 490,
+          "unit_profit_thb": -120,
+          "order_profit_thb": -36000,
+          "margin_percent": -24.5,
+          "markup_percent": -19.7,
+          "below_factory_cost": true,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 450,
+          "unit_profit_thb": -160,
+          "order_profit_thb": -80000,
+          "margin_percent": -35.6,
+          "markup_percent": -26.2,
+          "below_factory_cost": true,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 420,
+          "unit_profit_thb": -190,
+          "order_profit_thb": -190000,
+          "margin_percent": -45.2,
+          "markup_percent": -31.1,
+          "below_factory_cost": true,
+          "calculation_status": "indicative_exw_only"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-PEN",
+      "name_th": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+      "srp_unit_price_thb": 190,
+      "factory_cost_thb": null,
+      "factory_match_status": "missing_factory_cost",
+      "factory_moq_qty": null,
+      "factory_reference": null,
+      "missing_cost_reason": "ไม่มี single-item cost ใน 3 ไฟล์ต้นทุนชุด 2026-08-12; ต้องขอ quote แยกชิ้นหรือหาไฟล์เพิ่ม",
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 190,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 160,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 145,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 130,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 120,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 110,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 100,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 90,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-MUG-HEAT",
+      "name_th": "ชุดแก้วเซรามิกพร้อมแท่นอุ่นอุณหภูมิคงที่ 55°C",
+      "srp_unit_price_thb": 350,
+      "factory_cost_thb": 75,
+      "factory_match_status": "confirmed",
+      "factory_moq_qty": null,
+      "factory_reference": {
+        "item_code": "TN00-2",
+        "item_name": "55℃ Cup set",
+        "source_file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "currency": "USD",
+        "exw_unit_price": 2.30769230769231,
+        "fx_rate_to_thb": 32.5,
+        "components": [],
+        "confidence": "high",
+        "specification_note": "ceramic 350ml + heating pad 55C ตรงสเปค"
+      },
+      "missing_cost_reason": null,
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 350,
+          "unit_profit_thb": 275,
+          "order_profit_thb": 275,
+          "margin_percent": 78.6,
+          "markup_percent": 366.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 310,
+          "unit_profit_thb": 235,
+          "order_profit_thb": 2350,
+          "margin_percent": 75.8,
+          "markup_percent": 313.3,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 290,
+          "unit_profit_thb": 215,
+          "order_profit_thb": 4300,
+          "margin_percent": 74.1,
+          "markup_percent": 286.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 270,
+          "unit_profit_thb": 195,
+          "order_profit_thb": 9750,
+          "margin_percent": 72.2,
+          "markup_percent": 260,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 245,
+          "unit_profit_thb": 170,
+          "order_profit_thb": 17000,
+          "margin_percent": 69.4,
+          "markup_percent": 226.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 225,
+          "unit_profit_thb": 150,
+          "order_profit_thb": 45000,
+          "margin_percent": 66.7,
+          "markup_percent": 200,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 210,
+          "unit_profit_thb": 135,
+          "order_profit_thb": 67500,
+          "margin_percent": 64.3,
+          "markup_percent": 180,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 195,
+          "unit_profit_thb": 120,
+          "order_profit_thb": 120000,
+          "margin_percent": 61.5,
+          "markup_percent": 160,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-FLASH",
+      "name_th": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+      "srp_unit_price_thb": 220,
+      "factory_cost_thb": 84,
+      "factory_match_status": "confirmed",
+      "factory_moq_qty": 500,
+      "factory_reference": {
+        "item_code": null,
+        "item_name": "Swivel usb shell + PCBA chip 64G USB 3.0",
+        "source_file": "data-pipeline/01_raw/08_factory_costs/ต้นทุน USB Flashdrive.xls",
+        "source_sha256": "13e284c53bce55ae375ef487b340e21b3d34f98ce11b83bdc46b84cf2d5717a6",
+        "currency": "RMB",
+        "exw_unit_price": 16.8,
+        "fx_rate_to_thb": 5,
+        "components": [
+          {
+            "part": "shell",
+            "name": "Swivel usb",
+            "sheet": "PCBA Shell",
+            "price_rmb": 1.3,
+            "moq": 500
+          },
+          {
+            "part": "chip",
+            "name": "PCBA chip 64G USB 3.0",
+            "sheet": "Chip price",
+            "price_rmb": 15.5
+          }
+        ],
+        "confidence": "medium",
+        "specification_note": "ราคา composite shell+chip; capacity 64G ตามที่ Boss ยืนยัน; dual Type-C ไม่ระบุในตาราง chip"
+      },
+      "missing_cost_reason": null,
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 220,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "below_factory_moq"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 190,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "below_factory_moq"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 175,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "below_factory_moq"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 160,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "below_factory_moq"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 145,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "below_factory_moq"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 135,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "below_factory_moq"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 125,
+          "unit_profit_thb": 41,
+          "order_profit_thb": 20500,
+          "margin_percent": 32.8,
+          "markup_percent": 48.8,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 115,
+          "unit_profit_thb": 31,
+          "order_profit_thb": 31000,
+          "margin_percent": 27,
+          "markup_percent": 36.9,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-BOTTLE-LED",
+      "name_th": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+      "srp_unit_price_thb": 290,
+      "factory_cost_thb": 75,
+      "factory_match_status": "confirmed",
+      "factory_moq_qty": null,
+      "factory_reference": {
+        "item_code": "TDK01-1",
+        "item_name": "Vacuum Cup with Drawer Box Packing",
+        "source_file": "data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx",
+        "source_sha256": "515ecf8464b55cfa6c03b457952c3839d5a9d64f54e4e05e3a8522ddf7a9fd94",
+        "currency": "USD",
+        "exw_unit_price": 2.30769230769231,
+        "fx_rate_to_thb": 32.5,
+        "components": [],
+        "confidence": "high",
+        "specification_note": "450ml 304SS + temperature display"
+      },
+      "missing_cost_reason": null,
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 290,
+          "unit_profit_thb": 215,
+          "order_profit_thb": 215,
+          "margin_percent": 74.1,
+          "markup_percent": 286.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 260,
+          "unit_profit_thb": 185,
+          "order_profit_thb": 1850,
+          "margin_percent": 71.2,
+          "markup_percent": 246.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 240,
+          "unit_profit_thb": 165,
+          "order_profit_thb": 3300,
+          "margin_percent": 68.8,
+          "markup_percent": 220,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 220,
+          "unit_profit_thb": 145,
+          "order_profit_thb": 7250,
+          "margin_percent": 65.9,
+          "markup_percent": 193.3,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 200,
+          "unit_profit_thb": 125,
+          "order_profit_thb": 12500,
+          "margin_percent": 62.5,
+          "markup_percent": 166.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 185,
+          "unit_profit_thb": 110,
+          "order_profit_thb": 33000,
+          "margin_percent": 59.5,
+          "markup_percent": 146.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 170,
+          "unit_profit_thb": 95,
+          "order_profit_thb": 47500,
+          "margin_percent": 55.9,
+          "markup_percent": 126.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 155,
+          "unit_profit_thb": 80,
+          "order_profit_thb": 80000,
+          "margin_percent": 51.6,
+          "markup_percent": 106.7,
+          "below_factory_cost": false,
+          "calculation_status": "indicative_exw_only"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-CUTLERY",
+      "name_th": "ชุดช้อนส้อมมีดสแตนเลสฟู้ดเกรดพกพา",
+      "srp_unit_price_thb": 165,
+      "factory_cost_thb": null,
+      "factory_match_status": "missing_factory_cost",
+      "factory_moq_qty": null,
+      "factory_reference": null,
+      "missing_cost_reason": "ไม่มี single-item cost ใน 3 ไฟล์ต้นทุนชุด 2026-08-12; ต้องขอ quote แยกชิ้นหรือหาไฟล์เพิ่ม",
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 165,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 140,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 130,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 120,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 110,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 100,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 92,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 85,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-TEA-INF",
+      "name_th": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+      "srp_unit_price_thb": 360,
+      "factory_cost_thb": null,
+      "factory_match_status": "missing_factory_cost",
+      "factory_moq_qty": null,
+      "factory_reference": null,
+      "missing_cost_reason": "ไม่มี single-item cost ใน 3 ไฟล์ต้นทุนชุด 2026-08-12; ต้องขอ quote แยกชิ้นหรือหาไฟล์เพิ่ม",
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 360,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 320,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 300,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 280,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 255,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 235,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 220,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 205,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-AROMA",
+      "name_th": "เครื่องกระจายกลิ่นอโรมาอัลตราโซนิกเปลวไฟแสงไฟ Ambient",
+      "srp_unit_price_thb": 550,
+      "factory_cost_thb": null,
+      "factory_match_status": "missing_factory_cost",
+      "factory_moq_qty": null,
+      "factory_reference": null,
+      "missing_cost_reason": "ไม่มี single-item cost ใน 3 ไฟล์ต้นทุนชุด 2026-08-12; ต้องขอ quote แยกชิ้นหรือหาไฟล์เพิ่ม",
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 550,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 490,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 460,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 420,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 380,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 350,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 320,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 295,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-FAN",
+      "name_th": "พัดลมพกพาดีไซน์มินิมอลหน้าจอดิจิทัลแบต 4000mAh",
+      "srp_unit_price_thb": 260,
+      "factory_cost_thb": null,
+      "factory_match_status": "missing_factory_cost",
+      "factory_moq_qty": null,
+      "factory_reference": null,
+      "missing_cost_reason": "ไม่มี single-item cost ใน 3 ไฟล์ต้นทุนชุด 2026-08-12; ต้องขอ quote แยกชิ้นหรือหาไฟล์เพิ่ม",
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 260,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 230,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 210,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 195,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 175,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 160,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 148,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 138,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        }
+      ]
+    },
+    {
+      "product_code": "PM-DESK-MAT",
+      "name_th": "แผ่นรองโต๊ะทำงานหนัง Vegan Leather พร้อมที่ชาร์จไว",
+      "srp_unit_price_thb": 590,
+      "factory_cost_thb": null,
+      "factory_match_status": "missing_factory_cost",
+      "factory_moq_qty": null,
+      "factory_reference": null,
+      "missing_cost_reason": "ไม่มี single-item cost ใน 3 ไฟล์ต้นทุนชุด 2026-08-12; ต้องขอ quote แยกชิ้นหรือหาไฟล์เพิ่ม",
+      "quantity_comparisons": [
+        {
+          "quantity": 1,
+          "selling_unit_price_thb": 590,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 10,
+          "selling_unit_price_thb": 530,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 20,
+          "selling_unit_price_thb": 490,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 50,
+          "selling_unit_price_thb": 450,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 100,
+          "selling_unit_price_thb": 410,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 300,
+          "selling_unit_price_thb": 375,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 500,
+          "selling_unit_price_thb": 345,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        },
+        {
+          "quantity": 1000,
+          "selling_unit_price_thb": 320,
+          "unit_profit_thb": null,
+          "order_profit_thb": null,
+          "margin_percent": null,
+          "markup_percent": null,
+          "below_factory_cost": null,
+          "calculation_status": "missing_factory_cost"
+        }
+      ]
+    }
+  ]
+}

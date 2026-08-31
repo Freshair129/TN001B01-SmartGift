@@ -1,0 +1,96 @@
+{
+  "asset_key": "S1033",
+  "asset_version": "v003",
+  "source_product_code": "S1033",
+  "canonical_product_id": null,
+  "mapping_status": "unresolved",
+  "registry_refs": {
+    "doc_id": null,
+    "pic_id": null,
+    "status": "unregistered",
+    "checked_by": "exact source SHA-256 search of local registry: no match, 2026-08-31"
+  },
+  "sources": [
+    {
+      "path": "data-pipeline/01_raw/03_product_catalogs/2026 new catalogue of power banks&car charger&wireless charger.pdf",
+      "sha256": "066037e15f855d22d9d08b7e3ed440224ee6ec67d03a0d2cadb7f24325b25456",
+      "page": 6,
+      "locator_status": "page-code-visually-verified-2026-08-31"
+    },
+    {
+      "path": "output/catalog-internal/refs/single-S1033-source.png",
+      "sha256": "13611d39277ec28aa19c4a18c975ebfa304dd23b5750409a59b204d1c79464a2",
+      "visual_origin": "original-catalog-crop"
+    }
+  ],
+  "dimensions": {
+    "unit": "meter",
+    "body_xyz": [
+      0.0693,
+      0.10640000000000001,
+      0.0171
+    ],
+    "assembled_bounds_xyz": [
+      0.1535265447392531,
+      0.11948161069142815,
+      0.03801399614005636
+    ],
+    "source": "PDF page 6 original image annotations; text also says 69*106*17MM (rounded); body only, cables/stand excluded",
+    "source_annotation_not_factory_measurement": true
+  },
+  "dimension_status": "source-annotated",
+  "estimated_regions": [
+    "rear stand angle and hinge depth",
+    "cable pose and cross section",
+    "underside",
+    "connector depth",
+    "material roughness"
+  ],
+  "geometry_sha256": "e518bde94aa4ded6d47737580dec0bb4dba41fafa3ff9533662cab9cedcc5bb0",
+  "glb_sha256": "53c627d127c0576fe0f750bb658815728bc7e8eb79dcbdec06f6fa72b39439c2",
+  "generator": {
+    "name": "smartgift-catalog3d",
+    "version": "0.1.0",
+    "three": "0.160.0",
+    "chromium": "149.0.7827.55",
+    "models_sha256": "5d54b2eba09f841fe8e4600a3a48685f9d468fe8ad49bbaf1ed5cb83584fc56a",
+    "renderer_sha256": "c93a0269fc0682d5dc82fda11d75a2c7abc7d5a4270b9f7d55199d56e141b724",
+    "method": "local-photo-referenced-parametric-mesh"
+  },
+  "review_status": "review-ready",
+  "rights_status": "pending-owner-review",
+  "public_ready": false,
+  "omitted_details": "unreadable tiny labels/certification marks and hidden mechanisms not fabricated",
+  "metrics": {
+    "triangles": 7712,
+    "meshes": 12,
+    "bounds": [
+      0.1535265447392531,
+      0.11948161069142815,
+      0.03801399614005636
+    ],
+    "glb_bytes": 546404
+  },
+  "renders": {
+    "front": {
+      "path": "preview.png",
+      "sha256": "cb291c77afe5d8ade02043ddc7fbfb9eb4ac08e5d2b0dfccc5a713e8a57fe500",
+      "visible_pixels": 69167
+    },
+    "back": {
+      "path": "preview-back.png",
+      "sha256": "70256b211567969bde580c11b7c80d5e055c7313e2175e842c911ad93ad835f0",
+      "visible_pixels": 188429
+    },
+    "side": {
+      "path": "preview-side.png",
+      "sha256": "c903bc165b3f0a1ac1872d17965869a739ba0e46bb1705a84d6c9482345e3e9c",
+      "visible_pixels": 94125
+    },
+    "straight": {
+      "path": "preview-straight.png",
+      "sha256": "48f7ee4529d5f272057d2eebe047d6083ef8c8e915cbedeb5a0ec393f62e8c2e",
+      "visible_pixels": 37357
+    }
+  }
+}

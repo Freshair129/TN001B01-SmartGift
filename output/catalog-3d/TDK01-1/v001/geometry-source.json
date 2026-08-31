@@ -1,0 +1,35 @@
+{
+  "code": "TDK01-1",
+  "product_master_id": "pm:PM-BOTTLE-LED",
+  "category_id": "cat:eco-friendly",
+  "kind": "led-bottle",
+  "body_mm": [
+    65,
+    230,
+    65
+  ],
+  "dimension_status": "estimated",
+  "colors": [
+    {
+      "name": "Black",
+      "hex": "#14171a"
+    },
+    {
+      "name": "Blue",
+      "hex": "#174b7b"
+    },
+    {
+      "name": "Red",
+      "hex": "#a42125"
+    }
+  ],
+  "generator": {
+    "name": "smartgift-catalog3d-evidence-estimated",
+    "version": "1.0.0",
+    "three": "0.160.0",
+    "chromium": "152.0.4191.53",
+    "models_sha256": "6dd3278cfccfd098d6fbc05d7543cad1e573ccfee372d1fab5a1f57ee12e943c",
+    "renderer_sha256": "e79f082f21a84182cea22fe50526a9b12cfb080222a866838fa08e7899b2dbba",
+    "method": "local-photo-referenced-estimated-parametric-mesh"
+  }
+}

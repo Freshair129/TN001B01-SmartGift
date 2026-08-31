@@ -1,0 +1,43 @@
+{
+  "geometry_sha256": "e518bde94aa4ded6d47737580dec0bb4dba41fafa3ff9533662cab9cedcc5bb0",
+  "default": "White",
+  "color_evidence": "PDF page 6 color list; RGB values are uncalibrated visual estimates",
+  "variants": [
+    {
+      "name": "White",
+      "slots": {
+        "shell": "#deded9",
+        "detail": "#cbcbc7",
+        "seam": "#999b97"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "Black",
+      "slots": {
+        "shell": "#232629",
+        "detail": "#343638",
+        "seam": "#111315"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "Gray",
+      "slots": {
+        "shell": "#8d9194",
+        "detail": "#73787c",
+        "seam": "#555a5d"
+      },
+      "finish_status": "estimated from source, not colorimetric"
+    },
+    {
+      "name": "metal colour",
+      "slots": {
+        "shell": "#acb0b1",
+        "detail": "#92989a",
+        "seam": "#71777a"
+      },
+      "finish_status": "color-only approximation; finish not verified"
+    }
+  ]
+}

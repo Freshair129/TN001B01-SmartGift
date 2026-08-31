@@ -1,0 +1,18 @@
+<!doctype html><meta charset="utf-8"><title>BW00-0 estimated render worker</title>
+<script type="importmap">{"imports":{"three":"/three/build/three.module.js","three/addons/":"/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { makeBW00EstimatedModel } from '/models-bw00-estimated.mjs';
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(1200,1200);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.85;document.body.append(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#eae9e6');scene.add(new THREE.HemisphereLight('#fff','#9f9c92',.7));const key=new THREE.DirectionalLight('#fff',2);key.position.set(-.15,.25,.23);scene.add(key);const camera=new THREE.PerspectiveCamera(29,1,.001,5);let current;
+const inspect=root=>{let triangles=0,meshes=0;root.updateMatrixWorld(true);root.traverse(node=>{if(node.isMesh){meshes++;triangles+=(node.geometry.index?node.geometry.index.count:node.geometry.attributes.position.count)/3;}});return {triangles,meshes,bounds:new THREE.Box3().setFromObject(root).getSize(new THREE.Vector3()).toArray()};};
+const base64=bytes=>{let value='';for(let i=0;i<bytes.length;i+=8192)value+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(value);};
+async function load(buffer){if(current){scene.remove(current);current.traverse(node=>{if(node.isMesh){node.geometry.dispose();node.material.dispose();}});}current=(await new GLTFLoader().parseAsync(buffer,'')).scene;scene.add(current);return inspect(current);}
+window.worker={
+ async exportModel(){const model=makeBW00EstimatedModel();const geometry=JSON.stringify(model.toJSON());const binary=await new GLTFExporter().parseAsync(model,{binary:true});return {glb:base64(new Uint8Array(binary)),geometry,metrics:inspect(model),imported:await load(binary)};},
+ async loadFile(url){const response=await fetch(url);if(!response.ok)throw Error('GLB reload failed');return load(await response.arrayBuffer());},
+ capture(view='front',slots=null){if(slots)current.traverse(node=>{if(node.isMesh&&slots[node.material.name])node.material.color.set(slots[node.material.name]);});const bounds=new THREE.Box3().setFromObject(current),center=bounds.getCenter(new THREE.Vector3()),size=bounds.getSize(new THREE.Vector3()),distance=Math.max(size.x,size.y)*3.5;const vectors={front:[.65,.3,1],back:[-.65,.3,-1],side:[1,.18,.04],straight:[0,.01,1]};camera.position.copy(center).add(new THREE.Vector3(...vectors[view]).normalize().multiplyScalar(distance));camera.lookAt(center);renderer.render(scene,camera);const gl=renderer.getContext(),pixels=new Uint8Array(1200*1200*4);gl.readPixels(0,0,1200,1200,gl.RGBA,gl.UNSIGNED_BYTE,pixels);let visible=0;for(let i=0;i<pixels.length;i+=4)if(Math.abs(pixels[i]-pixels[0])+Math.abs(pixels[i+1]-pixels[1])+Math.abs(pixels[i+2]-pixels[2])>45)visible++;return {png:renderer.domElement.toDataURL('image/png').split(',')[1],visible_pixels:visible,metrics:inspect(current)};}
+};window.ready=true;
+</script>

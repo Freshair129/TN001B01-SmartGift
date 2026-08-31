@@ -1,0 +1,8 @@
+{
+  "name": "smartgift-local-catalog3d",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test ../../tests/catalog3d.test.mjs" },
+  "dependencies": { "three": "0.160.0", "gltf-validator": "2.0.0-dev.3.10" }
+}

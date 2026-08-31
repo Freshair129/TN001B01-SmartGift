@@ -1,0 +1,35 @@
+{
+  "geometry_sha256": "16fbe13896464eba1a672c8871f29619fa44bebc66b92c939e9257386d2e480e",
+  "default": "White",
+  "color_evidence": "Factory workbook color names; RGB values and finish are visual estimates",
+  "variants": [
+    {
+      "name": "White",
+      "slots": {
+        "shell": "#e7e7e2"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Orange",
+      "slots": {
+        "shell": "#e9812e"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Red",
+      "slots": {
+        "shell": "#b82e35"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    },
+    {
+      "name": "Blue",
+      "slots": {
+        "shell": "#4277aa"
+      },
+      "finish_status": "estimated from source image; not colorimetric"
+    }
+  ]
+}
