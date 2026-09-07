@@ -1,0 +1,20 @@
+# SmartGift hero SG-1 - two clips from ONE shared first frame (HERO-VIDEO-BRAND-DIRECTION.md 2.1)
+#   west = receive (mouse left  -> slot videoRightUrl)
+#   east = discover (mouse right -> slot videoLeftUrl)
+output_prefix: outputs/sg1_west
+pipeline:
+  - fragment: wan5b_i2v
+    alias: west
+    inputs:
+      start_image: $asset.frame0_open_box_1280x704.png
+    params:
+      save_video_filename_prefix: "outputs/sg1_west"
+      clip_text_encode_positive_prompt_text: "Single continuous take, image-to-video. The provided frame is the exact first frame: an open SmartGift-orange gift box on a warm sand-stone surface under soft window light with slatted shadows, holding an ivory ribbed tumbler, an orange power bank and a white handheld fan. Slowly and at constant speed, a pair of hands in a plain charcoal sleeve enters from the bottom edge of the frame, one hand rests gently on the orange box rim, the other lifts the ivory tumbler a few centimetres out of its inset. The camera holds still with a very slow, linear downward tilt. The products keep their exact shape, colour and arrangement; photoreal, matte materials, warm brass highlights, no text."
+      clip_text_encode_negative_prompt_text: "cuts, jump cuts, montage, transitions, camera shake, handheld, fast jerky movement, flicker, sudden stop, text, watermark, logo overlay, bright white background, blurry, low resolution, cyan rim light, blue neon, cold white light, fashion model, human face, glossy black void, lens flare, bokeh balls, confetti, extra products, duplicated objects, invented labels, deformed hands, extra fingers, morphing objects, products changing shape or colour, 色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走"
+      wan22imagetovideolatent_width: 1280
+      wan22imagetovideolatent_height: 704
+      wan22imagetovideolatent_length: 97
+      create_video_fps: 24
+      ksampler_seed: 20260907
+      ksampler_steps: 20
+      ksampler_cfg: 5

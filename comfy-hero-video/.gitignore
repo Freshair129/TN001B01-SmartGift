@@ -1,0 +1,6 @@
+# machine-owned / large derived outputs — the scripts regenerate them
+outputs/
+.comfy/
+assets/mockups_cut/
+ref_wan5b.json
+__pycache__/

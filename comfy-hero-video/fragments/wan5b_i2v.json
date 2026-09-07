@@ -1,0 +1,293 @@
+{
+  "_fragment": {
+    "name": "wan5b_i2v",
+    "description": "Wan 2.2 5B TI2V decomposed from the Comfy template; start_image input added so a pushed asset drives image-to-video (SmartGift hero SG-1).",
+    "terminal": true,
+    "source": "ref_wan5b.json",
+    "inputs": {
+      "start_image": {
+        "type": "IMAGE",
+        "binds": "55.start_image"
+      }
+    },
+    "outputs": {},
+    "params": {
+      "load_diffusion_model_unet_name": {
+        "type": "STRING",
+        "binds": "37.unet_name",
+        "default": "wan2.2_ti2v_5B_fp16.safetensors"
+      },
+      "load_diffusion_model_weight_dtype": {
+        "type": "STRING",
+        "binds": "37.weight_dtype",
+        "default": "default"
+      },
+      "load_clip_clip_name": {
+        "type": "STRING",
+        "binds": "38.clip_name",
+        "default": "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+      },
+      "load_clip_type": {
+        "type": "STRING",
+        "binds": "38.type",
+        "default": "wan"
+      },
+      "load_clip_device": {
+        "type": "STRING",
+        "binds": "38.device",
+        "default": "default"
+      },
+      "load_vae_vae_name": {
+        "type": "STRING",
+        "binds": "39.vae_name",
+        "default": "wan2.2_vae.safetensors"
+      },
+      "create_video_fps": {
+        "type": "INT",
+        "binds": "57.fps",
+        "default": 24
+      },
+      "create_video_bit_depth": {
+        "type": "STRING",
+        "binds": "57.bit_depth",
+        "default": "auto"
+      },
+      "create_video_color_space": {
+        "type": "STRING",
+        "binds": "57.color_space",
+        "default": "sRGB"
+      },
+      "wan22imagetovideolatent_width": {
+        "type": "INT",
+        "binds": "55.width",
+        "default": 1280
+      },
+      "wan22imagetovideolatent_height": {
+        "type": "INT",
+        "binds": "55.height",
+        "default": 704
+      },
+      "wan22imagetovideolatent_length": {
+        "type": "INT",
+        "binds": "55.length",
+        "default": 121
+      },
+      "wan22imagetovideolatent_batch_size": {
+        "type": "INT",
+        "binds": "55.batch_size",
+        "default": 1
+      },
+      "clip_text_encode_negative_prompt_text": {
+        "type": "STRING",
+        "binds": "7.text",
+        "default": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走"
+      },
+      "clip_text_encode_positive_prompt_text": {
+        "type": "STRING",
+        "binds": "6.text",
+        "default": "Low contrast. In a retro 1970s-style subway station, a street musician plays in dim colors and rough textures. He wears an old jacket, playing guitar with focus. Commuters hurry by, and a small crowd gathers to listen. The camera slowly moves right, capturing the blend of music and city noise, with old subway signs and mottled walls in the background."
+      },
+      "ksampler_seed": {
+        "type": "INT",
+        "binds": "3.seed",
+        "default": 898471028164125
+      },
+      "ksampler_steps": {
+        "type": "INT",
+        "binds": "3.steps",
+        "default": 20
+      },
+      "ksampler_cfg": {
+        "type": "INT",
+        "binds": "3.cfg",
+        "default": 5
+      },
+      "ksampler_sampler_name": {
+        "type": "STRING",
+        "binds": "3.sampler_name",
+        "default": "uni_pc"
+      },
+      "ksampler_scheduler": {
+        "type": "STRING",
+        "binds": "3.scheduler",
+        "default": "simple"
+      },
+      "ksampler_denoise": {
+        "type": "INT",
+        "binds": "3.denoise",
+        "default": 1
+      },
+      "modelsamplingsd3_shift": {
+        "type": "INT",
+        "binds": "48.shift",
+        "default": 8
+      },
+      "save_video_filename_prefix": {
+        "type": "STRING",
+        "binds": "58.filename_prefix",
+        "default": "outputs/sg1"
+      }
+    }
+  },
+  "37": {
+    "inputs": {
+      "unet_name": "wan2.2_ti2v_5B_fp16.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "38": {
+    "inputs": {
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "wan",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "39": {
+    "inputs": {
+      "vae_name": "wan2.2_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "57": {
+    "inputs": {
+      "fps": 24,
+      "bit_depth": "auto",
+      "color_space": "sRGB",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create Video"
+    }
+  },
+  "55": {
+    "inputs": {
+      "width": 1280,
+      "height": 704,
+      "length": 121,
+      "batch_size": 1,
+      "vae": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "Wan22ImageToVideoLatent",
+    "_meta": {
+      "title": "Wan22ImageToVideoLatent"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+      "clip": [
+        "38",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "Low contrast. In a retro 1970s-style subway station, a street musician plays in dim colors and rough textures. He wears an old jacket, playing guitar with focus. Commuters hurry by, and a small crowd gathers to listen. The camera slowly moves right, capturing the blend of music and city noise, with old subway signs and mottled walls in the background.",
+      "clip": [
+        "38",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "3": {
+    "inputs": {
+      "seed": 898471028164125,
+      "steps": 20,
+      "cfg": 5,
+      "sampler_name": "uni_pc",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "48",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "48": {
+    "inputs": {
+      "shift": 8,
+      "model": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingSD3",
+    "_meta": {
+      "title": "ModelSamplingSD3"
+    }
+  },
+  "58": {
+    "inputs": {
+      "video": [
+        "57",
+        0
+      ],
+      "filename_prefix": "outputs/sg1",
+      "format": "mp4",
+      "format.codec": "h264"
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Save Video"
+    }
+  }
+}
