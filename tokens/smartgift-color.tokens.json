@@ -1,0 +1,132 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Smart Gift Thailand Color Tokens",
+    "source": "IMG_4363.jpeg",
+    "version": "1.0.0",
+    "note": "Core colors were sampled from the supplied raster logo. Intermediate scale steps are calibrated extensions for UI use."
+  },
+  "color": {
+    "$type": "color",
+    "orange": {
+      "50":  { "$value": "#FFF4EB" },
+      "100": { "$value": "#FFE5D1" },
+      "200": { "$value": "#FFC69E" },
+      "300": { "$value": "#FFA161" },
+      "400": { "$value": "#FF7B28" },
+      "500": { "$value": "#FC6203", "$description": "Primary orange sampled from the logo" },
+      "600": { "$value": "#D94E00" },
+      "700": { "$value": "#AD3C00" },
+      "800": { "$value": "#842F05" },
+      "900": { "$value": "#642608" },
+      "950": { "$value": "#361104" }
+    },
+    "gold": {
+      "50":  { "$value": "#FCF8EB" },
+      "100": { "$value": "#F7EDC8" },
+      "200": { "$value": "#EEDC92" },
+      "300": { "$value": "#E4C65D" },
+      "400": { "$value": "#D99F48", "$description": "Representative gold sampled from the ribbon and divider" },
+      "500": { "$value": "#C78A25" },
+      "600": { "$value": "#A96B19" },
+      "700": { "$value": "#875016" },
+      "800": { "$value": "#6E4018" },
+      "900": { "$value": "#5D3519" },
+      "950": { "$value": "#351B0B" }
+    },
+    "cocoa": {
+      "50":  { "$value": "#F7F5F3" },
+      "100": { "$value": "#ECE8E4" },
+      "200": { "$value": "#D9D0C9" },
+      "300": { "$value": "#BBAEA3" },
+      "400": { "$value": "#968475" },
+      "500": { "$value": "#786453" },
+      "600": { "$value": "#685544", "$description": "Primary dark brown sampled from the logo" },
+      "700": { "$value": "#574638" },
+      "800": { "$value": "#493B30" },
+      "900": { "$value": "#3E332A" },
+      "950": { "$value": "#211A15" }
+    },
+    "neutral": {
+      "0":   { "$value": "#FFFFFF" },
+      "50":  { "$value": "#FEFEFE", "$description": "Logo background" },
+      "100": { "$value": "#F9F6F3" },
+      "200": { "$value": "#EEE9E4" },
+      "300": { "$value": "#D9D2CC" },
+      "400": { "$value": "#AAA099" },
+      "500": { "$value": "#7A7069" },
+      "600": { "$value": "#5F5650" },
+      "700": { "$value": "#48413C" },
+      "800": { "$value": "#302C29" },
+      "900": { "$value": "#211E1C" },
+      "950": { "$value": "#12100F" }
+    }
+  },
+  "semantic": {
+    "$type": "color",
+    "brand": {
+      "primary": { "$value": "{color.orange.500}" },
+      "primary-hover": { "$value": "{color.orange.600}" },
+      "primary-active": { "$value": "{color.orange.700}" },
+      "accent": { "$value": "{color.gold.400}" },
+      "accent-strong": { "$value": "{color.gold.600}" },
+      "signature-dark": { "$value": "{color.cocoa.600}" }
+    },
+    "background": {
+      "canvas": { "$value": "{color.neutral.50}" },
+      "surface": { "$value": "{color.neutral.0}" },
+      "subtle": { "$value": "{color.neutral.100}" },
+      "brand-subtle": { "$value": "{color.orange.50}" },
+      "inverse": { "$value": "{color.cocoa.900}" }
+    },
+    "text": {
+      "primary": { "$value": "{color.cocoa.900}" },
+      "secondary": { "$value": "{color.cocoa.600}" },
+      "muted": { "$value": "{color.neutral.500}" },
+      "brand": { "$value": "{color.orange.700}", "$description": "Accessible orange for normal-size text on a light background" },
+      "on-brand": { "$value": "{color.neutral.0}" },
+      "inverse": { "$value": "{color.neutral.0}" }
+    },
+    "icon": {
+      "default": { "$value": "{color.cocoa.600}" },
+      "brand": { "$value": "{color.orange.500}" },
+      "accent": { "$value": "{color.gold.500}" },
+      "on-brand": { "$value": "{color.neutral.0}" }
+    },
+    "border": {
+      "subtle": { "$value": "{color.neutral.200}" },
+      "default": { "$value": "{color.neutral.300}" },
+      "strong": { "$value": "{color.cocoa.400}" },
+      "brand": { "$value": "{color.orange.500}" },
+      "focus": { "$value": "{color.orange.700}" }
+    },
+    "action": {
+      "primary-background": { "$value": "{color.orange.700}" },
+      "primary-background-hover": { "$value": "{color.orange.800}" },
+      "primary-foreground": { "$value": "{color.neutral.0}" },
+      "secondary-background": { "$value": "{color.neutral.0}" },
+      "secondary-foreground": { "$value": "{color.cocoa.700}" },
+      "secondary-border": { "$value": "{color.cocoa.400}" },
+      "disabled-background": { "$value": "{color.neutral.200}" },
+      "disabled-foreground": { "$value": "{color.neutral.500}" }
+    }
+  },
+  "gradient": {
+    "brand-orange": {
+      "$type": "gradient",
+      "$value": [
+        { "color": "{color.orange.400}", "position": 0 },
+        { "color": "{color.orange.500}", "position": 0.52 },
+        { "color": "{color.orange.600}", "position": 1 }
+      ]
+    },
+    "brand-gold": {
+      "$type": "gradient",
+      "$value": [
+        { "color": "{color.gold.600}", "position": 0 },
+        { "color": "{color.gold.300}", "position": 0.48 },
+        { "color": "{color.gold.500}", "position": 1 }
+      ]
+    }
+  }
+}

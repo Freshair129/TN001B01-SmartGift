@@ -3,8 +3,8 @@
   "tenant_id": "Org-EtohGroup",
   "business_id": "SmartGift",
   "operating_entity": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)",
-  "catalog_version": "v1.3.0-2026.08.31-23c4c524",
-  "generated_at": "2026-08-31T12:47:55.643274+00:00",
+  "catalog_version": "v1.3.0-2026.09.02-b6b899f8",
+  "generated_at": "2026-09-02T03:26:56.694958+00:00",
   "data_integrity_hashes": {
     "smartgift_catalog_master": {
       "path": "data-pipeline/02_prepared/smartgift_catalog_master.json",
@@ -13,8 +13,8 @@
     },
     "pricelist_master": {
       "path": "data-pipeline/02_prepared/pricelist_master.json",
-      "size_bytes": 6243688,
-      "sha256": "d2a7f09a495cecf96d01006df232267737175d7d85b1b28b5e0a63ab476fa153"
+      "size_bytes": 6413701,
+      "sha256": "ab18b2a228bb38a11a586cd21f6e10ba50f018d90f830f64cfe5104396a26cde"
     },
     "factory_costs": {
       "path": "data-pipeline/02_prepared/factory_costs.json",
@@ -23,13 +23,13 @@
     },
     "catalog_media": {
       "path": "public/data/catalog_media.json",
-      "size_bytes": 57584,
-      "sha256": "990b553c2806d93a39e74801fe276d6dc40d323e930ffa74b240be9b10f918b1"
+      "size_bytes": 58872,
+      "sha256": "d19c2a52ec2d2a3f535d502b933ce0d5c3cfcf17764d1f815b931505622f92a4"
     },
     "pricelist_public": {
       "path": "public/data/pricelist_public.json",
-      "size_bytes": 1453533,
-      "sha256": "23c4c524afdcb27389217b648466c1c778548be14672f983b88f63386d9b2432"
+      "size_bytes": 1485973,
+      "sha256": "b6b899f82d8d9e20a789c46f248caf280c857aed90b7235d22330531a2d7c809"
     }
   },
   "multi_file_index": [
@@ -1640,13 +1640,13 @@
   "published_public_hashes": {
     "pricelist_public": {
       "path": "/data/pricelist_public.json",
-      "size_bytes": 1453533,
-      "sha256": "23c4c524afdcb27389217b648466c1c778548be14672f983b88f63386d9b2432"
+      "size_bytes": 1485973,
+      "sha256": "b6b899f82d8d9e20a789c46f248caf280c857aed90b7235d22330531a2d7c809"
     },
     "catalog_media": {
       "path": "/data/catalog_media.json",
-      "size_bytes": 57584,
-      "sha256": "990b553c2806d93a39e74801fe276d6dc40d323e930ffa74b240be9b10f918b1"
+      "size_bytes": 58872,
+      "sha256": "d19c2a52ec2d2a3f535d502b933ce0d5c3cfcf17764d1f815b931505622f92a4"
     }
   }
 }

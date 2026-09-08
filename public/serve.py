@@ -44,6 +44,12 @@ class SmartGiftHTTPHandler(SimpleHTTPRequestHandler):
             self.path = "/index.html"
             super().do_GET()
         else:
+            # ให้ URL แบบไม่มีนามสกุลใช้ได้เหมือน cleanUrls ของ Vercel
+            # (/catalog-offline -> catalog-offline.html) ลิงก์ในหน้าจะได้ไม่ 404 ตอนรันเครื่องตัวเอง
+            if "." not in os.path.basename(path) and os.path.isfile(
+                os.path.join(PUBLIC_DIR, path.lstrip("/") + ".html")
+            ):
+                self.path = path + ".html"
             super().do_GET()
 
     def serve_json_file(self, filepath):

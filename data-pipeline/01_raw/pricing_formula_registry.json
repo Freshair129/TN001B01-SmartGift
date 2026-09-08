@@ -3,14 +3,14 @@
   "business_id": "SmartGift",
   "vault_id": "vlt-catalog-product",
   "created_at": "2026-08-30T01:28:12.056804+00:00",
-  "last_updated": "2026-08-30T01:28:12.058242+00:00",
-  "active_formula_sha256": "f4473230f10b59133936974a0cacf84bbe84865d61db76553d8cc2a58ba635fc",
-  "total_ingested_versions": 1,
+  "last_updated": "2026-09-02T03:26:56.610507+00:00",
+  "active_formula_sha256": "00dcf08960844753293366803e7ab14c33f49a1111bb2a5f59456496989b97d5",
+  "total_ingested_versions": 2,
   "formulas": {
     "pricing_rules_formula.yaml": {
       "filename": "pricing_rules_formula.yaml",
-      "current_sha256": "f4473230f10b59133936974a0cacf84bbe84865d61db76553d8cc2a58ba635fc",
-      "versions_count": 1,
+      "current_sha256": "00dcf08960844753293366803e7ab14c33f49a1111bb2a5f59456496989b97d5",
+      "versions_count": 2,
       "history": [
         {
           "version_id": "v-20260830T012812Z-f44732",
@@ -18,6 +18,13 @@
           "archived_at": "2026-08-30T01:28:12.057060+00:00",
           "archive_path": "data-pipeline/01_raw/archive/pricing_formulas\\20260830T012812Z_f4473230f1_pricing_rules_formula.yaml",
           "size_bytes": 3351
+        },
+        {
+          "version_id": "v-20260902T032656Z-00dcf0",
+          "sha256": "00dcf08960844753293366803e7ab14c33f49a1111bb2a5f59456496989b97d5",
+          "archived_at": "2026-09-02T03:26:56.609474+00:00",
+          "archive_path": "data-pipeline/01_raw/archive/pricing_formulas\\20260902T032656Z_00dcf08960_pricing_rules_formula.yaml",
+          "size_bytes": 3471
         }
       ]
     }

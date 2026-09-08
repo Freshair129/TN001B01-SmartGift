@@ -1,0 +1,120 @@
+# ==============================================================================
+# 📊 SmartGift Landed Cost & Pricing Formula Specification
+# Contract: smartgift://b2b/pricing-rules-formula/v1
+# Authority: Controlled by Zuri-AI UI Control Plane & Pricing Calculator Engine
+# ==============================================================================
+
+version: "2026.08.30-v1"
+contract_reference: "smartgift://b2b/pricing-rules-formula/v1"
+last_updated: "2026-08-30T08:28:00+07:00"
+updated_by: "zuri_ai_pricing_control_plane"
+tenant_id: "Org-EtohGroup"
+business_id: "SmartGift"
+vault_id: "vlt-catalog-product"
+
+currency_exchange_rates:
+  cny_to_thb: 5.00
+  usd_to_thb: 32.50
+
+logistics_density_and_freight:
+  density_threshold_kg_per_cbm: 400.0
+  min_chargeable_cbm: 0.01
+  sea_threshold_cbm: 5.0
+  seasonality_peak_months: [9, 10, 11, 12, 1]
+  auto_force_truck_in_peak: true
+  inland_china_freight:
+    rate_cny_per_cbm: 150.0
+    min_charge_cny: 50.0
+
+profit_floors_thb:
+  small_order_floor: 5000.0
+  standard_floor: 3000.0
+
+small_order_factors:
+  - max_qty: 20
+    sof: 1.5
+  - max_qty: 50
+    sof: 1.4
+  - max_qty: 100
+    sof: 1.3
+  - max_qty: 300
+    sof: 1.2
+  - max_qty: 499
+    sof: 1.1
+  - max_qty: .inf
+    sof: 1.0
+
+markup_bands_standard:
+  - max_cost_thb: 250.0
+    markup_multiplier: 3.00
+  - max_cost_thb: 350.0
+    markup_multiplier: 2.73
+  - max_cost_thb: 500.0
+    markup_multiplier: 2.62
+  - max_cost_thb: 650.0
+    markup_multiplier: 2.45
+  - max_cost_thb: .inf
+    markup_multiplier: 2.14
+
+corporate_quote_profile:
+  name: "องค์กร"
+  flat_markup: 1.47
+  anchor_qty: 1000
+  breaks: [100, 300, 500, 1000]
+  factors: [0.80, 0.77, 0.75, 0.73]
+  package_profit_guardrails:
+    min_package_profit_thb: 20000.0
+    target_package_profit_thb: 30000.0
+
+srp_benchmark_rules:
+  srp_adder_thb: 1530.0
+  median_category_margin_percent: 38.0
+  moq_breaks: [10, 20, 50, 100, 300, 500, 1000]
+
+shipping_rate_matrix:
+  guangzhou_shenzhen:
+    truck:
+      general:
+        ELITE: { cbm: 5900, kg: 15 }
+        GOLD: { cbm: 6400, kg: 16 }
+        SILVER: { cbm: 6900, kg: 18 }
+        MEMBER: { cbm: 7400, kg: 19 }
+      electronic_tisi:
+        ELITE: { cbm: 6400, kg: 16 }
+        GOLD: { cbm: 6900, kg: 18 }
+        SILVER: { cbm: 7400, kg: 19 }
+        MEMBER: { cbm: 7900, kg: 20 }
+    sea:
+      general:
+        ELITE: { cbm: 3900, kg: 10 }
+        GOLD: { cbm: 4400, kg: 11 }
+        SILVER: { cbm: 4900, kg: 13 }
+        MEMBER: { cbm: 5400, kg: 14 }
+      electronic_tisi:
+        ELITE: { cbm: 4400, kg: 11 }
+        GOLD: { cbm: 4900, kg: 13 }
+        SILVER: { cbm: 5400, kg: 14 }
+        MEMBER: { cbm: 5900, kg: 15 }
+  yiwu:
+    truck:
+      general:
+        ELITE: { cbm: 6400, kg: 16 }
+        GOLD: { cbm: 6900, kg: 18 }
+        SILVER: { cbm: 7400, kg: 19 }
+        MEMBER: { cbm: 7900, kg: 20 }
+      electronic_tisi:
+        ELITE: { cbm: 6900, kg: 18 }
+        GOLD: { cbm: 7400, kg: 19 }
+        SILVER: { cbm: 7900, kg: 20 }
+        MEMBER: { cbm: 8400, kg: 21 }
+    sea:
+      general:
+        ELITE: { cbm: 3900, kg: 10 }
+        GOLD: { cbm: 4400, kg: 11 }
+        SILVER: { cbm: 4900, kg: 13 }
+        MEMBER: { cbm: 5400, kg: 14 }
+      electronic_tisi:
+        ELITE: { cbm: 4400, kg: 11 }
+        GOLD: { cbm: 4900, kg: 13 }
+        SILVER: { cbm: 5400, kg: 14 }
+        MEMBER: { cbm: 5900, kg: 15 }

@@ -9,24 +9,24 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #fafafa;
-      --panel: #fff;
-      --soft: #f5f7f8;
-      --ink: #0e1116;
-      --muted: #5d6972;
-      --line: #e5e7eb;
-      --strong: #c9d0d5;
-      --accent: #08798a;
-      --accent-visual: #0ea5b7;
-      --accent-soft: #e3f5f7;
-      --good: #187044;
-      --good-bg: #e3f6eb;
-      --warn: #8a5c00;
-      --warn-bg: #fff1d1;
-      --bad: #a8323d;
-      --bad-bg: #fde8ea;
-      --gold: #b38600;
-      --gold-bg: #fef8e7;
+      --bg: #F9F6F3;
+      --panel: #FFFFFF;
+      --soft: #F7F5F3;
+      --ink: #3E332A;
+      --muted: #7A7069;
+      --line: #EEE9E4;
+      --strong: #D9D2CC;
+      --accent: #AD3C00;
+      --accent-visual: #FC6203;
+      --accent-soft: #FFF4EB;
+      --good: #186B45;
+      --good-bg: #E6F4EC;
+      --warn: #875016;
+      --warn-bg: #F7EDC8;
+      --bad: #A8323D;
+      --bad-bg: #FBE9EA;
+      --gold: #A96B19;
+      --gold-bg: #FCF8EB;
     }
     * { box-sizing: border-box; }
     body {
@@ -38,7 +38,7 @@
     button, input, select { font: inherit; }
     a { color: var(--accent); }
     button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
-      outline: 3px solid #78b9cb;
+      outline: 3px solid #AD3C00;
       outline-offset: 3px;
     }
     .shell {
@@ -241,8 +241,8 @@
       min-height: 620px;
       overflow: hidden;
       border-radius: 14px;
-      background: radial-gradient(circle at 50% 25%, #1e293b 0%, #0a0f16 100%);
-      color: #e2e8f0;
+      background: radial-gradient(circle at 50% 25%, #3E332A 0%, #12100F 100%);
+      color: #F9F6F3;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -261,21 +261,21 @@
     .glass-orb-cyan {
       width: 260px;
       height: 260px;
-      background: #08798a;
+      background: #AD3C00;
       top: -40px;
       left: 20%;
     }
     .glass-orb-gold {
       width: 220px;
       height: 220px;
-      background: #d4af37;
+      background: #D99F48;
       bottom: -30px;
       right: 15%;
     }
     .glass-orb-blue {
       width: 280px;
       height: 280px;
-      background: #3b82f6;
+      background: #685544;
       top: 40%;
       left: -50px;
       opacity: 0.3;
@@ -310,7 +310,7 @@
       inset: -30px;
       border: 1px dashed rgba(56, 214, 223, 0.2);
       border-radius: 20px;
-      background: radial-gradient(circle, rgba(8, 121, 138, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(173, 60, 0, 0.1) 0%, transparent 70%);
       box-shadow: 0 0 40px rgba(0,0,0,0.8);
     }
     .glass-slab-base {
@@ -367,14 +367,14 @@
     }
     .glass-product-card:hover, .glass-product-card:focus-visible {
       background: rgba(30, 41, 59, 0.9);
-      border-color: #38d6df;
+      border-color: #FF7B28;
       transform: translateZ(40px) scale(1.06);
       box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 25px rgba(56, 214, 223, 0.45);
       z-index: 10;
     }
     .glass-product-card.selected-active {
-      border-color: #d4af37;
-      background: rgba(8, 121, 138, 0.35);
+      border-color: #D99F48;
+      background: rgba(173, 60, 0, 0.35);
       box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 30px rgba(212, 175, 55, 0.6);
       transform: translateZ(45px) scale(1.08);
       z-index: 12;
@@ -402,7 +402,7 @@
     .prod-sku {
       font-size: 10px;
       font-weight: 800;
-      color: #38d6df;
+      color: #FF7B28;
       letter-spacing: 0.05em;
     }
     .prod-details strong {
@@ -415,7 +415,7 @@
     }
     .prod-spec {
       font-size: 10px;
-      color: #94a3b8;
+      color: #BBAEA3;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -426,7 +426,7 @@
       padding: 3px 7px;
       border-radius: 999px;
       background: rgba(56, 214, 223, 0.2);
-      color: #38d6df;
+      color: #FF7B28;
       border: 1px solid rgba(56, 214, 223, 0.4);
     }
     .glass-custom-plate {
@@ -447,7 +447,7 @@
     .laser-text {
       font-size: 11px;
       font-weight: 800;
-      color: #d4af37;
+      color: #D99F48;
       letter-spacing: 0.08em;
     }
     .glass-slab-lid {
@@ -476,12 +476,12 @@
     .emblem-sg {
       font-size: 14px;
       font-weight: 900;
-      color: #d4af37;
+      color: #D99F48;
       letter-spacing: 0.15em;
     }
     .emblem-sub {
       font-size: 9px;
-      color: #cbd5e1;
+      color: #D9D0C9;
       letter-spacing: 0.05em;
     }
     .glass-controls-bar {
@@ -501,7 +501,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #cbd5e1;
+      color: #D9D0C9;
       font-size: 12px;
     }
     .slider-group label {
@@ -510,11 +510,11 @@
       align-items: baseline;
     }
     .slider-group strong {
-      color: #38d6df;
+      color: #FF7B28;
       font-size: 13px;
     }
     .slider-group input[type=range] {
-      accent-color: #38d6df;
+      accent-color: #FF7B28;
       cursor: pointer;
       width: 160px;
     }
@@ -527,7 +527,7 @@
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #e2e8f0;
+      color: #F9F6F3;
       font-size: 11px;
       font-weight: 700;
       cursor: pointer;
@@ -535,21 +535,21 @@
     }
     .glass-pill-btn:hover {
       background: rgba(255, 255, 255, 0.16);
-      border-color: #38d6df;
-      color: #38d6df;
+      border-color: #FF7B28;
+      color: #FF7B28;
     }
     .glass-pill-btn[aria-pressed=true] {
-      background: rgba(8, 121, 138, 0.35);
-      border-color: #38d6df;
-      color: #38d6df;
+      background: rgba(173, 60, 0, 0.35);
+      border-color: #FF7B28;
+      color: #FF7B28;
       box-shadow: 0 0 12px rgba(56, 214, 223, 0.3);
     }
     .glass-pill-btn.active-pulse {
       animation: pulseGlow 1.5s infinite alternate;
     }
     @keyframes pulseGlow {
-      from { box-shadow: 0 0 4px #38d6df; }
-      to { box-shadow: 0 0 16px #38d6df; }
+      from { box-shadow: 0 0 4px #FF7B28; }
+      to { box-shadow: 0 0 16px #FF7B28; }
     }
     .box-schematic {
       position: relative;
@@ -582,9 +582,9 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
     .category-slot[aria-pressed=true] {
-      border-color: #38d6df;
-      background: rgba(8, 121, 138, 0.25);
-      box-shadow: 0 0 0 1px #38d6df, 0 8px 24px rgba(8, 121, 138, 0.2);
+      border-color: #FF7B28;
+      background: rgba(173, 60, 0, 0.25);
+      box-shadow: 0 0 0 1px #FF7B28, 0 8px 24px rgba(173, 60, 0, 0.2);
     }
     .slot-header {
       display: flex;
@@ -604,7 +604,7 @@
       padding: 0 8px;
       border-radius: 999px;
       background: rgba(56, 214, 223, 0.18);
-      color: #38d6df;
+      color: #FF7B28;
       font-size: 11px;
       font-weight: 800;
     }
@@ -617,7 +617,7 @@
     .slot-body p {
       margin: 0;
       font-size: 12px;
-      color: #94a3b8;
+      color: #BBAEA3;
       line-height: 1.4;
     }
     .slot-signatures {
@@ -632,7 +632,7 @@
       padding: 2px 7px;
       border-radius: 5px;
       background: rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
+      color: #D9D0C9;
     }
     .category-bar-list {
       display: flex;
@@ -755,7 +755,7 @@
       display: inline-flex;
       padding: 3px 9px;
       border-radius: 999px;
-      background: #edf1f3;
+      background: #EEE9E4;
       color: var(--muted);
       font-size: 11px;
       font-weight: 800;
@@ -1018,10 +1018,10 @@
       padding: 18px;
       border-radius: 12px;
       color: #fff;
-      background: radial-gradient(circle at 75% 15%, rgba(255,255,255,.28), transparent 32%), linear-gradient(145deg, #194d56, #0b1824 72%);
+      background: radial-gradient(circle at 75% 15%, rgba(255,255,255,.28), transparent 32%), linear-gradient(145deg, #574638, #211A15 72%);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.22);
     }
-    .expo-ad.new-year { background: radial-gradient(circle at 78% 18%, rgba(255,231,151,.36), transparent 34%), linear-gradient(145deg, #3a3b63, #10182d 72%); }
+    .expo-ad.new-year { background: radial-gradient(circle at 78% 18%, rgba(255,231,151,.36), transparent 34%), linear-gradient(145deg, #6E4018, #351B0B 72%); }
     .expo-ad::after {
       content: "✦";
       position: absolute;
@@ -2560,9 +2560,19 @@
     // schema IDs, BOM provenance and price/cost readiness without changing the
     // customer-facing catalog source.
     const fetchJson = url => fetch(url).then(r => r.ok ? r.json() : Promise.reject(new Error(url)));
+    // /api/* is only a thin projection over ./data, so fall back to the files
+    // directly — that lets the back office run on a plain password-protected
+    // static host with no Node runtime and no PHP.
+    const customerSafe = raw => raw && ({
+      ...raw,
+      canonical_products: raw.canonical_products || raw.product_masters,
+      top_level_categories: raw.top_level_categories || raw.portfolio_catalogs,
+      corporate_bundles: raw.corporate_bundles || [],
+    });
     Promise.all([
       fetchJson("/api/catalog").catch(() => null),
-      fetchJson("/api/pricelist").catch(() => null),
+      fetchJson("/api/pricelist")
+        .catch(() => fetchJson("./data/pricelist_public.json").then(customerSafe).catch(() => null)),
       fetchJson("/api/media").catch(() => fetchJson("./data/catalog_media.json").catch(() => null)),
     ])
       .then(([catalog, pricelist, media]) => {

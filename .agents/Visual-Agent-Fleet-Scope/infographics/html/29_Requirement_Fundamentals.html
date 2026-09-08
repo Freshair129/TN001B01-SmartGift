@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>Requirement คืออะไร ? หัวใจของการพัฒนา — ZURI Anime Signal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102650;--ink:#15233b;--ember:#ed7b0b;--yellow:#ffd65b;--cream:#fffaf0;--paper:#fffefa;--blue:#3784e8;--sky:#dff2ff;--green:#4bb978;--mint:#dff6e8;--pink:#ff8198;--rose:#ffe2e8;--violet:#8b72df;--lav:#eee8ff;--line:#18345f}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{position:fixed;inset:0;width:1200px;height:1200px;overflow:hidden;background:#15171c;color:var(--ink);font-family:'IBM Plex Sans Thai','Segoe UI',sans-serif}
+.sheet{--accent:var(--blue);--pale:var(--sky);position:fixed;inset:0;width:1200px;height:1200px;padding:16px 18px;background:var(--paper);border:4px solid var(--navy);display:grid;grid-template-rows:42px 236px 118px 446px 202px 54px;gap:8px;overflow:hidden}
+.sheet.process{--accent:var(--ember);--pale:#fff0cf}.sheet.decision{--accent:var(--violet);--pale:var(--lav)}.sheet.case{--accent:#dc4253;--pale:var(--rose)}
+.sheet:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(237,123,11,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(237,123,11,.08) 1px,transparent 1px);background-size:56px 56px;opacity:.55;pointer-events:none}
+.sheet:after{content:"✦";position:absolute;right:24px;top:62px;color:var(--ember);font-size:34px;transform:rotate(12deg)}
+.sheet>*{position:relative;z-index:1}
+.mast{display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--navy);padding:0 8px 7px}
+.logo{font:800 22px/1 Manrope,sans-serif;letter-spacing:8px;color:var(--navy)}.logo:after{content:"";display:inline-block;width:7px;height:7px;background:var(--ember);margin-left:1px;vertical-align:top}
+.mantra{font:800 12px/1 Manrope,sans-serif;letter-spacing:1.2px;color:var(--navy)}.mantra strong{color:var(--ember)}
+.hero{display:grid;grid-template-columns:112px minmax(0,1fr) 430px;gap:12px;align-items:stretch}
+.day-tag{align-self:start;margin:12px 0 0 6px;background:var(--navy);color:white;border:3px solid var(--navy);box-shadow:5px 6px 0 var(--yellow);padding:10px 6px;text-align:center;transform:rotate(-3deg);clip-path:polygon(3% 8%,98% 0,94% 92%,0 100%)}
+.day-tag small{display:block;font:800 12px Manrope,sans-serif;letter-spacing:1px}.day-tag b{font:800 46px/1 Manrope,sans-serif}.day-tag span{display:block;font:800 8px/1.3 Manrope,sans-serif;color:var(--yellow);margin-top:7px;letter-spacing:.8px}
+.hero-copy{padding:18px 3px 0;position:relative}
+.eyebrow{display:inline-block;background:var(--yellow);border:2px solid var(--navy);border-radius:999px;padding:5px 10px;font:800 9px Manrope,sans-serif;letter-spacing:1.1px;transform:rotate(-1deg)}
+h1{font-size:34px;line-height:1.12;letter-spacing:-.9px;font-weight:800;margin-top:12px;max-width:570px}h1 .blue-highlight{color:var(--accent)}h1 .red-highlight{color:var(--ember)}
+.subtitle{font-size:13px;line-height:1.5;margin-top:9px;color:#485978;max-width:550px}.subtitle strong{color:var(--ember)}
+.hero-copy:after{content:"///";position:absolute;left:8px;bottom:13px;color:var(--accent);font:800 19px Manrope,sans-serif;letter-spacing:5px}
+.anime-scene{position:relative;background:white;border:3px solid var(--navy);border-radius:22px 8px 22px 8px;overflow:hidden;box-shadow:7px 7px 0 var(--pale)}
+.anime-scene img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.scene-label{position:absolute;left:12px;bottom:11px;background:var(--navy);color:#fff;border:2px solid white;border-radius:999px;padding:5px 10px;font-size:9px;font-weight:700;box-shadow:2px 2px 0 var(--ember)}
+.scene-label b{color:var(--yellow);margin-right:5px}
+.story-strip{display:grid;grid-template-columns:1.25fr .85fr 1fr;gap:8px}
+.story-card{border:2.5px solid var(--navy);background:white;border-radius:16px;padding:9px 12px;box-shadow:4px 4px 0 var(--pale);position:relative;overflow:hidden}
+.story-card h2,.story-card h3{font-size:12px;line-height:1.3;margin-bottom:7px}.story-label{display:inline-block;background:var(--accent);color:white;padding:3px 9px;border-radius:999px;font:800 8px Manrope,sans-serif;letter-spacing:1px;margin-bottom:5px}
+.strategy ul{display:grid;grid-template-columns:1fr 1fr;gap:4px 13px;list-style:none}
+.strategy li{display:grid;grid-template-columns:17px 1fr;gap:5px;font-size:8.7px;line-height:1.25}.strategy li span{width:15px;height:15px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--navy);display:flex;align-items:center;justify-content:center;font:800 7px Manrope,sans-serif}
+.speech{background:var(--pale)}.speech p{font-size:9.4px;line-height:1.38;font-weight:600}.speech:after{content:"";position:absolute;right:18px;bottom:-13px;border:10px solid transparent;border-top-color:var(--navy);transform:rotate(-12deg)}
+.principles{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 9px}
+.principles li{display:grid;grid-template-columns:16px 1fr;gap:4px;font-size:8.5px;line-height:1.22}.principles li span{color:var(--green);font-weight:900}
+.modules{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:10px;padding:8px 4px 5px;min-height:0}
+.module{--card:#e8f3ff;position:relative;border:2.5px solid var(--navy);border-radius:17px 7px 17px 7px;background:var(--card);padding:9px 11px 8px 84px;box-shadow:5px 5px 0 rgba(16,38,80,.12);overflow:visible}
+.module-2,.module-5{--card:#fff0ce}.module-3,.module-6{--card:#e8f7ed}.decision .module-2,.decision .module-5{--card:#f0e9ff}.case .module-1,.case .module-4{--card:#ffe5e9}
+.module-top{position:absolute;left:10px;top:10px;width:62px;height:62px;border-radius:50%;background:white;border:2px solid var(--navy);display:flex;align-items:center;justify-content:center}
+.module-icon{width:42px;height:42px;color:var(--accent)}.module-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.module-no{position:absolute;right:-5px;top:-6px;width:23px;height:23px;border:2px solid var(--navy);border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font:800 10px Manrope,sans-serif}
+.module h3{font:800 13px/1.2 Manrope,'IBM Plex Sans Thai',sans-serif;color:var(--navy);margin:3px 0 8px;border-bottom:2px dashed rgba(16,38,80,.24);padding-bottom:6px}
+.module ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:5px 8px}
+.module li{font-size:9.4px;line-height:1.25;padding-left:12px;position:relative}.module li:before{content:"";position:absolute;left:0;top:4px;width:6px;height:6px;background:var(--accent);border:1px solid var(--navy);transform:rotate(45deg)}
+.step-arrow{display:none}
+.process .modules{grid-template-columns:repeat(6,1fr);grid-template-rows:1fr;gap:8px;align-items:center;padding-top:20px;padding-bottom:16px}
+.process .module{height:360px;padding:88px 10px 10px}
+.process .module-top{left:50%;transform:translateX(-50%);top:14px}
+.process .module h3{font-size:10.5px;text-align:center;min-height:34px}
+.process .module ul{grid-template-columns:1fr;gap:8px}.process .module li{font-size:9.1px}
+.process .step-arrow{display:block;position:absolute;right:-17px;top:49%;z-index:4;width:27px;height:27px;border:2px solid var(--navy);border-radius:50%;background:var(--yellow);font:800 19px/22px Manrope,sans-serif;text-align:center;font-style:normal}
+.process .module:last-child .step-arrow{display:none}
+.lower{display:grid;grid-template-columns:1.02fr .96fr 1.05fr;gap:9px}
+.panel{position:relative;border:2.5px solid var(--navy);border-radius:16px 7px 16px 7px;background:#fff;padding:32px 11px 8px;box-shadow:5px 5px 0 var(--pale);overflow:hidden}
+.panel-label{position:absolute;left:-2px;top:-2px;background:var(--navy);color:white;border-radius:12px 0 12px 0;padding:6px 13px;font:800 9px Manrope,sans-serif;letter-spacing:1px}
+.skills{display:grid;gap:5px}.skill{display:grid;grid-template-columns:64px 1fr;gap:7px;align-items:start;border-bottom:1px dashed #9caac1;padding-bottom:4px}.skill:last-child{border:0}
+.skill b{font:800 8px Manrope,sans-serif;color:var(--navy);background:var(--yellow);border:1.5px solid var(--navy);border-radius:999px;text-align:center;padding:4px 2px}.skill h4{font-size:9px;line-height:1.2}.skill p{font-size:7.8px;line-height:1.25;color:#53617a;margin-top:2px}
+.loop{display:grid;grid-template-columns:1fr 1fr;gap:6px;position:relative}.loop:after{content:"↻";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border:2px solid var(--navy);border-radius:50%;background:var(--yellow);font:800 24px/30px Manrope,sans-serif;text-align:center}
+.loop-step{display:grid;grid-template-columns:23px 1fr;gap:5px;align-items:start;border:1.5px solid var(--navy);border-radius:10px;background:var(--pale);padding:7px 5px;min-height:64px}.loop-step span{width:21px;height:21px;border:1.5px solid var(--navy);border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font:800 9px Manrope,sans-serif}.loop-step b{display:block;font-size:7.8px;line-height:1.15}.loop-step small{display:block;font-size:7.4px;line-height:1.2;color:#59667a;margin-top:3px}
+.focus{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:5px 9px}.focus li{font-size:8.4px;line-height:1.25;padding-left:15px;position:relative}.focus li:before{content:"★";position:absolute;left:0;color:var(--ember)}
+.quote{margin-top:7px;padding:7px 9px;border:2px solid var(--navy);border-radius:10px;background:var(--yellow);font-size:8.2px;line-height:1.25;font-weight:600;transform:rotate(-.5deg)}
+.footer{display:grid;grid-template-columns:126px 1fr 110px;gap:12px;align-items:center;background:var(--navy);color:white;border-radius:11px;padding:0 13px;border-left:10px solid var(--ember)}.footer b{font:800 9px Manrope,sans-serif;letter-spacing:1px;color:var(--yellow)}.takeaway{font-size:10px;line-height:1.3;font-weight:600}.source{text-align:right;font:700 7px/1.35 Manrope,sans-serif;color:#cad5e8}
+</style>
+</head>
+<body>
+<main class="sheet system">
+  <header class="mast"><div class="logo">ZURI</div><div class="mantra">SEE THE WHOLE BUSINESS. <strong>MOVE WITH CLARITY.</strong></div></header>
+  <section class="hero">
+    <div class="day-tag"><small>DAY</small><b>29</b><span>TEAM SYSTEM MAP</span></div>
+    <div class="hero-copy"><div class="eyebrow">AI-NATIVE BUSINESS OPERATING SYSTEM</div><h1>Requirement คืออะไร ? <span class="blue-highlight">หัวใจสำคัญ</span> <span class="red-highlight">ของการพัฒนา</span></h1><div class="subtitle">สะพานเชื่อมระหว่าง <strong>"ความต้องการทางธุรกิจ"</strong> กับระบบเทคโนโลยีที่ใช้งานได้จริง</div></div>
+    <figure class="anime-scene"><img src="../assets/anime/anime-team-master.png" alt="Original ZURI anime team scene"><figcaption class="scene-label"><b>ZURI × น้องวางใจ</b>ทุกบทบาทเห็นเป้าหมายเดียวกัน</figcaption></figure>
+  </section>
+  <section class="story-strip">
+    <article class="story-card strategy"><span class="story-label">MISSION</span><h2>1. THE ESSENCE OF REQUIREMENTS : แก่นแท้ของความต้องการ</h2><ul><li><span>1</span>Requirement คือข้อกำหนด เงื่อนไข และคุณสมบัติที่ระบบต้องมีเพื่อตอบสนองต่อเป้าหมายของผู้ใช้และธุรกิจ</li><li><span>2</span>เป็นข้อตกลงและสัญญาใจร่วมกันระหว่างฝั่งธุรกิจ (Business), ผู้ใช้งาน (Users), และทีมเทคนิค (Dev & QA)</li><li><span>3</span>เป็นพิมพ์เขียว (Blueprint) สำหรับการออกแบบ UI, การเขียนโค้ด, การวางฐานข้อมูล และการทดสอบระบบ</li><li><span>4</span>หาก Requirement ผิดพลาดตั้งแต่เริ่มต้น ทุกอย่างที่สร้างตามมาจะผิดพลาดและสูญเปล่าทั้งหมด</li></ul></article>
+    <article class="story-card speech"><span class="story-label">ZURI SIGNAL</span><p>️ <strong>Foundation of Success</strong><br>Requirement ที่ยอดเยี่ยมจะช่วยให้ทีมสร้างของได้ถูกต้องตั้งแต่ครั้งแรก ไม่เสียเวลาสร้างสิ่งที่ไม่ตอบโจทย์</p></article>
+    <article class="story-card"><span class="story-label">TEAM CHECK</span><ul class="principles"><li><span>✓</span><div>Functional : ระบบทำอะไรได้บ้าง</div></li><li><span>✓</span><div>Non-Functional : คุณภาพระบบ</div></li><li><span>✓</span><div>Business Rules : กฎทางธุรกิจ</div></li><li><span>✓</span><div>User Constraints : ข้อจำกัด</div></li><li><span>✓</span><div>ชัดเจน ถูกต้อง ไม่ขัดแย้ง</div></li></ul></article>
+  </section>
+  <section class="modules"><article class="module module-1"><div class="module-top"><div class="module-icon"><svg viewBox="0 0 64 64"><path d="M16 8h25l9 9v39H16z"/><path d="M41 8v11h11M23 29h20M23 38h20M23 47h13"/></svg></div><div class="module-no">1</div></div><h3>1. BUSINESS GOAL</h3><ul><li>วัตถุประสงค์ธุรกิจ</li><li>ปัญหาที่ต้องการแก้</li><li>ผลลัพธ์ที่คาดหวัง</li><li>Success Metrics</li></ul><i class="step-arrow">→</i></article><article class="module module-2"><div class="module-top"><div class="module-icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22"/><circle cx="32" cy="32" r="12"/><circle cx="32" cy="32" r="3"/><path d="M48 16l8-8M46 10h10v10"/></svg></div><div class="module-no">2</div></div><h3>2. USER PERSONA</h3><ul><li>ใครเป็นผู้ใช้งาน?</li><li>บทบาทและหน้าที่</li><li>บริบทการใช้งาน</li><li>ความต้องการหลัก</li></ul><i class="step-arrow">→</i></article><article class="module module-3"><div class="module-top"><div class="module-icon"><svg viewBox="0 0 64 64"><rect x="7" y="11" width="18" height="14" rx="3"/><rect x="39" y="39" width="18" height="14" rx="3"/><path d="M25 18h10v28h4M30 42l5 5 5-5"/></svg></div><div class="module-no">3</div></div><h3>3. FUNCTIONAL SPEC</h3><ul><li>ระบบต้องทำอะไรได้</li><li>ฟังก์ชันการทำงาน</li><li>User Flow ชัดเจน</li><li>Input Output</li></ul><i class="step-arrow">→</i></article><article class="module module-4"><div class="module-top"><div class="module-icon"><svg viewBox="0 0 64 64"><rect x="8" y="12" width="48" height="34" rx="4"/><path d="M23 54h18M32 46v8M16 22h32M18 30l7 7 9-11 12 9"/></svg></div><div class="module-no">4</div></div><h3>4. NON-FUNCTIONAL</h3><ul><li>ความเร็ว (Speed)</li><li>ความปลอดภัย (Security)</li><li>ความเสถียร (Reliability)</li><li>การรองรับโหลด (Scale)</li></ul><i class="step-arrow">→</i></article><article class="module module-5"><div class="module-top"><div class="module-icon"><svg viewBox="0 0 64 64"><rect x="13" y="8" width="38" height="48" rx="4"/><path d="M22 21l4 4 7-8M37 22h7M22 35l4 4 7-8M37 36h7M22 49h22"/></svg></div><div class="module-no">5</div></div><h3>5. BUSINESS RULES</h3><ul><li>สูตรคำนวณราคา</li><li>เงื่อนไขโปรโมชัน</li><li>สิทธิ์การเข้าถึงข้อมูล</li><li>กฎหมายที่เกี่ยวข้อง</li></ul><i class="step-arrow">→</i></article><article class="module module-6"><div class="module-top"><div class="module-icon"><svg viewBox="0 0 64 64"><path d="M32 7l21 8v14c0 14-8 23-21 28C19 52 11 43 11 29V15z"/><path d="M22 32l7 7 14-16"/></svg></div><div class="module-no">6</div></div><h3>6. ACCEPTANCE CRITERIA</h3><ul><li>Given / When / Then</li><li>เกณฑ์การยอมรับงาน</li><li>เงื่อนไขความถูกต้อง</li><li>พร้อมสำหรับการเทส</li></ul><i class="step-arrow">→</i></article></section>
+  <section class="lower">
+    <article class="panel"><span class="panel-label">CHARACTER × CAPABILITY</span><div class="skills"><div class="skill"><b>Functional</b><div><h4>Functional Requirements (ระบบทำอะไรได้)</h4><p>เช่น สมัครสมาชิก, ค้นหาสินค้า, ชำระเงินผ่านบัตรเครดิต, ออกใบกำกับภาษี, อนุมัติเอกสาร</p></div></div><div class="skill"><b>Non-Functional</b><div><h4>Non-Functional Requirements (คุณภาพของระบบ)</h4><p>เช่น หน้าจอโหลดภายใน 2 วินาที, เข้ารหัสข้อมูลด้วย AES-256, ระบบ Uptime 99.9%, รองรับ 10,000 CCU</p></div></div><div class="skill"><b>Constraints</b><div><h4>Constraint & Assumption (ข้อจำกัดและสมมติฐาน)</h4><p>เช่น ต้องทำงานบน Chrome และ Safari, ต้องเชื่อมต่อกับระบบ ERP เดิม, ต้องรองรับ PDPA</p></div></div></div></article>
+    <article class="panel"><span class="panel-label">STORY FLOW</span><div class="loop"><div class="loop-step s1"><span>1</span><div><b>1. BUSINESS NEED</b><small>ทำความเข้าใจทำไมต้องทำ</small></div></div><div class="loop-step s2"><span>2</span><div><b>2. FUNCTIONAL SPEC</b><small>กำหนดสิ่งที่ระบบต้องทำ</small></div></div><div class="loop-step s3"><span>3</span><div><b>3. NON-FUNCTIONAL</b><small>️ ระบุมาตรฐานคุณภาพ</small></div></div><div class="loop-step s4"><span>4</span><div><b>4. ACCEPTANCE CRITERIA</b><small>กำหนดเกณฑ์วัดผลจริง</small></div></div></div></article>
+    <article class="panel"><span class="panel-label">CLARITY CHECK</span><ul class="focus"><li>Clear & Unambiguous : ชัดเจน ตรงไปตรงมา ตีความได้แบบเดียว</li><li>Complete : ข้อมูลครบถ้วน ทั้งกรณีปกติและกรณีผิดพลาด</li><li>Consistent : ไม่ขัดแย้งกับ Requirement ข้ออื่นในระบบ</li><li>Verifiable & Testable : สามารถทดสอบและพิสูจน์ผลลัพธ์ได้จริง</li></ul><div class="quote">Requirement ที่ดีคือรากฐานที่มั่นคงที่สุดของโครงการซอฟต์แวร์ทุกประเภท</div></article>
+  </section>
+  <footer class="footer"><b>KEY TAKEAWAY</b><div class="takeaway">Requirement = ปัญหาธุรกิจ (Need) + ฟังก์ชันระบบ (Functional) + มาตรฐานคุณภาพ (Non-Functional) + เกณฑ์วัดผล (AC)</div><div class="source">ZURI / 29<br>Requirement/Requirement.md</div></footer>
+</main>
+</body>
+</html>

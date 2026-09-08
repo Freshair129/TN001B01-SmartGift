@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZURI Signal System Infographics Gallery (30 Posters)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800;900&family=Mali:wght@500;600;700&family=Kanit:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand-amber: #E8820C;
+  --brand-amber-dark: #B86A08;
+  --brand-amber-light: #FFF8F0;
+  --slate-900: #0F172A;
+  --slate-800: #1E293B;
+  --slate-700: #334155;
+  --slate-100: #F1F5F9;
+  --slate-50: #F8FAFC;
+  --border-color: #CBD5E1;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Prompt', -apple-system, sans-serif;
+  background-color: #F1F5F9;
+  color: var(--slate-900);
+  padding: 32px 24px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 36px 40px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+  border: 2px solid #334155;
+}
+
+.hero-left h1 {
+  font-family: 'Kanit', sans-serif;
+  font-size: 38px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.hero-left h1 span { color: var(--brand-amber); }
+.hero-left p {
+  font-size: 16px;
+  color: #94A3B8;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 16px;
+}
+.stat-box {
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 16px 22px;
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Kanit', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--brand-amber);
+}
+.stat-label {
+  font-size: 13px;
+  color: #E2E8F0;
+  margin-top: 2px;
+}
+
+.filter-bar {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.02);
+}
+
+.search-input {
+  flex: 1;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s;
+}
+.search-input:focus {
+  border-color: var(--brand-amber);
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.15);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.gallery-card {
+  background: #FFFFFF;
+  border: 2.5px solid #0F172A;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 4px 6px 0px #0F172A;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 10px 0px #0F172A;
+}
+
+.card-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #E2E8F0;
+  cursor: pointer;
+  overflow: hidden;
+  border-bottom: 2.5px solid #0F172A;
+}
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.card-img-wrapper:hover img {
+  transform: scale(1.02);
+}
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.card-img-wrapper:hover .img-overlay {
+  opacity: 1;
+}
+
+.card-body {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  background: #FFFDF9;
+}
+
+.card-tag {
+  font-family: 'Kanit', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: #78350F;
+  background: #FEF08A;
+  border: 1px solid #FACC15;
+  padding: 3px 10px;
+  border-radius: 6px;
+  align-self: flex-start;
+}
+
+.card-title {
+  font-family: 'Kanit', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--slate-900);
+  line-height: 1.3;
+}
+
+.card-meta {
+  font-size: 12px;
+  color: #64748B;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.btn-download, .btn-view-html {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 2px solid #0F172A;
+  transition: all 0.2s;
+}
+.btn-download {
+  background: #0F172A;
+  color: #FFFFFF;
+  box-shadow: 2px 2px 0px #0F172A;
+}
+.btn-download:hover {
+  background: var(--brand-amber);
+  border-color: var(--brand-amber);
+}
+.btn-view-html {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  box-shadow: 2px 2px 0px #0F172A;
+}
+.btn-view-html:hover {
+  background: #DBEAFE;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.modal.active { display: flex; }
+.modal-content {
+  max-width: 90vh;
+  max-height: 90vh;
+  position: relative;
+  background: #FFFFFF;
+  border: 3px solid #0F172A;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+.modal-img { width: 100%; height: 100%; display: block; }
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #0F172A;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="hero-left">
+      <h1>ZURI <span>Master Posters</span> Gallery</h1>
+      <p>คลังภาพสรุปความรู้ระดับ High-Grade Comic / Illustrated Cheat-Sheets (1200x1200px) สำหรับเอกสารทั้ง 30 ไฟล์ใน Fleet Scope ออกแบบด้วยลายเส้นและการจัดวางระดับพรีเมียมตามมาตรฐานสากล</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="stat-number">30</div>
+        <div class="stat-label">ภาพโปสเตอร์ทั้งหมด</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">ครอบคลุมทุกไฟล์</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <input type="text" class="search-input" id="searchBox" placeholder="🔍 ค้นหาหัวข้อ, หมวดหมู่ หรือชื่อไฟล์ (เช่น AC, Agile, Backlog, UAT, Case Study, MoSCoW)..." onkeyup="filterCards()">
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+    
+    <div class="gallery-card" data-title="โครงสร้างเอกสารที่ ba / po ควรมี ?" data-tag="zuri master guide">
+      <div class="card-img-wrapper" onclick="openModal('01_BA_Doc_for_BA_PO.png', 'โครงสร้างเอกสารที่ BA / PO ควรมี ?')">
+        <img src="01_BA_Doc_for_BA_PO.png" alt="โครงสร้างเอกสารที่ BA / PO ควรมี ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">ZURI MASTER GUIDE</div>
+        <h3 class="card-title">01. โครงสร้างเอกสารที่ BA / PO ควรมี ?</h3>
+        <div class="card-meta">
+          <span>📄 BA/Doc for BA-PO.md</span>
+          <span>💾 330.5 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="01_BA_Doc_for_BA_PO.png" download="01_BA_Doc_for_BA_PO.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/01_BA_Doc_for_BA_PO.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="เอกสารและสิ่งส่งมอบที่ po ต้องถือ" data-tag="po value master">
+      <div class="card-img-wrapper" onclick="openModal('02_PO_Doc_for_BA_PO.png', 'เอกสารและสิ่งส่งมอบที่ PO ต้องถือ')">
+        <img src="02_PO_Doc_for_BA_PO.png" alt="เอกสารและสิ่งส่งมอบที่ PO ต้องถือ" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">PO VALUE MASTER</div>
+        <h3 class="card-title">02. เอกสารและสิ่งส่งมอบที่ PO ต้องถือ</h3>
+        <div class="card-meta">
+          <span>📄 PO/Doc for BA-PO.md</span>
+          <span>💾 345.3 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="02_PO_Doc_for_BA_PO.png" download="02_PO_Doc_for_BA_PO.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/02_PO_Doc_for_BA_PO.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="acceptance criteria เขียนยังไงให้ทีมไม่งง ?" data-tag="ac master guide">
+      <div class="card-img-wrapper" onclick="openModal('03_Acceptance_Criteria.png', 'Acceptance Criteria เขียนยังไงให้ทีมไม่งง ?')">
+        <img src="03_Acceptance_Criteria.png" alt="Acceptance Criteria เขียนยังไงให้ทีมไม่งง ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">AC MASTER GUIDE</div>
+        <h3 class="card-title">03. Acceptance Criteria เขียนยังไงให้ทีมไม่งง ?</h3>
+        <div class="card-meta">
+          <span>📄 Acceptance Criteria.md</span>
+          <span>💾 319.6 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="03_Acceptance_Criteria.png" download="03_Acceptance_Criteria.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/03_Acceptance_Criteria.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="ใน agile มีใครบ้าง ? แต่ละคนทำหน้าที่อะไร ?" data-tag="agile mindset">
+      <div class="card-img-wrapper" onclick="openModal('04_Agile_Mindset.png', 'ใน Agile มีใครบ้าง ? แต่ละคนทำหน้าที่อะไร ?')">
+        <img src="04_Agile_Mindset.png" alt="ใน Agile มีใครบ้าง ? แต่ละคนทำหน้าที่อะไร ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">AGILE MINDSET</div>
+        <h3 class="card-title">04. ใน Agile มีใครบ้าง ? แต่ละคนทำหน้าที่อะไร ?</h3>
+        <div class="card-meta">
+          <span>📄 Agile.md</span>
+          <span>💾 345.5 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="04_Agile_Mindset.png" download="04_Agile_Mindset.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/04_Agile_Mindset.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="agile ceremonies 5 พิธีกรรมที่ต้องรู้ !" data-tag="scrum events">
+      <div class="card-img-wrapper" onclick="openModal('05_Agile_Ceremonies.png', 'Agile Ceremonies 5 พิธีกรรมที่ต้องรู้ !')">
+        <img src="05_Agile_Ceremonies.png" alt="Agile Ceremonies 5 พิธีกรรมที่ต้องรู้ !" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">SCRUM EVENTS</div>
+        <h3 class="card-title">05. Agile Ceremonies 5 พิธีกรรมที่ต้องรู้ !</h3>
+        <div class="card-meta">
+          <span>📄 Agile Ceremonies.md</span>
+          <span>💾 302.9 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="05_Agile_Ceremonies.png" download="05_Agile_Ceremonies.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/05_Agile_Ceremonies.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="จัด backlog ยังไง ไม่ให้รกและหลุดเป้า ?" data-tag="backlog mastery">
+      <div class="card-img-wrapper" onclick="openModal('06_Backlog_Management.png', 'จัด Backlog ยังไง ไม่ให้รกและหลุดเป้า ?')">
+        <img src="06_Backlog_Management.png" alt="จัด Backlog ยังไง ไม่ให้รกและหลุดเป้า ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">BACKLOG MASTERY</div>
+        <h3 class="card-title">06. จัด Backlog ยังไง ไม่ให้รกและหลุดเป้า ?</h3>
+        <div class="card-meta">
+          <span>📄 backlog.md</span>
+          <span>💾 303.8 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="06_Backlog_Management.png" download="06_Backlog_Management.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/06_Backlog_Management.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="checklist ก่อนส่งงานให้ dev (dor)" data-tag="definition of ready">
+      <div class="card-img-wrapper" onclick="openModal('07_Checklist_Dev.png', 'Checklist ก่อนส่งงานให้ Dev (DoR)')">
+        <img src="07_Checklist_Dev.png" alt="Checklist ก่อนส่งงานให้ Dev (DoR)" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">DEFINITION OF READY</div>
+        <h3 class="card-title">07. Checklist ก่อนส่งงานให้ Dev (DoR)</h3>
+        <div class="card-meta">
+          <span>📄 Checklist-Dev.md</span>
+          <span>💾 327.9 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="07_Checklist_Dev.png" download="07_Checklist_Dev.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/07_Checklist_Dev.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="moscow method จัดลำดับงานแบบมือโปร" data-tag="moscow method">
+      <div class="card-img-wrapper" onclick="openModal('08_MoSCoW_Method.png', 'MoSCoW Method จัดลำดับงานแบบมือโปร')">
+        <img src="08_MoSCoW_Method.png" alt="MoSCoW Method จัดลำดับงานแบบมือโปร" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">MoSCoW METHOD</div>
+        <h3 class="card-title">08. MoSCoW Method จัดลำดับงานแบบมือโปร</h3>
+        <div class="card-meta">
+          <span>📄 MoSCoW.md</span>
+          <span>💾 328.2 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="08_MoSCoW_Method.png" download="08_MoSCoW_Method.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/08_MoSCoW_Method.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="prioritization ทำไมต้องเลือก และเลือกอย่างไร ?" data-tag="priority matrix">
+      <div class="card-img-wrapper" onclick="openModal('09_Prioritization_Techniques.png', 'Prioritization ทำไมต้องเลือก และเลือกอย่างไร ?')">
+        <img src="09_Prioritization_Techniques.png" alt="Prioritization ทำไมต้องเลือก และเลือกอย่างไร ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">PRIORITY MATRIX</div>
+        <h3 class="card-title">09. Prioritization ทำไมต้องเลือก และเลือกอย่างไร ?</h3>
+        <div class="card-meta">
+          <span>📄 Prioritization.md</span>
+          <span>💾 328.0 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="09_Prioritization_Techniques.png" download="09_Prioritization_Techniques.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/09_Prioritization_Techniques.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="backlog refinement เตรียมงานยังไงให้ลื่นไหล ?" data-tag="grooming & slicing">
+      <div class="card-img-wrapper" onclick="openModal('10_Backlog_Refinement.png', 'Backlog Refinement เตรียมงานยังไงให้ลื่นไหล ?')">
+        <img src="10_Backlog_Refinement.png" alt="Backlog Refinement เตรียมงานยังไงให้ลื่นไหล ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">GROOMING & SLICING</div>
+        <h3 class="card-title">10. Backlog Refinement เตรียมงานยังไงให้ลื่นไหล ?</h3>
+        <div class="card-meta">
+          <span>📄 refinement.md</span>
+          <span>💾 312.6 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="10_Backlog_Refinement.png" download="10_Backlog_Refinement.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/10_Backlog_Refinement.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="บทบาทหน้าที่ pm, po, ba, dev, qa ใครทำอะไร ?" data-tag="raci matrix">
+      <div class="card-img-wrapper" onclick="openModal('11_Roles_Responsibilities.png', 'บทบาทหน้าที่ PM, PO, BA, Dev, QA ใครทำอะไร ?')">
+        <img src="11_Roles_Responsibilities.png" alt="บทบาทหน้าที่ PM, PO, BA, Dev, QA ใครทำอะไร ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">RACI MATRIX</div>
+        <h3 class="card-title">11. บทบาทหน้าที่ PM, PO, BA, Dev, QA ใครทำอะไร ?</h3>
+        <div class="card-meta">
+          <span>📄 respon.md</span>
+          <span>💾 351.1 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="11_Roles_Responsibilities.png" download="11_Roles_Responsibilities.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/11_Roles_Responsibilities.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="rice scoring คิดคะแนน priority แบบมีเหตุผล" data-tag="rice model">
+      <div class="card-img-wrapper" onclick="openModal('12_RICE_Scoring.png', 'RICE Scoring คิดคะแนน Priority แบบมีเหตุผล')">
+        <img src="12_RICE_Scoring.png" alt="RICE Scoring คิดคะแนน Priority แบบมีเหตุผล" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">RICE MODEL</div>
+        <h3 class="card-title">12. RICE Scoring คิดคะแนน Priority แบบมีเหตุผล</h3>
+        <div class="card-meta">
+          <span>📄 RICE.md</span>
+          <span>💾 327.7 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="12_RICE_Scoring.png" download="12_RICE_Scoring.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/12_RICE_Scoring.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="roadmap ต่างจาก timeline อย่างไร ?" data-tag="roadmap guide">
+      <div class="card-img-wrapper" onclick="openModal('13_Product_Roadmap.png', 'Roadmap ต่างจาก Timeline อย่างไร ?')">
+        <img src="13_Product_Roadmap.png" alt="Roadmap ต่างจาก Timeline อย่างไร ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">ROADMAP GUIDE</div>
+        <h3 class="card-title">13. Roadmap ต่างจาก Timeline อย่างไร ?</h3>
+        <div class="card-meta">
+          <span>📄 roadmap.md</span>
+          <span>💾 305.2 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="13_Product_Roadmap.png" download="13_Product_Roadmap.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/13_Product_Roadmap.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="scope creep ปัญหางานบวม แก้อย่างไร ?" data-tag="scope governance">
+      <div class="card-img-wrapper" onclick="openModal('14_Scope_Creep.png', 'Scope Creep ปัญหางานบวม แก้อย่างไร ?')">
+        <img src="14_Scope_Creep.png" alt="Scope Creep ปัญหางานบวม แก้อย่างไร ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">SCOPE GOVERNANCE</div>
+        <h3 class="card-title">14. Scope Creep ปัญหางานบวม แก้อย่างไร ?</h3>
+        <div class="card-meta">
+          <span>📄 Scope-Creep.md</span>
+          <span>💾 315.2 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="14_Scope_Creep.png" download="14_Scope_Creep.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/14_Scope_Creep.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="sprint ใน agile ทำงานอย่างไรให้เกิดผลจริง ?" data-tag="sprint execution">
+      <div class="card-img-wrapper" onclick="openModal('15_Sprint_Execution.png', 'Sprint ใน Agile ทำงานอย่างไรให้เกิดผลจริง ?')">
+        <img src="15_Sprint_Execution.png" alt="Sprint ใน Agile ทำงานอย่างไรให้เกิดผลจริง ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">SPRINT EXECUTION</div>
+        <h3 class="card-title">15. Sprint ใน Agile ทำงานอย่างไรให้เกิดผลจริง ?</h3>
+        <div class="card-meta">
+          <span>📄 sprint.md</span>
+          <span>💾 308.5 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="15_Sprint_Execution.png" download="15_Sprint_Execution.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/15_Sprint_Execution.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="test case กับ acceptance criteria ต่างกันยังไง ?" data-tag="qa quality suite">
+      <div class="card-img-wrapper" onclick="openModal('16_Test_Case_vs_AC.png', 'Test Case กับ Acceptance Criteria ต่างกันยังไง ?')">
+        <img src="16_Test_Case_vs_AC.png" alt="Test Case กับ Acceptance Criteria ต่างกันยังไง ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">QA QUALITY SUITE</div>
+        <h3 class="card-title">16. Test Case กับ Acceptance Criteria ต่างกันยังไง ?</h3>
+        <div class="card-meta">
+          <span>📄 test case.md</span>
+          <span>💾 330.0 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="16_Test_Case_vs_AC.png" download="16_Test_Case_vs_AC.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/16_Test_Case_vs_AC.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="uat คืออะไร ? เตรียมตัวอย่างไรก่อน go-live ?" data-tag="uat readiness">
+      <div class="card-img-wrapper" onclick="openModal('17_UAT_Preparation.png', 'UAT คืออะไร ? เตรียมตัวอย่างไรก่อน Go-Live ?')">
+        <img src="17_UAT_Preparation.png" alt="UAT คืออะไร ? เตรียมตัวอย่างไรก่อน Go-Live ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">UAT READINESS</div>
+        <h3 class="card-title">17. UAT คืออะไร ? เตรียมตัวอย่างไรก่อน Go-Live ?</h3>
+        <div class="card-meta">
+          <span>📄 UAT.md</span>
+          <span>💾 311.6 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="17_UAT_Preparation.png" download="17_UAT_Preparation.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/17_UAT_Preparation.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="user story เขียนยังไงให้ทรงพลัง ?" data-tag="user story master">
+      <div class="card-img-wrapper" onclick="openModal('18_User_Story_Mastery.png', 'User Story เขียนยังไงให้ทรงพลัง ?')">
+        <img src="18_User_Story_Mastery.png" alt="User Story เขียนยังไงให้ทรงพลัง ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">USER STORY MASTER</div>
+        <h3 class="card-title">18. User Story เขียนยังไงให้ทรงพลัง ?</h3>
+        <div class="card-meta">
+          <span>📄 User Story.md</span>
+          <span>💾 352.5 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="18_User_Story_Mastery.png" download="18_User_Story_Mastery.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/18_User_Story_Mastery.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="กฎเหล็กการสื่อสารระหว่าง ba กับ dev" data-tag="collaboration rules">
+      <div class="card-img-wrapper" onclick="openModal('19_BA_Dev_Communication.png', 'กฎเหล็กการสื่อสารระหว่าง BA กับ Dev')">
+        <img src="19_BA_Dev_Communication.png" alt="กฎเหล็กการสื่อสารระหว่าง BA กับ Dev" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">COLLABORATION RULES</div>
+        <h3 class="card-title">19. กฎเหล็กการสื่อสารระหว่าง BA กับ Dev</h3>
+        <div class="card-meta">
+          <span>📄 BA/comunication-rule01-BA-DEV.md</span>
+          <span>💾 354.4 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="19_BA_Dev_Communication.png" download="19_BA_Dev_Communication.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/19_BA_Dev_Communication.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="case 01: ลูกค้าขอเปลี่ยนงานกลาง sprint รับมืออย่างไร ?" data-tag="case study 01">
+      <div class="card-img-wrapper" onclick="openModal('20_Case_01_Mid_Sprint_Change.png', 'CASE 01: ลูกค้าขอเปลี่ยนงานกลาง Sprint รับมืออย่างไร ?')">
+        <img src="20_Case_01_Mid_Sprint_Change.png" alt="CASE 01: ลูกค้าขอเปลี่ยนงานกลาง Sprint รับมืออย่างไร ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">CASE STUDY 01</div>
+        <h3 class="card-title">20. CASE 01: ลูกค้าขอเปลี่ยนงานกลาง Sprint รับมืออย่างไร ?</h3>
+        <div class="card-meta">
+          <span>📄 case-study/CASE-01.md</span>
+          <span>💾 320.1 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="20_Case_01_Mid_Sprint_Change.png" download="20_Case_01_Mid_Sprint_Change.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/20_Case_01_Mid_Sprint_Change.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="case 02: งานติดคอขวด โปรเจกต์จ่อ delay แก้อย่างไร ?" data-tag="case study 02">
+      <div class="card-img-wrapper" onclick="openModal('21_Case_02_Project_Delay.png', 'CASE 02: งานติดคอขวด โปรเจกต์จ่อ Delay แก้อย่างไร ?')">
+        <img src="21_Case_02_Project_Delay.png" alt="CASE 02: งานติดคอขวด โปรเจกต์จ่อ Delay แก้อย่างไร ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">CASE STUDY 02</div>
+        <h3 class="card-title">21. CASE 02: งานติดคอขวด โปรเจกต์จ่อ Delay แก้อย่างไร ?</h3>
+        <div class="card-meta">
+          <span>📄 case-study/CASE-02.md</span>
+          <span>💾 321.3 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="21_Case_02_Project_Delay.png" download="21_Case_02_Project_Delay.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/21_Case_02_Project_Delay.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="case 03: requirement ไม่ชัด ทีมตีความคนละภาพ" data-tag="case study 03">
+      <div class="card-img-wrapper" onclick="openModal('22_Case_03_Ambiguous_Requirement.png', 'CASE 03: Requirement ไม่ชัด ทีมตีความคนละภาพ')">
+        <img src="22_Case_03_Ambiguous_Requirement.png" alt="CASE 03: Requirement ไม่ชัด ทีมตีความคนละภาพ" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">CASE STUDY 03</div>
+        <h3 class="card-title">22. CASE 03: Requirement ไม่ชัด ทีมตีความคนละภาพ</h3>
+        <div class="card-meta">
+          <span>📄 case-study/CASE-03.md</span>
+          <span>💾 317.4 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="22_Case_03_Ambiguous_Requirement.png" download="22_Case_03_Ambiguous_Requirement.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/22_Case_03_Ambiguous_Requirement.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="case 06: ai agent ส่งงานไม่ตรงสเปก ตรวจสอบอย่างไร ?" data-tag="ai governance">
+      <div class="card-img-wrapper" onclick="openModal('23_Case_06_AI_Agent_Audit.png', 'CASE 06: AI Agent ส่งงานไม่ตรงสเปก ตรวจสอบอย่างไร ?')">
+        <img src="23_Case_06_AI_Agent_Audit.png" alt="CASE 06: AI Agent ส่งงานไม่ตรงสเปก ตรวจสอบอย่างไร ?" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">AI GOVERNANCE</div>
+        <h3 class="card-title">23. CASE 06: AI Agent ส่งงานไม่ตรงสเปก ตรวจสอบอย่างไร ?</h3>
+        <div class="card-meta">
+          <span>📄 case-study/CASE-06.md</span>
+          <span>💾 327.8 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="23_Case_06_AI_Agent_Audit.png" download="23_Case_06_AI_Agent_Audit.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/23_Case_06_AI_Agent_Audit.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="6 ความเสี่ยงสำคัญที่ pm ต้องเฝ้าระวังและรับมือ !" data-tag="risk management">
+      <div class="card-img-wrapper" onclick="openModal('24_PM_Risk_Management.png', '6 ความเสี่ยงสำคัญที่ PM ต้องเฝ้าระวังและรับมือ !')">
+        <img src="24_PM_Risk_Management.png" alt="6 ความเสี่ยงสำคัญที่ PM ต้องเฝ้าระวังและรับมือ !" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">RISK MANAGEMENT</div>
+        <h3 class="card-title">24. 6 ความเสี่ยงสำคัญที่ PM ต้องเฝ้าระวังและรับมือ !</h3>
+        <div class="card-meta">
+          <span>📄 PM/PM-req.md</span>
+          <span>💾 331.3 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="24_PM_Risk_Management.png" download="24_PM_Risk_Management.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/24_PM_Risk_Management.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="po ตัดสินใจจากอะไร ? 5 ปัจจัยเลือกงานเข้า product" data-tag="po decision matrix">
+      <div class="card-img-wrapper" onclick="openModal('25_PO_Decision_Making.png', 'PO ตัดสินใจจากอะไร ? 5 ปัจจัยเลือกงานเข้า Product')">
+        <img src="25_PO_Decision_Making.png" alt="PO ตัดสินใจจากอะไร ? 5 ปัจจัยเลือกงานเข้า Product" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">PO DECISION MATRIX</div>
+        <h3 class="card-title">25. PO ตัดสินใจจากอะไร ? 5 ปัจจัยเลือกงานเข้า Product</h3>
+        <div class="card-meta">
+          <span>📄 PO/PO-req.md</span>
+          <span>💾 333.0 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="25_PO_Decision_Making.png" download="25_PO_Decision_Making.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/25_PO_Decision_Making.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="5 สัญญาณเตือน bad requirement และวิธีแก้ไข" data-tag="requirement quality">
+      <div class="card-img-wrapper" onclick="openModal('26_Bad_Requirement_Fixes.png', '5 สัญญาณเตือน Bad Requirement และวิธีแก้ไข')">
+        <img src="26_Bad_Requirement_Fixes.png" alt="5 สัญญาณเตือน Bad Requirement และวิธีแก้ไข" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">REQUIREMENT QUALITY</div>
+        <h3 class="card-title">26. 5 สัญญาณเตือน Bad Requirement และวิธีแก้ไข</h3>
+        <div class="card-meta">
+          <span>📄 Requirement/Bad-Requirement.md</span>
+          <span>💾 331.8 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="26_Bad_Requirement_Fixes.png" download="26_Bad_Requirement_Fixes.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/26_Bad_Requirement_Fixes.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="ขั้นตอนการ refine requirement ทีละสเต็ป" data-tag="requirement refinement">
+      <div class="card-img-wrapper" onclick="openModal('27_Requirement_Refinement_Guide.png', 'ขั้นตอนการ Refine Requirement ทีละสเต็ป')">
+        <img src="27_Requirement_Refinement_Guide.png" alt="ขั้นตอนการ Refine Requirement ทีละสเต็ป" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">REQUIREMENT REFINEMENT</div>
+        <h3 class="card-title">27. ขั้นตอนการ Refine Requirement ทีละสเต็ป</h3>
+        <div class="card-meta">
+          <span>📄 Requirement/How-to-refinment-Requirement.md</span>
+          <span>💾 316.1 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="27_Requirement_Refinement_Guide.png" download="27_Requirement_Refinement_Guide.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/27_Requirement_Refinement_Guide.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="requirement traceability เมทริกซ์เชื่อมโยงงาน" data-tag="traceability matrix">
+      <div class="card-img-wrapper" onclick="openModal('28_Requirement_Traceability.png', 'Requirement Traceability เมทริกซ์เชื่อมโยงงาน')">
+        <img src="28_Requirement_Traceability.png" alt="Requirement Traceability เมทริกซ์เชื่อมโยงงาน" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">TRACEABILITY MATRIX</div>
+        <h3 class="card-title">28. Requirement Traceability เมทริกซ์เชื่อมโยงงาน</h3>
+        <div class="card-meta">
+          <span>📄 Requirement/Requirement Traceability.md</span>
+          <span>💾 318.5 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="28_Requirement_Traceability.png" download="28_Requirement_Traceability.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/28_Requirement_Traceability.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="requirement คืออะไร ? หัวใจของการพัฒนา" data-tag="requirement 101">
+      <div class="card-img-wrapper" onclick="openModal('29_Requirement_Fundamentals.png', 'Requirement คืออะไร ? หัวใจของการพัฒนา')">
+        <img src="29_Requirement_Fundamentals.png" alt="Requirement คืออะไร ? หัวใจของการพัฒนา" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">REQUIREMENT 101</div>
+        <h3 class="card-title">29. Requirement คืออะไร ? หัวใจของการพัฒนา</h3>
+        <div class="card-meta">
+          <span>📄 Requirement/Requirement.md</span>
+          <span>💾 360.1 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="29_Requirement_Fundamentals.png" download="29_Requirement_Fundamentals.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/29_Requirement_Fundamentals.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-card" data-title="เทคนิคจัด workshop เก็บ requirement ให้ตรงจุด" data-tag="workshop elicitation">
+      <div class="card-img-wrapper" onclick="openModal('30_Requirement_Workshop.png', 'เทคนิคจัด Workshop เก็บ Requirement ให้ตรงจุด')">
+        <img src="30_Requirement_Workshop.png" alt="เทคนิคจัด Workshop เก็บ Requirement ให้ตรงจุด" loading="lazy" />
+        <div class="img-overlay">🔍 คลิกดูภาพโปสเตอร์ขนาดเต็ม</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">WORKSHOP ELICITATION</div>
+        <h3 class="card-title">30. เทคนิคจัด Workshop เก็บ Requirement ให้ตรงจุด</h3>
+        <div class="card-meta">
+          <span>📄 Requirement/Workshop - Requirement.md</span>
+          <span>💾 319.6 KB</span>
+        </div>
+        <div class="card-actions">
+          <a href="30_Requirement_Workshop.png" download="30_Requirement_Workshop.png" class="btn-download">⬇️ ดาวน์โหลด PNG</a>
+          <a href="html/30_Requirement_Workshop.html" target="_blank" class="btn-view-html">🌐 ดู HTML</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="modal" id="imageModal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <img id="modalImg" class="modal-img" src="" alt="Full View">
+  </div>
+</div>
+
+<script>
+function filterCards() {
+  const query = document.getElementById('searchBox').value.toLowerCase();
+  const cards = document.querySelectorAll('.gallery-card');
+  cards.forEach(card => {
+    const title = card.getAttribute('data-title');
+    const tag = card.getAttribute('data-tag');
+    if (title.includes(query) || tag.includes(query)) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function openModal(imgSrc, title) {
+  document.getElementById('modalImg').src = imgSrc;
+  document.getElementById('imageModal').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
+</body>
+</html>

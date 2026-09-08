@@ -1,0 +1,2184 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./customer-catalog.css">
+  <title>SmartGift — B2B Portfolio & BOM Cascade Catalog</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fafafa;
+      --panel: #fff;
+      --soft: #f5f7f8;
+      --ink: #0e1116;
+      --muted: #5d6972;
+      --line: #e5e7eb;
+      --strong: #c9d0d5;
+      --accent: #08798a;
+      --accent-visual: #0ea5b7;
+      --accent-soft: #e3f5f7;
+      --good: #187044;
+      --good-bg: #e3f6eb;
+      --warn: #8a5c00;
+      --warn-bg: #fff1d1;
+      --bad: #a8323d;
+      --bad-bg: #fde8ea;
+      --gold: #b38600;
+      --gold-bg: #fef8e7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", sans-serif;
+    }
+    button, input, select { font: inherit; }
+    a { color: var(--accent); }
+    button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid #78b9cb;
+      outline-offset: 3px;
+    }
+    .shell {
+      width: min(1500px, 100%);
+      margin: auto;
+      padding: 18px 24px 32px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .logo {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--strong);
+      border-radius: 10px;
+      background: var(--panel);
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+    .brand p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .load {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .file-button {
+      padding: 8px 13px;
+      border: 1px solid var(--strong);
+      border-radius: 8px;
+      background: var(--panel);
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .file-button:hover {
+      background: var(--soft);
+      border-color: var(--accent);
+    }
+    #file {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
+    .source {
+      max-width: 320px;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nav {
+      display: flex;
+      gap: 4px;
+      margin: 16px 0 12px;
+      padding: 4px;
+      width: max-content;
+      max-width: 100%;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--panel);
+    }
+    .nav a {
+      padding: 8px 14px;
+      border-radius: 7px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav a:hover {
+      background: var(--soft);
+      color: var(--ink);
+    }
+    .nav a[aria-current=page] {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .status {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      min-height: 40px;
+      margin-bottom: 14px;
+      overflow: auto;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 4px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .status div {
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+      white-space: nowrap;
+    }
+    .status strong {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+    .view[hidden] {
+      display: none !important;
+    }
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      margin: 4px 0 16px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 3px 0 0;
+      font-size: clamp(22px, 2.8vw, 32px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .heading p {
+      max-width: 650px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(560px, 1.35fr) minmax(380px, 0.85fr);
+      gap: 16px;
+      min-height: 720px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .anatomy-panel {
+      min-width: 0;
+      overflow: hidden;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 2px 4px 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .panel-bar strong {
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .gift-stage {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      border-radius: 14px;
+      background: radial-gradient(circle at 50% 25%, #1e293b 0%, #0a0f16 100%);
+      color: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+      perspective: 1300px;
+    }
+    .glass-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(65px);
+      pointer-events: none;
+      opacity: 0.55;
+      z-index: 1;
+    }
+    .glass-orb-cyan {
+      width: 260px;
+      height: 260px;
+      background: #08798a;
+      top: -40px;
+      left: 20%;
+    }
+    .glass-orb-gold {
+      width: 220px;
+      height: 220px;
+      background: #d4af37;
+      bottom: -30px;
+      right: 15%;
+    }
+    .glass-orb-blue {
+      width: 280px;
+      height: 280px;
+      background: #3b82f6;
+      top: 40%;
+      left: -50px;
+      opacity: 0.3;
+    }
+    .deck-isometric-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+    }
+    .deck-viewport {
+      position: relative;
+      width: 480px;
+      height: 380px;
+      transform-style: preserve-3d;
+      transform: rotateX(52deg) rotateZ(-26deg);
+      transition: transform 0.08s ease-out;
+    }
+    .deck-layer {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .layer-grid-plane {
+      position: absolute;
+      inset: -30px;
+      border: 1px dashed rgba(56, 214, 223, 0.2);
+      border-radius: 20px;
+      background: radial-gradient(circle, rgba(8, 121, 138, 0.1) 0%, transparent 70%);
+      box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    }
+    .glass-slab-base {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      background: rgba(30, 41, 59, 0.45);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 0 20px rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+    }
+    .box-brand-badge {
+      font-size: 10px;
+      font-weight: 800;
+      color: rgba(212, 175, 55, 0.9);
+      letter-spacing: 0.1em;
+    }
+    .velvet-compartments {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+      height: 100%;
+      margin-top: 10px;
+    }
+    .cutout-slot {
+      border-radius: 12px;
+      background: rgba(10, 15, 22, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 3px 8px rgba(0,0,0,0.8);
+    }
+    .layer-2-products {
+      pointer-events: auto;
+    }
+    .glass-product-card {
+      position: absolute;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+    }
+    .glass-product-card:hover, .glass-product-card:focus-visible {
+      background: rgba(30, 41, 59, 0.9);
+      border-color: #38d6df;
+      transform: translateZ(40px) scale(1.06);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 25px rgba(56, 214, 223, 0.45);
+      z-index: 10;
+    }
+    .glass-product-card.selected-active {
+      border-color: #d4af37;
+      background: rgba(8, 121, 138, 0.35);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 30px rgba(212, 175, 55, 0.6);
+      transform: translateZ(45px) scale(1.08);
+      z-index: 12;
+    }
+    .prod-nb { top: 18px; left: 18px; width: 220px; }
+    .prod-pb { bottom: 18px; left: 18px; width: 200px; }
+    .prod-tmb { top: 18px; right: 18px; width: 210px; }
+    .prod-led { bottom: 18px; right: 18px; width: 210px; }
+    .prod-pen { top: 135px; left: 120px; width: 190px; }
+    .prod-tea { top: 75px; right: 80px; width: 210px; }
+    .prod-umb { bottom: 75px; left: 100px; width: 210px; }
+    .prod-flash { bottom: 120px; right: 100px; width: 190px; }
+
+    .prod-icon {
+      font-size: 22px;
+      line-height: 1;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+    .prod-details {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      flex: 1;
+    }
+    .prod-sku {
+      font-size: 10px;
+      font-weight: 800;
+      color: #38d6df;
+      letter-spacing: 0.05em;
+    }
+    .prod-details strong {
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .prod-spec {
+      font-size: 10px;
+      color: #94a3b8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .prod-float-badge {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(56, 214, 223, 0.2);
+      color: #38d6df;
+      border: 1px solid rgba(56, 214, 223, 0.4);
+    }
+    .glass-custom-plate {
+      position: absolute;
+      inset: 20px;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+    }
+    .laser-plate {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .laser-text {
+      font-size: 11px;
+      font-weight: 800;
+      color: #d4af37;
+      letter-spacing: 0.08em;
+    }
+    .glass-slab-lid {
+      position: absolute;
+      inset: -5px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 0 25px rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-15px, -15px);
+    }
+    .lid-gold-emblem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .emblem-sg {
+      font-size: 14px;
+      font-weight: 900;
+      color: #d4af37;
+      letter-spacing: 0.15em;
+    }
+    .emblem-sub {
+      font-size: 9px;
+      color: #cbd5e1;
+      letter-spacing: 0.05em;
+    }
+    .glass-controls-bar {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 18px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      flex-wrap: wrap;
+    }
+    .slider-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #cbd5e1;
+      font-size: 12px;
+    }
+    .slider-group label {
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+    }
+    .slider-group strong {
+      color: #38d6df;
+      font-size: 13px;
+    }
+    .slider-group input[type=range] {
+      accent-color: #38d6df;
+      cursor: pointer;
+      width: 160px;
+    }
+    .preset-buttons {
+      display: flex;
+      gap: 6px;
+    }
+    .glass-pill-btn {
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #e2e8f0;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .glass-pill-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: #38d6df;
+      color: #38d6df;
+    }
+    .glass-pill-btn[aria-pressed=true] {
+      background: rgba(8, 121, 138, 0.35);
+      border-color: #38d6df;
+      color: #38d6df;
+      box-shadow: 0 0 12px rgba(56, 214, 223, 0.3);
+    }
+    .glass-pill-btn.active-pulse {
+      animation: pulseGlow 1.5s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      from { box-shadow: 0 0 4px #38d6df; }
+      to { box-shadow: 0 0 16px #38d6df; }
+    }
+    .box-schematic {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+      padding: 20px;
+    }
+    .category-slot {
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      background: rgba(26, 33, 42, 0.85);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(8px);
+    }
+    .category-slot:hover, .category-slot:focus-visible {
+      border-color: var(--accent-visual);
+      background: rgba(35, 47, 58, 0.95);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+    .category-slot[aria-pressed=true] {
+      border-color: #38d6df;
+      background: rgba(8, 121, 138, 0.25);
+      box-shadow: 0 0 0 1px #38d6df, 0 8px 24px rgba(8, 121, 138, 0.2);
+    }
+    .slot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .slot-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+    .slot-count {
+      display: inline-grid;
+      place-items: center;
+      min-width: 26px;
+      height: 26px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: rgba(56, 214, 223, 0.18);
+      color: #38d6df;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .slot-body h4 {
+      margin: 8px 0 3px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .slot-body p {
+      margin: 0;
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+    .slot-signatures {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .sig-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+    }
+    .category-bar-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px 4px 2px;
+      margin-top: 8px;
+    }
+    .cat-jump {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .cat-jump:hover, .cat-jump[aria-pressed=true] {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+    }
+    .option-head {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .option-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .option-head h3 {
+      margin: 2px 0 3px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .option-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .option-count {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .option-list {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      overflow: auto;
+      max-height: 640px;
+    }
+    .card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .card:hover {
+      border-color: var(--strong);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .category-label {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .card h3 {
+      margin: 3px 0 4px;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .price-block {
+      text-align: right;
+      white-space: nowrap;
+    }
+    .srp-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .srp-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 9px 0;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #edf1f3;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .badge.available, .badge.ready, .badge.approved {
+      background: var(--good-bg);
+      color: var(--good);
+    }
+    .badge.pending, .badge.draft, .badge.pid_pending {
+      background: var(--warn-bg);
+      color: var(--warn);
+    }
+    .badge.bundle_only {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .badge.tier-signature {
+      background: var(--gold-bg);
+      color: var(--gold);
+    }
+    .ladder-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 6px;
+      font-size: 12px;
+    }
+    .ladder-table th, .ladder-table td {
+      padding: 5px 8px;
+      text-align: right;
+      border-bottom: 1px solid var(--line);
+    }
+    .ladder-table th:first-child, .ladder-table td:first-child {
+      text-align: left;
+    }
+    .ladder-table th {
+      color: var(--muted);
+      font-weight: 700;
+      background: var(--soft);
+    }
+    .unboxing {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--soft);
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .unboxing strong {
+      color: var(--ink);
+    }
+    .bom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    .bom-table th, .bom-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+    .bom-table th {
+      background: var(--soft);
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .bom-table td.num, .bom-table th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .page-panel {
+      padding: 20px;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .search-input {
+      padding: 8px 14px;
+      border: 1px solid var(--strong);
+      border-radius: 8px;
+      background: var(--panel);
+      font-size: 13px;
+      min-width: 280px;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+    }
+    .bundle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+      gap: 18px;
+    }
+    .bundle-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .profit-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      background: var(--good-bg);
+      color: var(--good);
+    }
+    .calc-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--soft);
+      margin-bottom: 18px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .form-group label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .form-group input, .form-group select {
+      padding: 8px 10px;
+      border: 1px solid var(--strong);
+      border-radius: 7px;
+      background: var(--panel);
+      font-size: 14px;
+    }
+    .quote-result {
+      display: grid;
+      gap: 14px;
+    }
+    .audit-list {
+      display: grid;
+      gap: 10px;
+    }
+    .audit-card {
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--panel);
+      font-size: 13px;
+      display: grid;
+      grid-template-columns: 180px 140px 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
+    .audit-time {
+      color: var(--muted);
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+    .audit-hash {
+      font-family: monospace;
+      color: var(--accent);
+      font-size: 12px;
+    }
+    .expo-toolbar {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      padding: 14px;
+      margin-bottom: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+    .expo-filter {
+      display: grid;
+      gap: 4px;
+      min-width: 160px;
+    }
+    .expo-filter label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .expo-filter select {
+      min-height: 36px;
+      padding: 6px 9px;
+      border: 1px solid var(--strong);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--ink);
+    }
+    .expo-mode {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      margin-left: auto;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .expo-mode input { accent-color: var(--accent); }
+    .expo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 16px;
+    }
+    .expo-card {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: 0 5px 18px rgba(14,17,22,0.04);
+    }
+    .expo-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .expo-card h3 { margin: 3px 0 4px; font-size: 19px; line-height: 1.3; }
+    .expo-id {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 10px;
+      word-break: break-all;
+    }
+    .expo-split {
+      display: grid;
+      grid-template-columns: minmax(210px, .9fr) minmax(230px, 1.1fr);
+      gap: 12px;
+    }
+    .expo-ad {
+      position: relative;
+      min-height: 190px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 18px;
+      border-radius: 12px;
+      color: #fff;
+      background: radial-gradient(circle at 75% 15%, rgba(255,255,255,.28), transparent 32%), linear-gradient(145deg, #194d56, #0b1824 72%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.22);
+    }
+    .expo-ad.new-year { background: radial-gradient(circle at 78% 18%, rgba(255,231,151,.36), transparent 34%), linear-gradient(145deg, #3a3b63, #10182d 72%); }
+    .expo-ad::after {
+      content: "✦";
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: rgba(255,255,255,.7);
+      font-size: 38px;
+    }
+    .expo-ad h4 { position: relative; z-index: 1; margin: 0; font-size: 21px; line-height: 1.2; }
+    .expo-ad p { position: relative; z-index: 1; margin: 0; color: rgba(255,255,255,.82); font-size: 12px; }
+    .expo-ad .expo-cta {
+      position: relative;
+      z-index: 1;
+      align-self: flex-start;
+      padding: 4px 9px;
+      border: 1px solid rgba(255,255,255,.32);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .expo-facts {
+      display: grid;
+      align-content: start;
+      gap: 8px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--soft);
+    }
+    .expo-fact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 12px;
+    }
+    .expo-fact-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .expo-fact-row span:first-child { color: var(--muted); }
+    .expo-fact-row strong { text-align: right; word-break: break-word; }
+    .expo-bom {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--panel);
+    }
+    .expo-bom summary {
+      padding: 10px 12px;
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .expo-bom-body { padding: 0 12px 12px; overflow-x: auto; }
+    .expo-bom table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .expo-bom th, .expo-bom td { padding: 7px 6px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .expo-bom th { color: var(--muted); font-size: 10px; white-space: nowrap; }
+    .expo-bom .num { text-align: right; white-space: nowrap; }
+    .expo-empty {
+      padding: 34px 18px;
+      border: 1px dashed var(--strong);
+      border-radius: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .expo-disclosure {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .expo-products { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+    .expo-product-pill {
+      padding: 3px 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .catalog-media-proof {
+      display: grid;
+      gap: 12px;
+      margin: 16px 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: 0 5px 18px rgba(14,17,22,0.04);
+    }
+    .catalog-media-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .catalog-media-head h3 { margin: 3px 0 3px; font-size: 19px; }
+    .catalog-media-head p { margin: 0; color: var(--muted); font-size: 12px; }
+    .catalog-media-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .catalog-media-hero {
+      position: relative;
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--soft);
+    }
+    .catalog-media-hero img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+    .catalog-media-hero figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--panel);
+      font-size: 12px;
+    }
+    .catalog-media-hero figcaption strong { color: var(--ink); }
+    .catalog-media-hero figcaption span { color: var(--muted); text-align: right; }
+    .catalog-media-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 4px 8px;
+      border: 1px solid rgba(255,255,255,.42);
+      border-radius: 999px;
+      background: rgba(10, 23, 34, .72);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .catalog-media-sets {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .catalog-media-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--soft);
+    }
+    .catalog-media-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .catalog-media-card figcaption { padding: 8px 9px 9px; }
+    .catalog-media-code {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 10px;
+      font-weight: 800;
+    }
+    .catalog-media-title {
+      margin-top: 3px;
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .catalog-media-status { margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .catalog-media-products {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .catalog-media-product { min-width: 0; }
+    .catalog-media-product img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fff;
+    }
+    .catalog-media-product .catalog-media-title { font-size: 10px; }
+    .catalog-media-note {
+      margin: 0;
+      padding: 9px 11px;
+      border-left: 3px solid var(--accent);
+      color: var(--muted);
+      background: var(--soft);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+    .expo-image-note {
+      margin-top: 2px;
+      padding: 7px 9px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.09);
+      color: rgba(255,255,255,.78);
+      font-size: 10px;
+      line-height: 1.4;
+    }
+    .expo-media-feature {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+    .expo-media-feature-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .expo-media-feature-head h3 { margin: 2px 0 3px; font-size: 17px; }
+    .expo-media-feature-head p { margin: 0; color: var(--muted); font-size: 11px; }
+    .expo-media-feature-grid {
+      display: grid;
+      grid-template-columns: minmax(250px, 1.25fr) repeat(4, minmax(120px, .75fr));
+      gap: 9px;
+    }
+    .expo-media-feature figure { margin: 0; min-width: 0; }
+    .expo-media-feature img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--soft);
+    }
+    .expo-media-feature .expo-media-hero img { aspect-ratio: 3 / 2; }
+    .expo-media-feature figcaption { padding: 5px 3px 0; }
+    .expo-media-feature .catalog-media-code { font-size: 9px; }
+    .expo-media-feature .catalog-media-title { font-size: 10px; }
+    .expo-media-feature .catalog-media-status { font-size: 9px; }
+    @media(max-width: 1080px) {
+      .workspace { grid-template-columns: 1fr; }
+      .bundle-grid { grid-template-columns: 1fr; }
+      .audit-card { grid-template-columns: 1fr; gap: 6px; }
+      .expo-grid { grid-template-columns: 1fr; }
+      .catalog-media-products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .expo-media-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .expo-media-feature .expo-media-hero { grid-column: 1 / -1; }
+    }
+    @media(max-width: 680px) {
+      .shell { padding: 14px 12px 24px; }
+      header { grid-template-columns: 1fr; }
+      .load { justify-content: flex-start; }
+      .box-schematic { grid-template-columns: 1fr; height: auto; }
+      .category-slot { min-height: 120px; }
+      .expo-toolbar { align-items: stretch; }
+      .expo-filter { min-width: 100%; }
+      .expo-mode { margin-left: 0; }
+      .expo-split { grid-template-columns: 1fr; }
+      .catalog-media-layout { grid-template-columns: 1fr; }
+      .catalog-media-sets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .catalog-media-products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .expo-media-feature-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body class="customer-view">
+  <div id="customer-catalog" hidden></div>
+  <div class="shell">
+    <header>
+      <div class="brand">
+        <div class="logo">SG</div>
+        <div>
+          <h1>SmartGift Corporate Catalog</h1>
+          <p>B2B Portfolio & Inventory Cascade Platform · Zero-PII Substrate</p>
+        </div>
+      </div>
+      <div class="load">
+        <span id="source" class="source">กำลังโหลดข้อมูล Catalog…</span>
+      </div>
+    </header>
+
+    <nav id="app-navigation" class="nav" aria-label="เมนูหลัก">
+      <a href="#/catalog" aria-current="page">Anatomy Explorer</a>
+      <a href="#/expo">Seasonal Expo</a>
+    </nav>
+
+    <div class="status" aria-label="สรุปสถิติ Master Catalog">
+      <div><strong id="stat-canonical">16</strong><span>สินค้าหลัก (SKU)</span></div>
+      <div><strong id="stat-offers">357</strong><span>ชุดเสนอขาย (Offers)</span></div>
+      <div><strong id="stat-bundles">2</strong><span>แพ็กเกจองค์กร</span></div>
+      <div><strong id="stat-subcatalogs">3</strong><span>Sub-Catalogs</span></div>
+      <div><strong id="stat-vault">Zero-PII Ready</strong><span>Vault Status</span></div>
+      <div><span>อัปเดตล่าสุด:</span><strong id="stat-updated">—</strong></div>
+    </div>
+
+    <main>
+      <!-- VIEW 1: ANATOMY EXPLORER -->
+      <section id="catalog-view" class="view" data-view="catalog">
+        <div class="heading">
+          <div>
+            <div class="eyebrow">Interactive B2B Gift Set Anatomy</div>
+            <h2>ภาพสินค้าจริงและชุดของขวัญตามหมวดหลัก</h2>
+          </div>
+          <p>เริ่มจากภาพใน Catalog ที่ตรวจรหัสแล้ว แล้วเปิด 2.5D เพื่อดูโครงสร้าง BOM และรายละเอียดราคา</p>
+        </div>
+
+        <section class="catalog-media-proof" aria-labelledby="catalog-media-title">
+          <div class="catalog-media-head">
+            <div>
+              <div class="eyebrow">Catalog visual proof</div>
+              <h3 id="catalog-media-title">ภาพสร้างสรรค์จากสินค้าจริงใน Catalog</h3>
+              <p>ภาพชุดและภาพสินค้าแยกจาก BOM เพื่อให้เห็นของจริงก่อนอ่านราคาและส่วนประกอบ</p>
+            </div>
+            <span class="badge available">Source-based preview</span>
+          </div>
+          <div id="catalog-media-content" class="catalog-media-content">
+            <p class="catalog-media-note">กำลังโหลดภาพจาก Catalog…</p>
+          </div>
+        </section>
+
+        <div class="workspace">
+          <section class="panel anatomy-panel">
+            <div class="panel-bar">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <strong id="anatomy-title">BOM Anatomy · ภาพประกอบจาก Catalog</strong>
+                <span class="badge available" style="font-size: 11px;">✨ 2.5D map</span>
+              </div>
+              <span id="category-status" style="color: var(--accent); font-weight: 700;">เลือกหมวดหรือภาพเพื่อดู BOM</span>
+            </div>
+
+            <div id="gift-anatomy-stage" class="gift-stage" style="--explode-z: 75px;">
+              <!-- Ambient Glassmorphism Glowing Orbs -->
+              <div class="glass-orb glass-orb-cyan" aria-hidden="true"></div>
+              <div class="glass-orb glass-orb-gold" aria-hidden="true"></div>
+              <div class="glass-orb glass-orb-blue" aria-hidden="true"></div>
+
+              <!-- 2.5D Isometric Exploded Deck -->
+              <div class="deck-isometric-container">
+                <div id="deck-viewport" class="deck-viewport">
+                  
+                  <!-- Layer 0: Shadow Base Footprint -->
+                  <div class="deck-layer layer-0-shadow" style="transform: translateZ(0px);">
+                    <div class="layer-grid-plane"></div>
+                  </div>
+
+                  <!-- Layer 1: Frosted Luxury Base Presentation Box & Velvet Inset -->
+                  <div class="deck-layer layer-1-box-base" style="transform: translateZ(calc(var(--explode-z) * 0.35));">
+                    <div class="glass-slab-base">
+                      <div class="box-brand-badge"><span>THERABIS · SMARTGIFT B2B PORTFOLIO</span></div>
+                      <div class="velvet-compartments">
+                        <div class="cutout-slot slot-nb"></div>
+                        <div class="cutout-slot slot-pb"></div>
+                        <div class="cutout-slot slot-tmb"></div>
+                        <div class="cutout-slot slot-pen"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Layer 2: Floating 2.5D Physical BOM Product SKUs -->
+                  <div class="deck-layer layer-2-products" style="transform: translateZ(calc(var(--explode-z) * 1.0));">
+                    
+                    <!-- PM-NB: Smart Powerbank Notebook -->
+                    <div class="glass-product-card prod-nb" data-part="PM-NB" tabindex="0">
+                      <div class="prod-icon">📓</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-NB · Tech</span>
+                        <strong>Smart PU Notebook</strong>
+                        <span class="prod-spec">ฝัง Powerbank ไร้สาย</span>
+                      </div>
+                      <div class="prod-float-badge">฿350</div>
+                    </div>
+
+                    <!-- PM-PB10K: Wireless MagSafe Powerbank -->
+                    <div class="glass-product-card prod-pb" data-part="PM-PB10K" tabindex="0">
+                      <div class="prod-icon">⚡</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-PB10K · Tech</span>
+                        <strong>MagSafe 10,000mAh</strong>
+                        <span class="prod-spec">ชาร์จแม่เหล็ก & ขาตั้ง</span>
+                      </div>
+                      <div class="prod-float-badge">฿320</div>
+                    </div>
+
+                    <!-- PM-TMB: SUS316 Tumbler -->
+                    <div class="glass-product-card prod-tmb" data-part="PM-TMB" tabindex="0">
+                      <div class="prod-icon">🥤</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-TMB · Eco</span>
+                        <strong>Tumbler SUS316</strong>
+                        <span class="prod-spec">แก้วเก็บความเย็น 2 ชั้น</span>
+                      </div>
+                      <div class="prod-float-badge">฿150</div>
+                    </div>
+
+                    <!-- PM-BOTTLE-LED: Smart LED Bottle -->
+                    <div class="glass-product-card prod-led" data-part="PM-BOTTLE-LED" tabindex="0">
+                      <div class="prod-icon">🌡️</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-BOTTLE-LED · Eco</span>
+                        <strong>Smart LED Bottle</strong>
+                        <span class="prod-spec">หน้าจอบอกอุณหภูมิ</span>
+                      </div>
+                      <div class="prod-float-badge">฿130</div>
+                    </div>
+
+                    <!-- PM-PEN: Solid Walnut Brass Gel Pen -->
+                    <div class="glass-product-card prod-pen" data-part="PM-PEN" tabindex="0">
+                      <div class="prod-icon">✒️</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-PEN · Craft</span>
+                        <strong>Walnut Brass Pen</strong>
+                        <span class="prod-spec">ปากกาไม้แท้วอลนัท</span>
+                      </div>
+                      <div class="prod-float-badge">฿85</div>
+                    </div>
+
+                    <!-- PM-UMB: UPF50+ Auto Umbrella -->
+                    <div class="glass-product-card prod-umb" data-part="PM-UMB" tabindex="0">
+                      <div class="prod-icon">☂️</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-UMB · Eco</span>
+                        <strong>Auto Umbrella 6-Fold</strong>
+                        <span class="prod-spec">เคลือบกันแดด UPF50+</span>
+                      </div>
+                      <div class="prod-float-badge">฿110</div>
+                    </div>
+
+                    <!-- PM-TEA-INF: Borosilicate Glass Tea Infuser -->
+                    <div class="glass-product-card prod-tea" data-part="PM-TEA-INF" tabindex="0">
+                      <div class="prod-icon">🍵</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-TEA-INF · Craft</span>
+                        <strong>Borosilicate Tea Infuser</strong>
+                        <span class="prod-spec">กระบอกชงชาแยกกาก</span>
+                      </div>
+                      <div class="prod-float-badge">฿165</div>
+                    </div>
+
+                    <!-- PM-FLASH: Dual Metal USB Flash -->
+                    <div class="glass-product-card prod-flash" data-part="PM-FLASH" tabindex="0">
+                      <div class="prod-icon">💾</div>
+                      <div class="prod-details">
+                        <span class="prod-sku">PM-FLASH · Craft</span>
+                        <strong>Dual Metal Flash Drive</strong>
+                        <span class="prod-spec">Type-C / USB 3.0</span>
+                      </div>
+                      <div class="prod-float-badge">฿95</div>
+                    </div>
+
+                  </div>
+
+                  <!-- Layer 3: Floating Customization & Silk Ribbon Plate -->
+                  <div class="deck-layer layer-3-branding" style="transform: translateZ(calc(var(--explode-z) * 1.7));">
+                    <div class="glass-custom-plate">
+                      <div class="laser-plate">
+                        <span class="laser-text">✨ LASER ENGRAVED / HOTSTAMP FOIL LOGO</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Layer 4: Floating Frosted Glass Presentation Lid -->
+                  <div class="deck-layer layer-4-lid" style="transform: translateZ(calc(var(--explode-z) * 2.35));">
+                    <div class="glass-slab-lid">
+                      <div class="lid-gold-emblem">
+                        <span class="emblem-sg">SMARTGIFT</span>
+                        <span class="emblem-sub">EXECUTIVE B2B GIFT SET · UNBOXING BOM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Glassmorphism 2.5D Controls Bar -->
+              <div class="glass-controls-bar">
+                <div class="slider-group">
+                  <label for="explode-slider">
+                    <span>ระยะการแยกชิ้นส่วน:</span>
+                    <strong id="explode-val-text">75px</strong>
+                  </label>
+                  <input id="explode-slider" type="range" min="0" max="160" value="75" step="5">
+                </div>
+                <div class="preset-buttons">
+                  <button id="preset-compact" type="button" class="glass-pill-btn" aria-pressed="false">📦 Compact</button>
+                  <button id="preset-float" type="button" class="glass-pill-btn" aria-pressed="true">🪟 2.5D Float</button>
+                  <button id="preset-explode" type="button" class="glass-pill-btn" aria-pressed="false">💥 Full Explode</button>
+                  <button id="preset-rotate" type="button" class="glass-pill-btn" aria-pressed="false">🔄 Auto-Rotate</button>
+                </div>
+              </div>
+
+              <div class="category-bar-list" id="category-jump-buttons"></div>
+            </div>
+          </section>
+                  </div>
+                </div>
+              </div>
+
+              <div class="category-bar-list" id="category-jump-buttons"></div>
+            </div>
+          </section>
+
+          <aside class="panel options">
+            <div class="option-head">
+              <div class="option-title">
+                <div>
+                  <div class="eyebrow">Active Selection</div>
+                  <h3 id="selected-category-title">Eco-Friendly & Green</h3>
+                </div>
+                <span id="selected-category-count" class="option-count">0 รายการ</span>
+              </div>
+              <p id="selected-category-desc">สินค้าและชุดของขวัญสำหรับองค์กรที่ใส่ใจสิ่งแวดล้อม</p>
+            </div>
+            <div id="category-items-list" class="option-list"></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- VIEW 2: SEASONAL EXPO -->
+      <section id="expo-view" class="view" data-view="expo" hidden>
+        <div class="heading">
+          <div>
+            <div class="eyebrow">Seasonal Ad Creative & BOM Explorer</div>
+            <h2>Seasonal Expo: ชุด Christmas และ New Year</h2>
+          </div>
+          <p>เลือก package ตาม event, tier และโครงสร้างบริษัท แล้วเปิดดูส่วนประกอบในชุด · ราคาแบบสอบถามผ่านทีมขาย</p>
+        </div>
+        <section id="expo-media-feature" class="expo-media-feature" aria-labelledby="expo-media-title" hidden></section>
+        <div class="expo-toolbar" aria-label="ตัวกรอง Seasonal Expo">
+          <div class="expo-filter">
+            <label for="expo-event">Event</label>
+            <select id="expo-event">
+              <option value="all">ทุก event</option>
+            </select>
+          </div>
+          <div class="expo-filter">
+            <label for="expo-tier">Gift tier</label>
+            <select id="expo-tier">
+              <option value="all">ทุก tier</option>
+            </select>
+          </div>
+          <div class="expo-filter">
+            <label for="expo-segment">Recipient segment</label>
+            <select id="expo-segment">
+              <option value="all">ทุก segment</option>
+            </select>
+          </div>
+          <span id="expo-count" style="color: var(--muted); font-size: 12px; font-weight: 700;">0 packages</span>
+        </div>
+        <div id="seasonal-expo-grid" class="expo-grid"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="./customer-catalog.js"></script>
+  <script>
+    let catalogMaster = null;
+    let catalogMedia = null;
+    let activeCategory = "eco-friendly";
+    const views = new Set(["catalog", "expo"]);
+
+    const fmtMoney = v => (typeof v === "number" && !isNaN(v)) 
+      ? new Intl.NumberFormat("th-TH", { style: "currency", currency: "THB", maximumFractionDigits: 2 }).format(v) 
+      : "฿0.00";
+
+    const fmtNum = v => (typeof v === "number" && !isNaN(v)) ? v.toLocaleString("th-TH") : "0";
+    const fmtMaybeMoney = v => (typeof v === "number" && Number.isFinite(v)) ? fmtMoney(v) : "รอข้อมูล";
+    const escapeHtml = value => String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+    const mediaPath = value => {
+      const path = String(value || "");
+      return /^\/assets\/catalog-media\/[A-Za-z0-9._/-]+$/.test(path) ? path : "";
+    };
+    const mediaLabel = item => item?.generated_from_catalog
+      ? "ภาพสร้างใหม่จากภาพอ้างอิงใน Catalog"
+      : (item?.source_label || "ภาพอ้างอิงจาก Catalog");
+
+    function renderCatalogMedia() {
+      const container = document.querySelector("#catalog-media-content");
+      if (!container) return;
+      const media = catalogMedia;
+      if (!media?.hero || !Array.isArray(media.sets) || !Array.isArray(media.products)) {
+        container.innerHTML = `<p class="catalog-media-note">ยังไม่มี media manifest ที่จับคู่รหัสภาพได้ จึงไม่ใช้ภาพแทนสินค้าแบบเดา</p>`;
+        return;
+      }
+      const heroSrc = mediaPath(media.hero.image);
+      const hero = heroSrc ? `
+        <figure class="catalog-media-hero">
+          <span class="catalog-media-badge">${escapeHtml(mediaLabel(media.hero))}</span>
+          <img src="${heroSrc}" alt="${escapeHtml(media.hero.title || "ภาพชุดสินค้าใน Catalog")}" loading="eager">
+          <figcaption>
+            <strong>${escapeHtml(media.hero.code)} · ${escapeHtml(media.hero.title || "ภาพชุดสินค้า")}</strong>
+            <span>ภาพนำสำหรับทำความเข้าใจชุด<br>ไม่ใช่หลักฐาน BOM</span>
+          </figcaption>
+        </figure>
+      ` : `<p class="catalog-media-note">ไม่มีภาพนำที่ผ่าน path allowlist</p>`;
+      const sets = media.sets.slice(0, 4).map(item => {
+        const src = mediaPath(item.image);
+        if (!src) return "";
+        return `
+          <figure class="catalog-media-card">
+            <img src="${src}" alt="${escapeHtml(item.title || item.code)}" loading="lazy">
+            <figcaption>
+              <div class="catalog-media-code">${escapeHtml(item.code)}</div>
+              <div class="catalog-media-title">${escapeHtml(item.title || "ชุดของขวัญ")}</div>
+              <div class="catalog-media-status">${escapeHtml(mediaLabel(item))}</div>
+            </figcaption>
+          </figure>
+        `;
+      }).join("");
+      const products = media.products.map(item => {
+        const src = mediaPath(item.image);
+        if (!src) return "";
+        return `
+          <article class="catalog-media-product">
+            <img src="${src}" alt="${escapeHtml(item.title || item.code)}" loading="lazy">
+            <div class="catalog-media-code">${escapeHtml(item.code)}</div>
+            <div class="catalog-media-title">${escapeHtml(item.title || "สินค้าเดี่ยว")}</div>
+            <div class="catalog-media-status">${escapeHtml(mediaLabel(item))}</div>
+          </article>
+        `;
+      }).join("");
+      container.innerHTML = `
+        <div class="catalog-media-layout">
+          ${hero}
+          <div class="catalog-media-sets" aria-label="ภาพชุดจาก Catalog">${sets}</div>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin: 3px 0 8px;">Single product references</div>
+          <div class="catalog-media-products" aria-label="ภาพสินค้าเดี่ยวจาก Catalog">${products}</div>
+        </div>
+        <p class="catalog-media-note">${escapeHtml(media.disclaimer_th || "ภาพนี้เป็น creative preview จากภาพอ้างอิง ไม่ใช้แทนข้อมูลราคา ต้นทุน stock หรือ BOM")}</p>
+      `;
+    }
+
+    function renderExpoMediaFeature() {
+      const container = document.querySelector("#expo-media-feature");
+      if (!container) return;
+      const media = catalogMedia;
+      if (!media?.hero || !Array.isArray(media.sets)) {
+        container.hidden = true;
+        container.replaceChildren();
+        return;
+      }
+      const heroSrc = mediaPath(media.hero.image);
+      const setCards = media.sets.slice(0, 4).map(item => {
+        const src = mediaPath(item.image);
+        if (!src) return "";
+        return `
+          <figure>
+            <img src="${src}" alt="${escapeHtml(item.title || item.code)}" loading="lazy">
+            <figcaption>
+              <div class="catalog-media-code">${escapeHtml(item.code)}</div>
+              <div class="catalog-media-title">${escapeHtml(item.title || "ชุดจาก Catalog")}</div>
+            </figcaption>
+          </figure>
+        `;
+      }).join("");
+      if (!heroSrc && !setCards) {
+        container.hidden = true;
+        container.replaceChildren();
+        return;
+      }
+      container.hidden = false;
+      container.innerHTML = `
+        <div class="expo-media-feature-head">
+          <div>
+            <div class="eyebrow">Source-based visual proof</div>
+            <h3 id="expo-media-title">ภาพชุดที่สร้างจากภาพสินค้าอ้างอิงจริง</h3>
+            <p>ดูรูปทรงและบรรยากาศของสินค้า ก่อนเปิด BOM และราคาในชุดที่เลือก</p>
+          </div>
+          <span class="badge available">${escapeHtml(mediaLabel(media.hero))}</span>
+        </div>
+        <div class="expo-media-feature-grid">
+          <figure class="expo-media-hero">
+            ${heroSrc ? `<img src="${heroSrc}" alt="${escapeHtml(media.hero.title || "ภาพชุดสินค้าใน Catalog")}" loading="eager">` : ""}
+            <figcaption>
+              <div class="catalog-media-code">${escapeHtml(media.hero.code || "Catalog")}</div>
+              <div class="catalog-media-title">${escapeHtml(media.hero.title || "ภาพชุดสินค้าจาก Catalog")}</div>
+            </figcaption>
+          </figure>
+          ${setCards}
+        </div>
+        <p class="catalog-media-note">ภาพเป็น creative preview จาก Catalog เท่านั้น ไม่ใช่หลักฐานราคา ต้นทุน stock หรือ BOM ของ package ที่เลือก</p>
+      `;
+    }
+
+    const packageStatus = status => ({
+      draft: ["draft", "เร็ว ๆ นี้"],
+      mapping_pending: ["pending", "รอยืนยันรายละเอียด"],
+      cost_pending: ["pending", "รอยืนยันรายละเอียด"],
+      missing_inputs: ["pending", "รอยืนยันรายละเอียด"],
+      below_minimum: ["pending", "ยังไม่เปิดรับออเดอร์"],
+      pass: ["ready", "พร้อมเสนอราคา"],
+      approved: ["approved", "พร้อมเสนอราคา"],
+      rejected: ["pending", "ยังไม่เปิดรับออเดอร์"],
+    }[status] || ["pending", "รอยืนยันรายละเอียด"]);
+
+    function canonicalProducts(data) {
+      if (Array.isArray(data.canonical_products)) return data.canonical_products;
+      return (data.srp_reference_products || []).map(row => ({
+        code: row.product_code,
+        name_th: row.name_th,
+        name_en: row.name_en,
+        product_master: row.product_master_id || `pm:${row.product_code}`,
+        product_family: row.product_family,
+        category_slug: row.category_slug,
+        category: row.category_slug,
+        srp_price: row.srp_price,
+        price_tiers: row.price_tiers,
+      }));
+    }
+
+    function normalizeMasterData(data) {
+      const normalized = { ...data };
+      normalized.canonical_products = canonicalProducts(data);
+      if (!Array.isArray(normalized.catalog_offers)) normalized.catalog_offers = [];
+      if (Array.isArray(data.seasonal_offers)) {
+        const sourceCodes = new Set(normalized.catalog_offers.map(offer => offer.offer_code || offer.code));
+        const seasonal = data.seasonal_offers
+          .filter(offer => !sourceCodes.has(offer.code))
+          .map(offer => ({
+            offer_code: offer.code,
+            code: offer.code,
+            name: offer.name,
+            name_en: offer.name_en,
+            gift_tier: offer.gift_tier,
+            unboxing_experience: offer.unboxing_experience,
+            price_tiers: offer.price_tiers || [],
+            components: (offer.contains || []).map(component => ({
+              product_code: component.product_code,
+              qty: component.qty,
+            })),
+            interest_theme_slug: offer.catalog_slug,
+            source_kind: offer.source_kind,
+            schema_id: offer.id,
+          }));
+        normalized.catalog_offers = normalized.catalog_offers.concat(seasonal);
+      }
+      normalized.corporate_bundles = normalized.corporate_bundles || [];
+      normalized.pkg = Array.isArray(data.pkg) ? data.pkg : [];
+      normalized.bom = Array.isArray(data.bom) ? data.bom : [];
+      return normalized;
+    }
+
+    const catInfo = {
+      "eco-friendly": { title: "Eco-Friendly & Sustainability", desc: "สินค้าที่เป็นมิตรต่อสิ่งแวดล้อม แก้วทัมเบลอร์ ร่มกันแดด และกระบอกน้ำ Smart LED" },
+      "executive-smart-tech": { title: "Executive Smart Tech", desc: "ชุดนวัตกรรมสำหรับผู้บริหาร สมุดพาวเวอร์แบงก์ ลำโพงบลูทูธ และแก้วกาแฟ 3-Way" },
+      "classic-oriental": { title: "Classic Oriental & Mindfulness", desc: "ชุดของขวัญอัตลักษณ์ตะวันออก กระบอกชงชา Borosilicate และปากกาไม้แท้" },
+      "novelty-self-care": { title: "Novelty & Self-Care", desc: "ชุดของขวัญเพื่อความผ่อนคลายและไลฟ์สไตล์ เครื่องนวดคอ และเทียนหอมอโรมา" }
+    };
+
+    function route() {
+      const hash = location.hash.replace(/^#\//, "");
+      const view = views.has(hash) ? hash : "catalog";
+      if (hash !== view) history.replaceState(null, "", `/#/${view}`);
+      window.CustomerCatalog?.setRoute(view === "catalog");
+
+      for (const s of document.querySelectorAll("[data-view]")) {
+        s.hidden = s.dataset.view !== view;
+      }
+      for (const a of document.querySelectorAll("#app-navigation a")) {
+        a.setAttribute("aria-current", a.getAttribute("href") === `#/${view}` ? "page" : "false");
+      }
+
+      if (view === "expo") renderSeasonalExpo();
+    }
+
+    function acceptMasterData(data, sourceLabel) {
+      catalogMaster = normalizeMasterData(data);
+      catalogMedia = data.catalog_media || null;
+      window.CustomerCatalog?.setData(data, catalogMedia);
+      const metadata = catalogMaster.metadata || {};
+      document.querySelector("#source").textContent = `${sourceLabel} (v${metadata.schema_version || metadata.version || "2026.08.30"})`;
+      document.querySelector("#stat-canonical").textContent = catalogMaster.canonical_products.length;
+      document.querySelector("#stat-offers").textContent = catalogMaster.catalog_offers.length;
+      document.querySelector("#stat-bundles").textContent = catalogMaster.pkg.length || catalogMaster.corporate_bundles.length;
+      document.querySelector("#stat-subcatalogs").textContent = (catalogMaster.portfolio_catalogs || catalogMaster.top_level_categories || catalogMaster.sub_catalogs || []).length;
+      document.querySelector("#stat-updated").textContent = metadata.last_updated ? new Date(metadata.last_updated).toLocaleString("th-TH") : (metadata.generated_at || "2026-08-30");
+
+      renderCategoryView(activeCategory);
+      renderCatalogMedia();
+      renderExpoMediaFeature();
+      configureExpoFilters();
+      renderSeasonalExpo();
+    }
+
+    function renderCategoryView(catSlug) {
+      activeCategory = catSlug;
+      const info = catInfo[catSlug] || { title: catSlug, desc: "" };
+      const titleEl = document.querySelector("#selected-category-title");
+      if (titleEl) titleEl.textContent = info.title;
+      const descEl = document.querySelector("#selected-category-desc");
+      if (descEl) descEl.textContent = info.desc;
+      const statusEl = document.querySelector("#category-status");
+      if (statusEl) statusEl.textContent = `กำลังดู: ${info.title}`;
+
+      for (const slot of document.querySelectorAll(".category-slot")) {
+        slot.setAttribute("aria-pressed", String(slot.dataset.cat === catSlug));
+      }
+      for (const btn of document.querySelectorAll(".cat-jump")) {
+        btn.setAttribute("aria-pressed", String(btn.dataset.cat === catSlug));
+      }
+
+      const container = document.querySelector("#category-items-list");
+      container.replaceChildren();
+
+      if (!catalogMaster) return;
+
+      const singleItems = (catalogMaster.canonical_products || []).filter(p => (p.category_slug === catSlug || p.category?.toLowerCase().includes(catSlug.split("-")[0])));
+      const offerItems = (catalogMaster.catalog_offers || []).filter(o => (o.interest_theme_slug === catSlug || o.interest_theme?.toLowerCase().includes(catSlug.split("-")[0])));
+      const totalCount = singleItems.length + offerItems.length;
+      document.querySelector("#selected-category-count").textContent = `${totalCount} รายการ`;
+
+      if (singleItems.length > 0) {
+        const header = document.createElement("div");
+        header.style.cssText = "font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px;";
+        header.textContent = "— สินค้าหลักประจำหมวด (Canonical Master SKUs) —";
+        container.append(header);
+
+        for (const item of singleItems) {
+          const card = document.createElement("article");
+          card.className = "card";
+
+          let singleTierRows = "";
+          if (item.price_tiers && item.price_tiers.length > 0) {
+            singleTierRows = `
+              <table class="ladder-table">
+                <thead><tr><th>จำนวน (ชิ้น)</th><th>ราคาต่อชิ้น</th><th>รวมทั้งออเดอร์</th></tr></thead>
+                <tbody>
+                  ${item.price_tiers.map(t => `<tr><td>${fmtNum(t.min_qty)} ${t.min_qty === 1 ? 'ชิ้น (SRP)' : 'ชิ้น+'}</td><td>${fmtMoney(t.unit_price)}</td><td>${fmtMoney(t.min_qty * t.unit_price)}</td></tr>`).join("")}
+                </tbody>
+              </table>
+            `;
+          }
+
+          card.innerHTML = `
+            <div class="card-top">
+              <div>
+                <span class="category-label">${item.code} · ${item.product_family || "PF-MASTER"}</span>
+                <h3>${item.name_th || item.name_en}</h3>
+                <div style="font-size: 12px; color: var(--muted);">${item.name_en || ""}</div>
+              </div>
+              <div class="price-block">
+                <div class="srp-price">${fmtMoney(item.srp_price)}</div>
+                <div class="srp-sub">ราคาต่อ 1 ชิ้น (SRP)</div>
+              </div>
+            </div>
+            <div class="badges">
+              <span class="badge available">พร้อมจำหน่าย</span>
+              <span class="badge bundle_only">${item.code}</span>
+            </div>
+            ${item.dimensions_cm ? `
+              <div style="font-size: 11px; color: var(--muted); margin: 6px 0; background: var(--soft); padding: 6px 10px; border-radius: 6px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <span>📐 ขนาด: <strong>${item.dimensions_cm.length}×${item.dimensions_cm.width}×${item.dimensions_cm.height} cm</strong></span>
+                <span>⚖️ น้ำหนัก: <strong>${item.unit_weight_kg} kg</strong></span>
+              </div>
+            ` : ''}
+            ${singleTierRows}
+          `;
+          container.append(card);
+        }
+      }
+
+      if (offerItems.length > 0) {
+        const header = document.createElement("div");
+        header.style.cssText = "font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 10px;";
+        header.textContent = `— ชุดของขวัญและข้อเสนอพิเศษ (${offerItems.length} รายการ) —`;
+        container.append(header);
+
+        for (const item of offerItems.slice(0, 30)) {
+          const card = document.createElement("article");
+          card.className = "card";
+          
+          let tierRows = "";
+          if (item.price_tiers && item.price_tiers.length > 0) {
+            tierRows = `
+              <table class="ladder-table">
+                <thead><tr><th>จำนวน (ชิ้น)</th><th>ราคาต่อชิ้น</th><th>รวมทั้งออเดอร์</th></tr></thead>
+                <tbody>
+                  ${item.price_tiers.map(t => `<tr><td>${fmtNum(t.min_qty)}+</td><td>${fmtMoney(t.unit_price)}</td><td>${fmtMoney(t.min_qty * t.unit_price)}</td></tr>`).join("")}
+                </tbody>
+              </table>
+            `;
+          }
+
+          card.innerHTML = `
+            <div class="card-top">
+              <div>
+                <span class="category-label">${item.offer_code}</span>
+                <h3>${item.name}</h3>
+              </div>
+              <div class="price-block">
+                <div class="srp-price">${fmtMaybeMoney(item.srp_price ?? item.price_tiers?.[0]?.unit_price)}</div>
+                <div class="srp-sub">ราคาต่อชุด (1-Piece SRP)</div>
+              </div>
+            </div>
+            <div class="badges">
+              <span class="badge ${item.gift_tier === 'Signature' ? 'tier-signature' : 'available'}">${item.gift_tier || 'Select Tier'}</span>
+              <span class="badge ${item.sub_catalog === 'draft_bom_catalog' || item.source_kind === 'derived_recipe_pending_approval' ? 'pending' : 'available'}">${item.catalog_match_status || (item.source_kind === 'derived_recipe_pending_approval' ? 'รออนุมัติ recipe' : 'Approved Offer')}</span>
+            </div>
+            ${item.dimensions_cm ? `
+              <div style="font-size: 11px; color: var(--muted); margin: 6px 0; background: var(--soft); padding: 6px 10px; border-radius: 6px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <span>📐 กล่อง: <strong>${item.dimensions_cm.length}×${item.dimensions_cm.width}×${item.dimensions_cm.height} cm</strong></span>
+                <span>⚖️ น้ำหนัก: <strong>${item.unit_weight_kg} kg</strong></span>
+              </div>
+            ` : ''}
+            ${tierRows}
+            <div class="unboxing">
+              <strong>Unboxing Experience:</strong> ${item.unboxing_experience || "ชุดของขวัญพรีเมียมคัดสรรพิเศษสำหรับลูกค้าองค์กร"}
+            </div>
+          `;
+          container.append(card);
+        }
+      }
+    }
+
+    function configureExpoFilters() {
+      const packages = (catalogMaster?.pkg || []).filter(pkg => ["christmas_2026", "new_year_2027"].includes(pkg.occasion));
+      const eventSelect = document.querySelector("#expo-event");
+      const tierSelect = document.querySelector("#expo-tier");
+      const segmentSelect = document.querySelector("#expo-segment");
+      if (!eventSelect || !tierSelect || !segmentSelect) return;
+
+      const current = {
+        event: eventSelect.value || "all",
+        tier: tierSelect.value || "all",
+        segment: segmentSelect.value || "all",
+      };
+      const events = [...new Set(packages.map(pkg => pkg.occasion))];
+      const tiers = [...new Set(packages.map(pkg => pkg.gift_tier).filter(Boolean))];
+      const segments = [...new Set(packages.map(pkg => pkg.recipient_segment).filter(Boolean))];
+      const eventLabels = { christmas_2026: "Christmas 2026", new_year_2027: "New Year 2027" };
+      eventSelect.innerHTML = `<option value="all">ทุก event</option>${events.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(eventLabels[value] || value)}</option>`).join("")}`;
+      tierSelect.innerHTML = `<option value="all">ทุก tier</option>${tiers.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("")}`;
+      segmentSelect.innerHTML = `<option value="all">ทุก segment</option>${segments.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("")}`;
+      if (events.includes(current.event)) eventSelect.value = current.event;
+      if (tiers.includes(current.tier)) tierSelect.value = current.tier;
+      if (segments.includes(current.segment)) segmentSelect.value = current.segment;
+
+      for (const select of [eventSelect, tierSelect, segmentSelect]) {
+        if (select.dataset.bound === "true") continue;
+        select.addEventListener("change", renderSeasonalExpo);
+        select.dataset.bound = "true";
+      }
+    }
+
+    function expoProductRows(pkg) {
+      const rows = (catalogMaster?.bom || []).filter(row => row.bundle_id === pkg.id);
+      if (rows.length > 0) return rows;
+      const offers = new Map((catalogMaster?.seasonal_offers || []).map(offer => [offer.id, offer]));
+      const options = pkg.options || [];
+      return options.flatMap(option => (offers.get(option.offer_id)?.contains || []).map(component => ({
+        bundle_id: pkg.id,
+        offer_id: option.offer_id,
+        product_master_id: component.product_master_id,
+        product_code: component.product_code,
+        qty: component.qty,
+        name_th: component.product_code,
+        name_en: "รอข้อมูล ProductMaster",
+      })));
+    }
+
+    function renderSeasonalExpo() {
+      const grid = document.querySelector("#seasonal-expo-grid");
+      if (!grid || !catalogMaster) return;
+      configureExpoFilters();
+      const event = document.querySelector("#expo-event")?.value || "all";
+      const tier = document.querySelector("#expo-tier")?.value || "all";
+      const segment = document.querySelector("#expo-segment")?.value || "all";
+      const allPackages = (catalogMaster.pkg || []).filter(pkg => ["christmas_2026", "new_year_2027"].includes(pkg.occasion));
+      const packages = allPackages.filter(pkg =>
+        (event === "all" || pkg.occasion === event) &&
+        (tier === "all" || pkg.gift_tier === tier) &&
+        (segment === "all" || pkg.recipient_segment === segment)
+      );
+      const count = document.querySelector("#expo-count");
+      if (count) count.textContent = `${packages.length} packages`;
+      grid.replaceChildren();
+      if (packages.length === 0) {
+        grid.innerHTML = `<div class="expo-empty">ยังไม่มี package ตามตัวกรองนี้</div>`;
+        return;
+      }
+
+      for (const pkg of packages) {
+        const [statusClass, statusText] = packageStatus(pkg.status);
+        const creative = pkg.ad_creative || {};
+        const rows = expoProductRows(pkg);
+        const uniqueProducts = [...new Map(rows.map(row => [row.product_code, row])).values()];
+        const productPills = uniqueProducts.length
+          ? uniqueProducts.map(row => `<span class="expo-product-pill">${escapeHtml(row.product_code)}</span>`).join("")
+          : `<span class="expo-product-pill">รอ brief สินค้า</span>`;
+        const bomRows = rows.length
+          ? rows.map(row => `
+              <tr>
+                <td><strong>${escapeHtml(row.product_code)}</strong><div class="expo-id">${escapeHtml(row.product_master_id)}</div></td>
+                <td>${escapeHtml(row.name_th || row.name_en || "—")}</td>
+                <td class="num">${fmtNum(row.qty)}</td>
+              </tr>
+            `).join("")
+          : `<tr><td colspan="3" class="expo-disclosure">ยังไม่มี BOM ที่มีจำนวนยืนยันได้</td></tr>`;
+        const bomHead = "<tr><th>ProductMaster</th><th>สินค้า</th><th class=\"num\">จำนวน</th></tr>";
+        const details = pkg.options?.length
+          ? pkg.options.map(option => `<div class="expo-disclosure">${escapeHtml(option.offer_code || option.offer_id)} × ${option.qty == null ? "รอจำนวน" : fmtNum(option.qty)} · ${escapeHtml(option.bom_status || "รอตรวจ")}</div>`).join("")
+          : `<div class="expo-disclosure">${pkg.gift_tier === "Bespoke" ? "รอ brief เพื่อเลือก CatalogOffer และ BOM" : "ยังไม่มีรายการย่อย"}</div>`;
+        const card = document.createElement("article");
+        card.className = "expo-card";
+        card.innerHTML = `
+          <div class="expo-card-head">
+            <div>
+              <div class="category-label">${escapeHtml(pkg.code)} · ${escapeHtml(pkg.occasion)}</div>
+              <h3>${escapeHtml(pkg.name)}</h3>
+              <div class="expo-id">PK ${escapeHtml(pkg.id)}</div>
+            </div>
+            <span class="badge ${statusClass}">${escapeHtml(statusText)}</span>
+          </div>
+          <div class="expo-split">
+            <div class="expo-ad ${pkg.occasion === "new_year_2027" ? "new-year" : ""}">
+              <div class="category-label" style="color: rgba(255,255,255,.74);">${escapeHtml(creative.claim_status || "draft creative")}</div>
+              <h4>${escapeHtml(creative.headline_th || "Seasonal SmartGift")}</h4>
+              <p>${escapeHtml(creative.supporting_copy_th || "ชุดของขวัญองค์กรจากสินค้าที่มี")}</p>
+              <span class="expo-cta">${escapeHtml(creative.cta_th || "ดูของในชุด")}</span>
+            </div>
+            <div class="expo-facts">
+              <div class="expo-fact-row"><span>Tier / Segment</span><strong>${escapeHtml(pkg.gift_tier || "Mixed")} · ${escapeHtml(pkg.recipient_segment || "mixed")}</strong></div>
+              <div class="expo-fact-row"><span>จำนวนผู้รับ</span><strong>${pkg.target_recipients == null ? "รอ order brief" : fmtNum(pkg.target_recipients)}</strong></div>
+              <div class="expo-fact-row"><span>ราคา offer @1</span><strong>สอบถามราคา</strong></div>
+              <div class="expo-fact-row"><span>Offer ladder</span><strong>สอบถามราคา</strong></div>
+              <div class="expo-fact-row"><span>ราคา package</span><strong>สอบถามราคา</strong></div>
+              <div class="expo-products" aria-label="ส่วนประกอบสินค้า">${productPills}</div>
+            </div>
+          </div>
+          <details class="expo-bom">
+            <summary>ดูชิ้นส่วนย่อยและ provenance (${rows.length} รายการ)</summary>
+            <div class="expo-bom-body">
+              <table>
+                <thead>${bomHead}</thead>
+                <tbody>${bomRows}</tbody>
+              </table>
+              ${details}
+            </div>
+          </details>
+        `;
+        grid.append(card);
+      }
+    }
+
+    // Set up Category Anatomy Interactions
+    for (const slot of document.querySelectorAll(".category-slot")) {
+      slot.addEventListener("click", () => renderCategoryView(slot.dataset.cat));
+      slot.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") renderCategoryView(slot.dataset.cat); });
+    }
+
+    // Build quick jump buttons
+    const jumpContainer = document.querySelector("#category-jump-buttons");
+    for (const [slug, info] of Object.entries(catInfo)) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "cat-jump";
+      btn.dataset.cat = slug;
+      btn.setAttribute("aria-pressed", String(slug === activeCategory));
+      btn.textContent = info.title;
+      btn.addEventListener("click", () => renderCategoryView(slug));
+      jumpContainer.append(btn);
+    }
+
+    // 3D View Mode vs 2D Schematic Toggle
+    const btnMode3D = document.querySelector("#btn-mode-3d");
+    const btnMode2D = document.querySelector("#btn-mode-2d");
+    const canvas3D = document.querySelector("#gift-anatomy-canvas");
+    const labels3D = document.querySelector("#gift-anatomy-labels");
+    const controls3D = document.querySelector(".viewport-controls");
+    const help3D = document.querySelector(".viewport-help");
+    const grid2D = document.querySelector("#box-schematic-grid");
+
+    function setViewMode(mode) {
+      const is3D = mode === "3d";
+      if (btnMode3D) btnMode3D.setAttribute("aria-pressed", String(is3D));
+      if (btnMode2D) btnMode2D.setAttribute("aria-pressed", String(!is3D));
+      if (canvas3D) canvas3D.style.display = is3D ? "block" : "none";
+      if (labels3D) labels3D.style.display = is3D ? "block" : "none";
+      if (controls3D) controls3D.style.display = is3D ? "flex" : "none";
+      if (help3D) help3D.style.display = is3D ? "block" : "none";
+      if (grid2D) grid2D.style.display = is3D ? "none" : "grid";
+    }
+
+    if (btnMode3D) btnMode3D.addEventListener("click", () => setViewMode("3d"));
+    if (btnMode2D) btnMode2D.addEventListener("click", () => setViewMode("2d"));
+
+    // Handle 3D Part Selection Event
+    const partToCat = {
+      "PM-TMB": "eco-friendly",
+      "PM-BOTTLE-LED": "eco-friendly",
+      "PM-UMB": "eco-friendly",
+      "PM-NB": "executive-smart-tech",
+      "PM-PB10K": "executive-smart-tech",
+      "PM-PEN": "classic-oriental",
+      "PM-TEA-INF": "classic-oriental",
+      "PM-FLASH": "classic-oriental"
+    };
+
+    window.addEventListener("gift-part-select", e => {
+      const pid = e.detail?.partId;
+      const targetCat = partToCat[pid];
+      if (targetCat) {
+        renderCategoryView(targetCat);
+      }
+    });
+
+    window.addEventListener("hashchange", route);
+    route();
+
+    // Fetch the customer-safe catalog and media projections for the
+    // Anatomy Explorer and Seasonal Expo views.
+    const fetchJson = url => fetch(url).then(r => r.ok ? r.json() : Promise.reject(new Error(url)));
+    // /api/* is only a thin projection over the JSON that already ships in
+    // ./data, so fall back to those files directly. That keeps the catalog
+    // running on a plain static host — no Node runtime and no PHP required.
+    const customerSafe = raw => raw && ({
+      ...raw,
+      canonical_products: raw.canonical_products || raw.product_masters,
+      top_level_categories: raw.top_level_categories || raw.portfolio_catalogs,
+      corporate_bundles: raw.corporate_bundles || [],
+    });
+    Promise.all([
+      fetchJson("/api/catalog").catch(() => null),
+      fetchJson("/api/pricelist")
+        .catch(() => fetchJson("./data/pricelist_public.json").then(customerSafe).catch(() => null)),
+      fetchJson("/api/media").catch(() => fetchJson("./data/catalog_media.json").catch(() => null)),
+    ])
+      .then(([catalog, pricelist, media]) => {
+        if (!catalog && !pricelist) throw new Error("no local master source");
+        const merged = { ...(catalog || {}), ...(pricelist || {}) };
+        merged.metadata = { ...(catalog?.metadata || {}), ...(pricelist?.metadata || {}) };
+        merged.canonical_products = catalog?.canonical_products || pricelist?.canonical_products;
+        merged.catalog_offers = catalog?.catalog_offers || pricelist?.catalog_offers;
+        merged.top_level_categories = catalog?.top_level_categories || pricelist?.portfolio_catalogs;
+        merged.corporate_bundles = catalog?.corporate_bundles || [];
+        merged.catalog_media = media;
+        acceptMasterData(merged, pricelist ? "Live Catalog + Price Projection" : "Live Master Catalog");
+      })
+      .catch(() => {
+        document.querySelector("#source").textContent = "ยังไม่สามารถโหลดข้อมูล Catalog ได้ในขณะนี้";
+        window.CustomerCatalog?.setError();
+      });
+  </script>
+  <script src="./gift-anatomy-25d.js"></script>
+</body>
+</html>

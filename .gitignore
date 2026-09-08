@@ -75,3 +75,12 @@ data-pipeline/01_raw/archive/factory_costs/*.xlsx
 !/data-pipeline/01_raw/archive/20260829T225900Z_708b556b6079_บริษัท เทราบิส จำกัด_contact.xlsx
 !/data-pipeline/01_raw/archive/factory_costs/20260830T103306Z_515ecf8464b5_01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx
 !/data-pipeline/01_raw/archive/factory_costs/20260830T103307Z_9c8b51678f0a_02-ต้นทุน-20260417 Power bank notebook catalog.xlsx
+
+# build output for the DirectAdmin uploads
+dist/
+
+# large local-only artifacts
+data-pipeline/01_raw.zip
+comfy-3d-products/
+data-pipeline/01_raw/08_factory_costs/extracted_images/
+.agents/*/session_logs/

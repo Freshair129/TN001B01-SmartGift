@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "smartgift-ui",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["public/serve.py"],
+      "port": 5180
+    }
+  ]
+}

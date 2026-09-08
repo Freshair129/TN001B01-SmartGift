@@ -1,0 +1,443 @@
+<meta charset="utf-8">
+<title>โลโก้ลูกค้า บนสินค้าจริง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+<style>
+  /* ── tokens ─────────────────────────────────────────────────────────────
+     Single visual world: a dark press-room. No light variant — the plates
+     are all shot on dark grounds and a light flip would fight them. Every
+     colour is painted explicitly so the page holds on any host ground. */
+  :root {
+    --ground:    #0F1416;
+    --ground-2:  #131A1D;
+    --surface:   #172025;
+    --hairline:  #26343A;
+    --hairline-2:#1C272C;
+    --ink:       #E9EEEF;
+    --ink-2:     #AFBDC2;
+    --muted:     #7D8C92;
+    --brass:     #C79A5B;
+    --brass-dim: #7A6238;
+    --verified:  #5FA987;
+    --concept:   #9AA6AB;
+
+    --step--1: 0.78rem;
+    --step-0:  1rem;
+    --step-1:  1.32rem;
+    --step-2:  1.85rem;
+    --step-3:  2.6rem;
+    --step-4:  clamp(2.9rem, 7.2vw, 6.4rem);
+
+    --sans: "IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+    --display: "Anuphan", "IBM Plex Sans Thai", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: var(--step-0);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  * { box-sizing: border-box; }
+  img { display: block; max-width: 100%; }
+  a { color: var(--brass); }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+  .wrap { max-width: 1240px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 64px); }
+
+  /* ── eyebrow / label vernacular ─────────────────────────────────────── */
+  .label {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+  .label--quiet { color: var(--muted); }
+
+  /* ── hero ───────────────────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--hairline);
+    background: var(--ground);
+  }
+  .hero__bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: 62% 38%;
+    opacity: 0.38;
+  }
+  .hero__bg::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(105deg, var(--ground) 6%, rgba(15,20,22,0.72) 46%, rgba(15,20,22,0.15) 100%);
+  }
+  .hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+    padding-block: clamp(56px, 8vw, 104px);
+  }
+  .hero__copy { display: flex; flex-direction: column; gap: 26px; }
+
+  h1 {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: var(--step-4);
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  h1 .rule {
+    display: block;
+    width: 88px; height: 3px;
+    margin-bottom: 22px;
+    background: var(--brass);
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--brass);
+  }
+  .hero__lede {
+    max-width: 46ch;
+    color: var(--ink-2);
+    font-size: var(--step-1);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ledger of hard numbers — trade-document voice, not big-number tiles */
+  .ledger {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    border-top: 1px solid var(--hairline);
+    margin-top: 6px;
+  }
+  .ledger div {
+    padding: 18px 20px 18px 0;
+    border-bottom: 1px solid var(--hairline-2);
+  }
+  .ledger dt {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 6px;
+  }
+  .ledger dd {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: var(--step-2);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+  }
+  .ledger dd small {
+    display: block;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: var(--step--1);
+    color: var(--muted);
+    letter-spacing: 0;
+    margin-top: 4px;
+  }
+
+  .hero__plate { position: relative; }
+  .hero__plate img {
+    width: 100%;
+    border: 1px solid var(--hairline);
+    background: var(--ground-2);
+  }
+  .hero__caption {
+    position: absolute;
+    left: 0; bottom: 0; right: 0;
+    display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline;
+    padding: 14px 18px;
+    background: linear-gradient(to top, rgba(10,14,16,0.94), rgba(10,14,16,0));
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--ink-2);
+  }
+  .hero__caption b { color: var(--ink); font-weight: 500; }
+
+  /* ── dockets ────────────────────────────────────────────────────────── */
+  .dockets { padding-block: clamp(56px, 7vw, 92px); }
+  .dockets__head {
+    display: flex; flex-wrap: wrap; align-items: flex-end;
+    justify-content: space-between; gap: 20px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .dockets__head h2 {
+    margin: 8px 0 0;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: var(--step-3);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .dockets__note {
+    max-width: 42ch; margin: 0;
+    color: var(--muted);
+    font-size: var(--step--1);
+    line-height: 1.7;
+  }
+
+  .grid {
+    display: grid;
+    /* four dockets: one column, then two — never a stray third that leaves a gap */
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1px;
+    background: var(--hairline-2);
+    border: 1px solid var(--hairline-2);
+    margin-top: 1px;
+  }
+  .docket {
+    display: flex; flex-direction: column;
+    background: var(--ground);
+  }
+  .docket__shot { position: relative; background: var(--ground-2); }
+  .docket__photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+  .docket__mark {
+    position: absolute; left: 18px; top: 18px;
+    height: 30px; width: auto;
+    padding: 7px 11px;
+    background: rgba(247,249,249,0.93);
+    border-radius: 3px;
+    box-sizing: content-box;
+    object-fit: contain;
+  }
+  .chip {
+    position: absolute; right: 16px; top: 18px;
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 11px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: rgba(10,14,16,0.72);
+  }
+  .chip::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor;
+  }
+  .chip--made { color: var(--verified); }
+  .chip--concept { color: var(--concept); border-style: dashed; }
+
+  .docket__body { padding: 22px 22px 26px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+  .docket__client { margin: 0; font-size: var(--step--1); color: var(--muted); font-family: var(--mono); letter-spacing: 0.06em; }
+  .docket__item { margin: 0; font-family: var(--display); font-weight: 600; font-size: var(--step-1); line-height: 1.25; }
+  .docket__spec { margin: 0; color: var(--ink-2); font-size: 0.92rem; line-height: 1.65; }
+
+  .rows { margin: 4px 0 0; border-top: 1px solid var(--hairline-2); }
+  .rows > div {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--hairline-2);
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    font-variant-numeric: tabular-nums;
+  }
+  .rows dt { color: var(--muted); margin: 0; }
+  .rows dd { margin: 0; color: var(--ink); text-align: right; }
+  .rows dd.warn { color: var(--brass); }
+
+  /* ── client rail ────────────────────────────────────────────────────── */
+  .rail {
+    border-top: 1px solid var(--hairline);
+    padding-block: clamp(40px, 5vw, 64px) clamp(48px, 6vw, 80px);
+  }
+  .rail__row {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: clamp(28px, 5vw, 64px);
+    margin-top: 26px;
+  }
+  .rail__row img { height: 40px; width: auto; opacity: 0.9; }
+  .rail__foot {
+    margin-top: 34px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hairline-2);
+    color: var(--muted);
+    font-size: var(--step--1);
+    line-height: 1.75;
+    max-width: 78ch;
+  }
+  .rail__foot code { font-family: var(--mono); color: var(--ink-2); }
+
+  @media (min-width: 760px) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 900px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__bg::after { background: linear-gradient(180deg, rgba(15,20,22,0.86), rgba(15,20,22,0.62)); }
+  }
+</style>
+
+<section class="hero">
+  <div class="hero__bg" style="background-image:url('{{IMG:backdrop}}')"></div>
+  <div class="wrap hero__inner">
+    <div class="hero__copy">
+      <span class="label">ผลงานลูกค้า · SmartGift by Therabis</span>
+      <h1><span class="rule"></span>โลโก้ลูกค้า<br>บน<em>สินค้าจริง</em></h1>
+      <p class="hero__lede">
+        เราไม่ได้ขายของพรีเมียมสำเร็จรูป — เรารับอาร์ตเวิร์กของลูกค้า
+        แล้วคุมงานพิมพ์ไปจนถึงสายผลิต ทุกชิ้นด้านล่างผูกกับเลขเอกสารจริงในระบบ
+      </p>
+      <dl class="ledger">
+        <div>
+          <dt>ลูกค้าที่วางบิลแล้ว</dt>
+          <dd>579<small>ราย ในฐานข้อมูลเดียว</small></dd>
+        </div>
+        <div>
+          <dt>ลูกค้าสูงสุด</dt>
+          <dd>฿13.9M<small>GMMTV · 56 ใบวางบิล</small></dd>
+        </div>
+        <div>
+          <dt>ต่อเนื่อง</dt>
+          <dd>2021–2026<small>สั่งซ้ำทุกปี</small></dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="hero__plate" style="margin:0">
+      <img src="{{IMG:udtrucks}}" alt="แก้วเก็บอุณหภูมิสแตนเลสสีดำด้านมีหูจับ พิมพ์โลโก้ UD Trucks สีขาว">
+      <figcaption class="hero__caption">
+        <b>UD Trucks (Thailand)</b>
+        <span>แก้วมีหูจับ 40oz · ดำด้าน</span>
+        <span>พิมพ์ 1 สี — ขาว</span>
+        <span>อาร์ตเวิร์ก 12 มิ.ย. 2026</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap dockets">
+  <div class="dockets__head">
+    <div>
+      <span class="label label--quiet">Job dockets</span>
+      <h2>สี่งาน สี่แบรนด์</h2>
+    </div>
+    <p class="dockets__note">
+      สองงานแรกอ้างอิงอาร์ตเวิร์กและรูปตัวอย่างจริงจากแฟ้มงาน
+      อีกสองงานเป็นคอนเซ็ปต์ที่เสนอจากประวัติการสั่งซื้อ — ยังไม่ใช่ของที่เคยผลิต
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <article class="docket">
+      <div class="docket__shot">
+        <img class="docket__photo" src="{{IMG:udtrucks}}" alt="แก้วสแตนเลสมีหูจับ พิมพ์โลโก้ UD Trucks">
+        <img class="docket__mark" src="{{IMG:logo_udtrucks}}" alt="UD Trucks">
+        <span class="chip chip--made">ผลิตจริง</span>
+      </div>
+      <div class="docket__body">
+        <p class="docket__client">UD TRUCKS CORPORATION (THAILAND)</p>
+        <h3 class="docket__item">แก้วเก็บอุณหภูมิมีหูจับ 40oz — ฉลอง 50 ปี</h3>
+        <p class="docket__spec">
+          สแตนเลสสองชั้น ผิวดำด้าน ฝาสไลด์ พิมพ์สกรีน 1 สีขาวสองด้าน —
+          ด้านหน้าตราสัญลักษณ์ 50 YEARS ด้านหลังโลโก้ UD TRUCKS
+        </p>
+        <dl class="rows">
+          <div><dt>ใบเสนอราคา</dt><dd>QT2026000133–137</dd></div>
+          <div><dt>ลงวันที่</dt><dd>02 มี.ค. 2026</dd></div>
+          <div><dt>มูลค่ารวม</dt><dd>฿231,762</dd></div>
+          <div><dt>สถานะในระบบ</dt><dd class="warn">รออนุมัติ · ยังไม่วางบิล</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="docket">
+      <div class="docket__shot">
+        <img class="docket__photo" src="{{IMG:truepride}}" alt="ซองใส่การ์ด MagSafe หนังสีแทน พิมพ์โลโก้ true">
+        <img class="docket__mark" src="{{IMG:logo_truecorp}}" alt="True">
+        <span class="chip chip--made">ผลิตจริง</span>
+      </div>
+      <div class="docket__body">
+        <p class="docket__client">TRUE DIGITAL PARK</p>
+        <h3 class="docket__item">ซองใส่การ์ด MagSafe หนัง — คอลเลกชัน TRUE PRIDE</h3>
+        <p class="docket__spec">
+          หนังเย็บขอบ ติดแม่เหล็ก MagSafe พิมพ์ full-colour ลายแคมเปญเต็มหน้า
+          ทำ 2 สี (ชมพูอ่อน · แทน) ผ่านรอบเทียบตัวอย่างเก่า/ใหม่ก่อนผลิต
+        </p>
+        <dl class="rows">
+          <div><dt>แฟ้มงาน</dt><dd>งาน CP ล่าสุด</dd></div>
+          <div><dt>รูปตัวอย่าง</dt><dd>OLD / NEW · 2 colorway</dd></div>
+          <div><dt>อนุมัติตัวอย่าง</dt><dd>05 พ.ค. 2026</dd></div>
+          <div><dt>เลขเอกสาร</dt><dd class="warn">ยังไม่พบใน FlowAccount</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="docket">
+      <div class="docket__shot">
+        <img class="docket__photo" src="{{IMG:gmmtv}}" alt="พาวเวอร์แบงก์ไร้สาย MagSafe สีขาว พิมพ์โลโก้ GMMTV">
+        <img class="docket__mark" src="{{IMG:logo_gmmtv}}" alt="GMMTV">
+        <span class="chip chip--concept">คอนเซ็ปต์เสนอ</span>
+      </div>
+      <div class="docket__body">
+        <p class="docket__client">บริษัท จีเอ็มเอ็ม ทีวี จำกัด</p>
+        <h3 class="docket__item">พาวเวอร์แบงก์ไร้สาย MagSafe 10,000mAh</h3>
+        <p class="docket__spec">
+          ลูกค้ารายใหญ่ที่สุดและสั่งซ้ำต่อเนื่องทุกปีตั้งแต่ 2021
+          — แต่ยังไม่มีรูปงานเก่าในแฟ้ม ชิ้นนี้จึงเป็นข้อเสนอ ไม่ใช่งานที่เคยผลิต
+        </p>
+        <dl class="rows">
+          <div><dt>ใบวางบิล</dt><dd>56 ใบ</dd></div>
+          <div><dt>ยอดสะสม</dt><dd>฿13,897,518</dd></div>
+          <div><dt>ช่วงเวลา</dt><dd>ก.ค. 2021 – พ.ค. 2026</dd></div>
+          <div><dt>รูปงานจริง</dt><dd class="warn">รอจากทีมขาย</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="docket">
+      <div class="docket__shot">
+        <img class="docket__photo" src="{{IMG:cpli}}" alt="สมุดปกผ้าสีเทาเข้ม พิมพ์โลโก้เครือเจริญโภคภัณฑ์สีเขียว">
+        <img class="docket__mark" src="{{IMG:logo_cpgroup}}" alt="เครือเจริญโภคภัณฑ์">
+        <span class="chip chip--concept">คอนเซ็ปต์เสนอ</span>
+      </div>
+      <div class="docket__body">
+        <p class="docket__client">บริษัท พัฒนาผู้นำเครือเจริญโภคภัณฑ์ จำกัด</p>
+        <h3 class="docket__item">สมุดปกผ้าผู้บริหาร พร้อมสายรัด</h3>
+        <p class="docket__spec">
+          สถาบันผู้นำที่ปากช่อง สั่งถี่แต่ยอดต่อครั้งไม่สูง เหมาะกับของแจกรอบอบรม
+          — ยังไม่มีบันทึกว่าเคยสั่งสินค้ารุ่นใด
+        </p>
+        <dl class="rows">
+          <div><dt>ใบวางบิล</dt><dd>21 ใบ</dd></div>
+          <div><dt>ยอดสะสม</dt><dd>฿261,508</dd></div>
+          <div><dt>ช่วงเวลา</dt><dd>ก.ค. 2024 – เม.ย. 2026</dd></div>
+          <div><dt>ใบใหญ่ค้างอนุมัติ</dt><dd class="warn">฿240,750 · ฿232,725</dd></div>
+        </dl>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="wrap rail">
+  <span class="label label--quiet">แบรนด์ที่ไว้ใจให้เราผลิต</span>
+  <div class="rail__row">
+    <img src="{{IMG:logo_gmmtv}}" alt="GMMTV">
+    <img src="{{IMG:logo_cpgroup}}" alt="เครือเจริญโภคภัณฑ์">
+    <img src="{{IMG:logo_udtrucks}}" alt="UD Trucks">
+    <img src="{{IMG:logo_truecorp}}" alt="True">
+  </div>
+  <p class="rail__foot">
+    ตัวเลขทั้งหมดดึงจาก FlowAccount export ที่เก็บใน
+    <code>data-pipeline/01_raw/05_crm_customer_data/</code> (ใบวางบิล 1,595 แถว · ใบเสนอราคา 6,688 ใบ)
+    ระบบบันทึกเฉพาะระดับหัวเอกสาร ไม่มีรายการสินค้ารายบรรทัด จึงยืนยัน “สั่งอะไร”
+    ได้เฉพาะงานที่มีอาร์ตเวิร์กในแฟ้มเท่านั้น · ภาพสินค้าเป็น mockup ที่เรนเดอร์ขึ้น
+    แล้วประกบโลโก้เวกเตอร์จริง ไม่ใช่ภาพถ่ายสินค้าที่ส่งมอบ · โลโก้เป็นทรัพย์สินของแต่ละแบรนด์
+  </p>
+</section>
