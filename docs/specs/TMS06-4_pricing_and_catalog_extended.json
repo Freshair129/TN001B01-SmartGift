@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "export_date": "2026-09-10",
+    "title": "ตารางเปรียบเทียบต้นทุน vs ราคาขายทั่วไป vs ราคาขายองค์กร (พร้อม Margin) TMS06-4",
+    "contract": "smartgift://b2b/pricing-comparison/v2"
+  },
+  "codes_and_identification": {
+    "factory_code": "TMS06-4",
+    "factory_name": "Shenzhen Zhimei Shiji Industrial Co., Limited",
+    "smartgift_product_code": "SG-TMS06-4",
+    "smartgift_offer_code": "OFFER_TMS06-4",
+    "package_code": "PKG-EXEC-TMS06-4",
+    "package_tier": "Signature / Bespoke Executive 4-in-1",
+    "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
+    "flowaccount_category": "สินค้าและบริการสั่งทำพิเศษ (Custom Gift Set)",
+    "flowaccount_shipping_sku": "ค่าจัดส่ง (Row 935)",
+    "bom_component_codes": [
+      {
+        "component": "แก้วสแตนเลส 316",
+        "pm_code": "PM-CFMUG",
+        "link_id": "PRODUCT_6CAE3DB3D5E972436C17"
+      },
+      {
+        "component": "ลำโพงบลูทูธพกพา",
+        "pm_code": "PM-SPK",
+        "link_id": "PRODUCT_D403AB4E3B37CC1ECB1B"
+      },
+      {
+        "component": "พาวเวอร์แบงก์พร้อมขาตั้ง 10,000mAh",
+        "pm_code": "PM-PB10K",
+        "link_id": "PRODUCT_47D03C3D554A9112B9B2"
+      },
+      {
+        "component": "ร่มพับ UV ไวนิลดำ 5 ตอน",
+        "pm_code": "PM-UMB",
+        "link_id": "PRODUCT_F30E7854AA7825446D97"
+      }
+    ]
+  },
+  "materials_options": {
+    "mug": "สแตนเลสสตีล SUS 316 เกรดการแพทย์ (Food Grade) เก็บความร้อน-เย็น 12-24 ชม. + ภายนอกเคลือบผิวด้าน Frosted Coating สัมผัสนุ่มมือ + ฝาและขอบซิลิโคน PP Food Grade ปลอดภัย",
+    "speaker": "โครงสร้างบอดี้พลาสติก ABS ทนความร้อนสูง + ตะแกรงเสียงโลหะ Micro-Perforated + โคมไฟอะคริลิก Ambient Light ในตัว",
+    "power_bank": "บอดี้ ABS + PC เกรดกันลามไฟ (Fireproof) + ขาตั้งพับเก็บได้ในตัว + แบตเตอรี่ Lithium-Polymer 10,000 mAh มาตรฐาน มอก. ปลอดภัยพกพาขึ้นเครื่องบินได้ + สายชาร์จ TPE คุณภาพสูง 3 หัวในตัว",
+    "umbrella": "โครงเหล็กผสมอลูมิเนียมไฟเบอร์กลาส 8 ก้าน ยืดหยุ่นต้านลมแรง + ผ้าร่ม 190T Pongee เคลือบกันน้ำ + แผ่นไวนิลสีดำกันรังสี UV 100% สะท้อนความร้อน (UPF 50+)",
+    "packaging": "กล่องจั่วปังแข็งพรีเมียม (Hardcover Box) ฝาเปิด-ปิดประกบแม่เหล็ก พร้อมถาดฟองน้ำ EVA ปั๊มขึ้นรูปล็อคสินค้าพอดีชิ้น + ถุงหิ้วกระดาษคราฟท์/อาร์ตการ์ดพิมพ์โลโก้เข้าชุด"
+  },
+  "color_options": [
+    {
+      "code": "NAVY",
+      "th": "น้ำเงินกรมท่า",
+      "en": "Navy Blue",
+      "hex": "#1E3A8A"
+    },
+    {
+      "code": "WHITE",
+      "th": "ขาวมินิมอล",
+      "en": "Classic White",
+      "hex": "#F8FAFC"
+    },
+    {
+      "code": "RED",
+      "th": "แดงเข้ม",
+      "en": "Crimson Red",
+      "hex": "#991B1B"
+    },
+    {
+      "code": "BLACK",
+      "th": "ดำด้านหรูหรา",
+      "en": "Matte Black",
+      "hex": "#0F172A"
+    },
+    {
+      "code": "ORANGE",
+      "th": "ส้มพรีเมียม",
+      "en": "Vibrant Orange",
+      "hex": "#EA580C"
+    }
+  ],
+  "shipping_options": [
+    {
+      "option_id": "OPT-A",
+      "name": "ขนส่งตรงจากท่าเรือถึงปลายทาง 1 จุด (Direct Port-to-Destination Single Drop)",
+      "description": "เหมารถกระบะ/4 ล้อใหญ่ ขนส่งตรงจากท่าเรือคลองเตย/แหลมฉบัง ถึงคลังหรือสำนักงานลูกค้าจุดเดียวใน กทม./ปริมณฑล",
+      "quotation_fee_thb": 0.0,
+      "quotation_label": "0.00 บาท (ฟรี - รวมค่าจัดส่งในราคาสินค้าเรียบร้อยแล้ว)",
+      "internal_cost_thb": "2,500 บาทเหมาเที่ยว (เฉลี่ย 2.50 - 25.00 บ./ชุดตามจำนวนสั่งผลิต)"
+    },
+    {
+      "option_id": "OPT-B",
+      "name": "จัดส่งแบบกระจายหลายสาขา (Multi-Drop Branch Delivery)",
+      "description": "จัดส่งมากกว่า 1 จุดหมาย (เช่น สำนักงานใหญ่ + สาขาต่างๆ)",
+      "quotation_fee_thb": 800.0,
+      "quotation_label": "จุดแรกฟรี / จุดถัดไปคิดเพิ่ม 500 - 1,200 บาทต่อจุดตามระยะทางจริง",
+      "internal_cost_thb": "คิดตามระยะทาง Lalamove / ขนส่งเหมาคันจริง"
+    },
+    {
+      "option_id": "OPT-C",
+      "name": "จัดส่งปลายทางต่างจังหวัด (Upcountry Regional Delivery)",
+      "description": "จัดส่งไปยังศูนย์กระจายสินค้าหรือสาขาในต่างจังหวัด",
+      "quotation_fee_thb": 1500.0,
+      "quotation_label": "คิดค่าส่งตามจริง หรือเหมาคันละ 1,200 - 2,500 บาท",
+      "internal_cost_thb": "คิดตามอัตราค่าระวางขนส่งประจำจังหวัด"
+    },
+    {
+      "option_id": "OPT-D",
+      "name": "กระจายจัดส่งรายบุคคลถึงบ้าน (Individual Home Fulfillment & Delivery)",
+      "description": "แพ็กบรรจุกล่องพัสดุรายชิ้น ติดจ่าหน้า พร้อมจัดส่งถึงบ้านพนักงาน/ลูกค้า VIP แต่ละราย (WFH / Direct Mail)",
+      "quotation_fee_thb": 75.0,
+      "quotation_label": "ค่าบริการคัดแยกแพ็กเกจ + ค่าส่งพัสดุเอกชน 65 - 85 บาท/ชุด",
+      "internal_cost_thb": "ค่ากล่องพัสดุ + ค่าแพ็กเกจจิ้ง 15 บ. + ค่าส่งพัสดุ Kerry/Flash 50-60 บ."
+    }
+  ],
+  "pricing_comparison_table": [
+    {
+      "quantity": 100,
+      "factory_item_code": "TMS06-4",
+      "smartgift_product_code": "SG-TMS06-4",
+      "package_code": "PKG-EXEC-TMS06-4",
+      "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
+      "factory_exw_usd": 16.2769,
+      "factory_exw_thb": 585.97,
+      "sea_freight_thb": 51.45,
+      "domestic_freight_thb": 25.0,
+      "total_landed_cost_thb": 662.42,
+      "standard_selling_price_thb": 1300.0,
+      "standard_gross_profit_unit": 637.58,
+      "standard_gross_profit_total": 63758.0,
+      "standard_gross_margin_pct": 49.0,
+      "corporate_selling_price_thb": 880.0,
+      "corporate_gross_profit_unit": 217.58,
+      "corporate_gross_profit_total": 21758.0,
+      "corporate_gross_margin_pct": 24.7,
+      "corporate_savings_per_unit_thb": 420.0,
+      "corporate_savings_total_thb": 42000.0
+    },
+    {
+      "quantity": 300,
+      "factory_item_code": "TMS06-4",
+      "smartgift_product_code": "SG-TMS06-4",
+      "package_code": "PKG-EXEC-TMS06-4",
+      "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
+      "factory_exw_usd": 15.2861,
+      "factory_exw_thb": 550.3,
+      "sea_freight_thb": 51.45,
+      "domestic_freight_thb": 8.33,
+      "total_landed_cost_thb": 610.08,
+      "standard_selling_price_thb": 1130.0,
+      "standard_gross_profit_unit": 519.92,
+      "standard_gross_profit_total": 155976.0,
+      "standard_gross_margin_pct": 46.0,
+      "corporate_selling_price_thb": 850.0,
+      "corporate_gross_profit_unit": 239.92,
+      "corporate_gross_profit_total": 71976.0,
+      "corporate_gross_margin_pct": 28.2,
+      "corporate_savings_per_unit_thb": 280.0,
+      "corporate_savings_total_thb": 84000.0
+    },
+    {
+      "quantity": 500,
+      "factory_item_code": "TMS06-4",
+      "smartgift_product_code": "SG-TMS06-4",
+      "package_code": "PKG-EXEC-TMS06-4",
+      "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
+      "factory_exw_usd": 14.1538,
+      "factory_exw_thb": 509.54,
+      "sea_freight_thb": 51.45,
+      "domestic_freight_thb": 5.0,
+      "total_landed_cost_thb": 565.99,
+      "standard_selling_price_thb": 1000.0,
+      "standard_gross_profit_unit": 434.01,
+      "standard_gross_profit_total": 217005.0,
+      "standard_gross_margin_pct": 43.4,
+      "corporate_selling_price_thb": 830.0,
+      "corporate_gross_profit_unit": 264.01,
+      "corporate_gross_profit_total": 132005.0,
+      "corporate_gross_margin_pct": 31.8,
+      "corporate_savings_per_unit_thb": 170.0,
+      "corporate_savings_total_thb": 85000.0
+    },
+    {
+      "quantity": 1000,
+      "factory_item_code": "TMS06-4",
+      "smartgift_product_code": "SG-TMS06-4",
+      "package_code": "PKG-EXEC-TMS06-4",
+      "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
+      "factory_exw_usd": 13.5877,
+      "factory_exw_thb": 489.15,
+      "sea_freight_thb": 51.45,
+      "domestic_freight_thb": 2.5,
+      "total_landed_cost_thb": 543.1,
+      "standard_selling_price_thb": 900.0,
+      "standard_gross_profit_unit": 356.9,
+      "standard_gross_profit_total": 356900.0,
+      "standard_gross_margin_pct": 39.7,
+      "corporate_selling_price_thb": 800.0,
+      "corporate_gross_profit_unit": 256.9,
+      "corporate_gross_profit_total": 256900.0,
+      "corporate_gross_margin_pct": 32.1,
+      "corporate_savings_per_unit_thb": 100.0,
+      "corporate_savings_total_thb": 100000.0
+    }
+  ]
+}
