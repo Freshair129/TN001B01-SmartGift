@@ -72,6 +72,16 @@ This file defines the domain role, governance invariants, and execution constrai
 
 ---
 
+## 💰 Pricing & Costing Delegation
+
+For any task, analysis, or inquiry involving **pricing, factory costs (USD/RMB), landed costs, quantity price tiers, FlowAccount catalogs, or gross profit margins**, do NOT expand formulas or pricing catalogs in this root document. Delegate directly to:
+
+👉 **[Price Agent Directive](.agents/price/AGENT.md)** (or `.agent/price/AGENT.md`)
+
+The Price Agent strictly enforces the 4-layer pricing taxonomy (`FACTORY_EXW` → `LANDED_COST` → `CATALOG_SRP` → `INVOICE_SELLING_PRICE`), prevents comparing selling price against selling price, and maintains quantity tier integrity.
+
+---
+
 ## 🧪 Verification Commands
 
 ```bash

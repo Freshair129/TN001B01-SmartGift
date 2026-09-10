@@ -222,7 +222,10 @@
   .notice.crit { background:var(--crit-bg); color:var(--crit); border-color:color-mix(in srgb,var(--crit) 30%,transparent); }
   .notice.info { background:var(--paper-2); color:var(--ink-2); border-color:var(--rule); }
 
-  .footnote { margin-top:24px; padding-top:13px; border-top:1px solid var(--rule); font-size:12px; color:var(--ink-3); line-height:1.6; max-width:78ch; }
+  .cfgsrc { margin:18px 0 0; font-size:11.5px; font-family:var(--mono, ui-monospace, monospace); line-height:1.6; }
+  .cfgsrc[data-state="config"] { color:var(--ink-3); }
+  .cfgsrc[data-state="builtin"] { color:var(--warn, #8a6d1f); }
+  .footnote { margin-top:10px; padding-top:13px; border-top:1px solid var(--rule); font-size:12px; color:var(--ink-3); line-height:1.6; max-width:78ch; }
   .footnote b { color:var(--ink-2); }
   .err { color:var(--crit); font-size:13px; padding:14px 16px; }
 
@@ -503,6 +506,7 @@
         </div>
         <div class="basket" id="basket"></div>
         <div class="notices" id="notices"></div>
+        <p class="cfgsrc" id="configSource"></p>
         <p class="footnote" id="foot"></p>
       </div>
     </div>
@@ -547,27 +551,37 @@
     electronic_tisi: row([6900,18],[7400,19],[7900,20],[8400,21]),
   };
   // Yiwu sea matches the Guangzhou cells exactly on the source sheets.
-  const RATES = {
+  let RATES = {
     guangzhou_shenzhen: {truck:GZ_TRUCK, sea:GZ_SEA},
     yiwu:               {truck:YW_TRUCK, sea:GZ_SEA},
   };
 
-  const DENSITY_SWITCH = 400, MIN_CBM = 0.01, SEA_THRESHOLD = 5;
-  const SEASON = [9,10,11,12,1];
-  const MARKUP_BANDS = [
+  let DENSITY_SWITCH = 400, MIN_CBM = 0.01, SEA_THRESHOLD = 5;
+  let SEASON = [9,10,11,12,1];
+  let PRICE_STEP = 10;
+  let MARKUP_BANDS = [
     {max:250, f:3.00}, {max:350, f:2.73}, {max:500, f:2.62}, {max:650, f:2.45}, {max:Infinity, f:2.14},
   ];
-  const FLOORS = [{maxQty:20, thb:5000}, {maxQty:Infinity, thb:3000}];
+  let FLOORS = [{maxQty:20, thb:5000}, {maxQty:Infinity, thb:3000}];
 
   /*
    * "Price is based on ≥500 sets, small quantity order is acceptable with 1.1 - 1.5 times price."
    * The catalog gives the range but not which quantity attracts which multiple, so this schedule
    * is an assumption — every quote that lands above 1.0 says so.
    */
-  const SMALL_ORDER = [
+  let SMALL_ORDER = [
     {maxQty:20, f:1.5}, {maxQty:50, f:1.4}, {maxQty:100, f:1.3},
     {maxQty:300, f:1.2}, {maxQty:499, f:1.1}, {maxQty:Infinity, f:1.0},
   ];
+
+  /* Screening rate tables and the position rule. Overridden by pricing-config.json. */
+  let LOGO_RATES = {
+    hotstamp:      {setup:11.3, tiers:[{max:100,usd:0}, {max:499,usd:0.081}, {max:999,usd:0.065}, {max:Infinity,usd:0.048}]},
+    hotstamp_text: {flat:4.84},
+    engrave:       {tiers:[{max:9,usd:0.17}, {max:99,usd:0.081}, {max:299,usd:0.05}, {max:499,usd:0.035}, {max:Infinity,usd:0.02}]},
+    silk:          {flatUpTo:350, flat:13, perPieceAbove:0.04},
+  };
+  let POS_RULE = {extra:2, min:1};
   const smallOrderFactor = q => (SMALL_ORDER.find(b => q <= b.maxQty) || {f:1}).f;
 
   /*
@@ -577,8 +591,13 @@
   function positionsForCode(code) {
     const m = /(\d)\s*$/.exec(code || '');
     const pieces = m ? Number(m[1]) : 1;
-    return (pieces === 0 ? 1 : pieces) + 2;
+    return Math.max(POS_RULE.min, (pieces === 0 ? 1 : pieces) + POS_RULE.extra);
   }
+
+  const tierUsd = (tiers, qty) => {
+    const hit = (tiers || []).find(t => qty <= t.max);
+    return hit ? (hit.usd || 0) : 0;
+  };
 
   /* Logo charge for the whole order, in THB. `flat` is the house method actually in use. */
   function logoCostThb(logo, qty, usdToThb) {
@@ -587,16 +606,15 @@
     if (logo.method === 'none') return 0;
     let usd = 0;
     if (logo.method === 'hotstamp') {
-      const over = Math.max(0, qty - 100);
-      const per = qty <= 100 ? 0 : qty <= 499 ? 0.081 : qty <= 999 ? 0.065 : 0.048;
-      usd = (11.3 + over * per) * pos;
+      const r = LOGO_RATES.hotstamp;
+      usd = (r.setup + Math.max(0, qty - 100) * tierUsd(r.tiers, qty)) * pos;
     } else if (logo.method === 'hotstamp_text') {
-      usd = 4.84 * pos;
+      usd = LOGO_RATES.hotstamp_text.flat * pos;
     } else if (logo.method === 'engrave') {
-      const per = qty <= 9 ? 0.17 : qty <= 99 ? 0.081 : qty <= 299 ? 0.05 : qty <= 499 ? 0.035 : 0.02;
-      usd = qty * per * pos;
+      usd = qty * tierUsd(LOGO_RATES.engrave.tiers, qty) * pos;
     } else if (logo.method === 'silk') {
-      usd = (qty <= 350 ? 13 : qty * 0.04) * pos * colors;
+      const r = LOGO_RATES.silk;
+      usd = (qty <= r.flatUpTo ? r.flat : qty * r.perPieceAbove) * pos * colors;
     } else if (logo.method === 'uv') {
       usd = qty * pos * (logo.uvRate || 0);
     }
@@ -604,14 +622,16 @@
   }
 
   /* The order workflow, in company working days. Customer confirmation time is not counted. */
-  const FREIGHT_DAYS = {truck:[7,10], sea:[21,30]};
-  const productionDays = q => (q <= 500 ? [7,7] : [15,15]);
+  let FREIGHT_DAYS = {truck:[7,10], sea:[21,30]};
+  let PRODUCTION_DAYS = [{max:500, days:[7,7]}, {max:Infinity, days:[15,15]}];
+  let STAGE_DAYS = {artwork:[2,2], sample:[3,5]};
+  const productionDays = q => (PRODUCTION_DAYS.find(t => q <= t.max) || PRODUCTION_DAYS[PRODUCTION_DAYS.length-1]).days;
 
   function leadTimeFor(qty, mode, rush) {
     const [pMin,pMax] = productionDays(qty), [fMin,fMax] = FREIGHT_DAYS[mode];
     const stages = [
-      {label:'ส่งอาร์ตเวิร์คให้คอนเฟิร์ม', min:2, max:2},
-      ...(rush ? [] : [{label:'ทำตัวอย่าง ถ่ายภาพและคลิป', min:3, max:5}]),
+      {label:'ส่งอาร์ตเวิร์คให้คอนเฟิร์ม', min:STAGE_DAYS.artwork[0], max:STAGE_DAYS.artwork[1]},
+      ...(rush ? [] : [{label:'ทำตัวอย่าง ถ่ายภาพและคลิป', min:STAGE_DAYS.sample[0], max:STAGE_DAYS.sample[1]}]),
       {label:'ผลิต', min:pMin, max:pMax},
       {label: mode === 'truck' ? 'ขนส่งทางรถ' : 'ขนส่งทางเรือ', min:fMin, max:fMax},
     ];
@@ -633,7 +653,7 @@
     return {mode:null, lt:fastest, why:`${days} วันไม่พอแม้แบบงานเร่งทางรถ ซึ่งใช้ ${fastest.min}-${fastest.max} วัน — ต้องขยับกำหนดส่งหรือลดจำนวน`};
   }
 
-  const PROFILES = {
+  let PROFILES = {
     standard: {
       label:'ทั่วไป', breaks:[10,20,50,100,300,500,1000],
       factors:[1.00,0.90,0.85,0.80,0.77,0.75,0.73], anchor:500,
@@ -646,6 +666,91 @@
       note:'รัฐวิสาหกิจ · กสทช. · ไทยคม — 1.47 เท่าของต้นทุนรวมที่ 1,000 ชุด แล้วลดหลั่นตามจำนวนเหมือนทั่วไป',
     },
   };
+
+
+  /*
+   * config/pricing_rules_formula.yaml is the source of truth for every constant above.
+   * The browser cannot read YAML, so pipeline/export_pricing_config.py generates
+   * pricing-config.json next to this file and the constants above are only the fallback
+   * for when the fetch cannot run — opening this file from file://, most obviously.
+   * Whatever ends up in effect is named in the footer, so nobody has to guess.
+   */
+  let CONFIG_SOURCE = {label:'ค่าในตัวโปรแกรม', version:null, sha:null};
+
+  const num = v => (typeof v === 'number' && isFinite(v) ? v : null);
+  const cap = v => (v === null || v === undefined ? Infinity : v);
+
+  function applyPricingConfig(c) {
+    if (!c || typeof c !== 'object') return false;
+    const fx = c.fx || {}, lg = c.logistics || {};
+    if (num(lg.densitySwitch) !== null) DENSITY_SWITCH = lg.densitySwitch;
+    if (num(lg.minCbm) !== null) MIN_CBM = lg.minCbm;
+    if (num(lg.seaThreshold) !== null) SEA_THRESHOLD = lg.seaThreshold;
+    if (Array.isArray(lg.seasonMonths) && lg.seasonMonths.length) SEASON = lg.seasonMonths.slice();
+    if (num(c.priceStepThb) !== null && c.priceStepThb > 0) PRICE_STEP = c.priceStepThb;
+
+    if (Array.isArray(c.floors) && c.floors.length)
+      FLOORS = c.floors.map(f => ({maxQty: cap(f.max), thb: f.thb}));
+    if (Array.isArray(c.smallOrder) && c.smallOrder.length)
+      SMALL_ORDER = c.smallOrder.map(t => ({maxQty: cap(t.max), f: t.f}));
+    if (Array.isArray(c.markupBands) && c.markupBands.length)
+      MARKUP_BANDS = c.markupBands.map(b => ({max: cap(b.max), f: b.f}));
+
+    ['standard','corporate'].forEach(key => {
+      const p = (c.profiles || {})[key];
+      if (!p || !Array.isArray(p.breaks) || !Array.isArray(p.factors)) return;
+      if (p.breaks.length !== p.factors.length || p.breaks.indexOf(p.anchor) < 0) return;
+      PROFILES[key] = {
+        label: p.label || PROFILES[key].label,
+        breaks: p.breaks.slice(), factors: p.factors.slice(), anchor: p.anchor,
+        basis: p.basis || PROFILES[key].basis,
+        bands: num(p.flatMarkup) !== null ? [{max:Infinity, f:p.flatMarkup}] : MARKUP_BANDS,
+        refGoods: p.refGoods || undefined,
+        note: p.note || PROFILES[key].note,
+      };
+    });
+
+    if (c.rates && c.rates.guangzhou_shenzhen && c.rates.yiwu) RATES = c.rates;
+
+    const lm = c.logoMethods || {};
+    if (lm.hotstamp) LOGO_RATES.hotstamp = {setup: lm.hotstamp.setup_usd,
+      tiers: (lm.hotstamp.per_piece_over_100_usd || []).map(t => ({max: cap(t.max), usd: t.usd}))};
+    if (lm.hotstamp_text) LOGO_RATES.hotstamp_text = {flat: lm.hotstamp_text.flat_usd};
+    if (lm.engrave) LOGO_RATES.engrave = {tiers: (lm.engrave.per_piece_usd || []).map(t => ({max: cap(t.max), usd: t.usd}))};
+    if (lm.silk) LOGO_RATES.silk = {flatUpTo: lm.silk.flat_usd_up_to_qty, flat: lm.silk.flat_usd, perPieceAbove: lm.silk.per_piece_usd_above};
+    if (c.logoPositions) POS_RULE = {extra: c.logoPositions.extra_positions ?? 2, min: c.logoPositions.min_positions ?? 1};
+
+    const lt = c.leadTime || {};
+    if (lt.artwork && lt.sample) STAGE_DAYS = {artwork:[lt.artwork.min, lt.artwork.max], sample:[lt.sample.min, lt.sample.max]};
+    if (Array.isArray(lt.production) && lt.production.length)
+      PRODUCTION_DAYS = lt.production.map(t => ({max: cap(t.max), days:[t.min, t.max_days]}));
+    if (lt.freight && lt.freight.truck && lt.freight.sea)
+      FREIGHT_DAYS = {truck:[lt.freight.truck.min, lt.freight.truck.max], sea:[lt.freight.sea.min, lt.freight.sea.max]};
+
+    CONFIG_SOURCE = {label: c.source_file || 'pricing-config.json',
+                     version: c.formula_version || null,
+                     sha: c.source_sha256 ? c.source_sha256.slice(0, 8) : null};
+    return true;
+  }
+
+  function renderConfigSource() {
+    const el = $('configSource');
+    if (!el) return;
+    const c = CONFIG_SOURCE;
+    el.textContent = c.version
+      ? `ค่าคงที่จาก ${c.label} · เวอร์ชัน ${c.version} · sha ${c.sha}`
+      : 'ค่าคงที่จากค่าในตัวโปรแกรม — โหลด pricing-config.json ไม่ได้ (เปิดจากไฟล์โดยตรงหรือยังไม่ได้ generate)';
+    el.dataset.state = c.version ? 'config' : 'builtin';
+  }
+
+  async function loadPricingConfig() {
+    try {
+      const res = await fetch(new URL('pricing-config.json', location.href), {cache:'no-cache'});
+      if (res.ok) applyPricingConfig(await res.json());
+    } catch { /* fall back to the built-in constants above */ }
+    renderConfigSource();
+    if (typeof render === 'function') render();
+  }
 
   const round = (v,d) => { const f = 10**d; return Math.round((v + Number.EPSILON) * f) / f; };
   const roundUpTo = (v,step) => round(Math.ceil(round(v/step, 6)) * step, 6);
@@ -714,9 +819,9 @@
       const minProfit = floorFor(qty);
       const floorPrice = L.total + (minProfit + i.ocost) / qty;
       const basis = floorPrice > ladder ? 'floor' : (P.basis === 'landed' ? 'volume' : 'ladder');
-      const price = roundUpTo(Math.max(ladder, floorPrice), 10);
+      const price = roundUpTo(Math.max(ladder, floorPrice), PRICE_STEP);
       const profit = (price - L.total) * qty - i.ocost;
-      return {qty, price, basis, minProfit, landed: round(L.total,2), mode:L.fr.mode,
+      return {qty, price, basis, minProfit, landed: round(L.total,2), mode:L.fr.mode, sof:L.sof,
               profit: round(profit,2), margin: round(profit/(price*qty)*100, 1)};
     });
 
@@ -1511,6 +1616,8 @@
 
   setProfile('standard');
   renderBasket();
+  renderConfigSource();
+  loadPricingConfig();
   loadBundled();
 })();
 </script>

@@ -80,55 +80,251 @@ RATES = {
     }
 }
 
-import os
+import copy
+import hashlib
 import json
+import os
+import re
 try:
     import yaml
 except ImportError:
     yaml = None
 
+DEFAULT_FX = 5.0
+DEFAULT_INLAND_RMB = 2.0
+DEFAULT_PRICE_STEP_THB = 10.0
+
+# Rate tables for the logo methods. Every method except "flat" is quoted in USD and
+# converted with usd_to_thb; the caller still supplies the flat and UV rates themselves.
+LOGO_METHODS = {
+    "flat": {"unit": "thb_per_position_per_piece", "default_rate_thb": 10.0},
+    "hotstamp": {"setup_usd": 11.3, "per_piece_over_100_usd": [
+        {"max_qty": 100, "usd": 0.0}, {"max_qty": 499, "usd": 0.081},
+        {"max_qty": 999, "usd": 0.065}, {"max_qty": float("inf"), "usd": 0.048}]},
+    "hotstamp_text": {"flat_usd": 4.84},
+    "engrave": {"per_piece_usd": [
+        {"max_qty": 9, "usd": 0.17}, {"max_qty": 99, "usd": 0.081},
+        {"max_qty": 299, "usd": 0.05}, {"max_qty": 499, "usd": 0.035},
+        {"max_qty": float("inf"), "usd": 0.02}]},
+    "silk": {"flat_usd_up_to_qty": 350, "flat_usd": 13.0, "per_piece_usd_above": 0.04},
+    "uv": {"per_piece_usd": None},
+    "none": {"unit": "none"},
+}
+
+LOGO_POSITIONS_RULE = {"pieces_from_code_last_digit": True, "extra_positions": 2, "min_positions": 1}
+
+LEAD_TIME_WORKING_DAYS = {
+    "artwork_confirm": {"min": 2, "max": 2},
+    "sample": {"min": 3, "max": 5},
+    "production": [{"max_qty": 500, "min": 7, "max": 7},
+                   {"max_qty": float("inf"), "min": 15, "max": 15}],
+    "freight": {"truck": {"min": 7, "max": 10}, "sea": {"min": 21, "max": 30}},
+}
+
+
+def _is_number(value: Any) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def _tier_table(rows: Any, bound_key: str, value_key: str,
+                out_key: str = "max_qty", out_value: str = None) -> Optional[List[Dict[str, float]]]:
+    """Normalize a YAML list of {bound, value} rows, sorted by bound. None if unusable."""
+    if not isinstance(rows, list) or not rows:
+        return None
+    out_value = out_value or value_key
+    table = []
+    for row in rows:
+        if not isinstance(row, dict) or not _is_number(row.get(bound_key)) or not _is_number(row.get(value_key)):
+            return None
+        table.append({out_key: float(row[bound_key]), out_value: float(row[value_key])})
+    table.sort(key=lambda r: r[out_key])
+    return table
+
+
+def _tier_value(rows: Any, qty: int, value_key: str, default: float) -> float:
+    if not isinstance(rows, list):
+        return default
+    for row in rows:
+        if isinstance(row, dict) and _is_number(row.get("max_qty")) and qty <= row["max_qty"]:
+            return float(row.get(value_key) or 0.0)
+    return default
+
+
 class SmartGiftPricingCalculator:
-    def __init__(self, fx: float = 5.0, config_path: Optional[str] = None,
+    # config/pricing_rules_formula.yaml is the declared source of truth for the formula
+    # lane (docs/DATA_PIPELINE_AND_VAULT_STRUCTURE.md). Until 2026-09-10 this class read
+    # key names that file never had ("currency_fx", "shipping_rates"), so every constant
+    # silently came from the module defaults below. The defaults are now the fallback for
+    # when the config is missing or unreadable, not the normal path.
+    CONFIG_CANDIDATES = (
+        os.path.join(os.path.dirname(__file__), "..", "..", "config", "pricing_rules_formula.yaml"),
+        "config/pricing_rules_formula.yaml",
+    )
+
+    def __init__(self, fx: Optional[float] = None, config_path: Optional[str] = None,
                  usd_to_thb: Optional[float] = None):
-        self.fx = fx
-        self.rates = RATES
+        # Precedence: explicit constructor argument > config file > module default.
         self.config_path = config_path
-        self.usd_to_thb = usd_to_thb
+        self.fx = DEFAULT_FX
+        self.usd_to_thb = None
+        self.rates = copy.deepcopy(RATES)
+        self.min_cbm = MIN_CBM
+        self.sea_threshold = SEA_THRESHOLD
+        self.density_switch = DENSITY_SWITCH
+        self.season_months = list(SEASON_MONTHS)
+        self.floors = copy.deepcopy(FLOORS)
+        self.sof_table = copy.deepcopy(SMALL_ORDER_FACTORS)
+        self.markup_bands = copy.deepcopy(MARKUP_BANDS_STANDARD)
+        self.profiles = copy.deepcopy(PROFILES)
+        self.logo_methods = copy.deepcopy(LOGO_METHODS)
+        self.logo_positions_rule = dict(LOGO_POSITIONS_RULE)
+        self.lead_times = copy.deepcopy(LEAD_TIME_WORKING_DAYS)
+        self.default_inland_rmb = DEFAULT_INLAND_RMB
+        self.price_step_thb = DEFAULT_PRICE_STEP_THB
+        self.config_source = {"path": None, "version": None, "sha256": None, "applied": []}
+
         self._load_config()
+
+        if fx is not None:
+            self.fx = float(fx)
+        if usd_to_thb is not None:
+            self.usd_to_thb = float(usd_to_thb)
         if self.usd_to_thb is None:
             # Last-resort estimate when no explicit rate and no config: ~6.5 CNY per USD
             self.usd_to_thb = self.fx * 6.5
 
     def _load_config(self):
-        candidate_paths = [
-            self.config_path,
-            os.path.join(os.path.dirname(__file__), "..", "..", "config", "pricing_rules_formula.yaml"),
-            "config/pricing_rules_formula.yaml",
-            os.path.join(os.path.dirname(__file__), "..", "..", "config", "shipping_rate_matrix.yaml"),
-            "config/shipping_rate_matrix.yaml",
-            "config/shipping_rate_matrix.json"
-        ]
-        for path in candidate_paths:
-            if path and os.path.exists(path):
-                try:
-                    with open(path, "r", encoding="utf-8") as f:
-                        if path.endswith(".yaml") or path.endswith(".yml"):
-                            data = yaml.safe_load(f) if yaml else None
-                        else:
-                            data = json.load(f)
-                    if data:
-                        if "currency_fx" in data and "cny_to_thb" in data["currency_fx"]:
-                            self.fx = data["currency_fx"]["cny_to_thb"]
-                        if (self.usd_to_thb is None and "currency_fx" in data
-                                and "usd_to_thb" in data["currency_fx"]):
-                            self.usd_to_thb = data["currency_fx"]["usd_to_thb"]
-                        if "shipping_rates" in data:
-                            self._merge_rates(data["shipping_rates"])
-                        elif "rates" in data:
-                            self._merge_rates(data["rates"])
-                        break
-                except Exception:
-                    pass
+        for path in [self.config_path, *self.CONFIG_CANDIDATES]:
+            if not path or not os.path.exists(path):
+                continue
+            try:
+                with open(path, "rb") as f:
+                    raw = f.read()
+                text = raw.decode("utf-8-sig")
+                if path.endswith((".yaml", ".yml")):
+                    if yaml is None:
+                        continue
+                    data = yaml.safe_load(text)
+                else:
+                    data = json.loads(text)
+            except Exception:
+                continue
+            if not isinstance(data, dict):
+                continue
+            self.config_source = {
+                "path": os.path.normpath(path),
+                "version": data.get("version"),
+                "sha256": hashlib.sha256(raw).hexdigest(),
+                "applied": self._apply_config(data),
+            }
+            return
+
+    def _apply_config(self, data: Dict[str, Any]) -> List[str]:
+        """Overlay a parsed pricing_rules_formula document. Returns the blocks applied."""
+        applied: List[str] = []
+
+        fx_block = data.get("currency_exchange_rates") or {}
+        if _is_number(fx_block.get("cny_to_thb")):
+            self.fx = float(fx_block["cny_to_thb"])
+            applied.append("currency_exchange_rates.cny_to_thb")
+        if _is_number(fx_block.get("usd_to_thb")):
+            self.usd_to_thb = float(fx_block["usd_to_thb"])
+            applied.append("currency_exchange_rates.usd_to_thb")
+
+        log = data.get("logistics_density_and_freight") or {}
+        if _is_number(log.get("density_threshold_kg_per_cbm")):
+            self.density_switch = float(log["density_threshold_kg_per_cbm"])
+        if _is_number(log.get("min_chargeable_cbm")):
+            self.min_cbm = float(log["min_chargeable_cbm"])
+        if _is_number(log.get("sea_threshold_cbm")):
+            self.sea_threshold = float(log["sea_threshold_cbm"])
+        if isinstance(log.get("seasonality_peak_months"), list) and log["seasonality_peak_months"]:
+            self.season_months = [int(m) for m in log["seasonality_peak_months"]]
+        if log:
+            applied.append("logistics_density_and_freight")
+        inland = log.get("inland_china_freight") or {}
+        if _is_number(inland.get("default_rate_cny_per_set")):
+            self.default_inland_rmb = float(inland["default_rate_cny_per_set"])
+            applied.append("inland_china_freight.default_rate_cny_per_set")
+
+        step = (data.get("price_rounding") or {}).get("ladder_price_step_thb")
+        if _is_number(step) and float(step) > 0:
+            self.price_step_thb = float(step)
+            applied.append("price_rounding")
+
+        floors = _tier_table(data.get("profit_floors"), "max_qty", "thb")
+        if floors:
+            self.floors = floors
+            applied.append("profit_floors")
+        else:
+            legacy = data.get("profit_floors_thb") or {}
+            if _is_number(legacy.get("small_order_floor")) and _is_number(legacy.get("standard_floor")):
+                self.floors = [
+                    {"max_qty": 20, "thb": float(legacy["small_order_floor"])},
+                    {"max_qty": float("inf"), "thb": float(legacy["standard_floor"])},
+                ]
+                applied.append("profit_floors_thb")
+
+        sof = _tier_table(data.get("small_order_factors"), "max_qty", "sof")
+        if sof:
+            self.sof_table = sof
+            applied.append("small_order_factors")
+
+        bands = _tier_table(data.get("markup_bands_standard"), "max_cost_thb", "markup_multiplier",
+                            out_key="max_cost", out_value="markup")
+        if bands:
+            self.markup_bands = bands
+            applied.append("markup_bands_standard")
+
+        for key, block_name in (("standard", "standard_quote_profile"),
+                                ("corporate", "corporate_quote_profile")):
+            profile = self._read_profile(data.get(block_name))
+            if profile:
+                self.profiles[key] = profile
+                applied.append(block_name)
+
+        if isinstance(data.get("logo_methods"), dict) and data["logo_methods"]:
+            self.logo_methods = copy.deepcopy(data["logo_methods"])
+            applied.append("logo_methods")
+        if isinstance(data.get("logo_positions_rule"), dict) and data["logo_positions_rule"]:
+            self.logo_positions_rule = dict(data["logo_positions_rule"])
+            applied.append("logo_positions_rule")
+        if isinstance(data.get("lead_time_working_days"), dict) and data["lead_time_working_days"]:
+            self.lead_times = copy.deepcopy(data["lead_time_working_days"])
+            applied.append("lead_time_working_days")
+
+        matrix = data.get("shipping_rate_matrix") or data.get("shipping_rates") or data.get("rates")
+        if isinstance(matrix, dict) and matrix:
+            self._merge_rates(matrix)
+            applied.append("shipping_rate_matrix")
+
+        return applied
+
+    def _read_profile(self, block: Any) -> Optional[Dict[str, Any]]:
+        if not isinstance(block, dict):
+            return None
+        breaks, factors = block.get("breaks"), block.get("factors")
+        anchor = block.get("anchor_qty", block.get("anchor"))
+        if not (isinstance(breaks, list) and isinstance(factors, list)):
+            return None
+        if len(breaks) != len(factors) or anchor not in breaks:
+            # A ladder whose factors do not line up with its breaks would price silently
+            # wrong, so the block is rejected and the module default stays in place.
+            return None
+        profile: Dict[str, Any] = {
+            "name": block.get("name", ""),
+            "breaks": [int(b) for b in breaks],
+            "factors": [float(f) for f in factors],
+            "anchor": int(anchor),
+            "basis": block.get("basis", "landed"),
+        }
+        if _is_number(block.get("flat_markup")):
+            profile["flat_markup"] = float(block["flat_markup"])
+        if block.get("reference_goods_type"):
+            profile["ref_goods"] = block["reference_goods_type"]
+        if block.get("markup_source") == "markup_bands_standard" or "flat_markup" not in profile:
+            profile["markup_bands"] = None  # resolved against self.markup_bands at quote time
+        return profile
 
     def _merge_rates(self, new_rates: Dict[str, Any]):
         # Normalize and merge rates table
@@ -143,35 +339,49 @@ class SmartGiftPricingCalculator:
                     cat_key = "electronic_tisi" if ("electronic" in cat.lower() or "tis" in cat.lower()) else cat.lower()
                     self.rates[wh_key][mode][cat_key] = {k.lower(): v for k, v in cat_data.items()}
 
+    def describe_config(self) -> Dict[str, Any]:
+        """Which config file is in effect and which blocks it supplied."""
+        return dict(self.config_source)
+
+    def positions_for_code(self, code: str) -> int:
+        """Pieces in the set (last digit of the code) plus the gift box and the bag."""
+        rule = self.logo_positions_rule
+        pieces = 1
+        if rule.get("pieces_from_code_last_digit", True):
+            match = re.search(r"(\d)\s*$", code or "")
+            if match:
+                pieces = int(match.group(1)) or 1
+        return max(int(rule.get("min_positions", 1)), pieces + int(rule.get("extra_positions", 0)))
+
     def get_small_order_factor(self, qty: int) -> float:
-        for tier in SMALL_ORDER_FACTORS:
+        for tier in self.sof_table:
             if qty <= tier["max_qty"]:
                 return tier["sof"]
         return 1.0
 
     def get_floor_profit(self, qty: int) -> float:
-        for f in FLOORS:
+        for f in self.floors:
             if qty <= f["max_qty"]:
                 return f["thb"]
-        return 3000.0
+        return self.floors[-1]["thb"] if self.floors else 3000.0
 
     def resolve_shipping_mode(self, mode: str, month: int, volume_cbm: float) -> str:
         if mode != "auto":
             return mode
-        if month in SEASON_MONTHS:
+        if month in self.season_months:
             return "truck"
-        if volume_cbm > SEA_THRESHOLD:
+        if volume_cbm > self.sea_threshold:
             return "sea"
         return "truck"
 
     def calculate_freight(self, qty: int, upc: int, cbm: float, kg: Optional[float],
                           warehouse: str, mode: str, month: int, goods_type: str, tier: str) -> Dict[str, Any]:
         cartons = math.ceil(qty / max(upc, 1))
-        volume_cbm = round(cartons * max(cbm, MIN_CBM), 2)
+        volume_cbm = round(cartons * max(cbm, self.min_cbm), 2)
         weight_kg = round(cartons * kg, 2) if kg else None
-        
+
         density = (kg / cbm) if (kg and cbm > 0) else 0.0
-        charged_by = "weight" if density >= DENSITY_SWITCH else "volume"
+        charged_by = "weight" if density >= self.density_switch else "volume"
         resolved_mode = self.resolve_shipping_mode(mode, month, volume_cbm)
 
         rate_table = self.rates.get(warehouse, {}).get(resolved_mode, {}).get(goods_type, {}).get(tier, {"cbm": 6400, "kg": 16})
@@ -201,32 +411,40 @@ class SmartGiftPricingCalculator:
 
     def calculate_logo_cost(self, method: str, qty: int, positions: int = 1, colors: int = 1,
                             rate: float = 0.0, uv_rate: float = 0.0) -> float:
-        usd_to_thb = self.usd_to_thb
-        if method == "none":
+        # Rate tables come from logo_methods in the config; the flat and UV rates stay
+        # caller-supplied because they are quoted per job, not published in the catalog.
+        spec = self.logo_methods.get(method)
+        if method == "none" or spec is None:
             return 0.0
-        elif method == "flat":
+        positions, colors = max(1, positions), max(1, colors)
+        if method == "flat":
             return qty * positions * rate
-        elif method == "hotstamp":
-            per = 0.0 if qty <= 100 else (0.081 if qty <= 499 else (0.065 if qty <= 999 else 0.048))
-            return (11.3 + max(0, qty - 100) * per) * positions * usd_to_thb
+        if method == "uv":
+            return qty * positions * uv_rate * self.usd_to_thb
+
+        if method == "hotstamp":
+            per = _tier_value(spec.get("per_piece_over_100_usd"), qty, "usd", 0.0)
+            usd = (float(spec.get("setup_usd") or 0.0) + max(0, qty - 100) * per) * positions
         elif method == "hotstamp_text":
-            return 4.84 * positions * usd_to_thb
+            usd = float(spec.get("flat_usd") or 0.0) * positions
         elif method == "engrave":
-            per = 0.17 if qty <= 9 else (0.081 if qty <= 99 else (0.05 if qty <= 299 else (0.035 if qty <= 499 else 0.02)))
-            return qty * per * positions * usd_to_thb
+            usd = qty * _tier_value(spec.get("per_piece_usd"), qty, "usd", 0.0) * positions
         elif method == "silk":
-            base = 13.0 if qty <= 350 else (qty * 0.04)
-            return base * positions * colors * usd_to_thb
-        elif method == "uv":
-            return qty * positions * uv_rate * usd_to_thb
-        return 0.0
+            cap = float(spec.get("flat_usd_up_to_qty") or 0)
+            base = float(spec.get("flat_usd") or 0.0) if qty <= cap else qty * float(spec.get("per_piece_usd_above") or 0.0)
+            usd = base * positions * colors
+        else:
+            return 0.0
+        return usd * self.usd_to_thb
 
     def calculate_landed_cost(self, rmb: float, qty: int, upc: int, cbm: float, kg: Optional[float],
                               warehouse: str = "guangzhou_shenzhen", mode: str = "auto", month: int = 8,
                               goods_type: str = "general", tier: str = "gold",
-                              inland_rmb: float = 2.0, custom_ucost: float = 0.0,
+                              inland_rmb: Optional[float] = None, custom_ucost: float = 0.0,
                               logo_method: str = "none", logo_positions: int = 1, logo_colors: int = 1,
                               logo_rate: float = 0.0, logo_uv_rate: float = 0.0) -> Dict[str, Any]:
+        if inland_rmb is None:
+            inland_rmb = self.default_inland_rmb
         sof = self.get_small_order_factor(qty)
         factory_cost_thb = round(rmb * self.fx * sof, 4)
 
@@ -256,7 +474,7 @@ class SmartGiftPricingCalculator:
                        tier: str = "gold", logo_method: str = "none", logo_positions: int = 1,
                        logo_colors: int = 1, logo_rate: float = 0.0, logo_uv_rate: float = 0.0,
                        custom_ucost: float = 0.0, order_cost: float = 0.0) -> Dict[str, Any]:
-        prof = PROFILES.get(profile_key, PROFILES["corporate"])
+        prof = self.profiles.get(profile_key, self.profiles["corporate"])
         anchor = prof["anchor"]
         ref_goods = prof.get("ref_goods", goods_type)
         logo_kwargs = {"logo_method": logo_method, "logo_positions": logo_positions,
@@ -276,8 +494,9 @@ class SmartGiftPricingCalculator:
         if "flat_markup" in prof:
             markup = prof["flat_markup"]
         else:
-            markup = 2.14
-            for band in prof["markup_bands"]:
+            bands = prof.get("markup_bands") or self.markup_bands
+            markup = bands[-1]["markup"]
+            for band in bands:
                 if anchor_basis <= band["max_cost"]:
                     markup = band["markup"]
                     break
@@ -298,7 +517,7 @@ class SmartGiftPricingCalculator:
             min_profit = self.get_floor_profit(q)
             floor_price = L["total_landed_cost"] + (min_profit + order_cost) / q
 
-            final_price = self.round_up_to_step(max(ladder_price, floor_price), 10.0)
+            final_price = self.round_up_to_step(max(ladder_price, floor_price), self.price_step_thb)
             profit = (final_price - L["total_landed_cost"]) * q - order_cost
             margin_pct = (profit / (final_price * q) * 100.0) if final_price > 0 else 0.0
 

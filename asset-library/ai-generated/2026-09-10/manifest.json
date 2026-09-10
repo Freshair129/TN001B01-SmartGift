@@ -1,0 +1,966 @@
+{
+  "title": "SmartGift AI Image Library",
+  "date": "2026-09-10",
+  "count": 48,
+  "originals_preserved": true,
+  "records": [
+    {
+      "asset_id": "AI-5718e2ab687dc3b8",
+      "filename": "images/PRODUCT_00A7D1FE671C2AF3B1E6-5718e2ab68.png",
+      "product_code": "PRODUCT_00A7D1FE671C2AF3B1E6",
+      "name": "Wireless Mouse",
+      "family": "mouse",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "5718e2ab687dc3b856aed9b6ee3a84eb18bb16d6fef4f5f20a4b836a600dfafb",
+      "source_description": "wireless mouse 5.6*11.5* magnetic top cover take out from the top to get the receiver one button back to desktop design for win system 500mah battery 4 lights remaining percentage display type-c rechargeable port mode switch button on & off button",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-31de0f89-d63f-4fe5-a36e-1e5c84dd190f.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_00A7D1FE671C2AF3B1E6.png"
+      ],
+      "created_utc": "2026-09-10T00:15:31.302053+00:00"
+    },
+    {
+      "asset_id": "AI-a76dfd00854ad301",
+      "filename": "images/PRODUCT_01C7554D0239EC30D3B0-a76dfd0085.png",
+      "product_code": "PRODUCT_01C7554D0239EC30D3B0",
+      "name": "Umbrella",
+      "family": "umbrella",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "a76dfd00854ad301bf22f18dc6352ecd5edb72ce7329503522180de013d0307c",
+      "source_description": "umbrella",
+      "exact_prompt": "Use case: product-mockup. One standalone catalog illustration of this individual item: Umbrella. Source description: umbrella. White seamless background, soft studio lighting, entire object visible and centered, square image. Neutral charcoal or natural material color unless stated in source. No gift boxes, unrelated objects, logos, watermark or text. This is a simulated illustrative product design, not a claim of exact manufacturer appearance. Preserve the product type and stated visible features.",
+      "prompt_status": "recorded",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-a08e6d3c-816d-4d6d-876c-335c74ac0f4f.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_01C7554D0239EC30D3B0.png"
+      ],
+      "created_utc": "2026-09-10T00:16:39.255288+00:00"
+    },
+    {
+      "asset_id": "AI-6378d7000174d708",
+      "filename": "images/PRODUCT_040A3998F55A7F74ACA5-6378d70001.png",
+      "product_code": "PRODUCT_040A3998F55A7F74ACA5",
+      "name": "Pen",
+      "family": "pen",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "6378d7000174d708f0b17212ab00f59e70f9aac7bbc9d1a0d490fade09481106",
+      "source_description": "pen gel ink",
+      "exact_prompt": "Use case: product-mockup. One standalone catalog illustration of this individual item: Pen. Source description: pen gel ink. White seamless background, soft studio lighting, entire object visible and centered, square image. Neutral charcoal or natural material color unless stated in source. No gift boxes, unrelated objects, logos, watermark or text. This is a simulated illustrative product design, not a claim of exact manufacturer appearance. Preserve the product type and stated visible features.",
+      "prompt_status": "recorded",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-8802aeac-1fc6-451b-a24b-53441ca158b6.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_040A3998F55A7F74ACA5.png"
+      ],
+      "created_utc": "2026-09-10T00:16:55.900792+00:00"
+    },
+    {
+      "asset_id": "AI-f98b6c0f9e7547c1",
+      "filename": "images/PRODUCT_041F6E650AF07FAF0E08-f98b6c0f9e.png",
+      "product_code": "PRODUCT_041F6E650AF07FAF0E08",
+      "name": "Wireless Earphone",
+      "family": "earphone",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "f98b6c0f9e7547c1dfbe6596a9c58896aa6254c7b408bf045b4f16f53b5c21ec",
+      "source_description": "wireless earphone",
+      "exact_prompt": "Use case: product-mockup. One standalone catalog illustration of this individual item: Wireless Earphone. Source description: wireless earphone. White seamless background, soft studio lighting, entire object visible and centered, square image. Neutral charcoal or natural material color unless stated in source. No gift boxes, unrelated objects, logos, watermark or text. This is a simulated illustrative product design, not a claim of exact manufacturer appearance. Preserve the product type and stated visible features.",
+      "prompt_status": "recorded",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-96023601-78c4-498d-a90a-0a74bcf28ff0.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_041F6E650AF07FAF0E08.png"
+      ],
+      "created_utc": "2026-09-10T00:17:13.849479+00:00"
+    },
+    {
+      "asset_id": "AI-8c2ca8ea6f52aa34",
+      "filename": "images/PRODUCT_045AD72D484CF3B5336F-8c2ca8ea6f.png",
+      "product_code": "PRODUCT_045AD72D484CF3B5336F",
+      "name": "Mouse",
+      "family": "mouse",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "8c2ca8ea6f52aa3418da731a3278070275846fbc50453435052a31060e859a2c",
+      "source_description": "mouse 109*60* 4 buttons type-c charging interface triple-mode +bt1+bt2 dpi 800/1200/1600 removable cover operating range 10m",
+      "exact_prompt": "Use case: product-mockup. One standalone catalog illustration of this individual item: Mouse. Source description: mouse 109*60* 4 buttons type-c charging interface triple-mode +bt1+bt2 dpi 800/1200/1600 removable cover operating range 10m. White seamless background, soft studio lighting, entire object visible and centered, square image. Neutral charcoal or natural material color unless stated in source. No gift boxes, unrelated objects, logos, watermark or text. This is a simulated illustrative product design, not a claim of exact manufacturer appearance. Preserve the product type and stated visible features.",
+      "prompt_status": "recorded",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-b9b1e211-9738-4dbd-9bc2-1b8a26d41c01.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_045AD72D484CF3B5336F.png"
+      ],
+      "created_utc": "2026-09-10T00:17:37.787371+00:00"
+    },
+    {
+      "asset_id": "AI-007fcbd31a909007",
+      "filename": "images/PRODUCT_049B44C4D9ECF281A9E5-007fcbd31a.png",
+      "product_code": "PRODUCT_049B44C4D9ECF281A9E5",
+      "name": "Detachable Hand Warmer",
+      "family": "",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "007fcbd31a9090075ec8e0cc6ffe7d70425b82d2ff92d330b9ce4cbd18da548d",
+      "source_description": "detachable hand warmer",
+      "exact_prompt": "Use case: product-mockup. One standalone catalog illustration of this individual item: Detachable Hand Warmer. Source description: detachable hand warmer. White seamless background, soft studio lighting, entire object visible and centered, square image. Neutral charcoal or natural material color unless stated in source. No gift boxes, unrelated objects, logos, watermark or text. This is a simulated illustrative product design, not a claim of exact manufacturer appearance. Preserve the product type and stated visible features.",
+      "prompt_status": "recorded",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-64e1effb-13cf-491c-94f3-d3090dfd3b55.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_049B44C4D9ECF281A9E5.png"
+      ],
+      "created_utc": "2026-09-10T00:18:00.346281+00:00"
+    },
+    {
+      "asset_id": "AI-4dd8621df4c23765",
+      "filename": "images/PRODUCT_05A8C06F06177FD4E632-4dd8621df4.png",
+      "product_code": "PRODUCT_05A8C06F06177FD4E632",
+      "name": "Car Wireless Charging Mount",
+      "family": "charger",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "4dd8621df4c237650bd334fa657ea3a1474464b529d215202c24e5effcf2a786",
+      "source_description": "car wireless charging mount /pc+alloy",
+      "exact_prompt": "Use case: product-mockup. One standalone catalog illustration of this individual item: Car Wireless Charging Mount. Source description: car wireless charging mount /pc+alloy. White seamless background, soft studio lighting, entire object visible and centered, square image. Neutral charcoal or natural material color unless stated in source. No gift boxes, unrelated objects, logos, watermark or text. This is a simulated illustrative product design, not a claim of exact manufacturer appearance. Preserve the product type and stated visible features.",
+      "prompt_status": "recorded",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-e4e07acc-9c1c-42f6-b445-418f968aff82.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_05A8C06F06177FD4E632.png"
+      ],
+      "created_utc": "2026-09-10T00:18:24.604586+00:00"
+    },
+    {
+      "asset_id": "AI-24e7a9d4c038af7e",
+      "filename": "images/PRODUCT_066DB717F5188EB545B5-24e7a9d4c0.png",
+      "product_code": "PRODUCT_066DB717F5188EB545B5",
+      "name": "Elastic Band Notebook",
+      "family": "notebook",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "24e7a9d4c038af7e1fcadfcd53b274d05ac02b7c4d6490fb342dbd7fcdc6a1f7",
+      "source_description": "notebook elastic band closure",
+      "exact_prompt": "Use case: product-mockup. One standalone catalog illustration of this individual item: Elastic Band Notebook. Source description: notebook elastic band closure. White seamless background, soft studio lighting, entire object visible and centered, square image. Neutral charcoal or natural material color unless stated in source. No gift boxes, unrelated objects, logos, watermark or text. This is a simulated illustrative product design, not a claim of exact manufacturer appearance. Preserve the product type and stated visible features.",
+      "prompt_status": "recorded",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-ad77fbfe-50f7-49be-b909-7b6f4e25a997.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_066DB717F5188EB545B5.png"
+      ],
+      "created_utc": "2026-09-10T00:18:42.052259+00:00"
+    },
+    {
+      "asset_id": "AI-e2ba5a7963ad1052",
+      "filename": "images/PRODUCT_0678405C488BD25EB28E-e2ba5a7963.png",
+      "product_code": "PRODUCT_0678405C488BD25EB28E",
+      "name": "Mug",
+      "family": "drinkware",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "e2ba5a7963ad1052f3134dd90ccbffc81bd5965ec6c7da497463c391886e3f16",
+      "source_description": "mug 316 sus 194* food grade",
+      "exact_prompt": "Use case: product-mockup. One standalone catalog illustration of this individual item: Mug. Source description: mug 316 sus 194* food grade. White seamless background, soft studio lighting, entire object visible and centered, square image. Neutral charcoal or natural material color unless stated in source. No gift boxes, unrelated objects, logos, watermark or text. This is a simulated illustrative product design, not a claim of exact manufacturer appearance. Preserve the product type and stated visible features.",
+      "prompt_status": "recorded",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-67c77a9b-189b-4ada-83d1-9f006a668f97.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_0678405C488BD25EB28E.png"
+      ],
+      "created_utc": "2026-09-10T00:19:04.446238+00:00"
+    },
+    {
+      "asset_id": "AI-be2421f1f0a43c59",
+      "filename": "images/PRODUCT_06EE4B838048E78EC2F9-be2421f1f0.png",
+      "product_code": "PRODUCT_06EE4B838048E78EC2F9",
+      "name": "Usb Flash Drive",
+      "family": "usb_flash_drive",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "be2421f1f0a43c59732891b00d8498c19a21d014f924d08b83c09afc4a24b130",
+      "source_description": "usb flash drive with chinese knot",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-dc0270f5-9129-42b4-84d0-9d3e9ec54abb.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_06EE4B838048E78EC2F9.png"
+      ],
+      "created_utc": "2026-09-10T00:19:28.795358+00:00"
+    },
+    {
+      "asset_id": "AI-a0853aa013791e2c",
+      "filename": "images/PRODUCT_14E8E11647021DDBFDC0-a0853aa013.png",
+      "product_code": "PRODUCT_14E8E11647021DDBFDC0",
+      "name": "Classic Bookmark",
+      "family": "bookmark",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "a0853aa013791e2c828af54e25c1caec3b22c7f6016f31998b6f2d1c4d0d3243",
+      "source_description": "bookmark with chinese knot",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-54d04257-897b-4731-90ef-bf38fb110b83.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_14E8E11647021DDBFDC0.png"
+      ],
+      "created_utc": "2026-09-10T00:19:45.297962+00:00"
+    },
+    {
+      "asset_id": "AI-9272318de3e8f2a8",
+      "filename": "images/PRODUCT_06FDB3EA033955A639DD-9272318de3.png",
+      "product_code": "PRODUCT_06FDB3EA033955A639DD",
+      "name": "Fan",
+      "family": "fan",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "9272318de3e8f2a83364e42e02daabd096d4ece099f251c2f27c81d0930495a3",
+      "source_description": "fan height 3-speed settings type-c charging football design",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-589b967f-a099-40f0-9b63-687110b9c63b.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_06FDB3EA033955A639DD.png"
+      ],
+      "created_utc": "2026-09-10T00:19:45.619336+00:00"
+    },
+    {
+      "asset_id": "AI-53d14b8d6865595b",
+      "filename": "images/PRODUCT_08A68D51611C7EF1CA8F-53d14b8d68.png",
+      "product_code": "PRODUCT_08A68D51611C7EF1CA8F",
+      "name": "Neck Fan",
+      "family": "fan",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "53d14b8d6865595bed372257caa6cd2196c7efa4417357ee7eab443e5da60ed8",
+      "source_description": "neck fan",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-95fee6c8-1b75-4696-a973-bf6c8ce0e1ba.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_08A68D51611C7EF1CA8F.png"
+      ],
+      "created_utc": "2026-09-10T00:20:04.931217+00:00"
+    },
+    {
+      "asset_id": "AI-e68bd2790606f52d",
+      "filename": "images/PRODUCT_14EBE40EEE4E19DAD35E-e68bd27906.png",
+      "product_code": "PRODUCT_14EBE40EEE4E19DAD35E",
+      "name": "Moka Pot",
+      "family": "",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "e68bd2790606f52d8a620b21865065ef8a9f22a57bd7833cf2e8dded32d0cc72",
+      "source_description": "moka pot",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-1225bf8f-25e9-40ac-bd12-ef28deeac30c.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_14EBE40EEE4E19DAD35E.png"
+      ],
+      "created_utc": "2026-09-10T00:20:16.350452+00:00"
+    },
+    {
+      "asset_id": "AI-d9d2a4d4c5517e8d",
+      "filename": "images/PRODUCT_08EE331E6298B2CE6E60-d9d2a4d4c5.png",
+      "product_code": "PRODUCT_08EE331E6298B2CE6E60",
+      "name": "Power Bank",
+      "family": "power_bank",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "d9d2a4d4c5517e8d0a435b7d7435427d7269db1efb30a24a520e2fd5879560f5",
+      "source_description": "power bank 6000mah 3.7v 87.5*76* +pc remaining percentage number display",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-8860b899-2d36-490f-9e01-4a7106557403.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_08EE331E6298B2CE6E60.png"
+      ],
+      "created_utc": "2026-09-10T00:20:27.188111+00:00"
+    },
+    {
+      "asset_id": "AI-3fa8c3ff863a78db",
+      "filename": "images/PRODUCT_159A7CF4D274A9414218-3fa8c3ff86.png",
+      "product_code": "PRODUCT_159A7CF4D274A9414218",
+      "name": "Massage Gun",
+      "family": "massage_gun",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "3fa8c3ff863a78db78404d8f3ad44c5c7fbdbf9b9a02b7fafe01a3257a2bf261",
+      "source_description": "massage gun 132*134* excluding massage tool four kinds of massage tools 1800mah type-c input port",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-2ef00f52-a455-43ed-9dd7-3811cfa0dbfc.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_159A7CF4D274A9414218.png"
+      ],
+      "created_utc": "2026-09-10T00:20:28.918359+00:00"
+    },
+    {
+      "asset_id": "AI-080d15b6c72ef788",
+      "filename": "images/PRODUCT_1578D647F57EA5CFC3BB-080d15b6c7.png",
+      "product_code": "PRODUCT_1578D647F57EA5CFC3BB",
+      "name": "Pen With",
+      "family": "pen",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "080d15b6c72ef788c79d50de5eacdbce25f392bbd2a8e4f0a216d7890cd605b9",
+      "source_description": "pen 13.5* gel ink",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-6adee5c3-697a-464c-93de-3b663cb3545b.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1578D647F57EA5CFC3BB.png"
+      ],
+      "created_utc": "2026-09-10T00:20:35.394788+00:00"
+    },
+    {
+      "asset_id": "AI-bdc12f1d0579cf96",
+      "filename": "images/PRODUCT_15A21FF02931F9E07A4F-bdc12f1d05.png",
+      "product_code": "PRODUCT_15A21FF02931F9E07A4F",
+      "name": "Name Card Holder",
+      "family": "name_card_holder",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "bdc12f1d0579cf960ab93f3b98b204afa17d43eaa38062aa5ea1946d8161babb",
+      "source_description": "name card holder",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-87d154cc-5d1a-420f-adc1-2c8c8215616f.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_15A21FF02931F9E07A4F.png"
+      ],
+      "created_utc": "2026-09-10T00:20:49.484827+00:00"
+    },
+    {
+      "asset_id": "AI-69103d16150e6466",
+      "filename": "images/PRODUCT_09A9775E4764DB329CDF-69103d1615.png",
+      "product_code": "PRODUCT_09A9775E4764DB329CDF",
+      "name": "55°c Cup Set",
+      "family": "drinkware",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "69103d16150e6466ecbb08ba0957455bc88d63cd14b4449950521c69687adeff",
+      "source_description": "mug 8*",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-1e1a38f1-532e-4426-94d2-c074961159bc.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_09A9775E4764DB329CDF.png"
+      ],
+      "created_utc": "2026-09-10T00:20:49.656415+00:00"
+    },
+    {
+      "asset_id": "AI-c51f98d77f65dc68",
+      "filename": "images/PRODUCT_1608A45171CC73998079-c51f98d77f.png",
+      "product_code": "PRODUCT_1608A45171CC73998079",
+      "name": "Usb Flash Drive Flash Drive",
+      "family": "usb_flash_drive",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "c51f98d77f65dc6850377d649c965b350c22aea74a4982368ca6291229c119ff",
+      "source_description": "usb flash drive with chinese knot",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-49885e2a-bf8d-473a-be63-7af555ca9bb6.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1608A45171CC73998079.png"
+      ],
+      "created_utc": "2026-09-10T00:21:08.693884+00:00"
+    },
+    {
+      "asset_id": "AI-2f57096c6ccca1c8",
+      "filename": "images/PRODUCT_0B09041198CD5B3158C9-2f57096c6c.png",
+      "product_code": "PRODUCT_0B09041198CD5B3158C9",
+      "name": "Single-spout Coffee Distributor",
+      "family": "",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "2f57096c6ccca1c81a453b486b42fbcb8844214e0eaee9e336646bdeee7a949a",
+      "source_description": "single-spout coffee distributor",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-08c28a8b-d0bf-4482-ab29-a6b404900f30.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_0B09041198CD5B3158C9.png"
+      ],
+      "created_utc": "2026-09-10T00:21:11.617660+00:00"
+    },
+    {
+      "asset_id": "AI-f90d8aa3acd5799a",
+      "filename": "images/PRODUCT_16A0E81AD6C15FC141EE-f90d8aa3ac.png",
+      "product_code": "PRODUCT_16A0E81AD6C15FC141EE",
+      "name": "Notebook",
+      "family": "notebook",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "f90d8aa3acd5799afddb2ae92140af03d9d0767e3b21afc876cd65cef79c9026",
+      "source_description": "notebook magnetic buckle closure",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-1812da45-c063-4f3d-95fb-8fd8fe5e4678.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_16A0E81AD6C15FC141EE.png"
+      ],
+      "created_utc": "2026-09-10T00:21:30.008066+00:00"
+    },
+    {
+      "asset_id": "AI-7e8df8934faf2f60",
+      "filename": "images/PRODUCT_0BC99E21A918E1DA582B-7e8df8934f.png",
+      "product_code": "PRODUCT_0BC99E21A918E1DA582B",
+      "name": "Umbrella In",
+      "family": "umbrella",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "7e8df8934faf2f60421adba192c6f27dd0b2261f9640c9a53ced4681166babd9",
+      "source_description": "umbrella 8k automatic open & close stand unfolded size 108*",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-7149e385-3a5c-4531-82b8-267bc82fcfb9.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_0BC99E21A918E1DA582B.png"
+      ],
+      "created_utc": "2026-09-10T00:21:30.398124+00:00"
+    },
+    {
+      "asset_id": "AI-570c71f4dfc70c93",
+      "filename": "images/PRODUCT_1704156AA45EEA3999C7-570c71f4df.png",
+      "product_code": "PRODUCT_1704156AA45EEA3999C7",
+      "name": "Vacuum Flask",
+      "family": "drinkware",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "570c71f4dfc70c93046327d5c35aa0b70947678b34466b08c2b517073e7f3299",
+      "source_description": "vacuum cup 304 liner without temperature display",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-791b09d2-bda6-47a1-9a89-14fbe70cc45b.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1704156AA45EEA3999C7.png"
+      ],
+      "created_utc": "2026-09-10T00:21:51.448497+00:00"
+    },
+    {
+      "asset_id": "AI-9d5bf14f55f35321",
+      "filename": "images/PRODUCT_1A433A65248388CB7CC9-9d5bf14f55.png",
+      "product_code": "PRODUCT_1A433A65248388CB7CC9",
+      "name": "Magnetic Power Bank",
+      "family": "power_bank",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "9d5bf14f55f353210ceedaa3bb6044af13b9c94ff5ec87310c55a13c71e4896f",
+      "source_description": "magnetic power bank",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-8b94604b-c9cb-48d2-bad2-9273aca020c6.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1A433A65248388CB7CC9.png"
+      ],
+      "created_utc": "2026-09-10T00:21:53.689021+00:00"
+    },
+    {
+      "asset_id": "AI-c6bf1134e814c973",
+      "filename": "images/PRODUCT_0C2A1023C5B1A644ACCC-c6bf1134e8.png",
+      "product_code": "PRODUCT_0C2A1023C5B1A644ACCC",
+      "name": "Vintage Flower Style Thermos Cup",
+      "family": "drinkware",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "c6bf1134e814c973d06fffe7886908307a4ac5153897c868879411bcc51560d5",
+      "source_description": "vacuum cup 8.3* 316 + silicon with sling two drinking methods sip & with straw",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-4c866c26-1e14-4cb0-829e-114217fa7c2d.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_0C2A1023C5B1A644ACCC.png"
+      ],
+      "created_utc": "2026-09-10T00:21:54.773243+00:00"
+    },
+    {
+      "asset_id": "AI-4aa11983c0fb03ed",
+      "filename": "images/PRODUCT_175ED3018ED228F0FEE8-4aa11983c0.png",
+      "product_code": "PRODUCT_175ED3018ED228F0FEE8",
+      "name": "Air Cushion Comb",
+      "family": "",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "4aa11983c0fb03ed4fdf0eeb56e08cddeabe4264923ea3b79362f60b9bd7ce45",
+      "source_description": "air cushion comb",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-4d8dcf76-3841-47cc-a71b-5134862df19c.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_175ED3018ED228F0FEE8.png"
+      ],
+      "created_utc": "2026-09-10T00:22:10.740354+00:00"
+    },
+    {
+      "asset_id": "AI-f8d143fc3dea2d86",
+      "filename": "images/PRODUCT_1A56480379848277E183-f8d143fc3d.png",
+      "product_code": "PRODUCT_1A56480379848277E183",
+      "name": "Foldable Keyboard",
+      "family": "keyboard",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "f8d143fc3dea2d86b072e74cb75ad4d54644cb7c3ed4a27bf94e135f2819d978",
+      "source_description": "foldable keyboard unfold size 281* folding size 140*94* compatiable with android windows ios system operating range 10m battery capacity 210mah",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-2ef4335d-56fa-4e98-90ce-22f9f0de6bc7.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1A56480379848277E183.png"
+      ],
+      "created_utc": "2026-09-10T00:22:15.401429+00:00"
+    },
+    {
+      "asset_id": "AI-06c3196eb2f9cb3f",
+      "filename": "images/PRODUCT_0F0D96CEEA469CA7F957-06c3196eb2.png",
+      "product_code": "PRODUCT_0F0D96CEEA469CA7F957",
+      "name": "Vacuum Cup",
+      "family": "drinkware",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "06c3196eb2f9cb3f159452b6db72696c990abd8b094b84a944c70ef86658a4d1",
+      "source_description": "vacuum cup",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-83b4059c-e27d-4b77-ad99-0622c0a2a54b.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_0F0D96CEEA469CA7F957.png"
+      ],
+      "created_utc": "2026-09-10T00:22:15.486309+00:00"
+    },
+    {
+      "asset_id": "AI-d0fbc02d22671f95",
+      "filename": "images/PRODUCT_0F16875BE4B21DB9588E-d0fbc02d22.png",
+      "product_code": "PRODUCT_0F16875BE4B21DB9588E",
+      "name": "Foldable Fan",
+      "family": "fan",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "d0fbc02d22671f9538e2a4279e9e9170c47b0799340333ba458539203eb3e8d7",
+      "source_description": "foldable fan",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-b4ad61ce-0021-4153-86d1-8a80115740c7.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_0F16875BE4B21DB9588E.png"
+      ],
+      "created_utc": "2026-09-10T00:22:32.385321+00:00"
+    },
+    {
+      "asset_id": "AI-d4ff8022b5199dbc",
+      "filename": "images/PRODUCT_182BB0BE9E863BD4F461-d4ff8022b5.png",
+      "product_code": "PRODUCT_182BB0BE9E863BD4F461",
+      "name": "Umbrella Set",
+      "family": "umbrella",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "d4ff8022b5199dbcaa207f572077b0f9ca28ae1710035c8ed9f4ca1ee3132878",
+      "source_description": "umbrella set",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-89fdf7d6-4dbc-438b-948a-c9b8edc23719.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_182BB0BE9E863BD4F461.png"
+      ],
+      "created_utc": "2026-09-10T00:22:33.325242+00:00"
+    },
+    {
+      "asset_id": "AI-755dcf2032e22389",
+      "filename": "images/PRODUCT_1A62713E2BB6B7F86553-755dcf2032.png",
+      "product_code": "PRODUCT_1A62713E2BB6B7F86553",
+      "name": "Neck Massager",
+      "family": "neck_massager",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "755dcf2032e22389376998348f849a4595533651eb1fb2827405773f934903b2",
+      "source_description": "neck massager 42 degrees warm compress daily fatigue relieve",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-341ae875-fd96-4c01-9e62-ba52fe572103.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1A62713E2BB6B7F86553.png"
+      ],
+      "created_utc": "2026-09-10T00:22:37.703784+00:00"
+    },
+    {
+      "asset_id": "AI-18914e3aa37ebe13",
+      "filename": "images/PRODUCT_1CFEBE4392CCE75F5F29-18914e3aa3.png",
+      "product_code": "PRODUCT_1CFEBE4392CCE75F5F29",
+      "name": "Turbo Handheld Fan",
+      "family": "fan",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "18914e3aa37ebe13815ab1ffd71340f8990596f7530204ab8debac47d6a0c04b",
+      "source_description": "turbo handheld fan",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-c211f75c-d96c-4347-887a-91fda10c3174.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1CFEBE4392CCE75F5F29.png"
+      ],
+      "created_utc": "2026-09-10T00:22:55.208063+00:00"
+    },
+    {
+      "asset_id": "AI-251a38c1821b2a1f",
+      "filename": "images/PRODUCT_102FB4D20D3424491ADB-251a38c182.png",
+      "product_code": "PRODUCT_102FB4D20D3424491ADB",
+      "name": "Waist-cinched Fluted Coffee Cup",
+      "family": "drinkware",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "251a38c1821b2a1fceefeac11ebeef64bc4140a63fb1bf994e0c64f2392c9bd5",
+      "source_description": "waist-cinched fluted coffee cup",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-2b9b2087-1cd1-47c9-a8f7-db11b9348fc9.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_102FB4D20D3424491ADB.png"
+      ],
+      "created_utc": "2026-09-10T00:22:56.311379+00:00"
+    },
+    {
+      "asset_id": "AI-bec19a20024d4ea2",
+      "filename": "images/PRODUCT_18641AA0722CDB1E823B-bec19a2002.png",
+      "product_code": "PRODUCT_18641AA0722CDB1E823B",
+      "name": "Car Wireless Charging Mount",
+      "family": "car_accessory",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "bec19a20024d4ea2490dd44fe60f21b73b2128c6188116a73a1cc9d0d4b24274",
+      "source_description": "car parking dual number plate +",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-8c657b46-dabe-488b-943d-de3c31b389d6.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_18641AA0722CDB1E823B.png"
+      ],
+      "created_utc": "2026-09-10T00:22:58.587776+00:00"
+    },
+    {
+      "asset_id": "AI-91a6567a519efadc",
+      "filename": "images/PRODUCT_1A94DF089EE020D9F689-91a6567a51.png",
+      "product_code": "PRODUCT_1A94DF089EE020D9F689",
+      "name": "Konka Neck Massager",
+      "family": "neck_massager",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "91a6567a519efadcb81545c6c7c26f9ee1ecd28c41543ac9cfcaf9d564b97be6",
+      "source_description": "konka neck massager",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-159dcd66-9472-414e-9b9e-9b2b4c2298ce.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1A94DF089EE020D9F689.png"
+      ],
+      "created_utc": "2026-09-10T00:23:02.518704+00:00"
+    },
+    {
+      "asset_id": "AI-9f018783adba0ccc",
+      "filename": "images/PRODUCT_1D4782C78860FA797F9F-9f018783ad.png",
+      "product_code": "PRODUCT_1D4782C78860FA797F9F",
+      "name": "Cup",
+      "family": "drinkware",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "9f018783adba0ccc721b0346f08d422927402b18cce302f8fe27d73c405f5543",
+      "source_description": "cup direct drink & straw pouch 11.5*8.5*",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-5eb23d31-4859-4a62-9b23-493676f6a16b.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1D4782C78860FA797F9F.png"
+      ],
+      "created_utc": "2026-09-10T00:23:17.572081+00:00"
+    },
+    {
+      "asset_id": "AI-ab1f5736e69c97a1",
+      "filename": "images/PRODUCT_187FB978BA405FE797A0-ab1f5736e6.png",
+      "product_code": "PRODUCT_187FB978BA405FE797A0",
+      "name": "Mini Umbrella",
+      "family": "umbrella",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "ab1f5736e69c97a164c3eca2ef9fba1d2ea87999737cb20d5d595b1f6d213382",
+      "source_description": "mini umbrella",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-9f5de36c-52ba-4dc9-b26d-38d9dcc859e4.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_187FB978BA405FE797A0.png"
+      ],
+      "created_utc": "2026-09-10T00:23:18.196244+00:00"
+    },
+    {
+      "asset_id": "AI-6883d4c046d28d41",
+      "filename": "images/PRODUCT_116AC3BAD0979D6CFA0A-6883d4c046.png",
+      "product_code": "PRODUCT_116AC3BAD0979D6CFA0A",
+      "name": "Mug",
+      "family": "drinkware",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "6883d4c046d28d41ca2d35e90ecaa2d5f2a128791ece1067c60daf04677336ed",
+      "source_description": "mug 8*",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-0d49da2e-7297-4907-bf28-ac4300b3e918.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_116AC3BAD0979D6CFA0A.png"
+      ],
+      "created_utc": "2026-09-10T00:23:20.034132+00:00"
+    },
+    {
+      "asset_id": "AI-4f83915bc08522a9",
+      "filename": "images/PRODUCT_1BECFFA30224E01647D7-4f83915bc0.png",
+      "product_code": "PRODUCT_1BECFFA30224E01647D7",
+      "name": "Mouse",
+      "family": "mouse",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "4f83915bc08522a999ea10af4d7d4af8d4d75fb2cc3eefa126faf3c5951c4bf5",
+      "source_description": "mouse",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-2b921a24-4281-41ef-8aed-3ac922d4b32f.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1BECFFA30224E01647D7.png"
+      ],
+      "created_utc": "2026-09-10T00:23:21.002764+00:00"
+    },
+    {
+      "asset_id": "AI-54dcc9e6381e426a",
+      "filename": "images/PRODUCT_1E4955930C7E8078E328-54dcc9e638.png",
+      "product_code": "PRODUCT_1E4955930C7E8078E328",
+      "name": "Mini Fan",
+      "family": "fan",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "54dcc9e6381e426ad75c88bdee01743123e0e7678a955dd8ff29efcca1b86d27",
+      "source_description": "fan material 3 wind speeds 64*35* with light indicator",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-493afa54-db0d-4f7a-a687-584bdb827cc3.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1E4955930C7E8078E328.png"
+      ],
+      "created_utc": "2026-09-10T00:23:34.574358+00:00"
+    },
+    {
+      "asset_id": "AI-2568d4b797d4e40d",
+      "filename": "images/PRODUCT_1C468DD7B42FC4899BBE-2568d4b797.png",
+      "product_code": "PRODUCT_1C468DD7B42FC4899BBE",
+      "name": "One Button To Open Vacuum Cup",
+      "family": "drinkware",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "2568d4b797d4e40dc7bcfb6ec71389745bc6ee516a5820d4d09d317197f5a898",
+      "source_description": "vacuum cup one button to open 316 liner temperature display",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-c6490895-3b85-4652-a89b-55aab42879a4.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1C468DD7B42FC4899BBE.png"
+      ],
+      "created_utc": "2026-09-10T00:23:41.481147+00:00"
+    },
+    {
+      "asset_id": "AI-efde3879529775e1",
+      "filename": "images/PRODUCT_1189250BBB22E62CE4FD-efde387952.png",
+      "product_code": "PRODUCT_1189250BBB22E62CE4FD",
+      "name": "Mouse Christmas",
+      "family": "mouse",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "efde3879529775e174edb8ddc9a8540caecb2ac60b20c2a0a060223c217f26a3",
+      "source_description": "mouse christmas",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-5139440f-7fc8-430d-9ce8-059f1e411fdc.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1189250BBB22E62CE4FD.png"
+      ],
+      "created_utc": "2026-09-10T00:23:42.886451+00:00"
+    },
+    {
+      "asset_id": "AI-79db227ec3922339",
+      "filename": "images/PRODUCT_1E56FD7AB0B542E45CB3-79db227ec3.png",
+      "product_code": "PRODUCT_1E56FD7AB0B542E45CB3",
+      "name": "Notebook",
+      "family": "notebook",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "79db227ec3922339516781b142a0eb2c715800c0e9c4758740c156ad85b6d902",
+      "source_description": "notebook 2 sets inner blank sheets 76 sheets with clip & pendant",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-9b92deb6-79ae-4cd3-88c5-39c1fc1e3880.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1E56FD7AB0B542E45CB3.png"
+      ],
+      "created_utc": "2026-09-10T00:23:53.187907+00:00"
+    },
+    {
+      "asset_id": "AI-c144c326c9ee44ed",
+      "filename": "images/unmapped-c144c326c9.png",
+      "product_code": "",
+      "name": "ยังไม่ยืนยันชื่อสินค้า",
+      "family": "",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "c144c326c9ee44edb9cbfe0f968482202a5e46bbd534d4bbeb7e27c34e61bcd8",
+      "source_description": "",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-bac082ce-e6fd-420a-ad83-d839fc8bd255.png"
+      ],
+      "created_utc": "2026-09-10T00:23:59.517478+00:00"
+    },
+    {
+      "asset_id": "AI-60f82d75f9f32915",
+      "filename": "images/unmapped-60f82d75f9.png",
+      "product_code": "",
+      "name": "ยังไม่ยืนยันชื่อสินค้า",
+      "family": "",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "60f82d75f9f3291546e4aa91e18f6fd2d2e9b7c9ea0ebda00abb5dee2191602f",
+      "source_description": "",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-019058b5-8a0b-437b-907e-b54abd98bc7e.png"
+      ],
+      "created_utc": "2026-09-10T00:24:04.848095+00:00"
+    },
+    {
+      "asset_id": "AI-b7691899fb0bce46",
+      "filename": "images/PRODUCT_1FBC1D44D562E1BBFE95-b7691899fb.png",
+      "product_code": "PRODUCT_1FBC1D44D562E1BBFE95",
+      "name": "Ink",
+      "family": "",
+      "category": "text-generated-illustration",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "b7691899fb0bce467002c1a16c443f3bd79fa443ad6d7bc8524654b850780047",
+      "source_description": "ink",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-33a83c44-7f62-4e49-80b2-7a90c98c4538.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\images\\PRODUCT_1FBC1D44D562E1BBFE95.png"
+      ],
+      "created_utc": "2026-09-10T00:24:12.377178+00:00"
+    },
+    {
+      "asset_id": "AI-ce0aa91315850933",
+      "filename": "images/mouse-FXD8812-ai-isolation-ce0aa91315.png",
+      "product_code": "",
+      "name": "Mouse / FXD8812 / AI isolation review",
+      "family": "",
+      "category": "source-guided-ai-isolation",
+      "review_status": "AI / ยังไม่ยืนยันตรงรุ่นสินค้า",
+      "catalog_approved": false,
+      "sha256": "ce0aa9131585093312b1bf855b6ad623aa237b84b1237b98f7847cefec9bad74",
+      "source_description": "",
+      "exact_prompt": null,
+      "prompt_status": "not recovered",
+      "reference_offer": "FXD8812",
+      "original_paths": [
+        "C:\\Users\\pc\\.codex\\generated_images\\01a085ee-0215-73d3-8f7a-b4e25f29b9ba\\exec-d0d2d907-9540-45a1-8a5c-6f08f13db9c3.png",
+        "C:\\Users\\pc\\workspace\\business-01-smart-gift\\outputs\\catalog-productmaster-2026-09-10\\source-extracted\\mouse-FXD8812-ai-isolation-review.png"
+      ],
+      "created_utc": "2026-09-10T00:26:46.990184+00:00"
+    }
+  ]
+}

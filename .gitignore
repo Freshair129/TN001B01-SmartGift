@@ -84,3 +84,6 @@ data-pipeline/01_raw.zip
 comfy-3d-products/
 data-pipeline/01_raw/08_factory_costs/extracted_images/
 .agents/*/session_logs/
+
+# Local build/pipeline outputs
+outputs/

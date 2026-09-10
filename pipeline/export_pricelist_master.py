@@ -38,7 +38,10 @@ PUBLIC_FORBIDDEN_FIELDS = frozenset({
 })
 SQL_SHA256 = "263556642064f6398e4cd00a7a4897ca7ba841b7c3bae5b8d2165b3186b2fdd4"
 FACTORY_SHA256 = "d85e114018a4792d7a3aa8fc9b4f35475f40e9948bffd5aa04cf0171b5c9cb24"
-PRICING_RULES_SHA256 = "f4473230f10b59133936974a0cacf84bbe84865d61db76553d8cc2a58ba635fc"
+# v1 f4473230… → v2 0ba4296f… . This pin was already stale before 2026-09-10: the
+# active config had moved to 00dcf089… (v2 in pricing_formula_registry.json) while
+# this constant still named v1, so the guard below rejected every export.
+PRICING_RULES_SHA256 = "ee7b3119746ab0a5753a3343a2d22bcef7d4f15a294340c48b1a61320de722ad"
 COST_MAPPING_PATH = "data-pipeline/02_prepared/factory_cost_pm_mapping.json"
 COST_MAPPING_SHA256 = "e2dd1f99fca79f184c0b76fc405ea29c99388018f2c23aa7eb4d961037f86503"
 MIN_PROFIT = Decimal("25000.00")
