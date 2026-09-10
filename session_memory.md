@@ -113,3 +113,6 @@ $$\mathbf{[รหัสโมเดลโรงงาน]} + \mathbf{[-จำน
 
 ### 4.7 บันทึกการตัดสินใจเชิงสถาปัตยกรรม (Architecture Decision Record)
 * **ADR-009:** [docs/decisions/ADR-009-B2B-PRICING-LOGISTICS-AND-FLOWACCOUNT-SKU-ARCHITECTURE.md](file:///c:/Users/pc/workspace/business-01-smart-gift/docs/decisions/ADR-009-B2B-PRICING-LOGISTICS-AND-FLOWACCOUNT-SKU-ARCHITECTURE.md)
+
+### 4.8 รายงานการวิเคราะห์สาเหตุความคลาดเคลื่อน (Root Cause Analysis - RCA)
+* **RCA Document:** [.brain/rca/2026-09-10-rca-bw00-factory-cost-fx-drift.md](file:///c:/Users/pc/workspace/business-01-smart-gift/.brain/rca/2026-09-10-rca-bw00-factory-cost-fx-drift.md)
