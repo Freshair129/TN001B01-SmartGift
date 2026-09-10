@@ -106,3 +106,7 @@ $$\mathbf{[รหัสโมเดลโรงงาน]} + \mathbf{[-จำน
 * **JSON Registry:** [docs/specs/business_pdf_blueprints_registry.json](file:///c:/Users/pc/workspace/business-01-smart-gift/docs/specs/business_pdf_blueprints_registry.json)
 * **Directory README:** [data-pipeline/01_raw/06_business_pdf/README.md](file:///c:/Users/pc/workspace/business-01-smart-gift/data-pipeline/01_raw/06_business_pdf/README.md)
 * **Prepared Dataset:** [data-pipeline/02_prepared/business_pdf_blueprints.json](file:///c:/Users/pc/workspace/business-01-smart-gift/data-pipeline/02_prepared/business_pdf_blueprints.json)
+
+### 4.6 สเปกและสัญญาโครงสร้างข้อมูลฉบับสมบูรณ์ (Full Enterprise Master Schema)
+* **Contract Schema:** [contracts/smartgift-full-master.schema.json](file:///c:/Users/pc/workspace/business-01-smart-gift/contracts/smartgift-full-master.schema.json)
+* **Enterprise Spec (.md):** [docs/specs/SPEC-FULL-ENTERPRISE-SCHEMA-2026-09-10.md](file:///c:/Users/pc/workspace/business-01-smart-gift/docs/specs/SPEC-FULL-ENTERPRISE-SCHEMA-2026-09-10.md)
