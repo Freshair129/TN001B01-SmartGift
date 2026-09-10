@@ -4,7 +4,7 @@
   "updated_by": "logistics_manager",
   "currency_fx": {
     "cny_to_thb": 5.0,
-    "usd_to_thb": 32.5
+    "usd_to_thb": 34.0
   },
   "density_rule": {
     "threshold_kg_per_cbm": 400.0,

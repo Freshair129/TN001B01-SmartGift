@@ -4,7 +4,7 @@
 # Authority: Controlled by Zuri-AI UI Control Plane & Pricing Calculator Engine
 # ==============================================================================
 
-version: "2026.09.11-v3"
+version: "2026.09.11-v4"
 contract_reference: "smartgift://b2b/pricing-rules-formula/v1"
 last_updated: "2026-09-10T00:00:00+07:00"
 updated_by: "zuri_ai_pricing_control_plane"
@@ -19,8 +19,11 @@ business_id: "SmartGift"
 vault_id: "vlt-catalog-product"
 
 currency_exchange_rates:
+  # v4 (2026-09-11) — usd_to_thb 32.50 -> 34.00 ตามที่ Boss ชี้ขาด
+  # SPEC-FULL-ENTERPRISE-SCHEMA-2026-09-10 และชุดข้อมูลที่ validate แล้วทุกไฟล์ใช้ 34.00 อยู่ก่อนแล้ว
+  # (เช่น BW00-0: factory_price_usd 2.31 x 34.00 = 78.4615385 บาท) ไฟล์นี้เป็นฝั่งที่ตามหลัง
   cny_to_thb: 5.00
-  usd_to_thb: 32.50
+  usd_to_thb: 34.00
 
 logistics_density_and_freight:
   density_threshold_kg_per_cbm: 400.0
@@ -263,5 +266,6 @@ sources:
   lead_time_working_days:
     level: "code_only"
   currency_exchange_rates:
-    level: "registered"
-    note: "usd_to_thb 32.50 — เอนจินเดิมคำนวณ fx × 6.5 แทน ซึ่งตรงกันเฉพาะตอน fx = 5"
+    level: "owner_directive"
+    origin: "Boss ชี้ขาด 2026-09-11 ให้ใช้ 34.00 — ตรงกับ SPEC-FULL-ENTERPRISE-SCHEMA-2026-09-10 §3 fx_rate_thb_per_usd"
+    note: "เดิม 32.50 ขัดกับ spec และชุดข้อมูลที่ validate แล้ว · เอนจินเดิมคำนวณ fx × 6.5 แทน ซึ่งตรงกันเฉพาะตอน fx = 5"
