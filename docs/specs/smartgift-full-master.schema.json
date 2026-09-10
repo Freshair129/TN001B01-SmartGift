@@ -1,0 +1,445 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zuri.ai/contracts/smartgift-full-master.schema.json",
+  "title": "SmartGiftFullEnterpriseMasterSchema",
+  "description": "Comprehensive Enterprise Schema for SmartGift & Zuri-AI B2B Portfolio Engine, covering 4-Tier Cognitive Stack, FlowAccount SKU Invariants, BOM Specifications, 4-Stage Unboxing, Multi-Tier Financial Costing, Commercial Pricing, and Data Governance.",
+  "type": "object",
+  "required": [
+    "enterprise_context",
+    "codes_and_identification",
+    "cost_and_financial_provenance",
+    "shipping_and_logistics",
+    "pricing_comparison_table"
+  ],
+  "properties": {
+    "enterprise_context": {
+      "type": "object",
+      "description": "Organizational tenancy and legal entity boundary",
+      "required": [
+        "workspace",
+        "tenant",
+        "business_id",
+        "legal_entity"
+      ],
+      "properties": {
+        "workspace": {
+          "type": "string",
+          "default": "Wannapa Workspace"
+        },
+        "tenant": {
+          "type": "string",
+          "default": "Org-EtohGroup"
+        },
+        "business_id": {
+          "type": "string",
+          "default": "Business 01: SmartGift"
+        },
+        "legal_entity": {
+          "type": "string",
+          "default": "บริษัท เทราบิส จำกัด (Therabis Co., Ltd.)"
+        },
+        "system_tier": {
+          "type": "string",
+          "enum": [
+            "Tier 1: Business Execution & Console",
+            "Tier 2: MSP Session Authority",
+            "Tier 3: GKS Knowledge Authority",
+            "Tier 4: GenesisBlockDB Substrate"
+          ],
+          "default": "Tier 1: Business Execution & Console"
+        }
+      }
+    },
+    "codes_and_identification": {
+      "type": "object",
+      "description": "Naming convention components adhering strictly to: [Factory Model] + [-Items] + [(Package Code)] = FlowAccount SKU",
+      "required": [
+        "factory_base_model",
+        "product_items_suffix",
+        "factory_item_code",
+        "package_suffix",
+        "flowaccount_product_code"
+      ],
+      "properties": {
+        "factory_base_model": {
+          "type": "string",
+          "description": "Base model identifier from manufacturer (e.g. TMS06, BW00)"
+        },
+        "product_items_suffix": {
+          "type": "string",
+          "pattern": "^-[0-9]+$",
+          "description": "Number of components in the set prefixed with hyphen (e.g. -4, -3, -0)"
+        },
+        "factory_item_code": {
+          "type": "string",
+          "description": "Manufacturer SKU code (e.g. TMS06-4, BW00-0)"
+        },
+        "package_suffix": {
+          "type": "string",
+          "pattern": "^\\(P-[A-Z0-9]+\\)$",
+          "description": "Package box/bag code wrapped in parentheses (e.g. (P-16), (P-06), (P-BAG))"
+        },
+        "package_name": {
+          "type": "string",
+          "description": "Descriptive packaging name"
+        },
+        "flowaccount_product_code": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]+-[0-9]+\\(P-[A-Z0-9]+\\)$",
+          "description": "Primary FlowAccount ERP SKU code: FactoryModel-Count(PackageCode)"
+        },
+        "smartgift_internal_code": {
+          "type": "string",
+          "description": "Internal ProductMaster reference ID (e.g. PM-TMB, TMS06-4)"
+        },
+        "product_family": {
+          "type": "string",
+          "description": "Product family classification (e.g. PF-DRINKWARE, PF-EXECUTIVE-TECH)"
+        },
+        "category": {
+          "type": "string",
+          "description": "Market category slug (e.g. eco-friendly, executive-smart-tech)"
+        },
+        "barcode": {
+          "type": "string",
+          "description": "EAN-13 or GS1 Barcode if applicable"
+        }
+      }
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Official commercial Thai title of the product or gift set"
+    },
+    "product_name_en": {
+      "type": "string",
+      "description": "Official commercial English title of the product or gift set"
+    },
+    "marketing_positioning": {
+      "type": "object",
+      "description": "Strategic positioning derived from 06_business_pdf blueprints",
+      "properties": {
+        "philosophy": {
+          "type": "string",
+          "default": "Recipient-First & Quiet Luxury"
+        },
+        "target_treatment_tier": {
+          "type": "string",
+          "enum": [
+            "Executive / C-Level",
+            "VIP Partner / Key Account",
+            "Management & Employees",
+            "Event / Mass Appreciation"
+          ],
+          "description": "Relationship care level according to Smart_Gift.pdf"
+        },
+        "story_and_concept": {
+          "type": "string"
+        },
+        "hero_feature": {
+          "type": "string"
+        }
+      }
+    },
+    "bill_of_materials": {
+      "type": "array",
+      "description": "Detailed breakdown of each physical component in the bundle",
+      "items": {
+        "type": "object",
+        "required": [
+          "item_name",
+          "item_role"
+        ],
+        "properties": {
+          "item_name": {
+            "type": "string"
+          },
+          "item_role": {
+            "type": "string"
+          },
+          "material": {
+            "type": "string"
+          },
+          "capacity_or_spec": {
+            "type": "string"
+          },
+          "dimensions": {
+            "type": "string"
+          },
+          "color_options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "unboxing_experience": {
+      "type": "object",
+      "description": "4-Stage Reveal sequence according to Unboxing_Engineering.pdf",
+      "properties": {
+        "stage_1_outer": {
+          "type": "string",
+          "description": "Outer impression (e.g. Matte Dark Blue Sleeve, Protective Box, or Gift Bag with braided handle)"
+        },
+        "stage_2_gateway": {
+          "type": "string",
+          "description": "Rigid Box with air-cushioned tight-fit lid and gold/silver hot foil stamp"
+        },
+        "stage_3_anticipation": {
+          "type": "string",
+          "description": "Branded vellum tracing paper, wax seal, or custom gratitude card"
+        },
+        "stage_4_discovery": {
+          "type": "string",
+          "description": "Laser-cut high density black EVA foam with velvet top lining holding components firmly"
+        },
+        "customization_finishing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Available branding techniques: Laser engraving, Gold/Silver Hot Stamping, UV Screen Print"
+        }
+      }
+    },
+    "cost_and_financial_provenance": {
+      "type": "object",
+      "description": "Auditable financial trace, FX baseline, and factory origin",
+      "required": [
+        "factory_item_code",
+        "factory_price_usd",
+        "fx_rate_thb_per_usd",
+        "factory_cost_thb_exact"
+      ],
+      "properties": {
+        "source_file": {
+          "type": "string",
+          "example": "01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx"
+        },
+        "source_row": {
+          "type": "integer",
+          "example": 5846
+        },
+        "factory_item_code": {
+          "type": "string"
+        },
+        "factory_price_formula_usd": {
+          "type": "string",
+          "example": "=15/6.5"
+        },
+        "factory_price_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "fx_rate_thb_per_usd": {
+          "type": "number",
+          "minimum": 0,
+          "default": 34.0
+        },
+        "currency_exchange_formula": {
+          "type": "string",
+          "example": "=E5846*34"
+        },
+        "factory_cost_thb_exact": {
+          "type": "number",
+          "minimum": 0,
+          "example": 78.4615385
+        },
+        "factory_cost_thb_display": {
+          "type": "number",
+          "minimum": 0,
+          "example": 78.46
+        }
+      }
+    },
+    "shipping_and_logistics": {
+      "type": "object",
+      "description": "Domestic logistics model and freight absorption details",
+      "required": [
+        "model",
+        "flat_rate_trip_thb"
+      ],
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": [
+            "Direct Single Drop (Port-to-Client)",
+            "Multi-Drop Branch Delivery",
+            "Upcountry Regional Delivery",
+            "Individual Home Fulfillment"
+          ],
+          "default": "Direct Single Drop (Port-to-Client)"
+        },
+        "flat_rate_trip_thb": {
+          "type": "number",
+          "description": "Flat rate per truck trip from port to single customer warehouse (absorbed in Landed Cost)",
+          "default": 2500.0
+        },
+        "sea_freight_cbm_rate": {
+          "type": "number",
+          "default": 2800.0
+        },
+        "cbm_per_unit": {
+          "type": "number"
+        },
+        "units_per_carton": {
+          "type": "integer"
+        },
+        "carton_dimensions_cm": {
+          "type": "string"
+        },
+        "corporate_quotation_display": {
+          "type": "string",
+          "default": "0.00 THB (ฟรีค่าจัดส่ง - รวมในต้นทุนต่อชุดเรียบร้อยแล้ว)"
+        }
+      }
+    },
+    "pricing_comparison_table": {
+      "type": "array",
+      "description": "Volume tier breakdown comparing landed cost, retail price, and corporate B2B discount",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/PricingTierRow"
+      }
+    },
+    "data_governance_and_compliance": {
+      "type": "object",
+      "description": "Zero-PII security and claim integrity compliance rules",
+      "properties": {
+        "zero_pii_verified": {
+          "type": "boolean",
+          "default": true
+        },
+        "anti_hyperbole_verified": {
+          "type": "boolean",
+          "default": true
+        },
+        "validity_period_days": {
+          "type": "integer",
+          "default": 30
+        },
+        "commercial_approval_status": {
+          "type": "string",
+          "enum": [
+            "DRAFT",
+            "REVIEW_REQUIRED",
+            "APPROVED_READY_TO_QUOTE",
+            "ARCHIVED"
+          ],
+          "default": "APPROVED_READY_TO_QUOTE"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "PricingTierRow": {
+      "type": "object",
+      "required": [
+        "quantity",
+        "factory_base_code",
+        "items_in_set",
+        "factory_item_code",
+        "package_code",
+        "flowaccount_product_code",
+        "factory_exw_usd",
+        "factory_exw_thb",
+        "sea_freight_thb",
+        "domestic_freight_thb",
+        "total_landed_cost_thb",
+        "standard_selling_price_thb",
+        "standard_gross_profit_unit",
+        "standard_gross_margin_pct",
+        "corporate_selling_price_thb",
+        "corporate_gross_profit_unit",
+        "corporate_gross_margin_pct",
+        "corporate_savings_per_unit_thb",
+        "corporate_savings_total_thb"
+      ],
+      "properties": {
+        "quantity": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "factory_base_code": {
+          "type": "string"
+        },
+        "items_in_set": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "factory_item_code": {
+          "type": "string"
+        },
+        "package_code": {
+          "type": "string"
+        },
+        "flowaccount_product_code": {
+          "type": "string"
+        },
+        "smartgift_product_code": {
+          "type": "string"
+        },
+        "factory_exw_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "factory_exw_thb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "fx_rate": {
+          "type": "number"
+        },
+        "sea_freight_thb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "customization_thb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "domestic_freight_thb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "total_landed_cost_thb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "standard_selling_price_thb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "standard_gross_profit_unit": {
+          "type": "number"
+        },
+        "standard_gross_profit_total": {
+          "type": "number"
+        },
+        "standard_gross_margin_pct": {
+          "type": "number"
+        },
+        "corporate_selling_price_thb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "corporate_gross_profit_unit": {
+          "type": "number"
+        },
+        "corporate_gross_profit_total": {
+          "type": "number"
+        },
+        "corporate_gross_margin_pct": {
+          "type": "number"
+        },
+        "corporate_savings_per_unit_thb": {
+          "type": "number"
+        },
+        "corporate_savings_total_thb": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
