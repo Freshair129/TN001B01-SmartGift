@@ -611,6 +611,122 @@ class SmartGiftPricingCalculator:
 
         return warns
 
+    def calculate_domestic_shipping(
+        self,
+        mode: str = "bulk",                      # "bulk" or "individual"
+        destination: str = "bkk",                # "bkk", "upcountry", "remote"
+        qty: int = 1,
+        total_order_thb: float = 0.0,
+        box_size: str = "box_m",                 # "box_s", "box_m", "box_l"
+        cartons_count: Optional[int] = None,
+        upcountry_method: str = "courier",       # "courier" or "charter"
+    ) -> Dict[str, Any]:
+        """
+        Calculates domestic Thailand delivery fee for B2B orders.
+        - Bulk Mode: Delivery to single office/warehouse. BKK Free if order >= 15,000 THB.
+        - Individual Mode: WFH direct delivery to recipients. Fee per piece (packing fee + courier fee).
+        """
+        dest_norm = destination.lower().strip()
+        mode_norm = mode.lower().strip()
+
+        # Rates from shipping_rate_matrix
+        bulk_bkk_min_order = 15000.0
+        bulk_bkk_flat_fee = 800.0
+        bulk_upcountry_charter = 2500.0
+        bulk_upcountry_carton = 150.0
+
+        individual_handling_fee = 20.0  # packing & label per piece
+        individual_rates = {
+            "box_s": {"bkk": 45.0, "upcountry": 55.0},
+            "box_m": {"bkk": 60.0, "upcountry": 75.0},
+            "box_l": {"bkk": 85.0, "upcountry": 105.0}
+        }
+        remote_surcharge = 50.0
+
+        if mode_norm == "bulk":
+            if dest_norm in ["bkk", "bangkok", "metropolitan"]:
+                if total_order_thb >= bulk_bkk_min_order:
+                    total_fee = 0.0
+                    is_free = True
+                    details = f"ส่งฟรี 1 จุด ใน กทม./ปริมณฑล (ยอดสั่งซื้อ ฿{total_order_thb:,.2f} >= ฿{bulk_bkk_min_order:,.2f})"
+                else:
+                    total_fee = bulk_bkk_flat_fee
+                    is_free = False
+                    details = f"ค่ารถเหมาส่งมาตรฐานใน กทม./ปริมณฑล ฿{bulk_bkk_flat_fee:,.2f} (ยอดสั่งซื้อต่ำกว่า ฿{bulk_bkk_min_order:,.2f})"
+                unit_fee = round(total_fee / max(1, qty), 2)
+                return {
+                    "mode": "bulk",
+                    "destination": "bkk",
+                    "total_shipping_fee_thb": total_fee,
+                    "unit_shipping_fee_thb": unit_fee,
+                    "is_free": is_free,
+                    "details": details,
+                    "flowaccount_service_item": {
+                        "name": "ค่าจัดส่ง",
+                        "unit_price": total_fee,
+                        "quantity": 1,
+                        "unit": "เที่ยว"
+                    }
+                }
+            else:  # upcountry or remote
+                if upcountry_method == "charter" or (cartons_count and cartons_count >= 15):
+                    total_fee = bulk_upcountry_charter
+                    details = f"ค่ารถกระบะเหมาคันส่งต่างจังหวัด ฿{bulk_upcountry_charter:,.2f}"
+                    unit = "คัน"
+                else:
+                    num_cartons = cartons_count if cartons_count else max(1, math.ceil(qty / 20))
+                    total_fee = float(num_cartons * bulk_upcountry_carton)
+                    details = f"ค่าจัดส่งขนส่งเอกชนต่างจังหวัด {num_cartons} ลังใหญ่ (@฿{bulk_upcountry_carton}/ลัง)"
+                    unit = "ลัง"
+                unit_fee = round(total_fee / max(1, qty), 2)
+                return {
+                    "mode": "bulk",
+                    "destination": dest_norm,
+                    "total_shipping_fee_thb": total_fee,
+                    "unit_shipping_fee_thb": unit_fee,
+                    "is_free": False,
+                    "details": details,
+                    "flowaccount_service_item": {
+                        "name": "ค่าจัดส่ง",
+                        "unit_price": total_fee,
+                        "quantity": 1,
+                        "unit": unit
+                    }
+                }
+
+        elif mode_norm in ["individual", "wfh", "direct"]:
+            tier_info = individual_rates.get(box_size, individual_rates["box_m"])
+            base_courier = tier_info["bkk"] if dest_norm in ["bkk", "bangkok"] else tier_info["upcountry"]
+            if dest_norm == "remote":
+                base_courier += remote_surcharge
+
+            per_unit_fee = individual_handling_fee + base_courier
+            total_fee = round(per_unit_fee * qty, 2)
+            details = (
+                f"จัดส่งพัสดุด่วนรายบุคคล ({box_size.upper()}) {qty} ราย: "
+                f"ค่าแพ็ก ฿{individual_handling_fee} + ค่าส่งพัสดุ ฿{base_courier} = ฿{per_unit_fee}/ชุด"
+            )
+            return {
+                "mode": "individual",
+                "destination": dest_norm,
+                "box_size": box_size,
+                "total_shipping_fee_thb": total_fee,
+                "unit_shipping_fee_thb": per_unit_fee,
+                "handling_fee_total": round(individual_handling_fee * qty, 2),
+                "courier_fee_total": round(base_courier * qty, 2),
+                "is_free": False,
+                "details": details,
+                "flowaccount_service_item": {
+                    "name": f"ค่าจัดส่งและแพ็กเกจจิ้งพัสดุรายบุคคล ({box_size.upper()})",
+                    "unit_price": per_unit_fee,
+                    "quantity": qty,
+                    "unit": "ชุด"
+                }
+            }
+
+        else:
+            raise ValueError(f"Unknown domestic shipping mode: {mode}")
+
 
 if __name__ == "__main__":
     calc = SmartGiftPricingCalculator(fx=5.0)

@@ -1,29 +1,24 @@
-# ==============================================================================
-# 📊 SmartGift Declared Shipping Rate & Pricing Rules Matrix
-# Contract: smartgift://b2b/pricing-rules/v1
-# Exported by Zuri-AI UI Control Plane (Owner/Logistics Manager Configurable)
-# ==============================================================================
-
-version: "2026.08.30-v1"
-updated_at: "2026-08-30T07:45:00+07:00"
-updated_by: "logistics_manager"
+version: 2026.08.30-v1
+updated_at: '2026-08-30T07:45:00+07:00'
+updated_by: logistics_manager
 currency_fx:
-  cny_to_thb: 5.00
-  usd_to_thb: 32.50
-
+  cny_to_thb: 5.0
+  usd_to_thb: 32.5
 density_rule:
   threshold_kg_per_cbm: 400.0
   min_chargeable_cbm: 0.01
-
 profit_floors:
   small_order_max_qty: 20
   small_order_floor_thb: 5000.0
   standard_floor_thb: 3000.0
-
 seasonality:
-  peak_months: [9, 10, 11, 12, 1]
+  peak_months:
+  - 9
+  - 10
+  - 11
+  - 12
+  - 1
   auto_force_truck: true
-
 member_tiers:
   ELITE:
     min_cbm: 10.0
@@ -37,91 +32,248 @@ member_tiers:
   MEMBER:
     min_cbm: 0.01
     min_weight_kg: 1.0
-
 shipping_rates:
   guangzhou_shenzhen:
     truck:
       general:
-        ELITE: { cbm: 5900, kg: 15 }
-        GOLD: { cbm: 6400, kg: 16 }
-        SILVER: { cbm: 6900, kg: 18 }
-        MEMBER: { cbm: 7400, kg: 19 }
+        ELITE:
+          cbm: 5900
+          kg: 15
+        GOLD:
+          cbm: 6400
+          kg: 16
+        SILVER:
+          cbm: 6900
+          kg: 18
+        MEMBER:
+          cbm: 7400
+          kg: 19
       electronic_tis:
-        ELITE: { cbm: 6400, kg: 16 }
-        GOLD: { cbm: 6900, kg: 18 }
-        SILVER: { cbm: 7400, kg: 19 }
-        MEMBER: { cbm: 7900, kg: 20 }
+        ELITE:
+          cbm: 6400
+          kg: 16
+        GOLD:
+          cbm: 6900
+          kg: 18
+        SILVER:
+          cbm: 7400
+          kg: 19
+        MEMBER:
+          cbm: 7900
+          kg: 20
       cosmetic_fda:
-        ELITE: { cbm: 7000, kg: 18 }
-        GOLD: { cbm: 7500, kg: 19 }
-        SILVER: { cbm: 8000, kg: 20 }
-        MEMBER: { cbm: 8500, kg: 22 }
+        ELITE:
+          cbm: 7000
+          kg: 18
+        GOLD:
+          cbm: 7500
+          kg: 19
+        SILVER:
+          cbm: 8000
+          kg: 20
+        MEMBER:
+          cbm: 8500
+          kg: 22
       others:
-        ELITE: { cbm: 9000, kg: 23 }
-        GOLD: { cbm: 9500, kg: 24 }
-        SILVER: { cbm: 10000, kg: 25 }
-        MEMBER: { cbm: 10500, kg: 27 }
+        ELITE:
+          cbm: 9000
+          kg: 23
+        GOLD:
+          cbm: 9500
+          kg: 24
+        SILVER:
+          cbm: 10000
+          kg: 25
+        MEMBER:
+          cbm: 10500
+          kg: 27
     sea:
       general:
-        ELITE: { cbm: 3900, kg: 10 }
-        GOLD: { cbm: 4400, kg: 11 }
-        SILVER: { cbm: 4900, kg: 13 }
-        MEMBER: { cbm: 5400, kg: 14 }
+        ELITE:
+          cbm: 3900
+          kg: 10
+        GOLD:
+          cbm: 4400
+          kg: 11
+        SILVER:
+          cbm: 4900
+          kg: 13
+        MEMBER:
+          cbm: 5400
+          kg: 14
       electronic_tis:
-        ELITE: { cbm: 4400, kg: 11 }
-        GOLD: { cbm: 4900, kg: 13 }
-        SILVER: { cbm: 5400, kg: 14 }
-        MEMBER: { cbm: 5900, kg: 15 }
+        ELITE:
+          cbm: 4400
+          kg: 11
+        GOLD:
+          cbm: 4900
+          kg: 13
+        SILVER:
+          cbm: 5400
+          kg: 14
+        MEMBER:
+          cbm: 5900
+          kg: 15
       cosmetic_fda:
-        ELITE: { cbm: 5500, kg: 14 }
-        GOLD: { cbm: 6000, kg: 15 }
-        SILVER: { cbm: 6500, kg: 17 }
-        MEMBER: { cbm: 7000, kg: 18 }
+        ELITE:
+          cbm: 5500
+          kg: 14
+        GOLD:
+          cbm: 6000
+          kg: 15
+        SILVER:
+          cbm: 6500
+          kg: 17
+        MEMBER:
+          cbm: 7000
+          kg: 18
       others:
-        ELITE: { cbm: 7500, kg: 19 }
-        GOLD: { cbm: 8000, kg: 20 }
-        SILVER: { cbm: 8500, kg: 22 }
-        MEMBER: { cbm: 9000, kg: 23 }
+        ELITE:
+          cbm: 7500
+          kg: 19
+        GOLD:
+          cbm: 8000
+          kg: 20
+        SILVER:
+          cbm: 8500
+          kg: 22
+        MEMBER:
+          cbm: 9000
+          kg: 23
   yiwu:
     truck:
       general:
-        ELITE: { cbm: 6400, kg: 16 }
-        GOLD: { cbm: 6900, kg: 18 }
-        SILVER: { cbm: 7400, kg: 19 }
-        MEMBER: { cbm: 7900, kg: 20 }
+        ELITE:
+          cbm: 6400
+          kg: 16
+        GOLD:
+          cbm: 6900
+          kg: 18
+        SILVER:
+          cbm: 7400
+          kg: 19
+        MEMBER:
+          cbm: 7900
+          kg: 20
       electronic_tis:
-        ELITE: { cbm: 6900, kg: 18 }
-        GOLD: { cbm: 7400, kg: 19 }
-        SILVER: { cbm: 7900, kg: 20 }
-        MEMBER: { cbm: 8400, kg: 21 }
+        ELITE:
+          cbm: 6900
+          kg: 18
+        GOLD:
+          cbm: 7400
+          kg: 19
+        SILVER:
+          cbm: 7900
+          kg: 20
+        MEMBER:
+          cbm: 8400
+          kg: 21
       cosmetic_fda:
-        ELITE: { cbm: 7500, kg: 19 }
-        GOLD: { cbm: 8000, kg: 20 }
-        SILVER: { cbm: 8500, kg: 22 }
-        MEMBER: { cbm: 9000, kg: 23 }
+        ELITE:
+          cbm: 7500
+          kg: 19
+        GOLD:
+          cbm: 8000
+          kg: 20
+        SILVER:
+          cbm: 8500
+          kg: 22
+        MEMBER:
+          cbm: 9000
+          kg: 23
       others:
-        ELITE: { cbm: 9500, kg: 24 }
-        GOLD: { cbm: 10000, kg: 25 }
-        SILVER: { cbm: 10500, kg: 27 }
-        MEMBER: { cbm: 11000, kg: 28 }
+        ELITE:
+          cbm: 9500
+          kg: 24
+        GOLD:
+          cbm: 10000
+          kg: 25
+        SILVER:
+          cbm: 10500
+          kg: 27
+        MEMBER:
+          cbm: 11000
+          kg: 28
     sea:
       general:
-        ELITE: { cbm: 3900, kg: 10 }
-        GOLD: { cbm: 4400, kg: 11 }
-        SILVER: { cbm: 4900, kg: 13 }
-        MEMBER: { cbm: 5400, kg: 14 }
+        ELITE:
+          cbm: 3900
+          kg: 10
+        GOLD:
+          cbm: 4400
+          kg: 11
+        SILVER:
+          cbm: 4900
+          kg: 13
+        MEMBER:
+          cbm: 5400
+          kg: 14
       electronic_tis:
-        ELITE: { cbm: 4400, kg: 11 }
-        GOLD: { cbm: 4900, kg: 13 }
-        SILVER: { cbm: 5400, kg: 14 }
-        MEMBER: { cbm: 5900, kg: 15 }
+        ELITE:
+          cbm: 4400
+          kg: 11
+        GOLD:
+          cbm: 4900
+          kg: 13
+        SILVER:
+          cbm: 5400
+          kg: 14
+        MEMBER:
+          cbm: 5900
+          kg: 15
       cosmetic_fda:
-        ELITE: { cbm: 5500, kg: 14 }
-        GOLD: { cbm: 6000, kg: 15 }
-        SILVER: { cbm: 6500, kg: 17 }
-        MEMBER: { cbm: 7000, kg: 18 }
+        ELITE:
+          cbm: 5500
+          kg: 14
+        GOLD:
+          cbm: 6000
+          kg: 15
+        SILVER:
+          cbm: 6500
+          kg: 17
+        MEMBER:
+          cbm: 7000
+          kg: 18
       others:
-        ELITE: { cbm: 7500, kg: 19 }
-        GOLD: { cbm: 8000, kg: 20 }
-        SILVER: { cbm: 8500, kg: 22 }
-        MEMBER: { cbm: 9000, kg: 23 }
+        ELITE:
+          cbm: 7500
+          kg: 19
+        GOLD:
+          cbm: 8000
+          kg: 20
+        SILVER:
+          cbm: 8500
+          kg: 22
+        MEMBER:
+          cbm: 9000
+          kg: 23
+domestic_shipping:
+  b2b_bulk_delivery:
+    bkk_metropolitan:
+      free_delivery_min_order_thb: 15000.0
+      standard_flat_fee_thb: 800.0
+      description: จัดส่งรวม 1 จุด ใน กทม. และปริมณฑล (ฟรีเมื่อยอดสั่งซื้อ >= 15,000
+        บ.)
+    upcountry:
+      base_truck_charter_thb: 2500.0
+      per_carton_courier_thb: 150.0
+      description: จัดส่งต่างจังหวัดแบบเหมาคัน หรือส่งผ่านขนส่งเอกชนรายกล่องใหญ่
+  direct_to_recipient_fulfilment:
+    packing_and_handling_fee_per_unit_thb: 20.0
+    size_tiers:
+      box_s:
+        max_weight_kg: 1.0
+        bkk_thb: 45.0
+        upcountry_thb: 55.0
+        description: กล่องเล็ก (กระบอกน้ำเดี่ยว, ปากกา, แฟลชไดร์ฟ <= 1kg)
+      box_m:
+        max_weight_kg: 2.0
+        bkk_thb: 60.0
+        upcountry_thb: 75.0
+        description: กล่องกลาง (กิฟต์เซ็ต 2-3 ชิ้น, แก้วมัค, ร่ม <= 2kg)
+      box_l:
+        max_weight_kg: 4.0
+        bkk_thb: 85.0
+        upcountry_thb: 105.0
+        description: กล่องใหญ่ (เซ็ต 4-5 ชิ้น, เครื่องนวด, พาวเวอร์แบงก์ <= 4kg)
+    remote_area_surcharge_thb: 50.0

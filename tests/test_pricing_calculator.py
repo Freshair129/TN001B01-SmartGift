@@ -310,5 +310,68 @@ class TestConfigDrivenConstants(unittest.TestCase):
         self.assertEqual(second.rates["guangzhou_shenzhen"]["truck"]["general"]["gold"]["cbm"], 6400)
 
 
+
+
+class TestDomesticShippingCalculator(unittest.TestCase):
+    """Unit tests for Domestic Thailand Shipping & Delivery calculation."""
+
+    def setUp(self):
+        self.calc = SmartGiftPricingCalculator(fx=5.0)
+
+    def test_bulk_bkk_free_above_threshold(self):
+        # Order 20,000 THB >= 15,000 THB -> Free shipping
+        res = self.calc.calculate_domestic_shipping(
+            mode="bulk", destination="bkk", qty=50, total_order_thb=20000.0
+        )
+        self.assertTrue(res["is_free"])
+        self.assertEqual(res["total_shipping_fee_thb"], 0.0)
+        self.assertEqual(res["flowaccount_service_item"]["unit_price"], 0.0)
+
+    def test_bulk_bkk_charged_below_threshold(self):
+        # Order 8,000 THB < 15,000 THB -> 800 THB flat fee
+        res = self.calc.calculate_domestic_shipping(
+            mode="bulk", destination="bkk", qty=10, total_order_thb=8000.0
+        )
+        self.assertFalse(res["is_free"])
+        self.assertEqual(res["total_shipping_fee_thb"], 800.0)
+        self.assertEqual(res["unit_shipping_fee_thb"], 80.0)
+
+    def test_bulk_upcountry_courier(self):
+        # 60 items = 3 cartons (20 items/carton) -> 3 * 150 = 450 THB
+        res = self.calc.calculate_domestic_shipping(
+            mode="bulk", destination="upcountry", qty=60, upcountry_method="courier"
+        )
+        self.assertEqual(res["total_shipping_fee_thb"], 450.0)
+        self.assertIn("3 ลังใหญ่", res["details"])
+
+    def test_bulk_upcountry_charter(self):
+        # Explicit charter truck -> 2,500 THB base
+        res = self.calc.calculate_domestic_shipping(
+            mode="bulk", destination="upcountry", qty=500, upcountry_method="charter"
+        )
+        self.assertEqual(res["total_shipping_fee_thb"], 2500.0)
+
+    def test_individual_fulfilment_rates(self):
+        # Box S (45 bkk + 20 pack) = 65 THB / unit
+        res_s = self.calc.calculate_domestic_shipping(
+            mode="individual", destination="bkk", qty=10, box_size="box_s"
+        )
+        self.assertEqual(res_s["unit_shipping_fee_thb"], 65.0)
+        self.assertEqual(res_s["total_shipping_fee_thb"], 650.0)
+
+        # Box M upcountry (75 upcountry + 20 pack) = 95 THB / unit
+        res_m = self.calc.calculate_domestic_shipping(
+            mode="individual", destination="upcountry", qty=20, box_size="box_m"
+        )
+        self.assertEqual(res_m["unit_shipping_fee_thb"], 95.0)
+        self.assertEqual(res_m["total_shipping_fee_thb"], 1900.0)
+
+        # Box L remote (105 upcountry + 50 remote + 20 pack) = 175 THB / unit
+        res_l = self.calc.calculate_domestic_shipping(
+            mode="individual", destination="remote", qty=5, box_size="box_l"
+        )
+        self.assertEqual(res_l["unit_shipping_fee_thb"], 175.0)
+        self.assertEqual(res_l["total_shipping_fee_thb"], 875.0)
+
 if __name__ == "__main__":
     unittest.main()

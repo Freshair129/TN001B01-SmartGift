@@ -38,7 +38,10 @@ class SmartGiftAutoQuoteService:
         logo_positions: int = 1,
         logo_colors: int = 1,
         logo_rate: float = 0.0,
-        logo_uv_rate: float = 0.0
+        logo_uv_rate: float = 0.0,
+        domestic_delivery_mode: Optional[str] = None, # "bulk", "individual"
+        domestic_destination: str = "bkk",            # "bkk", "upcountry", "remote"
+        domestic_box_size: str = "box_m"              # "box_s", "box_m", "box_l"
     ) -> Dict[str, Any]:
         """
         Calculates quotes across multiple order breaks and compares Member Tier shipping rates.
@@ -99,8 +102,27 @@ class SmartGiftAutoQuoteService:
             **logo_kwargs
         )
 
+        # Domestic Delivery Calculation (if requested)
+        domestic_shipping_summary = None
+        if domestic_delivery_mode:
+            # Estimate total order value from corporate quote at requested qty
+            unit_price = corp_quote["ladder_quotes"][0]["unit_selling_price"]
+            for lq in corp_quote["ladder_quotes"]:
+                if lq["quantity"] <= qty:
+                    unit_price = lq["unit_selling_price"]
+            est_order_total = unit_price * qty
+
+            domestic_shipping_summary = self.calc.calculate_domestic_shipping(
+                mode=domestic_delivery_mode,
+                destination=domestic_destination,
+                qty=qty,
+                total_order_thb=est_order_total,
+                box_size=domestic_box_size
+            )
+
         return {
             "status": "SUCCESS",
+            "domestic_shipping_summary": domestic_shipping_summary,
             "product_code": product_code,
             "requested_quantity": qty,
             "configuration": {
