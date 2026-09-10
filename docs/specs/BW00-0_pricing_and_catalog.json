@@ -121,12 +121,12 @@
       "standard_gross_profit_unit": 104.52,
       "standard_gross_profit_total": 5225.92,
       "standard_gross_margin_pct": 41.8,
-      "corporate_selling_price_thb": 189.0,
-      "corporate_gross_profit_unit": 43.52,
-      "corporate_gross_profit_total": 2175.92,
-      "corporate_gross_margin_pct": 23.0,
-      "corporate_savings_per_unit_thb": 61.0,
-      "corporate_savings_total_thb": 3050.0
+      "corporate_selling_price_thb": 210.0,
+      "corporate_gross_profit_unit": 64.52,
+      "corporate_gross_profit_total": 3226.0,
+      "corporate_gross_margin_pct": 30.7,
+      "corporate_savings_per_unit_thb": 40.0,
+      "corporate_savings_total_thb": 2000.0
     },
     {
       "quantity": 100,
