@@ -1,0 +1,218 @@
+{
+  "product_name": "แก้วทัมเบลอร์เก็บอุณหภูมิ 450ml พร้อมจอ LED แสดงอุณหภูมิ (SUS304)",
+  "product_name_en": "Thermal Tumbler 450ml with Touch LED Temperature Display (Vacuum Cup)",
+  "codes_and_identification": {
+    "factory_base_model": "BW00",
+    "product_items_suffix": "-0",
+    "factory_item_code": "BW00-0",
+    "package_suffix": "(P-BAG)",
+    "package_name": "Dark Blue Premium Gift Bag with Handle",
+    "flowaccount_product_code": "BW00-0(P-BAG)",
+    "smartgift_internal_code": "PM-TMB",
+    "product_family": "PF-DRINKWARE",
+    "category": "eco-friendly"
+  },
+  "specifications": {
+    "capacity": "450 ml",
+    "dimensions": "Diameter 65 mm x Height 230 mm",
+    "body_material": "SUS304 Stainless Steel Inner Liner (Food Grade, Vacuum Insulated)",
+    "lid_features": "Touch Sensor Smart LED Temperature Display Ring, Leak-proof Silicone Seal",
+    "thermal_performance": "Keep Warm 6-12 hrs / Keep Cold 12-24 hrs",
+    "weight": "Approx 320g"
+  },
+  "colors_available": [
+    {
+      "color_en": "Blue",
+      "color_th": "น้ำเงินคลาสสิก",
+      "hex": "#1E3A8A"
+    },
+    {
+      "color_en": "Silver",
+      "color_th": "เงินสแตนเลสเมทัลลิก",
+      "hex": "#94A3B8"
+    },
+    {
+      "color_en": "Black",
+      "color_th": "ดำด้านพรีเมียม (Matte Black)",
+      "hex": "#1E293B"
+    },
+    {
+      "color_en": "Red",
+      "color_th": "แดงทับทิม",
+      "hex": "#DC2626"
+    },
+    {
+      "color_en": "Gold",
+      "color_th": "ทองแชมเปญ",
+      "hex": "#D97706"
+    },
+    {
+      "color_en": "Pink",
+      "color_th": "ชมพูโรสโกลด์",
+      "hex": "#F472B6"
+    },
+    {
+      "color_en": "Orange",
+      "color_th": "ส้มสปอร์ต",
+      "hex": "#EA580C"
+    },
+    {
+      "color_en": "Light Blue",
+      "color_th": "ฟ้าพาสเทล",
+      "hex": "#38BDF8"
+    }
+  ],
+  "packaging_options": [
+    {
+      "package_code": "P-BAG",
+      "name": "ถุงของขวัญ Dark Blue Gift Bag พร้อมหูหิ้ว (รวมในชุดมาตรฐาน)",
+      "cost_included": true
+    },
+    {
+      "package_code": "P-01",
+      "name": "กล่องของขวัญเดี่ยวแบบแข็งเปิดฝาบน พร้อมโฟม EVA เข้ารูป",
+      "additional_cost_thb": 25.0
+    },
+    {
+      "package_code": "P-TUBE",
+      "name": "กระบอกของขวัญทรงกลมลายคราฟท์/ดำ ปั๊มฟอยล์",
+      "additional_cost_thb": 20.0
+    }
+  ],
+  "shipping_options": {
+    "model": "Direct Single Drop (Port-to-Client)",
+    "flat_rate_trip_thb": 2500.0,
+    "sea_freight_cbm_rate": 2800.0,
+    "cbm_per_unit": 0.002508,
+    "units_per_carton": 30,
+    "carton_dimensions_cm": "45 x 38 x 44 cm (0.07524 CBM)",
+    "corporate_quotation_display": "0.00 THB (ฟรีค่าจัดส่ง รวมในต้นทุนต่อชุดเรียบร้อยแล้ว)"
+  },
+  "pricing_comparison_table": [
+    {
+      "quantity": 50,
+      "factory_base_code": "BW00",
+      "items_in_set": 0,
+      "factory_item_code": "BW00-0",
+      "package_code": "P-BAG",
+      "flowaccount_product_code": "BW00-0(P-BAG)",
+      "smartgift_product_code": "PM-TMB",
+      "factory_exw_usd": 2.31,
+      "factory_exw_thb": 83.08,
+      "sea_freight_thb": 7.02,
+      "customization_thb": 10.0,
+      "domestic_freight_thb": 50.0,
+      "total_landed_cost_thb": 150.1,
+      "standard_selling_price_thb": 250.0,
+      "standard_gross_profit_unit": 99.9,
+      "standard_gross_profit_total": 4995.15,
+      "standard_gross_margin_pct": 40.0,
+      "corporate_selling_price_thb": 189.0,
+      "corporate_gross_profit_unit": 38.9,
+      "corporate_gross_profit_total": 1945.15,
+      "corporate_gross_margin_pct": 20.6,
+      "corporate_savings_per_unit_thb": 61.0,
+      "corporate_savings_total_thb": 3050.0
+    },
+    {
+      "quantity": 100,
+      "factory_base_code": "BW00",
+      "items_in_set": 0,
+      "factory_item_code": "BW00-0",
+      "package_code": "P-BAG",
+      "flowaccount_product_code": "BW00-0(P-BAG)",
+      "smartgift_product_code": "PM-TMB",
+      "factory_exw_usd": 2.31,
+      "factory_exw_thb": 83.08,
+      "sea_freight_thb": 7.02,
+      "customization_thb": 10.0,
+      "domestic_freight_thb": 25.0,
+      "total_landed_cost_thb": 125.1,
+      "standard_selling_price_thb": 230.0,
+      "standard_gross_profit_unit": 104.9,
+      "standard_gross_profit_total": 10490.31,
+      "standard_gross_margin_pct": 45.6,
+      "corporate_selling_price_thb": 169.0,
+      "corporate_gross_profit_unit": 43.9,
+      "corporate_gross_profit_total": 4390.31,
+      "corporate_gross_margin_pct": 26.0,
+      "corporate_savings_per_unit_thb": 61.0,
+      "corporate_savings_total_thb": 6100.0
+    },
+    {
+      "quantity": 300,
+      "factory_base_code": "BW00",
+      "items_in_set": 0,
+      "factory_item_code": "BW00-0",
+      "package_code": "P-BAG",
+      "flowaccount_product_code": "BW00-0(P-BAG)",
+      "smartgift_product_code": "PM-TMB",
+      "factory_exw_usd": 2.31,
+      "factory_exw_thb": 83.08,
+      "sea_freight_thb": 7.02,
+      "customization_thb": 10.0,
+      "domestic_freight_thb": 8.33,
+      "total_landed_cost_thb": 108.43,
+      "standard_selling_price_thb": 215.0,
+      "standard_gross_profit_unit": 106.57,
+      "standard_gross_profit_total": 31970.93,
+      "standard_gross_margin_pct": 49.6,
+      "corporate_selling_price_thb": 149.0,
+      "corporate_gross_profit_unit": 40.57,
+      "corporate_gross_profit_total": 12170.93,
+      "corporate_gross_margin_pct": 27.2,
+      "corporate_savings_per_unit_thb": 66.0,
+      "corporate_savings_total_thb": 19800.0
+    },
+    {
+      "quantity": 500,
+      "factory_base_code": "BW00",
+      "items_in_set": 0,
+      "factory_item_code": "BW00-0",
+      "package_code": "P-BAG",
+      "flowaccount_product_code": "BW00-0(P-BAG)",
+      "smartgift_product_code": "PM-TMB",
+      "factory_exw_usd": 2.31,
+      "factory_exw_thb": 83.08,
+      "sea_freight_thb": 7.02,
+      "customization_thb": 10.0,
+      "domestic_freight_thb": 5.0,
+      "total_landed_cost_thb": 105.1,
+      "standard_selling_price_thb": 200.0,
+      "standard_gross_profit_unit": 94.9,
+      "standard_gross_profit_total": 47451.54,
+      "standard_gross_margin_pct": 47.5,
+      "corporate_selling_price_thb": 139.0,
+      "corporate_gross_profit_unit": 33.9,
+      "corporate_gross_profit_total": 16951.54,
+      "corporate_gross_margin_pct": 24.4,
+      "corporate_savings_per_unit_thb": 61.0,
+      "corporate_savings_total_thb": 30500.0
+    },
+    {
+      "quantity": 1000,
+      "factory_base_code": "BW00",
+      "items_in_set": 0,
+      "factory_item_code": "BW00-0",
+      "package_code": "P-BAG",
+      "flowaccount_product_code": "BW00-0(P-BAG)",
+      "smartgift_product_code": "PM-TMB",
+      "factory_exw_usd": 2.31,
+      "factory_exw_thb": 83.08,
+      "sea_freight_thb": 7.02,
+      "customization_thb": 10.0,
+      "domestic_freight_thb": 2.5,
+      "total_landed_cost_thb": 102.6,
+      "standard_selling_price_thb": 185.0,
+      "standard_gross_profit_unit": 82.4,
+      "standard_gross_profit_total": 82403.09,
+      "standard_gross_margin_pct": 44.5,
+      "corporate_selling_price_thb": 129.0,
+      "corporate_gross_profit_unit": 26.4,
+      "corporate_gross_profit_total": 26403.09,
+      "corporate_gross_margin_pct": 20.5,
+      "corporate_savings_per_unit_thb": 56.0,
+      "corporate_savings_total_thb": 56000.0
+    }
+  ]
+}
