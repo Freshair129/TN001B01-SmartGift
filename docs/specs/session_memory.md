@@ -110,3 +110,6 @@ $$\mathbf{[รหัสโมเดลโรงงาน]} + \mathbf{[-จำน
 ### 4.6 สเปกและสัญญาโครงสร้างข้อมูลฉบับสมบูรณ์ (Full Enterprise Master Schema)
 * **Contract Schema:** [contracts/smartgift-full-master.schema.json](file:///c:/Users/pc/workspace/business-01-smart-gift/contracts/smartgift-full-master.schema.json)
 * **Enterprise Spec (.md):** [docs/specs/SPEC-FULL-ENTERPRISE-SCHEMA-2026-09-10.md](file:///c:/Users/pc/workspace/business-01-smart-gift/docs/specs/SPEC-FULL-ENTERPRISE-SCHEMA-2026-09-10.md)
+
+### 4.7 บันทึกการตัดสินใจเชิงสถาปัตยกรรม (Architecture Decision Record)
+* **ADR-009:** [docs/decisions/ADR-009-B2B-PRICING-LOGISTICS-AND-FLOWACCOUNT-SKU-ARCHITECTURE.md](file:///c:/Users/pc/workspace/business-01-smart-gift/docs/decisions/ADR-009-B2B-PRICING-LOGISTICS-AND-FLOWACCOUNT-SKU-ARCHITECTURE.md)
