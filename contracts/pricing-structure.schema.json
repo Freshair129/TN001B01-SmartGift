@@ -1,0 +1,317 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zuri.ai/contracts/pricing-structure.schema.json",
+  "title": "SmartGiftPricingStructure",
+  "description": "Standardized B2B pricing model, cost breakdown, FlowAccount SKU convention, and tier comparison schema for SmartGift & Zuri-AI.",
+  "type": "object",
+  "required": [
+    "codes_and_identification",
+    "shipping_options",
+    "pricing_comparison_table"
+  ],
+  "properties": {
+    "product_name": {
+      "type": "string",
+      "description": "Official Thai name of the product or gift set"
+    },
+    "product_name_en": {
+      "type": "string",
+      "description": "Official English name of the product or gift set"
+    },
+    "pricing_source_reconciliation": {
+      "type": "object",
+      "description": "Auditable trace linking the price to the source factory Excel and FX baseline",
+      "properties": {
+        "source_file": {
+          "type": "string"
+        },
+        "source_row": {
+          "type": "integer"
+        },
+        "factory_item_code": {
+          "type": "string"
+        },
+        "factory_price_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "fx_rate_thb_per_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "factory_cost_thb_exact": {
+          "type": "number",
+          "minimum": 0
+        },
+        "factory_cost_thb_display": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "codes_and_identification": {
+      "type": "object",
+      "description": "Naming convention components adhering to: [Factory Model] + [-Items] + [(Package Code)] = FlowAccount Code",
+      "required": [
+        "factory_base_model",
+        "product_items_suffix",
+        "factory_item_code",
+        "package_suffix",
+        "flowaccount_product_code"
+      ],
+      "properties": {
+        "factory_base_model": {
+          "type": "string",
+          "description": "Base model identifier from factory (e.g. TMS06, BW00)",
+          "example": "TMS06"
+        },
+        "product_items_suffix": {
+          "type": "string",
+          "pattern": "^-[0-9]+$",
+          "description": "Number of components in the set prefixed with hyphen (e.g. -3, -4, -0)",
+          "example": "-4"
+        },
+        "factory_item_code": {
+          "type": "string",
+          "description": "Factory SKU/model code (e.g. TMS06-4, BW00-0)",
+          "example": "TMS06-4"
+        },
+        "package_suffix": {
+          "type": "string",
+          "pattern": "^\\(P-[A-Z0-9]+\\)$",
+          "description": "Package box/bag code wrapped in parentheses (e.g. (P-16), (P-06), (P-BAG))",
+          "example": "(P-16)"
+        },
+        "package_name": {
+          "type": "string",
+          "description": "Descriptive packaging name"
+        },
+        "flowaccount_product_code": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]+-[0-9]+\\(P-[A-Z0-9]+\\)$",
+          "description": "Strict FlowAccount primary SKU code matching rule: FactoryModel-Count(PackageCode)",
+          "example": "TMS06-4(P-16)"
+        },
+        "smartgift_internal_code": {
+          "type": "string",
+          "description": "Internal ProductMaster code (e.g. PM-TMB, TMS06-4)"
+        },
+        "product_family": {
+          "type": "string",
+          "description": "Product family classification (e.g. PF-DRINKWARE, PF-EXECUTIVE-TECH)"
+        },
+        "category": {
+          "type": "string",
+          "description": "Market category slug (e.g. eco-friendly, executive-smart-tech)"
+        }
+      }
+    },
+    "specifications": {
+      "type": "object",
+      "description": "Physical and functional product specifications"
+    },
+    "colors_available": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "color_en",
+          "color_th"
+        ],
+        "properties": {
+          "color_en": {
+            "type": "string"
+          },
+          "color_th": {
+            "type": "string"
+          },
+          "hex": {
+            "type": "string",
+            "pattern": "^#[0-9A-Fa-f]{6}$"
+          }
+        }
+      }
+    },
+    "packaging_options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "package_code",
+          "name"
+        ],
+        "properties": {
+          "package_code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "cost_included": {
+            "type": "boolean"
+          },
+          "additional_cost_thb": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "shipping_options": {
+      "oneOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      ],
+      "description": "Domestic logistics model and freight absorption details (object or array of options)"
+    },
+    "pricing_comparison_table": {
+      "type": "array",
+      "description": "Volume tier breakdown comparing landed cost, retail price, and corporate B2B discount",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/PricingTierRow"
+      }
+    }
+  },
+  "definitions": {
+    "PricingTierRow": {
+      "type": "object",
+      "required": [
+        "quantity",
+        "factory_base_code",
+        "items_in_set",
+        "factory_item_code",
+        "package_code",
+        "flowaccount_product_code",
+        "factory_exw_usd",
+        "factory_exw_thb",
+        "sea_freight_thb",
+        "domestic_freight_thb",
+        "total_landed_cost_thb",
+        "standard_selling_price_thb",
+        "standard_gross_profit_unit",
+        "standard_gross_margin_pct",
+        "corporate_selling_price_thb",
+        "corporate_gross_profit_unit",
+        "corporate_gross_margin_pct",
+        "corporate_savings_per_unit_thb",
+        "corporate_savings_total_thb"
+      ],
+      "properties": {
+        "quantity": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Order batch volume tier (e.g. 50, 100, 300, 500, 1000)"
+        },
+        "factory_base_code": {
+          "type": "string",
+          "description": "Base factory model code"
+        },
+        "items_in_set": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of items bundled in this SKU"
+        },
+        "factory_item_code": {
+          "type": "string",
+          "description": "Factory SKU"
+        },
+        "package_code": {
+          "type": "string",
+          "description": "Package box code without parentheses (e.g. P-16, P-BAG)"
+        },
+        "flowaccount_product_code": {
+          "type": "string",
+          "description": "Full FlowAccount product code with package code in parentheses"
+        },
+        "smartgift_product_code": {
+          "type": "string",
+          "description": "Internal product reference code"
+        },
+        "factory_exw_usd": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Factory Ex-Works price in USD"
+        },
+        "factory_exw_thb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Factory Ex-Works price converted to THB"
+        },
+        "fx_rate": {
+          "type": "number",
+          "description": "Exchange rate applied (e.g. 34.00, 36.00)"
+        },
+        "sea_freight_thb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "International shipping cost from China to Thailand port per unit"
+        },
+        "customization_thb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Logo printing, UV screen, or laser engraving cost per unit"
+        },
+        "domestic_freight_thb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Port to destination delivery cost per unit (calculated as 2,500 THB / Quantity)"
+        },
+        "total_landed_cost_thb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Sum of Factory THB + Sea Freight + Customization + Domestic Freight"
+        },
+        "standard_selling_price_thb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Standard retail / SRP selling price per unit"
+        },
+        "standard_gross_profit_unit": {
+          "type": "number",
+          "description": "Standard Selling Price - Total Landed Cost"
+        },
+        "standard_gross_profit_total": {
+          "type": "number",
+          "description": "Standard Gross Profit Unit * Quantity"
+        },
+        "standard_gross_margin_pct": {
+          "type": "number",
+          "description": "(Standard Gross Profit Unit / Standard Selling Price) * 100"
+        },
+        "corporate_selling_price_thb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "B2B discounted corporate selling price per unit"
+        },
+        "corporate_gross_profit_unit": {
+          "type": "number",
+          "description": "Corporate Selling Price - Total Landed Cost"
+        },
+        "corporate_gross_profit_total": {
+          "type": "number",
+          "description": "Corporate Gross Profit Unit * Quantity"
+        },
+        "corporate_gross_margin_pct": {
+          "type": "number",
+          "description": "(Corporate Gross Profit Unit / Corporate Selling Price) * 100"
+        },
+        "corporate_savings_per_unit_thb": {
+          "type": "number",
+          "description": "Standard Selling Price - Corporate Selling Price"
+        },
+        "corporate_savings_total_thb": {
+          "type": "number",
+          "description": "Savings Per Unit * Quantity"
+        }
+      }
+    }
+  }
+}
