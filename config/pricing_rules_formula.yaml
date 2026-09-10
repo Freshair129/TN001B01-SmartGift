@@ -4,7 +4,7 @@
 # Authority: Controlled by Zuri-AI UI Control Plane & Pricing Calculator Engine
 # ==============================================================================
 
-version: "2026.09.10-v2"
+version: "2026.09.11-v3"
 contract_reference: "smartgift://b2b/pricing-rules-formula/v1"
 last_updated: "2026-09-10T00:00:00+07:00"
 updated_by: "zuri_ai_pricing_control_plane"
@@ -49,6 +49,20 @@ profit_floors:
     thb: 5000.0
   - max_qty: .inf
     thb: 3000.0
+
+# v3 (2026-09-11) — พื้นกำไรเสริม แยกตามชนิดสินค้า สั่งการโดย Boss
+# เป็นการ "เสริม" ไม่ใช่แทนที่ profit_floors ด้านบน:
+#   effective_floor_thb = max( profit_floors ตามช่วงจำนวน , profit_floors_by_kind ที่เข้าเงื่อนไข )
+# หน่วยเป็น "กำไรขั้นต้นรวมทั้งออเดอร์" เหมือน profit_floors เดิม ไม่ใช่ต่อหน่วย
+#   กำไรขั้นต้น = (ราคาขาย - total_landed_cost_thb) x จำนวน
+# ตัวอย่าง: เซ็ต 100 ชุด -> max(3000, 20000) = 20000 ; เซ็ต 50 ชุด -> max(3000, -) = 3000
+profit_floors_by_kind:
+  set:
+    - min_qty: 100
+      thb: 20000.0
+  single:
+    - min_qty: 50
+      thb: 3000.0
 
 small_order_factors:
   - max_qty: 20
@@ -228,6 +242,10 @@ sources:
   profit_floors:
     level: "undocumented"
     note: "ไม่พบเอกสารว่าใครกำหนดและเมื่อไหร่"
+  profit_floors_by_kind:
+    level: "owner_directive"
+    origin: "Boss ระบุด้วยวาจา 2026-09-11: เซ็ตจากโรงงาน 100 ชุด กำไรห้ามต่ำกว่า 20,000 · สินค้าเดี่ยว 50 ชิ้น กำไรไม่ต่ำกว่า 3,000"
+    note: "ยืนยันแล้วว่าเป็นยอดรวมต่อออเดอร์ (ไม่ใช่ต่อหน่วย) และเสริมของเดิมไม่ใช่แทนที่"
   standard_quote_profile:
     level: "code_only"
     origin: "price-boss/pricing.html · src/cascade_engine/pricing_calculator.py"
