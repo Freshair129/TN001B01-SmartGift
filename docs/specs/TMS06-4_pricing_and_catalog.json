@@ -1,0 +1,162 @@
+{
+  "product": {
+    "product_code": "TMS06-4",
+    "name_th": "ชุดของขวัญ Executive 4-in-1 (แก้วสแตนเลส 316 + ลำโพงบลูทูธ + พาวเวอร์แบงก์มีขาตั้ง + ร่มพับ UV)",
+    "name_en": "Executive Gift Set 4-in-1 (Mug + Bluetooth Speaker + Power Bank + Umbrella)",
+    "category": "Executive Business & Office Gift Set",
+    "currency_factory": "USD",
+    "exw_usd_base_500": 14.1538,
+    "fx_usd_to_thb": 36.0,
+    "carton_spec": {
+      "pieces_per_carton": 10,
+      "set_weight_kg": 1.4,
+      "set_volume_cbm": 0.0105,
+      "cbm_rate_sea_thb": 4900.0
+    },
+    "domestic_logistics": {
+      "mode": "direct_port_to_destination_single_drop",
+      "fixed_truck_thb": 2500.0,
+      "destination": "bangkok_metropolitan_single_location"
+    },
+    "items_in_set": [
+      {
+        "item": "แก้วสแตนเลส 316 (Smart Thermal Mug)",
+        "specs": "ผิว Frosted สัมผัสด้าน หรูหรา, ความจุ 450 มล., ขนาด 184 × 85 มม., วัสดุ Food Grade PP Silicon + สแตนเลสเกรดพรีเมียม SUS 316 เก็บอุณหภูมิร้อน-เย็นยาวนาน"
+      },
+      {
+        "item": "ลำโพงบลูทูธพกพา (Bluetooth Speaker with Ambient Light)",
+        "specs": "เชื่อมต่อไร้สาย Bluetooth, ไฟ Ambient Light ปรับบรรยากาศ, ปุ่มควบคุมฟังก์ชันด้านล่าง, พอร์ตชาร์จ Type-C, ช่องใส่ Micro SD / TF Card"
+      },
+      {
+        "item": "พาวเวอร์แบงก์พร้อมขาตั้งโทรศัพท์ (Power Bank 10,000 mAh)",
+        "specs": "ความจุ 10,000 mAh, ขนาด 68 × 147 × 20 มม., หน้าจอ LED แสดงเปอร์เซ็นต์แบตเตอรี่, มีขาตั้งโทรศัพท์และสายคล้องในตัว, สายชาร์จในตัว 3 หัว (iOS / Type-C / Micro USB) พร้อมพอร์ต USB 2 ช่อง"
+      },
+      {
+        "item": "ร่มพับกันแดด UV ไวนิลดำ (5-Fold Compact Umbrella)",
+        "specs": "ร่มพับ 5 ตอน กะทัดรัด, ผ้าร่มเคลือบฉนวนกันรังสี UV พร้อมแผ่นไวนิลสีดำกันความร้อนสะท้อนแดดเต็มพิกัด, พับเก็บยาวเพียง 19 ซม., กางกว้าง 92 ซม."
+      }
+    ],
+    "available_colors": [
+      "น้ำเงิน (Navy Blue)",
+      "ขาว (Classic White)",
+      "แดง (Crimson Red)",
+      "ดำ (Matte Black)",
+      "ส้ม (Vibrant Orange)"
+    ],
+    "packaging": "กล่องของขวัญพรีเมียมขึ้นรูปเฉพาะเซ็ต พร้อมถุงหิ้วของขวัญเข้าชุด (Gift Box & Gift Bag)"
+  },
+  "pricing_tiers": [
+    {
+      "quantity": 100,
+      "small_order_factor": 1.15,
+      "factory_cost_usd": 16.2769,
+      "factory_cost_thb": 585.97,
+      "sea_freight_china_thb": 51.45,
+      "domestic_freight_thb": 25.0,
+      "total_landed_cost": 662.42,
+      "standard_pricing": {
+        "unit_price_before_vat": 1300.0,
+        "unit_price_inc_vat": 1391.0,
+        "total_order_before_vat": 130000.0,
+        "total_order_inc_vat": 139100.0,
+        "gross_profit_total": 63758.0,
+        "gross_margin_percent": 49.0
+      },
+      "corporate_pricing": {
+        "volume_factor": 0.8,
+        "unit_price_before_vat": 880.0,
+        "unit_price_inc_vat": 941.6,
+        "total_order_before_vat": 88000.0,
+        "total_order_inc_vat": 94160.0,
+        "gross_profit_total": 21758.0,
+        "gross_margin_percent": 24.7
+      },
+      "corporate_savings_per_unit": 420.0,
+      "corporate_savings_total": 42000.0
+    },
+    {
+      "quantity": 300,
+      "small_order_factor": 1.08,
+      "factory_cost_usd": 15.2861,
+      "factory_cost_thb": 550.3,
+      "sea_freight_china_thb": 51.45,
+      "domestic_freight_thb": 8.33,
+      "total_landed_cost": 610.08,
+      "standard_pricing": {
+        "unit_price_before_vat": 1130.0,
+        "unit_price_inc_vat": 1209.1,
+        "total_order_before_vat": 339000.0,
+        "total_order_inc_vat": 362730.0,
+        "gross_profit_total": 155976.0,
+        "gross_margin_percent": 46.0
+      },
+      "corporate_pricing": {
+        "volume_factor": 0.77,
+        "unit_price_before_vat": 850.0,
+        "unit_price_inc_vat": 909.5,
+        "total_order_before_vat": 255000.0,
+        "total_order_inc_vat": 272850.0,
+        "gross_profit_total": 71976.0,
+        "gross_margin_percent": 28.2
+      },
+      "corporate_savings_per_unit": 280.0,
+      "corporate_savings_total": 84000.0
+    },
+    {
+      "quantity": 500,
+      "small_order_factor": 1.0,
+      "factory_cost_usd": 14.1538,
+      "factory_cost_thb": 509.54,
+      "sea_freight_china_thb": 51.45,
+      "domestic_freight_thb": 5.0,
+      "total_landed_cost": 565.99,
+      "standard_pricing": {
+        "unit_price_before_vat": 1000.0,
+        "unit_price_inc_vat": 1070.0,
+        "total_order_before_vat": 500000.0,
+        "total_order_inc_vat": 535000.0,
+        "gross_profit_total": 217005.0,
+        "gross_margin_percent": 43.4
+      },
+      "corporate_pricing": {
+        "volume_factor": 0.75,
+        "unit_price_before_vat": 830.0,
+        "unit_price_inc_vat": 888.1,
+        "total_order_before_vat": 415000.0,
+        "total_order_inc_vat": 444050.0,
+        "gross_profit_total": 132005.0,
+        "gross_margin_percent": 31.8
+      },
+      "corporate_savings_per_unit": 170.0,
+      "corporate_savings_total": 85000.0
+    },
+    {
+      "quantity": 1000,
+      "small_order_factor": 0.96,
+      "factory_cost_usd": 13.5876,
+      "factory_cost_thb": 489.15,
+      "sea_freight_china_thb": 51.45,
+      "domestic_freight_thb": 2.5,
+      "total_landed_cost": 543.1,
+      "standard_pricing": {
+        "unit_price_before_vat": 900.0,
+        "unit_price_inc_vat": 963.0,
+        "total_order_before_vat": 900000.0,
+        "total_order_inc_vat": 963000.0,
+        "gross_profit_total": 356900.0,
+        "gross_margin_percent": 39.7
+      },
+      "corporate_pricing": {
+        "volume_factor": 0.73,
+        "unit_price_before_vat": 800.0,
+        "unit_price_inc_vat": 856.0,
+        "total_order_before_vat": 800000.0,
+        "total_order_inc_vat": 856000.0,
+        "gross_profit_total": 256900.0,
+        "gross_margin_percent": 32.1
+      },
+      "corporate_savings_per_unit": 100.0,
+      "corporate_savings_total": 100000.0
+    }
+  ]
+}
