@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smartgift.etohgroup.com/contracts/smartgift-inventory-system.schema.json",
+  "title": "SmartGiftInventorySystemContract",
+  "description": "Enterprise Inventory & WIP Kitting Contract for SmartGift (Business 01) on Zuri-AI SCM Domain",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "tenantId",
+    "businessId",
+    "locations",
+    "items",
+    "recipes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "2026-09-10"
+    },
+    "tenantId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "businessId": {
+      "type": "string",
+      "const": "TN001B01"
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "name",
+          "type"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "CN_FACTORY",
+              "INTL_SEA_TRANSIT",
+              "TH_PORT_CUSTOMS",
+              "TH_CENTRAL_RAW",
+              "TH_WIP_CUSTOMIZATION",
+              "TH_WIP_ASSEMBLY",
+              "TH_FINISHED_GOODS",
+              "TH_QUARANTINE_SCRAP",
+              "CUSTOMER_SITE"
+            ]
+          },
+          "isVirtual": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "nameTh",
+          "itemKind",
+          "stockPolicy",
+          "trackingMode"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "flowAccountCode": {
+            "type": "string"
+          },
+          "nameTh": {
+            "type": "string"
+          },
+          "nameEn": {
+            "type": "string"
+          },
+          "itemKind": {
+            "type": "string",
+            "enum": [
+              "RAW_COMPONENT",
+              "PACKAGING_MATERIAL",
+              "CUSTOM_COMPONENT",
+              "FINISHED_SET"
+            ]
+          },
+          "stockPolicy": {
+            "type": "string",
+            "enum": [
+              "TRACKED",
+              "UNTRACKED"
+            ]
+          },
+          "trackingMode": {
+            "type": "string",
+            "enum": [
+              "NONE",
+              "LOT",
+              "SERIAL"
+            ]
+          },
+          "safetyStock": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "baseCostSatang": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "recipes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "finishedSkuCode",
+          "batchSize",
+          "scrapAllowanceFactor",
+          "components"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "finishedSkuCode": {
+            "type": "string"
+          },
+          "batchSize": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "scrapAllowanceFactor": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 0.2
+          },
+          "components": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "componentSkuCode",
+                "quantityPerBatch"
+              ],
+              "properties": {
+                "componentSkuCode": {
+                  "type": "string"
+                },
+                "quantityPerBatch": {
+                  "type": "number",
+                  "minimum": 0.001
+                },
+                "isFixed": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
