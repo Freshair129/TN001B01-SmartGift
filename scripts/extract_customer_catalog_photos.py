@@ -16,9 +16,21 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = Path(__file__).resolve().parents[1]
 CODE = re.compile(r"[A-Z]{1,8}[0-9][A-Z0-9]*(?:-[A-Z0-9]+)*\Z")
 
+# Verified column geometries for the A4 portrait price tables. Each entry describes ONE printed
+# layout, measured from its pages; they are tried in order and the first that yields rows wins for
+# that page. Do not merge them into a single loose band — a wider band can pair a code with the
+# photo from a neighbouring column, which puts the wrong product picture on the catalogue.
+#   narrow  the original verified layout (code x1<=50, photo 45..155)
+#   wide    the 110-page ใบเสนอราคา / ใบราคาส่งลูกค้า tables: code x1 measured 67-73,
+#           photo x0 measured 74-77 and x1 164-169
+LAYOUTS = (
+    {"name": "narrow", "code_x1": 50, "image_x0": 45, "image_x1": 155, "crop_x1": 306},
+    {"name": "wide", "code_x1": 80, "image_x0": 45, "image_x1": 180, "crop_x1": 380},
+)
 
-def match_rows(words, images, target_codes, page_height):
-    codes = sorted((w for w in words if w["x0"] < 45 and w["x1"] <= 50
+
+def match_rows(words, images, target_codes, page_height, layout):
+    codes = sorted((w for w in words if w["x0"] < 45 and w["x1"] <= layout["code_x1"]
                     and CODE.fullmatch(w["text"])), key=lambda w: w["top"])
     result = []
     for index, word in enumerate(codes):
@@ -26,13 +38,16 @@ def match_rows(words, images, target_codes, page_height):
         if word["text"] not in target_codes or word["top"] < 40:
             continue
         end = codes[index + 1]["top"] if index + 1 < len(codes) else page_height - 15
-        pictures = [im for im in images if 45 <= im["x0"] and im["x1"] <= 155
+        pictures = [im for im in images
+                    if layout["image_x0"] <= im["x0"] and im["x1"] <= layout["image_x1"]
                     and im["top"] >= word["top"] - 2 and im["bottom"] <= end + 2
                     and im["bottom"] <= page_height - 15
                     and im["x1"] - im["x0"] >= 40 and im["bottom"] - im["top"] >= 35]
+        # More than one candidate photo in the row band is not evidence of identity — skip it.
         if len(pictures) == 1:
             result.append({"code": word["text"], "image_name": pictures[0]["name"],
-                           "row_top": word["top"], "row_bottom": end})
+                           "row_top": word["top"], "row_bottom": end, "layout": layout["name"],
+                           "crop_x1": layout["crop_x1"]})
     return result
 
 
@@ -40,8 +55,12 @@ def collect(source):
     import pdfplumber
     from pypdf import PdfReader
 
+    # Every offer code the business knows about. smartgift_catalog_master carries the 357 canonical
+    # ones; pricelist_master carries all 1,110, and the price tables print codes from both.
     master = json.loads((ROOT / "data-pipeline/02_prepared/smartgift_catalog_master.json").read_text(encoding="utf-8"))
+    pricelist = json.loads((ROOT / "data-pipeline/02_prepared/pricelist_master.json").read_text(encoding="utf-8"))
     targets = {row["offer_code"] for row in master["catalog_offers"]}
+    targets |= {row["code"] for row in pricelist["catalog_offers"]}
     reader = PdfReader(source)
     found = {}
     with pdfplumber.open(source) as pdf:
@@ -49,7 +68,11 @@ def collect(source):
             # These coordinates describe the verified A4 portrait price-table layout only.
             if abs(page.width - 595.2) > 1 or abs(page.height - 841.8) > 1:
                 continue
-            rows = match_rows(page.extract_words(), page.images, targets, page.height)
+            words = page.extract_words()
+            for layout in LAYOUTS:
+                rows = match_rows(words, page.images, targets, page.height, layout)
+                if rows:
+                    break
             if not rows:
                 continue
             embedded = {Path(im.name).stem: im for im in reader.pages[page_number - 1].images}
@@ -83,7 +106,7 @@ def review_sheets(source, rows, directory):
             if row["page"] not in page_cache:
                 page_cache[row["page"]] = document[row["page"] - 1].render(scale=2).to_pil().convert("RGB")
             page_image = page_cache[row["page"]]
-            crop = page_image.crop((15, max(0, int((row["row_top"] - 2) * 2)), 306,
+            crop = page_image.crop((15, max(0, int((row["row_top"] - 2) * 2)), row.get("crop_x1", 306),
                                     min(page_image.height, int(row["row_bottom"] * 2))))
             crop.thumbnail((280, 245))
             sheet.paste(crop, (x + 8, y + 28))
