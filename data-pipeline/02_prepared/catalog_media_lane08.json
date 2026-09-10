@@ -1,0 +1,3519 @@
+{
+ "lane": "08_factory_costs",
+ "note": "ภาพสินค้าจากไฟล์ต้นทุนโรงงาน อนุมัติโดยเจ้าของ 2026-09-11 · ที่มาต่างจากภาพ lane 02 ที่มาจากใบราคาลูกค้า",
+ "max_edge": 1200,
+ "webp_quality": 82,
+ "count": 390,
+ "items": [
+  {
+   "code": "BT04-0",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/BT04-0.png",
+   "file": "source-offer-BT04-0.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "BW16-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/BW16-2.png",
+   "file": "source-offer-BW16-2.webp",
+   "size": [
+    348,
+    620
+   ]
+  },
+  {
+   "code": "CER01-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/CER01-5.png",
+   "file": "source-offer-CER01-5.webp",
+   "size": [
+    573,
+    545
+   ]
+  },
+  {
+   "code": "DDB00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/DDB00-3.png",
+   "file": "source-offer-DDB00-3.webp",
+   "size": [
+    803,
+    760
+   ]
+  },
+  {
+   "code": "FXD23-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/FXD23-3.png",
+   "file": "source-offer-FXD23-3.webp",
+   "size": [
+    643,
+    587
+   ]
+  },
+  {
+   "code": "FXD40-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/FXD40-3.png",
+   "file": "source-offer-FXD40-3.webp",
+   "size": [
+    1200,
+    1030
+   ]
+  },
+  {
+   "code": "FXD66-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/FXD66-3.png",
+   "file": "source-offer-FXD66-3.webp",
+   "size": [
+    525,
+    454
+   ]
+  },
+  {
+   "code": "FXD68-7",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/FXD68-7.png",
+   "file": "source-offer-FXD68-7.webp",
+   "size": [
+    429,
+    300
+   ]
+  },
+  {
+   "code": "FXD82-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/FXD82-5.png",
+   "file": "source-offer-FXD82-5.webp",
+   "size": [
+    720,
+    523
+   ]
+  },
+  {
+   "code": "MBD00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/MBD00-2.png",
+   "file": "source-offer-MBD00-2.webp",
+   "size": [
+    836,
+    801
+   ]
+  },
+  {
+   "code": "MBN00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/MBN00-2.png",
+   "file": "source-offer-MBN00-2.webp",
+   "size": [
+    846,
+    801
+   ]
+  },
+  {
+   "code": "MXF41-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/MXF41-2.png",
+   "file": "source-offer-MXF41-2.webp",
+   "size": [
+    447,
+    440
+   ]
+  },
+  {
+   "code": "MXF42-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/MXF42-2.png",
+   "file": "source-offer-MXF42-2.webp",
+   "size": [
+    440,
+    437
+   ]
+  },
+  {
+   "code": "MZA00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/MZA00-2.png",
+   "file": "source-offer-MZA00-2.webp",
+   "size": [
+    737,
+    728
+   ]
+  },
+  {
+   "code": "MZB00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/MZB00-2.png",
+   "file": "source-offer-MZB00-2.webp",
+   "size": [
+    655,
+    659
+   ]
+  },
+  {
+   "code": "MZC00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/MZC00-3.png",
+   "file": "source-offer-MZC00-3.webp",
+   "size": [
+    883,
+    670
+   ]
+  },
+  {
+   "code": "MZD00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/MZD00-2.png",
+   "file": "source-offer-MZD00-2.webp",
+   "size": [
+    754,
+    748
+   ]
+  },
+  {
+   "code": "MZD00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/MZD00-3.png",
+   "file": "source-offer-MZD00-3.webp",
+   "size": [
+    745,
+    740
+   ]
+  },
+  {
+   "code": "TBA1532",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBA1532.png",
+   "file": "source-offer-TBA1532.webp",
+   "size": [
+    660,
+    655
+   ]
+  },
+  {
+   "code": "TBA1632",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBA1632.png",
+   "file": "source-offer-TBA1632.webp",
+   "size": [
+    657,
+    652
+   ]
+  },
+  {
+   "code": "TBG02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBG02-2.png",
+   "file": "source-offer-TBG02-2.webp",
+   "size": [
+    454,
+    541
+   ]
+  },
+  {
+   "code": "TBG05-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBG05-4.png",
+   "file": "source-offer-TBG05-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBH00-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBH00-5.png",
+   "file": "source-offer-TBH00-5.webp",
+   "size": [
+    600,
+    433
+   ]
+  },
+  {
+   "code": "TBH04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBH04-2.png",
+   "file": "source-offer-TBH04-2.webp",
+   "size": [
+    683,
+    587
+   ]
+  },
+  {
+   "code": "TBH05-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBH05-3.png",
+   "file": "source-offer-TBH05-3.webp",
+   "size": [
+    595,
+    694
+   ]
+  },
+  {
+   "code": "TBH06-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBH06-2.png",
+   "file": "source-offer-TBH06-2.webp",
+   "size": [
+    590,
+    689
+   ]
+  },
+  {
+   "code": "TBJ04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBJ04-2.png",
+   "file": "source-offer-TBJ04-2.webp",
+   "size": [
+    617,
+    491
+   ]
+  },
+  {
+   "code": "TBJ05-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBJ05-3.png",
+   "file": "source-offer-TBJ05-3.webp",
+   "size": [
+    616,
+    476
+   ]
+  },
+  {
+   "code": "TBJ06-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBJ06-3.png",
+   "file": "source-offer-TBJ06-3.webp",
+   "size": [
+    621,
+    485
+   ]
+  },
+  {
+   "code": "TBK00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBK00-2.png",
+   "file": "source-offer-TBK00-2.webp",
+   "size": [
+    585,
+    685
+   ]
+  },
+  {
+   "code": "TBP09-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBP09-3.png",
+   "file": "source-offer-TBP09-3.webp",
+   "size": [
+    562,
+    560
+   ]
+  },
+  {
+   "code": "TBP10-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBP10-2.png",
+   "file": "source-offer-TBP10-2.webp",
+   "size": [
+    566,
+    570
+   ]
+  },
+  {
+   "code": "TBP10-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBP10-3.png",
+   "file": "source-offer-TBP10-3.webp",
+   "size": [
+    565,
+    565
+   ]
+  },
+  {
+   "code": "TBP12-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBP12-3.png",
+   "file": "source-offer-TBP12-3.webp",
+   "size": [
+    570,
+    562
+   ]
+  },
+  {
+   "code": "TBP1513",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBP1513.png",
+   "file": "source-offer-TBP1513.webp",
+   "size": [
+    502,
+    659
+   ]
+  },
+  {
+   "code": "TBS03-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBS03-4.png",
+   "file": "source-offer-TBS03-4.webp",
+   "size": [
+    734,
+    685
+   ]
+  },
+  {
+   "code": "TBS17-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBS17-2.jpeg",
+   "file": "source-offer-TBS17-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBS18-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBS18-2.jpeg",
+   "file": "source-offer-TBS18-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBS19-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBS19-2.jpeg",
+   "file": "source-offer-TBS19-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBS20-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBS20-3.jpeg",
+   "file": "source-offer-TBS20-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBS22-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBS22-3.jpeg",
+   "file": "source-offer-TBS22-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBS23-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBS23-4.jpeg",
+   "file": "source-offer-TBS23-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBS24-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBS24-5.jpeg",
+   "file": "source-offer-TBS24-5.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBS25-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBS25-3.jpeg",
+   "file": "source-offer-TBS25-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBT10-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBT10-2.png",
+   "file": "source-offer-TBT10-2.webp",
+   "size": [
+    116,
+    140
+   ]
+  },
+  {
+   "code": "TBT12-0",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBT12-0.png",
+   "file": "source-offer-TBT12-0.webp",
+   "size": [
+    116,
+    132
+   ]
+  },
+  {
+   "code": "TBX---2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX---2.png",
+   "file": "source-offer-TBX---2.webp",
+   "size": [
+    444,
+    439
+   ]
+  },
+  {
+   "code": "TBX-1-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX-1-2.png",
+   "file": "source-offer-TBX-1-2.webp",
+   "size": [
+    446,
+    440
+   ]
+  },
+  {
+   "code": "TBX-1-2A",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX-1-2A.png",
+   "file": "source-offer-TBX-1-2A.webp",
+   "size": [
+    445,
+    733
+   ]
+  },
+  {
+   "code": "TBX0--2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX0--2.png",
+   "file": "source-offer-TBX0--2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TBX03-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX03-2.png",
+   "file": "source-offer-TBX03-2.webp",
+   "size": [
+    446,
+    440
+   ]
+  },
+  {
+   "code": "TBX06-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX06-2.png",
+   "file": "source-offer-TBX06-2.webp",
+   "size": [
+    503,
+    507
+   ]
+  },
+  {
+   "code": "TBX06-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX06-3.png",
+   "file": "source-offer-TBX06-3.webp",
+   "size": [
+    501,
+    510
+   ]
+  },
+  {
+   "code": "TBX06-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX06-4.png",
+   "file": "source-offer-TBX06-4.webp",
+   "size": [
+    569,
+    517
+   ]
+  },
+  {
+   "code": "TBX07-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX07-2.png",
+   "file": "source-offer-TBX07-2.webp",
+   "size": [
+    502,
+    508
+   ]
+  },
+  {
+   "code": "TBX07-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX07-3.png",
+   "file": "source-offer-TBX07-3.webp",
+   "size": [
+    511,
+    514
+   ]
+  },
+  {
+   "code": "TBX07-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX07-4.png",
+   "file": "source-offer-TBX07-4.webp",
+   "size": [
+    568,
+    516
+   ]
+  },
+  {
+   "code": "TBX08-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TBX08-3.png",
+   "file": "source-offer-TBX08-3.webp",
+   "size": [
+    503,
+    509
+   ]
+  },
+  {
+   "code": "TC03-0",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TC03-0.jpeg",
+   "file": "source-offer-TC03-0.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCC00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCC00-2.png",
+   "file": "source-offer-TCC00-2.webp",
+   "size": [
+    186,
+    325
+   ]
+  },
+  {
+   "code": "TCS00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCS00-2.png",
+   "file": "source-offer-TCS00-2.webp",
+   "size": [
+    480,
+    561
+   ]
+  },
+  {
+   "code": "TCS80-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCS80-2.png",
+   "file": "source-offer-TCS80-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCS90-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCS90-3.png",
+   "file": "source-offer-TCS90-3.webp",
+   "size": [
+    332,
+    316
+   ]
+  },
+  {
+   "code": "TCT00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT00-2.jpeg",
+   "file": "source-offer-TCT00-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT00-3.jpeg",
+   "file": "source-offer-TCT00-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT00-6",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT00-6.jpeg",
+   "file": "source-offer-TCT00-6.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT01-2.jpeg",
+   "file": "source-offer-TCT01-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT01-3.jpeg",
+   "file": "source-offer-TCT01-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT02-2.jpeg",
+   "file": "source-offer-TCT02-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT02-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT02-3.jpeg",
+   "file": "source-offer-TCT02-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT03-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT03-2.jpeg",
+   "file": "source-offer-TCT03-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT03-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT03-3.jpeg",
+   "file": "source-offer-TCT03-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT04-2.jpeg",
+   "file": "source-offer-TCT04-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT04-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT04-3.jpeg",
+   "file": "source-offer-TCT04-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT05-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT05-3.jpeg",
+   "file": "source-offer-TCT05-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCT06-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCT06-3.jpeg",
+   "file": "source-offer-TCT06-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TCW0012",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCW0012.png",
+   "file": "source-offer-TCW0012.webp",
+   "size": [
+    364,
+    597
+   ]
+  },
+  {
+   "code": "TCW0022",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCW0022.png",
+   "file": "source-offer-TCW0022.webp",
+   "size": [
+    506,
+    594
+   ]
+  },
+  {
+   "code": "TCZ0034",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TCZ0034.png",
+   "file": "source-offer-TCZ0034.webp",
+   "size": [
+    506,
+    611
+   ]
+  },
+  {
+   "code": "TDD04-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDD04-3.png",
+   "file": "source-offer-TDD04-3.webp",
+   "size": [
+    588,
+    535
+   ]
+  },
+  {
+   "code": "TDD05-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDD05-2.png",
+   "file": "source-offer-TDD05-2.webp",
+   "size": [
+    504,
+    508
+   ]
+  },
+  {
+   "code": "TDK00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDK00-3.jpeg",
+   "file": "source-offer-TDK00-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDK01-1",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDK01-1.jpeg",
+   "file": "source-offer-TDK01-1.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDK01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDK01-2.jpeg",
+   "file": "source-offer-TDK01-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDK01-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDK01-4.jpeg",
+   "file": "source-offer-TDK01-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDK01-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDK01-5.jpeg",
+   "file": "source-offer-TDK01-5.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDK02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDK02-2.jpeg",
+   "file": "source-offer-TDK02-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDK02-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDK02-3.jpeg",
+   "file": "source-offer-TDK02-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDK03-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDK03-4.jpeg",
+   "file": "source-offer-TDK03-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDK05-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDK05-4.jpeg",
+   "file": "source-offer-TDK05-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDR0--3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDR0--3.png",
+   "file": "source-offer-TDR0--3.webp",
+   "size": [
+    696,
+    502
+   ]
+  },
+  {
+   "code": "TDR0--4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDR0--4.png",
+   "file": "source-offer-TDR0--4.webp",
+   "size": [
+    697,
+    503
+   ]
+  },
+  {
+   "code": "TDR0--5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDR0--5.png",
+   "file": "source-offer-TDR0--5.webp",
+   "size": [
+    628,
+    453
+   ]
+  },
+  {
+   "code": "TDS05-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDS05-2.png",
+   "file": "source-offer-TDS05-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDS06-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDS06-2.png",
+   "file": "source-offer-TDS06-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TDS08-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TDS08-3.png",
+   "file": "source-offer-TDS08-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0062",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0062.png",
+   "file": "source-offer-TED0062.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0063",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0063.png",
+   "file": "source-offer-TED0063.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0064",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0064.png",
+   "file": "source-offer-TED0064.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0162",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0162.png",
+   "file": "source-offer-TED0162.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0163",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0163.png",
+   "file": "source-offer-TED0163.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0164",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0164.png",
+   "file": "source-offer-TED0164.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0262",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0262.png",
+   "file": "source-offer-TED0262.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0263",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0263.png",
+   "file": "source-offer-TED0263.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0264",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0264.png",
+   "file": "source-offer-TED0264.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0362",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0362.png",
+   "file": "source-offer-TED0362.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0363",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0363.png",
+   "file": "source-offer-TED0363.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0364",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0364.png",
+   "file": "source-offer-TED0364.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0462",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0462.png",
+   "file": "source-offer-TED0462.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0463",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0463.png",
+   "file": "source-offer-TED0463.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0464",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0464.png",
+   "file": "source-offer-TED0464.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0562",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0562.png",
+   "file": "source-offer-TED0562.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0563",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0563.png",
+   "file": "source-offer-TED0563.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0564",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0564.png",
+   "file": "source-offer-TED0564.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TED0662",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TED0662.png",
+   "file": "source-offer-TED0662.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFS01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS01-3.png",
+   "file": "source-offer-TFS01-3.webp",
+   "size": [
+    571,
+    567
+   ]
+  },
+  {
+   "code": "TFS06-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS06-2.jpeg",
+   "file": "source-offer-TFS06-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFS09-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS09-2.jpeg",
+   "file": "source-offer-TFS09-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFS11-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS11-2.png",
+   "file": "source-offer-TFS11-2.webp",
+   "size": [
+    652,
+    556
+   ]
+  },
+  {
+   "code": "TFS11-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS11-3.jpeg",
+   "file": "source-offer-TFS11-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFS13-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS13-2.jpeg",
+   "file": "source-offer-TFS13-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFS16-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS16-2.png",
+   "file": "source-offer-TFS16-2.webp",
+   "size": [
+    532,
+    526
+   ]
+  },
+  {
+   "code": "TFS18-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS18-2.png",
+   "file": "source-offer-TFS18-2.webp",
+   "size": [
+    525,
+    519
+   ]
+  },
+  {
+   "code": "TFS45-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS45-2.png",
+   "file": "source-offer-TFS45-2.webp",
+   "size": [
+    1200,
+    1200
+   ]
+  },
+  {
+   "code": "TFS46-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS46-2.png",
+   "file": "source-offer-TFS46-2.webp",
+   "size": [
+    1200,
+    1200
+   ]
+  },
+  {
+   "code": "TFS47-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS47-2.png",
+   "file": "source-offer-TFS47-2.webp",
+   "size": [
+    492,
+    417
+   ]
+  },
+  {
+   "code": "TFS48-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS48-2.png",
+   "file": "source-offer-TFS48-2.webp",
+   "size": [
+    1200,
+    1200
+   ]
+  },
+  {
+   "code": "TFS60-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS60-3.png",
+   "file": "source-offer-TFS60-3.webp",
+   "size": [
+    1200,
+    1200
+   ]
+  },
+  {
+   "code": "TFS61-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS61-3.png",
+   "file": "source-offer-TFS61-3.webp",
+   "size": [
+    495,
+    430
+   ]
+  },
+  {
+   "code": "TFS62-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS62-3.png",
+   "file": "source-offer-TFS62-3.webp",
+   "size": [
+    1200,
+    1200
+   ]
+  },
+  {
+   "code": "TFS63-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS63-3.png",
+   "file": "source-offer-TFS63-3.webp",
+   "size": [
+    494,
+    432
+   ]
+  },
+  {
+   "code": "TFS64-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS64-4.png",
+   "file": "source-offer-TFS64-4.webp",
+   "size": [
+    1200,
+    1200
+   ]
+  },
+  {
+   "code": "TFS65-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS65-4.png",
+   "file": "source-offer-TFS65-4.webp",
+   "size": [
+    567,
+    425
+   ]
+  },
+  {
+   "code": "TFS66-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFS66-4.png",
+   "file": "source-offer-TFS66-4.webp",
+   "size": [
+    562,
+    421
+   ]
+  },
+  {
+   "code": "TFT00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT00-2.jpeg",
+   "file": "source-offer-TFT00-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT00-3.png",
+   "file": "source-offer-TFT00-3.webp",
+   "size": [
+    618,
+    532
+   ]
+  },
+  {
+   "code": "TFT00-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT00-4.jpeg",
+   "file": "source-offer-TFT00-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT01-2.png",
+   "file": "source-offer-TFT01-2.webp",
+   "size": [
+    538,
+    463
+   ]
+  },
+  {
+   "code": "TFT01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT01-3.png",
+   "file": "source-offer-TFT01-3.webp",
+   "size": [
+    613,
+    532
+   ]
+  },
+  {
+   "code": "TFT01-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT01-4.png",
+   "file": "source-offer-TFT01-4.webp",
+   "size": [
+    653,
+    471
+   ]
+  },
+  {
+   "code": "TFT02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT02-2.jpeg",
+   "file": "source-offer-TFT02-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT02-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT02-3.jpeg",
+   "file": "source-offer-TFT02-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT02-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT02-4.jpeg",
+   "file": "source-offer-TFT02-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT03-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT03-2.jpeg",
+   "file": "source-offer-TFT03-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT03-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT03-3.jpeg",
+   "file": "source-offer-TFT03-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT04-2.jpeg",
+   "file": "source-offer-TFT04-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT04-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT04-3.jpeg",
+   "file": "source-offer-TFT04-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT05-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT05-3.jpeg",
+   "file": "source-offer-TFT05-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT06-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT06-3.jpeg",
+   "file": "source-offer-TFT06-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT07-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT07-3.jpeg",
+   "file": "source-offer-TFT07-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT08-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT08-4.jpeg",
+   "file": "source-offer-TFT08-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TFT09-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TFT09-4.png",
+   "file": "source-offer-TFT09-4.webp",
+   "size": [
+    657,
+    469
+   ]
+  },
+  {
+   "code": "TGC05-7",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TGC05-7.png",
+   "file": "source-offer-TGC05-7.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TGCD08-7",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TGCD08-7.png",
+   "file": "source-offer-TGCD08-7.webp",
+   "size": [
+    344,
+    280
+   ]
+  },
+  {
+   "code": "THY00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/THY00-2.png",
+   "file": "source-offer-THY00-2.webp",
+   "size": [
+    634,
+    715
+   ]
+  },
+  {
+   "code": "TJB0062",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0062.jpeg",
+   "file": "source-offer-TJB0062.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0063",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0063.jpeg",
+   "file": "source-offer-TJB0063.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0064",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0064.jpeg",
+   "file": "source-offer-TJB0064.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0162",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0162.jpeg",
+   "file": "source-offer-TJB0162.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0163",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0163.jpeg",
+   "file": "source-offer-TJB0163.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0164",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0164.jpeg",
+   "file": "source-offer-TJB0164.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0262",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0262.jpeg",
+   "file": "source-offer-TJB0262.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0263",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0263.jpeg",
+   "file": "source-offer-TJB0263.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0264",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0264.jpeg",
+   "file": "source-offer-TJB0264.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0362",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0362.jpeg",
+   "file": "source-offer-TJB0362.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0363",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0363.jpeg",
+   "file": "source-offer-TJB0363.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0364",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0364.jpeg",
+   "file": "source-offer-TJB0364.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0462",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0462.jpeg",
+   "file": "source-offer-TJB0462.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0463",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0463.jpeg",
+   "file": "source-offer-TJB0463.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJB0562",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJB0562.jpeg",
+   "file": "source-offer-TJB0562.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJJ00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJJ00-2.png",
+   "file": "source-offer-TJJ00-2.webp",
+   "size": [
+    446,
+    435
+   ]
+  },
+  {
+   "code": "TJJ00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJJ00-3.png",
+   "file": "source-offer-TJJ00-3.webp",
+   "size": [
+    541,
+    471
+   ]
+  },
+  {
+   "code": "TJJ00-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJJ00-4.png",
+   "file": "source-offer-TJJ00-4.webp",
+   "size": [
+    463,
+    509
+   ]
+  },
+  {
+   "code": "TJJ01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJJ01-2.png",
+   "file": "source-offer-TJJ01-2.webp",
+   "size": [
+    447,
+    439
+   ]
+  },
+  {
+   "code": "TJJ01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJJ01-3.png",
+   "file": "source-offer-TJJ01-3.webp",
+   "size": [
+    461,
+    514
+   ]
+  },
+  {
+   "code": "TJJ01-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJJ01-4.png",
+   "file": "source-offer-TJJ01-4.webp",
+   "size": [
+    544,
+    476
+   ]
+  },
+  {
+   "code": "TJLD33-9",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJLD33-9.png",
+   "file": "source-offer-TJLD33-9.webp",
+   "size": [
+    343,
+    308
+   ]
+  },
+  {
+   "code": "TJLD42-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJLD42-2.png",
+   "file": "source-offer-TJLD42-2.webp",
+   "size": [
+    345,
+    282
+   ]
+  },
+  {
+   "code": "TJLD43-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJLD43-2.png",
+   "file": "source-offer-TJLD43-2.webp",
+   "size": [
+    333,
+    304
+   ]
+  },
+  {
+   "code": "TJM02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJM02-2.png",
+   "file": "source-offer-TJM02-2.webp",
+   "size": [
+    702,
+    609
+   ]
+  },
+  {
+   "code": "TJP02-6",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJP02-6.png",
+   "file": "source-offer-TJP02-6.webp",
+   "size": [
+    422,
+    753
+   ]
+  },
+  {
+   "code": "TJP05-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJP05-5.jpeg",
+   "file": "source-offer-TJP05-5.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TJS00-1",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS00-1.png",
+   "file": "source-offer-TJS00-1.webp",
+   "size": [
+    860,
+    850
+   ]
+  },
+  {
+   "code": "TJS00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS00-2.png",
+   "file": "source-offer-TJS00-2.webp",
+   "size": [
+    470,
+    451
+   ]
+  },
+  {
+   "code": "TJS00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS00-3.png",
+   "file": "source-offer-TJS00-3.webp",
+   "size": [
+    467,
+    447
+   ]
+  },
+  {
+   "code": "TJS01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS01-2.png",
+   "file": "source-offer-TJS01-2.webp",
+   "size": [
+    509,
+    437
+   ]
+  },
+  {
+   "code": "TJS01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS01-3.png",
+   "file": "source-offer-TJS01-3.webp",
+   "size": [
+    506,
+    434
+   ]
+  },
+  {
+   "code": "TJS01-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS01-4.png",
+   "file": "source-offer-TJS01-4.webp",
+   "size": [
+    511,
+    440
+   ]
+  },
+  {
+   "code": "TJS04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS04-2.png",
+   "file": "source-offer-TJS04-2.webp",
+   "size": [
+    860,
+    850
+   ]
+  },
+  {
+   "code": "TJS05-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS05-2.png",
+   "file": "source-offer-TJS05-2.webp",
+   "size": [
+    1146,
+    1200
+   ]
+  },
+  {
+   "code": "TJS05-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS05-3.png",
+   "file": "source-offer-TJS05-3.webp",
+   "size": [
+    1200,
+    1030
+   ]
+  },
+  {
+   "code": "TJS06-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS06-3.png",
+   "file": "source-offer-TJS06-3.webp",
+   "size": [
+    1200,
+    1030
+   ]
+  },
+  {
+   "code": "TJS08-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS08-4.png",
+   "file": "source-offer-TJS08-4.webp",
+   "size": [
+    1200,
+    889
+   ]
+  },
+  {
+   "code": "TJS2--2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS2--2.png",
+   "file": "source-offer-TJS2--2.webp",
+   "size": [
+    487,
+    468
+   ]
+  },
+  {
+   "code": "TJS23-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS23-2.png",
+   "file": "source-offer-TJS23-2.webp",
+   "size": [
+    488,
+    472
+   ]
+  },
+  {
+   "code": "TJS2362",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS2362.png",
+   "file": "source-offer-TJS2362.webp",
+   "size": [
+    486,
+    467
+   ]
+  },
+  {
+   "code": "TJS2462",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS2462.png",
+   "file": "source-offer-TJS2462.webp",
+   "size": [
+    489,
+    465
+   ]
+  },
+  {
+   "code": "TJS2562",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS2562.png",
+   "file": "source-offer-TJS2562.webp",
+   "size": [
+    488,
+    469
+   ]
+  },
+  {
+   "code": "TJS2662",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS2662.png",
+   "file": "source-offer-TJS2662.webp",
+   "size": [
+    485,
+    459
+   ]
+  },
+  {
+   "code": "TJS30-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS30-2.png",
+   "file": "source-offer-TJS30-2.webp",
+   "size": [
+    485,
+    469
+   ]
+  },
+  {
+   "code": "TJS32-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TJS32-2.png",
+   "file": "source-offer-TJS32-2.webp",
+   "size": [
+    486,
+    462
+   ]
+  },
+  {
+   "code": "TKD0462",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKD0462.png",
+   "file": "source-offer-TKD0462.webp",
+   "size": [
+    569,
+    490
+   ]
+  },
+  {
+   "code": "TKD0463",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKD0463.png",
+   "file": "source-offer-TKD0463.webp",
+   "size": [
+    567,
+    488
+   ]
+  },
+  {
+   "code": "TKD0662",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKD0662.png",
+   "file": "source-offer-TKD0662.webp",
+   "size": [
+    570,
+    489
+   ]
+  },
+  {
+   "code": "TKD1262",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKD1262.png",
+   "file": "source-offer-TKD1262.webp",
+   "size": [
+    563,
+    484
+   ]
+  },
+  {
+   "code": "TKF00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKF00-2.jpeg",
+   "file": "source-offer-TKF00-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TKF00-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKF00-4.png",
+   "file": "source-offer-TKF00-4.webp",
+   "size": [
+    570,
+    428
+   ]
+  },
+  {
+   "code": "TKF0095",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKF0095.png",
+   "file": "source-offer-TKF0095.webp",
+   "size": [
+    570,
+    475
+   ]
+  },
+  {
+   "code": "TKF0096",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKF0096.png",
+   "file": "source-offer-TKF0096.webp",
+   "size": [
+    565,
+    464
+   ]
+  },
+  {
+   "code": "TKF01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKF01-2.jpeg",
+   "file": "source-offer-TKF01-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TKF01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKF01-3.jpeg",
+   "file": "source-offer-TKF01-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TKF0195",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKF0195.png",
+   "file": "source-offer-TKF0195.webp",
+   "size": [
+    561,
+    463
+   ]
+  },
+  {
+   "code": "TKF02-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKF02-3.png",
+   "file": "source-offer-TKF02-3.webp",
+   "size": [
+    552,
+    469
+   ]
+  },
+  {
+   "code": "TKF0295",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TKF0295.png",
+   "file": "source-offer-TKF0295.webp",
+   "size": [
+    566,
+    481
+   ]
+  },
+  {
+   "code": "TL11-0",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TL11-0.png",
+   "file": "source-offer-TL11-0.webp",
+   "size": [
+    712,
+    664
+   ]
+  },
+  {
+   "code": "TLD0--2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TLD0--2.png",
+   "file": "source-offer-TLD0--2.webp",
+   "size": [
+    537,
+    507
+   ]
+  },
+  {
+   "code": "TLD0--3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TLD0--3.png",
+   "file": "source-offer-TLD0--3.webp",
+   "size": [
+    437,
+    508
+   ]
+  },
+  {
+   "code": "TLD0--4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TLD0--4.png",
+   "file": "source-offer-TLD0--4.webp",
+   "size": [
+    539,
+    455
+   ]
+  },
+  {
+   "code": "TLD0--5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TLD0--5.png",
+   "file": "source-offer-TLD0--5.webp",
+   "size": [
+    618,
+    459
+   ]
+  },
+  {
+   "code": "TLD0--6",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TLD0--6.png",
+   "file": "source-offer-TLD0--6.webp",
+   "size": [
+    612,
+    449
+   ]
+  },
+  {
+   "code": "TLD0--6N",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TLD0--6N.png",
+   "file": "source-offer-TLD0--6N.webp",
+   "size": [
+    1200,
+    871
+   ]
+  },
+  {
+   "code": "TLD1--3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TLD1--3.png",
+   "file": "source-offer-TLD1--3.webp",
+   "size": [
+    611,
+    431
+   ]
+  },
+  {
+   "code": "TLD1--5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TLD1--5.png",
+   "file": "source-offer-TLD1--5.webp",
+   "size": [
+    617,
+    452
+   ]
+  },
+  {
+   "code": "TMK00-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMK00-4.png",
+   "file": "source-offer-TMK00-4.webp",
+   "size": [
+    749,
+    652
+   ]
+  },
+  {
+   "code": "TMN00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN00-2.png",
+   "file": "source-offer-TMN00-2.webp",
+   "size": [
+    386,
+    380
+   ]
+  },
+  {
+   "code": "TMN01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN01-2.png",
+   "file": "source-offer-TMN01-2.webp",
+   "size": [
+    389,
+    385
+   ]
+  },
+  {
+   "code": "TMN01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN01-3.png",
+   "file": "source-offer-TMN01-3.webp",
+   "size": [
+    443,
+    380
+   ]
+  },
+  {
+   "code": "TMN02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN02-2.png",
+   "file": "source-offer-TMN02-2.webp",
+   "size": [
+    388,
+    386
+   ]
+  },
+  {
+   "code": "TMN02-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN02-3.png",
+   "file": "source-offer-TMN02-3.webp",
+   "size": [
+    439,
+    381
+   ]
+  },
+  {
+   "code": "TMN03-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN03-2.png",
+   "file": "source-offer-TMN03-2.webp",
+   "size": [
+    390,
+    389
+   ]
+  },
+  {
+   "code": "TMN03-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN03-3.png",
+   "file": "source-offer-TMN03-3.webp",
+   "size": [
+    441,
+    383
+   ]
+  },
+  {
+   "code": "TMN04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN04-2.png",
+   "file": "source-offer-TMN04-2.webp",
+   "size": [
+    383,
+    385
+   ]
+  },
+  {
+   "code": "TMN05-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN05-2.png",
+   "file": "source-offer-TMN05-2.webp",
+   "size": [
+    446,
+    380
+   ]
+  },
+  {
+   "code": "TMN05-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN05-3.png",
+   "file": "source-offer-TMN05-3.webp",
+   "size": [
+    443,
+    385
+   ]
+  },
+  {
+   "code": "TMN06-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMN06-2.png",
+   "file": "source-offer-TMN06-2.webp",
+   "size": [
+    225,
+    392
+   ]
+  },
+  {
+   "code": "TMS01-1",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS01-1.png",
+   "file": "source-offer-TMS01-1.webp",
+   "size": [
+    760,
+    567
+   ]
+  },
+  {
+   "code": "TMS02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS02-2.png",
+   "file": "source-offer-TMS02-2.webp",
+   "size": [
+    758,
+    562
+   ]
+  },
+  {
+   "code": "TMS04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS04-2.png",
+   "file": "source-offer-TMS04-2.webp",
+   "size": [
+    759,
+    563
+   ]
+  },
+  {
+   "code": "TMS12-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS12-3.jpeg",
+   "file": "source-offer-TMS12-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TMS15-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS15-3.jpeg",
+   "file": "source-offer-TMS15-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TMS19-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS19-3.jpeg",
+   "file": "source-offer-TMS19-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TMS23-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS23-2.jpeg",
+   "file": "source-offer-TMS23-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TMS34-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS34-3.png",
+   "file": "source-offer-TMS34-3.webp",
+   "size": [
+    726,
+    609
+   ]
+  },
+  {
+   "code": "TMS43-1",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS43-1.png",
+   "file": "source-offer-TMS43-1.webp",
+   "size": [
+    791,
+    784
+   ]
+  },
+  {
+   "code": "TMS45-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS45-4.png",
+   "file": "source-offer-TMS45-4.webp",
+   "size": [
+    1005,
+    845
+   ]
+  },
+  {
+   "code": "TMS46-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS46-2.png",
+   "file": "source-offer-TMS46-2.webp",
+   "size": [
+    516,
+    508
+   ]
+  },
+  {
+   "code": "TMS46-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS46-3.png",
+   "file": "source-offer-TMS46-3.webp",
+   "size": [
+    1001,
+    842
+   ]
+  },
+  {
+   "code": "TMS47-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS47-2.png",
+   "file": "source-offer-TMS47-2.webp",
+   "size": [
+    665,
+    796
+   ]
+  },
+  {
+   "code": "TMS47-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS47-3.png",
+   "file": "source-offer-TMS47-3.webp",
+   "size": [
+    1006,
+    844
+   ]
+  },
+  {
+   "code": "TMS48-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS48-3.png",
+   "file": "source-offer-TMS48-3.webp",
+   "size": [
+    1006,
+    845
+   ]
+  },
+  {
+   "code": "TMS49-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS49-3.png",
+   "file": "source-offer-TMS49-3.webp",
+   "size": [
+    570,
+    480
+   ]
+  },
+  {
+   "code": "TMS50-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS50-3.png",
+   "file": "source-offer-TMS50-3.webp",
+   "size": [
+    951,
+    799
+   ]
+  },
+  {
+   "code": "TMS51-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS51-3.png",
+   "file": "source-offer-TMS51-3.webp",
+   "size": [
+    670,
+    799
+   ]
+  },
+  {
+   "code": "TMS53-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS53-3.png",
+   "file": "source-offer-TMS53-3.webp",
+   "size": [
+    1126,
+    842
+   ]
+  },
+  {
+   "code": "TMS54-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS54-3.png",
+   "file": "source-offer-TMS54-3.webp",
+   "size": [
+    1125,
+    842
+   ]
+  },
+  {
+   "code": "TMS56-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS56-3.png",
+   "file": "source-offer-TMS56-3.webp",
+   "size": [
+    1002,
+    840
+   ]
+  },
+  {
+   "code": "TMS57-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS57-3.png",
+   "file": "source-offer-TMS57-3.webp",
+   "size": [
+    573,
+    482
+   ]
+  },
+  {
+   "code": "TMS76-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMS76-2.png",
+   "file": "source-offer-TMS76-2.webp",
+   "size": [
+    527,
+    452
+   ]
+  },
+  {
+   "code": "TMW06-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMW06-2.png",
+   "file": "source-offer-TMW06-2.webp",
+   "size": [
+    386,
+    380
+   ]
+  },
+  {
+   "code": "TMW10-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMW10-3.png",
+   "file": "source-offer-TMW10-3.webp",
+   "size": [
+    445,
+    386
+   ]
+  },
+  {
+   "code": "TMW11-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMW11-2.png",
+   "file": "source-offer-TMW11-2.webp",
+   "size": [
+    218,
+    389
+   ]
+  },
+  {
+   "code": "TMW12-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TMW12-2.png",
+   "file": "source-offer-TMW12-2.webp",
+   "size": [
+    216,
+    386
+   ]
+  },
+  {
+   "code": "TNH00",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/02_power_bank_notebook/TNH00.png",
+   "file": "source-offer-TNH00.webp",
+   "size": [
+    676,
+    410
+   ]
+  },
+  {
+   "code": "TNL02",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/02_power_bank_notebook/TNL02.png",
+   "file": "source-offer-TNL02.webp",
+   "size": [
+    381,
+    512
+   ]
+  },
+  {
+   "code": "TNP07",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/02_power_bank_notebook/TNP07.png",
+   "file": "source-offer-TNP07.webp",
+   "size": [
+    720,
+    472
+   ]
+  },
+  {
+   "code": "TNR00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TNR00-3.png",
+   "file": "source-offer-TNR00-3.webp",
+   "size": [
+    337,
+    267
+   ]
+  },
+  {
+   "code": "TNS10-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TNS10-3.png",
+   "file": "source-offer-TNS10-3.webp",
+   "size": [
+    473,
+    394
+   ]
+  },
+  {
+   "code": "TNS12-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TNS12-2.png",
+   "file": "source-offer-TNS12-2.webp",
+   "size": [
+    641,
+    655
+   ]
+  },
+  {
+   "code": "TNS13-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TNS13-2.png",
+   "file": "source-offer-TNS13-2.webp",
+   "size": [
+    487,
+    636
+   ]
+  },
+  {
+   "code": "TNS14-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TNS14-2.png",
+   "file": "source-offer-TNS14-2.webp",
+   "size": [
+    743,
+    631
+   ]
+  },
+  {
+   "code": "TNS14-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TNS14-3.png",
+   "file": "source-offer-TNS14-3.webp",
+   "size": [
+    643,
+    659
+   ]
+  },
+  {
+   "code": "TNS15-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TNS15-3.png",
+   "file": "source-offer-TNS15-3.webp",
+   "size": [
+    748,
+    634
+   ]
+  },
+  {
+   "code": "TNW03",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/02_power_bank_notebook/TNW03.png",
+   "file": "source-offer-TNW03.webp",
+   "size": [
+    732,
+    508
+   ]
+  },
+  {
+   "code": "TNW08-0",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/02_power_bank_notebook/TNW08-0.png",
+   "file": "source-offer-TNW08-0.webp",
+   "size": [
+    732,
+    773
+   ]
+  },
+  {
+   "code": "TPF01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TPF01-3.png",
+   "file": "source-offer-TPF01-3.webp",
+   "size": [
+    271,
+    260
+   ]
+  },
+  {
+   "code": "TPF13-6",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TPF13-6.png",
+   "file": "source-offer-TPF13-6.webp",
+   "size": [
+    625,
+    444
+   ]
+  },
+  {
+   "code": "TPM02-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TPM02-3.png",
+   "file": "source-offer-TPM02-3.webp",
+   "size": [
+    619,
+    432
+   ]
+  },
+  {
+   "code": "TPP2--2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TPP2--2.jpeg",
+   "file": "source-offer-TPP2--2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TPP213-",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TPP213-.png",
+   "file": "source-offer-TPP213-.webp",
+   "size": [
+    615,
+    450
+   ]
+  },
+  {
+   "code": "TPS00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TPS00-2.png",
+   "file": "source-offer-TPS00-2.webp",
+   "size": [
+    697,
+    648
+   ]
+  },
+  {
+   "code": "TPT12-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TPT12-5.png",
+   "file": "source-offer-TPT12-5.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TPY00-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TPY00-4.png",
+   "file": "source-offer-TPY00-4.webp",
+   "size": [
+    637,
+    593
+   ]
+  },
+  {
+   "code": "TRM0092",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TRM0092.png",
+   "file": "source-offer-TRM0092.webp",
+   "size": [
+    711,
+    614
+   ]
+  },
+  {
+   "code": "TRM0093",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TRM0093.png",
+   "file": "source-offer-TRM0093.webp",
+   "size": [
+    706,
+    610
+   ]
+  },
+  {
+   "code": "TRM0293",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TRM0293.png",
+   "file": "source-offer-TRM0293.webp",
+   "size": [
+    743,
+    610
+   ]
+  },
+  {
+   "code": "TRM0493",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TRM0493.png",
+   "file": "source-offer-TRM0493.webp",
+   "size": [
+    740,
+    586
+   ]
+  },
+  {
+   "code": "TRM0793",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TRM0793.png",
+   "file": "source-offer-TRM0793.webp",
+   "size": [
+    731,
+    611
+   ]
+  },
+  {
+   "code": "TSB00-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSB00-4.png",
+   "file": "source-offer-TSB00-4.webp",
+   "size": [
+    522,
+    521
+   ]
+  },
+  {
+   "code": "TSH00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSH00-3.png",
+   "file": "source-offer-TSH00-3.webp",
+   "size": [
+    516,
+    486
+   ]
+  },
+  {
+   "code": "TSH01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSH01-2.png",
+   "file": "source-offer-TSH01-2.webp",
+   "size": [
+    509,
+    485
+   ]
+  },
+  {
+   "code": "TSH03-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSH03-2.png",
+   "file": "source-offer-TSH03-2.webp",
+   "size": [
+    514,
+    483
+   ]
+  },
+  {
+   "code": "TSP06-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSP06-2.png",
+   "file": "source-offer-TSP06-2.webp",
+   "size": [
+    336,
+    332
+   ]
+  },
+  {
+   "code": "TSP07-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSP07-2.png",
+   "file": "source-offer-TSP07-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TSQ01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSQ01-2.png",
+   "file": "source-offer-TSQ01-2.webp",
+   "size": [
+    326,
+    578
+   ]
+  },
+  {
+   "code": "TSQ02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSQ02-2.png",
+   "file": "source-offer-TSQ02-2.webp",
+   "size": [
+    328,
+    579
+   ]
+  },
+  {
+   "code": "TSQ05-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSQ05-2.png",
+   "file": "source-offer-TSQ05-2.webp",
+   "size": [
+    579,
+    500
+   ]
+  },
+  {
+   "code": "TSS01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSS01-3.png",
+   "file": "source-offer-TSS01-3.webp",
+   "size": [
+    440,
+    436
+   ]
+  },
+  {
+   "code": "TSS03-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSS03-3.png",
+   "file": "source-offer-TSS03-3.webp",
+   "size": [
+    618,
+    506
+   ]
+  },
+  {
+   "code": "TSS04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSS04-2.png",
+   "file": "source-offer-TSS04-2.webp",
+   "size": [
+    614,
+    548
+   ]
+  },
+  {
+   "code": "TSS05-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TSS05-2.png",
+   "file": "source-offer-TSS05-2.webp",
+   "size": [
+    625,
+    507
+   ]
+  },
+  {
+   "code": "TST01-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TST01-4.png",
+   "file": "source-offer-TST01-4.webp",
+   "size": [
+    760,
+    644
+   ]
+  },
+  {
+   "code": "TST02-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TST02-4.png",
+   "file": "source-offer-TST02-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TST03-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TST03-5.png",
+   "file": "source-offer-TST03-5.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TST05-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TST05-4.jpeg",
+   "file": "source-offer-TST05-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TST06-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TST06-4.jpeg",
+   "file": "source-offer-TST06-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TST07-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TST07-5.jpeg",
+   "file": "source-offer-TST07-5.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTB02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB02-2.png",
+   "file": "source-offer-TTB02-2.webp",
+   "size": [
+    425,
+    416
+   ]
+  },
+  {
+   "code": "TTB05-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB05-2.png",
+   "file": "source-offer-TTB05-2.webp",
+   "size": [
+    439,
+    375
+   ]
+  },
+  {
+   "code": "TTB06-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB06-2.png",
+   "file": "source-offer-TTB06-2.webp",
+   "size": [
+    567,
+    475
+   ]
+  },
+  {
+   "code": "TTB06-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB06-3.png",
+   "file": "source-offer-TTB06-3.webp",
+   "size": [
+    565,
+    483
+   ]
+  },
+  {
+   "code": "TTB06-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB06-4.png",
+   "file": "source-offer-TTB06-4.webp",
+   "size": [
+    624,
+    446
+   ]
+  },
+  {
+   "code": "TTB06-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB06-5.png",
+   "file": "source-offer-TTB06-5.webp",
+   "size": [
+    619,
+    441
+   ]
+  },
+  {
+   "code": "TTB07-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB07-2.png",
+   "file": "source-offer-TTB07-2.webp",
+   "size": [
+    566,
+    474
+   ]
+  },
+  {
+   "code": "TTB07-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB07-3.png",
+   "file": "source-offer-TTB07-3.webp",
+   "size": [
+    567,
+    489
+   ]
+  },
+  {
+   "code": "TTB07-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB07-4.png",
+   "file": "source-offer-TTB07-4.webp",
+   "size": [
+    688,
+    589
+   ]
+  },
+  {
+   "code": "TTB07-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB07-5.png",
+   "file": "source-offer-TTB07-5.webp",
+   "size": [
+    609,
+    518
+   ]
+  },
+  {
+   "code": "TTB08-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB08-2.png",
+   "file": "source-offer-TTB08-2.webp",
+   "size": [
+    566,
+    477
+   ]
+  },
+  {
+   "code": "TTB08-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB08-3.png",
+   "file": "source-offer-TTB08-3.webp",
+   "size": [
+    693,
+    588
+   ]
+  },
+  {
+   "code": "TTB08-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB08-4.png",
+   "file": "source-offer-TTB08-4.webp",
+   "size": [
+    684,
+    589
+   ]
+  },
+  {
+   "code": "TTB09-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB09-2.png",
+   "file": "source-offer-TTB09-2.webp",
+   "size": [
+    588,
+    588
+   ]
+  },
+  {
+   "code": "TTB09-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB09-3.png",
+   "file": "source-offer-TTB09-3.webp",
+   "size": [
+    690,
+    586
+   ]
+  },
+  {
+   "code": "TTB10-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB10-2.png",
+   "file": "source-offer-TTB10-2.webp",
+   "size": [
+    595,
+    590
+   ]
+  },
+  {
+   "code": "TTB11-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB11-3.png",
+   "file": "source-offer-TTB11-3.webp",
+   "size": [
+    695,
+    590
+   ]
+  },
+  {
+   "code": "TTB12-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB12-3.png",
+   "file": "source-offer-TTB12-3.webp",
+   "size": [
+    686,
+    586
+   ]
+  },
+  {
+   "code": "TTB13-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB13-3.png",
+   "file": "source-offer-TTB13-3.webp",
+   "size": [
+    691,
+    592
+   ]
+  },
+  {
+   "code": "TTB14-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTB14-3.png",
+   "file": "source-offer-TTB14-3.webp",
+   "size": [
+    685,
+    590
+   ]
+  },
+  {
+   "code": "TTC10-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTC10-2.png",
+   "file": "source-offer-TTC10-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTC11-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTC11-2.png",
+   "file": "source-offer-TTC11-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTC12-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTC12-2.png",
+   "file": "source-offer-TTC12-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTC13-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTC13-2.png",
+   "file": "source-offer-TTC13-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTC13-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTC13-3.png",
+   "file": "source-offer-TTC13-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTC14-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTC14-3.png",
+   "file": "source-offer-TTC14-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTC15-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTC15-3.png",
+   "file": "source-offer-TTC15-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTC15-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTC15-4.png",
+   "file": "source-offer-TTC15-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTC16-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTC16-4.png",
+   "file": "source-offer-TTC16-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTT02-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTT02-3.jpeg",
+   "file": "source-offer-TTT02-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TTT03-18",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTT03-18.png",
+   "file": "source-offer-TTT03-18.webp",
+   "size": [
+    1078,
+    911
+   ]
+  },
+  {
+   "code": "TTT03-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTT03-3.png",
+   "file": "source-offer-TTT03-3.webp",
+   "size": [
+    617,
+    533
+   ]
+  },
+  {
+   "code": "TTT05-3N",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTT05-3N.png",
+   "file": "source-offer-TTT05-3N.webp",
+   "size": [
+    929,
+    786
+   ]
+  },
+  {
+   "code": "TTT30-1",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTT30-1.png",
+   "file": "source-offer-TTT30-1.webp",
+   "size": [
+    561,
+    524
+   ]
+  },
+  {
+   "code": "TTT69-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTT69-2.png",
+   "file": "source-offer-TTT69-2.webp",
+   "size": [
+    375,
+    376
+   ]
+  },
+  {
+   "code": "TTZ00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TTZ00-3.png",
+   "file": "source-offer-TTZ00-3.webp",
+   "size": [
+    690,
+    617
+   ]
+  },
+  {
+   "code": "TWK00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWK00-2.png",
+   "file": "source-offer-TWK00-2.webp",
+   "size": [
+    246,
+    409
+   ]
+  },
+  {
+   "code": "TWK00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWK00-3.png",
+   "file": "source-offer-TWK00-3.webp",
+   "size": [
+    266,
+    312
+   ]
+  },
+  {
+   "code": "TWK01-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWK01-2.png",
+   "file": "source-offer-TWK01-2.webp",
+   "size": [
+    190,
+    315
+   ]
+  },
+  {
+   "code": "TWK01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWK01-3.png",
+   "file": "source-offer-TWK01-3.webp",
+   "size": [
+    265,
+    313
+   ]
+  },
+  {
+   "code": "TWK04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWK04-2.png",
+   "file": "source-offer-TWK04-2.webp",
+   "size": [
+    235,
+    272
+   ]
+  },
+  {
+   "code": "TWL08-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWL08-2.jpeg",
+   "file": "source-offer-TWL08-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TWL09-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWL09-2.jpeg",
+   "file": "source-offer-TWL09-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TWL10-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWL10-2.jpeg",
+   "file": "source-offer-TWL10-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TWL11-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWL11-2.jpeg",
+   "file": "source-offer-TWL11-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TWL12-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWL12-3.jpeg",
+   "file": "source-offer-TWL12-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TWL13-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWL13-3.jpeg",
+   "file": "source-offer-TWL13-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TWL14-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWL14-4.jpeg",
+   "file": "source-offer-TWL14-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TWL15-5",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TWL15-5.jpeg",
+   "file": "source-offer-TWL15-5.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TX0310",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TX0310.png",
+   "file": "source-offer-TX0310.webp",
+   "size": [
+    735,
+    652
+   ]
+  },
+  {
+   "code": "TYD00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TYD00-2.png",
+   "file": "source-offer-TYD00-2.webp",
+   "size": [
+    366,
+    643
+   ]
+  },
+  {
+   "code": "TYD0063",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TYD0063.jpeg",
+   "file": "source-offer-TYD0063.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TYD04-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TYD04-2.png",
+   "file": "source-offer-TYD04-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TYD05-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TYD05-2.png",
+   "file": "source-offer-TYD05-2.webp",
+   "size": [
+    482,
+    577
+   ]
+  },
+  {
+   "code": "TYG00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TYG00-2.png",
+   "file": "source-offer-TYG00-2.webp",
+   "size": [
+    604,
+    611
+   ]
+  },
+  {
+   "code": "TYG00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TYG00-3.png",
+   "file": "source-offer-TYG00-3.webp",
+   "size": [
+    659,
+    613
+   ]
+  },
+  {
+   "code": "TYG00-3B",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TYG00-3B.png",
+   "file": "source-offer-TYG00-3B.webp",
+   "size": [
+    583,
+    507
+   ]
+  },
+  {
+   "code": "TYG02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TYG02-2.png",
+   "file": "source-offer-TYG02-2.webp",
+   "size": [
+    655,
+    610
+   ]
+  },
+  {
+   "code": "TYS01-1",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TYS01-1.png",
+   "file": "source-offer-TYS01-1.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZJ00-1",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZJ00-1.png",
+   "file": "source-offer-TZJ00-1.webp",
+   "size": [
+    468,
+    703
+   ]
+  },
+  {
+   "code": "TZM00-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM00-2.png",
+   "file": "source-offer-TZM00-2.webp",
+   "size": [
+    536,
+    442
+   ]
+  },
+  {
+   "code": "TZM00-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM00-3.png",
+   "file": "source-offer-TZM00-3.webp",
+   "size": [
+    550,
+    455
+   ]
+  },
+  {
+   "code": "TZM00-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM00-4.png",
+   "file": "source-offer-TZM00-4.webp",
+   "size": [
+    629,
+    456
+   ]
+  },
+  {
+   "code": "TZM0002",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM0002.png",
+   "file": "source-offer-TZM0002.webp",
+   "size": [
+    534,
+    443
+   ]
+  },
+  {
+   "code": "TZM01-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM01-3.png",
+   "file": "source-offer-TZM01-3.webp",
+   "size": [
+    551,
+    453
+   ]
+  },
+  {
+   "code": "TZM01-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM01-4.png",
+   "file": "source-offer-TZM01-4.webp",
+   "size": [
+    626,
+    455
+   ]
+  },
+  {
+   "code": "TZM02-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM02-2.jpeg",
+   "file": "source-offer-TZM02-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZM03-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM03-3.jpeg",
+   "file": "source-offer-TZM03-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZM04-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM04-3.jpeg",
+   "file": "source-offer-TZM04-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZM05-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM05-4.jpeg",
+   "file": "source-offer-TZM05-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZM06-4",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZM06-4.jpeg",
+   "file": "source-offer-TZM06-4.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZQ10-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZQ10-2.jpeg",
+   "file": "source-offer-TZQ10-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZQ11-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZQ11-2.jpeg",
+   "file": "source-offer-TZQ11-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZQ12-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZQ12-2.jpeg",
+   "file": "source-offer-TZQ12-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZQ13-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZQ13-2.jpeg",
+   "file": "source-offer-TZQ13-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZQ14-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZQ14-3.jpeg",
+   "file": "source-offer-TZQ14-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "TZQ15-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/TZQ15-3.jpeg",
+   "file": "source-offer-TZQ15-3.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "WRY0062",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/WRY0062.png",
+   "file": "source-offer-WRY0062.webp",
+   "size": [
+    576,
+    669
+   ]
+  },
+  {
+   "code": "WRY0162",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/WRY0162.png",
+   "file": "source-offer-WRY0162.webp",
+   "size": [
+    361,
+    421
+   ]
+  },
+  {
+   "code": "WRY0262",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/WRY0262.png",
+   "file": "source-offer-WRY0262.webp",
+   "size": [
+    572,
+    668
+   ]
+  },
+  {
+   "code": "WRY0263",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/WRY0263.png",
+   "file": "source-offer-WRY0263.webp",
+   "size": [
+    666,
+    498
+   ]
+  },
+  {
+   "code": "WRY36-3",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/WRY36-3.png",
+   "file": "source-offer-WRY36-3.webp",
+   "size": [
+    362,
+    317
+   ]
+  },
+  {
+   "code": "YBLX11-2",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/YBLX11-2.png",
+   "file": "source-offer-YBLX11-2.webp",
+   "size": [
+    800,
+    800
+   ]
+  },
+  {
+   "code": "ZS1615",
+   "source": "data-pipeline/01_raw/08_factory_costs/extracted_images/01_business_office_gift_set/ZS1615.png",
+   "file": "source-offer-ZS1615.webp",
+   "size": [
+    536,
+    541
+   ]
+  }
+ ]
+}
