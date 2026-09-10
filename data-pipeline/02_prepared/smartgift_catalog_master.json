@@ -68,8 +68,8 @@
   "canonical_products": [
     {
       "code": "PM-TMB",
-      "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
-      "name_en": "Thermal Tumbler SUS316",
+      "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS304)",
+      "name_en": "Thermal Tumbler SUS304",
       "category": "Eco-Friendly & Sustainability (Green & Earth)",
       "category_slug": "eco-friendly",
       "product_master": "PROD-MASTER-TMB-01",
@@ -78,10 +78,10 @@
         "แก้วทัมเบลอร์",
         "แก้วเก็บความเย็น",
         "Thermal Tumbler",
-        "SUS316 Tumbler",
+        "SUS304 Tumbler",
         "กระบอกน้ำสแตนเลส",
         "TMB-316",
-        "Tumbler SUS316"
+        "Tumbler SUS304"
       ],
       "srp_price": 320.0,
       "price_tiers": [
@@ -146,7 +146,7 @@
         "freight_thb_per_unit": 19.2,
         "inland_china_thb_per_unit": 1.88
       },
-      "material": "generic",
+      "material": "SUS304 stainless steel inner liner (food grade, vacuum insulated)",
       "color": "unspecified"
     },
     {
@@ -24011,7 +24011,7 @@
       "tier_breakdown": {
         "Bespoke (VIP 5 ชุด)": "เครื่องนวดคอพรีเมียม + แก้วกาแฟ 3-Way + ปากกาไม้แท้ (Novelty & Oriental)",
         "Signature (Exec 10 ชุด)": "สมุดโน้ตอัจฉริยะ Powerbank + ปากกาไม้ + ลำโพงบลูทูธ (Executive Smart Tech)",
-        "Reach (Staff 20 ชุด)": "แก้วทัมเบลอร์ SUS316 + ร่มพับ UPF50+ (Pastel Series)"
+        "Reach (Staff 20 ชุด)": "แก้วทัมเบลอร์ SUS304 + ร่มพับ UPF50+ (Pastel Series)"
       },
       "included_offers": [
         {
@@ -24097,7 +24097,7 @@
               },
               {
                 "product_code": "PM-TMB",
-                "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+                "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS304)",
                 "category": "Eco-Friendly & Sustainability (Green & Earth)",
                 "unit_qty_per_set": 1,
                 "total_qty_needed": 5,
@@ -24192,7 +24192,7 @@
           },
           {
             "product_code": "PM-TMB",
-            "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+            "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS304)",
             "category": "Eco-Friendly & Sustainability (Green & Earth)",
             "total_units_required": 5,
             "unit_cost": 185.0,
@@ -24315,7 +24315,7 @@
               },
               {
                 "product_code": "PM-TMB",
-                "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+                "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS304)",
                 "category": "Eco-Friendly & Sustainability (Green & Earth)",
                 "unit_qty_per_set": 1,
                 "total_qty_needed": 10,
@@ -24410,7 +24410,7 @@
           },
           {
             "product_code": "PM-TMB",
-            "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS316)",
+            "name_th": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS304)",
             "category": "Eco-Friendly & Sustainability (Green & Earth)",
             "total_units_required": 10,
             "unit_cost": 185.0,
