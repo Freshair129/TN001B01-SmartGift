@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1120" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <defs>
+    <!-- Drop Shadow Filters -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.05"/>
+    </filter>
+    
+    <!-- Arrow Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#4B5563" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F59E0B" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="30" y="25" width="940" height="70" rx="12" fill="#1E293B" filter="url(#shadow)"/>
+  <text x="50" y="60" fill="#FFFFFF" font-size="20" font-weight="bold">SmartGift — แผนผังขั้นตอนการคำนวณราคาขาย (Pricing Engine Flowchart)</text>
+  <text x="50" y="80" fill="#94A3B8" font-size="13">โมเดลการจัดส่ง: ขนส่งทางเรือจีน-ไทย → ท่าเรือคลองเตย/แหลมฉบัง → จัดส่งตรงปลายทางลูกค้า 1 จุด (Direct Single Drop)</text>
+
+  <!-- ================= SECTION 1: INPUTS ================= -->
+  <rect x="30" y="115" width="940" height="135" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="50" y="105" width="220" height="24" rx="6" fill="#0284C7"/>
+  <text x="60" y="122" fill="#FFFFFF" font-size="12" font-weight="bold">1. ข้อมูลนำเข้า (INPUT PARAMETERS)</text>
+  
+  <!-- 5 Input Cards -->
+  <!-- Card 1 -->
+  <rect x="50" y="140" width="165" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="62" y="165" fill="#0369A1" font-size="12" font-weight="bold">ต้นทุนโรงงานจีน</text>
+  <text x="62" y="185" fill="#0F172A" font-size="15" font-weight="bold">USD / ชิ้น</text>
+  <text x="62" y="210" fill="#64748B" font-size="11">จาก Catalog โรงงาน</text>
+
+  <!-- Card 2 -->
+  <rect x="235" y="140" width="165" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="247" y="165" fill="#0369A1" font-size="12" font-weight="bold">อัตราแลกเปลี่ยน (FX)</text>
+  <text x="247" y="185" fill="#0F172A" font-size="15" font-weight="bold">บาท / USD</text>
+  <text x="247" y="210" fill="#64748B" font-size="11">เช่น 36.00 บาท/USD</text>
+
+  <!-- Card 3 -->
+  <rect x="420" y="140" width="165" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="432" y="165" fill="#0369A1" font-size="12" font-weight="bold">จำนวนที่สั่งผลิต</text>
+  <text x="432" y="185" fill="#0F172A" font-size="15" font-weight="bold">Order Qty (ชิ้น)</text>
+  <text x="432" y="210" fill="#64748B" font-size="11">100 / 300 / 500 / 1,000</text>
+
+  <!-- Card 4 -->
+  <rect x="605" y="140" width="165" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="617" y="165" fill="#0369A1" font-size="12" font-weight="bold">ปริมาตร/น้ำหนัก</text>
+  <text x="617" y="185" fill="#0F172A" font-size="15" font-weight="bold">CBM หรือ Kg</text>
+  <text x="617" y="210" fill="#64748B" font-size="11">คิดตามเกณฑ์หนาแน่น</text>
+
+  <!-- Card 5 -->
+  <rect x="790" y="140" width="165" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="802" y="165" fill="#0369A1" font-size="12" font-weight="bold">ค่ารถเหมาท่าเรือ</text>
+  <text x="802" y="185" fill="#0F172A" font-size="15" font-weight="bold">บาท / เที่ยว</text>
+  <text x="802" y="210" fill="#64748B" font-size="11">ส่งตรงถึงลูกค้า 1 จุด</text>
+
+  <!-- Connector Line from Inputs to Landed Cost -->
+  <path d="M 500 250 L 500 280" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ================= SECTION 2: LANDED COST ENGINE ================= -->
+  <rect x="30" y="285" width="940" height="205" rx="12" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <rect x="50" y="275" width="280" height="24" rx="6" fill="#D97706"/>
+  <text x="60" y="292" fill="#FFFFFF" font-size="12" font-weight="bold">2. ต้นทุนส่งมอบถึงหน้างาน (LANDED COST ENGINE)</text>
+
+  <!-- Sub-box 1: ทุนโรงงานแปลงบาท -->
+  <rect x="50" y="315" width="270" height="80" rx="8" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="65" y="340" fill="#B45309" font-size="12" font-weight="bold">① ทุนโรงงานแปลงเป็นบาท</text>
+  <text x="65" y="365" fill="#1E293B" font-size="14" font-weight="bold">USD x อัตราแลกเปลี่ยน</text>
+  <text x="65" y="383" fill="#64748B" font-size="11">(เช่น $2.50 x 36 = 90.00 บาท/ชิ้น)</text>
+
+  <!-- Plus 1 -->
+  <circle cx="345" cy="355" r="14" fill="#F59E0B"/>
+  <text x="339" y="360" fill="#FFFFFF" font-size="18" font-weight="bold">+</text>
+
+  <!-- Sub-box 2: ค่าเรือจีน-ไทย -->
+  <rect x="375" y="315" width="270" height="80" rx="8" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="390" y="340" fill="#B45309" font-size="12" font-weight="bold">② ค่าขนส่งทางเรือ จีน-ไทย</text>
+  <text x="390" y="365" fill="#1E293B" font-size="14" font-weight="bold">(CBM x เรท CBM) / Qty</text>
+  <text x="390" y="383" fill="#64748B" font-size="11">(เฉลี่ยประมาณ 10 - 15 บาท/ชิ้น)</text>
+
+  <!-- Plus 2 -->
+  <circle cx="670" cy="355" r="14" fill="#F59E0B"/>
+  <text x="664" y="360" fill="#FFFFFF" font-size="18" font-weight="bold">+</text>
+
+  <!-- Sub-box 3: ค่ารถเหมาท่าเรือ -->
+  <rect x="700" y="315" width="250" height="80" rx="8" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="715" y="340" fill="#B45309" font-size="12" font-weight="bold">③ ค่าขนส่งในไทย (ท่าเรือ→ลูกค้า)</text>
+  <text x="715" y="365" fill="#1E293B" font-size="14" font-weight="bold">ค่ารถเหมาเที่ยว / Qty</text>
+  <text x="715" y="383" fill="#64748B" font-size="11">(เช่น 2,500 บ. / 1,000 ชิ้น = 2.50 บ.)</text>
+
+  <!-- Equals Box: Total Landed Cost -->
+  <rect x="50" y="415" width="900" height="60" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="70" y="445" fill="#92400E" font-size="13" font-weight="bold">ต้นทุนรวมส่งมอบต่อชิ้น (Total Landed Cost) =</text>
+  <text x="430" y="445" fill="#0F172A" font-size="16" font-weight="bold">ทุนโรงงานบาท + ค่าเรือจีน-ไทย + ค่าส่งในไทยต่อชิ้น</text>
+  <text x="70" y="463" fill="#B45309" font-size="11">✓ รวมค่าใช้จ่ายทั้งหมดจนถึงหน้าโกดังลูกค้า 1 จุดเรียบร้อยแล้ว ไม่ต้องแบกค่าส่งเข้าเนื้อ</text>
+
+  <!-- Connector Line from Landed Cost to Corporate Pricing -->
+  <path d="M 500 490 L 500 520" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ================= SECTION 3: CORPORATE PRICING ================= -->
+  <rect x="30" y="525" width="940" height="135" rx="12" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5"/>
+  <rect x="50" y="515" width="270" height="24" rx="6" fill="#7C3AED"/>
+  <text x="60" y="532" fill="#FFFFFF" font-size="12" font-weight="bold">3. ราคาขายแบบองค์กร (CORPORATE PRICING)</text>
+
+  <rect x="50" y="550" width="460" height="95" rx="8" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="70" y="575" fill="#6D28D9" font-size="13" font-weight="bold">สูตรราคาขายองค์กรก่อนภาษี</text>
+  <text x="70" y="605" fill="#0F172A" font-size="15" font-weight="bold">Landed Cost  x  1.47  x  ส่วนลดตามจำนวน</text>
+  <text x="70" y="630" fill="#64748B" font-size="11">มาร์กอัปฐาน 1.47 (กำไร ~47% บน Landed Cost)</text>
+
+  <!-- Volume discount table card -->
+  <rect x="530" y="550" width="420" height="95" rx="8" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="545" y="573" fill="#6D28D9" font-size="12" font-weight="bold">ตารางส่วนลดตามจำนวน (Volume Discount Factors):</text>
+  <text x="545" y="598" fill="#334155" font-size="12">• สั่ง 100 ชิ้น: ตัวคูณ <tspan font-weight="bold" fill="#7C3AED">0.80</tspan>   |  สั่ง 300 ชิ้น: ตัวคูณ <tspan font-weight="bold" fill="#7C3AED">0.77</tspan></text>
+  <text x="545" y="622" fill="#334155" font-size="12">• สั่ง 500 ชิ้น: ตัวคูณ <tspan font-weight="bold" fill="#7C3AED">0.75</tspan>   |  สั่ง 1,000+ ชิ้น: ตัวคูณ <tspan font-weight="bold" fill="#7C3AED">0.73</tspan></text>
+
+  <!-- Connector to Gate -->
+  <path d="M 500 660 L 500 690" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ================= SECTION 4: PROFIT FLOOR GATE ================= -->
+  <rect x="30" y="695" width="940" height="185" rx="12" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
+  <rect x="50" y="685" width="280" height="24" rx="6" fill="#DC2626"/>
+  <text x="60" y="702" fill="#FFFFFF" font-size="12" font-weight="bold">4. ด่านตรวจกำไรขั้นต่ำ (PROFIT FLOOR GATE)</text>
+
+  <!-- Diamond Decision -->
+  <polygon points="500,725 640,785 500,845 360,785" fill="#FFFFFF" stroke="#EF4444" stroke-width="2" filter="url(#card-shadow)"/>
+  <text x="445" y="775" fill="#991B1B" font-size="13" font-weight="bold">กำไรรวมออเดอร์</text>
+  <text x="430" y="798" fill="#991B1B" font-size="14" font-weight="bold">≥ 3,000 บาท ?</text>
+
+  <!-- Branch NO (Left) -->
+  <path d="M 360 785 L 190 785" stroke="#F59E0B" stroke-width="2" marker-end="url(#arrow-amber)"/>
+  <rect x="220" y="760" width="110" height="20" rx="4" fill="#FEF3C7"/>
+  <text x="228" y="774" fill="#B45309" font-size="11" font-weight="bold">ไม่ผ่าน (กำไรต่ำ)</text>
+
+  <rect x="50" y="740" width="250" height="90" rx="8" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="65" y="765" fill="#B45309" font-size="12" font-weight="bold">ปรับราคาขึ้นล็อกกำไรขั้นต่ำ</text>
+  <text x="65" y="788" fill="#0F172A" font-size="12" font-weight="bold">ราคาใหม่ = Landed Cost + (3,000/Qty)</text>
+  <text x="65" y="813" fill="#64748B" font-size="11">การันตีกำไรขั้นต่ำ 3,000 บ. เสมอ</text>
+
+  <!-- Branch YES (Right) -->
+  <path d="M 640 785 L 750 785" stroke="#10B981" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <rect x="660" y="760" width="70" height="20" rx="4" fill="#D1FAE5"/>
+  <text x="668" y="774" fill="#065F46" font-size="11" font-weight="bold">ผ่านเกณฑ์</text>
+
+  <rect x="750" y="745" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="765" y="775" fill="#065F46" font-size="13" font-weight="bold">คงราคาขายตามสูตร</text>
+  <text x="765" y="800" fill="#64748B" font-size="12">กำไรคุ้มค่าส่งและต้นทุนแล้ว</text>
+
+  <!-- Connector Lines to Output -->
+  <path d="M 175 830 L 175 895 L 340 895" stroke="#94A3B8" stroke-width="2"/>
+  <path d="M 850 825 L 850 895 L 660 895" stroke="#94A3B8" stroke-width="2"/>
+  <path d="M 500 845 L 500 905" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ================= SECTION 5: QUOTATION TOTAL ================= -->
+  <rect x="30" y="910" width="940" height="180" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="2"/>
+  <rect x="50" y="900" width="280" height="24" rx="6" fill="#059669"/>
+  <text x="60" y="917" fill="#FFFFFF" font-size="12" font-weight="bold">5. ยอดสุทธิในใบเสนอราคา (QUOTATION TOTAL)</text>
+
+  <!-- Final Step 1 -->
+  <rect x="50" y="940" width="270" height="125" rx="8" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="65" y="965" fill="#065F46" font-size="12" font-weight="bold">1. ปัดเศษราคาขายต่อชิ้น</text>
+  <text x="65" y="990" fill="#0F172A" font-size="13" font-weight="bold">ปัดขึ้นเป็นจำนวนเต็ม (Step 10 บาท)</text>
+  <text x="65" y="1015" fill="#64748B" font-size="11">เช่น 112.14 บ. → ปัดเป็น 120 บ./ชิ้น</text>
+  <text x="65" y="1035" fill="#64748B" font-size="11">เพื่อให้ตัวเลขสวยงามและเป็นมาตรฐาน B2B</text>
+
+  <!-- Final Step 2 -->
+  <rect x="340" y="940" width="310" height="125" rx="8" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="1.5" filter="url(#card-shadow)"/>
+  <text x="355" y="965" fill="#065F46" font-size="12" font-weight="bold">2. ยอดรวมสินค้า &amp; ค่าส่งในใบเสนอราคา</text>
+  <text x="355" y="990" fill="#0F172A" font-size="13" font-weight="bold">ราคาสินค้ารวม = ราคาขาย x Qty</text>
+  <rect x="355" y="1005" width="275" height="45" rx="6" fill="#FEF3C7"/>
+  <text x="365" y="1025" fill="#92400E" font-size="11" font-weight="bold">ค่าจัดส่ง: 0.00 บาท (ส่งฟรี กทม. 1 จุด)</text>
+  <text x="365" y="1040" fill="#B45309" font-size="10">หมายเหตุ: รวมส่งตรงจากท่าเรือถึงปลายทาง 1 จุด</text>
+
+  <!-- Final Step 3 (Grand Total) -->
+  <rect x="670" y="940" width="280" height="125" rx="8" fill="#1E293B" filter="url(#card-shadow)"/>
+  <text x="685" y="965" fill="#34D399" font-size="12" font-weight="bold">3. ยอดสุทธิเรียกเก็บ (GRAND TOTAL)</text>
+  <text x="685" y="1000" fill="#FFFFFF" font-size="16" font-weight="bold">ยอดก่อนภาษี  x  1.07</text>
+  <text x="685" y="1025" fill="#94A3B8" font-size="12">(รวมภาษีมูลค่าเพิ่ม VAT 7%)</text>
+  <text x="685" y="1048" fill="#38BDF8" font-size="11">✓ ออกใบเสนอราคา / ใบวางบิล FlowAccount</text>
+
+</svg>
