@@ -1,0 +1,26 @@
+# SmartGift (Business 01) — AI-Native B2B Corporate Gift Operating System
+
+> SmartGift (`TN001B01`, Business 01 in EtohGroup / Zuri-AI ecosystem) is an AI-native B2B manufacturer and distributor of premium corporate gift sets, executive drinkware, tech lifestyle accessories, and promotional merchandise.
+
+## 1. Quick Reference & Core Invariants
+- **FlowAccount Normalized SKU Pattern:** `^[A-Z0-9]+-[0-9]+\([A-Z0-9_-]+\)$` (e.g. `TMS06-4(P-16)`, `TMS06-3(P-06)`, `BW00-0(P-BAG)`).
+- **Direct Single-Drop Freight:** Flat rate of 2,500 THB per batch is absorbed directly into Landed Cost ($2,500 / Qty$). Customer quotes display 0.00 THB for standard domestic delivery.
+- **Customization Irreversibility:** Once raw hardware (tumbler, power bank) is laser-engraved or screen-printed with a client logo, stock locks to `CUSTOMER_DEDICATED`. It can never be returned to generic stock.
+- **Append-Only Stock Ledger:** Inventory is tracked via immutable `StockMovement` rows. On-hand is strictly $\sum \Delta Q$.
+- **Battery Shelf-Life FEFO:** Lithium-polymer power banks expire/require recharge after 180 days of storage.
+
+## 2. Authoritative Specifications & Schemas
+- [SPEC-SMARTGIFT-INVENTORY-REQUIREMENTS-FOR-ZURI-AI-2026-09-10.md](docs/specs/SPEC-SMARTGIFT-INVENTORY-REQUIREMENTS-FOR-ZURI-AI-2026-09-10.md): Complete requirements, business rules, and Prisma schema for Zuri-AI SCM domain.
+- [SPEC-SMARTGIFT-LLM-AGENT-INVENTORY-2026-09-10.md](docs/specs/SPEC-SMARTGIFT-LLM-AGENT-INVENTORY-2026-09-10.md): Detailed LLM Agent System Prompts, Tool Calling schemas, and reasoning chains.
+- [ADR-009: B2B Pricing, Logistics & FlowAccount Architecture](docs/decisions/ADR-009-B2B-PRICING-LOGISTICS-AND-FLOWACCOUNT-SKU-ARCHITECTURE.md): Approved B2B pricing model and logistics rules.
+- [SPEC-FULL-ENTERPRISE-SCHEMA-2026-09-10.md](docs/specs/SPEC-FULL-ENTERPRISE-SCHEMA-2026-09-10.md): Enterprise data dictionary and full relational layout.
+- [smartgift-inventory-system.schema.json](contracts/smartgift-inventory-system.schema.json): JSON Schema contract for Inventory, WIP, and Kitting.
+- [smartgift-full-master.schema.json](contracts/smartgift-full-master.schema.json): Master product catalog, pricing tiers, and packaging schema.
+
+## 3. LLM Agent Tools (Function Calling)
+- `check_inventory_atp`: Check real-time Available-to-Promise stock across 8 warehouse locations.
+- `calculate_smartgift_quote`: Calculate tier pricing (100, 300, 500, 1000 sets) with absorbed logistics and customization setup/run costs.
+- `create_quote_stock_reservation`: Place a 7-day soft reservation on components for active B2B quotes.
+- `dispatch_customization_order`: Issue raw stock to workshop for laser engraving or screen printing.
+- `dispatch_kitting_order`: Explode BOM and assemble finished gift boxes.
+- `inspect_battery_lots`: Audit lithium power banks approaching 180-day storage degradation limit.
