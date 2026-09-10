@@ -5,28 +5,33 @@
     "contract": "smartgift://b2b/pricing-comparison/v2"
   },
   "codes_and_identification": {
-    "factory_code": "TMS06-4",
+    "factory_base_model": "TMS06",
+    "factory_item_code": "TMS06-4",
     "factory_name": "Shenzhen Zhimei Shiji Industrial Co., Limited",
-    "smartgift_product_code": "SG-TMS06-4",
-    "smartgift_offer_code": "OFFER_TMS06-4",
-    "package_code": "PKG-EXEC-TMS06-4",
+    "product_items_count": 4,
+    "product_items_suffix": "-4",
+    "package_code": "P-16",
+    "package_suffix": "(P-16)",
+    "package_name": "กล่องของขวัญแข็ง Hardcover Set 4 ชิ้น บุโฟม EVA พร้อมถุงหิ้ว (Gift Box P-16)",
     "package_tier": "Signature / Bespoke Executive 4-in-1",
-    "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
-    "flowaccount_category": "สินค้าและบริการสั่งทำพิเศษ (Custom Gift Set)",
+    "flowaccount_product_code": "TMS06-4(P-16)",
+    "flowaccount_naming_rule": "รหัสโรงงาน [TMS06] + จำนวนชิ้นในชุด [-4] + รหัสแพ็กเกจกล่อง [(P-16)] = TMS06-4(P-16)",
+    "smartgift_sku_code": "SG-TMS06-4(P-16)",
+    "smartgift_offer_code": "OFFER_TMS06-4",
     "flowaccount_shipping_sku": "ค่าจัดส่ง (Row 935)",
     "bom_component_codes": [
       {
-        "component": "แก้วสแตนเลส 316",
+        "component": "แก้วสแตนเลส 316 (450ml)",
         "pm_code": "PM-CFMUG",
         "link_id": "PRODUCT_6CAE3DB3D5E972436C17"
       },
       {
-        "component": "ลำโพงบลูทูธพกพา",
+        "component": "ลำโพงบลูทูธพกพา Ambient Light",
         "pm_code": "PM-SPK",
         "link_id": "PRODUCT_D403AB4E3B37CC1ECB1B"
       },
       {
-        "component": "พาวเวอร์แบงก์พร้อมขาตั้ง 10,000mAh",
+        "component": "พาวเวอร์แบงก์มีขาตั้ง 10,000mAh",
         "pm_code": "PM-PB10K",
         "link_id": "PRODUCT_47D03C3D554A9112B9B2"
       },
@@ -114,9 +119,9 @@
     {
       "quantity": 100,
       "factory_item_code": "TMS06-4",
-      "smartgift_product_code": "SG-TMS06-4",
-      "package_code": "PKG-EXEC-TMS06-4",
-      "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
+      "smartgift_product_code": "SG-TMS06-4(P-16)",
+      "package_code": "P-16",
+      "flowaccount_product_code": "TMS06-4(P-16)",
       "factory_exw_usd": 16.2769,
       "factory_exw_thb": 585.97,
       "sea_freight_thb": 51.45,
@@ -131,14 +136,16 @@
       "corporate_gross_profit_total": 21758.0,
       "corporate_gross_margin_pct": 24.7,
       "corporate_savings_per_unit_thb": 420.0,
-      "corporate_savings_total_thb": 42000.0
+      "corporate_savings_total_thb": 42000.0,
+      "factory_base_code": "TMS06",
+      "items_in_set": 4
     },
     {
       "quantity": 300,
       "factory_item_code": "TMS06-4",
-      "smartgift_product_code": "SG-TMS06-4",
-      "package_code": "PKG-EXEC-TMS06-4",
-      "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
+      "smartgift_product_code": "SG-TMS06-4(P-16)",
+      "package_code": "P-16",
+      "flowaccount_product_code": "TMS06-4(P-16)",
       "factory_exw_usd": 15.2861,
       "factory_exw_thb": 550.3,
       "sea_freight_thb": 51.45,
@@ -153,14 +160,16 @@
       "corporate_gross_profit_total": 71976.0,
       "corporate_gross_margin_pct": 28.2,
       "corporate_savings_per_unit_thb": 280.0,
-      "corporate_savings_total_thb": 84000.0
+      "corporate_savings_total_thb": 84000.0,
+      "factory_base_code": "TMS06",
+      "items_in_set": 4
     },
     {
       "quantity": 500,
       "factory_item_code": "TMS06-4",
-      "smartgift_product_code": "SG-TMS06-4",
-      "package_code": "PKG-EXEC-TMS06-4",
-      "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
+      "smartgift_product_code": "SG-TMS06-4(P-16)",
+      "package_code": "P-16",
+      "flowaccount_product_code": "TMS06-4(P-16)",
       "factory_exw_usd": 14.1538,
       "factory_exw_thb": 509.54,
       "sea_freight_thb": 51.45,
@@ -175,14 +184,16 @@
       "corporate_gross_profit_total": 132005.0,
       "corporate_gross_margin_pct": 31.8,
       "corporate_savings_per_unit_thb": 170.0,
-      "corporate_savings_total_thb": 85000.0
+      "corporate_savings_total_thb": 85000.0,
+      "factory_base_code": "TMS06",
+      "items_in_set": 4
     },
     {
       "quantity": 1000,
       "factory_item_code": "TMS06-4",
-      "smartgift_product_code": "SG-TMS06-4",
-      "package_code": "PKG-EXEC-TMS06-4",
-      "flowaccount_product_code": "FA-CUSTOM-TMS06-4",
+      "smartgift_product_code": "SG-TMS06-4(P-16)",
+      "package_code": "P-16",
+      "flowaccount_product_code": "TMS06-4(P-16)",
       "factory_exw_usd": 13.5877,
       "factory_exw_thb": 489.15,
       "sea_freight_thb": 51.45,
@@ -197,7 +208,9 @@
       "corporate_gross_profit_total": 256900.0,
       "corporate_gross_margin_pct": 32.1,
       "corporate_savings_per_unit_thb": 100.0,
-      "corporate_savings_total_thb": 100000.0
+      "corporate_savings_total_thb": 100000.0,
+      "factory_base_code": "TMS06",
+      "items_in_set": 4
     }
   ]
 }
