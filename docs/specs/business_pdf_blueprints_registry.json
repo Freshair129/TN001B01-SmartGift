@@ -1,0 +1,125 @@
+{
+  "title": "SmartGift Business PDF Blueprints & Strategic Knowledge Registry",
+  "directory": "data-pipeline/01_raw/06_business_pdf",
+  "updated_at": "2026-09-10",
+  "total_documents": 5,
+  "total_pages": 62,
+  "total_bytes": 60281929,
+  "governance": {
+    "security_classification": "Confidential / Internal Strategy",
+    "data_privacy": "Zero-PII Policy Enforced (No client names or personal identities in public outputs)",
+    "claim_policy": "No unverified flight-approved, medical, or military grade claims"
+  },
+  "documents": [
+    {
+      "file": "Architecture_of_Appreciation.pdf",
+      "title_th": "สถาปัตยกรรมแห่งการแสดงความขอบคุณ (4 ระดับการดูแล และรูปทรงกล่องบรรจุภัณฑ์)",
+      "title_en": "Architecture of Appreciation: 4 Tiers & Box Geometry",
+      "pages_count": 6,
+      "role": "Packaging Architecture & Tier Stratification",
+      "summary": "กำหนดโครงสร้างความสัมพันธ์ 4 ระดับการแสดงความขอบคุณ (Executive, VIP Partner, Management, Staff) รูปทรงกล่องมาตรฐาน (Box Geometry P-01 ถึง P-16) วัสดุบุด้านใน (EVA Foam, ผ้ากำมะหยี่, ผ้าซาติน) และการจัดวางเพื่อความสมดุลทางสายตา",
+      "key_concepts": [
+        "4 Tiers of Appreciation (ระดับการดูแลความสัมพันธ์ขององค์กร)",
+        "Box Geometry & Form Factor (ขนาดและสัดส่วนกล่องของขวัญ P-Series)",
+        "Interior Lining: Precision Die-cut EVA foam & Velvet finish",
+        "Visual Balance & Arrangement (สมดุลทางสายตาเมื่อเปิดกล่อง)"
+      ],
+      "catalog_application": "นำมาใช้วางรหัสกล่องแพ็กเกจ (P-06, P-16, P-BAG) และการออกแบบบล็อกโฟมรับสินค้า",
+      "confidentiality": "Internal Strategy & Architecture",
+      "path": "data-pipeline/01_raw/06_business_pdf/Architecture_of_Appreciation.pdf",
+      "sha256": "0c306630490f7e0d43df529d7a6e93f08e8f619a97d6e29e8f9ef950c8dd92e1",
+      "size_bytes": 6680475,
+      "aspect_ratio": "16:9 Landscape",
+      "dimensions_mm": "485.42 x 270.93 mm",
+      "pixel_dimensions": "1376 x 768 px"
+    },
+    {
+      "file": "SmartGift_2026_Portfolio_Blueprint.pdf",
+      "title_th": "พิมพ์เขียวพอร์ตโฟลิโอ SmartGift 2026 (ปรัชญา Recipient-First และการแบ่งกลุ่มสินค้า)",
+      "title_en": "SmartGift 2026 Portfolio Blueprint",
+      "pages_count": 12,
+      "role": "Product Portfolio & Strategic Segmentation",
+      "summary": "พิมพ์เขียวกลยุทธ์สินค้าปี 2026 ยึดหลัก 'เริ่มจากผู้รับ (Recipient-First)' จำแนกพอร์ตสินค้าตามความสนใจและบริบทการใช้งาน 5-9 ธีม และข้อกำหนดการกำกับดูแลคำกล่าวอ้างทางเทคนิค (Claim Governance)",
+      "key_concepts": [
+        "Recipient-First Philosophy (คิดจากประโยชน์และความประทับใจของผู้รับเป็นอันดับแรก)",
+        "Interest-based Bundling (การจัดชุดตามไลฟ์สไตล์ เช่น Smart Tech, Eco Living, Executive)",
+        "Claim Governance (ห้ามใช้คำกล่าวอ้างเกินจริงที่ไม่มีใบรับรอง)",
+        "Portfolio Cohesion (การรักษาอัตลักษณ์ของแบรนด์ SmartGift ในทุกระดับราคา)"
+      ],
+      "catalog_application": "ใช้เป็นแกนหลักในการจัดหมวดหมู่สินค้าใน Catalog และการตั้งชื่อชุดของขวัญ",
+      "confidentiality": "Internal Business Blueprint",
+      "path": "data-pipeline/01_raw/06_business_pdf/SmartGift_2026_Portfolio_Blueprint.pdf",
+      "sha256": "c9ee13ceac99a755d36a25ebf64ae162bfd8ccde4bc7bb6333840bf392f3a35e",
+      "size_bytes": 14493431,
+      "aspect_ratio": "16:9 Landscape",
+      "dimensions_mm": "485.42 x 270.93 mm",
+      "pixel_dimensions": "1376 x 768 px"
+    },
+    {
+      "file": "Smart_Gift.pdf",
+      "title_th": "วิสัยทัศน์และการวางตำแหน่งแบรนด์ SmartGift (Brand Positioning & Unboxing Sequence)",
+      "title_en": "SmartGift Brand Vision & Customer Experience",
+      "pages_count": 15,
+      "role": "Brand Strategy & Customer Journey",
+      "summary": "การวางตำแหน่งทางการตลาด (Positioning) แบรนด์ของขวัญองค์กรระดับพรีเมียม นิยาม Tier เป็น 'ระดับการดูแล' ไม่จำกัดด้วยตำแหน่ง ลำดับจังหวะ Unboxing และกรอบการปรับแต่งสินค้า (Customization Framework)",
+      "key_concepts": [
+        "Brand Positioning (High-utility Quiet Luxury สำหรับ B2B Corporate)",
+        "Care Tiers vs Hierarchy (ดูแลตามความผูกพันและคุณค่า ไม่ใช่แค่ยึดตามตำแหน่งทางการ)",
+        "One Brand, Multiple Recipient Personas (แบรนด์เดียวตอบโจทย์ผู้รับทุกมิติ)",
+        "Customization Guidelines (เลเซอร์สกรีน, ฟอยล์ทอง, ฟอยล์เงิน, UV Print)"
+      ],
+      "catalog_application": "นำมาใช้เขียนคำบรรยายแนวคิดใน Catalog และบริการสกรีนโลโก้ 1 จุด",
+      "confidentiality": "Internal Executive Pitch & Positioning",
+      "path": "data-pipeline/01_raw/06_business_pdf/Smart_Gift.pdf",
+      "sha256": "4f3a5c01a7a50c73a0a77d444ec3bbb393c35119229743efe8c984a0c4d36521",
+      "size_bytes": 10006074,
+      "aspect_ratio": "16:9 Landscape",
+      "dimensions_mm": "485.42 x 270.93 mm",
+      "pixel_dimensions": "1376 x 768 px"
+    },
+    {
+      "file": "Sovereign_Group_Digital_Infrastructure.pdf",
+      "title_th": "โครงสร้างพื้นฐานดิจิทัลและโลจิสติกส์การส่งมอบ (Digital & Logistics Infrastructure)",
+      "title_en": "Sovereign Group Digital Infrastructure & Supply Chain",
+      "pages_count": 14,
+      "role": "Operations & Logistics Backbone",
+      "summary": "พิมพ์เขียวระบบโครงสร้างพื้นฐานดิจิทัล การเชื่อมโยง ERP/CRM การคำนวณต้นทุนการขนส่งแบบ Direct Single Drop (ท่าเรือถึงคลังลูกค้า) และนโยบาย Zero-PII / การปกป้องข้อมูลส่วนบุคคล",
+      "key_concepts": [
+        "Direct Single Drop Logistics (ขนส่งจุดเดียว ท่าเรือไทย -> ปลายทางลูกค้า 2,500 ฿/เที่ยว)",
+        "Zero-PII Data Privacy (ห้ามเปิดเผยชื่อบุคคล/ลูกค้าในแคตตาล็อกสาธารณะ)",
+        "Multi-system Traceability (เชื่อมโยง FlowAccount, ProductMaster และ Supplier BOM)",
+        "Operational Resilience & Landed Cost Absorption"
+      ],
+      "catalog_application": "เป็นที่มาของสูตรกระจายค่าขนส่งลง Landed Cost และระบบ Free Delivery ใบเสนอราคา",
+      "confidentiality": "Confidential Infrastructure Document",
+      "path": "data-pipeline/01_raw/06_business_pdf/Sovereign_Group_Digital_Infrastructure.pdf",
+      "sha256": "d6fdb811f0a407d12753312005ae322211546532af7248df1dc7afb4d2e42b1a",
+      "size_bytes": 15431749,
+      "aspect_ratio": "16:9 Landscape",
+      "dimensions_mm": "485.42 x 270.93 mm",
+      "pixel_dimensions": "1376 x 768 px"
+    },
+    {
+      "file": "Unboxing_Engineering.pdf",
+      "title_th": "วิศวกรรมประสบการณ์การเปิดกล่อง (4-Stage Unboxing Reveal & Quiet Luxury)",
+      "title_en": "Unboxing Engineering & Tactile Experience",
+      "pages_count": 15,
+      "role": "Packaging Engineering & Sensory Design",
+      "summary": "วิศวกรรมการออกแบบกล่องของขวัญ 4 ชั้น (Sleeve -> Rigid Box -> Tissue/Vellum Paper -> Product Discovery) ปรัชญา Quiet Luxury การรับรู้ผ่านสัมผัส (Tactile & Sensory Touch) และเทคนิคงานพิมพ์ขั้นสูง",
+      "key_concepts": [
+        "4-Stage Reveal Hierarchy: 1. ปลอกสวม/ริบบิ้น -> 2. กล่องแข็ง -> 3. กระดาษไขซีล -> 4. ตัวสินค้าในโฟม",
+        "Sensory Touch: ผิวสัมผัสแบบด้าน (Matte Soft-touch) และเสียงดูดอากาศเปิดกล่อง",
+        "Quiet Luxury: โลโก้คมชัดแบบมินิมอล ไม่เอะอะ ปั๊มฟอยล์เมทัลลิกหรือเลเซอร์คมกริบ",
+        "Box Structural Integrity: รับน้ำหนักสินค้าได้ดี ป้องกันแรงกระแทกระหว่างขนส่ง"
+      ],
+      "catalog_application": "ใช้เป็นมาตรฐานการประกอบชุดของขวัญ TMS06-4, TMS06-3 และภาพ Infographic แสดงกล่อง",
+      "confidentiality": "Internal Engineering Specification",
+      "path": "data-pipeline/01_raw/06_business_pdf/Unboxing_Engineering.pdf",
+      "sha256": "1b50882c90cfd005cac2a1423fc9d62bcd4538dae133aca784315e813b10c69a",
+      "size_bytes": 13670200,
+      "aspect_ratio": "16:9 Landscape",
+      "dimensions_mm": "485.42 x 270.93 mm",
+      "pixel_dimensions": "1376 x 768 px"
+    }
+  ]
+}
