@@ -106,7 +106,7 @@ O:\Org-EtohGroup\SmartGift\
 ├── data-pipeline/                        # 📥 Data Pipeline Workspace (แยกตาม Stage)
 │   ├── 01_raw/                           # Stage 1: ไฟล์ต้นฉบับ Read-Only / Immutable
 │   │   ├── 01_flowaccount_exports/       #   FlowAccount xlsx (product/contact/quotation/billing)
-│   │   ├── 02_factory_pricelists_pdf/    #   ใบราคาโรงงาน PDF (path ถูกอ้างใน production manifest — ห้าม renumber)
+│   │   ├── 02_catalog_srp_pricelists_pdf/ #   🆕 แคตตาล็อกราคาขายส่งลูกค้า (Catalog SRP) PDF (legacy alias: 02_factory_pricelists_pdf)
 │   │   ├── 03_product_catalogs/          #   แคตตาล็อกสินค้า PDF
 │   │   ├── 04_shipping_rates_cbm/        #   เรทค่าส่ง CBM (ภาพ)
 │   │   ├── 05_crm_customer_data/         #   ⚠️ PII — untracked+ignored ตาม CR-006, path ถูก pin ใน .gitignore ห้าม rename/renumber

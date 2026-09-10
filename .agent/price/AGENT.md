@@ -40,7 +40,7 @@ attributes:
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
 │ Layer 3: CATALOG_SRP_PRICE (ราคาเสนอขายมาตรฐานในแคตตาล็อก)             │
-│ • แหล่งข้อมูล: 01_raw/02_factory_pricelists_pdf/                       │
+│ • แหล่งข้อมูล: 01_raw/02_catalog_srp_pricelists_pdf/ (legacy junction: 02_factory_pricelists_pdf/)                       │
 │   (ไฟล์ 01-ใบเสนอราคา... และ 02-ตัวอย่างใบราคาส่งลูกค้า... 110 หน้า)   │
 │ • ความหมาย: แคตตาล็อกราคาขายส่งลูกค้าองค์กรของ SmartGift รวมสกรีนโลโก้ │
 │ • โครงสร้าง Tier: @10, @20, @50, @100, @300, @500                     │
@@ -82,7 +82,7 @@ attributes:
 |---|---|---|---|
 | **ต้นทุนโรงงานจริง** | `data-pipeline/01_raw/08_factory_costs/01-ต้นทุน-20260612 Business Office Gift set catalog.xlsx` | Excel (USD) | ต้นทุนจริงจาก Shenzhen Zhimei Shiji |
 | **ต้นทุน Power Bank** | `data-pipeline/01_raw/08_factory_costs/02-ต้นทุน-20260417 Power bank notebook catalog.xlsx` | Excel (USD) | ต้นทุนสินค้ากลุ่มเทคโนโลยี |
-| **แคตตาล็อกราคาขายส่ง** | `data-pipeline/01_raw/02_factory_pricelists_pdf/01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf` | PDF (110 หน้า) | ราคาขายมาตรฐานพร้อมสกรีน (Catalog SRP) |
+| **แคตตาล็อกราคาขายส่ง** | `data-pipeline/01_raw/02_catalog_srp_pricelists_pdf/ (legacy junction: 02_factory_pricelists_pdf/)01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf` | PDF (110 หน้า) | ราคาขายมาตรฐานพร้อมสกรีน (Catalog SRP) |
 | **ข้อมูลดิบ FlowAccount** | `data-pipeline/01_raw/01_flowaccount_exports/บริษัท เทราบิส จำกัด_product.xlsx` | Excel (1,319 แถว) | ข้อมูลราคาย้อนหลังที่เซลส์ใช้งานจริง |
 | **ฐานข้อมูลคลีน Normalized** | `data-pipeline/02_prepared/flowaccount_catalog_normalized.json` | JSON Master | แคตตาล็อก 186 รายการที่คลีนแล้วพร้อม Tiers |
 | **สคริปต์ประมวลผล** | `pipeline/normalize_flowaccount_catalog.py` | Python Script | สคริปต์จับคู่และคำนวณราคาอัตโนมัติ |

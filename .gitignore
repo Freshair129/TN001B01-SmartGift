@@ -87,3 +87,6 @@ data-pipeline/01_raw/08_factory_costs/extracted_images/
 
 # Local build/pipeline outputs
 outputs/
+
+# Backward-compatibility junction for lane 02 (renamed to 02_catalog_srp_pricelists_pdf)
+data-pipeline/01_raw/02_factory_pricelists_pdf

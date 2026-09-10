@@ -20,7 +20,10 @@ from datetime import datetime, timezone
 sys.stdout.reconfigure(encoding='utf-8')
 
 BASE_DIR = r'C:\Users\pc\workspace\business-01-smart-gift'
-PDF_PATH = os.path.join(BASE_DIR, r'data-pipeline\01_raw\02_factory_pricelists_pdf\01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf')
+# Primary canonical path with fallback to legacy junction
+PDF_PATH = os.path.join(BASE_DIR, r'data-pipeline\01_raw\02_catalog_srp_pricelists_pdf\01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf')
+if not os.path.exists(PDF_PATH):
+    PDF_PATH = os.path.join(BASE_DIR, r'data-pipeline\01_raw\02_factory_pricelists_pdf\01-ใบเสนอราคา-update12กย68(แปลอังกฤษ to ไทยยังไม่เสร็จ).pdf')
 XLSX_PATH = os.path.join(BASE_DIR, r'data-pipeline\01_raw\01_flowaccount_exports\บริษัท เทราบิส จำกัด_product.xlsx')
 OUT_JSON = os.path.join(BASE_DIR, r'data-pipeline\02_prepared\flowaccount_catalog_normalized.json')
 OUT_AUDIT = os.path.join(BASE_DIR, r'data-pipeline\04_review_reports\flowaccount_normalization_audit_2026-09-10.json')
