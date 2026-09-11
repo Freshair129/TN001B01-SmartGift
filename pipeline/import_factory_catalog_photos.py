@@ -86,6 +86,11 @@ def main():
         print(f"   {code}: {err}")
     if args.apply:
         print(f"ประหยัดพื้นที่  {saved_bytes / 1048576:.0f} MB")
+        # รอบถัดไปจะข้ามภาพที่นำเข้าแล้ว (อยู่ใน existing) — ต้องรวมกับ manifest เดิม ไม่อย่างนั้นที่มาของภาพเก่าหาย
+        if MANIFEST.exists():
+            done = {r["code"] for r in written}
+            old = json.loads(MANIFEST.read_text(encoding="utf-8")).get("items", [])
+            written = [r for r in old if r["code"] not in done] + written
         MANIFEST.write_text(json.dumps({
             "lane": "08_factory_costs",
             "note": "ภาพสินค้าจากไฟล์ต้นทุนโรงงาน อนุมัติโดยเจ้าของ 2026-09-11 · "
