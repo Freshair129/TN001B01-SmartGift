@@ -3,7 +3,7 @@
   "meta": {
     "name": "Smart Gift Thailand Color Tokens",
     "source": "IMG_4363.jpeg",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "note": "Core colors were sampled from the supplied raster logo. Intermediate scale steps are calibrated extensions for UI use."
   },
   "color": {
@@ -80,8 +80,8 @@
       "inverse": { "$value": "{color.cocoa.900}" }
     },
     "text": {
-      "primary": { "$value": "{color.cocoa.900}" },
-      "secondary": { "$value": "{color.cocoa.600}" },
+      "primary": { "$value": "{color.neutral.900}" },
+      "secondary": { "$value": "{color.neutral.600}" },
       "muted": { "$value": "{color.neutral.500}" },
       "brand": { "$value": "{color.orange.700}", "$description": "Accessible orange for normal-size text on a light background" },
       "on-brand": { "$value": "{color.neutral.0}" },
