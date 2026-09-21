@@ -1,0 +1,786 @@
+[
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-AROMA",
+    "code": "PM-AROMA",
+    "nameTh": "เครื่องกระจายกลิ่นอโรมาอัลตราโซนิกเปลวไฟแสงไฟ Ambient",
+    "nameEn": "Ultrasonic Flame Aroma Diffuser",
+    "category": "novelty-self-care",
+    "productFamily": "PF-WELLNESS-HEALTH",
+    "srpPriceThbQty1": 550.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 550.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 490.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 460.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 420.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 380.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 350.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 320.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 295.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-AROMA",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-BOTTLE-LED",
+    "code": "PM-BOTTLE-LED",
+    "nameTh": "กระบอกน้ำสแตนเลสบอกอุณหภูมิหน้าจอ Smart LED",
+    "nameEn": "Smart LED Temperature Thermos Bottle",
+    "category": "eco-friendly",
+    "productFamily": "PF-DRINKWARE",
+    "srpPriceThbQty1": 290.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 290.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 260.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 240.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 220.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 200.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 185.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 170.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 155.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-BOTTLE-LED",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-CFMUG",
+    "code": "PM-CFMUG",
+    "nameTh": "แก้วกาแฟพกพาสแตนเลส 316 พร้อมฝา 3 ระบบ",
+    "nameEn": "Stainless Coffee Mug 3-Way Lid",
+    "category": "novelty-self-care",
+    "productFamily": "PF-DRINKWARE",
+    "srpPriceThbQty1": 299.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 299.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 270.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 250.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 230.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 210.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 195.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 180.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 165.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-CFMUG",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-CUTLERY",
+    "code": "PM-CUTLERY",
+    "nameTh": "ชุดช้อนส้อมมีดสแตนเลสฟู้ดเกรดพกพา",
+    "nameEn": "Portable Stainless Steel Cutlery Set",
+    "category": "novelty-self-care",
+    "productFamily": "PF-ECO-LIFESTYLE",
+    "srpPriceThbQty1": 165.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 165.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 140.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 130.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 120.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 110.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 100.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 92.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 85.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-CUTLERY",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-DESK-MAT",
+    "code": "PM-DESK-MAT",
+    "nameTh": "แผ่นรองโต๊ะทำงานหนัง Vegan Leather พร้อมที่ชาร์จไว",
+    "nameEn": "Wireless Charging Vegan Desk Mat",
+    "category": "executive-smart-tech",
+    "productFamily": "PF-SMART-OFFICE",
+    "srpPriceThbQty1": 590.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 590.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 530.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 490.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 450.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 410.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 375.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 345.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 320.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-DESK-MAT",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-FAN",
+    "code": "PM-FAN",
+    "nameTh": "พัดลมพกพาดีไซน์มินิมอลหน้าจอดิจิทัลแบต 4000mAh",
+    "nameEn": "Digital Display Mini Handheld Fan",
+    "category": "eco-friendly",
+    "productFamily": "PF-ECO-LIFESTYLE",
+    "srpPriceThbQty1": 260.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 260.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 230.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 210.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 195.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 175.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 160.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 148.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 138.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-FAN",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-FLASH",
+    "code": "PM-FLASH",
+    "nameTh": "แฟลชไดรฟ์โลหะหมุน Dual Interface (Type-C / USB 3.0)",
+    "nameEn": "Dual Interface Metal Flash Drive",
+    "category": "classic-oriental",
+    "productFamily": "PF-STORAGE-TECH",
+    "srpPriceThbQty1": 220.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 220.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 190.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 175.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 160.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 145.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 135.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 125.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 115.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-FLASH",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-MSG",
+    "code": "PM-MSG",
+    "nameTh": "เครื่องนวดคอพกพาคลื่นความถี่ต่ำ Low Pulse & ประคบร้อน",
+    "nameEn": "Portable Low Pulse Neck Massager",
+    "category": "novelty-self-care",
+    "productFamily": "PF-WELLNESS-HEALTH",
+    "srpPriceThbQty1": 850.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 850.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 780.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 720.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 660.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 600.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 550.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 500.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 460.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-MSG",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-MUG-HEAT",
+    "code": "PM-MUG-HEAT",
+    "nameTh": "ชุดแก้วเซรามิกพร้อมแท่นอุ่นอุณหภูมิคงที่ 55°C",
+    "nameEn": "Ceramic Mug with 55C Heating Base",
+    "category": "novelty-self-care",
+    "productFamily": "PF-DRINKWARE",
+    "srpPriceThbQty1": 350.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 350.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 310.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 290.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 270.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 245.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 225.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 210.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 195.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-MUG-HEAT",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-NB",
+    "code": "PM-NB",
+    "nameTh": "สมุดโน้ตหนัง PU อัจฉริยะฝังพาวเวอร์แบงก์ชาร์จไร้สาย",
+    "nameEn": "Smart Leather Powerbank Notebook",
+    "category": "executive-smart-tech",
+    "productFamily": "PF-SMART-OFFICE",
+    "srpPriceThbQty1": 750.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 750.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 680.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 630.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 590.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 540.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 490.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 450.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 420.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-NB",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-PB10K",
+    "code": "PM-PB10K",
+    "nameTh": "พาวเวอร์แบงก์แม่เหล็กไร้สาย 10,000mAh (MagSafe & Stand)",
+    "nameEn": "MagSafe Wireless Powerbank 10000mAh",
+    "category": "executive-smart-tech",
+    "productFamily": "PF-POWER-CHARGING",
+    "srpPriceThbQty1": 690.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 690.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 620.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 580.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 540.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 490.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 450.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 420.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 390.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-PB10K",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-PEN",
+    "code": "PM-PEN",
+    "nameTh": "ปากกาเจลบอดี้ไม้แท้หัวทองเหลือง (Brass Wood Signature)",
+    "nameEn": "Solid Walnut Brass Gel Pen",
+    "category": "classic-oriental",
+    "productFamily": "PF-CRAFT-STATIONERY",
+    "srpPriceThbQty1": 190.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 190.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 160.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 145.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 130.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 120.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 110.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 100.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 90.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-PEN",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-SPK",
+    "code": "PM-SPK",
+    "nameTh": "ลำโพงบลูทูธสเตอริโอคู่พรีเมียม (Bluetooth Speaker 5W)",
+    "nameEn": "Dual Stereo Bluetooth Speaker",
+    "category": "executive-smart-tech",
+    "productFamily": "PF-AUDIO-TECH",
+    "srpPriceThbQty1": 480.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 480.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 440.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 410.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 380.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 350.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 320.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 295.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 275.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-SPK",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-TEA-INF",
+    "code": "PM-TEA-INF",
+    "nameTh": "กระบอกชงชาแก้ว Borosilicate สองชั้นแยกกากชา",
+    "nameEn": "Double Wall Borosilicate Tea Infuser",
+    "category": "classic-oriental",
+    "productFamily": "PF-DRINKWARE",
+    "srpPriceThbQty1": 360.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 360.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 320.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 300.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 280.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 255.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 235.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 220.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 205.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-TEA-INF",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-TMB",
+    "code": "PM-TMB",
+    "nameTh": "แก้วทัมเบลอร์เก็บอุณหภูมิ (Tumbler SUS304)",
+    "nameEn": "Thermal Tumbler SUS304",
+    "category": "eco-friendly",
+    "productFamily": "PF-DRINKWARE",
+    "srpPriceThbQty1": 320.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 320.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 290.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 270.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 250.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 230.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 215.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 200.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 185.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-TMB",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  },
+  {
+    "entityType": "ProductMaster",
+    "externalId": "PM-UMB",
+    "code": "PM-UMB",
+    "nameTh": "ร่มพับออโต้ 6 ตอน เคลือบซิลิโคนกันแดด UPF50+",
+    "nameEn": "Auto 6-Fold UPF50+ Umbrella",
+    "category": "eco-friendly",
+    "productFamily": "PF-OUTDOOR-LIFESTYLE",
+    "srpPriceThbQty1": 250.0,
+    "priceTiersThb": [
+      {
+        "minQty": 1,
+        "unitPriceThb": 250.0
+      },
+      {
+        "minQty": 10,
+        "unitPriceThb": 220.0
+      },
+      {
+        "minQty": 20,
+        "unitPriceThb": 200.0
+      },
+      {
+        "minQty": 50,
+        "unitPriceThb": 185.0
+      },
+      {
+        "minQty": 100,
+        "unitPriceThb": 170.0
+      },
+      {
+        "minQty": 300,
+        "unitPriceThb": 155.0
+      },
+      {
+        "minQty": 500,
+        "unitPriceThb": 140.0
+      },
+      {
+        "minQty": 1000,
+        "unitPriceThb": 130.0
+      }
+    ],
+    "provenance": {
+      "upstreamFile": "data-pipeline/02_prepared/ProductMaster.json",
+      "upstreamRecordId": "PM-UMB",
+      "supplementUpstreamFile": "data-pipeline/02_prepared/pricelist_master.json"
+    }
+  }
+]
